@@ -1,0 +1,20 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_loan_trust-b_routing",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "trust-b",
+ "n_cases": 60,
+ "interventions": [
+  {
+   "type": "routing_set",
+   "gateway": "Gateway_0eqakhv",
+   "probabilities": {
+    "Flow_0mpn0oz": "0.4",
+    "Flow_1ltuf1s": "0.6"
+   }
+  }
+ ]
+}
