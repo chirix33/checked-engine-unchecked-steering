@@ -1,0 +1,6380 @@
+{
+ "scenarios": {
+  "H01_factual_contention_ties_loop": {
+   "scenario_id": "H01_factual_contention_ties_loop",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": null
+  },
+  "H02_unavailable_pauses_running_task": {
+   "scenario_id": "H02_unavailable_pauses_running_task",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H03_unavailable_count_uses_highest_index": {
+   "scenario_id": "H03_unavailable_count_uses_highest_index",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H04_resource_add": {
+   "scenario_id": "H04_resource_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H05_duration_scale_interval_bounds": {
+   "scenario_id": "H05_duration_scale_interval_bounds",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H06_duration_set_zero": {
+   "scenario_id": "H06_duration_set_zero",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H07_duration_distribution_keeps_draw": {
+   "scenario_id": "H07_duration_distribution_keeps_draw",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 15,
+     "skipped_overridden_here_only": [
+      [
+       "c0001",
+       "T_decide",
+       1,
+       "service"
+      ],
+      [
+       "c0002",
+       "T_notify",
+       1,
+       "service"
+      ]
+     ]
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H08_timer_scale_interval": {
+   "scenario_id": "H08_timer_scale_interval",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H09_timer_set_zero_simultaneous": {
+   "scenario_id": "H09_timer_set_zero_simultaneous",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H10_routing_keeps_draw": {
+   "scenario_id": "H10_routing_keeps_draw",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 22
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 5
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 41
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 14
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H11_routing_from_is_inclusive": {
+   "scenario_id": "H11_routing_from_is_inclusive",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 22
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 5
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 41
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 14
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H12_routing_no_effect_after_boundary": {
+   "scenario_id": "H12_routing_no_effect_after_boundary",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H13_routing_no_effect_threshold": {
+   "scenario_id": "H13_routing_no_effect_threshold",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H14_resource_no_effect_off_hours": {
+   "scenario_id": "H14_resource_no_effect_off_hours",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 20
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 17
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 37
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 13
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "H15_case_add_calendar_edges": {
+   "scenario_id": "H15_case_add_calendar_edges",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 18
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 9
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 9
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 33
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 16
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 12
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 9
+    }
+   },
+   "base": null
+  },
+  "H16_case_remove_preserves_others": {
+   "scenario_id": "H16_case_remove_preserves_others",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 12
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 10
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 12
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 22
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 11
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 8
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    }
+   },
+   "base": "H01_factual_contention_ties_loop"
+  },
+  "P_loan_trust-a_case_add": {
+   "scenario_id": "P_loan_trust-a_case_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1330
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 665
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 665
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 94
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 236
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1046
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2051
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 996
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 759
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 62
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 665
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_case_remove": {
+   "scenario_id": "P_loan_trust-a_case_remove",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 59
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1292
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 646
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 646
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 92
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 229
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 967
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1026
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1993
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 968
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 738
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 646
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_duration_dist": {
+   "scenario_id": "P_loan_trust-a_duration_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_duration_scale": {
+   "scenario_id": "P_loan_trust-a_duration_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_duration_set": {
+   "scenario_id": "P_loan_trust-a_duration_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_factual": {
+   "scenario_id": "P_loan_trust-a_factual",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": null
+  },
+  "P_loan_trust-a_resource_add": {
+   "scenario_id": "P_loan_trust-a_resource_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_routing": {
+   "scenario_id": "P_loan_trust-a_routing",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1366
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 683
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 683
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 246
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2104
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1023
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 776
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 683
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_timer_dist": {
+   "scenario_id": "P_loan_trust-a_timer_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_timer_scale": {
+   "scenario_id": "P_loan_trust-a_timer_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_timer_set": {
+   "scenario_id": "P_loan_trust-a_timer_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-a_unavailable": {
+   "scenario_id": "P_loan_trust-a_unavailable",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1318
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 93
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 234
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 986
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2032
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 987
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 752
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 659
+    }
+   },
+   "base": "P_loan_trust-a_factual"
+  },
+  "P_loan_trust-b_case_add": {
+   "scenario_id": "P_loan_trust-b_case_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1484
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 742
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 742
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 102
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 267
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1162
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2283
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1112
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 844
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 62
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 742
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_case_remove": {
+   "scenario_id": "P_loan_trust-b_case_remove",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 59
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1448
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 724
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 724
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 99
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 261
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1084
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1143
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2227
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1085
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 823
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 724
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_duration_dist": {
+   "scenario_id": "P_loan_trust-b_duration_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_duration_scale": {
+   "scenario_id": "P_loan_trust-b_duration_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_duration_set": {
+   "scenario_id": "P_loan_trust-b_duration_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_factual": {
+   "scenario_id": "P_loan_trust-b_factual",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": null
+  },
+  "P_loan_trust-b_resource_add": {
+   "scenario_id": "P_loan_trust-b_resource_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_routing": {
+   "scenario_id": "P_loan_trust-b_routing",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1556
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 778
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 778
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 286
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2390
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1166
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 879
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 778
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_timer_dist": {
+   "scenario_id": "P_loan_trust-b_timer_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_timer_scale": {
+   "scenario_id": "P_loan_trust-b_timer_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_timer_set": {
+   "scenario_id": "P_loan_trust-b_timer_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_loan_trust-b_unavailable": {
+   "scenario_id": "P_loan_trust-b_unavailable",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 60
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1472
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 6
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 101
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 265
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1102
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2264
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1103
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 837
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 61
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 736
+    }
+   },
+   "base": "P_loan_trust-b_factual"
+  },
+  "P_pharmacy_trust-a_case_add": {
+   "scenario_id": "P_pharmacy_trust-a_case_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2040
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1020
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1020
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 364
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 640
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2128
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4169
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2025
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1384
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 122
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1020
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_case_remove": {
+   "scenario_id": "P_pharmacy_trust-a_case_remove",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 119
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1004
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1004
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 358
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1992
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2111
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4103
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1993
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1362
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1004
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_duration_dist": {
+   "scenario_id": "P_pharmacy_trust-a_duration_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_duration_scale": {
+   "scenario_id": "P_pharmacy_trust-a_duration_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_duration_set": {
+   "scenario_id": "P_pharmacy_trust-a_duration_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_factual": {
+   "scenario_id": "P_pharmacy_trust-a_factual",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": null
+  },
+  "P_pharmacy_trust-a_resource_add": {
+   "scenario_id": "P_pharmacy_trust-a_resource_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_routing": {
+   "scenario_id": "P_pharmacy_trust-a_routing",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2272
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1136
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1136
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 423
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 763
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4764
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2323
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1559
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1136
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_timer_dist": {
+   "scenario_id": "P_pharmacy_trust-a_timer_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_timer_scale": {
+   "scenario_id": "P_pharmacy_trust-a_timer_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_timer_set": {
+   "scenario_id": "P_pharmacy_trust-a_timer_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-a_unavailable": {
+   "scenario_id": "P_pharmacy_trust-a_unavailable",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2024
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 361
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 635
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2008
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4136
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1373
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1012
+    }
+   },
+   "base": "P_pharmacy_trust-a_factual"
+  },
+  "P_pharmacy_trust-b_case_add": {
+   "scenario_id": "P_pharmacy_trust-b_case_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2026
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1013
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1013
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 357
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 638
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2105
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4137
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2009
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1370
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 122
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1013
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_case_remove": {
+   "scenario_id": "P_pharmacy_trust-b_case_remove",
+   "run_status": "ok",
+   "summary": {
+    "pass": 14,
+    "fail": 0,
+    "not_applicable": 1
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 119
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1988
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 994
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 994
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 350
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 625
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1969
+    },
+    "P9_case_isolation": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2088
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no interventions or case-set interventions present"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4057
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1970
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1344
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 994
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_duration_dist": {
+   "scenario_id": "P_pharmacy_trust-b_duration_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_duration_scale": {
+   "scenario_id": "P_pharmacy_trust-b_duration_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_duration_set": {
+   "scenario_id": "P_pharmacy_trust-b_duration_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_factual": {
+   "scenario_id": "P_pharmacy_trust-b_factual",
+   "run_status": "ok",
+   "summary": {
+    "pass": 12,
+    "fail": 0,
+    "not_applicable": 3
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "no (valid) base output supplied"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": null
+  },
+  "P_pharmacy_trust-b_resource_add": {
+   "scenario_id": "P_pharmacy_trust-b_resource_add",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_routing": {
+   "scenario_id": "P_pharmacy_trust-b_routing",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2364
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1182
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1182
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 443
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 815
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 5000
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2441
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1625
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1182
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_timer_dist": {
+   "scenario_id": "P_pharmacy_trust-b_timer_dist",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_timer_scale": {
+   "scenario_id": "P_pharmacy_trust-b_timer_scale",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_timer_set": {
+   "scenario_id": "P_pharmacy_trust-b_timer_set",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  },
+  "P_pharmacy_trust-b_unavailable": {
+   "scenario_id": "P_pharmacy_trust-b_unavailable",
+   "run_status": "ok",
+   "summary": {
+    "pass": 13,
+    "fail": 0,
+    "not_applicable": 2
+   },
+   "properties": {
+    "P1_flow": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 120
+    },
+    "P2_precedence": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 2004
+    },
+    "P3_occupancy": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P4_work": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    },
+    "P5_queue_order": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 3
+    },
+    "P6_timers": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 353
+    },
+    "P7_routing": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 630
+    },
+    "P8_draw_stability": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1985
+    },
+    "P9_case_isolation": {
+     "status": "not_applicable",
+     "reason": "no case_add/case_remove intervention"
+    },
+    "P10_no_effect": {
+     "status": "not_applicable",
+     "reason": "interventions have effect candidates (static test could not show a no-op)"
+    },
+    "X_format": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 4090
+    },
+    "X_draws_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1986
+    },
+    "X_values_recomputed": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1355
+    },
+    "X_arrivals_and_case_set": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 121
+    },
+    "X_section8_definition_replay": {
+     "status": "pass",
+     "violations": [],
+     "n_violations": 0,
+     "checked": 1002
+    }
+   },
+   "base": "P_pharmacy_trust-b_factual"
+  }
+ },
+ "totals": {
+  "P1_flow": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P2_precedence": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P3_occupancy": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P4_work": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P5_queue_order": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P6_timers": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P7_routing": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "P8_draw_stability": {
+   "pass": 58,
+   "fail": 0,
+   "not_applicable": 6
+  },
+  "P9_case_isolation": {
+   "pass": 9,
+   "fail": 0,
+   "not_applicable": 55
+  },
+  "P10_no_effect": {
+   "pass": 3,
+   "fail": 0,
+   "not_applicable": 61
+  },
+  "X_format": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "X_draws_recomputed": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "X_values_recomputed": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "X_arrivals_and_case_set": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  },
+  "X_section8_definition_replay": {
+   "pass": 64,
+   "fail": 0,
+   "not_applicable": 0
+  }
+ },
+ "failing": {}
+}

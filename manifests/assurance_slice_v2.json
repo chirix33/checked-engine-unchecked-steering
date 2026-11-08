@@ -1,0 +1,2267 @@
+[
+ {
+  "program": "otf/claude-haiku-5-5/b2",
+  "case": "effectful",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0007",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0007', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": false,
+  "reason": "directed: changing Applicant completes form for c0005 visit 3 changed nothing for that case",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    false,
+    "changing Applicant completes form for c0005 visit 3 changed nothing for that case"
+   ]
+  ],
+  "answer": null,
+  "gold": 315061,
+  "probes_run": 2,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 3.5,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-haiku-5-5/b2",
+  "case": "no_effect",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0000",
+     "target": "Design loan offer",
+     "visit": 3,
+     "value": 5000.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0000', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": true,
+  "reason": "directed: 3 probes passed",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0012 Design loan offer visit 1: case changed, prefix unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0013 Design loan offer visit 1: case changed, prefix unchanged"
+   ]
+  ],
+  "answer": null,
+  "gold": 208849,
+  "probes_run": 3,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "ToolError: patch {\"op\": \"set\", \"select\": {\"entity\": \"c0000\", \"kind\": \"work plan\"}, \"field\": \"visit 3\", \"value\": 5000.0}: input has no field 'visit 3' (fields: ['activity', 'visit 1']); patch {\"op\": \"set\", \"select\": {\"entity\": \"c0000\", \"kind\": \"work plan\"}, \"field\": \"visit 3\", \"value\": 5000.0}: input",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 6.8,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-haiku-5-5/b2",
+  "case": "invalid",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0003",
+     "target": "Inspect building",
+     "visit": 1,
+     "value": 600.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0003', deadline=None)",
+   "unresolved": "The activity 'Inspect building' does not appear in the document's list of activities, so this intervention cannot be matched to a process activity."
+  },
+  "contract": "unresolved_meaning",
+  "permit": false,
+  "reason": "contract unresolved_meaning: The activity 'Inspect building' does not appear in the document's list of activities, so this intervention cannot be matched to a process activity.",
+  "evidence": [],
+  "answer": null,
+  "gold": null,
+  "probes_run": 0,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 3.5,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-haiku-5-5/b2",
+  "case": "reuse_same_policy",
+  "request": {
+   "scope": "Run 03",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0004",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0004', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": false,
+  "reason": "capability failed earlier for activity_duration/set/Applicant completes form on Run 02",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ]
+  ],
+  "answer": null,
+  "gold": 46579,
+  "probes_run": 0,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 1.7,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-haiku-5-5/b2",
+  "case": "reuse_changed_policy",
+  "request": {
+   "scope": "Run 03",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0004",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0004', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": false,
+  "reason": "directed: changing Applicant completes form for c0001 visit 1 changed nothing for that case",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    false,
+    "changing Applicant completes form for c0001 visit 1 changed nothing for that case"
+   ]
+  ],
+  "answer": null,
+  "gold": 46579,
+  "probes_run": 2,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 1.9,
+  "note": "gold computed under the changed policy (10 clerks)"
+ },
+ {
+  "program": "otf/claude-sonnet-5-5/b2",
+  "case": "effectful",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0007",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0007', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": true,
+  "reason": "directed: 3 probes passed",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0005 Applicant completes form visit 3: case changed, prefix unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0000 Applicant completes form visit 1: case changed, prefix unchanged"
+   ]
+  ],
+  "answer": null,
+  "gold": 315061,
+  "probes_run": 3,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {
+   "patches": [
+    {
+     "op": "set",
+     "select": {
+      "entity": "c0007",
+      "kind": "work_plan"
+     },
+     "field": "visit 1",
+     "value": 1
+    }
+   ],
+   "touched": [
+    "c0007"
+   ],
+   "errors": [],
+   "t_star": 40517.0,
+   "overrides": [],
+   "params_changed": {},
+   "case_input_count": {
+    "c0000": 26,
+    "c0001": 26,
+    "c0002": 26,
+    "c0003": 26,
+    "c0004": 26,
+    "c0005": 26,
+    "c0006": 26,
+    "c0007": 26,
+    "c0008": 26,
+    "c0009": 26,
+    "c0010": 26,
+    "c0011": 26,
+    "c0012": 26,
+    "c0013": 26,
+    "c0014": 26
+   },
+   "modified": [
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1827.0
+      },
+      "id": "work_plan_c0007_AML Check",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_AML Check",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 2024.0,
+       "visit 2": 1843.0,
+       "visit 3": 1870.0,
+       "visit 4": 1837.0,
+       "visit 5": 1993.0
+      },
+      "id": "work_plan_c0007_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 1,
+       "visit 2": 1843.0,
+       "visit 3": 1870.0,
+       "visit 4": 1837.0,
+       "visit 5": 1993.0
+      },
+      "id": "work_plan_c0007_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 86400.0,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0
+      },
+      "id": "work_plan_c0007_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 1,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0
+      },
+      "id": "work_plan_c0007_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1844.0,
+       "visit 2": 1908.0,
+       "visit 3": 1803.0,
+       "visit 4": 1824.0,
+       "visit 5": 1844.0
+      },
+      "id": "work_plan_c0007_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1,
+       "visit 2": 1908.0,
+       "visit 3": 1803.0,
+       "visit 4": 1824.0,
+       "visit 5": 1844.0
+      },
+      "id": "work_plan_c0007_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 2416.0,
+       "visit 2": 1924.0,
+       "visit 3": 2075.0,
+       "visit 4": 1852.0,
+       "visit 5": 1922.0
+      },
+      "id": "work_plan_c0007_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 1,
+       "visit 2": 1924.0,
+       "visit 3": 2075.0,
+       "visit 4": 1852.0,
+       "visit 5": 1922.0
+      },
+      "id": "work_plan_c0007_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1856.0,
+       "visit 2": 2085.0,
+       "visit 3": 1877.0,
+       "visit 4": 2038.0,
+       "visit 5": 1873.0
+      },
+      "id": "work_plan_c0007_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1,
+       "visit 2": 2085.0,
+       "visit 3": 1877.0,
+       "visit 4": 2038.0,
+       "visit 5": 1873.0
+      },
+      "id": "work_plan_c0007_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 2023.0
+      },
+      "id": "work_plan_c0007_Approve application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Approve application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1916.0
+      },
+      "id": "work_plan_c0007_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1806.0
+      },
+      "id": "work_plan_c0007_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1814.0
+      },
+      "id": "work_plan_c0007_Reject application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Reject application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1837.0
+      },
+      "id": "work_plan_c0007_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1817.0,
+       "visit 2": 1840.0,
+       "visit 3": 2174.0,
+       "visit 4": 1829.0,
+       "visit 5": 1827.0
+      },
+      "id": "work_plan_c0007_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1,
+       "visit 2": 1840.0,
+       "visit 3": 2174.0,
+       "visit 4": 1829.0,
+       "visit 5": 1827.0
+      },
+      "id": "work_plan_c0007_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 2143.0,
+       "visit 2": 1800.0,
+       "visit 3": 1914.0,
+       "visit 4": 1838.0,
+       "visit 5": 1914.0
+      },
+      "id": "work_plan_c0007_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 1,
+       "visit 2": 1800.0,
+       "visit 3": 1914.0,
+       "visit 4": 1838.0,
+       "visit 5": 1914.0
+      },
+      "id": "work_plan_c0007_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 2106.0
+      },
+      "id": "work_plan_c0007_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 1
+      },
+      "id": "work_plan_c0007_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 1950.0,
+       "visit 2": 2066.0,
+       "visit 3": 1804.0,
+       "visit 4": 2020.0,
+       "visit 5": 1933.0
+      },
+      "id": "work_plan_c0007_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 1,
+       "visit 2": 2066.0,
+       "visit 3": 1804.0,
+       "visit 4": 2020.0,
+       "visit 5": 1933.0
+      },
+      "id": "work_plan_c0007_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1870.0,
+       "visit 2": 2001.0,
+       "visit 3": 1919.0,
+       "visit 4": 1800.0,
+       "visit 5": 1840.0
+      },
+      "id": "work_plan_c0007_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1,
+       "visit 2": 2001.0,
+       "visit 3": 1919.0,
+       "visit 4": 1800.0,
+       "visit 5": 1840.0
+      },
+      "id": "work_plan_c0007_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1803.0,
+       "visit 2": 1801.0,
+       "visit 3": 1823.0,
+       "visit 4": 1892.0,
+       "visit 5": 1814.0
+      },
+      "id": "work_plan_c0007_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0007"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1,
+       "visit 2": 1801.0,
+       "visit 3": 1823.0,
+       "visit 4": 1892.0,
+       "visit 5": 1814.0
+      },
+      "id": "work_plan_c0007_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ]
+   ],
+   "added": [],
+   "removed": []
+  },
+  "detail": "",
+  "binding_check": [
+   false,
+   "17 input records changed, expected exactly 1"
+  ],
+  "answer_before_binding_check": 227456,
+  "raw_correct": false,
+  "seconds": 9.2,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-sonnet-5-5/b2",
+  "case": "no_effect",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0000",
+     "target": "Design loan offer",
+     "visit": 3,
+     "value": 5000.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0000', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": true,
+  "reason": "directed: 3 probes passed",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0012 Design loan offer visit 1: case changed, prefix unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0013 Design loan offer visit 1: case changed, prefix unchanged"
+   ]
+  ],
+  "answer": null,
+  "gold": 208849,
+  "probes_run": 3,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "ToolError: patch {\"op\": \"set\", \"select\": {\"entity\": \"c0000\", \"kind\": \"work_plan\"}, \"field\": \"visit 3\", \"value\": 5000}: input has no field 'visit 3' (fields: ['activity', 'visit 1']); patch {\"op\": \"set\", \"select\": {\"entity\": \"c0000\", \"kind\": \"work_plan\"}, \"field\": \"visit 3\", \"value\": 5000}: input has",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 7.6,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-sonnet-5-5/b2",
+  "case": "invalid",
+  "request": {
+   "scope": "Run 02",
+   "interventions": [],
+   "query": "Query(kind='case_end_time', case='c0003', deadline=None)",
+   "unresolved": "'Inspect building' is not an activity in this process. The activities are: AML Check, Applicant completes form, Appraise property, Approve Loan Offer, Approve and post home insurance quote, Approve and send acceptance pack, Approve application, Assess loan risk, Cancel application, Check application form completeness, Check credit history, Consider re-design loan offer, Design loan offer, Prepare acceptance pack, Prepare home insurance quote, Reject application, Return application back to applicant."
+  },
+  "contract": "unresolved_meaning",
+  "permit": false,
+  "reason": "contract unresolved_meaning: 'Inspect building' is not an activity in this process. The activities are: AML Check, Applicant completes form, Appraise property, Approve Loan Offer, Approve and post home insurance quote, Approve and send acceptance pack, Approve application, Assess loan risk, Cancel application, Check application form completeness, Check credit history, Consider re-design loan offer, Design loan offer, Prepare acceptance pack, Prepare home insurance quote, Reject application, Return application back to applicant.",
+  "evidence": [],
+  "answer": null,
+  "gold": null,
+  "probes_run": 0,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {},
+  "detail": "",
+  "binding_check": null,
+  "answer_before_binding_check": null,
+  "raw_correct": null,
+  "seconds": 2.2,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-sonnet-5-5/b2",
+  "case": "reuse_same_policy",
+  "request": {
+   "scope": "Run 03",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0004",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0004', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": true,
+  "reason": "directed: 3 probes passed",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0001 Applicant completes form visit 1: case changed, prefix unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0008 Applicant completes form visit 1: case changed, prefix unchanged"
+   ]
+  ],
+  "answer": null,
+  "gold": 46579,
+  "probes_run": 3,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {
+   "patches": [
+    {
+     "op": "set",
+     "select": {
+      "entity": "c0004",
+      "kind": "work_plan"
+     },
+     "field": "visit 1",
+     "value": 1.0
+    }
+   ],
+   "touched": [
+    "c0004"
+   ],
+   "errors": [],
+   "t_star": 37927.0,
+   "overrides": [],
+   "params_changed": {},
+   "case_input_count": {
+    "c0000": 26,
+    "c0001": 26,
+    "c0002": 26,
+    "c0003": 26,
+    "c0004": 26,
+    "c0005": 26,
+    "c0006": 26,
+    "c0007": 26,
+    "c0008": 26,
+    "c0009": 26,
+    "c0010": 26,
+    "c0011": 26,
+    "c0012": 26,
+    "c0013": 26,
+    "c0014": 26
+   },
+   "modified": [
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1809.0
+      },
+      "id": "work_plan_c0004_AML Check",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_AML Check",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 1840.0,
+       "visit 2": 1843.0,
+       "visit 3": 1845.0,
+       "visit 4": 1941.0,
+       "visit 5": 1864.0,
+       "visit 6": 1974.0
+      },
+      "id": "work_plan_c0004_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 1.0,
+       "visit 2": 1843.0,
+       "visit 3": 1845.0,
+       "visit 4": 1941.0,
+       "visit 5": 1864.0,
+       "visit 6": 1974.0
+      },
+      "id": "work_plan_c0004_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 86400.0,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0,
+       "visit 6": 86400.0
+      },
+      "id": "work_plan_c0004_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 1.0,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0,
+       "visit 6": 86400.0
+      },
+      "id": "work_plan_c0004_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1839.0,
+       "visit 2": 1870.0,
+       "visit 3": 1924.0,
+       "visit 4": 1802.0,
+       "visit 5": 1914.0,
+       "visit 6": 1983.0
+      },
+      "id": "work_plan_c0004_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1.0,
+       "visit 2": 1870.0,
+       "visit 3": 1924.0,
+       "visit 4": 1802.0,
+       "visit 5": 1914.0,
+       "visit 6": 1983.0
+      },
+      "id": "work_plan_c0004_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 1810.0,
+       "visit 2": 1885.0,
+       "visit 3": 1840.0,
+       "visit 4": 1976.0,
+       "visit 5": 1862.0,
+       "visit 6": 1816.0
+      },
+      "id": "work_plan_c0004_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 1.0,
+       "visit 2": 1885.0,
+       "visit 3": 1840.0,
+       "visit 4": 1976.0,
+       "visit 5": 1862.0,
+       "visit 6": 1816.0
+      },
+      "id": "work_plan_c0004_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1917.0,
+       "visit 2": 1826.0,
+       "visit 3": 2183.0,
+       "visit 4": 1956.0,
+       "visit 5": 1862.0,
+       "visit 6": 1881.0
+      },
+      "id": "work_plan_c0004_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1.0,
+       "visit 2": 1826.0,
+       "visit 3": 2183.0,
+       "visit 4": 1956.0,
+       "visit 5": 1862.0,
+       "visit 6": 1881.0
+      },
+      "id": "work_plan_c0004_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 1850.0
+      },
+      "id": "work_plan_c0004_Approve application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Approve application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1961.0
+      },
+      "id": "work_plan_c0004_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1817.0
+      },
+      "id": "work_plan_c0004_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1989.0
+      },
+      "id": "work_plan_c0004_Reject application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Reject application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1814.0
+      },
+      "id": "work_plan_c0004_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1927.0,
+       "visit 2": 2092.0,
+       "visit 3": 1861.0,
+       "visit 4": 1842.0,
+       "visit 5": 1932.0,
+       "visit 6": 1814.0
+      },
+      "id": "work_plan_c0004_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1.0,
+       "visit 2": 2092.0,
+       "visit 3": 1861.0,
+       "visit 4": 1842.0,
+       "visit 5": 1932.0,
+       "visit 6": 1814.0
+      },
+      "id": "work_plan_c0004_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 1800.0,
+       "visit 2": 1987.0,
+       "visit 3": 1884.0,
+       "visit 4": 1948.0,
+       "visit 5": 1817.0,
+       "visit 6": 1880.0
+      },
+      "id": "work_plan_c0004_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 1.0,
+       "visit 2": 1987.0,
+       "visit 3": 1884.0,
+       "visit 4": 1948.0,
+       "visit 5": 1817.0,
+       "visit 6": 1880.0
+      },
+      "id": "work_plan_c0004_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 1802.0
+      },
+      "id": "work_plan_c0004_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 2011.0,
+       "visit 2": 1891.0,
+       "visit 3": 1808.0,
+       "visit 4": 1851.0,
+       "visit 5": 1947.0,
+       "visit 6": 1815.0
+      },
+      "id": "work_plan_c0004_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 1.0,
+       "visit 2": 1891.0,
+       "visit 3": 1808.0,
+       "visit 4": 1851.0,
+       "visit 5": 1947.0,
+       "visit 6": 1815.0
+      },
+      "id": "work_plan_c0004_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1829.0,
+       "visit 2": 1956.0,
+       "visit 3": 1832.0,
+       "visit 4": 1891.0,
+       "visit 5": 1932.0,
+       "visit 6": 1810.0
+      },
+      "id": "work_plan_c0004_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1.0,
+       "visit 2": 1956.0,
+       "visit 3": 1832.0,
+       "visit 4": 1891.0,
+       "visit 5": 1932.0,
+       "visit 6": 1810.0
+      },
+      "id": "work_plan_c0004_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1955.0,
+       "visit 2": 1838.0,
+       "visit 3": 2050.0,
+       "visit 4": 1913.0,
+       "visit 5": 1897.0,
+       "visit 6": 2014.0
+      },
+      "id": "work_plan_c0004_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1.0,
+       "visit 2": 1838.0,
+       "visit 3": 2050.0,
+       "visit 4": 1913.0,
+       "visit 5": 1897.0,
+       "visit 6": 2014.0
+      },
+      "id": "work_plan_c0004_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ]
+   ],
+   "added": [],
+   "removed": []
+  },
+  "detail": "",
+  "binding_check": [
+   false,
+   "17 input records changed, expected exactly 1"
+  ],
+  "answer_before_binding_check": 46579,
+  "raw_correct": true,
+  "seconds": 7.3,
+  "note": ""
+ },
+ {
+  "program": "otf/claude-sonnet-5-5/b2",
+  "case": "reuse_changed_policy",
+  "request": {
+   "scope": "Run 03",
+   "interventions": [
+    {
+     "family": "activity_duration",
+     "op": "set",
+     "case": "c0004",
+     "target": "Applicant completes form",
+     "visit": 1,
+     "value": 1.0,
+     "routes": null,
+     "effective_from": null,
+     "effective_to": null,
+     "units": null
+    }
+   ],
+   "query": "Query(kind='case_end_time', case='c0004', deadline=None)",
+   "unresolved": null
+  },
+  "contract": "ok",
+  "permit": true,
+  "reason": "directed: 3 probes passed",
+  "evidence": [
+   [
+    "replay",
+    true,
+    "all case ends match"
+   ],
+   [
+    "no_op",
+    true,
+    "unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0001 Applicant completes form visit 1: case changed, prefix unchanged"
+   ],
+   [
+    "input_use activity_duration",
+    true,
+    "c0008 Applicant completes form visit 1: case changed, prefix unchanged"
+   ]
+  ],
+  "answer": null,
+  "gold": 46579,
+  "probes_run": 3,
+  "untested": false,
+  "inexpressible": false,
+  "correct": null,
+  "binding": {
+   "patches": [
+    {
+     "op": "set",
+     "select": {
+      "entity": "c0004",
+      "kind": "work_plan"
+     },
+     "field": "visit 1",
+     "value": 1.0
+    }
+   ],
+   "touched": [
+    "c0004"
+   ],
+   "errors": [],
+   "t_star": 37927.0,
+   "overrides": [],
+   "params_changed": {},
+   "case_input_count": {
+    "c0000": 26,
+    "c0001": 26,
+    "c0002": 26,
+    "c0003": 26,
+    "c0004": 26,
+    "c0005": 26,
+    "c0006": 26,
+    "c0007": 26,
+    "c0008": 26,
+    "c0009": 26,
+    "c0010": 26,
+    "c0011": 26,
+    "c0012": 26,
+    "c0013": 26,
+    "c0014": 26
+   },
+   "modified": [
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1809.0
+      },
+      "id": "work_plan_c0004_AML Check",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "AML Check",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_AML Check",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 1840.0,
+       "visit 2": 1843.0,
+       "visit 3": 1845.0,
+       "visit 4": 1941.0,
+       "visit 5": 1864.0,
+       "visit 6": 1974.0
+      },
+      "id": "work_plan_c0004_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Consider re-design loan offer",
+       "visit 1": 1.0,
+       "visit 2": 1843.0,
+       "visit 3": 1845.0,
+       "visit 4": 1941.0,
+       "visit 5": 1864.0,
+       "visit 6": 1974.0
+      },
+      "id": "work_plan_c0004_Consider re-design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 86400.0,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0,
+       "visit 6": 86400.0
+      },
+      "id": "work_plan_c0004_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Applicant completes form",
+       "visit 1": 1.0,
+       "visit 2": 86400.0,
+       "visit 3": 86400.0,
+       "visit 4": 86400.0,
+       "visit 5": 86400.0,
+       "visit 6": 86400.0
+      },
+      "id": "work_plan_c0004_Applicant completes form",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1839.0,
+       "visit 2": 1870.0,
+       "visit 3": 1924.0,
+       "visit 4": 1802.0,
+       "visit 5": 1914.0,
+       "visit 6": 1983.0
+      },
+      "id": "work_plan_c0004_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve Loan Offer",
+       "visit 1": 1.0,
+       "visit 2": 1870.0,
+       "visit 3": 1924.0,
+       "visit 4": 1802.0,
+       "visit 5": 1914.0,
+       "visit 6": 1983.0
+      },
+      "id": "work_plan_c0004_Approve Loan Offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 1810.0,
+       "visit 2": 1885.0,
+       "visit 3": 1840.0,
+       "visit 4": 1976.0,
+       "visit 5": 1862.0,
+       "visit 6": 1816.0
+      },
+      "id": "work_plan_c0004_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare acceptance pack",
+       "visit 1": 1.0,
+       "visit 2": 1885.0,
+       "visit 3": 1840.0,
+       "visit 4": 1976.0,
+       "visit 5": 1862.0,
+       "visit 6": 1816.0
+      },
+      "id": "work_plan_c0004_Prepare acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1917.0,
+       "visit 2": 1826.0,
+       "visit 3": 2183.0,
+       "visit 4": 1956.0,
+       "visit 5": 1862.0,
+       "visit 6": 1881.0
+      },
+      "id": "work_plan_c0004_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Prepare home insurance quote",
+       "visit 1": 1.0,
+       "visit 2": 1826.0,
+       "visit 3": 2183.0,
+       "visit 4": 1956.0,
+       "visit 5": 1862.0,
+       "visit 6": 1881.0
+      },
+      "id": "work_plan_c0004_Prepare home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 1850.0
+      },
+      "id": "work_plan_c0004_Approve application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Approve application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1961.0
+      },
+      "id": "work_plan_c0004_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Cancel application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Cancel application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1817.0
+      },
+      "id": "work_plan_c0004_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Assess loan risk",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Assess loan risk",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1989.0
+      },
+      "id": "work_plan_c0004_Reject application",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Reject application",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Reject application",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1814.0
+      },
+      "id": "work_plan_c0004_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check credit history",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Check credit history",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1927.0,
+       "visit 2": 2092.0,
+       "visit 3": 1861.0,
+       "visit 4": 1842.0,
+       "visit 5": 1932.0,
+       "visit 6": 1814.0
+      },
+      "id": "work_plan_c0004_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Check application form completeness",
+       "visit 1": 1.0,
+       "visit 2": 2092.0,
+       "visit 3": 1861.0,
+       "visit 4": 1842.0,
+       "visit 5": 1932.0,
+       "visit 6": 1814.0
+      },
+      "id": "work_plan_c0004_Check application form completeness",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 1800.0,
+       "visit 2": 1987.0,
+       "visit 3": 1884.0,
+       "visit 4": 1948.0,
+       "visit 5": 1817.0,
+       "visit 6": 1880.0
+      },
+      "id": "work_plan_c0004_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and post home insurance quote",
+       "visit 1": 1.0,
+       "visit 2": 1987.0,
+       "visit 3": 1884.0,
+       "visit 4": 1948.0,
+       "visit 5": 1817.0,
+       "visit 6": 1880.0
+      },
+      "id": "work_plan_c0004_Approve and post home insurance quote",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 1802.0
+      },
+      "id": "work_plan_c0004_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Appraise property",
+       "visit 1": 1.0
+      },
+      "id": "work_plan_c0004_Appraise property",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 2011.0,
+       "visit 2": 1891.0,
+       "visit 3": 1808.0,
+       "visit 4": 1851.0,
+       "visit 5": 1947.0,
+       "visit 6": 1815.0
+      },
+      "id": "work_plan_c0004_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Design loan offer",
+       "visit 1": 1.0,
+       "visit 2": 1891.0,
+       "visit 3": 1808.0,
+       "visit 4": 1851.0,
+       "visit 5": 1947.0,
+       "visit 6": 1815.0
+      },
+      "id": "work_plan_c0004_Design loan offer",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1829.0,
+       "visit 2": 1956.0,
+       "visit 3": 1832.0,
+       "visit 4": 1891.0,
+       "visit 5": 1932.0,
+       "visit 6": 1810.0
+      },
+      "id": "work_plan_c0004_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Return application back to applicant",
+       "visit 1": 1.0,
+       "visit 2": 1956.0,
+       "visit 3": 1832.0,
+       "visit 4": 1891.0,
+       "visit 5": 1932.0,
+       "visit 6": 1810.0
+      },
+      "id": "work_plan_c0004_Return application back to applicant",
+      "kind": "work_plan",
+      "time": null
+     }
+    ],
+    [
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1955.0,
+       "visit 2": 1838.0,
+       "visit 3": 2050.0,
+       "visit 4": 1913.0,
+       "visit 5": 1897.0,
+       "visit 6": 2014.0
+      },
+      "id": "work_plan_c0004_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     },
+     {
+      "entities": [
+       "c0004"
+      ],
+      "fields": {
+       "activity": "Approve and send acceptance pack",
+       "visit 1": 1.0,
+       "visit 2": 1838.0,
+       "visit 3": 2050.0,
+       "visit 4": 1913.0,
+       "visit 5": 1897.0,
+       "visit 6": 2014.0
+      },
+      "id": "work_plan_c0004_Approve and send acceptance pack",
+      "kind": "work_plan",
+      "time": null
+     }
+    ]
+   ],
+   "added": [],
+   "removed": []
+  },
+  "detail": "",
+  "binding_check": [
+   false,
+   "17 input records changed, expected exactly 1"
+  ],
+  "answer_before_binding_check": 46579,
+  "raw_correct": true,
+  "seconds": 6.8,
+  "note": "gold computed under the changed policy (10 clerks)"
+ }
+]

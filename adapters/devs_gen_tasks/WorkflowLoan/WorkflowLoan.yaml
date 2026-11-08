@@ -1,0 +1,239 @@
+root_model_name: WorkflowLoan
+required_cli_options: [--horizon]
+requirements:
+    general: |
+        ### General Implementation Requirements
+        1. Language & Environment:
+        - Target Language: Python 3.10+
+        - Standard Libraries: `argparse`, `sys`, `json`, `logging`, `collections`, `heapq`, `math`, `xdevs`.
+
+        2. Input Interface (Arguments & Stdin):
+        - **CLI Arguments:** You MUST use the `argparse` library to handle configuration parameters.
+        - **Data Stream:** Read ONE JSON object from `sys.stdin` (the whole of standard input) before starting the simulation.
+
+        3. Output Interface:
+        - Stream 1: KPI Data (sys.stdout)
+            - You MUST print ONLY the required event records to Standard Output.
+            - Format: JSONL. Each line is a valid, independent JSON object representing a key event.
+            - Emit records in nondecreasing absolute simulation-time order.
+        - Stream 2: Debug/Log data (sys.stderr)
+            - Print any other information (debug, progress, warnings) to Standard Error.
+
+        4. Entry point: executable via `python run.py`
+
+        Do not use real time, use simulation time, and guarantee the simulation ends in 10 seconds in real time.
+
+    scenario: |
+        ### Scenario: Loan Application process
+
+        This task simulates one business process, Loan Application. The process structure and its parameters come from a published simulation model. Each run is one fixed realization: every case's arrival time, every activity's required work, every wait and every route draw are fixed in advance and listed. The records are computed from those plans by the rules below, applied exactly. Knowing the plans in advance is a condition of this benchmark, not a claim about real operations.
+
+        Time. All times are whole seconds from time 0, which is a Monday at 00:00. Weekday = floor(t / 86400) mod 7, where 0 is Monday. An interval [a, b) includes a and excludes b.
+
+        Arrivals. Arrival times are given in 'Cases' and do not depend on other cases. A new case arriving at a stated time does not change other cases' plans. Published arrival pattern: one case every fixed at 900 seconds, within Monday to Friday 09:00 to 17:00.
+
+        Workers. Applicant: 20 workers (Applicant_0 to Applicant_19), working Monday to Sunday 00:00 to 23:59. Senior Officer: 3 workers (Senior Officer_0 to Senior Officer_2), working Monday to Friday 09:00 to 17:00. Appraiser: 2 workers (Appraiser_0 to Appraiser_1), working Monday to Friday 09:00 to 17:00. AML Investigator: 4 workers (AML Investigator_0 to AML Investigator_3), working Monday to Friday 09:00 to 17:00. Loan Officer: 9 workers (Loan Officer_0 to Loan Officer_8), working Monday to Friday 09:00 to 17:00. Clerk: 9 workers (Clerk_0 to Clerk_8), working Monday to Friday 09:00 to 17:00. Workers in a pool are interchangeable, and the assigned worker does not change how much work an activity needs.
+
+        Process. A new case goes to Check application form completeness. Check application form completeness (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then D1. Decision D1: route D1-a (form incomplete), probability 0.2, to Return application back to applicant; route D1-b, probability 0.8, to S1. Return application back to applicant (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then W1. Split S1: starts all of these at the same time: Appraise property, Check credit history, AML Check. Wait W1 (published delay exponential, mean 18600, between 18000 and 21600 seconds): then Applicant completes form. Appraise property (pool Appraiser, published work exponential, mean 1900, between 1800 and 3600 seconds): then J1. AML Check (pool AML Investigator, published work exponential, mean 1900, between 1800 and 3600 seconds): then J1. Check credit history (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then J1. Applicant completes form (pool Applicant, published work fixed at 86400 seconds): then Check application form completeness. Join J1: waits until all its 3 incoming paths have finished, then W2. Wait W2 (published delay exponential, mean 2970, between 2700 and 7200 seconds): then Assess loan risk. Assess loan risk (pool Loan Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then D2. Decision D2: route D2-a (applicant not eligible), probability 0.5, to Reject application; route D2-b, probability 0.5, to Design loan offer. Reject application (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then End. Design loan offer (pool Loan Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then Approve Loan Offer. Approve Loan Offer (pool Senior Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then D3. Decision D3: route D3-a (Loan offer needs refinement), probability 0.2, to Design loan offer; route D3-b, probability 0.8, to S2. Split S2: starts all of these at the same time: Prepare acceptance pack, Prepare home insurance quote. Prepare acceptance pack (pool Loan Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then Approve and send acceptance pack. Prepare home insurance quote (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then Approve and post home insurance quote. Approve and send acceptance pack (pool Loan Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then J2. Approve and post home insurance quote (pool Loan Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then J2. Join J2: waits until all its 2 incoming paths have finished, then D4. Decision D4: route D4-a (applicant agrees), probability 0.5, to W3; route D4-b (applicant disagrees), probability 0.5, to Consider re-design loan offer. Consider re-design loan offer (pool Senior Officer, published work exponential, mean 1900, between 1800 and 3600 seconds): then D5. Wait W3 (published delay exponential, mean 11300, between 10800 and 18000 seconds): then Approve application. Decision D5: route D5-a, probability 0.45, to Cancel application; route D5-b (Re-design offer), probability 0.55, to Design loan offer. Approve application (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then End. Cancel application (pool Clerk, published work exponential, mean 1900, between 1800 and 3600 seconds): then End.
+
+        Rules. A visit counts how many times a case has reached an activity, wait or decision, starting at 1. Reaching an activity enables it. Passing through a decision, split or join takes no time.
+
+        1. Which task is assigned next. Enabled activities wait in one first-come-first-served line per pool, shared by all activities of that pool. Order: earliest enabled time, then the case that arrived earlier, then the lower case id, then the lower activity id, then the lower visit. Activity id order is fixed by the model and given by the order in which each case's activities appear in the `work` input list.
+
+        2. Which worker. The task goes to the worker who can start it earliest. On a tie, the worker free for longest; on a further tie, the lower-numbered worker. A worker can start at the first time that is at or after both the enabled time and the time the worker is free, and within that worker's working hours.
+
+        3. Work and pauses. A worker does one task at a time and keeps it until it ends. Work counts only during working hours. Outside them the task pauses and resumes with the same worker, who stays held. A task that needs exactly the time left ends at closing time. If a worker is declared unavailable for an interval, that interval counts as non-working time in the same way.
+
+        4. Waits. A wait starts when reached and ends after its delay. It uses no worker and ignores working hours.
+
+        5. Decisions. Take the decision's routes in the listed order and add up their probabilities. The route taken is the first whose running total is greater than the draw for this case and visit. If a probability changes, the draw stays the same and the route is chosen again from the changed probabilities.
+
+        6. Case end. A case ends when its last path reaches End. All cases run until they end.
+
+        Units. Work and delays are in whole seconds. Draws are between 0 and 1, shown to 6 decimal places.
+
+    args_input_output: |
+        1. Command Line Interface
+        * `--horizon` (int): Stop at this simulation time in seconds. Default: 100000000 (every case runs until it ends).
+
+        2. Input Data Format (one JSON object on standard input)
+        All times and durations are whole seconds from time 0, a Monday at 00:00, as in the rules above.
+        * `cases`: list of {"case": id, "arrival": time}. Only these cases exist. A case not listed does not arrive.
+        * `work`: list of {"case": id, "activity": name, "visit": n, "seconds": s}. The work activity `name` needs on visit
+          `n` of that case. Activity names are: AML Check, Applicant completes form, Appraise property, Approve Loan Offer, Approve and post home insurance quote, Approve and send acceptance pack, Approve application, Assess loan risk, Cancel application, Check application form completeness, Check credit history, Consider re-design loan offer, Design loan offer, Prepare acceptance pack, Prepare home insurance quote, Reject application, Return application back to applicant.
+        * `waits`: list of {"case": id, "wait": label, "visit": n, "seconds": s}. Wait labels are: W1, W2, W3.
+        * `draws`: list of {"case": id, "decision": label, "visit": n, "draw": u}. Decision labels are: D1, D2, D3, D4, D5.
+        * `route_probabilities` (optional): {decision label: {route label: probability}}. When present, these replace the
+          probabilities stated in the rules for that decision. Route labels are: {"D1": ["D1-a", "D1-b"], "D2": ["D2-a", "D2-b"], "D3": ["D3-a", "D3-b"], "D5": ["D5-a", "D5-b"], "D4": ["D4-a", "D4-b"]}.
+        * `workers` (optional): {pool: number}. When present, the pool has that many workers instead of the stated number.
+          Workers are numbered from 0 and named `<pool>_<k>`. Pools are: AML Investigator, Applicant, Appraiser, Clerk, Loan Officer, Senior Officer.
+        * `unavailable` (optional): list of {"worker": name, "from": t1, "to": t2}. That worker has no working time in
+          [t1, t2), in addition to its working hours.
+        Entries for visits that never happen may be present and are then unused.
+
+        Example input (abridged to the first two cases):
+        ```json
+        {
+         "cases": [
+          {"case": "c0000", "arrival": 32400},
+          {"case": "c0001", "arrival": 33300}
+         ],
+         "work": [
+          {"case": "c0000", "activity": "AML Check", "visit": 1, "seconds": 1945},
+          {"case": "c0000", "activity": "Consider re-design loan offer", "visit": 1, "seconds": 1897},
+          {"case": "c0000", "activity": "Consider re-design loan offer", "visit": 2, "seconds": 1843},
+          {"case": "c0000", "activity": "Consider re-design loan offer", "visit": 3, "seconds": 1823},
+          {"case": "c0000", "activity": "Consider re-design loan offer", "visit": 4, "seconds": 1932},
+          {"case": "c0000", "activity": "Applicant completes form", "visit": 1, "seconds": 86400},
+          {"case": "c0000", "activity": "Applicant completes form", "visit": 2, "seconds": 86400},
+          {"case": "c0000", "activity": "Applicant completes form", "visit": 3, "seconds": 86400},
+          {"case": "c0000", "activity": "Applicant completes form", "visit": 4, "seconds": 86400},
+          {"case": "c0000", "activity": "Approve Loan Offer", "visit": 1, "seconds": 1805},
+          {"case": "c0000", "activity": "Approve Loan Offer", "visit": 2, "seconds": 1935},
+          {"case": "c0000", "activity": "Approve Loan Offer", "visit": 3, "seconds": 2028},
+          {"case": "c0000", "activity": "Approve Loan Offer", "visit": 4, "seconds": 1837},
+          {"case": "c0000", "activity": "Prepare acceptance pack", "visit": 1, "seconds": 1800},
+          {"case": "c0000", "activity": "Prepare acceptance pack", "visit": 2, "seconds": 1901},
+          {"case": "c0000", "activity": "Prepare acceptance pack", "visit": 3, "seconds": 1902},
+          {"case": "c0000", "activity": "Prepare acceptance pack", "visit": 4, "seconds": 1825},
+          {"case": "c0000", "activity": "Prepare home insurance quote", "visit": 1, "seconds": 1813},
+          {"case": "c0000", "activity": "Prepare home insurance quote", "visit": 2, "seconds": 1916},
+          {"case": "c0000", "activity": "Prepare home insurance quote", "visit": 3, "seconds": 1841},
+          {"case": "c0000", "activity": "Prepare home insurance quote", "visit": 4, "seconds": 1849},
+          {"case": "c0000", "activity": "Approve application", "visit": 1, "seconds": 1875},
+          {"case": "c0000", "activity": "Cancel application", "visit": 1, "seconds": 2043},
+          {"case": "c0000", "activity": "Assess loan risk", "visit": 1, "seconds": 1950},
+          {"case": "c0000", "activity": "Reject application", "visit": 1, "seconds": 1819},
+          {"case": "c0000", "activity": "Check credit history", "visit": 1, "seconds": 2027},
+          {"case": "c0000", "activity": "Check application form completeness", "visit": 1, "seconds": 1885},
+          {"case": "c0000", "activity": "Check application form completeness", "visit": 2, "seconds": 1816},
+          {"case": "c0000", "activity": "Check application form completeness", "visit": 3, "seconds": 1969},
+          {"case": "c0000", "activity": "Check application form completeness", "visit": 4, "seconds": 1803},
+          {"case": "c0000", "activity": "Approve and post home insurance quote", "visit": 1, "seconds": 1874},
+          {"case": "c0000", "activity": "Approve and post home insurance quote", "visit": 2, "seconds": 1896},
+          {"case": "c0000", "activity": "Approve and post home insurance quote", "visit": 3, "seconds": 1996},
+          {"case": "c0000", "activity": "Approve and post home insurance quote", "visit": 4, "seconds": 1924},
+          {"case": "c0000", "activity": "Appraise property", "visit": 1, "seconds": 1816},
+          {"case": "c0000", "activity": "Design loan offer", "visit": 1, "seconds": 1822},
+          {"case": "c0000", "activity": "Design loan offer", "visit": 2, "seconds": 1800},
+          {"case": "c0000", "activity": "Design loan offer", "visit": 3, "seconds": 2079},
+          {"case": "c0000", "activity": "Design loan offer", "visit": 4, "seconds": 1827},
+          {"case": "c0000", "activity": "Return application back to applicant", "visit": 1, "seconds": 2056},
+          {"case": "c0000", "activity": "Return application back to applicant", "visit": 2, "seconds": 1963},
+          {"case": "c0000", "activity": "Return application back to applicant", "visit": 3, "seconds": 1877},
+          {"case": "c0000", "activity": "Return application back to applicant", "visit": 4, "seconds": 1984},
+          {"case": "c0000", "activity": "Approve and send acceptance pack", "visit": 1, "seconds": 1948},
+          {"case": "c0000", "activity": "Approve and send acceptance pack", "visit": 2, "seconds": 1830},
+          {"case": "c0000", "activity": "Approve and send acceptance pack", "visit": 3, "seconds": 1990},
+          {"case": "c0000", "activity": "Approve and send acceptance pack", "visit": 4, "seconds": 1813},
+          {"case": "c0001", "activity": "AML Check", "visit": 1, "seconds": 1812},
+          {"case": "c0001", "activity": "Consider re-design loan offer", "visit": 1, "seconds": 1825},
+          {"case": "c0001", "activity": "Consider re-design loan offer", "visit": 2, "seconds": 1993},
+          {"case": "c0001", "activity": "Consider re-design loan offer", "visit": 3, "seconds": 2026},
+          {"case": "c0001", "activity": "Consider re-design loan offer", "visit": 4, "seconds": 1824},
+          {"case": "c0001", "activity": "Applicant completes form", "visit": 1, "seconds": 86400},
+          {"case": "c0001", "activity": "Applicant completes form", "visit": 2, "seconds": 86400},
+          {"case": "c0001", "activity": "Applicant completes form", "visit": 3, "seconds": 86400},
+          {"case": "c0001", "activity": "Applicant completes form", "visit": 4, "seconds": 86400},
+          {"case": "c0001", "activity": "Approve Loan Offer", "visit": 1, "seconds": 1927},
+          {"case": "c0001", "activity": "Approve Loan Offer", "visit": 2, "seconds": 1899},
+          {"case": "c0001", "activity": "Approve Loan Offer", "visit": 3, "seconds": 1888},
+          {"case": "c0001", "activity": "Approve Loan Offer", "visit": 4, "seconds": 1814},
+          {"case": "c0001", "activity": "Prepare acceptance pack", "visit": 1, "seconds": 1803},
+          {"case": "c0001", "activity": "Prepare acceptance pack", "visit": 2, "seconds": 1800},
+          {"case": "c0001", "activity": "Prepare acceptance pack", "visit": 3, "seconds": 1828},
+          {"case": "c0001", "activity": "Prepare acceptance pack", "visit": 4, "seconds": 2146},
+          {"case": "c0001", "activity": "Prepare home insurance quote", "visit": 1, "seconds": 1834},
+          {"case": "c0001", "activity": "Prepare home insurance quote", "visit": 2, "seconds": 2013},
+          {"case": "c0001", "activity": "Prepare home insurance quote", "visit": 3, "seconds": 1825},
+          {"case": "c0001", "activity": "Prepare home insurance quote", "visit": 4, "seconds": 1853},
+          {"case": "c0001", "activity": "Approve application", "visit": 1, "seconds": 1935},
+          {"case": "c0001", "activity": "Cancel application", "visit": 1, "seconds": 1885},
+          {"case": "c0001", "activity": "Assess loan risk", "visit": 1, "seconds": 1874},
+          {"case": "c0001", "activity": "Reject application", "visit": 1, "seconds": 2007},
+          {"case": "c0001", "activity": "Check credit history", "visit": 1, "seconds": 1980},
+          {"case": "c0001", "activity": "Check application form completeness", "visit": 1, "seconds": 1867},
+          {"case": "c0001", "activity": "Check application form completeness", "visit": 2, "seconds": 1856},
+          {"case": "c0001", "activity": "Check application form completeness", "visit": 3, "seconds": 1916},
+          {"case": "c0001", "activity": "Check application form completeness", "visit": 4, "seconds": 1911},
+          {"case": "c0001", "activity": "Approve and post home insurance quote", "visit": 1, "seconds": 1918},
+          {"case": "c0001", "activity": "Approve and post home insurance quote", "visit": 2, "seconds": 1807},
+          {"case": "c0001", "activity": "Approve and post home insurance quote", "visit": 3, "seconds": 1874},
+          {"case": "c0001", "activity": "Approve and post home insurance quote", "visit": 4, "seconds": 1900},
+          {"case": "c0001", "activity": "Appraise property", "visit": 1, "seconds": 1839},
+          {"case": "c0001", "activity": "Design loan offer", "visit": 1, "seconds": 1939},
+          {"case": "c0001", "activity": "Design loan offer", "visit": 2, "seconds": 1839},
+          {"case": "c0001", "activity": "Design loan offer", "visit": 3, "seconds": 2053},
+          {"case": "c0001", "activity": "Design loan offer", "visit": 4, "seconds": 1804},
+          {"case": "c0001", "activity": "Return application back to applicant", "visit": 1, "seconds": 1873},
+          {"case": "c0001", "activity": "Return application back to applicant", "visit": 2, "seconds": 1845},
+          {"case": "c0001", "activity": "Return application back to applicant", "visit": 3, "seconds": 1856},
+          {"case": "c0001", "activity": "Return application back to applicant", "visit": 4, "seconds": 2211},
+          {"case": "c0001", "activity": "Approve and send acceptance pack", "visit": 1, "seconds": 1821},
+          {"case": "c0001", "activity": "Approve and send acceptance pack", "visit": 2, "seconds": 1908},
+          {"case": "c0001", "activity": "Approve and send acceptance pack", "visit": 3, "seconds": 1969},
+          {"case": "c0001", "activity": "Approve and send acceptance pack", "visit": 4, "seconds": 1805}
+         ],
+         "waits": [
+          {"case": "c0000", "wait": "W3", "visit": 1, "seconds": 11780},
+          {"case": "c0000", "wait": "W1", "visit": 1, "seconds": 18191},
+          {"case": "c0000", "wait": "W1", "visit": 2, "seconds": 18755},
+          {"case": "c0000", "wait": "W1", "visit": 3, "seconds": 19348},
+          {"case": "c0000", "wait": "W1", "visit": 4, "seconds": 18287},
+          {"case": "c0000", "wait": "W2", "visit": 1, "seconds": 2923},
+          {"case": "c0001", "wait": "W3", "visit": 1, "seconds": 11265},
+          {"case": "c0001", "wait": "W1", "visit": 1, "seconds": 18288},
+          {"case": "c0001", "wait": "W1", "visit": 2, "seconds": 18297},
+          {"case": "c0001", "wait": "W1", "visit": 3, "seconds": 18451},
+          {"case": "c0001", "wait": "W1", "visit": 4, "seconds": 18387},
+          {"case": "c0001", "wait": "W2", "visit": 1, "seconds": 2791}
+         ],
+         "draws": [
+          {"case": "c0000", "decision": "D4", "visit": 1, "draw": 0.065687},
+          {"case": "c0000", "decision": "D4", "visit": 2, "draw": 0.85623},
+          {"case": "c0000", "decision": "D4", "visit": 3, "draw": 0.434106},
+          {"case": "c0000", "decision": "D4", "visit": 4, "draw": 0.176161},
+          {"case": "c0000", "decision": "D3", "visit": 1, "draw": 0.40815},
+          {"case": "c0000", "decision": "D3", "visit": 2, "draw": 0.719924},
+          {"case": "c0000", "decision": "D3", "visit": 3, "draw": 0.012417},
+          {"case": "c0000", "decision": "D3", "visit": 4, "draw": 0.005434},
+          {"case": "c0000", "decision": "D5", "visit": 1, "draw": 0.731009},
+          {"case": "c0000", "decision": "D5", "visit": 2, "draw": 0.72012},
+          {"case": "c0000", "decision": "D5", "visit": 3, "draw": 0.095398},
+          {"case": "c0000", "decision": "D5", "visit": 4, "draw": 0.397496},
+          {"case": "c0000", "decision": "D2", "visit": 1, "draw": 0.048369},
+          {"case": "c0000", "decision": "D1", "visit": 1, "draw": 0.680814},
+          {"case": "c0000", "decision": "D1", "visit": 2, "draw": 0.498968},
+          {"case": "c0000", "decision": "D1", "visit": 3, "draw": 0.29419},
+          {"case": "c0000", "decision": "D1", "visit": 4, "draw": 0.274158},
+          {"case": "c0001", "decision": "D4", "visit": 1, "draw": 0.235861},
+          {"case": "c0001", "decision": "D4", "visit": 2, "draw": 0.976044},
+          {"case": "c0001", "decision": "D4", "visit": 3, "draw": 0.67059},
+          {"case": "c0001", "decision": "D4", "visit": 4, "draw": 0.83067},
+          {"case": "c0001", "decision": "D3", "visit": 1, "draw": 0.740433},
+          {"case": "c0001", "decision": "D3", "visit": 2, "draw": 0.561961},
+          {"case": "c0001", "decision": "D3", "visit": 3, "draw": 0.791642},
+          {"case": "c0001", "decision": "D3", "visit": 4, "draw": 0.604344},
+          {"case": "c0001", "decision": "D5", "visit": 1, "draw": 0.654165},
+          {"case": "c0001", "decision": "D5", "visit": 2, "draw": 0.322853},
+          {"case": "c0001", "decision": "D5", "visit": 3, "draw": 0.6489},
+          {"case": "c0001", "decision": "D5", "visit": 4, "draw": 0.883075},
+          {"case": "c0001", "decision": "D2", "visit": 1, "draw": 0.521521},
+          {"case": "c0001", "decision": "D1", "visit": 1, "draw": 0.839891},
+          {"case": "c0001", "decision": "D1", "visit": 2, "draw": 0.250659},
+          {"case": "c0001", "decision": "D1", "visit": 3, "draw": 0.161761},
+          {"case": "c0001", "decision": "D1", "visit": 4, "draw": 0.426036}
+         ]
+        }
+        ```
+
+        3. Output Data Format (STDOUT)
+        Emit JSONL. Every record has exactly these keys:
+        * `time` (int): absolute simulation time in seconds.
+        * `case` (str): the case id.
+        * `event` (str): one of `task_start`, `task_end`, `wait_start`, `wait_end`, `decision`, `case_end`.
+        * `name` (str): the activity name, wait label or decision label; for `case_end`, the empty string.
+        * `visit` (int): the visit number; for `case_end`, 0.
+        * `worker` (str): the worker name for `task_start` and `task_end`; otherwise the empty string.
+        * `route` (str): the route label taken for `decision`; otherwise the empty string.
+
