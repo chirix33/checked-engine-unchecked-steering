@@ -1,0 +1,6 @@
+{
+ "schema": "wf-run/1",
+ "scenario_id": "inv",
+ "status": "error",
+ "error": "invalid_intervention"
+}

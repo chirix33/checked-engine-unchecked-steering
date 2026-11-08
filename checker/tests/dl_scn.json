@@ -1,0 +1,2 @@
+{"schema":"wf-scenario/1","scenario_id":"dl","model":{"bpmn":"dl.bpmn","params":"dl.json"},"seed":"s","n_cases":1,
+ "draw_overrides":[{"case":"c0000","element":"G","visit":1,"variable":"branch","u":"0.9"}]}

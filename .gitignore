@@ -1,3 +1,27 @@
 *.pdf
 *.md
 !README.md
+
+# Keep the run manifest and decision log
+!manifests/
+!manifests/**/*.md
+
+# Keep the semantics spec and the checker's notes
+!spec/**/*.md
+!checker/**/*.md
+
+# Keep out of git
+baseline/
+data/
+runs/
+.env
+.env.*
+.venv/
+.tools/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Generated checker outputs (regenerate with checker/validate_all.py)
+checker/out/

@@ -1,0 +1,6 @@
+{
+ "schema": "wf-run/1",
+ "scenario_id": "cf",
+ "status": "error",
+ "error": "conflicting_interventions"
+}
