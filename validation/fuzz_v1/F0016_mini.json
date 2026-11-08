@@ -1,0 +1,17 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0016_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-362546",
+ "n_cases": 8,
+ "interventions": [
+  {
+   "type": "case_add",
+   "case": "x1",
+   "arrival": 32400
+  }
+ ]
+}

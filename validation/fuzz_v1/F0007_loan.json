@@ -1,0 +1,19 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0007_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-10794",
+ "n_cases": 5,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Clerk",
+   "from": 61200,
+   "to": 64800,
+   "count": 3
+  }
+ ]
+}
