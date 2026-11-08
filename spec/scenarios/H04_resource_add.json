@@ -1,0 +1,55 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "H04_resource_add",
+ "model": {
+  "bpmn": "../mini/mini.bpmn",
+  "params": "../mini/mini.json"
+ },
+ "seed": "hand",
+ "n_cases": 3,
+ "draw_overrides": [
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.1"
+  },
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.9"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.4"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.8"
+  },
+  {
+   "case": "c0002",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.9"
+  }
+ ],
+ "interventions": [
+  {
+   "type": "resource_add",
+   "pool": "Officer",
+   "count": 1,
+   "from": 33700
+  }
+ ]
+}

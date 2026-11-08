@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="mini_defs" targetNamespace="http://example.invalid/mini">
+  <process id="mini" isExecutable="false">
+    <startEvent id="S" name="Received"/>
+    <exclusiveGateway id="M"/>
+    <task id="T_review" name="Review"/>
+    <exclusiveGateway id="G"/>
+    <intermediateCatchEvent id="W">
+      <timerEventDefinition/>
+    </intermediateCatchEvent>
+    <parallelGateway id="P"/>
+    <task id="T_decide" name="Decide"/>
+    <task id="T_notify" name="Notify"/>
+    <parallelGateway id="J"/>
+    <endEvent id="E" name="Done"/>
+    <sequenceFlow id="f_start" sourceRef="S" targetRef="M"/>
+    <sequenceFlow id="f_review" sourceRef="M" targetRef="T_review"/>
+    <sequenceFlow id="f_after_review" sourceRef="T_review" targetRef="G"/>
+    <sequenceFlow id="f_rework" sourceRef="G" targetRef="M"/>
+    <sequenceFlow id="f_ok" sourceRef="G" targetRef="W"/>
+    <sequenceFlow id="f_after_wait" sourceRef="W" targetRef="P"/>
+    <sequenceFlow id="f_decide" sourceRef="P" targetRef="T_decide"/>
+    <sequenceFlow id="f_notify" sourceRef="P" targetRef="T_notify"/>
+    <sequenceFlow id="f_decided" sourceRef="T_decide" targetRef="J"/>
+    <sequenceFlow id="f_notified" sourceRef="T_notify" targetRef="J"/>
+    <sequenceFlow id="f_end" sourceRef="J" targetRef="E"/>
+  </process>
+</definitions>

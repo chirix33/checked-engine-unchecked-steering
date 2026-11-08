@@ -1,0 +1,60 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "H12_routing_no_effect_after_boundary",
+ "model": {
+  "bpmn": "../mini/mini.bpmn",
+  "params": "../mini/mini.json"
+ },
+ "seed": "hand",
+ "n_cases": 3,
+ "draw_overrides": [
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.1"
+  },
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.9"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.4"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.8"
+  },
+  {
+   "case": "c0002",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.9"
+  }
+ ],
+ "interventions": [
+  {
+   "type": "routing_set",
+   "gateway": "G",
+   "probabilities": {
+    "f_rework": "0.5",
+    "f_ok": "0.5"
+   },
+   "selector": {
+    "from": 33301
+   }
+  }
+ ]
+}

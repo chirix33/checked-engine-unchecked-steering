@@ -1,0 +1,90 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "H07_duration_distribution_keeps_draw",
+ "model": {
+  "bpmn": "../mini/mini.bpmn",
+  "params": "../mini/mini.json"
+ },
+ "seed": "hand",
+ "n_cases": 3,
+ "draw_overrides": [
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.1"
+  },
+  {
+   "case": "c0000",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.9"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.4"
+  },
+  {
+   "case": "c0001",
+   "element": "G",
+   "visit": 2,
+   "variable": "branch",
+   "u": "0.8"
+  },
+  {
+   "case": "c0002",
+   "element": "G",
+   "visit": 1,
+   "variable": "branch",
+   "u": "0.9"
+  },
+  {
+   "case": "c0001",
+   "element": "T_decide",
+   "visit": 1,
+   "variable": "service",
+   "u": "0.5"
+  },
+  {
+   "case": "c0002",
+   "element": "T_notify",
+   "visit": 1,
+   "variable": "service",
+   "u": "0.8413447"
+  }
+ ],
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "T_decide",
+   "distribution_name": "expon",
+   "distribution_params": [
+    1300,
+    1200,
+    2400
+   ],
+   "selector": {
+    "case": "c0001"
+   }
+  },
+  {
+   "type": "duration_distribution",
+   "task": "T_notify",
+   "distribution_name": "norm",
+   "distribution_params": [
+    300,
+    30,
+    0,
+    600
+   ],
+   "selector": {
+    "case": "c0002"
+   }
+  }
+ ]
+}
