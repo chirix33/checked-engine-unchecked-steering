@@ -1,0 +1,835 @@
+{
+ "by_build": {
+  "gemma-31b-ollama/itops_dev/b1": {
+   "result": "parsers:runtime_crash",
+   "attempts": [
+    [
+     "parsers",
+     "other"
+    ],
+    [
+     "parsers",
+     "other"
+    ],
+    [
+     "parsers",
+     "runtime_crash"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/itops_dev/b2": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/itops_dev/b3": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/mfg_dev/b1": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/mfg_dev/b2": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/mfg_dev/b3": {
+   "result": "parsers:reads_undeclared_cells",
+   "attempts": [
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/workflow_loan_dev/b1": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/workflow_loan_dev/b2": {
+   "result": "parsers:outcomes_found_after_hiding",
+   "attempts": [
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "outcomes_found_after_hiding"
+    ]
+   ]
+  },
+  "gemma-31b-ollama/workflow_loan_dev/b3": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gpt-oss-120b/itops_dev/b1": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "syntax_or_rejected"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "syntax_or_rejected"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gpt-oss-120b/itops_dev/b2": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gpt-oss-120b/itops_dev/b3": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gpt-oss-120b/mfg_dev/b1": {
+   "result": "parsers:reads_undeclared_cells",
+   "attempts": [
+    [
+     "parsers",
+     "unknown_entity_ids"
+    ],
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ],
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ]
+   ]
+  },
+  "gpt-oss-120b/mfg_dev/b2": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "syntax_or_rejected"
+    ],
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gpt-oss-120b/mfg_dev/b3": {
+   "result": "parsers:bad_location_format",
+   "attempts": [
+    [
+     "parsers",
+     "unknown_entity_ids"
+    ],
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ],
+    [
+     "parsers",
+     "bad_location_format"
+    ]
+   ]
+  },
+  "gpt-oss-120b/workflow_loan_dev/b1": {
+   "result": "simulate:runtime_crash",
+   "attempts": [
+    [
+     "parsers",
+     "outcomes_found_after_hiding"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "unknown_entity_ids"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "syntax_or_rejected"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "timeout"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ]
+   ]
+  },
+  "gpt-oss-120b/workflow_loan_dev/b2": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "gpt-oss-120b/workflow_loan_dev/b3": {
+   "result": "accepted",
+   "attempts": [
+    [
+     "parsers",
+     "reads_undeclared_cells"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "passed"
+    ]
+   ]
+  },
+  "qwen3.5-9b/itops_dev/b1": {
+   "result": "parsers:runtime_crash",
+   "attempts": [
+    [
+     "parsers",
+     "syntax_or_rejected"
+    ],
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "runtime_crash"
+    ]
+   ]
+  },
+  "qwen3.5-9b/mfg_dev/b1": {
+   "result": "parsers:other",
+   "attempts": [
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "other"
+    ]
+   ]
+  },
+  "qwen3.5-9b/workflow_loan_dev/b1": {
+   "result": "simulate:runtime_crash",
+   "attempts": [
+    [
+     "parsers",
+     "runtime_crash"
+    ],
+    [
+     "parsers",
+     "passed"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "syntax_or_rejected"
+    ],
+    [
+     "simulate",
+     "syntax_or_rejected"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ],
+    [
+     "explore",
+     "low_forecast_f1"
+    ],
+    [
+     "simulate",
+     "runtime_crash"
+    ]
+   ]
+  }
+ },
+ "final": {
+  "gemma-31b-ollama | itops_dev | parsers:runtime_crash": 1,
+  "gemma-31b-ollama | itops_dev | parsers:bad_location_format": 1,
+  "gemma-31b-ollama | itops_dev | accepted": 1,
+  "gemma-31b-ollama | mfg_dev | parsers:bad_location_format": 2,
+  "gemma-31b-ollama | mfg_dev | parsers:reads_undeclared_cells": 1,
+  "gemma-31b-ollama | workflow_loan_dev | parsers:bad_location_format": 2,
+  "gemma-31b-ollama | workflow_loan_dev | parsers:outcomes_found_after_hiding": 1,
+  "gpt-oss-120b | itops_dev | accepted": 3,
+  "gpt-oss-120b | mfg_dev | parsers:reads_undeclared_cells": 1,
+  "gpt-oss-120b | mfg_dev | accepted": 1,
+  "gpt-oss-120b | mfg_dev | parsers:bad_location_format": 1,
+  "gpt-oss-120b | workflow_loan_dev | simulate:runtime_crash": 1,
+  "gpt-oss-120b | workflow_loan_dev | accepted": 2,
+  "qwen3.5-9b | itops_dev | parsers:runtime_crash": 1,
+  "qwen3.5-9b | mfg_dev | parsers:other": 1,
+  "qwen3.5-9b | workflow_loan_dev | simulate:runtime_crash": 1
+ },
+ "attempts": {
+  "gemma-31b-ollama | parsers | other": 2,
+  "gemma-31b-ollama | parsers | runtime_crash": 4,
+  "gemma-31b-ollama | parsers | bad_location_format": 18,
+  "gemma-31b-ollama | parsers | passed": 1,
+  "gemma-31b-ollama | explore | low_forecast_f1": 4,
+  "gemma-31b-ollama | simulate | runtime_crash": 2,
+  "gemma-31b-ollama | simulate | passed": 1,
+  "gemma-31b-ollama | parsers | reads_undeclared_cells": 1,
+  "gemma-31b-ollama | parsers | outcomes_found_after_hiding": 1,
+  "gpt-oss-120b | parsers | syntax_or_rejected": 2,
+  "gpt-oss-120b | parsers | passed": 7,
+  "gpt-oss-120b | explore | low_forecast_f1": 50,
+  "gpt-oss-120b | simulate | syntax_or_rejected": 2,
+  "gpt-oss-120b | simulate | passed": 6,
+  "gpt-oss-120b | parsers | unknown_entity_ids": 2,
+  "gpt-oss-120b | parsers | reads_undeclared_cells": 5,
+  "gpt-oss-120b | parsers | bad_location_format": 1,
+  "gpt-oss-120b | parsers | outcomes_found_after_hiding": 1,
+  "gpt-oss-120b | simulate | runtime_crash": 10,
+  "gpt-oss-120b | simulate | unknown_entity_ids": 1,
+  "gpt-oss-120b | simulate | low_forecast_f1": 6,
+  "gpt-oss-120b | simulate | timeout": 1,
+  "qwen3.5-9b | parsers | syntax_or_rejected": 1,
+  "qwen3.5-9b | parsers | runtime_crash": 5,
+  "qwen3.5-9b | parsers | other": 1,
+  "qwen3.5-9b | parsers | passed": 1,
+  "qwen3.5-9b | explore | low_forecast_f1": 18,
+  "qwen3.5-9b | simulate | syntax_or_rejected": 2,
+  "qwen3.5-9b | simulate | runtime_crash": 10,
+  "qwen3.5-9b | simulate | low_forecast_f1": 3
+ }
+}

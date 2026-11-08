@@ -1,0 +1,316 @@
+{
+ "accepted": {
+  "gpt-oss-120b|b0|mfg_dev": {
+   "accepted": 1,
+   "builds": 3,
+   "f1": [
+    0.922
+   ]
+  },
+  "gpt-oss-120b|b0|itops_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.805,
+    0.728,
+    0.678
+   ]
+  },
+  "gpt-oss-120b|b0|workflow_loan_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.408,
+    0.729
+   ]
+  },
+  "gpt-oss-120b|b0|workflow_pharmacy_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.863,
+    0.64
+   ]
+  },
+  "gpt-oss-120b|r1|mfg_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.946,
+    0.653,
+    0.911
+   ]
+  },
+  "gpt-oss-120b|r1|itops_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.697,
+    0.53
+   ]
+  },
+  "gpt-oss-120b|r1|workflow_loan_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.671,
+    0.65
+   ]
+  },
+  "gpt-oss-120b|r1|workflow_pharmacy_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.988,
+    0.581,
+    0.952
+   ]
+  },
+  "qwen3.5-9b|b0|mfg_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "qwen3.5-9b|b0|itops_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "qwen3.5-9b|b0|workflow_loan_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "qwen3.5-9b|b0|workflow_pharmacy_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "qwen3.5-9b|r1|mfg_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "qwen3.5-9b|r1|itops_dev": {
+   "accepted": 1,
+   "builds": 3,
+   "f1": [
+    0.445
+   ]
+  },
+  "qwen3.5-9b|r1|workflow_loan_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.453,
+    0.605
+   ]
+  },
+  "qwen3.5-9b|r1|workflow_pharmacy_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "gemma-31b-ollama|b0|mfg_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "gemma-31b-ollama|b0|itops_dev": {
+   "accepted": 1,
+   "builds": 3,
+   "f1": [
+    0.927
+   ]
+  },
+  "gemma-31b-ollama|b0|workflow_loan_dev": {
+   "accepted": 0,
+   "builds": 3,
+   "f1": []
+  },
+  "gemma-31b-ollama|b0|workflow_pharmacy_dev": {
+   "accepted": 1,
+   "builds": 3,
+   "f1": [
+    1.0
+   ]
+  },
+  "gemma-31b-ollama|r1|mfg_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.66,
+    0.844,
+    0.638
+   ]
+  },
+  "gemma-31b-ollama|r1|itops_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.802,
+    0.883,
+    0.785
+   ]
+  },
+  "gemma-31b-ollama|r1|workflow_loan_dev": {
+   "accepted": 3,
+   "builds": 3,
+   "f1": [
+    0.404,
+    0.922,
+    0.916
+   ]
+  },
+  "gemma-31b-ollama|r1|workflow_pharmacy_dev": {
+   "accepted": 2,
+   "builds": 3,
+   "f1": [
+    0.772,
+    1.0
+   ]
+  }
+ },
+ "cost": {
+  "gpt-oss-120b|b0": {
+   "builds": 12,
+   "accepted": 8,
+   "seconds": 1322,
+   "prompt_tokens": 2374223,
+   "output_tokens": 387977,
+   "usd": 0.589,
+   "prompt_per_accepted": 296778,
+   "output_per_accepted": 48497,
+   "seconds_per_accepted": 165,
+   "busy": 2,
+   "length_cutoffs": 0,
+   "largest_prompt": 48784,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  },
+  "gpt-oss-120b|r1": {
+   "builds": 12,
+   "accepted": 10,
+   "seconds": 1148,
+   "prompt_tokens": 2354129,
+   "output_tokens": 391180,
+   "usd": 0.588,
+   "prompt_per_accepted": 235413,
+   "output_per_accepted": 39118,
+   "seconds_per_accepted": 115,
+   "busy": 0,
+   "length_cutoffs": 0,
+   "largest_prompt": 41012,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  },
+  "qwen3.5-9b|b0": {
+   "builds": 12,
+   "accepted": 0,
+   "seconds": 2191,
+   "prompt_tokens": 1575363,
+   "output_tokens": 390339,
+   "usd": 0.0,
+   "prompt_per_accepted": null,
+   "output_per_accepted": null,
+   "seconds_per_accepted": null,
+   "busy": 0,
+   "length_cutoffs": 7,
+   "largest_prompt": 59256,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  },
+  "qwen3.5-9b|r1": {
+   "builds": 12,
+   "accepted": 3,
+   "seconds": 5401,
+   "prompt_tokens": 4680722,
+   "output_tokens": 957157,
+   "usd": 0.0,
+   "prompt_per_accepted": 1560241,
+   "output_per_accepted": 319052,
+   "seconds_per_accepted": 1800,
+   "busy": 0,
+   "length_cutoffs": 15,
+   "largest_prompt": 79173,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  },
+  "gemma-31b-ollama|b0": {
+   "builds": 12,
+   "accepted": 2,
+   "seconds": 952,
+   "prompt_tokens": 431074,
+   "output_tokens": 219933,
+   "usd": 0.148,
+   "prompt_per_accepted": 215537,
+   "output_per_accepted": 109966,
+   "seconds_per_accepted": 476,
+   "busy": 2,
+   "length_cutoffs": 0,
+   "largest_prompt": 20575,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  },
+  "gemma-31b-ollama|r1": {
+   "builds": 12,
+   "accepted": 11,
+   "seconds": 2746,
+   "prompt_tokens": 2440097,
+   "output_tokens": 620026,
+   "usd": 0.59,
+   "prompt_per_accepted": 221827,
+   "output_per_accepted": 56366,
+   "seconds_per_accepted": 250,
+   "busy": 0,
+   "length_cutoffs": 1,
+   "largest_prompt": 53448,
+   "missing_tokens": 0,
+   "failed_calls": 0,
+   "non_completed": {}
+  }
+ },
+ "stages": {
+  "gpt-oss-120b|b0": {
+   "failed_parsers": 3,
+   "accepted": 8,
+   "failed_simulate": 1
+  },
+  "qwen3.5-9b|b0": {
+   "failed_parsers": 11,
+   "failed_simulate": 1
+  },
+  "gemma-31b-ollama|b0": {
+   "failed_parsers": 10,
+   "accepted": 2
+  },
+  "gpt-oss-120b|r1": {
+   "accepted": 10,
+   "failed_parsers": 2
+  },
+  "qwen3.5-9b|r1": {
+   "failed_parsers": 7,
+   "accepted": 3,
+   "failed_simulate": 2
+  },
+  "gemma-31b-ollama|r1": {
+   "accepted": 11,
+   "failed_simulate": 1
+  }
+ },
+ "status": {},
+ "totals": {
+  "b0": 10,
+  "r1": 24
+ },
+ "pharmacy": {
+  "b0": 3,
+  "r1": 5
+ },
+ "usd_total": 1.915
+}
