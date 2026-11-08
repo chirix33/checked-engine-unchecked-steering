@@ -1,0 +1,1450 @@
+[
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 5485,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6523,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 0,
+    "selector": {
+     "case": "c0008",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 39150
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_0wlatrq",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 5408,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1w0dur0",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_19s1gwa",
+    "seconds": 22031,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 0,
+    "selector": {
+     "case": "c0005",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0012",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0012",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 39150
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 02",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_0wlatrq",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 5612,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-543CE27B-717A-4583-8BFE-09BF2267ACFC",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6429,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0ygf1qj",
+    "seconds": 0,
+    "selector": {
+     "case": "c0002",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_13axscl",
+   "to": "Flow_1e43zqq"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "Gateway_0ovqfsq",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.225"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-F4C85F4E-A227-4D05-AE55-5ACD9A2CF15F",
+   "to": "sid-92B5B1F2-7B5C-45A9-8C6B-BCC1E0490D99"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 39150
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 03",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_0wlatrq",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 5563,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-30EFC8A9-15F6-45A1-B0FE-C9B37FC92D36",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_19s1gwa",
+    "seconds": 21606,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 0,
+    "selector": {
+     "case": "c0003",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0009",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "Flow_1ltuf1s",
+   "to": "Flow_0mpn0oz"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0009",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 39150
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Clerk",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Clerk",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_0wlatrq",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2D8F96BD-C99A-4D36-A951-AC29CB4A1B4A",
+    "seconds": 3728,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-E31F3A7F-28E3-47E5-8BBF-8CF7E1C37E9C",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 3820,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0jj7p9e",
+    "seconds": 0,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-C56D0112-5EB3-4D6B-8B56-28502BD6FB82",
+   "to": "sid-B0617E7B-8279-4A03-A83A-CB445C948139"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-7BC2AC26-117F-4F44-842E-D70A37254F7C",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.975"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5",
+   "to": "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 30090
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2D8F96BD-C99A-4D36-A951-AC29CB4A1B4A",
+    "seconds": 3727,
+    "selector": {
+     "case": "c0002",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-A4A84A0D-A58B-4650-A3F2-D1967DB8C146",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 3781,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0jj7p9e",
+    "seconds": 0,
+    "selector": {
+     "case": "c0010",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-C56D0112-5EB3-4D6B-8B56-28502BD6FB82",
+   "to": "sid-B0617E7B-8279-4A03-A83A-CB445C948139"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0002",
+    "element": "sid-7BC2AC26-117F-4F44-842E-D70A37254F7C",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.975"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5",
+   "to": "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 30090
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 3601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-E31F3A7F-28E3-47E5-8BBF-8CF7E1C37E9C",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 3806,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0jj7p9e",
+    "seconds": 0,
+    "selector": {
+     "case": "c0005",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5",
+   "to": "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5",
+   "to": "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 30090
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "work_up_busiest_pool",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2D8F96BD-C99A-4D36-A951-AC29CB4A1B4A",
+    "seconds": 3733,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "work_down_to_1s",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-6305CEC6-25BA-4B0F-8CF1-2AD6F76D8B9E",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "wait_up",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 3786,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "wait_zero",
+  "family": "timer_delay",
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0jj7p9e",
+    "seconds": 0,
+    "selector": {
+     "case": "c0014",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "route_flip_least_used_path",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-C56D0112-5EB3-4D6B-8B56-28502BD6FB82",
+   "to": "sid-B0617E7B-8279-4A03-A83A-CB445C948139"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-7BC2AC26-117F-4F44-842E-D70A37254F7C",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.975"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "route_flip_into_loop",
+  "family": "routing_outcome",
+  "flip": {
+   "from": "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5",
+   "to": "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71"
+  },
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "case_remove_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "case_add_near_middle",
+  "family": "case_set",
+  "interventions": [
+   {
+    "type": "case_add",
+    "case": "x1",
+    "arrival": 30090
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "worker_added",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": 1,
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "worker_removed",
+  "family": "resource_availability",
+  "params_pool": "Technician",
+  "params_delta": -1,
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0,
+    "to": 100000000
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "no_effect_unreached_visit",
+  "family": "no_effect_control",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+    "seconds": 5000,
+    "selector": {
+     "case": "c0000",
+     "visit": 3
+    }
+   }
+  ]
+ }
+]

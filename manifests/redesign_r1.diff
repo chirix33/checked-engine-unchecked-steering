@@ -1,0 +1,187 @@
+--- pinned/otf/sandbox.py
++++ redesign/otf_r1/sandbox.py
+@@ -48,6 +48,22 @@
+     new on every call: identify a row by its row_index, never with `is`."""
+     cols = node.get("table", {}).get("columns", [])
+     return [(i, dict(zip(cols, r))) for i, r in enumerate(node.get("table", {}).get("rows", []))]
++
++class Reader:
++    """Reads table cells and list lines and records where each came from. Use one new Reader per record."""
++    def __init__(self):
++        self.src = []
++
++    def cell(self, node, row_index, column):
++        columns = node["table"]["columns"]
++        value = node["table"]["rows"][row_index][columns.index(column)]
++        self.src.append([node["node_id"], row_index, [column]])
++        return value
++
++    def line(self, node, line_index):
++        value = node["lines"][line_index]
++        self.src.append([node["node_id"], line_index])
++        return value
+ '''
+ 
+ RUNNER = r'''
+--- pinned/otf/prompts.py
++++ redesign/otf_r1/prompts.py
+@@ -41,6 +41,9 @@
+ (table_rows builds new dicts on every call, so identify a row by its row_index, never with `is`).
+ A LOCATION says where a record was read from: [node_id, row_index] (a whole table row),
+ [node_id, row_index, [column names]] (some cells of a row) or [node_id, line_index] (a list line).
++A record's "src" is ALWAYS a list of locations, even for one: "src": [[node_id, 3]], never "src": [node_id, 3].
++Reader() is also defined: it reads a value and records its location. r.cell(node, row_index, column) reads a table
++cell, r.line(node, line_index) reads a list line, and r.src is the finished list of locations.
+ {schema}
+ """
+ 
+@@ -75,6 +78,14 @@
+ 
+ `src` lists every location the record was read from, including the cells that give its time and its entities
+ (an input and an outcome may share such cells, for example the time cell of one row).
++THE SAFE WAY TO FILL src: use one new Reader per record and read every value of that record through it:
++    for i, _ in table_rows(node):
++        r = Reader()
++        time = float(r.cell(node, i, "some time column"))
++        amount = float(r.cell(node, i, "some amount column"))
++        records.append({{"time": time, "value": amount, "src": r.src}})
++Then a function reads only what its src declares, so hiding the outcomes cannot change inputs(). In inputs(), never
++read a cell that holds an outcome, not even to skip a row or to find a time, because hidden cells become "". 
+ HOW IT IS CHECKED: on a few scopes the functions must run, use only ids from entities(), give outcome times
+ within the recorded period, and point `src` at real rows, columns and lines. Then a copy of the scope is made
+ in which the outcomes are hidden (their cells and lines, and every timed row or line after the first outcome
+@@ -152,11 +163,17 @@
+ 
+ FEEDBACK = """
+ YOUR PREVIOUS ATTEMPT (shown below) FAILED THE CHECK. Fix it.
+-Check result: {report}
++{hints}Check result: {report}
+ Previous code:
+ ```python
+ {code}
+ ```"""
++
++SYNTAX_REPAIR = """YOUR REPLY CANNOT BE USED: {problem}
++{cut_off}Reply with the complete corrected code in one fenced block."""
++
++CUT_OFF = """The reply appears to have been cut off before the code ended. Write shorter code: no comments, no explanation.
++"""
+ 
+ PATCH = """A question supposes that something was different from what the records show. Write that change as
+ patches on the recorded inputs or constants.
+--- pinned/otf/toolgen.py
++++ redesign/otf_r1/toolgen.py
+@@ -8,6 +8,7 @@
+ """
+ from __future__ import annotations
+ 
++import ast
+ import json
+ import re
+ from pathlib import Path
+@@ -342,7 +343,10 @@
+         explore = [c for lang, c in blocks if lang == "explore" or ("def simulate(" not in c and lang != "explore")]
+         if not blocks:
+             nudges += 1
+-            messages.append({"role": "user", "content": "Reply with an ```explore block or a final ```python block."})
++            cut = _is_cut_off(reply)
++            messages.append({"role": "user", "content": (
++                prompts.SYNTAX_REPAIR.format(problem="it has no complete code block.", cut_off=prompts.CUT_OFF) if cut
++                else "Reply with an ```explore block or a final ```python block.")})
+             continue
+         if not submit or explored < min_explore:
+             if not explore or explored >= n_explore:
+@@ -362,6 +366,12 @@
+                                                                                        output=text)})
+             continue
+         code = submit[-1]
++        problem = _syntax_problem(code)
++        if problem and nudges < 6:
++            nudges += 1
++            log(f"simulate syntax repair: {problem}")
++            messages.append({"role": "user", "content": prompts.SYNTAX_REPAIR.format(problem=problem, cut_off="")})
++            continue
+         full = parsers + "\n\n# ---- step 2: forward model ----\n" + code
+         rep = check_model(full, nav, map_path)
+         attempts.append({"step": "simulate", "try": len(sims) + 1, "report": rep, "code": full,
+@@ -387,8 +397,60 @@
+             "example_params": clip(r["params"])}
+ 
+ 
++FEEDBACK_HINTS = [
++    ("bad src", "HOW TO FIX: each record's src must be a list of locations, for example \"src\": [[node_id, 3]]. Build it "
++                "with Reader: r = Reader(); value = r.cell(node, i, column); record[\"src\"] = r.src."),
++    ("reads differently once the outcomes are hidden",
++     "HOW TO FIX: inputs() used a cell its src does not list. Read every value of each input through one Reader, and "
++     "never use outcome cells to decide which rows to read."),
++    ("fails on the copy in which the outcomes are hidden",
++     "HOW TO FIX: inputs() read a hidden cell, which is now \"\". Read only cells listed in src, or skip empty cells."),
++    ("still finds them", "HOW TO FIX: outcomes must come from cells that no input lists in its src, and each outcome's "
++                         "src must list all the cells that hold it."),
++    ("not ids from entities", "HOW TO FIX: every id in a record's entities must be an id that entities() returns. Parse "
++                              "the id exactly, or remove the record's unknown entity."),
++    ("malformed output", "HOW TO FIX: each function must return exactly the structure described above."),
++]
++
++
++def _hints(report: str) -> str:
++    """The fix for each kind of failure found in a check report."""
++    found = [text for key, text in FEEDBACK_HINTS if key in (report or "")]
++    return "\n".join(found) + "\n" if found else ""
++
++
++def _syntax_problem(code: str) -> str | None:
++    try:
++        ast.parse(code)
++    except SyntaxError as e:
++        return f"syntax error at line {e.lineno}: {e.msg}."
++    return None
++
++
++def _is_cut_off(reply: str) -> bool:
++    return (reply or "").count("```") % 2 == 1
++
++
++def _with_syntax_repair(llm, ask: list[dict], attempts: list, log, max_repairs: int = 2) -> str:
++    """Get code from the model. A syntax error or a cut-off reply is sent back before the code is checked, so it
++    does not use up a try. Repairs are real calls: they are metered, and they are recorded in `attempts`."""
++    reply = llm(ask)
++    code = extract_code(reply)
++    for k in range(max_repairs):
++        problem = _syntax_problem(code)
++        if not problem:
++            break
++        attempts.append({"step": "syntax_repair", "try": k + 1, "problem": problem, "cut_off": _is_cut_off(reply)})
++        log(f"syntax repair {k + 1}: {problem}")
++        cut = prompts.CUT_OFF if _is_cut_off(reply) else ""
++        reply = llm(ask + [{"role": "assistant", "content": reply or "(empty reply)"},
++                           {"role": "user", "content": prompts.SYNTAX_REPAIR.format(problem=problem, cut_off=cut)}])
++        code = extract_code(reply)
++    return code
++
++
+ def generate_model(llm, nav: dict, map_path: Path, max_tries: int = 3, log=None,
+-                   parser_tries: int = 3, sim_tries: int = 5, n_explore: int = 8, restarts: int = 3,
++                   parser_tries: int = 5, sim_tries: int = 5, n_explore: int = 8, restarts: int = 3,
+                    library: list[dict] | None = None) -> dict:
+     """Two checked steps: (1) reading functions, (2) a forward model built on the checked reading functions,
+     written by a code-executing agent that can explore the data first. llm(messages) -> reply text.
+@@ -405,15 +467,15 @@
+     system = {"role": "system", "content": prompts.GENERATOR_SYSTEM}
+     attempts, feedback, parsers = [], "", None
+     for t in range(1, parser_tries + 1):
+-        code = extract_code(llm([system, {"role": "user", "content": prompts.PARSERS_USER.format(
+-            context=context, feedback=feedback)}]))
++        ask = [system, {"role": "user", "content": prompts.PARSERS_USER.format(context=context, feedback=feedback)}]
++        code = _with_syntax_repair(llm, ask, attempts, log)
+         rep = check_parsers(code, nav, map_path)
+         attempts.append({"step": "parsers", "try": t, "report": rep, "code": code})
+         log(f"parsers attempt {t}: {'passed' if rep['passed'] else rep['error']}")
+         if rep["passed"]:
+             parsers = code
+             break
+-        feedback = prompts.FEEDBACK.format(report=rep["error"], code=code)
++        feedback = prompts.FEEDBACK.format(hints=_hints(rep["error"]), report=rep["error"], code=code)
+     if parsers is None:
+         return {"code": "", "passed": False, "mean_f1": 0.0, "tries": len(attempts), "attempts": attempts,
+                 "failed_step": "parsers"}
