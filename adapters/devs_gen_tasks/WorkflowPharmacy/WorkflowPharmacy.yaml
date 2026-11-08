@@ -1,0 +1,163 @@
+root_model_name: WorkflowPharmacy
+required_cli_options: [--horizon]
+requirements:
+    general: |
+        ### General Implementation Requirements
+        1. Language & Environment:
+        - Target Language: Python 3.10+
+        - Standard Libraries: `argparse`, `sys`, `json`, `logging`, `collections`, `heapq`, `math`, `xdevs`.
+
+        2. Input Interface (Arguments & Stdin):
+        - **CLI Arguments:** You MUST use the `argparse` library to handle configuration parameters.
+        - **Data Stream:** Read ONE JSON object from `sys.stdin` (the whole of standard input) before starting the simulation.
+
+        3. Output Interface:
+        - Stream 1: KPI Data (sys.stdout)
+            - You MUST print ONLY the required event records to Standard Output.
+            - Format: JSONL. Each line is a valid, independent JSON object representing a key event.
+            - Emit records in nondecreasing absolute simulation-time order.
+        - Stream 2: Debug/Log data (sys.stderr)
+            - Print any other information (debug, progress, warnings) to Standard Error.
+
+        4. Entry point: executable via `python run.py`
+
+        Do not use real time, use simulation time, and guarantee the simulation ends in 10 seconds in real time.
+
+    scenario: |
+        ### Scenario: Pharmacy process
+
+        This task simulates one business process, Pharmacy. The process structure and its parameters come from a published simulation model. Each run is one fixed realization: every case's arrival time, every activity's required work, every wait and every route draw are fixed in advance and listed. The records are computed from those plans by the rules below, applied exactly. Knowing the plans in advance is a condition of this benchmark, not a claim about real operations.
+
+        Time. All times are whole seconds from time 0, which is a Monday at 00:00. Weekday = floor(t / 86400) mod 7, where 0 is Monday. An interval [a, b) includes a and excludes b.
+
+        Arrivals. Arrival times are given in 'Cases' and do not depend on other cases. A new case arriving at a stated time does not change other cases' plans. Published arrival pattern: one case every fixed at 120 seconds, within Monday to Friday 08:00 to 20:00.
+
+        Workers. Pharmacy System: 1 workers (Pharmacy System_0 to Pharmacy System_0), working Monday to Friday 08:00 to 20:00. Technician: 8 workers (Technician_0 to Technician_7), working Monday to Friday 08:00 to 20:00. Pharmacist: 1 workers (Pharmacist_0 to Pharmacist_0), working Monday to Friday 08:00 to 20:00. Workers in a pool are interchangeable, and the assigned worker does not change how much work an activity needs.
+
+        Process. A new case goes to Process drop-off. Process drop-off (pool Technician, published work normal, mean 90, standard deviation 9, between 0 and 180 seconds): then W1. Wait W1 (published delay exponential, mean 198, between 180 and 3600 seconds): then Enter prescription details. Enter prescription details (pool Technician, published work normal, mean 150, standard deviation 15, between 0 and 300 seconds): then Check if refill is allowed. Check if refill is allowed (pool Pharmacy System, published work fixed at 1 seconds): then D1. Decision D1: route D1-a (OK), probability 0.94, to Check DUR; route D1-b (No refill allowed), probability 0.06, to Contact Doctor about refill. Contact Doctor about refill (pool Technician, published work exponential, mean 1230, between 1200 and 3600 seconds): then D2. Decision D2: route D2-a (Refill approved), probability 0.99, to Check DUR; route D2-b, probability 0.01, to End. Check DUR (pool Pharmacy System, published work fixed at 1 seconds): then D3. Decision D3: route D3-a (DUR passed), probability 0.8, to Check Insurance; route D3-b (DUR failed (hard stop)), probability 0.2, to D4. Decision D4: route D4-a (Confirmation not needed), probability 0.95, to Resolve DUR manually; route D4-b (Confirmation needed), probability 0.05, to Contact customer / doctor. Check Insurance (pool Pharmacy System, published work fixed at 1 seconds): then D5. Contact customer / doctor (pool Pharmacy System, published work exponential, mean 630, between 600 and 1200 seconds): then Check Insurance. Resolve DUR manually (pool Pharmacist, published work exponential, mean 130, between 120 and 240 seconds): then Check Insurance. Decision D5: route D5-a (No issues), probability 0.83, to D6; route D5-b (Issues detected), probability 0.17, to Resolve insurance issues manually. Resolve insurance issues manually (pool Technician, published work exponential, mean 310, between 300 and 3600 seconds): then D6. Decision D6: route D6-a (Out of stock), probability 0.07, to W3; route D6-b (In stock), probability 0.93, to W2. Wait W2 (published delay exponential, mean 198, between 180 and 3600 seconds): then Pack the drugs (Production). Pack the drugs (Production) (pool Technician, published work normal, mean 180, standard deviation 18, between 0 and 3600 seconds): then Check for Quality Assurance. Wait W3 (published delay exponential, mean 330, between 300 and 3600 seconds): then Pick-up. Check for Quality Assurance (pool Pharmacist, published work normal, mean 60, standard deviation 6, between 0 and 90 seconds): then D7. Pick-up (pool Technician, published work normal, mean 150, standard deviation 15, between 0 and 3600 seconds): then End. Decision D7: route D7-a (Bag filled incorrectly), probability 0.05, to D6; route D7-b (Bag filled correctly), probability 0.95, to W3.
+
+        Rules. A visit counts how many times a case has reached an activity, wait or decision, starting at 1. Reaching an activity enables it. Passing through a decision, split or join takes no time.
+
+        1. Which task is assigned next. Enabled activities wait in one first-come-first-served line per pool, shared by all activities of that pool. Order: earliest enabled time, then the case that arrived earlier, then the lower case id, then the lower activity id, then the lower visit. Activity id order is fixed by the model and given by the order in which each case's activities appear in the `work` input list.
+
+        2. Which worker. The task goes to the worker who can start it earliest. On a tie, the worker free for longest; on a further tie, the lower-numbered worker. A worker can start at the first time that is at or after both the enabled time and the time the worker is free, and within that worker's working hours.
+
+        3. Work and pauses. A worker does one task at a time and keeps it until it ends. Work counts only during working hours. Outside them the task pauses and resumes with the same worker, who stays held. A task that needs exactly the time left ends at closing time. If a worker is declared unavailable for an interval, that interval counts as non-working time in the same way.
+
+        4. Waits. A wait starts when reached and ends after its delay. It uses no worker and ignores working hours.
+
+        5. Decisions. Take the decision's routes in the listed order and add up their probabilities. The route taken is the first whose running total is greater than the draw for this case and visit. If a probability changes, the draw stays the same and the route is chosen again from the changed probabilities.
+
+        6. Case end. A case ends when its last path reaches End. All cases run until they end.
+
+        Units. Work and delays are in whole seconds. Draws are between 0 and 1, shown to 6 decimal places.
+
+    args_input_output: |
+        1. Command Line Interface
+        * `--horizon` (int): Stop at this simulation time in seconds. Default: 100000000 (every case runs until it ends).
+
+        2. Input Data Format (one JSON object on standard input)
+        All times and durations are whole seconds from time 0, a Monday at 00:00, as in the rules above.
+        * `cases`: list of {"case": id, "arrival": time}. Only these cases exist. A case not listed does not arrive.
+        * `work`: list of {"case": id, "activity": name, "visit": n, "seconds": s}. The work activity `name` needs on visit
+          `n` of that case. Activity names are: Check DUR, Check Insurance, Check for Quality Assurance, Check if refill is allowed, Contact Doctor about refill, Contact customer / doctor, Enter prescription details, Pack the drugs (Production), Pick-up, Process drop-off, Resolve DUR manually, Resolve insurance issues manually.
+        * `waits`: list of {"case": id, "wait": label, "visit": n, "seconds": s}. Wait labels are: W1, W2, W3.
+        * `draws`: list of {"case": id, "decision": label, "visit": n, "draw": u}. Decision labels are: D1, D2, D3, D4, D5, D6, D7.
+        * `route_probabilities` (optional): {decision label: {route label: probability}}. When present, these replace the
+          probabilities stated in the rules for that decision. Route labels are: {"D4": ["D4-a", "D4-b"], "D7": ["D7-a", "D7-b"], "D6": ["D6-a", "D6-b"], "D2": ["D2-a", "D2-b"], "D3": ["D3-a", "D3-b"], "D1": ["D1-a", "D1-b"], "D5": ["D5-a", "D5-b"]}.
+        * `workers` (optional): {pool: number}. When present, the pool has that many workers instead of the stated number.
+          Workers are numbered from 0 and named `<pool>_<k>`. Pools are: Pharmacist, Pharmacy System, Technician.
+        * `unavailable` (optional): list of {"worker": name, "from": t1, "to": t2}. That worker has no working time in
+          [t1, t2), in addition to its working hours.
+        Entries for visits that never happen may be present and are then unused.
+
+        Example input (abridged to the first two cases):
+        ```json
+        {
+         "cases": [
+          {"case": "c0000", "arrival": 28800},
+          {"case": "c0001", "arrival": 28920}
+         ],
+         "work": [
+          {"case": "c0000", "activity": "Check if refill is allowed", "visit": 1, "seconds": 1},
+          {"case": "c0000", "activity": "Check for Quality Assurance", "visit": 1, "seconds": 64},
+          {"case": "c0000", "activity": "Check for Quality Assurance", "visit": 2, "seconds": 66},
+          {"case": "c0000", "activity": "Check for Quality Assurance", "visit": 3, "seconds": 57},
+          {"case": "c0000", "activity": "Check DUR", "visit": 1, "seconds": 1},
+          {"case": "c0000", "activity": "Resolve DUR manually", "visit": 1, "seconds": 128},
+          {"case": "c0000", "activity": "Resolve insurance issues manually", "visit": 1, "seconds": 312},
+          {"case": "c0000", "activity": "Pick-up", "visit": 1, "seconds": 156},
+          {"case": "c0000", "activity": "Pack the drugs (Production)", "visit": 1, "seconds": 168},
+          {"case": "c0000", "activity": "Pack the drugs (Production)", "visit": 2, "seconds": 145},
+          {"case": "c0000", "activity": "Pack the drugs (Production)", "visit": 3, "seconds": 164},
+          {"case": "c0000", "activity": "Process drop-off", "visit": 1, "seconds": 82},
+          {"case": "c0000", "activity": "Contact customer / doctor", "visit": 1, "seconds": 669},
+          {"case": "c0000", "activity": "Enter prescription details", "visit": 1, "seconds": 158},
+          {"case": "c0000", "activity": "Check Insurance", "visit": 1, "seconds": 1},
+          {"case": "c0000", "activity": "Contact Doctor about refill", "visit": 1, "seconds": 1202},
+          {"case": "c0001", "activity": "Check if refill is allowed", "visit": 1, "seconds": 1},
+          {"case": "c0001", "activity": "Check for Quality Assurance", "visit": 1, "seconds": 69},
+          {"case": "c0001", "activity": "Check for Quality Assurance", "visit": 2, "seconds": 68},
+          {"case": "c0001", "activity": "Check for Quality Assurance", "visit": 3, "seconds": 63},
+          {"case": "c0001", "activity": "Check DUR", "visit": 1, "seconds": 1},
+          {"case": "c0001", "activity": "Resolve DUR manually", "visit": 1, "seconds": 122},
+          {"case": "c0001", "activity": "Resolve insurance issues manually", "visit": 1, "seconds": 311},
+          {"case": "c0001", "activity": "Pick-up", "visit": 1, "seconds": 176},
+          {"case": "c0001", "activity": "Pack the drugs (Production)", "visit": 1, "seconds": 194},
+          {"case": "c0001", "activity": "Pack the drugs (Production)", "visit": 2, "seconds": 167},
+          {"case": "c0001", "activity": "Pack the drugs (Production)", "visit": 3, "seconds": 169},
+          {"case": "c0001", "activity": "Process drop-off", "visit": 1, "seconds": 83},
+          {"case": "c0001", "activity": "Contact customer / doctor", "visit": 1, "seconds": 632},
+          {"case": "c0001", "activity": "Enter prescription details", "visit": 1, "seconds": 148},
+          {"case": "c0001", "activity": "Check Insurance", "visit": 1, "seconds": 1},
+          {"case": "c0001", "activity": "Contact Doctor about refill", "visit": 1, "seconds": 1214}
+         ],
+         "waits": [
+          {"case": "c0000", "wait": "W1", "visit": 1, "seconds": 220},
+          {"case": "c0000", "wait": "W3", "visit": 1, "seconds": 338},
+          {"case": "c0000", "wait": "W2", "visit": 1, "seconds": 185},
+          {"case": "c0000", "wait": "W2", "visit": 2, "seconds": 181},
+          {"case": "c0000", "wait": "W2", "visit": 3, "seconds": 225},
+          {"case": "c0001", "wait": "W1", "visit": 1, "seconds": 190},
+          {"case": "c0001", "wait": "W3", "visit": 1, "seconds": 337},
+          {"case": "c0001", "wait": "W2", "visit": 1, "seconds": 194},
+          {"case": "c0001", "wait": "W2", "visit": 2, "seconds": 187},
+          {"case": "c0001", "wait": "W2", "visit": 3, "seconds": 186}
+         ],
+         "draws": [
+          {"case": "c0000", "decision": "D2", "visit": 1, "draw": 0.351954},
+          {"case": "c0000", "decision": "D5", "visit": 1, "draw": 0.066396},
+          {"case": "c0000", "decision": "D3", "visit": 1, "draw": 0.873453},
+          {"case": "c0000", "decision": "D1", "visit": 1, "draw": 0.128441},
+          {"case": "c0000", "decision": "D4", "visit": 1, "draw": 0.605937},
+          {"case": "c0000", "decision": "D6", "visit": 1, "draw": 0.82831},
+          {"case": "c0000", "decision": "D6", "visit": 2, "draw": 0.789602},
+          {"case": "c0000", "decision": "D6", "visit": 3, "draw": 0.307988},
+          {"case": "c0000", "decision": "D7", "visit": 1, "draw": 0.982507},
+          {"case": "c0000", "decision": "D7", "visit": 2, "draw": 0.481256},
+          {"case": "c0000", "decision": "D7", "visit": 3, "draw": 0.778117},
+          {"case": "c0001", "decision": "D2", "visit": 1, "draw": 0.132534},
+          {"case": "c0001", "decision": "D5", "visit": 1, "draw": 0.236557},
+          {"case": "c0001", "decision": "D3", "visit": 1, "draw": 0.301998},
+          {"case": "c0001", "decision": "D1", "visit": 1, "draw": 0.810371},
+          {"case": "c0001", "decision": "D4", "visit": 1, "draw": 0.450032},
+          {"case": "c0001", "decision": "D6", "visit": 1, "draw": 0.569121},
+          {"case": "c0001", "decision": "D6", "visit": 2, "draw": 0.47548},
+          {"case": "c0001", "decision": "D6", "visit": 3, "draw": 0.79868},
+          {"case": "c0001", "decision": "D7", "visit": 1, "draw": 0.642427},
+          {"case": "c0001", "decision": "D7", "visit": 2, "draw": 0.873749},
+          {"case": "c0001", "decision": "D7", "visit": 3, "draw": 0.577543}
+         ]
+        }
+        ```
+
+        3. Output Data Format (STDOUT)
+        Emit JSONL. Every record has exactly these keys:
+        * `time` (int): absolute simulation time in seconds.
+        * `case` (str): the case id.
+        * `event` (str): one of `task_start`, `task_end`, `wait_start`, `wait_end`, `decision`, `case_end`.
+        * `name` (str): the activity name, wait label or decision label; for `case_end`, the empty string.
+        * `visit` (int): the visit number; for `case_end`, 0.
+        * `worker` (str): the worker name for `task_start` and `task_end`; otherwise the empty string.
+        * `route` (str): the route label taken for `decision`; otherwise the empty string.
+
