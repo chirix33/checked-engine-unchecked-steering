@@ -1,0 +1,21 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_loan_trust-a_duration_scale",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "trust-a",
+ "n_cases": 60,
+ "interventions": [
+  {
+   "type": "duration_scale",
+   "task": "sid-9F775FDB-CD87-40D7-8B8D-DFD50176CE88",
+   "factor": "1.25",
+   "selector": {
+    "from": 36000,
+    "to": 43200
+   }
+  }
+ ]
+}

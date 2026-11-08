@@ -1,0 +1,11 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_loan_trust-a_factual",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "trust-a",
+ "n_cases": 60,
+ "interventions": []
+}

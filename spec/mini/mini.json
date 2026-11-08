@@ -1,0 +1,23 @@
+{
+  "task_resource_distribution": [
+    {"task_id": "T_review", "resources": [{"resource_id": "clerk", "distribution_name": "fix", "distribution_params": [{"value": 600}]}]},
+    {"task_id": "T_decide", "resources": [{"resource_id": "officer", "distribution_name": "fix", "distribution_params": [{"value": 1200}]}]},
+    {"task_id": "T_notify", "resources": [{"resource_id": "clerk", "distribution_name": "fix", "distribution_params": [{"value": 300}]}]}
+  ],
+  "resource_profiles": [
+    {"id": "p_clerk", "name": "Clerk", "resource_list": [{"id": "clerk", "name": "Clerk", "amount": 2, "calendar": "cal"}]},
+    {"id": "p_officer", "name": "Officer", "resource_list": [{"id": "officer", "name": "Officer", "amount": 1, "calendar": "cal"}]}
+  ],
+  "resource_calendars": [
+    {"id": "cal", "name": "Weekdays", "time_periods": [{"from": "MONDAY", "to": "FRIDAY", "beginTime": "09:00:00.000", "endTime": "17:00:00.000"}]}
+  ],
+  "gateway_branching_probabilities": [
+    {"gateway_id": "G", "probabilities": [{"path_id": "f_rework", "value": "0.25"}, {"path_id": "f_ok", "value": "0.75"}]}
+  ],
+  "event_distribution": [
+    {"event_id": "W", "distribution_name": "fix", "distribution_params": [{"value": 300}]}
+  ],
+  "arrival_time_distribution": {"distribution_name": "fix", "distribution_params": [{"value": 300}]},
+  "arrival_time_calendar": [{"from": "MONDAY", "to": "FRIDAY", "beginTime": "09:00:00.000", "endTime": "17:00:00.000"}],
+  "batch_processing": []
+}

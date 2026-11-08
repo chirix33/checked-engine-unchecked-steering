@@ -1,0 +1,22 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_pharmacy_trust-a_timer_dist",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "trust-a",
+ "n_cases": 120,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "Event_1hrnfk3",
+   "distribution_name": "expon",
+   "distribution_params": [
+    1200,
+    600,
+    3600
+   ]
+  }
+ ]
+}
