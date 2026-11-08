@@ -1,0 +1,23 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_pharmacy_trust-a_duration_dist",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "trust-a",
+ "n_cases": 120,
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+   "distribution_name": "norm",
+   "distribution_params": [
+    1500,
+    200,
+    0,
+    3600
+   ]
+  }
+ ]
+}
