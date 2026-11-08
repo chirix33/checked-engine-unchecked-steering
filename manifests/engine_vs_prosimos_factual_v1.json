@@ -1,0 +1,978 @@
+{
+ "cases": 400,
+ "prosimos_seeds": [
+  20261104,
+  20261105,
+  20261106
+ ],
+ "engine_seeds": [
+  "factual-0",
+  "factual-1",
+  "factual-2",
+  "factual-3",
+  "factual-4",
+  "factual-5",
+  "factual-6",
+  "factual-7",
+  "factual-8",
+  "factual-9"
+ ],
+ "models": {
+  "Loan_Application_3_timers": {
+   "visits_per_case": {
+    "AML Check": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Applicant completes form": {
+     "engine": {
+      "mean": 0.266,
+      "min": 0.237,
+      "max": 0.295
+     },
+     "prosimos": {
+      "mean": 0.233,
+      "min": 0.23,
+      "max": 0.24
+     }
+    },
+    "Appraise property": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Approve Loan Offer": {
+     "engine": {
+      "mean": 0.849,
+      "min": 0.733,
+      "max": 0.953
+     },
+     "prosimos": {
+      "mean": 0.847,
+      "min": 0.762,
+      "max": 0.917
+     }
+    },
+    "Approve and post home insurance quote": {
+     "engine": {
+      "mean": 0.685,
+      "min": 0.627,
+      "max": 0.782
+     },
+     "prosimos": {
+      "mean": 0.675,
+      "min": 0.61,
+      "max": 0.72
+     }
+    },
+    "Approve and send acceptance pack": {
+     "engine": {
+      "mean": 0.685,
+      "min": 0.627,
+      "max": 0.782
+     },
+     "prosimos": {
+      "mean": 0.675,
+      "min": 0.61,
+      "max": 0.72
+     }
+    },
+    "Approve application": {
+     "engine": {
+      "mean": 0.35,
+      "min": 0.32,
+      "max": 0.385
+     },
+     "prosimos": {
+      "mean": 0.332,
+      "min": 0.312,
+      "max": 0.35
+     }
+    },
+    "Assess loan risk": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Cancel application": {
+     "engine": {
+      "mean": 0.153,
+      "min": 0.13,
+      "max": 0.175
+     },
+     "prosimos": {
+      "mean": 0.153,
+      "min": 0.125,
+      "max": 0.193
+     }
+    },
+    "Check application form completeness": {
+     "engine": {
+      "mean": 1.266,
+      "min": 1.238,
+      "max": 1.295
+     },
+     "prosimos": {
+      "mean": 1.233,
+      "min": 1.23,
+      "max": 1.24
+     }
+    },
+    "Check credit history": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Consider re-design loan offer": {
+     "engine": {
+      "mean": 0.336,
+      "min": 0.282,
+      "max": 0.42
+     },
+     "prosimos": {
+      "mean": 0.343,
+      "min": 0.278,
+      "max": 0.407
+     }
+    },
+    "Design loan offer": {
+     "engine": {
+      "mean": 0.849,
+      "min": 0.733,
+      "max": 0.953
+     },
+     "prosimos": {
+      "mean": 0.847,
+      "min": 0.762,
+      "max": 0.917
+     }
+    },
+    "Prepare acceptance pack": {
+     "engine": {
+      "mean": 0.685,
+      "min": 0.627,
+      "max": 0.782
+     },
+     "prosimos": {
+      "mean": 0.675,
+      "min": 0.61,
+      "max": 0.72
+     }
+    },
+    "Prepare home insurance quote": {
+     "engine": {
+      "mean": 0.685,
+      "min": 0.627,
+      "max": 0.782
+     },
+     "prosimos": {
+      "mean": 0.675,
+      "min": 0.61,
+      "max": 0.72
+     }
+    },
+    "Reject application": {
+     "engine": {
+      "mean": 0.497,
+      "min": 0.47,
+      "max": 0.525
+     },
+     "prosimos": {
+      "mean": 0.515,
+      "min": 0.495,
+      "max": 0.542
+     }
+    },
+    "Return application back to applicant": {
+     "engine": {
+      "mean": 0.266,
+      "min": 0.237,
+      "max": 0.295
+     },
+     "prosimos": {
+      "mean": 0.233,
+      "min": 0.23,
+      "max": 0.24
+     }
+    }
+   },
+   "mean_service_s": {
+    "AML Check": {
+     "engine": {
+      "mean": 1900.913,
+      "min": 1892.412,
+      "max": 1905.622
+     },
+     "prosimos": {
+      "mean": 1899.03,
+      "min": 1896.578,
+      "max": 1901.618
+     }
+    },
+    "Applicant completes form": {
+     "engine": {
+      "mean": 86400.0,
+      "min": 86400.0,
+      "max": 86400.0
+     },
+     "prosimos": {
+      "mean": 86400.0,
+      "min": 86400.0,
+      "max": 86400.0
+     }
+    },
+    "Appraise property": {
+     "engine": {
+      "mean": 1901.131,
+      "min": 1894.743,
+      "max": 1907.46
+     },
+     "prosimos": {
+      "mean": 1898.124,
+      "min": 1893.753,
+      "max": 1901.907
+     }
+    },
+    "Approve Loan Offer": {
+     "engine": {
+      "mean": 1901.061,
+      "min": 1889.632,
+      "max": 1914.328
+     },
+     "prosimos": {
+      "mean": 1902.409,
+      "min": 1897.183,
+      "max": 1908.693
+     }
+    },
+    "Approve and post home insurance quote": {
+     "engine": {
+      "mean": 1899.641,
+      "min": 1887.542,
+      "max": 1913.446
+     },
+     "prosimos": {
+      "mean": 1903.118,
+      "min": 1898.083,
+      "max": 1910.212
+     }
+    },
+    "Approve and send acceptance pack": {
+     "engine": {
+      "mean": 1899.61,
+      "min": 1886.275,
+      "max": 1908.268
+     },
+     "prosimos": {
+      "mean": 1900.022,
+      "min": 1894.042,
+      "max": 1904.413
+     }
+    },
+    "Approve application": {
+     "engine": {
+      "mean": 1900.266,
+      "min": 1888.862,
+      "max": 1919.394
+     },
+     "prosimos": {
+      "mean": 1901.025,
+      "min": 1897.71,
+      "max": 1904.509
+     }
+    },
+    "Assess loan risk": {
+     "engine": {
+      "mean": 1899.218,
+      "min": 1892.957,
+      "max": 1904.685
+     },
+     "prosimos": {
+      "mean": 1905.768,
+      "min": 1904.08,
+      "max": 1907.849
+     }
+    },
+    "Cancel application": {
+     "engine": {
+      "mean": 1907.075,
+      "min": 1894.17,
+      "max": 1932.231
+     },
+     "prosimos": {
+      "mean": 1897.899,
+      "min": 1892.534,
+      "max": 1905.694
+     }
+    },
+    "Check application form completeness": {
+     "engine": {
+      "mean": 1899.432,
+      "min": 1886.259,
+      "max": 1908.06
+     },
+     "prosimos": {
+      "mean": 1897.057,
+      "min": 1896.298,
+      "max": 1897.977
+     }
+    },
+    "Check credit history": {
+     "engine": {
+      "mean": 1900.001,
+      "min": 1893.017,
+      "max": 1904.47
+     },
+     "prosimos": {
+      "mean": 1897.738,
+      "min": 1893.541,
+      "max": 1902.266
+     }
+    },
+    "Consider re-design loan offer": {
+     "engine": {
+      "mean": 1897.043,
+      "min": 1889.821,
+      "max": 1906.943
+     },
+     "prosimos": {
+      "mean": 1898.781,
+      "min": 1895.196,
+      "max": 1901.62
+     }
+    },
+    "Design loan offer": {
+     "engine": {
+      "mean": 1899.782,
+      "min": 1894.811,
+      "max": 1909.905
+     },
+     "prosimos": {
+      "mean": 1895.101,
+      "min": 1891.787,
+      "max": 1901.044
+     }
+    },
+    "Prepare acceptance pack": {
+     "engine": {
+      "mean": 1900.898,
+      "min": 1891.909,
+      "max": 1910.961
+     },
+     "prosimos": {
+      "mean": 1903.073,
+      "min": 1898.892,
+      "max": 1905.402
+     }
+    },
+    "Prepare home insurance quote": {
+     "engine": {
+      "mean": 1897.588,
+      "min": 1888.1,
+      "max": 1905.243
+     },
+     "prosimos": {
+      "mean": 1898.661,
+      "min": 1893.268,
+      "max": 1901.903
+     }
+    },
+    "Reject application": {
+     "engine": {
+      "mean": 1900.625,
+      "min": 1887.397,
+      "max": 1910.624
+     },
+     "prosimos": {
+      "mean": 1895.665,
+      "min": 1892.467,
+      "max": 1900.066
+     }
+    },
+    "Return application back to applicant": {
+     "engine": {
+      "mean": 1903.282,
+      "min": 1888.513,
+      "max": 1932.389
+     },
+     "prosimos": {
+      "mean": 1896.178,
+      "min": 1890.434,
+      "max": 1900.008
+     }
+    }
+   },
+   "mean_wait_min": {
+    "AML Investigator": {
+     "engine": {
+      "mean": 1.362,
+      "min": 0.872,
+      "max": 2.132
+     },
+     "prosimos": {
+      "mean": 1.018,
+      "min": 0.774,
+      "max": 1.378
+     }
+    },
+    "Applicant": {
+     "engine": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+     },
+     "prosimos": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+     }
+    },
+    "Appraiser": {
+     "engine": {
+      "mean": 146.899,
+      "min": 83.344,
+      "max": 217.818
+     },
+     "prosimos": {
+      "mean": 176.392,
+      "min": 155.779,
+      "max": 189.553
+     }
+    },
+    "Clerk": {
+     "engine": {
+      "mean": 18.871,
+      "min": 13.568,
+      "max": 24.669
+     },
+     "prosimos": {
+      "mean": 17.477,
+      "min": 13.15,
+      "max": 20.546
+     }
+    },
+    "Loan Officer": {
+     "engine": {
+      "mean": 4.36,
+      "min": 0.878,
+      "max": 13.706
+     },
+     "prosimos": {
+      "mean": 5.116,
+      "min": 2.409,
+      "max": 8.6
+     }
+    },
+    "Senior Officer": {
+     "engine": {
+      "mean": 9.028,
+      "min": 2.994,
+      "max": 20.211
+     },
+     "prosimos": {
+      "mean": 9.155,
+      "min": 5.065,
+      "max": 13.75
+     }
+    }
+   },
+   "share_waiting": {
+    "AML Investigator": {
+     "engine": {
+      "mean": 0.1,
+      "min": 0.08,
+      "max": 0.125
+     },
+     "prosimos": {
+      "mean": 0.096,
+      "min": 0.085,
+      "max": 0.107
+     }
+    },
+    "Applicant": {
+     "engine": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+     },
+     "prosimos": {
+      "mean": 0.16,
+      "min": 0.12,
+      "max": 0.198
+     }
+    },
+    "Appraiser": {
+     "engine": {
+      "mean": 0.914,
+      "min": 0.873,
+      "max": 0.935
+     },
+     "prosimos": {
+      "mean": 0.941,
+      "min": 0.932,
+      "max": 0.953
+     }
+    },
+    "Clerk": {
+     "engine": {
+      "mean": 0.655,
+      "min": 0.602,
+      "max": 0.696
+     },
+     "prosimos": {
+      "mean": 0.66,
+      "min": 0.588,
+      "max": 0.702
+     }
+    },
+    "Loan Officer": {
+     "engine": {
+      "mean": 0.434,
+      "min": 0.2,
+      "max": 0.69
+     },
+     "prosimos": {
+      "mean": 0.465,
+      "min": 0.328,
+      "max": 0.552
+     }
+    },
+    "Senior Officer": {
+     "engine": {
+      "mean": 0.494,
+      "min": 0.283,
+      "max": 0.705
+     },
+     "prosimos": {
+      "mean": 0.518,
+      "min": 0.389,
+      "max": 0.615
+     }
+    }
+   },
+   "mean_cycle_days": {
+    "engine": {
+     "mean": 2.066,
+     "min": 1.858,
+     "max": 2.33
+    },
+    "prosimos": {
+     "mean": 2.102,
+     "min": 1.899,
+     "max": 2.25
+    }
+   }
+  },
+  "Pharmacy_3_timers": {
+   "visits_per_case": {
+    "Check DUR": {
+     "engine": {
+      "mean": 1.0,
+      "min": 0.998,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Check Insurance": {
+     "engine": {
+      "mean": 1.0,
+      "min": 0.998,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Check for Quality Assurance": {
+     "engine": {
+      "mean": 0.974,
+      "min": 0.955,
+      "max": 0.998
+     },
+     "prosimos": {
+      "mean": 0.99,
+      "min": 0.98,
+      "max": 1.005
+     }
+    },
+    "Check if refill is allowed": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Contact Doctor about refill": {
+     "engine": {
+      "mean": 0.055,
+      "min": 0.04,
+      "max": 0.068
+     },
+     "prosimos": {
+      "mean": 0.049,
+      "min": 0.045,
+      "max": 0.052
+     }
+    },
+    "Contact customer /  doctor": {
+     "engine": {
+      "mean": 0.011,
+      "min": 0.01,
+      "max": 0.015
+     },
+     "prosimos": {
+      "mean": 0.008,
+      "min": 0.005,
+      "max": 0.013
+     }
+    },
+    "Enter prescription details": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Pack the drugs (Production)": {
+     "engine": {
+      "mean": 0.974,
+      "min": 0.955,
+      "max": 0.998
+     },
+     "prosimos": {
+      "mean": 0.99,
+      "min": 0.98,
+      "max": 1.005
+     }
+    },
+    "Pick-up": {
+     "engine": {
+      "mean": 1.0,
+      "min": 0.998,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Process drop-off": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Resolve DUR manually": {
+     "engine": {
+      "mean": 0.19,
+      "min": 0.165,
+      "max": 0.22
+     },
+     "prosimos": {
+      "mean": 0.198,
+      "min": 0.188,
+      "max": 0.207
+     }
+    },
+    "Resolve insurance issues manually": {
+     "engine": {
+      "mean": 0.168,
+      "min": 0.152,
+      "max": 0.21
+     },
+     "prosimos": {
+      "mean": 0.177,
+      "min": 0.165,
+      "max": 0.19
+     }
+    }
+   },
+   "mean_service_s": {
+    "Check DUR": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Check Insurance": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Check for Quality Assurance": {
+     "engine": {
+      "mean": 60.064,
+      "min": 59.553,
+      "max": 60.699
+     },
+     "prosimos": {
+      "mean": 59.84,
+      "min": 59.816,
+      "max": 59.873
+     }
+    },
+    "Check if refill is allowed": {
+     "engine": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     },
+     "prosimos": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+     }
+    },
+    "Contact Doctor about refill": {
+     "engine": {
+      "mean": 1230.915,
+      "min": 1212.812,
+      "max": 1240.667
+     },
+     "prosimos": {
+      "mean": 1228.169,
+      "min": 1227.034,
+      "max": 1229.989
+     }
+    },
+    "Contact customer /  doctor": {
+     "engine": {
+      "mean": 627.923,
+      "min": 618.0,
+      "max": 650.25
+     },
+     "prosimos": {
+      "mean": 620.933,
+      "min": 617.517,
+      "max": 625.193
+     }
+    },
+    "Enter prescription details": {
+     "engine": {
+      "mean": 150.1,
+      "min": 149.137,
+      "max": 151.17
+     },
+     "prosimos": {
+      "mean": 149.786,
+      "min": 148.162,
+      "max": 150.88
+     }
+    },
+    "Pack the drugs (Production)": {
+     "engine": {
+      "mean": 180.083,
+      "min": 178.139,
+      "max": 181.51
+     },
+     "prosimos": {
+      "mean": 180.368,
+      "min": 178.887,
+      "max": 181.672
+     }
+    },
+    "Pick-up": {
+     "engine": {
+      "mean": 150.098,
+      "min": 149.037,
+      "max": 151.456
+     },
+     "prosimos": {
+      "mean": 149.929,
+      "min": 149.336,
+      "max": 150.856
+     }
+    },
+    "Process drop-off": {
+     "engine": {
+      "mean": 89.926,
+      "min": 88.942,
+      "max": 90.61
+     },
+     "prosimos": {
+      "mean": 90.53,
+      "min": 89.973,
+      "max": 91.074
+     }
+    },
+    "Resolve DUR manually": {
+     "engine": {
+      "mean": 130.456,
+      "min": 129.139,
+      "max": 132.387
+     },
+     "prosimos": {
+      "mean": 130.047,
+      "min": 129.222,
+      "max": 130.862
+     }
+    },
+    "Resolve insurance issues manually": {
+     "engine": {
+      "mean": 309.797,
+      "min": 308.361,
+      "max": 312.125
+     },
+     "prosimos": {
+      "mean": 309.819,
+      "min": 309.098,
+      "max": 310.601
+     }
+    }
+   },
+   "mean_wait_min": {
+    "Pharmacist": {
+     "engine": {
+      "mean": 0.977,
+      "min": 0.771,
+      "max": 1.211
+     },
+     "prosimos": {
+      "mean": 0.991,
+      "min": 0.868,
+      "max": 1.074
+     }
+    },
+    "Pharmacy System": {
+     "engine": {
+      "mean": 0.109,
+      "min": 0.091,
+      "max": 0.15
+     },
+     "prosimos": {
+      "mean": 0.075,
+      "min": 0.05,
+      "max": 0.107
+     }
+    },
+    "Technician": {
+     "engine": {
+      "mean": 0.041,
+      "min": 0.026,
+      "max": 0.056
+     },
+     "prosimos": {
+      "mean": 0.036,
+      "min": 0.03,
+      "max": 0.045
+     }
+    }
+   },
+   "share_waiting": {
+    "Pharmacist": {
+     "engine": {
+      "mean": 0.617,
+      "min": 0.558,
+      "max": 0.667
+     },
+     "prosimos": {
+      "mean": 0.64,
+      "min": 0.632,
+      "max": 0.65
+     }
+    },
+    "Pharmacy System": {
+     "engine": {
+      "mean": 0.061,
+      "min": 0.05,
+      "max": 0.079
+     },
+     "prosimos": {
+      "mean": 0.047,
+      "min": 0.032,
+      "max": 0.069
+     }
+    },
+    "Technician": {
+     "engine": {
+      "mean": 0.086,
+      "min": 0.063,
+      "max": 0.116
+     },
+     "prosimos": {
+      "mean": 0.163,
+      "min": 0.154,
+      "max": 0.171
+     }
+    }
+   },
+   "mean_cycle_days": {
+    "engine": {
+     "mean": 0.034,
+     "min": 0.032,
+     "max": 0.036
+    },
+    "prosimos": {
+     "mean": 0.033,
+     "min": 0.032,
+     "max": 0.034
+    }
+   }
+  }
+ }
+}

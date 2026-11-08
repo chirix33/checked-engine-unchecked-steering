@@ -1,0 +1,208 @@
+{
+ "tie_break_ignores_longest_idle": {
+  "hand": {
+   "detected_by": 14,
+   "of": 18,
+   "first": [
+    "H01_factual_contention_ties_loop.json",
+    "H02_unavailable_pauses_running_task.json",
+    "H04_resource_add.json"
+   ]
+  },
+  "process": {
+   "detected_by": 48,
+   "of": 48,
+   "first": [
+    "P_loan_trust-a_case_add.json",
+    "P_loan_trust-a_case_remove.json",
+    "P_loan_trust-a_duration_dist.json"
+   ]
+  },
+  "fuzz": {
+   "detected_by": 124,
+   "of": 150,
+   "first": [
+    "F0000_loan.json",
+    "F0001_pharmacy.json",
+    "F0002_loan.json"
+   ]
+  }
+ },
+ "queue_key_ignores_arrival": {
+  "hand": {
+   "detected_by": 1,
+   "of": 18,
+   "first": [
+    "H17_tie_order_uses_arrival_before_case_id.json"
+   ]
+  },
+  "process": {
+   "detected_by": 0,
+   "of": 48,
+   "first": []
+  },
+  "fuzz": {
+   "detected_by": 1,
+   "of": 150,
+   "first": [
+    "F0016_mini.json"
+   ]
+  }
+ },
+ "interval_end_inclusive": {
+  "hand": {
+   "detected_by": 1,
+   "of": 18,
+   "first": [
+    "H05_duration_scale_interval_bounds.json"
+   ]
+  },
+  "process": {
+   "detected_by": 0,
+   "of": 48,
+   "first": []
+  },
+  "fuzz": {
+   "detected_by": 1,
+   "of": 150,
+   "first": [
+    "F0073_mini.json"
+   ]
+  }
+ },
+ "interval_start_exclusive": {
+  "hand": {
+   "detected_by": 2,
+   "of": 18,
+   "first": [
+    "H05_duration_scale_interval_bounds.json",
+    "H11_routing_from_is_inclusive.json"
+   ]
+  },
+  "process": {
+   "detected_by": 0,
+   "of": 48,
+   "first": []
+  },
+  "fuzz": {
+   "detected_by": 1,
+   "of": 150,
+   "first": [
+    "F0080_mini.json"
+   ]
+  }
+ },
+ "draw_ignores_visit": {
+  "hand": {
+   "detected_by": 16,
+   "of": 18,
+   "first": [
+    "H01_factual_contention_ties_loop.json",
+    "H02_unavailable_pauses_running_task.json",
+    "H03_unavailable_count_uses_highest_index.json"
+   ]
+  },
+  "process": {
+   "detected_by": 48,
+   "of": 48,
+   "first": [
+    "P_loan_trust-a_case_add.json",
+    "P_loan_trust-a_case_remove.json",
+    "P_loan_trust-a_duration_dist.json"
+   ]
+  },
+  "fuzz": {
+   "detected_by": 111,
+   "of": 150,
+   "first": [
+    "F0000_loan.json",
+    "F0001_pharmacy.json",
+    "F0002_loan.json"
+   ]
+  }
+ },
+ "routing_threshold_inclusive": {
+  "hand": {
+   "detected_by": 18,
+   "of": 18,
+   "first": [
+    "H01_factual_contention_ties_loop.json",
+    "H02_unavailable_pauses_running_task.json",
+    "H03_unavailable_count_uses_highest_index.json"
+   ]
+  },
+  "process": {
+   "detected_by": 48,
+   "of": 48,
+   "first": [
+    "P_loan_trust-a_case_add.json",
+    "P_loan_trust-a_case_remove.json",
+    "P_loan_trust-a_duration_dist.json"
+   ]
+  },
+  "fuzz": {
+   "detected_by": 131,
+   "of": 150,
+   "first": [
+    "F0000_loan.json",
+    "F0001_pharmacy.json",
+    "F0002_loan.json"
+   ]
+  }
+ },
+ "unavailability_ignored_during_work": {
+  "hand": {
+   "detected_by": 2,
+   "of": 18,
+   "first": [
+    "H02_unavailable_pauses_running_task.json",
+    "H15_case_add_calendar_edges.json"
+   ]
+  },
+  "process": {
+   "detected_by": 27,
+   "of": 48,
+   "first": [
+    "P_loan_trust-a_case_add.json",
+    "P_loan_trust-a_case_remove.json",
+    "P_loan_trust-a_duration_dist.json"
+   ]
+  },
+  "fuzz": {
+   "detected_by": 67,
+   "of": 150,
+   "first": [
+    "F0000_loan.json",
+    "F0002_loan.json",
+    "F0004_loan.json"
+   ]
+  }
+ },
+ "scale_rounds_down": {
+  "hand": {
+   "detected_by": 1,
+   "of": 18,
+   "first": [
+    "H18_scale_rounds_half_up_exactly.json"
+   ]
+  },
+  "process": {
+   "detected_by": 8,
+   "of": 48,
+   "first": [
+    "P_loan_trust-a_duration_scale.json",
+    "P_loan_trust-a_timer_scale.json",
+    "P_loan_trust-b_duration_scale.json"
+   ]
+  },
+  "fuzz": {
+   "detected_by": 5,
+   "of": 150,
+   "first": [
+    "F0036_pharmacy.json",
+    "F0048_pharmacy.json",
+    "F0135_loan.json"
+   ]
+  }
+ }
+}

@@ -1,0 +1,398 @@
+[
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "unavailable",
+  "shared_cases": 60,
+  "records_changed": 59,
+  "end_changed": 45,
+  "mean_cycle_change_min": 53.2
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "resource_add",
+  "shared_cases": 60,
+  "records_changed": 59,
+  "end_changed": 34,
+  "mean_cycle_change_min": -4.9
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "duration_set",
+  "shared_cases": 60,
+  "records_changed": 58,
+  "end_changed": 2,
+  "mean_cycle_change_min": -0.0
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "duration_scale",
+  "shared_cases": 60,
+  "records_changed": 59,
+  "end_changed": 27,
+  "mean_cycle_change_min": 21.8
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "duration_dist",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 41,
+  "mean_cycle_change_min": -4.5
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "timer_set",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 56,
+  "mean_cycle_change_min": -146.4
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "timer_scale",
+  "shared_cases": 60,
+  "records_changed": 27,
+  "end_changed": 18,
+  "mean_cycle_change_min": -75.8
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "timer_dist",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 55,
+  "mean_cycle_change_min": -76.6
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "routing",
+  "shared_cases": 60,
+  "records_changed": 51,
+  "end_changed": 28,
+  "mean_cycle_change_min": 32.4
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "case_add",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 20,
+  "mean_cycle_change_min": 3.4
+ },
+ {
+  "process": "loan",
+  "seed": "trust-a",
+  "intervention": "case_remove",
+  "shared_cases": 59,
+  "records_changed": 59,
+  "end_changed": 4,
+  "mean_cycle_change_min": -0.1
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "unavailable",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 42,
+  "mean_cycle_change_min": 4.2
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "resource_add",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 42,
+  "mean_cycle_change_min": -2.7
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "duration_set",
+  "shared_cases": 60,
+  "records_changed": 58,
+  "end_changed": 3,
+  "mean_cycle_change_min": -0.1
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "duration_scale",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 14,
+  "mean_cycle_change_min": 1.0
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "duration_dist",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 41,
+  "mean_cycle_change_min": -3.5
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "timer_set",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 58,
+  "mean_cycle_change_min": -125.1
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "timer_scale",
+  "shared_cases": 60,
+  "records_changed": 41,
+  "end_changed": 34,
+  "mean_cycle_change_min": -180.7
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "timer_dist",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 56,
+  "mean_cycle_change_min": -90.9
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "routing",
+  "shared_cases": 60,
+  "records_changed": 58,
+  "end_changed": 40,
+  "mean_cycle_change_min": 108.9
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "case_add",
+  "shared_cases": 60,
+  "records_changed": 60,
+  "end_changed": 0,
+  "mean_cycle_change_min": 0.0
+ },
+ {
+  "process": "loan",
+  "seed": "trust-b",
+  "intervention": "case_remove",
+  "shared_cases": 59,
+  "records_changed": 59,
+  "end_changed": 31,
+  "mean_cycle_change_min": -1.5
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "unavailable",
+  "shared_cases": 120,
+  "records_changed": 119,
+  "end_changed": 34,
+  "mean_cycle_change_min": 1.0
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "resource_add",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 13,
+  "mean_cycle_change_min": -0.0
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "duration_set",
+  "shared_cases": 120,
+  "records_changed": 115,
+  "end_changed": 31,
+  "mean_cycle_change_min": 1.6
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "duration_scale",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 54,
+  "mean_cycle_change_min": 0.4
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "duration_dist",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 119,
+  "mean_cycle_change_min": 2509.8
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "timer_set",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 119,
+  "mean_cycle_change_min": -3.4
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "timer_scale",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 119,
+  "mean_cycle_change_min": -1.7
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "timer_dist",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 119,
+  "mean_cycle_change_min": 17.7
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "routing",
+  "shared_cases": 120,
+  "records_changed": 116,
+  "end_changed": 102,
+  "mean_cycle_change_min": 8.2
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "case_add",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 7,
+  "mean_cycle_change_min": 0.0
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-a",
+  "intervention": "case_remove",
+  "shared_cases": 119,
+  "records_changed": 119,
+  "end_changed": 1,
+  "mean_cycle_change_min": -0.0
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "unavailable",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 44,
+  "mean_cycle_change_min": 0.2
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "resource_add",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 51,
+  "mean_cycle_change_min": -0.2
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "duration_set",
+  "shared_cases": 120,
+  "records_changed": 106,
+  "end_changed": 59,
+  "mean_cycle_change_min": 2.5
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "duration_scale",
+  "shared_cases": 120,
+  "records_changed": 119,
+  "end_changed": 54,
+  "mean_cycle_change_min": 0.6
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "duration_dist",
+  "shared_cases": 120,
+  "records_changed": 119,
+  "end_changed": 112,
+  "mean_cycle_change_min": 2327.0
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "timer_set",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 114,
+  "mean_cycle_change_min": -3.1
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "timer_scale",
+  "shared_cases": 120,
+  "records_changed": 120,
+  "end_changed": 114,
+  "mean_cycle_change_min": -1.8
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "timer_dist",
+  "shared_cases": 120,
+  "records_changed": 119,
+  "end_changed": 113,
+  "mean_cycle_change_min": 14.7
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "routing",
+  "shared_cases": 120,
+  "records_changed": 118,
+  "end_changed": 112,
+  "mean_cycle_change_min": 13.6
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "case_add",
+  "shared_cases": 120,
+  "records_changed": 119,
+  "end_changed": 29,
+  "mean_cycle_change_min": 0.3
+ },
+ {
+  "process": "pharmacy",
+  "seed": "trust-b",
+  "intervention": "case_remove",
+  "shared_cases": 119,
+  "records_changed": 119,
+  "end_changed": 27,
+  "mean_cycle_change_min": -0.0
+ }
+]
