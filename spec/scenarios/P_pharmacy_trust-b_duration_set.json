@@ -1,0 +1,20 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "P_pharmacy_trust-b_duration_set",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "trust-b",
+ "n_cases": 120,
+ "interventions": [
+  {
+   "type": "duration_set",
+   "task": "sid-18F562AE-0F3A-489F-8660-38E177904BB0",
+   "seconds": 900,
+   "selector": {
+    "case": "c0005"
+   }
+  }
+ ]
+}
