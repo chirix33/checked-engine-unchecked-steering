@@ -1,0 +1,14 @@
+{
+ "compared": 500,
+ "identical": 500,
+ "different": 0,
+ "status_counts_a": {
+  "ok": 445,
+  "invalid_intervention": 31,
+  "conflicting_interventions": 17,
+  "visit_limit_exceeded": 7
+ },
+ "only_in_a": [],
+ "only_in_b": [],
+ "differences": []
+}
