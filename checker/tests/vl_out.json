@@ -1,0 +1,6 @@
+{
+ "schema": "wf-run/1",
+ "scenario_id": "vl",
+ "status": "error",
+ "error": "visit_limit_exceeded"
+}

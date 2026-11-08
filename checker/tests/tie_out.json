@@ -1,0 +1,70 @@
+{
+ "schema": "wf-run/1",
+ "scenario_id": "tie",
+ "status": "ok",
+ "cases": [
+  {
+   "case": "c0000",
+   "arrival": 0,
+   "end": 200,
+   "end_event": "E"
+  }
+ ],
+ "tasks": [
+  {
+   "case": "c0000",
+   "task": "T_b",
+   "visit": 1,
+   "enabled": 0,
+   "start": 100,
+   "end": 200,
+   "resource": "Y_0",
+   "service": 100
+  },
+  {
+   "case": "c0000",
+   "task": "T_c",
+   "visit": 1,
+   "enabled": 0,
+   "start": 0,
+   "end": 100,
+   "resource": "Y_0",
+   "service": 100
+  },
+  {
+   "case": "c0000",
+   "task": "T_d",
+   "visit": 1,
+   "enabled": 0,
+   "start": 0,
+   "end": 0,
+   "resource": "Z_0",
+   "service": 0
+  }
+ ],
+ "timers": [],
+ "branches": [],
+ "draws": [
+  {
+   "case": "c0000",
+   "element": "T_b",
+   "visit": 1,
+   "variable": "service",
+   "u": "0.366195162124"
+  },
+  {
+   "case": "c0000",
+   "element": "T_c",
+   "visit": 1,
+   "variable": "service",
+   "u": "0.970153498364"
+  },
+  {
+   "case": "c0000",
+   "element": "T_d",
+   "visit": 1,
+   "variable": "service",
+   "u": "0.578007610039"
+  }
+ ]
+}

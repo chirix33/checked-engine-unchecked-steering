@@ -1,0 +1,1 @@
+{"schema":"wf-scenario/1","scenario_id":"inv","model":{"bpmn":"../../spec/mini/mini.bpmn","params":"../../spec/mini/mini.json"},"seed":"h","n_cases":1,"interventions":[{"type":"resource_unavailable","pool":"Officer","count":2,"from":0,"to":5}]}

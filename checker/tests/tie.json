@@ -1,0 +1,10 @@
+{"task_resource_distribution":[
+{"task_id":"T_c","resources":[{"resource_id":"y","distribution_name":"fix","distribution_params":[{"value":100}]}]},
+{"task_id":"T_b","resources":[{"resource_id":"y","distribution_name":"fix","distribution_params":[{"value":100}]}]},
+{"task_id":"T_d","resources":[{"resource_id":"z","distribution_name":"fix","distribution_params":[{"value":0}]}]}],
+"resource_profiles":[{"id":"py","name":"Y","resource_list":[{"id":"y","name":"Y","amount":1,"calendar":"c"}]},
+{"id":"pz","name":"Z","resource_list":[{"id":"z","name":"Z","amount":1,"calendar":"c"}]}],
+"resource_calendars":[{"id":"c","name":"all","time_periods":[{"from":"MONDAY","to":"SUNDAY","beginTime":"00:00:00.000","endTime":"24:00:00.000"}]}],
+"gateway_branching_probabilities":[],"event_distribution":[],
+"arrival_time_distribution":{"distribution_name":"fix","distribution_params":[{"value":10}]},
+"arrival_time_calendar":[{"from":"MONDAY","to":"SUNDAY","beginTime":"00:00:00.000","endTime":"24:00:00.000"}]}

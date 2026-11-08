@@ -1,0 +1,1 @@
+{"schema":"wf-scenario/1","scenario_id":"tie","model":{"bpmn":"tie.bpmn","params":"tie.json"},"seed":"s","n_cases":1,"interventions":[]}

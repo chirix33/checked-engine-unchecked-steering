@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="d" targetNamespace="x">
+  <process id="p">
+    <startEvent id="S"/>
+    <parallelGateway id="P"/>
+    <task id="T_c"/>
+    <task id="T_d"/>
+    <task id="T_b"/>
+    <parallelGateway id="J"/>
+    <endEvent id="E"/>
+    <sequenceFlow id="f1" sourceRef="S" targetRef="P"/>
+    <sequenceFlow id="f2" sourceRef="P" targetRef="T_c"/>
+    <sequenceFlow id="f3" sourceRef="P" targetRef="T_d"/>
+    <sequenceFlow id="f4" sourceRef="T_d" targetRef="T_b"/>
+    <sequenceFlow id="f5" sourceRef="T_c" targetRef="J"/>
+    <sequenceFlow id="f6" sourceRef="T_b" targetRef="J"/>
+    <sequenceFlow id="f7" sourceRef="J" targetRef="E"/>
+  </process>
+</definitions>
