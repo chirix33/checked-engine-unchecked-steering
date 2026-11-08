@@ -1,0 +1,44 @@
+{
+ "openrouter_key": {
+  "http": 200,
+  "limit": null,
+  "limit_reset": null,
+  "limit_remaining": null,
+  "usage": 1061.265916405,
+  "usage_daily": 0,
+  "is_free_tier": false,
+  "expires_at": "2027-04-22T22:46:29.146Z",
+  "free_model_daily_requests": {
+   "used": 0,
+   "limit": 1000,
+   "remaining": 1000
+  },
+  "rate_limit": {
+   "requests": -1,
+   "interval": "10s",
+   "note": "This field is deprecated and safe to ignore."
+  }
+ },
+ "openrouter_credits": {
+  "http": 200,
+  "data": {
+   "total_credits": 1100,
+   "total_usage": 1061.265916405
+  }
+ },
+ "ollama_cloud_tags": {
+  "http": 200,
+  "count": 26,
+  "wanted_present": {
+   "gpt-oss:120b": true,
+   "gpt-oss:120b-cloud": false,
+   "gemma4:31b": true,
+   "gemma4:31b-cloud": false
+  },
+  "gemma_gpt_names": [
+   "gemma4:31b",
+   "gpt-oss:20b",
+   "gpt-oss:120b"
+  ]
+ }
+}

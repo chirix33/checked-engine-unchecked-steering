@@ -1,0 +1,3401 @@
+[
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-16B45990-F522-4EA9-A01A-70EE8D0C9EC5",
+    "seconds": 1,
+    "selector": {
+     "case": "c0009",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 04, suppose case c0009 needed 1 seconds of work for the activity 'Prepare home insurance quote' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0009",
+   "target": "Prepare home insurance quote",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "loa-activity_duration-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 136676,
+  "factual_end": 136677,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0009 needed 1 seconds of work for the activity 'Prepare home insurance quote' on visit 1. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_065abi2",
+    "seconds": 1,
+    "selector": {
+     "case": "c0003",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 03, suppose case c0003 needed 1 seconds of work for the activity 'AML Check' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0003",
+   "target": "AML Check",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "loa-activity_duration-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "activity_duration",
+  "gold": 120653,
+  "factual_end": 120653,
+  "effectful": false,
+  "question": "In Run 03, suppose case c0003 needed 1 seconds of work for the activity 'AML Check' on visit 1. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-034F28AB-5EBC-4336-82BD-4FE7A525CCE2",
+    "seconds": 1,
+    "selector": {
+     "case": "c0001",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 03, suppose case c0001 needed 1 seconds of work for the activity 'Prepare acceptance pack' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0001",
+   "target": "Prepare acceptance pack",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "loa-activity_duration-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "activity_duration",
+  "gold": 293473,
+  "factual_end": 293473,
+  "effectful": false,
+  "question": "In Run 03, suppose case c0001 needed 1 seconds of work for the activity 'Prepare acceptance pack' on visit 1. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1w0dur0",
+    "seconds": 1,
+    "selector": {
+     "case": "c0008",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0008",
+  "text": "In Run 01, suppose case c0008 needed 1 seconds of work for the activity 'Applicant completes form' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0008",
+   "target": "Applicant completes form",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "loa-activity_duration-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 295355,
+  "factual_end": 381755,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0008 needed 1 seconds of work for the activity 'Applicant completes form' on visit 1. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1y2vzu0",
+    "seconds": 3816,
+    "selector": {
+     "case": "c0007",
+     "visit": 2
+    }
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 02, suppose case c0007 needed 3816 seconds of work for the activity 'Approve Loan Offer' on visit 2.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0007",
+   "target": "Approve Loan Offer",
+   "visit": 2,
+   "value": 3816
+  },
+  "id": "loa-activity_duration-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "activity_duration",
+  "gold": 403369,
+  "factual_end": 401461,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0007 needed 3816 seconds of work for the activity 'Approve Loan Offer' on visit 2. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-B27E434D-3A46-46FE-94DE-184C179BE525",
+    "seconds": 4178,
+    "selector": {
+     "case": "c0002",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 01, suppose case c0002 needed 4178 seconds of work for the activity 'Return application back to applicant' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0002",
+   "target": "Return application back to applicant",
+   "visit": 1,
+   "value": 4178
+  },
+  "id": "loa-activity_duration-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 213278,
+  "factual_end": 208907,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0002 needed 4178 seconds of work for the activity 'Return application back to applicant' on visit 1. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9703AD2C-3219-4B4A-9A91-F4A81EF91130",
+    "seconds": 1,
+    "selector": {
+     "case": "c0007",
+     "visit": 3
+    }
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 02, suppose case c0007 needed 1 seconds of work for the activity 'Check application form completeness' on visit 3.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0007",
+   "target": "Check application form completeness",
+   "visit": 3,
+   "value": 1
+  },
+  "id": "loa-activity_duration-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "activity_duration",
+  "gold": 399833,
+  "factual_end": 401461,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0007 needed 1 seconds of work for the activity 'Check application form completeness' on visit 3. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-AD68767C-968B-4DCD-821E-3F5C5C3D0D04",
+    "seconds": 3754,
+    "selector": {
+     "case": "c0013",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 01, suppose case c0013 needed 3754 seconds of work for the activity 'Design loan offer' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0013",
+   "target": "Design loan offer",
+   "visit": 1,
+   "value": 3754
+  },
+  "id": "loa-activity_duration-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 293404,
+  "factual_end": 291714,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0013 needed 3754 seconds of work for the activity 'Design loan offer' on visit 1. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1y2vzu0",
+    "seconds": 5530,
+    "selector": {
+     "case": "c0013",
+     "visit": 2
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose case c0013 needed 5530 seconds of work for the activity 'Approve Loan Offer' on visit 2.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0013",
+   "target": "Approve Loan Offer",
+   "visit": 2,
+   "value": 5530
+  },
+  "id": "loa-activity_duration-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 307127,
+  "factual_end": 293500,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0013 needed 5530 seconds of work for the activity 'Approve Loan Offer' on visit 2. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-9726C026-BDE7-4467-B613-EB951D1FE613",
+    "seconds": 3778,
+    "selector": {
+     "case": "c0013",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 01, suppose case c0013 needed 3778 seconds of work for the activity 'Approve and post home insurance quote' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0013",
+   "target": "Approve and post home insurance quote",
+   "visit": 1,
+   "value": 3778
+  },
+  "id": "loa-activity_duration-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 293404,
+  "factual_end": 291714,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0013 needed 3778 seconds of work for the activity 'Approve and post home insurance quote' on visit 1. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 7280,
+    "selector": {
+     "case": "c0001",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 02, suppose the wait W2 for case c0001 lasted 7280 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0001",
+   "target": "W2",
+   "visit": 1,
+   "value": 7280
+  },
+  "id": "loa-timer_delay-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "timer_delay",
+  "gold": 48118,
+  "factual_end": 44478,
+  "effectful": true,
+  "question": "In Run 02, suppose the wait W2 for case c0001 lasted 7280 seconds on visit 1. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_19s1gwa",
+    "seconds": 0,
+    "selector": {
+     "case": "c0003",
+     "visit": 2
+    }
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 04, suppose the wait W1 for case c0003 lasted 0 seconds on visit 2.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0003",
+   "target": "W1",
+   "visit": 2,
+   "value": 0
+  },
+  "id": "loa-timer_delay-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 302039,
+  "factual_end": 320171,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W1 for case c0003 lasted 0 seconds on visit 2. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6682,
+    "selector": {
+     "case": "c0006",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 01, suppose the wait W2 for case c0006 lasted 6682 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0006",
+   "target": "W2",
+   "visit": 1,
+   "value": 6682
+  },
+  "id": "loa-timer_delay-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "timer_delay",
+  "gold": 52361,
+  "factual_end": 48761,
+  "effectful": true,
+  "question": "In Run 01, suppose the wait W2 for case c0006 lasted 6682 seconds on visit 1. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6331,
+    "selector": {
+     "case": "c0013",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 03, suppose the wait W2 for case c0013 lasted 6331 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0013",
+   "target": "W2",
+   "visit": 1,
+   "value": 6331
+  },
+  "id": "loa-timer_delay-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 129527,
+  "factual_end": 126481,
+  "effectful": true,
+  "question": "In Run 03, suppose the wait W2 for case c0013 lasted 6331 seconds on visit 1. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 5684,
+    "selector": {
+     "case": "c0014",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 04, suppose the wait W2 for case c0014 lasted 5684 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0014",
+   "target": "W2",
+   "visit": 1,
+   "value": 5684
+  },
+  "id": "loa-timer_delay-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 144374,
+  "factual_end": 141532,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W2 for case c0014 lasted 5684 seconds on visit 1. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6617,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 01, suppose the wait W2 for case c0007 lasted 6617 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0007",
+   "target": "W2",
+   "visit": 1,
+   "value": 6617
+  },
+  "id": "loa-timer_delay-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "timer_delay",
+  "gold": 120613,
+  "factual_end": 120613,
+  "effectful": false,
+  "question": "In Run 01, suppose the wait W2 for case c0007 lasted 6617 seconds on visit 1. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 0,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0000",
+  "text": "In Run 03, suppose the wait W2 for case c0000 lasted 0 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0000",
+   "target": "W2",
+   "visit": 1,
+   "value": 0
+  },
+  "id": "loa-timer_delay-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 40132,
+  "factual_end": 42961,
+  "effectful": true,
+  "question": "In Run 03, suppose the wait W2 for case c0000 lasted 0 seconds on visit 1. At what time, in seconds from time 0, would case c0000 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_19s1gwa",
+    "seconds": 36618,
+    "selector": {
+     "case": "c0005",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 02, suppose the wait W1 for case c0005 lasted 36618 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0005",
+   "target": "W1",
+   "visit": 1,
+   "value": 36618
+  },
+  "id": "loa-timer_delay-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "timer_delay",
+  "gold": 647477,
+  "factual_end": 647477,
+  "effectful": false,
+  "question": "In Run 02, suppose the wait W1 for case c0005 lasted 36618 seconds on visit 1. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1g228xj",
+    "seconds": 6335,
+    "selector": {
+     "case": "c0012",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0012",
+  "text": "In Run 04, suppose the wait W2 for case c0012 lasted 6335 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0012",
+   "target": "W2",
+   "visit": 1,
+   "value": 6335
+  },
+  "id": "loa-timer_delay-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 57081,
+  "factual_end": 53481,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W2 for case c0012 lasted 6335 seconds on visit 1. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_19s1gwa",
+    "seconds": 0,
+    "selector": {
+     "case": "c0005",
+     "visit": 3
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 02, suppose the wait W1 for case c0005 lasted 0 seconds on visit 3.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0005",
+   "target": "W1",
+   "visit": 3,
+   "value": 0
+  },
+  "id": "loa-timer_delay-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "timer_delay",
+  "gold": 640817,
+  "factual_end": 647477,
+  "effectful": true,
+  "question": "In Run 02, suppose the wait W1 for case c0005 lasted 0 seconds on visit 3. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0000",
+    "element": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.6"
+   }
+  ],
+  "query_case": "c0000",
+  "text": "In Run 04, suppose the route draw for case c0000 at decision D1 on visit 1 were 0.600000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0000",
+   "target": "D1",
+   "visit": 1,
+   "value": 0.6
+  },
+  "id": "loa-routing_outcome-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "routing_outcome",
+  "gold": 120455,
+  "factual_end": 228914,
+  "effectful": true,
+  "question": "In Run 04, suppose the route draw for case c0000 at decision D1 on visit 1 were 0.600000. At what time, in seconds from time 0, would case c0000 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0013",
+    "element": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "visit": 2,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 01, suppose the route draw for case c0013 at decision D1 on visit 2 were 0.100000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0013",
+   "target": "D1",
+   "visit": 2,
+   "value": 0.1
+  },
+  "id": "loa-routing_outcome-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 400037,
+  "factual_end": 291714,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0013 at decision D1 on visit 2 were 0.100000. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0006",
+    "element": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 03, suppose the route draw for case c0006 at decision D1 on visit 1 were 0.100000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0006",
+   "target": "D1",
+   "visit": 1,
+   "value": 0.1
+  },
+  "id": "loa-routing_outcome-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_outcome",
+  "gold": 399506,
+  "factual_end": 120673,
+  "effectful": true,
+  "question": "In Run 03, suppose the route draw for case c0006 at decision D1 on visit 1 were 0.100000. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0013",
+    "element": "Gateway_06djhup",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.25"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose the route draw for case c0013 at decision D4 on visit 1 were 0.250000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0013",
+   "target": "D4",
+   "visit": 1,
+   "value": 0.25
+  },
+  "id": "loa-routing_outcome-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "routing_outcome",
+  "gold": 293500,
+  "factual_end": 293500,
+  "effectful": false,
+  "question": "In Run 04, suppose the route draw for case c0013 at decision D4 on visit 1 were 0.250000. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0010",
+    "element": "sid-79AFF435-717A-4C1E-87FA-D002372D2251",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.75"
+   }
+  ],
+  "query_case": "c0010",
+  "text": "In Run 02, suppose the route draw for case c0010 at decision D2 on visit 1 were 0.750000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0010",
+   "target": "D2",
+   "visit": 1,
+   "value": 0.75
+  },
+  "id": "loa-routing_outcome-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "routing_outcome",
+  "gold": 120614,
+  "factual_end": 52185,
+  "effectful": true,
+  "question": "In Run 02, suppose the route draw for case c0010 at decision D2 on visit 1 were 0.750000. At what time, in seconds from time 0, would case c0010 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0003",
+    "element": "Gateway_0ovqfsq",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.725"
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 01, suppose the route draw for case c0003 at decision D5 on visit 1 were 0.725000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0003",
+   "target": "D5",
+   "visit": 1,
+   "value": 0.725
+  },
+  "id": "loa-routing_outcome-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 207230,
+  "factual_end": 55176,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0003 at decision D5 on visit 1 were 0.725000. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0002",
+    "element": "Gateway_06djhup",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.25"
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 03, suppose the route draw for case c0002 at decision D4 on visit 1 were 0.250000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0002",
+   "target": "D4",
+   "visit": 1,
+   "value": 0.25
+  },
+  "id": "loa-routing_outcome-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_outcome",
+  "gold": 231324,
+  "factual_end": 311592,
+  "effectful": true,
+  "question": "In Run 03, suppose the route draw for case c0002 at decision D4 on visit 1 were 0.250000. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0006",
+    "element": "sid-79AFF435-717A-4C1E-87FA-D002372D2251",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.75"
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 01, suppose the route draw for case c0006 at decision D2 on visit 1 were 0.750000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0006",
+   "target": "D2",
+   "visit": 1,
+   "value": 0.75
+  },
+  "id": "loa-routing_outcome-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 57952,
+  "factual_end": 48761,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0006 at decision D2 on visit 1 were 0.750000. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0008",
+    "element": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "visit": 3,
+    "variable": "branch",
+    "u": "0.1"
+   }
+  ],
+  "query_case": "c0008",
+  "text": "In Run 01, suppose the route draw for case c0008 at decision D1 on visit 3 were 0.100000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0008",
+   "target": "D1",
+   "visit": 3,
+   "value": 0.1
+  },
+  "id": "loa-routing_outcome-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 648663,
+  "factual_end": 381755,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0008 at decision D1 on visit 3 were 0.100000. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0009",
+    "element": "Gateway_0eqakhv",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.6"
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 03, suppose the route draw for case c0009 at decision D3 on visit 1 were 0.600000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0009",
+   "target": "D3",
+   "visit": 1,
+   "value": 0.6
+  },
+  "id": "loa-routing_outcome-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_outcome",
+  "gold": 120751,
+  "factual_end": 120751,
+  "effectful": false,
+  "question": "In Run 03, suppose the route draw for case c0009 at decision D3 on visit 1 were 0.600000. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_0ovqfsq",
+    "probabilities": {
+     "Flow_1e43zqq": "0.5",
+     "Flow_13axscl": "0.5"
+    }
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 01, suppose decision D5 used the probabilities route D5-a 0.5, route D5-b 0.5.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D5",
+   "routes": {
+    "D5-a": 0.5,
+    "D5-b": 0.5
+   }
+  },
+  "id": "loa-routing_probability-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "routing_probability",
+  "gold": 55176,
+  "factual_end": 55176,
+  "effectful": false,
+  "question": "In Run 01, suppose decision D5 used the probabilities route D5-a 0.5, route D5-b 0.5. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-79AFF435-717A-4C1E-87FA-D002372D2251",
+    "probabilities": {
+     "sid-B04F2DE9-EE3E-4AC6-8470-B22F242E48AE": "0.3",
+     "sid-20A44905-F224-4AC2-8D6E-B25B4416D362": "0.7"
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 04, suppose decision D2 used the probabilities route D2-a 0.3, route D2-b 0.7.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D2",
+   "routes": {
+    "D2-a": 0.3,
+    "D2-b": 0.7
+   }
+  },
+  "id": "loa-routing_probability-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "routing_probability",
+  "gold": 133762,
+  "factual_end": 43762,
+  "effectful": true,
+  "question": "In Run 04, suppose decision D2 used the probabilities route D2-a 0.3, route D2-b 0.7. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_0eqakhv",
+    "probabilities": {
+     "Flow_0mpn0oz": "0.7",
+     "Flow_1ltuf1s": "0.3"
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.7, route D3-b 0.3.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D3",
+   "routes": {
+    "D3-a": 0.7,
+    "D3-b": 0.3
+   }
+  },
+  "id": "loa-routing_probability-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 305990,
+  "factual_end": 293473,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.7, route D3-b 0.3. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_06djhup",
+    "probabilities": {
+     "Flow_1cces2a": "0.1",
+     "Flow_0wgg1r6": "0.9"
+    }
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 04, suppose decision D4 used the probabilities route D4-a 0.1, route D4-b 0.9.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D4",
+   "routes": {
+    "D4-a": 0.1,
+    "D4-b": 0.9
+   }
+  },
+  "id": "loa-routing_probability-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "routing_probability",
+  "gold": 128670,
+  "factual_end": 136677,
+  "effectful": true,
+  "question": "In Run 04, suppose decision D4 used the probabilities route D4-a 0.1, route D4-b 0.9. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_06djhup",
+    "probabilities": {
+     "Flow_1cces2a": "0.3",
+     "Flow_0wgg1r6": "0.7"
+    }
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.3, route D4-b 0.7.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D4",
+   "routes": {
+    "D4-a": 0.3,
+    "D4-b": 0.7
+   }
+  },
+  "id": "loa-routing_probability-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 120673,
+  "factual_end": 120673,
+  "effectful": false,
+  "question": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.3, route D4-b 0.7. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_0eqakhv",
+    "probabilities": {
+     "Flow_0mpn0oz": "0.3",
+     "Flow_1ltuf1s": "0.7"
+    }
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 02, suppose decision D3 used the probabilities route D3-a 0.3, route D3-b 0.7.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D3",
+   "routes": {
+    "D3-a": 0.3,
+    "D3-b": 0.7
+   }
+  },
+  "id": "loa-routing_probability-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "routing_probability",
+  "gold": 405068,
+  "factual_end": 401461,
+  "effectful": true,
+  "question": "In Run 02, suppose decision D3 used the probabilities route D3-a 0.3, route D3-b 0.7. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-79AFF435-717A-4C1E-87FA-D002372D2251",
+    "probabilities": {
+     "sid-B04F2DE9-EE3E-4AC6-8470-B22F242E48AE": "0.1",
+     "sid-20A44905-F224-4AC2-8D6E-B25B4416D362": "0.9"
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 04, suppose decision D2 used the probabilities route D2-a 0.1, route D2-b 0.9.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D2",
+   "routes": {
+    "D2-a": 0.1,
+    "D2-b": 0.9
+   }
+  },
+  "id": "loa-routing_probability-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "routing_probability",
+  "gold": 133762,
+  "factual_end": 43762,
+  "effectful": true,
+  "question": "In Run 04, suppose decision D2 used the probabilities route D2-a 0.1, route D2-b 0.9. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_06djhup",
+    "probabilities": {
+     "Flow_1cces2a": "0.1",
+     "Flow_0wgg1r6": "0.9"
+    }
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.1, route D4-b 0.9.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D4",
+   "routes": {
+    "D4-a": 0.1,
+    "D4-b": 0.9
+   }
+  },
+  "id": "loa-routing_probability-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 140390,
+  "factual_end": 120653,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.1, route D4-b 0.9. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "Gateway_0eqakhv",
+    "probabilities": {
+     "Flow_0mpn0oz": "0.7",
+     "Flow_1ltuf1s": "0.3"
+    }
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.7, route D3-b 0.3.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D3",
+   "routes": {
+    "D3-a": 0.7,
+    "D3-b": 0.3
+   }
+  },
+  "id": "loa-routing_probability-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 126882,
+  "factual_end": 122981,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.7, route D3-b 0.3. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-D537CF9E-CB8A-4188-80DE-1CA903F38436",
+    "probabilities": {
+     "sid-92B5B1F2-7B5C-45A9-8C6B-BCC1E0490D99": "0.9",
+     "sid-F4C85F4E-A227-4D05-AE55-5ACD9A2CF15F": "0.1"
+    }
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 02, suppose decision D1 used the probabilities route D1-a 0.9, route D1-b 0.1.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D1",
+   "routes": {
+    "D1-a": 0.9,
+    "D1-b": 0.1
+   }
+  },
+  "id": "loa-routing_probability-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "routing_probability",
+  "gold": 813720,
+  "factual_end": 45624,
+  "effectful": true,
+  "question": "In Run 02, suppose decision D1 used the probabilities route D1-a 0.9, route D1-b 0.1. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Applicant",
+    "count": 2,
+    "from": 0
+   }
+  ],
+  "query_case": "c0000",
+  "text": "In Run 04, suppose the pool Applicant had 2 more workers throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Applicant",
+   "value": 2
+  },
+  "id": "loa-resource_availability-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "resource_availability",
+  "gold": 228914,
+  "factual_end": 228914,
+  "effectful": false,
+  "question": "In Run 04, suppose the pool Applicant had 2 more workers throughout. At what time, in seconds from time 0, would case c0000 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Clerk",
+    "count": 2,
+    "from": 0
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 04, suppose the pool Clerk had 2 more workers throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Clerk",
+   "value": 2
+  },
+  "id": "loa-resource_availability-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 04",
+  "family": "resource_availability",
+  "gold": 225602,
+  "factual_end": 225602,
+  "effectful": false,
+  "question": "In Run 04, suppose the pool Clerk had 2 more workers throughout. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Appraiser",
+    "count": 2,
+    "from": 39600,
+    "to": 54000
+   }
+  ],
+  "query_case": "c0010",
+  "text": "In Run 02, suppose 2 Appraiser workers were unavailable from time 39600 to time 54000.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Appraiser",
+   "value": 2,
+   "effective_from": 39600,
+   "effective_to": 54000
+  },
+  "id": "loa-resource_availability-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "resource_availability",
+  "gold": 122220,
+  "factual_end": 52185,
+  "effectful": true,
+  "question": "In Run 02, suppose 2 Appraiser workers were unavailable from time 39600 to time 54000. At what time, in seconds from time 0, would case c0010 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Appraiser",
+    "count": 2,
+    "from": 39600,
+    "to": 68400
+   }
+  ],
+  "query_case": "c0011",
+  "text": "In Run 03, suppose 2 Appraiser workers were unavailable from time 39600 to time 68400.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Appraiser",
+   "value": 2,
+   "effective_from": 39600,
+   "effective_to": 68400
+  },
+  "id": "loa-resource_availability-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 131696,
+  "factual_end": 53615,
+  "effectful": true,
+  "question": "In Run 03, suppose 2 Appraiser workers were unavailable from time 39600 to time 68400. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Senior Officer",
+    "count": 2,
+    "from": 46800,
+    "to": 75600
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 01, suppose 2 Senior Officer workers were unavailable from time 46800 to time 75600.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Senior Officer",
+   "value": 2,
+   "effective_from": 46800,
+   "effective_to": 75600
+  },
+  "id": "loa-resource_availability-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 127176,
+  "factual_end": 55176,
+  "effectful": true,
+  "question": "In Run 01, suppose 2 Senior Officer workers were unavailable from time 46800 to time 75600. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Appraiser",
+    "count": 2,
+    "from": 39600,
+    "to": 68400
+   }
+  ],
+  "query_case": "c0004",
+  "text": "In Run 02, suppose 2 Appraiser workers were unavailable from time 39600 to time 68400.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Appraiser",
+   "value": 2,
+   "effective_from": 39600,
+   "effective_to": 68400
+  },
+  "id": "loa-resource_availability-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "resource_availability",
+  "gold": 125880,
+  "factual_end": 46680,
+  "effectful": true,
+  "question": "In Run 02, suppose 2 Appraiser workers were unavailable from time 39600 to time 68400. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Appraiser",
+    "count": 2,
+    "from": 39600,
+    "to": 46800
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 01, suppose 2 Appraiser workers were unavailable from time 39600 to time 46800.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Appraiser",
+   "value": 2,
+   "effective_from": 39600,
+   "effective_to": 46800
+  },
+  "id": "loa-resource_availability-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 55744,
+  "factual_end": 48761,
+  "effectful": true,
+  "question": "In Run 01, suppose 2 Appraiser workers were unavailable from time 39600 to time 46800. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Appraiser",
+    "count": 2,
+    "from": 0
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 03, suppose the pool Appraiser had 2 more workers throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Appraiser",
+   "value": 2
+  },
+  "id": "loa-resource_availability-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 125439,
+  "factual_end": 126481,
+  "effectful": true,
+  "question": "In Run 03, suppose the pool Appraiser had 2 more workers throughout. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Senior Officer",
+    "count": 2,
+    "from": 46800,
+    "to": 75600
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 01, suppose 2 Senior Officer workers were unavailable from time 46800 to time 75600.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Senior Officer",
+   "value": 2,
+   "effective_from": 46800,
+   "effective_to": 75600
+  },
+  "id": "loa-resource_availability-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 127176,
+  "factual_end": 55176,
+  "effectful": true,
+  "question": "In Run 01, suppose 2 Senior Officer workers were unavailable from time 46800 to time 75600. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "AML Investigator",
+    "count": 2,
+    "from": 39600,
+    "to": 54000
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 03, suppose 2 AML Investigator workers were unavailable from time 39600 to time 54000.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "AML Investigator",
+   "value": 2,
+   "effective_from": 39600,
+   "effective_to": 54000
+  },
+  "id": "loa-resource_availability-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 119688,
+  "factual_end": 47688,
+  "effectful": true,
+  "question": "In Run 03, suppose 2 AML Investigator workers were unavailable from time 39600 to time 54000. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0002"
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 02, suppose case c0002 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0002"
+  },
+  "id": "loa-case_set-00",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 51022,
+  "factual_end": 51022,
+  "effectful": false,
+  "question": "In Run 02, suppose case c0002 had never arrived. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0005"
+   }
+  ],
+  "query_case": "c0008",
+  "text": "In Run 01, suppose case c0005 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0005"
+  },
+  "id": "loa-case_set-01",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 01",
+  "family": "case_set",
+  "gold": 381755,
+  "factual_end": 381755,
+  "effectful": false,
+  "question": "In Run 01, suppose case c0005 had never arrived. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0012"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 02, suppose case c0012 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0012"
+  },
+  "id": "loa-case_set-02",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 125686,
+  "factual_end": 125932,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0012 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0001"
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 02, suppose case c0001 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0001"
+  },
+  "id": "loa-case_set-03",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 45538,
+  "factual_end": 45624,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0001 had never arrived. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 02, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "loa-case_set-04",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 125752,
+  "factual_end": 125932,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0011"
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 03, suppose case c0011 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0011"
+  },
+  "id": "loa-case_set-05",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 133440,
+  "factual_end": 120751,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0011 had never arrived. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0013"
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 02, suppose case c0013 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0013"
+  },
+  "id": "loa-case_set-06",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 55533,
+  "factual_end": 55615,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0013 had never arrived. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0009"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 02, suppose case c0009 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0009"
+  },
+  "id": "loa-case_set-07",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 125752,
+  "factual_end": 125932,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0009 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 02, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "loa-case_set-08",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 125752,
+  "factual_end": 125932,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 03, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "loa-case_set-09",
+  "doc": "workflow_loan_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 125544,
+  "factual_end": 126481,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-A4A84A0D-A58B-4650-A3F2-D1967DB8C146",
+    "seconds": 402,
+    "selector": {
+     "case": "c0004",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0004",
+  "text": "In Run 04, suppose case c0004 needed 402 seconds of work for the activity 'Pack the drugs (Production)' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0004",
+   "target": "Pack the drugs (Production)",
+   "visit": 1,
+   "value": 402
+  },
+  "id": "pha-activity_duration-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 30792,
+  "factual_end": 30591,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0004 needed 402 seconds of work for the activity 'Pack the drugs (Production)' on visit 1. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-B116665C-63B7-4D81-A47A-358CE898E122",
+    "seconds": 3691,
+    "selector": {
+     "case": "c0014",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 01, suppose case c0014 needed 3691 seconds of work for the activity 'Process drop-off' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0014",
+   "target": "Process drop-off",
+   "visit": 1,
+   "value": 3691
+  },
+  "id": "pha-activity_duration-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 34943,
+  "factual_end": 31343,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0014 needed 3691 seconds of work for the activity 'Process drop-off' on visit 1. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-6305CEC6-25BA-4B0F-8CF1-2AD6F76D8B9E",
+    "seconds": 3776,
+    "selector": {
+     "case": "c0001",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 01, suppose case c0001 needed 3776 seconds of work for the activity 'Pick-up' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0001",
+   "target": "Pick-up",
+   "visit": 1,
+   "value": 3776
+  },
+  "id": "pha-activity_duration-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 33914,
+  "factual_end": 30314,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0001 needed 3776 seconds of work for the activity 'Pick-up' on visit 1. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+    "seconds": 2,
+    "selector": {
+     "case": "c0013",
+     "visit": 3
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose case c0013 needed 2 seconds of work for the activity 'Check DUR' on visit 3.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0013",
+   "target": "Check DUR",
+   "visit": 3,
+   "value": 2
+  },
+  "id": "pha-activity_duration-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 31853,
+  "factual_end": 31853,
+  "effectful": false,
+  "question": "In Run 04, suppose case c0013 needed 2 seconds of work for the activity 'Check DUR' on visit 3. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 1,
+    "selector": {
+     "case": "c0011",
+     "visit": 3
+    }
+   }
+  ],
+  "query_case": "c0011",
+  "text": "In Run 01, suppose case c0011 needed 1 seconds of work for the activity 'Check if refill is allowed' on visit 3.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0011",
+   "target": "Check if refill is allowed",
+   "visit": 3,
+   "value": 1
+  },
+  "id": "pha-activity_duration-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 31554,
+  "factual_end": 31554,
+  "effectful": false,
+  "question": "In Run 01, suppose case c0011 needed 1 seconds of work for the activity 'Check if refill is allowed' on visit 3. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-B9F72F21-DC8A-4873-9E04-B19ED7381ADC",
+    "seconds": 320,
+    "selector": {
+     "case": "c0009",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 02, suppose case c0009 needed 320 seconds of work for the activity 'Enter prescription details' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0009",
+   "target": "Enter prescription details",
+   "visit": 1,
+   "value": 320
+  },
+  "id": "pha-activity_duration-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "activity_duration",
+  "gold": 30937,
+  "factual_end": 30777,
+  "effectful": true,
+  "question": "In Run 02, suppose case c0009 needed 320 seconds of work for the activity 'Enter prescription details' on visit 1. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-A4A84A0D-A58B-4650-A3F2-D1967DB8C146",
+    "seconds": 1,
+    "selector": {
+     "case": "c0014",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 04, suppose case c0014 needed 1 seconds of work for the activity 'Pack the drugs (Production)' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0014",
+   "target": "Pack the drugs (Production)",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "pha-activity_duration-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 32293,
+  "factual_end": 32413,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0014 needed 1 seconds of work for the activity 'Pack the drugs (Production)' on visit 1. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-A4A84A0D-A58B-4650-A3F2-D1967DB8C146",
+    "seconds": 368,
+    "selector": {
+     "case": "c0005",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 03, suppose case c0005 needed 368 seconds of work for the activity 'Pack the drugs (Production)' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0005",
+   "target": "Pack the drugs (Production)",
+   "visit": 1,
+   "value": 368
+  },
+  "id": "pha-activity_duration-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "activity_duration",
+  "gold": 32762,
+  "factual_end": 32578,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0005 needed 368 seconds of work for the activity 'Pack the drugs (Production)' on visit 1. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-B9F72F21-DC8A-4873-9E04-B19ED7381ADC",
+    "seconds": 304,
+    "selector": {
+     "case": "c0010",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0010",
+  "text": "In Run 04, suppose case c0010 needed 304 seconds of work for the activity 'Enter prescription details' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0010",
+   "target": "Enter prescription details",
+   "visit": 1,
+   "value": 304
+  },
+  "id": "pha-activity_duration-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "activity_duration",
+  "gold": 31814,
+  "factual_end": 31694,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0010 needed 304 seconds of work for the activity 'Enter prescription details' on visit 1. At what time, in seconds from time 0, would case c0010 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-376F3213-4B1D-4DAB-89CC-60F051627586",
+    "seconds": 1,
+    "selector": {
+     "case": "c0009",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 01, suppose case c0009 needed 1 seconds of work for the activity 'Resolve insurance issues manually' on visit 1.",
+  "binding": {
+   "family": "activity_duration",
+   "case": "c0009",
+   "target": "Resolve insurance issues manually",
+   "visit": 1,
+   "value": 1
+  },
+  "id": "pha-activity_duration-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "activity_duration",
+  "gold": 31180,
+  "factual_end": 31501,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0009 needed 1 seconds of work for the activity 'Resolve insurance issues manually' on visit 1. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1hrnfk3",
+    "seconds": 3781,
+    "selector": {
+     "case": "c0002",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 01, suppose the wait W2 for case c0002 lasted 3781 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0002",
+   "target": "W2",
+   "visit": 1,
+   "value": 3781
+  },
+  "id": "pha-timer_delay-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "timer_delay",
+  "gold": 34024,
+  "factual_end": 30596,
+  "effectful": true,
+  "question": "In Run 01, suppose the wait W2 for case c0002 lasted 3781 seconds on visit 1. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1hrnfk3",
+    "seconds": 368,
+    "selector": {
+     "case": "c0005",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 03, suppose the wait W2 for case c0005 lasted 368 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0005",
+   "target": "W2",
+   "visit": 1,
+   "value": 368
+  },
+  "id": "pha-timer_delay-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 32762,
+  "factual_end": 32578,
+  "effectful": true,
+  "question": "In Run 03, suppose the wait W2 for case c0005 lasted 368 seconds on visit 1. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1hrnfk3",
+    "seconds": 368,
+    "selector": {
+     "case": "c0007",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 04, suppose the wait W2 for case c0007 lasted 368 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0007",
+   "target": "W2",
+   "visit": 1,
+   "value": 368
+  },
+  "id": "pha-timer_delay-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 31327,
+  "factual_end": 31039,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W2 for case c0007 lasted 368 seconds on visit 1. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 0,
+    "selector": {
+     "case": "c0013",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 03, suppose the wait W1 for case c0013 lasted 0 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0013",
+   "target": "W1",
+   "visit": 1,
+   "value": 0
+  },
+  "id": "pha-timer_delay-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 31727,
+  "factual_end": 31876,
+  "effectful": true,
+  "question": "In Run 03, suppose the wait W1 for case c0013 lasted 0 seconds on visit 1. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_1hrnfk3",
+    "seconds": 3785,
+    "selector": {
+     "case": "c0006",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 01, suppose the wait W2 for case c0006 lasted 3785 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0006",
+   "target": "W2",
+   "visit": 1,
+   "value": 3785
+  },
+  "id": "pha-timer_delay-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "timer_delay",
+  "gold": 34443,
+  "factual_end": 30843,
+  "effectful": true,
+  "question": "In Run 01, suppose the wait W2 for case c0006 lasted 3785 seconds on visit 1. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 3798,
+    "selector": {
+     "case": "c0004",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0004",
+  "text": "In Run 03, suppose the wait W1 for case c0004 lasted 3798 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0004",
+   "target": "W1",
+   "visit": 1,
+   "value": 3798
+  },
+  "id": "pha-timer_delay-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 34597,
+  "factual_end": 31557,
+  "effectful": true,
+  "question": "In Run 03, suppose the wait W1 for case c0004 lasted 3798 seconds on visit 1. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0jj7p9e",
+    "seconds": 696,
+    "selector": {
+     "case": "c0013",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose the wait W3 for case c0013 lasted 696 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0013",
+   "target": "W3",
+   "visit": 1,
+   "value": 696
+  },
+  "id": "pha-timer_delay-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 32201,
+  "factual_end": 31853,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W3 for case c0013 lasted 696 seconds on visit 1. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 370,
+    "selector": {
+     "case": "c0010",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0010",
+  "text": "In Run 04, suppose the wait W1 for case c0010 lasted 370 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0010",
+   "target": "W1",
+   "visit": 1,
+   "value": 370
+  },
+  "id": "pha-timer_delay-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "timer_delay",
+  "gold": 31817,
+  "factual_end": 31694,
+  "effectful": true,
+  "question": "In Run 04, suppose the wait W1 for case c0010 lasted 370 seconds on visit 1. At what time, in seconds from time 0, would case c0010 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 396,
+    "selector": {
+     "case": "c0004",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0004",
+  "text": "In Run 03, suppose the wait W1 for case c0004 lasted 396 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0004",
+   "target": "W1",
+   "visit": 1,
+   "value": 396
+  },
+  "id": "pha-timer_delay-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 31557,
+  "factual_end": 31557,
+  "effectful": false,
+  "question": "In Run 03, suppose the wait W1 for case c0004 lasted 396 seconds on visit 1. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "timer_set",
+    "timer": "Event_0f8q4fm",
+    "seconds": 0,
+    "selector": {
+     "case": "c0012",
+     "visit": 1
+    }
+   }
+  ],
+  "query_case": "c0012",
+  "text": "In Run 03, suppose the wait W1 for case c0012 lasted 0 seconds on visit 1.",
+  "binding": {
+   "family": "timer_delay",
+   "case": "c0012",
+   "target": "W1",
+   "visit": 1,
+   "value": 0
+  },
+  "id": "pha-timer_delay-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "timer_delay",
+  "gold": 31674,
+  "factual_end": 31674,
+  "effectful": false,
+  "question": "In Run 03, suppose the wait W1 for case c0012 lasted 0 seconds on visit 1. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0002",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 03, suppose the route draw for case c0002 at decision D7 on visit 1 were 0.025000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0002",
+   "target": "D7",
+   "visit": 1,
+   "value": 0.025
+  },
+  "id": "pha-routing_outcome-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_outcome",
+  "gold": 31766,
+  "factual_end": 31259,
+  "effectful": true,
+  "question": "In Run 03, suppose the route draw for case c0002 at decision D7 on visit 1 were 0.025000. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0005",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 04, suppose the route draw for case c0005 at decision D7 on visit 1 were 0.025000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0005",
+   "target": "D7",
+   "visit": 1,
+   "value": 0.025
+  },
+  "id": "pha-routing_outcome-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "routing_outcome",
+  "gold": 32507,
+  "factual_end": 32061,
+  "effectful": true,
+  "question": "In Run 04, suppose the route draw for case c0005 at decision D7 on visit 1 were 0.025000. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0006",
+    "element": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.035"
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 01, suppose the route draw for case c0006 at decision D6 on visit 1 were 0.035000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0006",
+   "target": "D6",
+   "visit": 1,
+   "value": 0.035
+  },
+  "id": "pha-routing_outcome-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 30450,
+  "factual_end": 30843,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0006 at decision D6 on visit 1 were 0.035000. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0013",
+    "element": "sid-37213186-E64B-45FA-B7D2-57AB25FA1663",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.915"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 02, suppose the route draw for case c0013 at decision D5 on visit 1 were 0.915000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0013",
+   "target": "D5",
+   "visit": 1,
+   "value": 0.915
+  },
+  "id": "pha-routing_outcome-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "routing_outcome",
+  "gold": 32159,
+  "factual_end": 31845,
+  "effectful": true,
+  "question": "In Run 02, suppose the route draw for case c0013 at decision D5 on visit 1 were 0.915000. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0001",
+    "element": "sid-37213186-E64B-45FA-B7D2-57AB25FA1663",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.915"
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 01, suppose the route draw for case c0001 at decision D5 on visit 1 were 0.915000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0001",
+   "target": "D5",
+   "visit": 1,
+   "value": 0.915
+  },
+  "id": "pha-routing_outcome-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 30625,
+  "factual_end": 30314,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0001 at decision D5 on visit 1 were 0.915000. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0002",
+    "element": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.035"
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 04, suppose the route draw for case c0002 at decision D6 on visit 1 were 0.035000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0002",
+   "target": "D6",
+   "visit": 1,
+   "value": 0.035
+  },
+  "id": "pha-routing_outcome-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "routing_outcome",
+  "gold": 31182,
+  "factual_end": 31671,
+  "effectful": true,
+  "question": "In Run 04, suppose the route draw for case c0002 at decision D6 on visit 1 were 0.035000. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0014",
+    "element": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.535"
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 01, suppose the route draw for case c0014 at decision D6 on visit 1 were 0.535000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0014",
+   "target": "D6",
+   "visit": 1,
+   "value": 0.535
+  },
+  "id": "pha-routing_outcome-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_outcome",
+  "gold": 31802,
+  "factual_end": 31343,
+  "effectful": true,
+  "question": "In Run 01, suppose the route draw for case c0014 at decision D6 on visit 1 were 0.535000. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0003",
+    "element": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.035"
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 04, suppose the route draw for case c0003 at decision D6 on visit 1 were 0.035000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0003",
+   "target": "D6",
+   "visit": 1,
+   "value": 0.035
+  },
+  "id": "pha-routing_outcome-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "routing_outcome",
+  "gold": 30033,
+  "factual_end": 30457,
+  "effectful": true,
+  "question": "In Run 04, suppose the route draw for case c0003 at decision D6 on visit 1 were 0.035000. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0003",
+    "element": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.025"
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 03, suppose the route draw for case c0003 at decision D7 on visit 1 were 0.025000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0003",
+   "target": "D7",
+   "visit": 1,
+   "value": 0.025
+  },
+  "id": "pha-routing_outcome-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_outcome",
+  "gold": 31084,
+  "factual_end": 31084,
+  "effectful": false,
+  "question": "In Run 03, suppose the route draw for case c0003 at decision D7 on visit 1 were 0.025000. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [],
+  "draw_overrides": [
+   {
+    "case": "c0008",
+    "element": "sid-43BB33DE-0C27-4B78-9FA6-BF79AB7F55A6",
+    "visit": 1,
+    "variable": "branch",
+    "u": "0.4"
+   }
+  ],
+  "query_case": "c0008",
+  "text": "In Run 02, suppose the route draw for case c0008 at decision D3 on visit 1 were 0.400000.",
+  "binding": {
+   "family": "routing_outcome",
+   "case": "c0008",
+   "target": "D3",
+   "visit": 1,
+   "value": 0.4
+  },
+  "id": "pha-routing_outcome-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "routing_outcome",
+  "gold": 31191,
+  "factual_end": 31191,
+  "effectful": false,
+  "question": "In Run 02, suppose the route draw for case c0008 at decision D3 on visit 1 were 0.400000. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "probabilities": {
+     "sid-29FF0F91-2739-4B3D-AB06-1B4AC47B2A61": "0.7",
+     "sid-1138993B-6AC7-4AC7-A3A0-1C026F2C7D1F": "0.3"
+    }
+   }
+  ],
+  "query_case": "c0011",
+  "text": "In Run 03, suppose decision D6 used the probabilities route D6-a 0.7, route D6-b 0.3.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D6",
+   "routes": {
+    "D6-a": 0.7,
+    "D6-b": 0.3
+   }
+  },
+  "id": "pha-routing_probability-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 31218,
+  "factual_end": 31696,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D6 used the probabilities route D6-a 0.7, route D6-b 0.3. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "probabilities": {
+     "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71": "0.7",
+     "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5": "0.3"
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 04, suppose decision D7 used the probabilities route D7-a 0.7, route D7-b 0.3.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D7",
+   "routes": {
+    "D7-a": 0.7,
+    "D7-b": 0.3
+   }
+  },
+  "id": "pha-routing_probability-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "routing_probability",
+  "gold": 32272,
+  "factual_end": 32061,
+  "effectful": true,
+  "question": "In Run 04, suppose decision D7 used the probabilities route D7-a 0.7, route D7-b 0.3. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-7BC2AC26-117F-4F44-842E-D70A37254F7C",
+    "probabilities": {
+     "sid-C56D0112-5EB3-4D6B-8B56-28502BD6FB82": "0.9",
+     "sid-B0617E7B-8279-4A03-A83A-CB445C948139": "0.1"
+    }
+   }
+  ],
+  "query_case": "c0000",
+  "text": "In Run 01, suppose decision D4 used the probabilities route D4-a 0.9, route D4-b 0.1.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D4",
+   "routes": {
+    "D4-a": 0.9,
+    "D4-b": 0.1
+   }
+  },
+  "id": "pha-routing_probability-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_probability",
+  "gold": 30359,
+  "factual_end": 30359,
+  "effectful": false,
+  "question": "In Run 01, suppose decision D4 used the probabilities route D4-a 0.9, route D4-b 0.1. At what time, in seconds from time 0, would case c0000 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-43BB33DE-0C27-4B78-9FA6-BF79AB7F55A6",
+    "probabilities": {
+     "sid-1CA7F183-E7A7-4D18-ACB9-601580147891": "0.3",
+     "sid-DF253452-AF1D-4759-ADF4-C3B7A2DE42FC": "0.7"
+    }
+   }
+  ],
+  "query_case": "c0008",
+  "text": "In Run 01, suppose decision D3 used the probabilities route D3-a 0.3, route D3-b 0.7.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D3",
+   "routes": {
+    "D3-a": 0.3,
+    "D3-b": 0.7
+   }
+  },
+  "id": "pha-routing_probability-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_probability",
+  "gold": 31420,
+  "factual_end": 31057,
+  "effectful": true,
+  "question": "In Run 01, suppose decision D3 used the probabilities route D3-a 0.3, route D3-b 0.7. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "probabilities": {
+     "sid-29FF0F91-2739-4B3D-AB06-1B4AC47B2A61": "0.9",
+     "sid-1138993B-6AC7-4AC7-A3A0-1C026F2C7D1F": "0.1"
+    }
+   }
+  ],
+  "query_case": "c0011",
+  "text": "In Run 01, suppose decision D6 used the probabilities route D6-a 0.9, route D6-b 0.1.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D6",
+   "routes": {
+    "D6-a": 0.9,
+    "D6-b": 0.1
+   }
+  },
+  "id": "pha-routing_probability-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "routing_probability",
+  "gold": 31472,
+  "factual_end": 31554,
+  "effectful": true,
+  "question": "In Run 01, suppose decision D6 used the probabilities route D6-a 0.9, route D6-b 0.1. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-FEC69A74-A114-4118-8057-2CC467F9BC26",
+    "probabilities": {
+     "sid-5557ED54-1A2C-4EC2-8F49-48C111186F71": "0.3",
+     "sid-61D66A8C-4729-4335-A5B8-F02BD7FEE5E5": "0.7"
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 02, suppose decision D7 used the probabilities route D7-a 0.3, route D7-b 0.7.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D7",
+   "routes": {
+    "D7-a": 0.3,
+    "D7-b": 0.7
+   }
+  },
+  "id": "pha-routing_probability-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "routing_probability",
+  "gold": 31976,
+  "factual_end": 31968,
+  "effectful": true,
+  "question": "In Run 02, suppose decision D7 used the probabilities route D7-a 0.3, route D7-b 0.7. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-0D31F8F8-A930-4F67-8674-73FD4FD29E64",
+    "probabilities": {
+     "sid-A960095B-4484-4ECB-A486-70A64BB4C8D8": "0.9",
+     "Flow_0yqt7bu": "0.1"
+    }
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 03, suppose decision D2 used the probabilities route D2-a 0.9, route D2-b 0.1.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D2",
+   "routes": {
+    "D2-a": 0.9,
+    "D2-b": 0.1
+   }
+  },
+  "id": "pha-routing_probability-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 32578,
+  "factual_end": 32578,
+  "effectful": false,
+  "question": "In Run 03, suppose decision D2 used the probabilities route D2-a 0.9, route D2-b 0.1. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-43BB33DE-0C27-4B78-9FA6-BF79AB7F55A6",
+    "probabilities": {
+     "sid-1CA7F183-E7A7-4D18-ACB9-601580147891": "0.9",
+     "sid-DF253452-AF1D-4759-ADF4-C3B7A2DE42FC": "0.1"
+    }
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.9, route D3-b 0.1.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D3",
+   "routes": {
+    "D3-a": 0.9,
+    "D3-b": 0.1
+   }
+  },
+  "id": "pha-routing_probability-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 31820,
+  "factual_end": 31835,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D3 used the probabilities route D3-a 0.9, route D3-b 0.1. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+    "probabilities": {
+     "sid-29FF0F91-2739-4B3D-AB06-1B4AC47B2A61": "0.5",
+     "sid-1138993B-6AC7-4AC7-A3A0-1C026F2C7D1F": "0.5"
+    }
+   }
+  ],
+  "query_case": "c0010",
+  "text": "In Run 03, suppose decision D6 used the probabilities route D6-a 0.5, route D6-b 0.5.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D6",
+   "routes": {
+    "D6-a": 0.5,
+    "D6-b": 0.5
+   }
+  },
+  "id": "pha-routing_probability-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 30972,
+  "factual_end": 31505,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D6 used the probabilities route D6-a 0.5, route D6-b 0.5. At what time, in seconds from time 0, would case c0010 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "routing_set",
+    "gateway": "sid-7BC2AC26-117F-4F44-842E-D70A37254F7C",
+    "probabilities": {
+     "sid-C56D0112-5EB3-4D6B-8B56-28502BD6FB82": "0.5",
+     "sid-B0617E7B-8279-4A03-A83A-CB445C948139": "0.5"
+    }
+   }
+  ],
+  "query_case": "c0001",
+  "text": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.5, route D4-b 0.5.",
+  "binding": {
+   "family": "routing_probability",
+   "target": "D4",
+   "routes": {
+    "D4-a": 0.5,
+    "D4-b": 0.5
+   }
+  },
+  "id": "pha-routing_probability-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "routing_probability",
+  "gold": 32007,
+  "factual_end": 31420,
+  "effectful": true,
+  "question": "In Run 03, suppose decision D4 used the probabilities route D4-a 0.5, route D4-b 0.5. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Pharmacy System",
+    "count": 1,
+    "from": 28800,
+    "to": 36000
+   }
+  ],
+  "query_case": "c0012",
+  "text": "In Run 04, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 36000.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Pharmacy System",
+   "value": 1,
+   "effective_from": 28800,
+   "effective_to": 36000
+  },
+  "id": "pha-resource_availability-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "resource_availability",
+  "gold": 37272,
+  "factual_end": 31566,
+  "effectful": true,
+  "question": "In Run 04, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 36000. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Pharmacist",
+    "count": 1,
+    "from": 28800,
+    "to": 36000
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 01, suppose 1 Pharmacist worker was unavailable from time 28800 to time 36000.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Pharmacist",
+   "value": 1,
+   "effective_from": 28800,
+   "effective_to": 36000
+  },
+  "id": "pha-resource_availability-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 37480,
+  "factual_end": 32247,
+  "effectful": true,
+  "question": "In Run 01, suppose 1 Pharmacist worker was unavailable from time 28800 to time 36000. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 2,
+    "from": 0
+   }
+  ],
+  "query_case": "c0006",
+  "text": "In Run 04, suppose the pool Technician had 2 more workers throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Technician",
+   "value": 2
+  },
+  "id": "pha-resource_availability-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "resource_availability",
+  "gold": 30945,
+  "factual_end": 30945,
+  "effectful": false,
+  "question": "In Run 04, suppose the pool Technician had 2 more workers throughout. At what time, in seconds from time 0, would case c0006 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Pharmacy System",
+    "count": 1,
+    "from": 28800,
+    "to": 43200
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 43200.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Pharmacy System",
+   "value": 1,
+   "effective_from": 28800,
+   "effective_to": 43200
+  },
+  "id": "pha-resource_availability-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "resource_availability",
+  "gold": 44218,
+  "factual_end": 31853,
+  "effectful": true,
+  "question": "In Run 04, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 43200. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Pharmacy System",
+    "count": 1,
+    "from": 0
+   }
+  ],
+  "query_case": "c0007",
+  "text": "In Run 01, suppose the pool Pharmacy System had 1 more worker throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Pharmacy System",
+   "value": 1
+  },
+  "id": "pha-resource_availability-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 32247,
+  "factual_end": 32247,
+  "effectful": false,
+  "question": "In Run 01, suppose the pool Pharmacy System had 1 more worker throughout. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Technician",
+    "count": 1,
+    "from": 0
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 03, suppose the pool Technician had 1 more worker throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Technician",
+   "value": 1
+  },
+  "id": "pha-resource_availability-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 31196,
+  "factual_end": 31259,
+  "effectful": true,
+  "question": "In Run 03, suppose the pool Technician had 1 more worker throughout. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Pharmacy System",
+    "count": 1,
+    "from": 28800,
+    "to": 36000
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 02, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 36000.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Pharmacy System",
+   "value": 1,
+   "effective_from": 28800,
+   "effective_to": 36000
+  },
+  "id": "pha-resource_availability-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "resource_availability",
+  "gold": 36557,
+  "factual_end": 30777,
+  "effectful": true,
+  "question": "In Run 02, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 36000. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Pharmacy System",
+    "count": 1,
+    "from": 28800,
+    "to": 57600
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 03, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 57600.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Pharmacy System",
+   "value": 1,
+   "effective_from": 28800,
+   "effective_to": 57600
+  },
+  "id": "pha-resource_availability-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 59189,
+  "factual_end": 31835,
+  "effectful": true,
+  "question": "In Run 03, suppose 1 Pharmacy System worker was unavailable from time 28800 to time 57600. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_unavailable",
+    "pool": "Technician",
+    "count": 2,
+    "from": 28800,
+    "to": 57600
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 03, suppose 2 Technician workers were unavailable from time 28800 to time 57600.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "unavailable",
+   "target": "Technician",
+   "value": 2,
+   "effective_from": 28800,
+   "effective_to": 57600
+  },
+  "id": "pha-resource_availability-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "resource_availability",
+  "gold": 31460,
+  "factual_end": 31259,
+  "effectful": true,
+  "question": "In Run 03, suppose 2 Technician workers were unavailable from time 28800 to time 57600. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "resource_add",
+    "pool": "Pharmacist",
+    "count": 2,
+    "from": 0
+   }
+  ],
+  "query_case": "c0005",
+  "text": "In Run 01, suppose the pool Pharmacist had 2 more workers throughout.",
+  "binding": {
+   "family": "resource_availability",
+   "op": "add_workers",
+   "target": "Pharmacist",
+   "value": 2
+  },
+  "id": "pha-resource_availability-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "resource_availability",
+  "gold": 31222,
+  "factual_end": 31252,
+  "effectful": true,
+  "question": "In Run 01, suppose the pool Pharmacist had 2 more workers throughout. At what time, in seconds from time 0, would case c0005 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0007"
+   }
+  ],
+  "query_case": "c0004",
+  "text": "In Run 04, suppose case c0007 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0007"
+  },
+  "id": "pha-case_set-00",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "case_set",
+  "gold": 30591,
+  "factual_end": 30591,
+  "effectful": false,
+  "question": "In Run 04, suppose case c0007 had never arrived. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0014"
+   }
+  ],
+  "query_case": "c0012",
+  "text": "In Run 02, suppose case c0014 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0014"
+  },
+  "id": "pha-case_set-01",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 02",
+  "family": "case_set",
+  "gold": 31573,
+  "factual_end": 31573,
+  "effectful": false,
+  "question": "In Run 02, suppose case c0014 had never arrived. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0009",
+  "text": "In Run 03, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "pha-case_set-02",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 31336,
+  "factual_end": 31361,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "pha-case_set-03",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "case_set",
+  "gold": 31794,
+  "factual_end": 31853,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0002"
+   }
+  ],
+  "query_case": "c0011",
+  "text": "In Run 03, suppose case c0002 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0002"
+  },
+  "id": "pha-case_set-04",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 31633,
+  "factual_end": 31696,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0002 had never arrived. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0005"
+   }
+  ],
+  "query_case": "c0002",
+  "text": "In Run 01, suppose case c0005 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0005"
+  },
+  "id": "pha-case_set-05",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 01",
+  "family": "case_set",
+  "gold": 30446,
+  "factual_end": 30596,
+  "effectful": true,
+  "question": "In Run 01, suppose case c0005 had never arrived. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0010"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 04, suppose case c0010 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0010"
+  },
+  "id": "pha-case_set-06",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "case_set",
+  "gold": 31794,
+  "factual_end": 31853,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0010 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0002"
+   }
+  ],
+  "query_case": "c0003",
+  "text": "In Run 03, suppose case c0002 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0002"
+  },
+  "id": "pha-case_set-07",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 30540,
+  "factual_end": 31084,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0002 had never arrived. At what time, in seconds from time 0, would case c0003 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0003"
+   }
+  ],
+  "query_case": "c0013",
+  "text": "In Run 03, suppose case c0003 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0003"
+  },
+  "id": "pha-case_set-08",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 03",
+  "family": "case_set",
+  "gold": 31803,
+  "factual_end": 31876,
+  "effectful": true,
+  "question": "In Run 03, suppose case c0003 had never arrived. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "interventions": [
+   {
+    "type": "case_remove",
+    "case": "c0002"
+   }
+  ],
+  "query_case": "c0014",
+  "text": "In Run 04, suppose case c0002 had never arrived.",
+  "binding": {
+   "family": "case_set",
+   "op": "remove",
+   "case": "c0002"
+  },
+  "id": "pha-case_set-09",
+  "doc": "workflow_pharmacy_dev",
+  "scope": "Run 04",
+  "family": "case_set",
+  "gold": 32364,
+  "factual_end": 32413,
+  "effectful": true,
+  "question": "In Run 04, suppose case c0002 had never arrived. At what time, in seconds from time 0, would case c0014 end?"
+ }
+]

@@ -1,0 +1,828 @@
+[
+ {
+  "system": "b0",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_loan_dev",
+  "build": "b2",
+  "acceptance_f1": 0.408,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.103,
+    "records_true": 216,
+    "records_predicted": 75,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.103,
+    "records_true": 201,
+    "records_predicted": 70,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "b0",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_loan_dev",
+  "build": "b3",
+  "acceptance_f1": 0.729,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.701,
+    "records_true": 216,
+    "records_predicted": 155,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.496,
+    "records_true": 216,
+    "records_predicted": 155,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 9,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.701,
+    "records_true": 216,
+    "records_predicted": 155,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.714,
+    "records_true": 201,
+    "records_predicted": 149,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_loan_dev",
+  "build": "b1",
+  "acceptance_f1": 0.404,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.0,
+    "records_true": 216,
+    "records_predicted": 375,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.0,
+    "records_true": 201,
+    "records_predicted": 350,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.0,
+    "records_true": 216,
+    "records_predicted": 375,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 2,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_loan_dev",
+  "build": "b2",
+  "acceptance_f1": 0.922,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.858,
+    "records_true": 216,
+    "records_predicted": 178,
+    "cases_exact": 12,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.897,
+    "records_true": 201,
+    "records_predicted": 167,
+    "cases_exact": 12,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.858,
+    "records_true": 216,
+    "records_predicted": 178,
+    "cases_exact": 12,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 2,
+    "changed_cases_exact": 2,
+    "truly_changed_at_all": true
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_loan_dev",
+  "build": "b3",
+  "acceptance_f1": 0.916,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.858,
+    "records_true": 216,
+    "records_predicted": 178,
+    "cases_exact": 12,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.897,
+    "records_true": 201,
+    "records_predicted": 167,
+    "cases_exact": 12,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.858,
+    "records_true": 216,
+    "records_predicted": 178,
+    "cases_exact": 12,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 2,
+    "changed_cases_exact": 2,
+    "truly_changed_at_all": true
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_loan_dev",
+  "build": "b1",
+  "acceptance_f1": 0.671,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.676,
+    "records_true": 201,
+    "records_predicted": 225,
+    "cases_exact": 8,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.698,
+    "records_true": 187,
+    "records_predicted": 211,
+    "cases_exact": 8,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_loan_dev",
+  "build": "b2",
+  "acceptance_f1": 0.65,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.665,
+    "records_true": 216,
+    "records_predicted": 244,
+    "cases_exact": 8,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.457,
+    "records_true": 216,
+    "records_predicted": 244,
+    "cases_exact": 3,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 9,
+    "changed_cases_exact": 1,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.665,
+    "records_true": 216,
+    "records_predicted": 244,
+    "cases_exact": 8,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 1,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.688,
+    "records_true": 201,
+    "records_predicted": 229,
+    "cases_exact": 8,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "qwen3.5-9b",
+  "doc": "workflow_loan_dev",
+  "build": "b1",
+  "acceptance_f1": 0.453,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.002,
+    "records_true": 201,
+    "records_predicted": 13487,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.003,
+    "records_true": 187,
+    "records_predicted": 9104,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.002,
+    "records_true": 201,
+    "records_predicted": 13487,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 2,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "qwen3.5-9b",
+  "doc": "workflow_loan_dev",
+  "build": "b2",
+  "acceptance_f1": 0.605,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.097,
+    "records_true": 201,
+    "records_predicted": 128,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.097,
+    "records_true": 187,
+    "records_predicted": 123,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.097,
+    "records_true": 201,
+    "records_predicted": 128,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 2,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   }
+  }
+ },
+ {
+  "system": "b0",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b3",
+  "acceptance_f1": 1.0,
+  "tests": {
+   "factual": {
+    "exact_f1": 1.0,
+    "records_true": 544,
+    "records_predicted": 544,
+    "cases_exact": 15,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 1.0,
+    "records_true": 508,
+    "records_predicted": 508,
+    "cases_exact": 14,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 1.0,
+    "records_true": 544,
+    "records_predicted": 544,
+    "cases_exact": 15,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   }
+  }
+ },
+ {
+  "system": "b0",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b1",
+  "acceptance_f1": 0.863,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.709,
+    "records_true": 257,
+    "records_predicted": 242,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.709,
+    "records_true": 257,
+    "records_predicted": 242,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 10,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.709,
+    "records_true": 257,
+    "records_predicted": 242,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.708,
+    "records_true": 240,
+    "records_predicted": 226,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "b0",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b3",
+  "acceptance_f1": 0.64,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.68,
+    "records_true": 257,
+    "records_predicted": 140,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.68,
+    "records_true": 257,
+    "records_predicted": 140,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 10,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.68,
+    "records_true": 257,
+    "records_predicted": 140,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.679,
+    "records_true": 240,
+    "records_predicted": 131,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b2",
+  "acceptance_f1": 0.772,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.694,
+    "records_true": 422,
+    "records_predicted": 267,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.693,
+    "records_true": 394,
+    "records_predicted": 252,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 0.694,
+    "records_true": 422,
+    "records_predicted": 267,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gemma-31b-ollama",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b3",
+  "acceptance_f1": 1.0,
+  "tests": {
+   "factual": {
+    "exact_f1": 1.0,
+    "records_true": 422,
+    "records_predicted": 422,
+    "cases_exact": 15,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 1.0,
+    "records_true": 394,
+    "records_predicted": 394,
+    "cases_exact": 14,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "exact_f1": 1.0,
+    "records_true": 422,
+    "records_predicted": 422,
+    "cases_exact": 15,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": false,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b1",
+  "acceptance_f1": 0.988,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.845,
+    "records_true": 257,
+    "records_predicted": 254,
+    "cases_exact": 9,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.943,
+    "records_true": 257,
+    "records_predicted": 254,
+    "cases_exact": 12,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 10,
+    "changed_cases_exact": 8,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.845,
+    "records_true": 257,
+    "records_predicted": 254,
+    "cases_exact": 9,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 1,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.834,
+    "records_true": 240,
+    "records_predicted": 237,
+    "cases_exact": 8,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b2",
+  "acceptance_f1": 0.581,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.535,
+    "records_true": 257,
+    "records_predicted": 117,
+    "cases_exact": 0,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "status": "not_mappable"
+   },
+   "timer_set": {
+    "status": "not_mappable"
+   },
+   "case_remove": {
+    "exact_f1": 0.533,
+    "records_true": 240,
+    "records_predicted": 109,
+    "cases_exact": 0,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ },
+ {
+  "system": "r1",
+  "setup": "gpt-oss-120b",
+  "doc": "workflow_pharmacy_dev",
+  "build": "b3",
+  "acceptance_f1": 0.952,
+  "tests": {
+   "factual": {
+    "exact_f1": 0.79,
+    "records_true": 257,
+    "records_predicted": 257,
+    "cases_exact": 8,
+    "cases": 15,
+    "status": "ran"
+   },
+   "duration_set": {
+    "exact_f1": 0.751,
+    "records_true": 257,
+    "records_predicted": 257,
+    "cases_exact": 6,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 10,
+    "changed_cases_exact": 2,
+    "truly_changed_at_all": true
+   },
+   "timer_set": {
+    "exact_f1": 0.79,
+    "records_true": 257,
+    "records_predicted": 257,
+    "cases_exact": 8,
+    "cases": 15,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 1,
+    "changed_cases_exact": 1,
+    "truly_changed_at_all": true
+   },
+   "case_remove": {
+    "exact_f1": 0.929,
+    "records_true": 240,
+    "records_predicted": 240,
+    "cases_exact": 12,
+    "cases": 14,
+    "status": "ran",
+    "program_reacted": true,
+    "cases_truly_changed": 0,
+    "changed_cases_exact": 0,
+    "truly_changed_at_all": false
+   },
+   "resource_add": {
+    "status": "not_mappable"
+   }
+  }
+ }
+]

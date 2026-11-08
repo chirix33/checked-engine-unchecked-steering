@@ -1,0 +1,36 @@
+{
+ "seed": 20261104,
+ "n": 50,
+ "prosimos": "2.1.0",
+ "start": "2026-01-05T08:00:00+00:00",
+ "results": {
+  "Insurance_Claims": {
+   "cases": 50,
+   "repeatable_same_seed": true,
+   "first_start_unchanged": 33,
+   "activity_path_unchanged": 23,
+   "full_record_unchanged": 0
+  },
+  "Loan_Application": {
+   "cases": 50,
+   "repeatable_same_seed": true,
+   "first_start_unchanged": 50,
+   "activity_path_unchanged": 23,
+   "full_record_unchanged": 22
+  },
+  "Pharmacy": {
+   "cases": 50,
+   "repeatable_same_seed": true,
+   "first_start_unchanged": 50,
+   "activity_path_unchanged": 49,
+   "full_record_unchanged": 44
+  },
+  "Procure_to_Pay": {
+   "cases": 50,
+   "repeatable_same_seed": true,
+   "first_start_unchanged": 5,
+   "activity_path_unchanged": 5,
+   "full_record_unchanged": 0
+  }
+ }
+}

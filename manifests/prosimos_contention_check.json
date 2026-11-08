@@ -1,0 +1,1055 @@
+{
+ "prosimos": "2.1.0",
+ "seeds": [
+  20261104,
+  20261105,
+  20261106
+ ],
+ "sizes": [
+  100,
+  400
+ ],
+ "start": "2026-01-05T08:00:00+00:00",
+ "results": {
+  "Loan_Application_3_timers": [
+   {
+    "cases": 100,
+    "seed": 20261104,
+    "span_days": 8.0,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.02,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 3.1,
+      "utilization": 0.272
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 25,
+      "share_waiting_in_hours": 0.16,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.156
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.76,
+      "mean_wait_min": 49.1,
+      "p90_wait_min": 114.6,
+      "max_wait_min": 153.1,
+      "utilization": 0.545
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 409,
+      "share_waiting_in_hours": 0.374,
+      "mean_wait_min": 8.4,
+      "p90_wait_min": 33.8,
+      "max_wait_min": 61.9,
+      "utilization": 0.494
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 354,
+      "share_waiting_in_hours": 0.13,
+      "mean_wait_min": 0.5,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 15.8,
+      "utilization": 0.43
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 107,
+      "share_waiting_in_hours": 0.178,
+      "mean_wait_min": 2.5,
+      "p90_wait_min": 9.4,
+      "max_wait_min": 35.6,
+      "utilization": 0.387
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261105,
+    "span_days": 7.1,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.03,
+      "mean_wait_min": 0.4,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 21.5,
+      "utilization": 0.309
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 16,
+      "share_waiting_in_hours": 0.188,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.112
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.81,
+      "mean_wait_min": 15.7,
+      "p90_wait_min": 47.0,
+      "max_wait_min": 69.9,
+      "utilization": 0.616
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 392,
+      "share_waiting_in_hours": 0.25,
+      "mean_wait_min": 2.6,
+      "p90_wait_min": 11.9,
+      "max_wait_min": 32.7,
+      "utilization": 0.536
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 354,
+      "share_waiting_in_hours": 0.212,
+      "mean_wait_min": 1.0,
+      "p90_wait_min": 3.3,
+      "max_wait_min": 20.4,
+      "utilization": 0.483
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 104,
+      "share_waiting_in_hours": 0.327,
+      "mean_wait_min": 3.4,
+      "p90_wait_min": 13.7,
+      "max_wait_min": 29.3,
+      "utilization": 0.423
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261106,
+    "span_days": 8.0,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.08,
+      "mean_wait_min": 0.3,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 16.9,
+      "utilization": 0.276
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 22,
+      "share_waiting_in_hours": 0.227,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.137
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 100,
+      "share_waiting_in_hours": 0.72,
+      "mean_wait_min": 17.1,
+      "p90_wait_min": 43.9,
+      "max_wait_min": 72.1,
+      "utilization": 0.549
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 422,
+      "share_waiting_in_hours": 0.289,
+      "mean_wait_min": 3.0,
+      "p90_wait_min": 14.8,
+      "max_wait_min": 42.3,
+      "utilization": 0.514
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 425,
+      "share_waiting_in_hours": 0.369,
+      "mean_wait_min": 3.0,
+      "p90_wait_min": 12.1,
+      "max_wait_min": 30.7,
+      "utilization": 0.518
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 131,
+      "share_waiting_in_hours": 0.397,
+      "mean_wait_min": 4.9,
+      "p90_wait_min": 18.0,
+      "max_wait_min": 34.0,
+      "utilization": 0.476
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261104,
+    "span_days": 22.0,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.085,
+      "mean_wait_min": 0.9,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 33.7,
+      "utilization": 0.41
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 96,
+      "share_waiting_in_hours": 0.198,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.218
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.953,
+      "mean_wait_min": 189.6,
+      "p90_wait_min": 356.3,
+      "max_wait_min": 461.0,
+      "utilization": 0.819
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 1680,
+      "share_waiting_in_hours": 0.702,
+      "mean_wait_min": 20.5,
+      "p90_wait_min": 54.9,
+      "max_wait_min": 83.9,
+      "utilization": 0.766
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 1631,
+      "share_waiting_in_hours": 0.552,
+      "mean_wait_min": 8.6,
+      "p90_wait_min": 27.9,
+      "max_wait_min": 55.6,
+      "utilization": 0.744
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 530,
+      "share_waiting_in_hours": 0.615,
+      "mean_wait_min": 13.7,
+      "p90_wait_min": 40.6,
+      "max_wait_min": 80.7,
+      "utilization": 0.727
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261105,
+    "span_days": 22.0,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.107,
+      "mean_wait_min": 1.4,
+      "p90_wait_min": 0.4,
+      "max_wait_min": 33.8,
+      "utilization": 0.411
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 92,
+      "share_waiting_in_hours": 0.12,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.209
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.932,
+      "mean_wait_min": 155.8,
+      "p90_wait_min": 346.9,
+      "max_wait_min": 405.9,
+      "utilization": 0.823
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 1628,
+      "share_waiting_in_hours": 0.588,
+      "mean_wait_min": 13.1,
+      "p90_wait_min": 42.1,
+      "max_wait_min": 89.4,
+      "utilization": 0.743
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 1437,
+      "share_waiting_in_hours": 0.328,
+      "mean_wait_min": 2.4,
+      "p90_wait_min": 9.1,
+      "max_wait_min": 32.7,
+      "utilization": 0.657
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 416,
+      "share_waiting_in_hours": 0.389,
+      "mean_wait_min": 5.1,
+      "p90_wait_min": 18.7,
+      "max_wait_min": 51.4,
+      "utilization": 0.571
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261106,
+    "span_days": 22.0,
+    "pools": {
+     "AML Investigator": {
+      "size": 4,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.095,
+      "mean_wait_min": 0.8,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 28.7,
+      "utilization": 0.412
+     },
+     "Applicant": {
+      "size": 20,
+      "tasks": 92,
+      "share_waiting_in_hours": 0.163,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.209
+     },
+     "Appraiser": {
+      "size": 2,
+      "tasks": 400,
+      "share_waiting_in_hours": 0.938,
+      "mean_wait_min": 183.8,
+      "p90_wait_min": 416.4,
+      "max_wait_min": 450.3,
+      "utilization": 0.824
+     },
+     "Clerk": {
+      "size": 9,
+      "tasks": 1662,
+      "share_waiting_in_hours": 0.69,
+      "mean_wait_min": 18.7,
+      "p90_wait_min": 53.3,
+      "max_wait_min": 89.2,
+      "utilization": 0.759
+     },
+     "Loan Officer": {
+      "size": 9,
+      "tasks": 1578,
+      "share_waiting_in_hours": 0.515,
+      "mean_wait_min": 4.3,
+      "p90_wait_min": 14.5,
+      "max_wait_min": 30.8,
+      "utilization": 0.724
+     },
+     "Senior Officer": {
+      "size": 3,
+      "tasks": 482,
+      "share_waiting_in_hours": 0.55,
+      "mean_wait_min": 8.6,
+      "p90_wait_min": 25.8,
+      "max_wait_min": 56.0,
+      "utilization": 0.661
+     }
+    }
+   }
+  ],
+  "Pharmacy_3_timers": [
+   {
+    "cases": 100,
+    "seed": 20261104,
+    "span_days": 0.2,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 116,
+      "share_waiting_in_hours": 0.612,
+      "mean_wait_min": 0.9,
+      "p90_wait_min": 2.6,
+      "max_wait_min": 5.9,
+      "utilization": 0.579
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 302,
+      "share_waiting_in_hours": 0.089,
+      "mean_wait_min": 0.1,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 8.4,
+      "utilization": 0.11
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 429,
+      "share_waiting_in_hours": 0.163,
+      "mean_wait_min": 0.1,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 1.5,
+      "utilization": 0.615
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261105,
+    "span_days": 0.2,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 112,
+      "share_waiting_in_hours": 0.616,
+      "mean_wait_min": 0.8,
+      "p90_wait_min": 2.4,
+      "max_wait_min": 4.2,
+      "utilization": 0.592
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 300,
+      "share_waiting_in_hours": 0.007,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.022
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 416,
+      "share_waiting_in_hours": 0.12,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 1.1,
+      "utilization": 0.641
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261106,
+    "span_days": 0.2,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 117,
+      "share_waiting_in_hours": 0.607,
+      "mean_wait_min": 0.7,
+      "p90_wait_min": 2.1,
+      "max_wait_min": 3.7,
+      "utilization": 0.582
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 300,
+      "share_waiting_in_hours": 0.0,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.02
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 424,
+      "share_waiting_in_hours": 0.137,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 1.0,
+      "utilization": 0.601
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261104,
+    "span_days": 1.1,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 477,
+      "share_waiting_in_hours": 0.65,
+      "mean_wait_min": 1.0,
+      "p90_wait_min": 2.8,
+      "max_wait_min": 7.4,
+      "utilization": 0.667
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 1205,
+      "share_waiting_in_hours": 0.069,
+      "mean_wait_min": 0.1,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 9.8,
+      "utilization": 0.085
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 1693,
+      "share_waiting_in_hours": 0.171,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 1.9,
+      "utilization": 0.682
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261105,
+    "span_days": 1.1,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 473,
+      "share_waiting_in_hours": 0.632,
+      "mean_wait_min": 0.9,
+      "p90_wait_min": 2.4,
+      "max_wait_min": 5.8,
+      "utilization": 0.683
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 1202,
+      "share_waiting_in_hours": 0.032,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 10.0,
+      "utilization": 0.049
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 1680,
+      "share_waiting_in_hours": 0.154,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 1.9,
+      "utilization": 0.686
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261106,
+    "span_days": 1.1,
+    "pools": {
+     "Pharmacist": {
+      "size": 1,
+      "tasks": 475,
+      "share_waiting_in_hours": 0.638,
+      "mean_wait_min": 1.1,
+      "p90_wait_min": 2.9,
+      "max_wait_min": 6.1,
+      "utilization": 0.691
+     },
+     "Pharmacy System": {
+      "size": 1,
+      "tasks": 1203,
+      "share_waiting_in_hours": 0.04,
+      "mean_wait_min": 0.1,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 8.5,
+      "utilization": 0.062
+     },
+     "Technician": {
+      "size": 8,
+      "tasks": 1686,
+      "share_waiting_in_hours": 0.165,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 2.3,
+      "utilization": 0.686
+     }
+    }
+   }
+  ],
+  "Insurance_Claims_3_timers": [
+   {
+    "cases": 100,
+    "seed": 20261104,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 181,
+      "share_waiting_in_hours": 0.381,
+      "mean_wait_min": 0.1,
+      "p90_wait_min": 0.3,
+      "max_wait_min": 0.8,
+      "utilization": 0.331
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 321,
+      "share_waiting_in_hours": 0.059,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.239
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261105,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 192,
+      "share_waiting_in_hours": 0.682,
+      "mean_wait_min": 0.5,
+      "p90_wait_min": 1.2,
+      "max_wait_min": 1.5,
+      "utilization": 0.374
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 376,
+      "share_waiting_in_hours": 0.085,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.273
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261106,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 191,
+      "share_waiting_in_hours": 0.691,
+      "mean_wait_min": 0.5,
+      "p90_wait_min": 1.3,
+      "max_wait_min": 1.6,
+      "utilization": 0.372
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 375,
+      "share_waiting_in_hours": 0.075,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.268
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261104,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 754,
+      "share_waiting_in_hours": 0.836,
+      "mean_wait_min": 1.5,
+      "p90_wait_min": 3.7,
+      "max_wait_min": 5.9,
+      "utilization": 0.692
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 1410,
+      "share_waiting_in_hours": 0.071,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.499
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261105,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 764,
+      "share_waiting_in_hours": 0.914,
+      "mean_wait_min": 2.4,
+      "p90_wait_min": 4.7,
+      "max_wait_min": 6.4,
+      "utilization": 0.702
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 1396,
+      "share_waiting_in_hours": 0.062,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.485
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261106,
+    "span_days": 0.1,
+    "pools": {
+     "Call Centre Operator": {
+      "size": 30,
+      "tasks": 751,
+      "share_waiting_in_hours": 0.868,
+      "mean_wait_min": 1.9,
+      "p90_wait_min": 3.7,
+      "max_wait_min": 4.4,
+      "utilization": 0.696
+     },
+     "Claims Handler": {
+      "size": 100,
+      "tasks": 1299,
+      "share_waiting_in_hours": 0.075,
+      "mean_wait_min": 0.0,
+      "p90_wait_min": 0.0,
+      "max_wait_min": 0.0,
+      "utilization": 0.466
+     }
+    }
+   }
+  ],
+  "Procure_to_Pay_3_timers": [
+   {
+    "cases": 100,
+    "seed": 20261104,
+    "span_days": 11.2,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 232,
+      "share_waiting_in_hours": 0.849,
+      "mean_wait_min": 68.2,
+      "p90_wait_min": 192.9,
+      "max_wait_min": 304.7,
+      "utilization": 0.457
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 425,
+      "share_waiting_in_hours": 0.534,
+      "mean_wait_min": 47.1,
+      "p90_wait_min": 151.4,
+      "max_wait_min": 195.6,
+      "utilization": 0.635
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 360,
+      "share_waiting_in_hours": 0.75,
+      "mean_wait_min": 155.6,
+      "p90_wait_min": 294.4,
+      "max_wait_min": 335.5,
+      "utilization": 0.532
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 110,
+      "share_waiting_in_hours": 0.227,
+      "mean_wait_min": 0.8,
+      "p90_wait_min": 2.0,
+      "max_wait_min": 19.0,
+      "utilization": 0.142
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 174,
+      "share_waiting_in_hours": 0.494,
+      "mean_wait_min": 93.2,
+      "p90_wait_min": 284.0,
+      "max_wait_min": 360.0,
+      "utilization": 0.523
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261105,
+    "span_days": 11.0,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 256,
+      "share_waiting_in_hours": 0.867,
+      "mean_wait_min": 57.2,
+      "p90_wait_min": 137.8,
+      "max_wait_min": 272.5,
+      "utilization": 0.54
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 463,
+      "share_waiting_in_hours": 0.611,
+      "mean_wait_min": 19.2,
+      "p90_wait_min": 62.8,
+      "max_wait_min": 151.1,
+      "utilization": 0.606
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 380,
+      "share_waiting_in_hours": 0.839,
+      "mean_wait_min": 127.9,
+      "p90_wait_min": 259.6,
+      "max_wait_min": 361.9,
+      "utilization": 0.599
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 125,
+      "share_waiting_in_hours": 0.152,
+      "mean_wait_min": 0.9,
+      "p90_wait_min": 1.9,
+      "max_wait_min": 19.0,
+      "utilization": 0.182
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 192,
+      "share_waiting_in_hours": 0.51,
+      "mean_wait_min": 61.5,
+      "p90_wait_min": 265.7,
+      "max_wait_min": 359.9,
+      "utilization": 0.619
+     }
+    }
+   },
+   {
+    "cases": 100,
+    "seed": 20261106,
+    "span_days": 15.0,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 224,
+      "share_waiting_in_hours": 0.754,
+      "mean_wait_min": 91.8,
+      "p90_wait_min": 265.9,
+      "max_wait_min": 365.2,
+      "utilization": 0.388
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 392,
+      "share_waiting_in_hours": 0.408,
+      "mean_wait_min": 14.7,
+      "p90_wait_min": 49.5,
+      "max_wait_min": 79.3,
+      "utilization": 0.485
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 336,
+      "share_waiting_in_hours": 0.815,
+      "mean_wait_min": 143.5,
+      "p90_wait_min": 272.1,
+      "max_wait_min": 332.9,
+      "utilization": 0.458
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 126,
+      "share_waiting_in_hours": 0.19,
+      "mean_wait_min": 0.7,
+      "p90_wait_min": 1.3,
+      "max_wait_min": 19.0,
+      "utilization": 0.131
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 168,
+      "share_waiting_in_hours": 0.482,
+      "mean_wait_min": 110.1,
+      "p90_wait_min": 397.6,
+      "max_wait_min": 693.0,
+      "utilization": 0.445
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261104,
+    "span_days": 42.2,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 928,
+      "share_waiting_in_hours": 0.857,
+      "mean_wait_min": 122.6,
+      "p90_wait_min": 385.9,
+      "max_wait_min": 828.0,
+      "utilization": 0.583
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 1637,
+      "share_waiting_in_hours": 0.722,
+      "mean_wait_min": 53.2,
+      "p90_wait_min": 166.1,
+      "max_wait_min": 366.0,
+      "utilization": 0.689
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 1401,
+      "share_waiting_in_hours": 0.903,
+      "mean_wait_min": 490.5,
+      "p90_wait_min": 851.9,
+      "max_wait_min": 1025.2,
+      "utilization": 0.671
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 430,
+      "share_waiting_in_hours": 0.288,
+      "mean_wait_min": 0.8,
+      "p90_wait_min": 2.8,
+      "max_wait_min": 19.0,
+      "utilization": 0.159
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 696,
+      "share_waiting_in_hours": 0.566,
+      "mean_wait_min": 155.5,
+      "p90_wait_min": 720.2,
+      "max_wait_min": 1071.1,
+      "utilization": 0.668
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261105,
+    "span_days": 43.2,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 976,
+      "share_waiting_in_hours": 0.795,
+      "mean_wait_min": 91.7,
+      "p90_wait_min": 357.9,
+      "max_wait_min": 790.3,
+      "utilization": 0.595
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 1750,
+      "share_waiting_in_hours": 0.746,
+      "mean_wait_min": 59.6,
+      "p90_wait_min": 221.2,
+      "max_wait_min": 375.2,
+      "utilization": 0.712
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 1473,
+      "share_waiting_in_hours": 0.901,
+      "mean_wait_min": 540.1,
+      "p90_wait_min": 1068.6,
+      "max_wait_min": 1238.3,
+      "utilization": 0.673
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 459,
+      "share_waiting_in_hours": 0.2,
+      "mean_wait_min": 1.3,
+      "p90_wait_min": 6.1,
+      "max_wait_min": 19.1,
+      "utilization": 0.178
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 732,
+      "share_waiting_in_hours": 0.59,
+      "mean_wait_min": 223.5,
+      "p90_wait_min": 778.4,
+      "max_wait_min": 1511.4,
+      "utilization": 0.682
+     }
+    }
+   },
+   {
+    "cases": 400,
+    "seed": 20261106,
+    "span_days": 42.0,
+    "pools": {
+     "Financial Manager": {
+      "size": 1,
+      "tasks": 976,
+      "share_waiting_in_hours": 0.823,
+      "mean_wait_min": 97.8,
+      "p90_wait_min": 390.3,
+      "max_wait_min": 632.1,
+      "utilization": 0.622
+     },
+     "Purchasing Agent": {
+      "size": 8,
+      "tasks": 1720,
+      "share_waiting_in_hours": 0.646,
+      "mean_wait_min": 47.5,
+      "p90_wait_min": 150.8,
+      "max_wait_min": 391.9,
+      "utilization": 0.711
+     },
+     "Requester": {
+      "size": 2,
+      "tasks": 1441,
+      "share_waiting_in_hours": 0.91,
+      "mean_wait_min": 445.8,
+      "p90_wait_min": 824.3,
+      "max_wait_min": 937.5,
+      "utilization": 0.698
+     },
+     "Requester Manager": {
+      "size": 1,
+      "tasks": 478,
+      "share_waiting_in_hours": 0.222,
+      "mean_wait_min": 0.8,
+      "p90_wait_min": 2.0,
+      "max_wait_min": 26.0,
+      "utilization": 0.181
+     },
+     "Supplier": {
+      "size": 9,
+      "tasks": 732,
+      "share_waiting_in_hours": 0.529,
+      "mean_wait_min": 159.6,
+      "p90_wait_min": 603.2,
+      "max_wait_min": 1300.5,
+      "utilization": 0.713
+     }
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "setup": "gemma-26b-openrouter-free",
+ "seconds_between": 300,
+ "samples": [
+  {
+   "utc": "2026-11-05T00:45:21Z",
+   "http": 429,
+   "seconds": 0.38,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T00:50:21Z",
+   "http": 429,
+   "seconds": 0.32,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T00:55:21Z",
+   "http": 429,
+   "seconds": 0.39,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:00:22Z",
+   "http": 429,
+   "seconds": 0.27,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:05:22Z",
+   "http": 429,
+   "seconds": 0.54,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:10:23Z",
+   "http": 429,
+   "seconds": 0.97,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:15:24Z",
+   "http": 429,
+   "seconds": 0.28,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:20:24Z",
+   "http": 429,
+   "seconds": 0.43,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:25:24Z",
+   "http": 429,
+   "seconds": 0.61,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:30:25Z",
+   "http": 429,
+   "seconds": 0.36,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  },
+  {
+   "utc": "2026-11-05T01:35:25Z",
+   "http": 429,
+   "seconds": 0.28,
+   "detail": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.a"
+  }
+ ],
+ "full_test": null
+}
