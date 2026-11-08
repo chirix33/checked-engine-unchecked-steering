@@ -1,0 +1,240 @@
+[
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 01",
+  "name": "fixed_input_up:Activity_1w0dur0",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1w0dur0",
+    "seconds": 87000,
+    "selector": {
+     "case": "c0002",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_loan_dev",
+  "run": "Run 04",
+  "name": "fixed_input_up:Activity_1w0dur0",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "Activity_1w0dur0",
+    "seconds": 87000,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "fixed_input_up:sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "fixed_input_up:sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 01",
+  "name": "fixed_input_up:sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+    "seconds": 601,
+    "selector": {
+     "case": "c0001",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "fixed_input_up:sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "fixed_input_up:sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 02",
+  "name": "fixed_input_up:sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "fixed_input_up:sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "fixed_input_up:sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 03",
+  "name": "fixed_input_up:sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "fixed_input_up:sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-0B0AE587-EE27-414E-A051-D91E1866E1C3",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "fixed_input_up:sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-2B439B6B-4DD1-4D40-902D-43B7C4F215AB",
+    "seconds": 601,
+    "selector": {
+     "case": "c0000",
+     "visit": 1
+    }
+   }
+  ]
+ },
+ {
+  "doc": "workflow_pharmacy_dev",
+  "run": "Run 04",
+  "name": "fixed_input_up:sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+  "family": "activity_duration",
+  "interventions": [
+   {
+    "type": "duration_set",
+    "task": "sid-D859AC4F-3984-4A6B-8366-62B226C4DD53",
+    "seconds": 601,
+    "selector": {
+     "case": "c0001",
+     "visit": 1
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,11 @@
+{
+ "compared": 66,
+ "identical": 66,
+ "different": 0,
+ "status_counts_a": {
+  "ok": 66
+ },
+ "only_in_a": [],
+ "only_in_b": [],
+ "differences": []
+}
