@@ -1,0 +1,19 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0341_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-266235",
+ "n_cases": 5,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Technician",
+   "from": 115200,
+   "to": 201600,
+   "count": 6
+  }
+ ]
+}

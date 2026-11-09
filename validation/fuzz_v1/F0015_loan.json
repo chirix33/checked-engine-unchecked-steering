@@ -1,0 +1,26 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0015_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-158138",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "routing_set",
+   "gateway": "Gateway_06djhup",
+   "probabilities": {
+    "Flow_1cces2a": "0.01",
+    "Flow_0wgg1r6": "0.99"
+   },
+   "selector": {}
+  },
+  {
+   "type": "case_add",
+   "case": "x1",
+   "arrival": 32400
+  }
+ ]
+}

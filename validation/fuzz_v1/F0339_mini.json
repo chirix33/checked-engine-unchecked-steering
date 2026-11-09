@@ -1,0 +1,33 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0339_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-979554",
+ "n_cases": 8,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Officer",
+   "from": 56758,
+   "to": 143158,
+   "count": 1
+  },
+  {
+   "type": "duration_distribution",
+   "task": "T_decide",
+   "selector": {
+    "case": "c0004",
+    "visit": 2
+   },
+   "distribution_name": "expon",
+   "distribution_params": [
+    90,
+    60,
+    660
+   ]
+  }
+ ]
+}

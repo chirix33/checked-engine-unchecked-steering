@@ -1,0 +1,18 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0451_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-211281",
+ "n_cases": 80,
+ "interventions": [
+  {
+   "type": "duration_set",
+   "task": "sid-E31F3A7F-28E3-47E5-8BBF-8CF7E1C37E9C",
+   "selector": {},
+   "seconds": 40000
+  }
+ ]
+}

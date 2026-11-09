@@ -1,0 +1,26 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0105_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-152628",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "T_decide",
+   "selector": {
+    "from": 39600,
+    "to": 298800
+   },
+   "distribution_name": "expon",
+   "distribution_params": [
+    90,
+    60,
+    660
+   ]
+  }
+ ]
+}

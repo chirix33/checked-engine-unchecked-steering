@@ -1,0 +1,43 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0041_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-85108",
+ "n_cases": 80,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "Event_0jj7p9e",
+   "selector": {
+    "from": 31089
+   },
+   "distribution_name": "norm",
+   "distribution_params": [
+    600,
+    300,
+    0,
+    7200
+   ]
+  },
+  {
+   "type": "case_add",
+   "case": "x1",
+   "arrival": 28800
+  },
+  {
+   "type": "duration_distribution",
+   "task": "sid-6305CEC6-25BA-4B0F-8CF1-2AD6F76D8B9E",
+   "selector": {
+    "case": "c0020",
+    "visit": 1
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    5400
+   ]
+  }
+ ]
+}

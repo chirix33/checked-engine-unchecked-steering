@@ -1,0 +1,10 @@
+[
+ {"qid": "B01", "answer": 1806, "confidence": "high", "note": "Full re-run days 1-14 at 27600 kg (=1150 ATN units). State re-converges to the recorded one at end of day 6-7, diverges from day 8; ATN open at end of day 14: d11 204 + d12 1224 + d14 378."},
+ {"qid": "B02", "answer": 0, "confidence": "high", "note": "Extra capacity only reaches the last-served order on cap-bound days (SOS001 d71/d75, SOS002 d78). On day 79, 447066.80 kg is used before POV500 d79 (21217.56 kg) is served, so 1943 units ship in full; no prior POV500 backlog."},
+ {"qid": "B03", "answer": 950, "confidence": "high", "note": "Recorded 176 +40 unshipped = 216 at end of day 25; day 26 +874 -140 = 950; day 27 no movement. Capacity never binding."},
+ {"qid": "B04", "answer": 0, "confidence": "high", "note": "No SOS008 backlog before day 8. Without the d8 order: stock 767 kept; d9 order 142 and d10 order 292 ship in full (days 9-10 far below capacity). Stock 333, backordered 0."},
+ {"qid": "B05", "answer": 5000, "confidence": "high", "note": "No capacity binding days 197-202 and all ATN orders already ship in full, so the extra 700 units carry through: 4300 + 700."},
+ {"qid": "B06", "answer": 10258, "confidence": "high", "note": "End day 124 SOS002 stock 0, backordered 10258; day 125 has no order and now no production, so nothing ships."},
+ {"qid": "B07", "answer": 302, "confidence": "high", "note": "End day 40 POP002 stock 0, backordered 302; day 41 has no order and now no production, so backlog stays 302."},
+ {"qid": "B08", "answer": 150, "confidence": "high", "note": "End day 150 stock 178; day 151 +0 -10 = 168; day 152 +0 -18 = 150. No capacity binding in the period."}
+]

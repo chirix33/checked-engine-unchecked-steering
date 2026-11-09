@@ -1,0 +1,42 @@
+[
+ {
+  "qid": "B01",
+  "chapter_file": "chapter_Plant_1912_Period_01.txt",
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on. How many units of ATN02K12P would be backordered at the end of day 14?"
+ },
+ {
+  "qid": "B02",
+  "chapter_file": "chapter_Plant_2103_Period_06.txt",
+  "question": "In Plant 2103, Period 06, suppose the daily dispatch capacity had been 120% of its stated value (489240 kg instead of 407700 kg) on every day from day 71 on. How many units of POV500M24P would be backordered at the end of day 79?"
+ },
+ {
+  "qid": "B03",
+  "chapter_file": "chapter_Plant_2114_Period_02.txt",
+  "question": "In Plant 2114, Period 02, suppose the order for SOP001L12P placed on day 25 had not been placed. How many units of SOP001L12P would be in stock at the end of day 27?"
+ },
+ {
+  "qid": "B04",
+  "chapter_file": "chapter_Plant_2103_Period_01.txt",
+  "question": "In Plant 2103, Period 01, suppose the order for SOS008L02P placed on day 8 had not been placed. How many units of SOS008L02P would be backordered at the end of day 10?"
+ },
+ {
+  "qid": "B05",
+  "chapter_file": "chapter_Plant_1912_Period_15.txt",
+  "question": "In Plant 1912, Period 15, suppose 1400 units of ATN02K12P had been produced on day 197 (instead of the recorded 700). How many units of ATN02K12P would be in stock at the end of day 202?"
+ },
+ {
+  "qid": "B06",
+  "chapter_file": "chapter_Plant_2103_Period_09.txt",
+  "question": "In Plant 2103, Period 09, suppose 0 units of SOS002L09P had been produced on day 125 (instead of the recorded 5426). How many units of SOS002L09P would be backordered at the end of day 125?"
+ },
+ {
+  "qid": "B07",
+  "chapter_file": "chapter_Plant_2103_Period_03.txt",
+  "question": "In Plant 2103, Period 03, suppose the production of POP002L09P on day 41 had arrived 2 days later, on day 43, instead of on day 41. How many units of POP002L09P would be backordered at the end of day 41?"
+ },
+ {
+  "qid": "B08",
+  "chapter_file": "chapter_Plant_1914_Period_11.txt",
+  "question": "In Plant 1914, Period 11, suppose the production of SE200G24P on day 151 had arrived 2 days later, on day 153, instead of on day 151. How many units of SE200G24P would be in stock at the end of day 152?"
+ }
+]

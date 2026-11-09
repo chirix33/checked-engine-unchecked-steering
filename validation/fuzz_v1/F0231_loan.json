@@ -1,0 +1,25 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0231_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-851747",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "case_remove",
+   "case": "c0019"
+  },
+  {
+   "type": "duration_set",
+   "task": "sid-9726C026-BDE7-4467-B613-EB951D1FE613",
+   "selector": {
+    "case": "c0003",
+    "from": 118800
+   },
+   "seconds": 0
+  }
+ ]
+}

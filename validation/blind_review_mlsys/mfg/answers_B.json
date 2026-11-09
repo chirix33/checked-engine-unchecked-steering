@@ -1,0 +1,10 @@
+[
+ {"qid": "B01", "answer": 1806, "confidence": "high", "note": "Full hand re-run days 1-14 at 27600 kg; ATN backlog 204 (d11 remainder) + 1224 (d12) + 378 (d14)."},
+ {"qid": "B02", "answer": 0, "confidence": "high", "note": "Re-run days 71-79 at 489240 kg; capacity not binding before POV500M24P is served on d79 (about 21000 kg to spare), so its 1943 order ships in full."},
+ {"qid": "B03", "answer": 950, "confidence": "high", "note": "Removed 40-unit order only raises stock by 40 (recorded 910 -> 950); capacity not binding."},
+ {"qid": "B04", "answer": 0, "confidence": "high", "note": "Without d8 order, stock stays 767; d9 order 142 and d10 order 292 both ship in full; extra capacity on d8 only goes to SOS001, no capacity limit hits d9/d10."},
+ {"qid": "B05", "answer": 5000, "confidence": "high", "note": "No backlog and no capacity event on days 197-202; recorded stock 4300 plus 700 extra units."},
+ {"qid": "B06", "answer": 10258, "confidence": "high", "note": "Stock 0 and backlog 10258 at end of d124; with no production on d125 nothing ships and no order is placed."},
+ {"qid": "B07", "answer": 302, "confidence": "high", "note": "Backlog 302, stock 0 at end of d40; no production arrives d41 so nothing ships and no new order."},
+ {"qid": "B08", "answer": 150, "confidence": "high", "note": "Stock 178 at end d150; d151 ships 10, d152 ships 18, no production arrives: 150."}
+]

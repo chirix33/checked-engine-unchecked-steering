@@ -1,0 +1,24 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0095_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-242973",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "W",
+   "selector": {
+    "from": 378900,
+    "to": 382500
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    60
+   ]
+  }
+ ]
+}

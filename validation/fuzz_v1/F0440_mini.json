@@ -1,0 +1,40 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0440_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-519731",
+ "n_cases": 3,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "W",
+   "selector": {
+    "from": 61200,
+    "to": 61201
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    1
+   ]
+  },
+  {
+   "type": "duration_scale",
+   "task": "T_decide",
+   "selector": {
+    "visit": 1,
+    "from": 61200
+   },
+   "factor": "0.333"
+  },
+  {
+   "type": "resource_unavailable",
+   "pool": "Clerk",
+   "from": 381600,
+   "to": 382200,
+   "count": 2
+  }
+ ]
+}

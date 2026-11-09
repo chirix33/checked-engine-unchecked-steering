@@ -1,0 +1,66 @@
+{
+ "reference": {
+  "manufacturing": {
+   "replay pass": 12,
+   "order_removal input_use True": 72,
+   "production_quantity input_use True": 72,
+   "production_timing input_use True": 72,
+   "dispatch_capacity input_use True": 12
+  },
+  "it_ops": {
+   "replay pass": 16,
+   "job_removal input_use True": 96,
+   "failure_removal input_use True": 13,
+   "task_priority input_use True": 77,
+   "task_request input_use True": 96,
+   "machine_removal input_use True": 96
+  },
+  "questions": {
+   "manufacturing rule True": 48,
+   "manufacturing no_op True": 43,
+   "manufacturing directed Trusted": 48,
+   "manufacturing answer == gold": 48,
+   "manufacturing no_op None": 5,
+   "it_ops rule True": 60,
+   "it_ops no_op None": 60,
+   "it_ops directed Trusted": 58,
+   "it_ops answer == gold": 60,
+   "it_ops directed Untestable": 2
+  },
+  "rejections": []
+ },
+ "broken": {
+  "manufacturing/ignores_input": {
+   "right Caught": 4,
+   "wrong Caught": 20
+  },
+  "manufacturing/wrong_field": {
+   "right Caught": 2,
+   "wrong Caught": 22
+  },
+  "manufacturing/moves_prefix": {
+   "right Caught": 48
+  },
+  "manufacturing/ignores_capacity": {
+   "wrong Caught": 10,
+   "right Caught": 2
+  },
+  "it_ops/ignores_input": {
+   "right Caught": 2,
+   "wrong Caught": 10
+  },
+  "it_ops/wrong_field": {
+   "right Trusted": 6,
+   "wrong Caught": 5,
+   "wrong Trusted": 1
+  },
+  "it_ops/moves_prefix": {
+   "wrong Caught": 43,
+   "right Caught": 5
+  },
+  "it_ops/ignores_removed_machine": {
+   "right Caught": 2,
+   "wrong Caught": 10
+  }
+ }
+}

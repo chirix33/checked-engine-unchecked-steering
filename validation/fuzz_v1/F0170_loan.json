@@ -1,0 +1,41 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0170_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-925595",
+ "n_cases": 80,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Appraiser",
+   "from": 39600,
+   "to": 39601,
+   "count": 2
+  },
+  {
+   "type": "routing_set",
+   "gateway": "Gateway_0ovqfsq",
+   "probabilities": {
+    "Flow_1e43zqq": "0.99",
+    "Flow_13axscl": "0.01"
+   },
+   "selector": {
+    "case": "c0037"
+   }
+  },
+  {
+   "type": "routing_set",
+   "gateway": "Gateway_0eqakhv",
+   "probabilities": {
+    "Flow_0mpn0oz": "0.2",
+    "Flow_1ltuf1s": "0.8"
+   },
+   "selector": {
+    "from": 32400
+   }
+  }
+ ]
+}

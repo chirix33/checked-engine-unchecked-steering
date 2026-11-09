@@ -1,0 +1,41 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0439_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-362469",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "sid-8BCCD9BA-2B23-44CA-BB32-4988807D3161",
+   "selector": {
+    "from": 33300,
+    "to": 292500
+   },
+   "distribution_name": "expon",
+   "distribution_params": [
+    900,
+    600,
+    7800
+   ]
+  },
+  {
+   "type": "timer_scale",
+   "timer": "Event_0ygf1qj",
+   "selector": {
+    "case": "c0030",
+    "from": 36000
+   },
+   "factor": "10"
+  },
+  {
+   "type": "resource_add",
+   "pool": "Senior Officer",
+   "count": 3,
+   "from": 126000
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0462_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-315790",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "T_notify",
+   "selector": {
+    "case": "c0017",
+    "visit": 1,
+    "from": 379800,
+    "to": 380400
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    600
+   ]
+  },
+  {
+   "type": "timer_set",
+   "timer": "W",
+   "selector": {
+    "case": "c0007"
+   },
+   "seconds": 0
+  }
+ ]
+}

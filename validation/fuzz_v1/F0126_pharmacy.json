@@ -1,0 +1,37 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0126_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-854798",
+ "n_cases": 5,
+ "interventions": [
+  {
+   "type": "routing_set",
+   "gateway": "sid-DF7ECD36-BB5B-49FE-ABA9-57BADC155DCC",
+   "probabilities": {
+    "sid-29FF0F91-2739-4B3D-AB06-1B4AC47B2A61": "0.01",
+    "sid-1138993B-6AC7-4AC7-A3A0-1C026F2C7D1F": "0.99"
+   },
+   "selector": {
+    "case": "c0003"
+   }
+  },
+  {
+   "type": "resource_unavailable",
+   "pool": "Technician",
+   "from": 144000,
+   "to": 144001,
+   "count": 4
+  },
+  {
+   "type": "resource_unavailable",
+   "pool": "Pharmacist",
+   "from": 64289,
+   "to": 323489,
+   "count": 1
+  }
+ ]
+}

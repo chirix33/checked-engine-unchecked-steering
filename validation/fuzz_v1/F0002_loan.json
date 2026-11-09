@@ -1,0 +1,33 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0002_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-109796",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Loan Officer",
+   "from": 32400,
+   "to": 291600,
+   "count": 7
+  },
+  {
+   "type": "timer_scale",
+   "timer": "Event_1g228xj",
+   "selector": {
+    "case": "c0016",
+    "from": 120600
+   },
+   "factor": "10"
+  },
+  {
+   "type": "case_add",
+   "case": "x1",
+   "arrival": 118800
+  }
+ ]
+}

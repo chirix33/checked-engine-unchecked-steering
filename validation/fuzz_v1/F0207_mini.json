@@ -1,0 +1,36 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0207_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-177501",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "duration_set",
+   "task": "T_notify",
+   "selector": {
+    "case": "c0024",
+    "from": 118800
+   },
+   "seconds": 40000
+  },
+  {
+   "type": "duration_scale",
+   "task": "T_notify",
+   "selector": {},
+   "factor": "1.25"
+  },
+  {
+   "type": "timer_scale",
+   "timer": "W",
+   "selector": {
+    "case": "c0038",
+    "from": 36000
+   },
+   "factor": "1"
+  }
+ ]
+}

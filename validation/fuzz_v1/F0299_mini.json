@@ -1,0 +1,35 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0299_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-515804",
+ "n_cases": 3,
+ "interventions": [
+  {
+   "type": "routing_set",
+   "gateway": "G",
+   "probabilities": {
+    "f_rework": "0.2",
+    "f_ok": "0.8"
+   },
+   "selector": {
+    "from": 39600,
+    "to": 43200
+   }
+  },
+  {
+   "type": "routing_set",
+   "gateway": "G",
+   "probabilities": {
+    "f_rework": "0.77",
+    "f_ok": "0.23"
+   },
+   "selector": {
+    "visit": 2
+   }
+  }
+ ]
+}

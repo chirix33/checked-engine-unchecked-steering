@@ -1,0 +1,21 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0073_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-527358",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "duration_set",
+   "task": "T_decide",
+   "selector": {
+    "from": 32700,
+    "to": 33300
+   },
+   "seconds": 40000
+  }
+ ]
+}

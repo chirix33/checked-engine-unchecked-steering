@@ -1,0 +1,30 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0403_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-601561",
+ "n_cases": 3,
+ "interventions": [
+  {
+   "type": "resource_add",
+   "pool": "Clerk",
+   "count": 3,
+   "from": 32400
+  },
+  {
+   "type": "timer_distribution",
+   "timer": "W",
+   "selector": {},
+   "distribution_name": "norm",
+   "distribution_params": [
+    600,
+    300,
+    0,
+    7200
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0480_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-246241",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "resource_add",
+   "pool": "No such pool",
+   "count": 1,
+   "from": 0
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "qid": "B01",
+  "answer": 543,
+  "factual_reproduced": true,
+  "note": "factual first start 551; counterfactual 543"
+ },
+ {
+  "qid": "B02",
+  "answer": 1012,
+  "factual_reproduced": true,
+  "note": "factual first start 1260; counterfactual 1012"
+ },
+ {
+  "qid": "B03",
+  "answer": false,
+  "factual_reproduced": true,
+  "note": "counterfactual first start 1310 (factual 1306); threshold 1306"
+ },
+ {
+  "qid": "B04",
+  "answer": false,
+  "factual_reproduced": true,
+  "note": "counterfactual first start 1240 (factual 1168); threshold 1168"
+ },
+ {
+  "qid": "B05",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "counterfactual first start 725 (factual 725); threshold 725"
+ },
+ {
+  "qid": "B06",
+  "answer": 1076,
+  "factual_reproduced": true,
+  "note": "factual first start 1024; counterfactual 1076"
+ },
+ {
+  "qid": "B07",
+  "answer": 1022,
+  "factual_reproduced": true,
+  "note": "factual first start 1015; counterfactual 1022"
+ },
+ {
+  "qid": "B08",
+  "answer": 1324,
+  "factual_reproduced": true,
+  "note": "factual first start 1526; counterfactual 1324"
+ },
+ {
+  "qid": "B09",
+  "answer": 407,
+  "factual_reproduced": true,
+  "note": "factual first start 549; counterfactual 407"
+ },
+ {
+  "qid": "B10",
+  "answer": 1143,
+  "factual_reproduced": true,
+  "note": "factual first start 915; counterfactual 1143"
+ }
+]

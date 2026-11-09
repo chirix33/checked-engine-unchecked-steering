@@ -1,0 +1,37 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0228_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-585056",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "Event_0ygf1qj",
+   "selector": {
+    "from": 120600,
+    "to": 379800
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    0
+   ]
+  },
+  {
+   "type": "timer_distribution",
+   "timer": "Event_1g228xj",
+   "selector": {
+    "case": "c0019"
+   },
+   "distribution_name": "expon",
+   "distribution_params": [
+    30,
+    0,
+    3600
+   ]
+  }
+ ]
+}

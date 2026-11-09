@@ -1,0 +1,19 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0324_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-918352",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Officer",
+   "from": 33300,
+   "to": 33301,
+   "count": 1
+  }
+ ]
+}

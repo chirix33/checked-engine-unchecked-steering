@@ -1,0 +1,19 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0107_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-777951",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "AML Investigator",
+   "from": 32400,
+   "to": 32401,
+   "count": 4
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0167_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-962572",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "duration_scale",
+   "task": "sid-2D8F96BD-C99A-4D36-A951-AC29CB4A1B4A",
+   "selector": {
+    "case": "c0019",
+    "from": 57600
+   },
+   "factor": "1"
+  },
+  {
+   "type": "resource_add",
+   "pool": "Pharmacy System",
+   "count": 1,
+   "from": 117000
+  },
+  {
+   "type": "resource_add",
+   "pool": "Pharmacist",
+   "count": 1,
+   "from": 122400
+  }
+ ]
+}

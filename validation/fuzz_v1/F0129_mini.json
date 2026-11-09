@@ -1,0 +1,27 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0129_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-925486",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "duration_distribution",
+   "task": "T_review",
+   "selector": {
+    "visit": 1,
+    "from": 120600
+   },
+   "distribution_name": "norm",
+   "distribution_params": [
+    120,
+    300,
+    0,
+    7200
+   ]
+  }
+ ]
+}

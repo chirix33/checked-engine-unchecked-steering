@@ -1,0 +1,2950 @@
+{
+ "cases": [
+  {
+   "case": "c0000",
+   "arrival": 28800
+  },
+  {
+   "case": "c0001",
+   "arrival": 28920
+  },
+  {
+   "case": "c0002",
+   "arrival": 29040
+  },
+  {
+   "case": "c0003",
+   "arrival": 29160
+  },
+  {
+   "case": "c0004",
+   "arrival": 29280
+  },
+  {
+   "case": "c0005",
+   "arrival": 29400
+  },
+  {
+   "case": "c0006",
+   "arrival": 29520
+  },
+  {
+   "case": "c0007",
+   "arrival": 29640
+  },
+  {
+   "case": "c0008",
+   "arrival": 29760
+  },
+  {
+   "case": "c0009",
+   "arrival": 29880
+  },
+  {
+   "case": "c0010",
+   "arrival": 30000
+  },
+  {
+   "case": "c0011",
+   "arrival": 30120
+  },
+  {
+   "case": "c0012",
+   "arrival": 30240
+  },
+  {
+   "case": "c0013",
+   "arrival": 30360
+  },
+  {
+   "case": "c0014",
+   "arrival": 30480
+  }
+ ],
+ "work": [
+  {
+   "case": "c0000",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0000",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 64
+  },
+  {
+   "case": "c0000",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 66
+  },
+  {
+   "case": "c0000",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 57
+  },
+  {
+   "case": "c0000",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0000",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 128
+  },
+  {
+   "case": "c0000",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 312
+  },
+  {
+   "case": "c0000",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 156
+  },
+  {
+   "case": "c0000",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 168
+  },
+  {
+   "case": "c0000",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 145
+  },
+  {
+   "case": "c0000",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 164
+  },
+  {
+   "case": "c0000",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 82
+  },
+  {
+   "case": "c0000",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 669
+  },
+  {
+   "case": "c0000",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 158
+  },
+  {
+   "case": "c0000",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0000",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1202
+  },
+  {
+   "case": "c0001",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0001",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 69
+  },
+  {
+   "case": "c0001",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 68
+  },
+  {
+   "case": "c0001",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 63
+  },
+  {
+   "case": "c0001",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0001",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 122
+  },
+  {
+   "case": "c0001",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 311
+  },
+  {
+   "case": "c0001",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 176
+  },
+  {
+   "case": "c0001",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 194
+  },
+  {
+   "case": "c0001",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 167
+  },
+  {
+   "case": "c0001",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 169
+  },
+  {
+   "case": "c0001",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 83
+  },
+  {
+   "case": "c0001",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 632
+  },
+  {
+   "case": "c0001",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 148
+  },
+  {
+   "case": "c0001",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0001",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1214
+  },
+  {
+   "case": "c0002",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0002",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 57
+  },
+  {
+   "case": "c0002",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 49
+  },
+  {
+   "case": "c0002",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 57
+  },
+  {
+   "case": "c0002",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0002",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 130
+  },
+  {
+   "case": "c0002",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 308
+  },
+  {
+   "case": "c0002",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 152
+  },
+  {
+   "case": "c0002",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 170
+  },
+  {
+   "case": "c0002",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 190
+  },
+  {
+   "case": "c0002",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 169
+  },
+  {
+   "case": "c0002",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 108
+  },
+  {
+   "case": "c0002",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 616
+  },
+  {
+   "case": "c0002",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 155
+  },
+  {
+   "case": "c0002",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0002",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1221
+  },
+  {
+   "case": "c0003",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0003",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 61
+  },
+  {
+   "case": "c0003",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 66
+  },
+  {
+   "case": "c0003",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 55
+  },
+  {
+   "case": "c0003",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0003",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 124
+  },
+  {
+   "case": "c0003",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 303
+  },
+  {
+   "case": "c0003",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 153
+  },
+  {
+   "case": "c0003",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 152
+  },
+  {
+   "case": "c0003",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 186
+  },
+  {
+   "case": "c0003",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 195
+  },
+  {
+   "case": "c0003",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 96
+  },
+  {
+   "case": "c0003",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 621
+  },
+  {
+   "case": "c0003",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 140
+  },
+  {
+   "case": "c0003",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0003",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1202
+  },
+  {
+   "case": "c0004",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0004",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 55
+  },
+  {
+   "case": "c0004",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 63
+  },
+  {
+   "case": "c0004",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 53
+  },
+  {
+   "case": "c0004",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0004",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 121
+  },
+  {
+   "case": "c0004",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 307
+  },
+  {
+   "case": "c0004",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 159
+  },
+  {
+   "case": "c0004",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 201
+  },
+  {
+   "case": "c0004",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 192
+  },
+  {
+   "case": "c0004",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 178
+  },
+  {
+   "case": "c0004",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 94
+  },
+  {
+   "case": "c0004",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 608
+  },
+  {
+   "case": "c0004",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 171
+  },
+  {
+   "case": "c0004",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0004",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1201
+  },
+  {
+   "case": "c0005",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0005",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 63
+  },
+  {
+   "case": "c0005",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 60
+  },
+  {
+   "case": "c0005",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 52
+  },
+  {
+   "case": "c0005",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0005",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 150
+  },
+  {
+   "case": "c0005",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 323
+  },
+  {
+   "case": "c0005",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 157
+  },
+  {
+   "case": "c0005",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 180
+  },
+  {
+   "case": "c0005",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 197
+  },
+  {
+   "case": "c0005",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 180
+  },
+  {
+   "case": "c0005",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 95
+  },
+  {
+   "case": "c0005",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 658
+  },
+  {
+   "case": "c0005",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 148
+  },
+  {
+   "case": "c0005",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0005",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1211
+  },
+  {
+   "case": "c0006",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0006",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 56
+  },
+  {
+   "case": "c0006",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 67
+  },
+  {
+   "case": "c0006",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 55
+  },
+  {
+   "case": "c0006",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0006",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 121
+  },
+  {
+   "case": "c0006",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 301
+  },
+  {
+   "case": "c0006",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 176
+  },
+  {
+   "case": "c0006",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 152
+  },
+  {
+   "case": "c0006",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 177
+  },
+  {
+   "case": "c0006",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 182
+  },
+  {
+   "case": "c0006",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 105
+  },
+  {
+   "case": "c0006",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 641
+  },
+  {
+   "case": "c0006",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 136
+  },
+  {
+   "case": "c0006",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0006",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1255
+  },
+  {
+   "case": "c0007",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0007",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 62
+  },
+  {
+   "case": "c0007",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 61
+  },
+  {
+   "case": "c0007",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 52
+  },
+  {
+   "case": "c0007",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0007",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 145
+  },
+  {
+   "case": "c0007",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 302
+  },
+  {
+   "case": "c0007",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 164
+  },
+  {
+   "case": "c0007",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 198
+  },
+  {
+   "case": "c0007",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 159
+  },
+  {
+   "case": "c0007",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 195
+  },
+  {
+   "case": "c0007",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 87
+  },
+  {
+   "case": "c0007",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 602
+  },
+  {
+   "case": "c0007",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 145
+  },
+  {
+   "case": "c0007",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0007",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1238
+  },
+  {
+   "case": "c0008",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0008",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 55
+  },
+  {
+   "case": "c0008",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 56
+  },
+  {
+   "case": "c0008",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 59
+  },
+  {
+   "case": "c0008",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0008",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 135
+  },
+  {
+   "case": "c0008",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 305
+  },
+  {
+   "case": "c0008",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 139
+  },
+  {
+   "case": "c0008",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 159
+  },
+  {
+   "case": "c0008",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 190
+  },
+  {
+   "case": "c0008",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 148
+  },
+  {
+   "case": "c0008",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 104
+  },
+  {
+   "case": "c0008",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 618
+  },
+  {
+   "case": "c0008",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 144
+  },
+  {
+   "case": "c0008",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0008",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1209
+  },
+  {
+   "case": "c0009",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0009",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 63
+  },
+  {
+   "case": "c0009",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 61
+  },
+  {
+   "case": "c0009",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 57
+  },
+  {
+   "case": "c0009",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0009",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 123
+  },
+  {
+   "case": "c0009",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 302
+  },
+  {
+   "case": "c0009",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 147
+  },
+  {
+   "case": "c0009",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 193
+  },
+  {
+   "case": "c0009",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 159
+  },
+  {
+   "case": "c0009",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 171
+  },
+  {
+   "case": "c0009",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 66
+  },
+  {
+   "case": "c0009",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 631
+  },
+  {
+   "case": "c0009",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 139
+  },
+  {
+   "case": "c0009",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0009",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1236
+  },
+  {
+   "case": "c0010",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0010",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 55
+  },
+  {
+   "case": "c0010",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 66
+  },
+  {
+   "case": "c0010",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 56
+  },
+  {
+   "case": "c0010",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0010",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 128
+  },
+  {
+   "case": "c0010",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 319
+  },
+  {
+   "case": "c0010",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 175
+  },
+  {
+   "case": "c0010",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 172
+  },
+  {
+   "case": "c0010",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 211
+  },
+  {
+   "case": "c0010",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 197
+  },
+  {
+   "case": "c0010",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 92
+  },
+  {
+   "case": "c0010",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 604
+  },
+  {
+   "case": "c0010",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 118
+  },
+  {
+   "case": "c0010",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0010",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1254
+  },
+  {
+   "case": "c0011",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0011",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 56
+  },
+  {
+   "case": "c0011",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 63
+  },
+  {
+   "case": "c0011",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 78
+  },
+  {
+   "case": "c0011",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0011",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 124
+  },
+  {
+   "case": "c0011",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 318
+  },
+  {
+   "case": "c0011",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 135
+  },
+  {
+   "case": "c0011",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 193
+  },
+  {
+   "case": "c0011",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 183
+  },
+  {
+   "case": "c0011",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 158
+  },
+  {
+   "case": "c0011",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 94
+  },
+  {
+   "case": "c0011",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 614
+  },
+  {
+   "case": "c0011",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 134
+  },
+  {
+   "case": "c0011",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0011",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1211
+  },
+  {
+   "case": "c0012",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0012",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 67
+  },
+  {
+   "case": "c0012",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 67
+  },
+  {
+   "case": "c0012",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 59
+  },
+  {
+   "case": "c0012",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0012",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 142
+  },
+  {
+   "case": "c0012",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 301
+  },
+  {
+   "case": "c0012",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 139
+  },
+  {
+   "case": "c0012",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 160
+  },
+  {
+   "case": "c0012",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 192
+  },
+  {
+   "case": "c0012",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 170
+  },
+  {
+   "case": "c0012",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 102
+  },
+  {
+   "case": "c0012",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 603
+  },
+  {
+   "case": "c0012",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 153
+  },
+  {
+   "case": "c0012",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0012",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1231
+  },
+  {
+   "case": "c0013",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0013",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 70
+  },
+  {
+   "case": "c0013",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 53
+  },
+  {
+   "case": "c0013",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 46
+  },
+  {
+   "case": "c0013",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0013",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 125
+  },
+  {
+   "case": "c0013",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 303
+  },
+  {
+   "case": "c0013",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 158
+  },
+  {
+   "case": "c0013",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 199
+  },
+  {
+   "case": "c0013",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 145
+  },
+  {
+   "case": "c0013",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 172
+  },
+  {
+   "case": "c0013",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 105
+  },
+  {
+   "case": "c0013",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 638
+  },
+  {
+   "case": "c0013",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 162
+  },
+  {
+   "case": "c0013",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0013",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1332
+  },
+  {
+   "case": "c0014",
+   "activity": "Check if refill is allowed",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0014",
+   "activity": "Check for Quality Assurance",
+   "visit": 1,
+   "seconds": 58
+  },
+  {
+   "case": "c0014",
+   "activity": "Check for Quality Assurance",
+   "visit": 2,
+   "seconds": 63
+  },
+  {
+   "case": "c0014",
+   "activity": "Check for Quality Assurance",
+   "visit": 3,
+   "seconds": 55
+  },
+  {
+   "case": "c0014",
+   "activity": "Check DUR",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0014",
+   "activity": "Resolve DUR manually",
+   "visit": 1,
+   "seconds": 122
+  },
+  {
+   "case": "c0014",
+   "activity": "Resolve insurance issues manually",
+   "visit": 1,
+   "seconds": 303
+  },
+  {
+   "case": "c0014",
+   "activity": "Pick-up",
+   "visit": 1,
+   "seconds": 144
+  },
+  {
+   "case": "c0014",
+   "activity": "Pack the drugs (Production)",
+   "visit": 1,
+   "seconds": 176
+  },
+  {
+   "case": "c0014",
+   "activity": "Pack the drugs (Production)",
+   "visit": 2,
+   "seconds": 165
+  },
+  {
+   "case": "c0014",
+   "activity": "Pack the drugs (Production)",
+   "visit": 3,
+   "seconds": 196
+  },
+  {
+   "case": "c0014",
+   "activity": "Process drop-off",
+   "visit": 1,
+   "seconds": 91
+  },
+  {
+   "case": "c0014",
+   "activity": "Contact customer / doctor",
+   "visit": 1,
+   "seconds": 639
+  },
+  {
+   "case": "c0014",
+   "activity": "Enter prescription details",
+   "visit": 1,
+   "seconds": 141
+  },
+  {
+   "case": "c0014",
+   "activity": "Check Insurance",
+   "visit": 1,
+   "seconds": 1
+  },
+  {
+   "case": "c0014",
+   "activity": "Contact Doctor about refill",
+   "visit": 1,
+   "seconds": 1214
+  }
+ ],
+ "waits": [
+  {
+   "case": "c0000",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 220
+  },
+  {
+   "case": "c0000",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 338
+  },
+  {
+   "case": "c0000",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 185
+  },
+  {
+   "case": "c0000",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 181
+  },
+  {
+   "case": "c0000",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 225
+  },
+  {
+   "case": "c0001",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 190
+  },
+  {
+   "case": "c0001",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 337
+  },
+  {
+   "case": "c0001",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 194
+  },
+  {
+   "case": "c0001",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 187
+  },
+  {
+   "case": "c0001",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 186
+  },
+  {
+   "case": "c0002",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 186
+  },
+  {
+   "case": "c0002",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 372
+  },
+  {
+   "case": "c0002",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 181
+  },
+  {
+   "case": "c0002",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 193
+  },
+  {
+   "case": "c0002",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 182
+  },
+  {
+   "case": "c0003",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 181
+  },
+  {
+   "case": "c0003",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 301
+  },
+  {
+   "case": "c0003",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 192
+  },
+  {
+   "case": "c0003",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 256
+  },
+  {
+   "case": "c0003",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 191
+  },
+  {
+   "case": "c0004",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 180
+  },
+  {
+   "case": "c0004",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 365
+  },
+  {
+   "case": "c0004",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 250
+  },
+  {
+   "case": "c0004",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 193
+  },
+  {
+   "case": "c0004",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 206
+  },
+  {
+   "case": "c0005",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 190
+  },
+  {
+   "case": "c0005",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 318
+  },
+  {
+   "case": "c0005",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 195
+  },
+  {
+   "case": "c0005",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 219
+  },
+  {
+   "case": "c0005",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 181
+  },
+  {
+   "case": "c0006",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 206
+  },
+  {
+   "case": "c0006",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 304
+  },
+  {
+   "case": "c0006",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 185
+  },
+  {
+   "case": "c0006",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 180
+  },
+  {
+   "case": "c0006",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 189
+  },
+  {
+   "case": "c0007",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 199
+  },
+  {
+   "case": "c0007",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 300
+  },
+  {
+   "case": "c0007",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 211
+  },
+  {
+   "case": "c0007",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 181
+  },
+  {
+   "case": "c0007",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 184
+  },
+  {
+   "case": "c0008",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 187
+  },
+  {
+   "case": "c0008",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 318
+  },
+  {
+   "case": "c0008",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 182
+  },
+  {
+   "case": "c0008",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 192
+  },
+  {
+   "case": "c0008",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 181
+  },
+  {
+   "case": "c0009",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 186
+  },
+  {
+   "case": "c0009",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 321
+  },
+  {
+   "case": "c0009",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 181
+  },
+  {
+   "case": "c0009",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 248
+  },
+  {
+   "case": "c0009",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 187
+  },
+  {
+   "case": "c0010",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 205
+  },
+  {
+   "case": "c0010",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 354
+  },
+  {
+   "case": "c0010",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 197
+  },
+  {
+   "case": "c0010",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 181
+  },
+  {
+   "case": "c0010",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 181
+  },
+  {
+   "case": "c0011",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 226
+  },
+  {
+   "case": "c0011",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 330
+  },
+  {
+   "case": "c0011",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 181
+  },
+  {
+   "case": "c0011",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 216
+  },
+  {
+   "case": "c0011",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 210
+  },
+  {
+   "case": "c0012",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 182
+  },
+  {
+   "case": "c0012",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 315
+  },
+  {
+   "case": "c0012",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 183
+  },
+  {
+   "case": "c0012",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 227
+  },
+  {
+   "case": "c0012",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 227
+  },
+  {
+   "case": "c0013",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 202
+  },
+  {
+   "case": "c0013",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 304
+  },
+  {
+   "case": "c0013",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 197
+  },
+  {
+   "case": "c0013",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 198
+  },
+  {
+   "case": "c0013",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 249
+  },
+  {
+   "case": "c0014",
+   "wait": "W1",
+   "visit": 1,
+   "seconds": 182
+  },
+  {
+   "case": "c0014",
+   "wait": "W3",
+   "visit": 1,
+   "seconds": 302
+  },
+  {
+   "case": "c0014",
+   "wait": "W2",
+   "visit": 1,
+   "seconds": 181
+  },
+  {
+   "case": "c0014",
+   "wait": "W2",
+   "visit": 2,
+   "seconds": 198
+  },
+  {
+   "case": "c0014",
+   "wait": "W2",
+   "visit": 3,
+   "seconds": 188
+  }
+ ],
+ "draws": [
+  {
+   "case": "c0000",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.351954
+  },
+  {
+   "case": "c0000",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.066396
+  },
+  {
+   "case": "c0000",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.873453
+  },
+  {
+   "case": "c0000",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.128441
+  },
+  {
+   "case": "c0000",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.605937
+  },
+  {
+   "case": "c0000",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.82831
+  },
+  {
+   "case": "c0000",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.789602
+  },
+  {
+   "case": "c0000",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.307988
+  },
+  {
+   "case": "c0000",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.982507
+  },
+  {
+   "case": "c0000",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.481256
+  },
+  {
+   "case": "c0000",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.778117
+  },
+  {
+   "case": "c0001",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.132534
+  },
+  {
+   "case": "c0001",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.236557
+  },
+  {
+   "case": "c0001",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.301998
+  },
+  {
+   "case": "c0001",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.810371
+  },
+  {
+   "case": "c0001",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.450032
+  },
+  {
+   "case": "c0001",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.569121
+  },
+  {
+   "case": "c0001",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.47548
+  },
+  {
+   "case": "c0001",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.79868
+  },
+  {
+   "case": "c0001",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.642427
+  },
+  {
+   "case": "c0001",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.873749
+  },
+  {
+   "case": "c0001",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.577543
+  },
+  {
+   "case": "c0002",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.500643
+  },
+  {
+   "case": "c0002",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.063081
+  },
+  {
+   "case": "c0002",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.122649
+  },
+  {
+   "case": "c0002",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.278519
+  },
+  {
+   "case": "c0002",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.733821
+  },
+  {
+   "case": "c0002",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.985316
+  },
+  {
+   "case": "c0002",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.223265
+  },
+  {
+   "case": "c0002",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.608355
+  },
+  {
+   "case": "c0002",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.097585
+  },
+  {
+   "case": "c0002",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.210706
+  },
+  {
+   "case": "c0002",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.317851
+  },
+  {
+   "case": "c0003",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.731266
+  },
+  {
+   "case": "c0003",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.798328
+  },
+  {
+   "case": "c0003",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.288168
+  },
+  {
+   "case": "c0003",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.130487
+  },
+  {
+   "case": "c0003",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.955522
+  },
+  {
+   "case": "c0003",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.039668
+  },
+  {
+   "case": "c0003",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.427769
+  },
+  {
+   "case": "c0003",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.030139
+  },
+  {
+   "case": "c0003",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.185737
+  },
+  {
+   "case": "c0003",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.610494
+  },
+  {
+   "case": "c0003",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.502275
+  },
+  {
+   "case": "c0004",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.175066
+  },
+  {
+   "case": "c0004",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.141107
+  },
+  {
+   "case": "c0004",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.351094
+  },
+  {
+   "case": "c0004",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.659866
+  },
+  {
+   "case": "c0004",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.845031
+  },
+  {
+   "case": "c0004",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.140668
+  },
+  {
+   "case": "c0004",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.994676
+  },
+  {
+   "case": "c0004",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.326731
+  },
+  {
+   "case": "c0004",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.373749
+  },
+  {
+   "case": "c0004",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.80976
+  },
+  {
+   "case": "c0004",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.176232
+  },
+  {
+   "case": "c0005",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.826336
+  },
+  {
+   "case": "c0005",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.976878
+  },
+  {
+   "case": "c0005",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.882587
+  },
+  {
+   "case": "c0005",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.518889
+  },
+  {
+   "case": "c0005",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.204721
+  },
+  {
+   "case": "c0005",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.542381
+  },
+  {
+   "case": "c0005",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.589019
+  },
+  {
+   "case": "c0005",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.663286
+  },
+  {
+   "case": "c0005",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.741355
+  },
+  {
+   "case": "c0005",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.317771
+  },
+  {
+   "case": "c0005",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.286515
+  },
+  {
+   "case": "c0006",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.93291
+  },
+  {
+   "case": "c0006",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.025173
+  },
+  {
+   "case": "c0006",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.761936
+  },
+  {
+   "case": "c0006",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.274694
+  },
+  {
+   "case": "c0006",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.714715
+  },
+  {
+   "case": "c0006",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.950412
+  },
+  {
+   "case": "c0006",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.941452
+  },
+  {
+   "case": "c0006",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.689311
+  },
+  {
+   "case": "c0006",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.362509
+  },
+  {
+   "case": "c0006",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.970473
+  },
+  {
+   "case": "c0006",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.987636
+  },
+  {
+   "case": "c0007",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.89778
+  },
+  {
+   "case": "c0007",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.130238
+  },
+  {
+   "case": "c0007",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.213802
+  },
+  {
+   "case": "c0007",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.961935
+  },
+  {
+   "case": "c0007",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.888239
+  },
+  {
+   "case": "c0007",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.274744
+  },
+  {
+   "case": "c0007",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.855763
+  },
+  {
+   "case": "c0007",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.564417
+  },
+  {
+   "case": "c0007",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.173598
+  },
+  {
+   "case": "c0007",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.318468
+  },
+  {
+   "case": "c0007",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.806953
+  },
+  {
+   "case": "c0008",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.233591
+  },
+  {
+   "case": "c0008",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.668748
+  },
+  {
+   "case": "c0008",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.63941
+  },
+  {
+   "case": "c0008",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.597953
+  },
+  {
+   "case": "c0008",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.517591
+  },
+  {
+   "case": "c0008",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.173407
+  },
+  {
+   "case": "c0008",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.63121
+  },
+  {
+   "case": "c0008",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.764275
+  },
+  {
+   "case": "c0008",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.22665
+  },
+  {
+   "case": "c0008",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.696627
+  },
+  {
+   "case": "c0008",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.727574
+  },
+  {
+   "case": "c0009",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.685221
+  },
+  {
+   "case": "c0009",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.852973
+  },
+  {
+   "case": "c0009",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.259501
+  },
+  {
+   "case": "c0009",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.217901
+  },
+  {
+   "case": "c0009",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.522356
+  },
+  {
+   "case": "c0009",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.533552
+  },
+  {
+   "case": "c0009",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.097103
+  },
+  {
+   "case": "c0009",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.493689
+  },
+  {
+   "case": "c0009",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.240741
+  },
+  {
+   "case": "c0009",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.77557
+  },
+  {
+   "case": "c0009",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.469251
+  },
+  {
+   "case": "c0010",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.716501
+  },
+  {
+   "case": "c0010",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.018161
+  },
+  {
+   "case": "c0010",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.892296
+  },
+  {
+   "case": "c0010",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.836748
+  },
+  {
+   "case": "c0010",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.628821
+  },
+  {
+   "case": "c0010",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.468781
+  },
+  {
+   "case": "c0010",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.674818
+  },
+  {
+   "case": "c0010",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.56838
+  },
+  {
+   "case": "c0010",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.357484
+  },
+  {
+   "case": "c0010",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.201987
+  },
+  {
+   "case": "c0010",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.27355
+  },
+  {
+   "case": "c0011",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.169663
+  },
+  {
+   "case": "c0011",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.165265
+  },
+  {
+   "case": "c0011",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.207212
+  },
+  {
+   "case": "c0011",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.605729
+  },
+  {
+   "case": "c0011",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.384465
+  },
+  {
+   "case": "c0011",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.911203
+  },
+  {
+   "case": "c0011",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.264913
+  },
+  {
+   "case": "c0011",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.118315
+  },
+  {
+   "case": "c0011",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.190197
+  },
+  {
+   "case": "c0011",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.372274
+  },
+  {
+   "case": "c0011",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.763942
+  },
+  {
+   "case": "c0012",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.600357
+  },
+  {
+   "case": "c0012",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.519569
+  },
+  {
+   "case": "c0012",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.741603
+  },
+  {
+   "case": "c0012",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.560408
+  },
+  {
+   "case": "c0012",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.075168
+  },
+  {
+   "case": "c0012",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.337494
+  },
+  {
+   "case": "c0012",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.253344
+  },
+  {
+   "case": "c0012",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.785404
+  },
+  {
+   "case": "c0012",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.090376
+  },
+  {
+   "case": "c0012",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.047953
+  },
+  {
+   "case": "c0012",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.677969
+  },
+  {
+   "case": "c0013",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.065259
+  },
+  {
+   "case": "c0013",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.275091
+  },
+  {
+   "case": "c0013",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.583138
+  },
+  {
+   "case": "c0013",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.759241
+  },
+  {
+   "case": "c0013",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.838439
+  },
+  {
+   "case": "c0013",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.518571
+  },
+  {
+   "case": "c0013",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.868343
+  },
+  {
+   "case": "c0013",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.97039
+  },
+  {
+   "case": "c0013",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.750162
+  },
+  {
+   "case": "c0013",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.232341
+  },
+  {
+   "case": "c0013",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.052213
+  },
+  {
+   "case": "c0014",
+   "decision": "D2",
+   "visit": 1,
+   "draw": 0.015491
+  },
+  {
+   "case": "c0014",
+   "decision": "D5",
+   "visit": 1,
+   "draw": 0.440284
+  },
+  {
+   "case": "c0014",
+   "decision": "D3",
+   "visit": 1,
+   "draw": 0.645018
+  },
+  {
+   "case": "c0014",
+   "decision": "D1",
+   "visit": 1,
+   "draw": 0.693216
+  },
+  {
+   "case": "c0014",
+   "decision": "D4",
+   "visit": 1,
+   "draw": 0.720001
+  },
+  {
+   "case": "c0014",
+   "decision": "D6",
+   "visit": 1,
+   "draw": 0.06875
+  },
+  {
+   "case": "c0014",
+   "decision": "D6",
+   "visit": 2,
+   "draw": 0.348706
+  },
+  {
+   "case": "c0014",
+   "decision": "D6",
+   "visit": 3,
+   "draw": 0.443009
+  },
+  {
+   "case": "c0014",
+   "decision": "D7",
+   "visit": 1,
+   "draw": 0.927717
+  },
+  {
+   "case": "c0014",
+   "decision": "D7",
+   "visit": 2,
+   "draw": 0.378148
+  },
+  {
+   "case": "c0014",
+   "decision": "D7",
+   "visit": 3,
+   "draw": 0.547289
+  }
+ ]
+}

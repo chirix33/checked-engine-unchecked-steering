@@ -1,0 +1,11 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0152_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-434046",
+ "n_cases": 5,
+ "interventions": []
+}

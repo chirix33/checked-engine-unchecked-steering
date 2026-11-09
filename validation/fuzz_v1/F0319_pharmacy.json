@@ -1,0 +1,19 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0319_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-512662",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Pharmacist",
+   "count": 1,
+   "from": 10,
+   "to": 10
+  }
+ ]
+}

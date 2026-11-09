@@ -1,0 +1,28 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0496_pharmacy",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Pharmacy_3_timers.json"
+ },
+ "seed": "fuzz-544497",
+ "n_cases": 20,
+ "interventions": [
+  {
+   "type": "resource_unavailable",
+   "pool": "Pharmacy System",
+   "from": 36000,
+   "to": 39600,
+   "count": 1
+  },
+  {
+   "type": "timer_set",
+   "timer": "Event_0jj7p9e",
+   "selector": {
+    "case": "c0005",
+    "from": 32400
+   },
+   "seconds": 60
+  }
+ ]
+}

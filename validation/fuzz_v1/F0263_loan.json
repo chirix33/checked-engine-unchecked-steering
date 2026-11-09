@@ -1,0 +1,22 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0263_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-661935",
+ "n_cases": 80,
+ "interventions": [
+  {
+   "type": "timer_scale",
+   "timer": "Event_0ygf1qj",
+   "selector": {
+    "visit": 1,
+    "from": 34200,
+    "to": 34201
+   },
+   "factor": "2.5"
+  }
+ ]
+}

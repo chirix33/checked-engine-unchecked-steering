@@ -1,0 +1,24 @@
+{
+ "mfg": {
+  "B01": "mfg-dev-dispatch_capacity-06",
+  "B02": "mfg-test-dispatch_capacity-17",
+  "B03": "mfg-dev-order_removal-05",
+  "B04": "mfg-dev-order_removal-00",
+  "B05": "mfg-test-production_quantity-08",
+  "B06": "mfg-test-production_quantity-13",
+  "B07": "mfg-dev-production_timing-11",
+  "B08": "mfg-test-production_timing-13"
+ },
+ "itops": {
+  "B01": "itops-dev-failure_removal-11",
+  "B02": "itops-test-failure_removal-10",
+  "B03": "itops-dev-job_removal-11",
+  "B04": "itops-test-job_removal-05",
+  "B05": "itops-test-machine_removal-06",
+  "B06": "itops-dev-machine_removal-04",
+  "B07": "itops-test-task_priority-09",
+  "B08": "itops-test-task_priority-07",
+  "B09": "itops-dev-task_request-04",
+  "B10": "itops-test-task_request-04"
+ }
+}

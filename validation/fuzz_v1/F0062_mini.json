@@ -1,0 +1,37 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0062_mini",
+ "model": {
+  "bpmn": "../../spec/mini/mini.bpmn",
+  "params": "../../spec/mini/mini.json"
+ },
+ "seed": "fuzz-202",
+ "n_cases": 3,
+ "interventions": [
+  {
+   "type": "timer_scale",
+   "timer": "W",
+   "selector": {
+    "from": 39600,
+    "to": 40200
+   },
+   "factor": "1"
+  },
+  {
+   "type": "routing_set",
+   "gateway": "G",
+   "probabilities": {
+    "f_rework": "0.99",
+    "f_ok": "0.01"
+   },
+   "selector": {}
+  },
+  {
+   "type": "resource_unavailable",
+   "pool": "Officer",
+   "from": 39600,
+   "to": 298800,
+   "count": 1
+  }
+ ]
+}

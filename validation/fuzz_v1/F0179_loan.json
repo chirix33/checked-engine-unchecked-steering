@@ -1,0 +1,30 @@
+{
+ "schema": "wf-scenario/1",
+ "scenario_id": "F0179_loan",
+ "model": {
+  "bpmn": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.bpmn",
+  "params": "../../data/zenodo_10435849/inputs/synthetic/Loan_Application_3_timers.json"
+ },
+ "seed": "fuzz-621163",
+ "n_cases": 40,
+ "interventions": [
+  {
+   "type": "timer_distribution",
+   "timer": "Event_1g228xj",
+   "selector": {
+    "case": "c0039",
+    "from": 34200
+   },
+   "distribution_name": "fix",
+   "distribution_params": [
+    1
+   ]
+  },
+  {
+   "type": "resource_add",
+   "pool": "AML Investigator",
+   "count": 1,
+   "from": 40655
+  }
+ ]
+}
