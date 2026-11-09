@@ -1,0 +1,485 @@
+{
+ "products": [
+  {
+   "product": "ATN02K12P",
+   "kg_per_unit": 24.0,
+   "opening_stock": 2950
+  },
+  {
+   "product": "MAR02K12P",
+   "kg_per_unit": 24.0,
+   "opening_stock": 561
+  },
+  {
+   "product": "MASR025K",
+   "kg_per_unit": 25.0,
+   "opening_stock": 527
+  }
+ ],
+ "days": [
+  {
+   "day": 1,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 2,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 3,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 4,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 5,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 6,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 7,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 8,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 9,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 10,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 11,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 12,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 13,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 14,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 15,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 16,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 17,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 18,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 19,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 20,
+   "capacity_kg": 34500
+  },
+  {
+   "day": 21,
+   "capacity_kg": 34500
+  }
+ ],
+ "flows": [
+  {
+   "day": 1,
+   "product": "ATN02K12P",
+   "produced": 200,
+   "ordered": 1819
+  },
+  {
+   "day": 1,
+   "product": "MAR02K12P",
+   "produced": 100,
+   "ordered": 464
+  },
+  {
+   "day": 1,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 96
+  },
+  {
+   "day": 2,
+   "product": "ATN02K12P",
+   "produced": 500,
+   "ordered": 1281
+  },
+  {
+   "day": 2,
+   "product": "MAR02K12P",
+   "produced": 100,
+   "ordered": 310
+  },
+  {
+   "day": 2,
+   "product": "MASR025K",
+   "produced": 100,
+   "ordered": 21
+  },
+  {
+   "day": 3,
+   "product": "ATN02K12P",
+   "produced": 0,
+   "ordered": 736
+  },
+  {
+   "day": 3,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 63
+  },
+  {
+   "day": 3,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 35
+  },
+  {
+   "day": 4,
+   "product": "ATN02K12P",
+   "produced": 1700,
+   "ordered": 523
+  },
+  {
+   "day": 4,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 65
+  },
+  {
+   "day": 4,
+   "product": "MASR025K",
+   "produced": 5,
+   "ordered": 46
+  },
+  {
+   "day": 5,
+   "product": "ATN02K12P",
+   "produced": 1000,
+   "ordered": 930
+  },
+  {
+   "day": 5,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 364
+  },
+  {
+   "day": 5,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 244
+  },
+  {
+   "day": 6,
+   "product": "ATN02K12P",
+   "produced": 800,
+   "ordered": 0
+  },
+  {
+   "day": 6,
+   "product": "MAR02K12P",
+   "produced": 300,
+   "ordered": 0
+  },
+  {
+   "day": 6,
+   "product": "MASR025K",
+   "produced": 100,
+   "ordered": 0
+  },
+  {
+   "day": 7,
+   "product": "ATN02K12P",
+   "produced": 400,
+   "ordered": 608
+  },
+  {
+   "day": 7,
+   "product": "MAR02K12P",
+   "produced": 7,
+   "ordered": 147
+  },
+  {
+   "day": 7,
+   "product": "MASR025K",
+   "produced": 45,
+   "ordered": 477
+  },
+  {
+   "day": 8,
+   "product": "ATN02K12P",
+   "produced": 0,
+   "ordered": 1782
+  },
+  {
+   "day": 8,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 137
+  },
+  {
+   "day": 8,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 231
+  },
+  {
+   "day": 9,
+   "product": "ATN02K12P",
+   "produced": 1000,
+   "ordered": 925
+  },
+  {
+   "day": 9,
+   "product": "MAR02K12P",
+   "produced": 500,
+   "ordered": 63
+  },
+  {
+   "day": 9,
+   "product": "MASR025K",
+   "produced": 114,
+   "ordered": 34
+  },
+  {
+   "day": 10,
+   "product": "ATN02K12P",
+   "produced": 1200,
+   "ordered": 1791
+  },
+  {
+   "day": 10,
+   "product": "MAR02K12P",
+   "produced": 300,
+   "ordered": 532
+  },
+  {
+   "day": 10,
+   "product": "MASR025K",
+   "produced": 510,
+   "ordered": 95
+  },
+  {
+   "day": 11,
+   "product": "ATN02K12P",
+   "produced": 1000,
+   "ordered": 1771
+  },
+  {
+   "day": 11,
+   "product": "MAR02K12P",
+   "produced": 300,
+   "ordered": 300
+  },
+  {
+   "day": 11,
+   "product": "MASR025K",
+   "produced": 300,
+   "ordered": 80
+  },
+  {
+   "day": 12,
+   "product": "ATN02K12P",
+   "produced": 1700,
+   "ordered": 1224
+  },
+  {
+   "day": 12,
+   "product": "MAR02K12P",
+   "produced": 300,
+   "ordered": 161
+  },
+  {
+   "day": 12,
+   "product": "MASR025K",
+   "produced": 6,
+   "ordered": 50
+  },
+  {
+   "day": 13,
+   "product": "ATN02K12P",
+   "produced": 1500,
+   "ordered": 0
+  },
+  {
+   "day": 13,
+   "product": "MAR02K12P",
+   "produced": 300,
+   "ordered": 0
+  },
+  {
+   "day": 13,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 0
+  },
+  {
+   "day": 14,
+   "product": "ATN02K12P",
+   "produced": 1000,
+   "ordered": 378
+  },
+  {
+   "day": 14,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 13
+  },
+  {
+   "day": 14,
+   "product": "MASR025K",
+   "produced": 52,
+   "ordered": 1050
+  },
+  {
+   "day": 15,
+   "product": "ATN02K12P",
+   "produced": 500,
+   "ordered": 840
+  },
+  {
+   "day": 15,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 47
+  },
+  {
+   "day": 15,
+   "product": "MASR025K",
+   "produced": 145,
+   "ordered": 185
+  },
+  {
+   "day": 16,
+   "product": "ATN02K12P",
+   "produced": 500,
+   "ordered": 2034
+  },
+  {
+   "day": 16,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 133
+  },
+  {
+   "day": 16,
+   "product": "MASR025K",
+   "produced": 300,
+   "ordered": 315
+  },
+  {
+   "day": 17,
+   "product": "ATN02K12P",
+   "produced": 0,
+   "ordered": 1842
+  },
+  {
+   "day": 17,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 536
+  },
+  {
+   "day": 17,
+   "product": "MASR025K",
+   "produced": 500,
+   "ordered": 156
+  },
+  {
+   "day": 18,
+   "product": "ATN02K12P",
+   "produced": 1500,
+   "ordered": 417
+  },
+  {
+   "day": 18,
+   "product": "MAR02K12P",
+   "produced": 302,
+   "ordered": 68
+  },
+  {
+   "day": 18,
+   "product": "MASR025K",
+   "produced": 43,
+   "ordered": 125
+  },
+  {
+   "day": 19,
+   "product": "ATN02K12P",
+   "produced": 1500,
+   "ordered": 831
+  },
+  {
+   "day": 19,
+   "product": "MAR02K12P",
+   "produced": 500,
+   "ordered": 153
+  },
+  {
+   "day": 19,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 65
+  },
+  {
+   "day": 20,
+   "product": "ATN02K12P",
+   "produced": 2000,
+   "ordered": 0
+  },
+  {
+   "day": 20,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 0
+  },
+  {
+   "day": 20,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 0
+  },
+  {
+   "day": 21,
+   "product": "ATN02K12P",
+   "produced": 1000,
+   "ordered": 250
+  },
+  {
+   "day": 21,
+   "product": "MAR02K12P",
+   "produced": 0,
+   "ordered": 46
+  },
+  {
+   "day": 21,
+   "product": "MASR025K",
+   "produced": 0,
+   "ordered": 1
+  }
+ ]
+}
