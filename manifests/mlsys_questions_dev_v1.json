@@ -1,0 +1,3623 @@
+[
+ {
+  "id": "mfg-dev-order_removal-00",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2103, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 1188,
+  "effectful": true,
+  "question": "In Plant 2103, Period 01, suppose the order for SOS008L02P placed on day 8 had not been placed. How many units of SOS008L02P would be backordered at the end of day 10?",
+  "text": "In Plant 2103, Period 01, suppose the order for SOS008L02P placed on day 8 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "SOS008L02P",
+    "day": 8
+   }
+  ],
+  "query_case": "SOS008L02P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS008L02P",
+   "day": 10
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "SOS008L02P",
+   "day": 8
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-01",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2114, Period 02",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 21778,
+  "gold_reimpl": 21778,
+  "factual_end": 15820,
+  "effectful": true,
+  "question": "In Plant 2114, Period 02, suppose the order for SOS005L04P placed on day 16 had not been placed. How many units of SOS005L04P would be in stock at the end of day 16?",
+  "text": "In Plant 2114, Period 02, suppose the order for SOS005L04P placed on day 16 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "SOS005L04P",
+    "day": 16
+   }
+  ],
+  "query_case": "SOS005L04P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS005L04P",
+   "day": 16
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "SOS005L04P",
+   "day": 16
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-02",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 0,
+  "effectful": false,
+  "question": "In Plant 2114, Period 01, suppose the order for SOS250M48P placed on day 5 had not been placed. How many units of SOS250M48P would be backordered at the end of day 10?",
+  "text": "In Plant 2114, Period 01, suppose the order for SOS250M48P placed on day 5 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "SOS250M48P",
+    "day": 5
+   }
+  ],
+  "query_case": "SOS250M48P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS250M48P",
+   "day": 10
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "SOS250M48P",
+   "day": 5
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-03",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2103, Period 02",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 2368,
+  "gold_reimpl": 2368,
+  "factual_end": 683,
+  "effectful": true,
+  "question": "In Plant 2103, Period 02, suppose the order for POP001L12P-A placed on day 26 had not been placed. How many units of POP001L12P-A would be in stock at the end of day 27?",
+  "text": "In Plant 2103, Period 02, suppose the order for POP001L12P-A placed on day 26 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "POP001L12P-A",
+    "day": 26
+   }
+  ],
+  "query_case": "POP001L12P-A",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POP001L12P-A",
+   "day": 27
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "POP001L12P-A",
+   "day": 26
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-04",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1914, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 1899,
+  "gold_reimpl": 1899,
+  "factual_end": 1850,
+  "effectful": true,
+  "question": "In Plant 1914, Period 01, suppose the order for ATWWP001K24P placed on day 4 had not been placed. How many units of ATWWP001K24P would be in stock at the end of day 12?",
+  "text": "In Plant 1914, Period 01, suppose the order for ATWWP001K24P placed on day 4 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "ATWWP001K24P",
+    "day": 4
+   }
+  ],
+  "query_case": "ATWWP001K24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "ATWWP001K24P",
+   "day": 12
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "ATWWP001K24P",
+   "day": 4
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-05",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2114, Period 02",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 950,
+  "gold_reimpl": 950,
+  "factual_end": 910,
+  "effectful": true,
+  "question": "In Plant 2114, Period 02, suppose the order for SOP001L12P placed on day 25 had not been placed. How many units of SOP001L12P would be in stock at the end of day 27?",
+  "text": "In Plant 2114, Period 02, suppose the order for SOP001L12P placed on day 25 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "SOP001L12P",
+    "day": 25
+   }
+  ],
+  "query_case": "SOP001L12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOP001L12P",
+   "day": 27
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "SOP001L12P",
+   "day": 25
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-06",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1914, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 3134,
+  "gold_reimpl": 3134,
+  "factual_end": 1898,
+  "effectful": true,
+  "question": "In Plant 1914, Period 01, suppose the order for MAR01K24P placed on day 10 had not been placed. How many units of MAR01K24P would be in stock at the end of day 11?",
+  "text": "In Plant 1914, Period 01, suppose the order for MAR01K24P placed on day 10 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "MAR01K24P",
+    "day": 10
+   }
+  ],
+  "query_case": "MAR01K24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR01K24P",
+   "day": 11
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "MAR01K24P",
+   "day": 10
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-07",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 6721,
+  "gold_reimpl": 6721,
+  "factual_end": 6721,
+  "effectful": false,
+  "question": "In Plant 2114, Period 03, suppose the order for SOP001L12P placed on day 37 had not been placed. How many units of SOS500M24P would be in stock at the end of day 42?",
+  "text": "In Plant 2114, Period 03, suppose the order for SOP001L12P placed on day 37 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "SOP001L12P",
+    "day": 37
+   }
+  ],
+  "query_case": "SOS500M24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS500M24P",
+   "day": 42
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "SOP001L12P",
+   "day": 37
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-08",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2103, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 7006,
+  "gold_reimpl": 7006,
+  "factual_end": 7778,
+  "effectful": true,
+  "question": "In Plant 2103, Period 01, suppose the order for POPF01L12P placed on day 1 had not been placed. How many units of SOS001L12P would be in stock at the end of day 4?",
+  "text": "In Plant 2103, Period 01, suppose the order for POPF01L12P placed on day 1 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "POPF01L12P",
+    "day": 1
+   }
+  ],
+  "query_case": "SOS001L12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS001L12P",
+   "day": 4
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "POPF01L12P",
+   "day": 1
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-09",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d01",
+  "scope": "Plant 2103, Period 03",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 901,
+  "gold_reimpl": 901,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2103, Period 03, suppose the order for POP001L12P-B placed on day 33 had not been placed. How many units of POP001L12P-B would be in stock at the end of day 34?",
+  "text": "In Plant 2103, Period 03, suppose the order for POP001L12P-B placed on day 33 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "POP001L12P-B",
+    "day": 33
+   }
+  ],
+  "query_case": "POP001L12P-B",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POP001L12P-B",
+   "day": 34
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "POP001L12P-B",
+   "day": 33
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-10",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "order_removal",
+  "gold": 3446,
+  "gold_reimpl": 3446,
+  "factual_end": 1627,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the order for ATN02K12P placed on day 1 had not been placed. How many units of ATN02K12P would be in stock at the end of day 13?",
+  "text": "In Plant 1912, Period 01, suppose the order for ATN02K12P placed on day 1 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "ATN02K12P",
+    "day": 1
+   }
+  ],
+  "query_case": "ATN02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "ATN02K12P",
+   "day": 13
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "ATN02K12P",
+   "day": 1
+  }
+ },
+ {
+  "id": "mfg-dev-order_removal-11",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2103, Period 02",
+  "seen_at_build": false,
+  "family": "order_removal",
+  "gold": 1983,
+  "gold_reimpl": 1983,
+  "factual_end": 838,
+  "effectful": true,
+  "question": "In Plant 2103, Period 02, suppose the order for POV500M24P placed on day 26 had not been placed. How many units of POV500M24P would be in stock at the end of day 26?",
+  "text": "In Plant 2103, Period 02, suppose the order for POV500M24P placed on day 26 had not been placed.",
+  "interventions": [
+   {
+    "kind": "remove_order",
+    "product": "POV500M24P",
+    "day": 26
+   }
+  ],
+  "query_case": "POV500M24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POV500M24P",
+   "day": 26
+  },
+  "binding": {
+   "family": "order_removal",
+   "op": "remove",
+   "target": "POV500M24P",
+   "day": 26
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-00",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 0,
+  "effectful": false,
+  "question": "In Plant 2114, Period 01, suppose 82 units of SOP001L12P had been produced on day 7 (instead of the recorded 0). How many units of SOP001L12P would be in stock at the end of day 9?",
+  "text": "In Plant 2114, Period 01, suppose 82 units of SOP001L12P had been produced on day 7 (instead of the recorded 0).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOP001L12P",
+    "day": 7,
+    "value": 82
+   }
+  ],
+  "query_case": "SOP001L12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOP001L12P",
+   "day": 9
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOP001L12P",
+   "day": 7,
+   "value": 82
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-01",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2114, Period 02",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 3930,
+  "gold_reimpl": 3930,
+  "factual_end": 4932,
+  "effectful": true,
+  "question": "In Plant 2114, Period 02, suppose 1001 units of SOS003L04P had been produced on day 20 (instead of the recorded 2003). How many units of SOS003L04P would be in stock at the end of day 24?",
+  "text": "In Plant 2114, Period 02, suppose 1001 units of SOS003L04P had been produced on day 20 (instead of the recorded 2003).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS003L04P",
+    "day": 20,
+    "value": 1001
+   }
+  ],
+  "query_case": "SOS003L04P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS003L04P",
+   "day": 24
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS003L04P",
+   "day": 20,
+   "value": 1001
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-02",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 0,
+  "effectful": false,
+  "question": "In Plant 2114, Period 01, suppose 2000 units of SOS500M24P had been produced on day 11 (instead of the recorded 4001). How many units of SOS003L04P would be backordered at the end of day 14?",
+  "text": "In Plant 2114, Period 01, suppose 2000 units of SOS500M24P had been produced on day 11 (instead of the recorded 4001).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS500M24P",
+    "day": 11,
+    "value": 2000
+   }
+  ],
+  "query_case": "SOS003L04P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS003L04P",
+   "day": 14
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS500M24P",
+   "day": 11,
+   "value": 2000
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-03",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 15417,
+  "gold_reimpl": 15417,
+  "factual_end": 15395,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose 0 units of SOS005L04P had been produced on day 37 (instead of the recorded 5924). How many units of SOS005L04P would be backordered at the end of day 37?",
+  "text": "In Plant 2114, Period 03, suppose 0 units of SOS005L04P had been produced on day 37 (instead of the recorded 5924).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS005L04P",
+    "day": 37,
+    "value": 0
+   }
+  ],
+  "query_case": "SOS005L04P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS005L04P",
+   "day": 37
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS005L04P",
+   "day": 37,
+   "value": 0
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-04",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 80,
+  "effectful": true,
+  "question": "In Plant 2114, Period 01, suppose 82 units of SOP001L12P had been produced on day 9 (instead of the recorded 0). How many units of SOP001L12P would be backordered at the end of day 13?",
+  "text": "In Plant 2114, Period 01, suppose 82 units of SOP001L12P had been produced on day 9 (instead of the recorded 0).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOP001L12P",
+    "day": 9,
+    "value": 82
+   }
+  ],
+  "query_case": "SOP001L12P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOP001L12P",
+   "day": 13
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOP001L12P",
+   "day": 9,
+   "value": 82
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-05",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d01",
+  "scope": "Plant 2103, Period 03",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 248,
+  "gold_reimpl": 248,
+  "factual_end": 96,
+  "effectful": true,
+  "question": "In Plant 2103, Period 03, suppose 152 units of POP002L09P had been produced on day 39 (instead of the recorded 304). How many units of POP002L09P would be backordered at the end of day 41?",
+  "text": "In Plant 2103, Period 03, suppose 152 units of POP002L09P had been produced on day 39 (instead of the recorded 304).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "POP002L09P",
+    "day": 39,
+    "value": 152
+   }
+  ],
+  "query_case": "POP002L09P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "POP002L09P",
+   "day": 41
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "POP002L09P",
+   "day": 39,
+   "value": 152
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-06",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 14077,
+  "gold_reimpl": 14077,
+  "factual_end": 5964,
+  "effectful": true,
+  "question": "In Plant 2114, Period 01, suppose 18113 units of SOS005L04P had been produced on day 8 (instead of the recorded 10000). How many units of SOS005L04P would be in stock at the end of day 10?",
+  "text": "In Plant 2114, Period 01, suppose 18113 units of SOS005L04P had been produced on day 8 (instead of the recorded 10000).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS005L04P",
+    "day": 8,
+    "value": 18113
+   }
+  ],
+  "query_case": "SOS005L04P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS005L04P",
+   "day": 10
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS005L04P",
+   "day": 8,
+   "value": 18113
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-07",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d04",
+  "scope": "Plant 1914, Period 03",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 821,
+  "gold_reimpl": 821,
+  "factual_end": 1271,
+  "effectful": true,
+  "question": "In Plant 1914, Period 03, suppose 0 units of MAR01K24P had been produced on day 42 (instead of the recorded 450). How many units of MAR01K24P would be in stock at the end of day 42?",
+  "text": "In Plant 1914, Period 03, suppose 0 units of MAR01K24P had been produced on day 42 (instead of the recorded 450).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "MAR01K24P",
+    "day": 42,
+    "value": 0
+   }
+  ],
+  "query_case": "MAR01K24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR01K24P",
+   "day": 42
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "MAR01K24P",
+   "day": 42,
+   "value": 0
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-08",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 162,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose 0 units of MAR02K12P had been produced on day 11 (instead of the recorded 300). How many units of MAR02K12P would be in stock at the end of day 13?",
+  "text": "In Plant 1912, Period 01, suppose 0 units of MAR02K12P had been produced on day 11 (instead of the recorded 300).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "MAR02K12P",
+    "day": 11,
+    "value": 0
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR02K12P",
+   "day": 13
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "MAR02K12P",
+   "day": 11,
+   "value": 0
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-09",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d03",
+  "scope": "Plant 1914, Period 02",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 51,
+  "effectful": true,
+  "question": "In Plant 1914, Period 02, suppose 54 units of SE200G24P had been produced on day 16 (instead of the recorded 0). How many units of SE200G24P would be backordered at the end of day 18?",
+  "text": "In Plant 1914, Period 02, suppose 54 units of SE200G24P had been produced on day 16 (instead of the recorded 0).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SE200G24P",
+    "day": 16,
+    "value": 54
+   }
+  ],
+  "query_case": "SE200G24P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SE200G24P",
+   "day": 18
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SE200G24P",
+   "day": 16,
+   "value": 54
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-10",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_quantity",
+  "gold": 2394,
+  "gold_reimpl": 2394,
+  "factual_end": 389,
+  "effectful": true,
+  "question": "In Plant 2114, Period 01, suppose 0 units of SOS003L04P had been produced on day 8 (instead of the recorded 2005). How many units of SOS003L04P would be backordered at the end of day 9?",
+  "text": "In Plant 2114, Period 01, suppose 0 units of SOS003L04P had been produced on day 8 (instead of the recorded 2005).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS003L04P",
+    "day": 8,
+    "value": 0
+   }
+  ],
+  "query_case": "SOS003L04P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS003L04P",
+   "day": 9
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS003L04P",
+   "day": 8,
+   "value": 0
+  }
+ },
+ {
+  "id": "mfg-dev-production_quantity-11",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "production_quantity",
+  "gold": 1603,
+  "gold_reimpl": 1603,
+  "factual_end": 1298,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose 305 units of SOS250M48P had been produced on day 32 (instead of the recorded 0). How many units of SOS250M48P would be in stock at the end of day 34?",
+  "text": "In Plant 2114, Period 03, suppose 305 units of SOS250M48P had been produced on day 32 (instead of the recorded 0).",
+  "interventions": [
+   {
+    "kind": "set_production",
+    "product": "SOS250M48P",
+    "day": 32,
+    "value": 305
+   }
+  ],
+  "query_case": "SOS250M48P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS250M48P",
+   "day": 34
+  },
+  "binding": {
+   "family": "production_quantity",
+   "op": "set",
+   "target": "SOS250M48P",
+   "day": 32,
+   "value": 305
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-00",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1914, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 0,
+  "effectful": false,
+  "question": "In Plant 1914, Period 01, suppose the production of AT5X5K on day 7 had arrived 3 days later, on day 10, instead of on day 7. How many units of AT5X5K would be backordered at the end of day 14?",
+  "text": "In Plant 1914, Period 01, suppose the production of AT5X5K on day 7 had arrived 3 days later, on day 10, instead of on day 7.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "AT5X5K",
+    "day": 7,
+    "by": 3
+   }
+  ],
+  "query_case": "AT5X5K",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "AT5X5K",
+   "day": 14
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "AT5X5K",
+   "day": 7,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-01",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 11069,
+  "gold_reimpl": 11069,
+  "factual_end": 16491,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose the production of SOS005L04P on day 30 had arrived 3 days later, on day 33, instead of on day 30. How many units of SOS005L04P would be in stock at the end of day 32?",
+  "text": "In Plant 2114, Period 03, suppose the production of SOS005L04P on day 30 had arrived 3 days later, on day 33, instead of on day 30.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "SOS005L04P",
+    "day": 30,
+    "by": 3
+   }
+  ],
+  "query_case": "SOS005L04P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SOS005L04P",
+   "day": 32
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "SOS005L04P",
+   "day": 30,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-02",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 0,
+  "effectful": false,
+  "question": "In Plant 1912, Period 01, suppose the production of MAR02K12P on day 12 had arrived 1 day later, on day 13, instead of on day 12. How many units of MAR02K12P would be backordered at the end of day 13?",
+  "text": "In Plant 1912, Period 01, suppose the production of MAR02K12P on day 12 had arrived 1 day later, on day 13, instead of on day 12.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "MAR02K12P",
+    "day": 12,
+    "by": 1
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "MAR02K12P",
+   "day": 13
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "MAR02K12P",
+   "day": 12,
+   "value": 1
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-03",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 4686,
+  "gold_reimpl": 4686,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose the production of SOS005L04P on day 41 had arrived 3 days later, on day 44, instead of on day 41. How many units of SOS005L04P would be backordered at the end of day 42?",
+  "text": "In Plant 2114, Period 03, suppose the production of SOS005L04P on day 41 had arrived 3 days later, on day 44, instead of on day 41.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "SOS005L04P",
+    "day": 41,
+    "by": 3
+   }
+  ],
+  "query_case": "SOS005L04P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS005L04P",
+   "day": 42
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "SOS005L04P",
+   "day": 41,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-04",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2114, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 13,
+  "gold_reimpl": 13,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2114, Period 01, suppose the production of SOS500M24P on day 1 had arrived 2 days later, on day 3, instead of on day 1. How many units of SOS500M24P would be backordered at the end of day 2?",
+  "text": "In Plant 2114, Period 01, suppose the production of SOS500M24P on day 1 had arrived 2 days later, on day 3, instead of on day 1.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "SOS500M24P",
+    "day": 1,
+    "by": 2
+   }
+  ],
+  "query_case": "SOS500M24P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS500M24P",
+   "day": 2
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "SOS500M24P",
+   "day": 1,
+   "value": 2
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-05",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 8830,
+  "gold_reimpl": 8830,
+  "factual_end": 3469,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose the production of SOS500M24P on day 38 had arrived 2 days later, on day 40, instead of on day 38. How many units of SOS500M24P would be backordered at the end of day 38?",
+  "text": "In Plant 2114, Period 03, suppose the production of SOS500M24P on day 38 had arrived 2 days later, on day 40, instead of on day 38.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "SOS500M24P",
+    "day": 38,
+    "by": 2
+   }
+  ],
+  "query_case": "SOS500M24P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS500M24P",
+   "day": 38
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "SOS500M24P",
+   "day": 38,
+   "value": 2
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-06",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 705,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the production of ATN02K12P on day 11 had arrived 3 days later, on day 14, instead of on day 11. How many units of ATN02K12P would be in stock at the end of day 11?",
+  "text": "In Plant 1912, Period 01, suppose the production of ATN02K12P on day 11 had arrived 3 days later, on day 14, instead of on day 11.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "ATN02K12P",
+    "day": 11,
+    "by": 3
+   }
+  ],
+  "query_case": "ATN02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "ATN02K12P",
+   "day": 11
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "ATN02K12P",
+   "day": 11,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-07",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2103, Period 02",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 363,
+  "gold_reimpl": 363,
+  "factual_end": 967,
+  "effectful": true,
+  "question": "In Plant 2103, Period 02, suppose the production of POV002L09P on day 28 had arrived 1 day later, on day 29, instead of on day 28. How many units of POV002L09P would be in stock at the end of day 28?",
+  "text": "In Plant 2103, Period 02, suppose the production of POV002L09P on day 28 had arrived 1 day later, on day 29, instead of on day 28.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "POV002L09P",
+    "day": 28,
+    "by": 1
+   }
+  ],
+  "query_case": "POV002L09P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POV002L09P",
+   "day": 28
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "POV002L09P",
+   "day": 28,
+   "value": 1
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-08",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2103, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 940,
+  "effectful": true,
+  "question": "In Plant 2103, Period 01, suppose the production of POP001L12P-B on day 12 had arrived 2 days later, on day 14, instead of on day 12. How many units of POP001L12P-B would be in stock at the end of day 13?",
+  "text": "In Plant 2103, Period 01, suppose the production of POP001L12P-B on day 12 had arrived 2 days later, on day 14, instead of on day 12.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "POP001L12P-B",
+    "day": 12,
+    "by": 2
+   }
+  ],
+  "query_case": "POP001L12P-B",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POP001L12P-B",
+   "day": 13
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "POP001L12P-B",
+   "day": 12,
+   "value": 2
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-09",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d01",
+  "scope": "Plant 2103, Period 03",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 122,
+  "effectful": true,
+  "question": "In Plant 2103, Period 03, suppose the production of POV005L04P on day 38 had arrived 3 days later, on day 41, instead of on day 38. How many units of POV005L04P would be in stock at the end of day 38?",
+  "text": "In Plant 2103, Period 03, suppose the production of POV005L04P on day 38 had arrived 3 days later, on day 41, instead of on day 38.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "POV005L04P",
+    "day": 38,
+    "by": 3
+   }
+  ],
+  "query_case": "POV005L04P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POV005L04P",
+   "day": 38
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "POV005L04P",
+   "day": 38,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-10",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "production_timing",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 149,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the production of MAR02K12P on day 13 had arrived 3 days later, on day 16, instead of on day 13. How many units of MAR02K12P would be in stock at the end of day 14?",
+  "text": "In Plant 1912, Period 01, suppose the production of MAR02K12P on day 13 had arrived 3 days later, on day 16, instead of on day 13.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "MAR02K12P",
+    "day": 13,
+    "by": 3
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR02K12P",
+   "day": 14
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "MAR02K12P",
+   "day": 13,
+   "value": 3
+  }
+ },
+ {
+  "id": "mfg-dev-production_timing-11",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d01",
+  "scope": "Plant 2103, Period 03",
+  "seen_at_build": false,
+  "family": "production_timing",
+  "gold": 302,
+  "gold_reimpl": 302,
+  "factual_end": 96,
+  "effectful": true,
+  "question": "In Plant 2103, Period 03, suppose the production of POP002L09P on day 41 had arrived 2 days later, on day 43, instead of on day 41. How many units of POP002L09P would be backordered at the end of day 41?",
+  "text": "In Plant 2103, Period 03, suppose the production of POP002L09P on day 41 had arrived 2 days later, on day 43, instead of on day 41.",
+  "interventions": [
+   {
+    "kind": "delay_production",
+    "product": "POP002L09P",
+    "day": 41,
+    "by": 2
+   }
+  ],
+  "query_case": "POP002L09P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "POP002L09P",
+   "day": 41
+  },
+  "binding": {
+   "family": "production_timing",
+   "op": "delay",
+   "target": "POP002L09P",
+   "day": 41,
+   "value": 2
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-00",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 0,
+  "gold_reimpl": 0,
+  "factual_end": 23,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 120% of its stated value (41400 kg instead of 34500 kg) on every day from day 1 on. How many units of MAR02K12P would be in stock at the end of day 11?",
+  "text": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 120% of its stated value (41400 kg instead of 34500 kg) on every day from day 1 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 1.2,
+    "from_day": 1
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR02K12P",
+   "day": 11
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 1,
+   "value": 1.2
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-01",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d03",
+  "scope": "Plant 1914, Period 02",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 8273,
+  "gold_reimpl": 8273,
+  "factual_end": 8273,
+  "effectful": false,
+  "question": "In Plant 1914, Period 02, suppose the daily dispatch capacity had been 80% of its stated value (154360 kg instead of 192950 kg) on every day from day 15 on. How many units of SE500G24P would be in stock at the end of day 25?",
+  "text": "In Plant 1914, Period 02, suppose the daily dispatch capacity had been 80% of its stated value (154360 kg instead of 192950 kg) on every day from day 15 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 15
+   }
+  ],
+  "query_case": "SE500G24P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "SE500G24P",
+   "day": 25
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 15,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-02",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 1861,
+  "gold_reimpl": 1861,
+  "factual_end": 1861,
+  "effectful": false,
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on. How many units of ATN02K12P would be in stock at the end of day 6?",
+  "text": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 1
+   }
+  ],
+  "query_case": "ATN02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "ATN02K12P",
+   "day": 6
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 1,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-03",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d05",
+  "scope": "Plant 2114, Period 03",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 187,
+  "gold_reimpl": 187,
+  "factual_end": 277,
+  "effectful": true,
+  "question": "In Plant 2114, Period 03, suppose the daily dispatch capacity had been 120% of its stated value (360000 kg instead of 300000 kg) on every day from day 29 on. How many units of SOS250M48P would be backordered at the end of day 38?",
+  "text": "In Plant 2114, Period 03, suppose the daily dispatch capacity had been 120% of its stated value (360000 kg instead of 300000 kg) on every day from day 29 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 1.2,
+    "from_day": 29
+   }
+  ],
+  "query_case": "SOS250M48P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS250M48P",
+   "day": 38
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 29,
+   "value": 1.2
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-04",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 348,
+  "gold_reimpl": 348,
+  "factual_end": 298,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 10 on. How many units of MASR025K would be in stock at the end of day 13?",
+  "text": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 10 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 10
+   }
+  ],
+  "query_case": "MASR025K",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MASR025K",
+   "day": 13
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 10,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-05",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2103, Period 02",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 221,
+  "gold_reimpl": 221,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2103, Period 02, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 15 on. How many units of POP001L12P-B would be backordered at the end of day 22?",
+  "text": "In Plant 2103, Period 02, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 15 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.5,
+    "from_day": 15
+   }
+  ],
+  "query_case": "POP001L12P-B",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "POP001L12P-B",
+   "day": 22
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 15,
+   "value": 0.5
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-06",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 1806,
+  "gold_reimpl": 1806,
+  "factual_end": 21,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on. How many units of ATN02K12P would be backordered at the end of day 14?",
+  "text": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 1
+   }
+  ],
+  "query_case": "ATN02K12P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "ATN02K12P",
+   "day": 14
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 1,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-07",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d03",
+  "scope": "Plant 1912, Period 02",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 474,
+  "gold_reimpl": 474,
+  "factual_end": 418,
+  "effectful": true,
+  "question": "In Plant 1912, Period 02, suppose the daily dispatch capacity had been 50% of its stated value (17250 kg instead of 34500 kg) on every day from day 20 on. How many units of MAR02K12P would be in stock at the end of day 24?",
+  "text": "In Plant 1912, Period 02, suppose the daily dispatch capacity had been 50% of its stated value (17250 kg instead of 34500 kg) on every day from day 20 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.5,
+    "from_day": 20
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "MAR02K12P",
+   "day": 24
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 20,
+   "value": 0.5
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-08",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 1912, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 532,
+  "gold_reimpl": 532,
+  "factual_end": 277,
+  "effectful": true,
+  "question": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on. How many units of MAR02K12P would be backordered at the end of day 10?",
+  "text": "In Plant 1912, Period 01, suppose the daily dispatch capacity had been 80% of its stated value (27600 kg instead of 34500 kg) on every day from day 1 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 1
+   }
+  ],
+  "query_case": "MAR02K12P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "MAR02K12P",
+   "day": 10
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 1,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-09",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d01",
+  "scope": "Plant 2103, Period 03",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 795,
+  "gold_reimpl": 795,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2103, Period 03, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 29 on. How many units of POPF01L12P would be backordered at the end of day 32?",
+  "text": "In Plant 2103, Period 03, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 29 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.5,
+    "from_day": 29
+   }
+  ],
+  "query_case": "POPF01L12P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "POPF01L12P",
+   "day": 32
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 29,
+   "value": 0.5
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-10",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_dev",
+  "scope": "Plant 2103, Period 01",
+  "seen_at_build": true,
+  "family": "dispatch_capacity",
+  "gold": 1135,
+  "gold_reimpl": 1135,
+  "factual_end": 476,
+  "effectful": true,
+  "question": "In Plant 2103, Period 01, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 1 on. How many units of POV002L09P would be in stock at the end of day 14?",
+  "text": "In Plant 2103, Period 01, suppose the daily dispatch capacity had been 50% of its stated value (203850 kg instead of 407700 kg) on every day from day 1 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.5,
+    "from_day": 1
+   }
+  ],
+  "query_case": "POV002L09P",
+  "query": {
+   "kind": "stock_end_of_day",
+   "product": "POV002L09P",
+   "day": 14
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 1,
+   "value": 0.5
+  }
+ },
+ {
+  "id": "mfg-dev-dispatch_capacity-11",
+  "domain": "manufacturing",
+  "split": "dev",
+  "doc": "mfg_d02",
+  "scope": "Plant 2103, Period 02",
+  "seen_at_build": false,
+  "family": "dispatch_capacity",
+  "gold": 409,
+  "gold_reimpl": 409,
+  "factual_end": 0,
+  "effectful": true,
+  "question": "In Plant 2103, Period 02, suppose the daily dispatch capacity had been 80% of its stated value (326160 kg instead of 407700 kg) on every day from day 16 on. How many units of SOS002L09P would be backordered at the end of day 16?",
+  "text": "In Plant 2103, Period 02, suppose the daily dispatch capacity had been 80% of its stated value (326160 kg instead of 407700 kg) on every day from day 16 on.",
+  "interventions": [
+   {
+    "kind": "scale_capacity",
+    "factor": 0.8,
+    "from_day": 16
+   }
+  ],
+  "query_case": "SOS002L09P",
+  "query": {
+   "kind": "backordered_end_of_day",
+   "product": "SOS002L09P",
+   "day": 16
+  },
+  "binding": {
+   "family": "dispatch_capacity",
+   "op": "scale",
+   "day": 16,
+   "value": 0.8
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-00",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 716,
+  "gold_reimpl": 716,
+  "factual_end": 742,
+  "effectful": true,
+  "question": "In Cell window 30, suppose job J26 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T105 first start?",
+  "text": "In Cell window 30, suppose job J26 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J26"
+   }
+  ],
+  "query_case": "T105",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T105"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J26"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-01",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 07",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": 1069,
+  "gold_reimpl": 1069,
+  "factual_end": 1346,
+  "effectful": true,
+  "question": "In Cell window 07, suppose job J05 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T081 first start?",
+  "text": "In Cell window 07, suppose job J05 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J05"
+   }
+  ],
+  "query_case": "T081",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T081"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J05"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-02",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 4554,
+  "gold_reimpl": 4554,
+  "factual_end": 4523,
+  "effectful": true,
+  "question": "In Cell window 30, suppose job J22 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T154 first start?",
+  "text": "In Cell window 30, suppose job J22 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J22"
+   }
+  ],
+  "query_case": "T154",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T154"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J22"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-03",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 25",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": 35961,
+  "gold_reimpl": 35961,
+  "factual_end": 35961,
+  "effectful": false,
+  "question": "In Cell window 25, suppose job J13 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T156 first start?",
+  "text": "In Cell window 25, suppose job J13 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J13"
+   }
+  ],
+  "query_case": "T156",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T156"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J13"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-04",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 263,
+  "gold_reimpl": 263,
+  "factual_end": 263,
+  "effectful": false,
+  "question": "In Cell window 30, suppose job J06 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T034 first start?",
+  "text": "In Cell window 30, suppose job J06 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J06"
+   }
+  ],
+  "query_case": "T034",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T034"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J06"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-05",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": 594,
+  "gold_reimpl": 594,
+  "factual_end": 546,
+  "effectful": true,
+  "question": "In Cell window 06, suppose job J20 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T035 first start?",
+  "text": "In Cell window 06, suppose job J20 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J20"
+   }
+  ],
+  "query_case": "T035",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T035"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J20"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-06",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 1312,
+  "gold_reimpl": 1312,
+  "factual_end": 5536,
+  "effectful": true,
+  "question": "In Cell window 17, suppose job J17 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T033 first start?",
+  "text": "In Cell window 17, suppose job J17 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J17"
+   }
+  ],
+  "query_case": "T033",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T033"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J17"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-07",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 07",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": 871,
+  "gold_reimpl": 871,
+  "factual_end": 885,
+  "effectful": true,
+  "question": "In Cell window 07, suppose job J18 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T079 first start?",
+  "text": "In Cell window 07, suppose job J18 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J18"
+   }
+  ],
+  "query_case": "T079",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T079"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J18"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-08",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 1263,
+  "gold_reimpl": 1263,
+  "factual_end": 1389,
+  "effectful": true,
+  "question": "In Cell window 30, suppose job J28 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T149 first start?",
+  "text": "In Cell window 30, suppose job J28 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J28"
+   }
+  ],
+  "query_case": "T149",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T149"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J28"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-09",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 07",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": 924,
+  "gold_reimpl": 924,
+  "factual_end": 1163,
+  "effectful": true,
+  "question": "In Cell window 07, suppose job J21 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T092 first start?",
+  "text": "In Cell window 07, suppose job J21 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J21"
+   }
+  ],
+  "query_case": "T092",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T092"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J21"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-10",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "job_removal",
+  "gold": 2466,
+  "gold_reimpl": 2466,
+  "factual_end": 2303,
+  "effectful": true,
+  "question": "In Cell window 08, suppose job J14 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T075 first start?",
+  "text": "In Cell window 08, suppose job J14 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J14"
+   }
+  ],
+  "query_case": "T075",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T075"
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J14"
+  }
+ },
+ {
+  "id": "itops-dev-job_removal-11",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d02",
+  "scope": "Cell window 24",
+  "seen_at_build": false,
+  "family": "job_removal",
+  "gold": false,
+  "gold_reimpl": false,
+  "factual_end": true,
+  "effectful": true,
+  "question": "In Cell window 24, suppose job J05 had never been submitted (none of its tasks). Would task T186 first start at or before time 1306? Answer yes or no.",
+  "text": "In Cell window 24, suppose job J05 had never been submitted (none of its tasks).",
+  "interventions": [
+   {
+    "kind": "remove_job",
+    "job": "J05"
+   }
+  ],
+  "query_case": "T186",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T186",
+   "deadline": 1306
+  },
+  "binding": {
+   "family": "job_removal",
+   "op": "remove",
+   "target": "J05"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-00",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": false,
+  "gold_reimpl": false,
+  "factual_end": true,
+  "effectful": true,
+  "question": "In Cell window 27, suppose machine M04 had not failed during the window. Would task T085 first start at or before time 1443? Answer yes or no.",
+  "text": "In Cell window 27, suppose machine M04 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M04"
+   }
+  ],
+  "query_case": "T085",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T085",
+   "deadline": 1443
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M04"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-01",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": true,
+  "gold_reimpl": true,
+  "factual_end": true,
+  "effectful": false,
+  "question": "In Cell window 06, suppose machine M02 had not failed during the window. Would task T105 first start at or before time 1417? Answer yes or no.",
+  "text": "In Cell window 06, suppose machine M02 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M02"
+   }
+  ],
+  "query_case": "T105",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T105",
+   "deadline": 1417
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M02"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-02",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": 749,
+  "gold_reimpl": 749,
+  "factual_end": 1024,
+  "effectful": true,
+  "question": "In Cell window 30, suppose machine M07 had not failed during the window. At what time, in seconds from the window start, would task T100 first start?",
+  "text": "In Cell window 30, suppose machine M07 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M07"
+   }
+  ],
+  "query_case": "T100",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T100"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M07"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-03",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 18",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": true,
+  "gold_reimpl": true,
+  "factual_end": true,
+  "effectful": false,
+  "question": "In Cell window 18, suppose machine M05 had not failed during the window. Would task T054 first start at or before time 855? Answer yes or no.",
+  "text": "In Cell window 18, suppose machine M05 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T054",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T054",
+   "deadline": 855
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-04",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": 2879,
+  "gold_reimpl": 2879,
+  "factual_end": 2954,
+  "effectful": true,
+  "question": "In Cell window 08, suppose machine M02 had not failed during the window. At what time, in seconds from the window start, would task T047 first start?",
+  "text": "In Cell window 08, suppose machine M02 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M02"
+   }
+  ],
+  "query_case": "T047",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T047"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M02"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-05",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 07",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": 1016,
+  "gold_reimpl": 1016,
+  "factual_end": 979,
+  "effectful": true,
+  "question": "In Cell window 07, suppose machine M01 had not failed during the window. At what time, in seconds from the window start, would task T090 first start?",
+  "text": "In Cell window 07, suppose machine M01 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M01"
+   }
+  ],
+  "query_case": "T090",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T090"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M01"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-06",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": 952,
+  "gold_reimpl": 952,
+  "factual_end": 975,
+  "effectful": true,
+  "question": "In Cell window 17, suppose machine M05 had not failed during the window. At what time, in seconds from the window start, would task T066 first start?",
+  "text": "In Cell window 17, suppose machine M05 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T066",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T066"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-07",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 16",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": 1366,
+  "gold_reimpl": 1366,
+  "factual_end": 1385,
+  "effectful": true,
+  "question": "In Cell window 16, suppose machine M04 had not failed during the window. At what time, in seconds from the window start, would task T113 first start?",
+  "text": "In Cell window 16, suppose machine M04 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M04"
+   }
+  ],
+  "query_case": "T113",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T113"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M04"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-08",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": 1231,
+  "gold_reimpl": 1231,
+  "factual_end": 1253,
+  "effectful": true,
+  "question": "In Cell window 30, suppose machine M07 had not failed during the window. At what time, in seconds from the window start, would task T128 first start?",
+  "text": "In Cell window 30, suppose machine M07 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M07"
+   }
+  ],
+  "query_case": "T128",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T128"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M07"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-09",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d02",
+  "scope": "Cell window 24",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": false,
+  "gold_reimpl": false,
+  "factual_end": true,
+  "effectful": true,
+  "question": "In Cell window 24, suppose machine M05 had not failed during the window. Would task T198 first start at or before time 1081? Answer yes or no.",
+  "text": "In Cell window 24, suppose machine M05 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T198",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T198",
+   "deadline": 1081
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-10",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "failure_removal",
+  "gold": 1025,
+  "gold_reimpl": 1025,
+  "factual_end": 1134,
+  "effectful": true,
+  "question": "In Cell window 17, suppose machine M05 had not failed during the window. At what time, in seconds from the window start, would task T059 first start?",
+  "text": "In Cell window 17, suppose machine M05 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T059",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T059"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-failure_removal-11",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d02",
+  "scope": "Cell window 24",
+  "seen_at_build": false,
+  "family": "failure_removal",
+  "gold": 543,
+  "gold_reimpl": 543,
+  "factual_end": 551,
+  "effectful": true,
+  "question": "In Cell window 24, suppose machine M05 had not failed during the window. At what time, in seconds from the window start, would task T096 first start?",
+  "text": "In Cell window 24, suppose machine M05 had not failed during the window.",
+  "interventions": [
+   {
+    "kind": "remove_failure",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T096",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T096"
+  },
+  "binding": {
+   "family": "failure_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-00",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 2954,
+  "gold_reimpl": 2954,
+  "factual_end": 2954,
+  "effectful": false,
+  "question": "In Cell window 08, suppose task T067 had priority 5 (instead of 4). At what time, in seconds from the window start, would task T047 first start?",
+  "text": "In Cell window 08, suppose task T067 had priority 5 (instead of 4).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T067",
+    "value": 5
+   }
+  ],
+  "query_case": "T047",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T047"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T067",
+   "value": 5
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-01",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 16",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": 1321,
+  "gold_reimpl": 1321,
+  "factual_end": 1359,
+  "effectful": true,
+  "question": "In Cell window 16, suppose task T106 had priority 0 (instead of 4). At what time, in seconds from the window start, would task T069 first start?",
+  "text": "In Cell window 16, suppose task T106 had priority 0 (instead of 4).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T106",
+    "value": 0
+   }
+  ],
+  "query_case": "T069",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T069"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T106",
+   "value": 0
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-02",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 1260,
+  "gold_reimpl": 1260,
+  "factual_end": 14959,
+  "effectful": true,
+  "question": "In Cell window 30, suppose task T136 had priority 5 (instead of 4). At what time, in seconds from the window start, would task T136 first start?",
+  "text": "In Cell window 30, suppose task T136 had priority 5 (instead of 4).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T136",
+    "value": 5
+   }
+  ],
+  "query_case": "T136",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T136"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T136",
+   "value": 5
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-03",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": true,
+  "gold_reimpl": true,
+  "factual_end": true,
+  "effectful": false,
+  "question": "In Cell window 06, suppose task T061 had priority 5 (instead of 0). Would task T061 first start at or before time 705? Answer yes or no.",
+  "text": "In Cell window 06, suppose task T061 had priority 5 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T061",
+    "value": 5
+   }
+  ],
+  "query_case": "T061",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T061",
+   "deadline": 705
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T061",
+   "value": 5
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-04",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 597,
+  "gold_reimpl": 597,
+  "factual_end": 2954,
+  "effectful": true,
+  "question": "In Cell window 08, suppose task T047 had priority 1 (instead of 0). At what time, in seconds from the window start, would task T047 first start?",
+  "text": "In Cell window 08, suppose task T047 had priority 1 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T047",
+    "value": 1
+   }
+  ],
+  "query_case": "T047",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T047"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T047",
+   "value": 1
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-05",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 28",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": 1003,
+  "gold_reimpl": 1003,
+  "factual_end": 1005,
+  "effectful": true,
+  "question": "In Cell window 28, suppose task T059 had priority 11 (instead of 0). At what time, in seconds from the window start, would task T099 first start?",
+  "text": "In Cell window 28, suppose task T059 had priority 11 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T059",
+    "value": 11
+   }
+  ],
+  "query_case": "T099",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T099"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T059",
+   "value": 11
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-06",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 1072,
+  "gold_reimpl": 1072,
+  "factual_end": 1040,
+  "effectful": true,
+  "question": "In Cell window 08, suppose task T061 had priority 0 (instead of 6). At what time, in seconds from the window start, would task T061 first start?",
+  "text": "In Cell window 08, suppose task T061 had priority 0 (instead of 6).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T061",
+    "value": 0
+   }
+  ],
+  "query_case": "T061",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T061"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T061",
+   "value": 0
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-07",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d04",
+  "scope": "Cell window 26",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": 658,
+  "gold_reimpl": 658,
+  "factual_end": 724,
+  "effectful": true,
+  "question": "In Cell window 26, suppose task T096 had priority 11 (instead of 0). At what time, in seconds from the window start, would task T096 first start?",
+  "text": "In Cell window 26, suppose task T096 had priority 11 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T096",
+    "value": 11
+   }
+  ],
+  "query_case": "T096",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T096"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T096",
+   "value": 11
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-08",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 597,
+  "gold_reimpl": 597,
+  "factual_end": 740,
+  "effectful": true,
+  "question": "In Cell window 08, suppose task T039 had priority 11 (instead of 0). At what time, in seconds from the window start, would task T039 first start?",
+  "text": "In Cell window 08, suppose task T039 had priority 11 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T039",
+    "value": 11
+   }
+  ],
+  "query_case": "T039",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T039"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T039",
+   "value": 11
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-09",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 15",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": 1197,
+  "gold_reimpl": 1197,
+  "factual_end": 2096,
+  "effectful": true,
+  "question": "In Cell window 15, suppose task T214 had priority 11 (instead of 0). At what time, in seconds from the window start, would task T214 first start?",
+  "text": "In Cell window 15, suppose task T214 had priority 11 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T214",
+    "value": 11
+   }
+  ],
+  "query_case": "T214",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T214"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T214",
+   "value": 11
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-10",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "task_priority",
+  "gold": 5957,
+  "gold_reimpl": 5957,
+  "factual_end": 5955,
+  "effectful": true,
+  "question": "In Cell window 30, suppose task T055 had priority 9 (instead of 0). At what time, in seconds from the window start, would task T134 first start?",
+  "text": "In Cell window 30, suppose task T055 had priority 9 (instead of 0).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T055",
+    "value": 9
+   }
+  ],
+  "query_case": "T134",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T134"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T055",
+   "value": 9
+  }
+ },
+ {
+  "id": "itops-dev-task_priority-11",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "task_priority",
+  "gold": 374,
+  "gold_reimpl": 374,
+  "factual_end": 384,
+  "effectful": true,
+  "question": "In Cell window 06, suppose task T066 had priority 11 (instead of 8). At what time, in seconds from the window start, would task T066 first start?",
+  "text": "In Cell window 06, suppose task T066 had priority 11 (instead of 8).",
+  "interventions": [
+   {
+    "kind": "set_priority",
+    "task": "T066",
+    "value": 11
+   }
+  ],
+  "query_case": "T066",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T066"
+  },
+  "binding": {
+   "family": "task_priority",
+   "op": "set",
+   "target": "T066",
+   "value": 11
+  }
+ },
+ {
+  "id": "itops-dev-task_request-00",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 30",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 92,
+  "gold_reimpl": 92,
+  "factual_end": 92,
+  "effectful": false,
+  "question": "In Cell window 30, suppose task T017 had requested 484 units of memory (instead of 242). At what time, in seconds from the window start, would task T017 first start?",
+  "text": "In Cell window 30, suppose task T017 had requested 484 units of memory (instead of 242).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T017",
+    "resource": "mem",
+    "value": 484
+   }
+  ],
+  "query_case": "T017",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T017"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T017",
+   "resource": "mem",
+   "value": 484
+  }
+ },
+ {
+  "id": "itops-dev-task_request-01",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d04",
+  "scope": "Cell window 23",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": true,
+  "gold_reimpl": true,
+  "factual_end": true,
+  "effectful": false,
+  "question": "In Cell window 23, suppose task T059 had requested 622 units of memory (instead of 1244). Would task T059 first start at or before time 403? Answer yes or no.",
+  "text": "In Cell window 23, suppose task T059 had requested 622 units of memory (instead of 1244).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T059",
+    "resource": "mem",
+    "value": 622
+   }
+  ],
+  "query_case": "T059",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T059",
+   "deadline": 403
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T059",
+   "resource": "mem",
+   "value": 622
+  }
+ },
+ {
+  "id": "itops-dev-task_request-02",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 924,
+  "gold_reimpl": 924,
+  "factual_end": 909,
+  "effectful": true,
+  "question": "In Cell window 27, suppose task T073 had requested 6244 units of memory (instead of 3122). At what time, in seconds from the window start, would task T073 first start?",
+  "text": "In Cell window 27, suppose task T073 had requested 6244 units of memory (instead of 3122).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T073",
+    "resource": "mem",
+    "value": 6244
+   }
+  ],
+  "query_case": "T073",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T073"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T073",
+   "resource": "mem",
+   "value": 6244
+  }
+ },
+ {
+  "id": "itops-dev-task_request-03",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 16",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": 851,
+  "gold_reimpl": 851,
+  "factual_end": 1097,
+  "effectful": true,
+  "question": "In Cell window 16, suppose task T097 had requested 312 units of CPU (instead of 625). At what time, in seconds from the window start, would task T097 first start?",
+  "text": "In Cell window 16, suppose task T097 had requested 312 units of CPU (instead of 625).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T097",
+    "resource": "cpu",
+    "value": 312
+   }
+  ],
+  "query_case": "T097",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T097"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T097",
+   "resource": "cpu",
+   "value": 312
+  }
+ },
+ {
+  "id": "itops-dev-task_request-04",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 407,
+  "gold_reimpl": 407,
+  "factual_end": 549,
+  "effectful": true,
+  "question": "In Cell window 27, suppose task T038 had requested 3436 units of CPU (instead of 6873). At what time, in seconds from the window start, would task T038 first start?",
+  "text": "In Cell window 27, suppose task T038 had requested 3436 units of CPU (instead of 6873).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T038",
+    "resource": "cpu",
+    "value": 3436
+   }
+  ],
+  "query_case": "T038",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T038"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T038",
+   "resource": "cpu",
+   "value": 3436
+  }
+ },
+ {
+  "id": "itops-dev-task_request-05",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 15",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": 2096,
+  "gold_reimpl": 2096,
+  "factual_end": 2047,
+  "effectful": true,
+  "question": "In Cell window 15, suppose task T164 had requested 3106 units of memory (instead of 1553). At what time, in seconds from the window start, would task T164 first start?",
+  "text": "In Cell window 15, suppose task T164 had requested 3106 units of memory (instead of 1553).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T164",
+    "resource": "mem",
+    "value": 3106
+   }
+  ],
+  "query_case": "T164",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T164"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T164",
+   "resource": "mem",
+   "value": 3106
+  }
+ },
+ {
+  "id": "itops-dev-task_request-06",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 959,
+  "gold_reimpl": 959,
+  "factual_end": 1036,
+  "effectful": true,
+  "question": "In Cell window 17, suppose task T021 had requested 3125 units of CPU (instead of 6250). At what time, in seconds from the window start, would task T040 first start?",
+  "text": "In Cell window 17, suppose task T021 had requested 3125 units of CPU (instead of 6250).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T021",
+    "resource": "cpu",
+    "value": 3125
+   }
+  ],
+  "query_case": "T040",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T040"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T021",
+   "resource": "cpu",
+   "value": 3125
+  }
+ },
+ {
+  "id": "itops-dev-task_request-07",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": 3221,
+  "gold_reimpl": 3221,
+  "factual_end": 1956,
+  "effectful": true,
+  "question": "In Cell window 06, suppose task T107 had requested 6250 units of CPU (instead of 3125). At what time, in seconds from the window start, would task T107 first start?",
+  "text": "In Cell window 06, suppose task T107 had requested 6250 units of CPU (instead of 3125).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T107",
+    "resource": "cpu",
+    "value": 6250
+   }
+  ],
+  "query_case": "T107",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T107"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T107",
+   "resource": "cpu",
+   "value": 6250
+  }
+ },
+ {
+  "id": "itops-dev-task_request-08",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 597,
+  "gold_reimpl": 597,
+  "factual_end": 2967,
+  "effectful": true,
+  "question": "In Cell window 08, suppose task T048 had requested 1562 units of CPU (instead of 3125). At what time, in seconds from the window start, would task T048 first start?",
+  "text": "In Cell window 08, suppose task T048 had requested 1562 units of CPU (instead of 3125).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T048",
+    "resource": "cpu",
+    "value": 1562
+   }
+  ],
+  "query_case": "T048",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T048"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T048",
+   "resource": "cpu",
+   "value": 1562
+  }
+ },
+ {
+  "id": "itops-dev-task_request-09",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 28",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": 758,
+  "gold_reimpl": 758,
+  "factual_end": 765,
+  "effectful": true,
+  "question": "In Cell window 28, suppose task T060 had requested 137 units of memory (instead of 274). At what time, in seconds from the window start, would task T060 first start?",
+  "text": "In Cell window 28, suppose task T060 had requested 137 units of memory (instead of 274).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T060",
+    "resource": "mem",
+    "value": 137
+   }
+  ],
+  "query_case": "T060",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T060"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T060",
+   "resource": "mem",
+   "value": 137
+  }
+ },
+ {
+  "id": "itops-dev-task_request-10",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "task_request",
+  "gold": 799,
+  "gold_reimpl": 799,
+  "factual_end": 1036,
+  "effectful": true,
+  "question": "In Cell window 17, suppose task T040 had requested 625 units of CPU (instead of 1250). At what time, in seconds from the window start, would task T040 first start?",
+  "text": "In Cell window 17, suppose task T040 had requested 625 units of CPU (instead of 1250).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T040",
+    "resource": "cpu",
+    "value": 625
+   }
+  ],
+  "query_case": "T040",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T040"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T040",
+   "resource": "cpu",
+   "value": 625
+  }
+ },
+ {
+  "id": "itops-dev-task_request-11",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 25",
+  "seen_at_build": false,
+  "family": "task_request",
+  "gold": 848,
+  "gold_reimpl": 848,
+  "factual_end": 847,
+  "effectful": true,
+  "question": "In Cell window 25, suppose task T110 had requested 554 units of memory (instead of 277). At what time, in seconds from the window start, would task T110 first start?",
+  "text": "In Cell window 25, suppose task T110 had requested 554 units of memory (instead of 277).",
+  "interventions": [
+   {
+    "kind": "set_request",
+    "task": "T110",
+    "resource": "mem",
+    "value": 554
+   }
+  ],
+  "query_case": "T110",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T110"
+  },
+  "binding": {
+   "family": "task_request",
+   "op": "set",
+   "target": "T110",
+   "resource": "mem",
+   "value": 554
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-00",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": true,
+  "gold_reimpl": true,
+  "factual_end": true,
+  "effectful": false,
+  "question": "In Cell window 27, suppose machine M04 had not been part of the cluster. Would task T022 first start at or before time 145? Answer yes or no.",
+  "text": "In Cell window 27, suppose machine M04 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M04"
+   }
+  ],
+  "query_case": "T022",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T022",
+   "deadline": 145
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M04"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-01",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 07",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 237,
+  "gold_reimpl": 237,
+  "factual_end": 237,
+  "effectful": false,
+  "question": "In Cell window 07, suppose machine M08 had not been part of the cluster. At what time, in seconds from the window start, would task T027 first start?",
+  "text": "In Cell window 07, suppose machine M08 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M08"
+   }
+  ],
+  "query_case": "T027",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T027"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M08"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-02",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": 1553,
+  "gold_reimpl": 1553,
+  "factual_end": 1374,
+  "effectful": true,
+  "question": "In Cell window 27, suppose machine M01 had not been part of the cluster. At what time, in seconds from the window start, would task T104 first start?",
+  "text": "In Cell window 27, suppose machine M01 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M01"
+   }
+  ],
+  "query_case": "T104",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T104"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M01"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-03",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d01",
+  "scope": "Cell window 25",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 344,
+  "gold_reimpl": 344,
+  "factual_end": 322,
+  "effectful": true,
+  "question": "In Cell window 25, suppose machine M05 had not been part of the cluster. At what time, in seconds from the window start, would task T038 first start?",
+  "text": "In Cell window 25, suppose machine M05 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T038",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T038"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-04",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 17",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": 1076,
+  "gold_reimpl": 1076,
+  "factual_end": 1024,
+  "effectful": true,
+  "question": "In Cell window 17, suppose machine M04 had not been part of the cluster. At what time, in seconds from the window start, would task T039 first start?",
+  "text": "In Cell window 17, suppose machine M04 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M04"
+   }
+  ],
+  "query_case": "T039",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T039"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M04"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-05",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d03",
+  "scope": "Cell window 06",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 147,
+  "gold_reimpl": 147,
+  "factual_end": 248,
+  "effectful": true,
+  "question": "In Cell window 06, suppose machine M01 had not been part of the cluster. At what time, in seconds from the window start, would task T014 first start?",
+  "text": "In Cell window 06, suppose machine M01 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M01"
+   }
+  ],
+  "query_case": "T014",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T014"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M01"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-06",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": false,
+  "gold_reimpl": false,
+  "factual_end": true,
+  "effectful": true,
+  "question": "In Cell window 08, suppose machine M07 had not been part of the cluster. Would task T053 first start at or before time 3859? Answer yes or no.",
+  "text": "In Cell window 08, suppose machine M07 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M07"
+   }
+  ],
+  "query_case": "T053",
+  "query": {
+   "kind": "task_starts_by",
+   "task": "T053",
+   "deadline": 3859
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M07"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-07",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d02",
+  "scope": "Cell window 24",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 704,
+  "gold_reimpl": 704,
+  "factual_end": 695,
+  "effectful": true,
+  "question": "In Cell window 24, suppose machine M07 had not been part of the cluster. At what time, in seconds from the window start, would task T131 first start?",
+  "text": "In Cell window 24, suppose machine M07 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M07"
+   }
+  ],
+  "query_case": "T131",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T131"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M07"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-08",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 27",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": 1188,
+  "gold_reimpl": 1188,
+  "factual_end": 1162,
+  "effectful": true,
+  "question": "In Cell window 27, suppose machine M07 had not been part of the cluster. At what time, in seconds from the window start, would task T110 first start?",
+  "text": "In Cell window 27, suppose machine M07 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M07"
+   }
+  ],
+  "query_case": "T110",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T110"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M07"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-09",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 15",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 2960,
+  "gold_reimpl": 2960,
+  "factual_end": 2776,
+  "effectful": true,
+  "question": "In Cell window 15, suppose machine M03 had not been part of the cluster. At what time, in seconds from the window start, would task T175 first start?",
+  "text": "In Cell window 15, suppose machine M03 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M03"
+   }
+  ],
+  "query_case": "T175",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T175"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M03"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-10",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_dev",
+  "scope": "Cell window 08",
+  "seen_at_build": true,
+  "family": "machine_removal",
+  "gold": 2875,
+  "gold_reimpl": 2875,
+  "factual_end": 740,
+  "effectful": true,
+  "question": "In Cell window 08, suppose machine M05 had not been part of the cluster. At what time, in seconds from the window start, would task T040 first start?",
+  "text": "In Cell window 08, suppose machine M05 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M05"
+   }
+  ],
+  "query_case": "T040",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T040"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M05"
+  }
+ },
+ {
+  "id": "itops-dev-machine_removal-11",
+  "domain": "it_ops",
+  "split": "dev",
+  "doc": "itops_d05",
+  "scope": "Cell window 16",
+  "seen_at_build": false,
+  "family": "machine_removal",
+  "gold": 1650,
+  "gold_reimpl": 1650,
+  "factual_end": 1291,
+  "effectful": true,
+  "question": "In Cell window 16, suppose machine M01 had not been part of the cluster. At what time, in seconds from the window start, would task T109 first start?",
+  "text": "In Cell window 16, suppose machine M01 had not been part of the cluster.",
+  "interventions": [
+   {
+    "kind": "remove_machine",
+    "machine": "M01"
+   }
+  ],
+  "query_case": "T109",
+  "query": {
+   "kind": "task_start_time",
+   "task": "T109"
+  },
+  "binding": {
+   "family": "machine_removal",
+   "op": "remove",
+   "target": "M01"
+  }
+ }
+]

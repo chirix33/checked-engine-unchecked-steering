@@ -1,10 +1,24 @@
-# Abstract draft for registration
+# Registered abstract
 
-Status: draft for Ashraf to edit and register by Nov 8, 2026, 11:59 PM Pacific. It claims no results, because the study has not run. Development numbers are left out on purpose. The title is provisional. Check in the submission system whether the abstract can be edited after registration. The GenAI disclosure is required at submission, not here.
+Status: the current text was updated in the submission system by Ashraf on 2026-11-08, replacing the text he first registered that day. It reflects the three platforms, the five builder models, the four domains and the named baselines (`manifests/baseline_judges_design.md`). It claims no results. The registered title is not recorded here; the earlier provisional title was "Portable Intervention-Level Assurance for Reusable LLM-Generated Process Models". The GenAI disclosure is required at submission, not at registration.
 
-**Title:** Portable Intervention-Level Assurance for Reusable LLM-Generated Process Models
+Commitments in this text to keep true in the paper:
+- Every one of the five models builds programs on at least one platform. Qwen may build few.
+- "Where they exist": the plain coding agent has no native check.
+- Reference answers are independently checked on all four domains. Manufacturing and IT use OTF-Tools' simulator, its re-implementation and a sampled blind check.
 
-**Abstract:**
+**Abstract (current):**
+
+Large language models can now write simulation programs of operational processes and workflows. These programs can be reused to answer what-if questions on new records and policies. However, a program that reproduces recorded history can still give a wrong answer to a specific what-if question. It may apply the requested change incorrectly, attach it to the wrong records, or stop being valid when reused under a new policy. Current checks give a single pass-or-fail verdict on the program, which hides these failures and says little about whether a particular answer can be trusted.
+
+We propose a library that judges whether an answer from a generated simulator can be trusted for the change being asked about. It turns each what-if request into a structured form and checks it against the program and the current records. It also records which kinds of changes the program handles correctly and checks that record again whenever the program is reused. We apply it to three program-generation platforms, with programs built by five language models, across four domains: manufacturing, IT operations, and pharmacy and loan application workflows, using independently checked reference answers. We compare it with the platforms' own checks where they exist, an LLM-as-a-judge, and a ReAct agent that can run the program. We measure how many correct answers are kept, how many wrong answers are accepted, how many correct answers are wrongly rejected, and what the checking costs.
+
+## First registered version (2026-11-08, superseded)
+Large language models can now write simulation programs of operational processes workflows. These programs can be reused to answer what-if questions on new records and policies. However, a program that reproduces recorded history can still give a wrong answer to a specific what-if question. It may apply the requested change incorrectly, attach it to the wrong records, or stop being valid when reused under a new policy. Current checks give a single pass-or-fail verdict on the program, which hides these failures and says little about whether a particular answer can be trusted.
+
+We propose a library that judges whether an answer from a generated simulator can be trusted for the change being asked about. It turns each what-if request into a structured form and checks it against the program and the current records. It also records which kinds of changes the program handles correctly and checks that record again whenever the program is reused. We apply it to two such systems across several operational domains, using independently checked reference answers, and compare it with competitive baselines. We measure how many correct answers are kept, how many wrong answers are accepted, how many correct answers are wrongly rejected, and what the checking costs.
+
+## Earlier draft (superseded)
 
 LLM-generated executable process models can answer what-if questions about operational systems, and can be reused across records and policies. Matching recorded outcomes, however, does not establish that a program supports a particular requested change. A model may reproduce history and still mishandle an intervention, misbind it to current records, or lose validity when reused under a changed policy. A single pass-or-fail verdict hides these differences.
 
