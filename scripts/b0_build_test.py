@@ -24,7 +24,7 @@ from pathlib import Path
 CAP_USD = 5.00
 EARLIER_SPEND_USD = 0.03
 CAP_MARGIN_USD = 0.25
-CLAUDE_CAP_USD = 15.00  # First Claude build test (D18). Tracked apart from Ollama credits.
+CLAUDE_CAP_USD = 25.00  # Raised from 15.00 by Ashraf on 2026-11-08 for the judge baselines (D18, baseline_judges_design.md). Tracked apart from Ollama credits.
 NUM_CTX = 131072
 MAX_OUTPUT = 16384
 BUSY_DELAYS = [30, 60, 120, 240, 300, 300]
