@@ -11,7 +11,7 @@ This paper studies the \textit{trustworthiness} question of these reusable progr
 
 The example shows the gap. A single pass-or-fail verdict on a program says little about whether a \emph{particular answer}, for a \emph{particular change}, can be trusted. Failures can come from several places: the question may be misread, the change may be applied to the wrong record, the program may ignore the changed input or simulate its effects incorrectly, or the program may stop being valid when the policy it was built for changes. A checker that only judges the program as a whole cannot tell these apart, and cannot tell a user which answers to rely on.
 
-\paragraph{Our approach.} We built an assurance library that decides, for each what-if answer, whether to trust it or decline it. The decision is specific to the change being asked about. The library:
+\paragraph{Our approach.} We built an assurance library that decides whether to trust or decline an answer to a what-if question. The decision is specific to the change being asked about. The library:
 \begin{enumerate}[leftmargin=*,nosep]
   \item turns the question into a structured change (what is changed, how, by how much, when, and for which record) and checks that change against the document and the current records;
   \item checks that the program reproduces the recorded history of the run being asked about;
