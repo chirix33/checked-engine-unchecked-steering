@@ -1,0 +1,26 @@
+[
+ {
+  "qid": "B02",
+  "answer": 6493,
+  "confidence": "high",
+  "note": "Re-run days 99-102 at 150000 kg from period start; SOS500M24P back 1802 (d100) + 2959 (d101) + 3534 (d102)."
+ },
+ {
+  "qid": "B05",
+  "answer": 18368,
+  "confidence": "high",
+  "note": "SOS001L12P orders on d115-117 all ship in full in the record; stock = recorded 13395 + 4973."
+ },
+ {
+  "qid": "B06",
+  "answer": 359,
+  "confidence": "high",
+  "note": "MAR02K12P orders always ship in full in record; stock = recorded 278 + 81."
+ },
+ {
+  "qid": "B08",
+  "answer": 13694,
+  "confidence": "high",
+  "note": "Backlog 12296 at end d124 with stock 0; no stock arrives by d126; add d126 order 1398."
+ }
+]

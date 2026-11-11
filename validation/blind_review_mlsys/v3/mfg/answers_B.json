@@ -1,0 +1,50 @@
+[
+ {
+  "qid": "B01",
+  "answer": 1806,
+  "confidence": "high",
+  "note": "Full hand re-run days 1-14 at 27600 kg; ATN backlog 204 (d11 remainder) + 1224 (d12) + 378 (d14). [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B02",
+  "answer": 6493,
+  "confidence": "high",
+  "note": "Re-run days 99-102 at 150000 kg from period start; SOS500M24P back 1802 (d100) + 2959 (d101) + 3534 (d102)."
+ },
+ {
+  "qid": "B03",
+  "answer": 950,
+  "confidence": "high",
+  "note": "Removed 40-unit order only raises stock by 40 (recorded 910 -> 950); capacity not binding. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B04",
+  "answer": 0,
+  "confidence": "high",
+  "note": "Without d8 order, stock stays 767; d9 order 142 and d10 order 292 both ship in full; extra capacity on d8 only goes to SOS001, no capacity limit hits d9/d10. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B05",
+  "answer": 18368,
+  "confidence": "high",
+  "note": "SOS001L12P orders on d115-117 all ship in full in the record; stock = recorded 13395 + 4973."
+ },
+ {
+  "qid": "B06",
+  "answer": 359,
+  "confidence": "high",
+  "note": "MAR02K12P orders always ship in full in record; stock = recorded 278 + 81."
+ },
+ {
+  "qid": "B07",
+  "answer": 302,
+  "confidence": "high",
+  "note": "Backlog 302, stock 0 at end of d40; no production arrives d41 so nothing ships and no new order. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B08",
+  "answer": 13694,
+  "confidence": "high",
+  "note": "Backlog 12296 at end d124 with stock 0; no stock arrives by d126; add d126 order 1398."
+ }
+]
