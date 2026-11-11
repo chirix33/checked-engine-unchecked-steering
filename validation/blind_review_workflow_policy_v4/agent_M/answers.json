@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 140804,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Design loan offer visit 2 work 1888->3776; c0008 ends 1984 s later after downstream re-queueing."
+ },
+ {
+  "qid": "W02",
+  "answer": 42771,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0000 ends at 42771, before c0013 arrives (44100), so removing c0013 cannot affect it."
+ },
+ {
+  "qid": "W03",
+  "answer": 138588,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Added Senior Officer_3 (same hours); c0008 avoids a Senior Officer queue and ends 232 s earlier."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.75 at D4 visit 2 sends c0007 to D4-b (Consider re-design loan offer) instead of W3."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0002 D4 draw 0.541281 still exceeds 0.3, so it takes D4-b as in the record (then D5-a Cancel); end unchanged."
+ },
+ {
+  "qid": "W06",
+  "answer": 52795,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 delay 2871->6471 shifts c0007 by exactly 3600 s; no off-hours or queue effects."
+ },
+ {
+  "qid": "W07",
+  "answer": 120853,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Longer Assess loan risk still finishes Monday; c0004 still waits for W3 then next-day Approve application, end unchanged."
+ },
+ {
+  "qid": "W08",
+  "answer": 120715,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removing c0009 changes which workers c0011 gets but none of its times (it never waited for a worker); end unchanged."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "AML Investigator_2/3 off 39600-68400 (rest of Monday); c0012 AML Check queues on AML_1 and the case ends 355 s later. In-progress task of c0005 pauses and is held per rule 3 (does not affect c0012)."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.75 at D2 sends c0012 to D2-b (loan offer path) instead of rejection; ends Tuesday."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With D4-a at 0.9, c0009 draw 0.713556 takes D4-a (W3 then Approve application on Tuesday) instead of D4-b then Cancel."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 longer by 3600 s pushes the approve tasks past Monday 17:00; they finish Tuesday, then W3 and Approve application."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance 1->2 s shifts c0012 by 1 s."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Without c0003, c0001 Quality Assurance no longer queues 17 s for the single Pharmacist, so it ends 17 s earlier."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Extra Pharmacy System workers only change worker names for c0013 (it never waited); no case end changes."
+ },
+ {
+  "qid": "W16",
+  "answer": 32184,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.915 at D5 sends c0014 to D5-b (Resolve insurance issues manually)."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D6-a prob 0.7: c0002 D6 draw now selects Out of stock (W3 then Pick-up), skipping packing; ends earlier."
+ },
+ {
+  "qid": "W18",
+  "answer": 31007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 0 s for c0007; Pack enabled immediately, case ends 107 s earlier."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance 1->2 s shifts c0014 by 1 s."
+ },
+ {
+  "qid": "W20",
+  "answer": 31803,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Without c0011, c0014 Quality Assurance no longer queues for Pharmacist_0 (16 s), so it ends 16 s earlier."
+ },
+ {
+  "qid": "W21",
+  "answer": 31441,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With two extra Pharmacists, c0011 Quality Assurance starts without queueing and the case ends 41 s earlier."
+ },
+ {
+  "qid": "W22",
+  "answer": 30356,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.9 at D3 sends c0000 to D3-b then D4 (D4-a, Resolve DUR manually by a Pharmacist)."
+ },
+ {
+  "qid": "W23",
+  "answer": 32007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0012 D3 draw 0.504507 gives D3-a under both 0.8 and 0.9; no case end in the run changes."
+ },
+ {
+  "qid": "W24",
+  "answer": 31060,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 0 s for c0008; Pack enabled immediately, case ends 131 s earlier."
+ }
+]
