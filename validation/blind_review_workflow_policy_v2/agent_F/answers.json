@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 120644,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 120644 -> counterfactual 120644 (delta 0). Visit 4 of that activity never occurs for c0001 in this run (only 2 visits happen), so the change has no effect."
+ },
+ {
+  "qid": "W02",
+  "answer": 52791,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 52791 -> counterfactual 52791 (delta 0). Removing c0005 does not change c0011 (answer equals factual)."
+ },
+ {
+  "qid": "W03",
+  "answer": 127185,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 122014 -> counterfactual 127185 (delta 5171)."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 137860 -> counterfactual 147353 (delta 9493)."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 54241 -> counterfactual 54241 (delta 0). D4 probabilities 0.3/0.7: c0002 route unchanged, so answer equals factual."
+ },
+ {
+  "qid": "W06",
+  "answer": 229720,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 227282 -> counterfactual 229720 (delta 2438)."
+ },
+ {
+  "qid": "W07",
+  "answer": 227149,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 227149 -> counterfactual 227149 (delta 0). Plan has only visit 1 for Approve application (W3 route ends the case), so visit 3 cannot occur; change has no effect."
+ },
+ {
+  "qid": "W08",
+  "answer": 134835,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 134835 -> counterfactual 134835 (delta 0). Removing c0004 does not change c0014 (answer equals factual)."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 53792 -> counterfactual 54147 (delta 355)."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 53792 -> counterfactual 120685 (delta 66893)."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 60943 -> counterfactual 120637 (delta 59694)."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 120715 -> counterfactual 134082 (delta 13367)."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 31590 -> counterfactual 31591 (delta 1)."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30322 -> counterfactual 30305 (delta -17)."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 31678 -> counterfactual 31678 (delta 0). Two extra Pharmacy System workers: c0013 timing unchanged."
+ },
+ {
+  "qid": "W16",
+  "answer": 30431,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30322 -> counterfactual 30431 (delta 109)."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30435 -> counterfactual 29962 (delta -473)."
+ },
+ {
+  "qid": "W18",
+  "answer": 31217,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 31299 -> counterfactual 31217 (delta -82)."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 31784 -> counterfactual 31785 (delta 1)."
+ },
+ {
+  "qid": "W20",
+  "answer": 30598,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30617 -> counterfactual 30598 (delta -19)."
+ },
+ {
+  "qid": "W21",
+  "answer": 58323,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30984 -> counterfactual 58323 (delta 27339). Both Pharmacists (the whole pool in policyP) unavailable 28800-57600; QA work waits for 57600+."
+ },
+ {
+  "qid": "W22",
+  "answer": 30744,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 31201 -> counterfactual 30744 (delta -457)."
+ },
+ {
+  "qid": "W23",
+  "answer": 30529,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30962 -> counterfactual 30529 (delta -433)."
+ },
+ {
+  "qid": "W24",
+  "answer": 30891,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end 30681 -> counterfactual 30891 (delta 210)."
+ }
+]

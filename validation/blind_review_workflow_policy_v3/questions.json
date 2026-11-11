@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose case c0008 needed 3776 seconds of work for the activity 'Design loan offer' on visit 2. At what time, in seconds from time 0, would case c0008 end?"
+ },
+ {
+  "qid": "W02",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose case c0005 had never arrived. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "qid": "W03",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose 1 Appraiser worker (Appraiser_1) was unavailable from time 39600 to time 54000. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "qid": "W04",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose the route draw for case c0007 at decision D4 on visit 2 were 0.750000. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "qid": "W05",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_15.txt",
+  "question": "In Run 15, suppose decision D4 used the probabilities route D4-a 0.3, route D4-b 0.7. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "qid": "W06",
+  "process": "loan",
+  "front_matter_file": "loan_policyH_front_matter.txt",
+  "chapter_file": "loan_policyH_chapter_Run_15.txt",
+  "question": "In Run 15, suppose the wait W2 for case c0007 lasted 6471 seconds on visit 1. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "qid": "W07",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose case c0004 needed 3864 seconds of work for the activity 'Assess loan risk' on visit 1. At what time, in seconds from time 0, would case c0004 end?"
+ },
+ {
+  "qid": "W08",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose case c0004 had never arrived. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "qid": "W09",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose 2 AML Investigator workers (AML Investigator_2, AML Investigator_3) were unavailable from time 39600 to time 68400. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "qid": "W10",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose the route draw for case c0012 at decision D2 on visit 1 were 0.750000. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "qid": "W11",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose decision D4 used the probabilities route D4-a 0.9, route D4-b 0.1. At what time, in seconds from time 0, would case c0009 end?"
+ },
+ {
+  "qid": "W12",
+  "process": "loan",
+  "front_matter_file": "loan_policyP_front_matter.txt",
+  "chapter_file": "loan_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose the wait W2 for case c0011 lasted 6970 seconds on visit 1. At what time, in seconds from time 0, would case c0011 end?"
+ },
+ {
+  "qid": "W13",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose case c0012 needed 2 seconds of work for the activity 'Check Insurance' on visit 1. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "qid": "W14",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose case c0003 had never arrived. At what time, in seconds from time 0, would case c0001 end?"
+ },
+ {
+  "qid": "W15",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_15.txt",
+  "question": "In Run 15, suppose the pool Pharmacy System had 2 more workers throughout. At what time, in seconds from time 0, would case c0013 end?"
+ },
+ {
+  "qid": "W16",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose the route draw for case c0014 at decision D5 on visit 1 were 0.915000. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "qid": "W17",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose decision D6 used the probabilities route D6-a 0.7, route D6-b 0.3. At what time, in seconds from time 0, would case c0002 end?"
+ },
+ {
+  "qid": "W18",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyH_front_matter.txt",
+  "chapter_file": "pharmacy_policyH_chapter_Run_16.txt",
+  "question": "In Run 16, suppose the wait W2 for case c0007 lasted 0 seconds on visit 1. At what time, in seconds from time 0, would case c0007 end?"
+ },
+ {
+  "qid": "W19",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose case c0014 needed 2 seconds of work for the activity 'Check Insurance' on visit 1. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "qid": "W20",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose case c0011 had never arrived. At what time, in seconds from time 0, would case c0014 end?"
+ },
+ {
+  "qid": "W21",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose 2 Technician workers (Technician_6, Technician_7) were unavailable from time 28800 to time 57600. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "qid": "W22",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose the route draw for case c0000 at decision D3 on visit 1 were 0.900000. At what time, in seconds from time 0, would case c0000 end?"
+ },
+ {
+  "qid": "W23",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_14.txt",
+  "question": "In Run 14, suppose decision D3 used the probabilities route D3-a 0.9, route D3-b 0.1. At what time, in seconds from time 0, would case c0012 end?"
+ },
+ {
+  "qid": "W24",
+  "process": "pharmacy",
+  "front_matter_file": "pharmacy_policyP_front_matter.txt",
+  "chapter_file": "pharmacy_policyP_chapter_Run_13.txt",
+  "question": "In Run 13, suppose the wait W2 for case c0008 lasted 0 seconds on visit 1. At what time, in seconds from time 0, would case c0008 end?"
+ }
+]
