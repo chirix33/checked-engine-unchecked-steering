@@ -1,0 +1,86 @@
+[
+ {
+  "qid": "W01",
+  "answer": 293096,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied (Return visit 1 occurs), but case end is unchanged because the later Clerk restart falls at the same next-day 09:00 opening."
+ },
+ {
+  "qid": "W02",
+  "answer": 45599,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Case c0001 removed from arrivals; other plans unchanged."
+ },
+ {
+  "qid": "W03",
+  "answer": 119156,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Both Appraisers made unavailable 39600-54000 (pool size 2); tasks pause/wait as non-working time."
+ },
+ {
+  "qid": "W04",
+  "answer": 215479,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.1 re-routes D1 visit 1 (D1-a)."
+ },
+ {
+  "qid": "W05",
+  "answer": 59158,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D5 probabilities changed, draws kept, route re-chosen."
+ },
+ {
+  "qid": "W06",
+  "answer": 58166,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 visit 1 delay replaced."
+ },
+ {
+  "qid": "W07",
+  "answer": 34055,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check DUR work 3601 s, pauses across closing time."
+ },
+ {
+  "qid": "W08",
+  "answer": 31562,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Case c0004 removed from arrivals; other plans unchanged."
+ },
+ {
+  "qid": "W09",
+  "answer": 37688,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Single Pharmacist unavailable 28800-36000 treated as non-working time."
+ },
+ {
+  "qid": "W10",
+  "answer": 30198,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.025 sends D7 to D7-a then D6 visit 2 to D6-a (W3), same W3 delay as before, so end is unchanged."
+ },
+ {
+  "qid": "W11",
+  "answer": 30235,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D1 probabilities changed, draws kept, route re-chosen."
+ },
+ {
+  "qid": "W12",
+  "answer": 34341,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 visit 1 delay replaced."
+ }
+]
