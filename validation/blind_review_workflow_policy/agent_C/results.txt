@@ -1,0 +1,32 @@
+loan_policyH_chapter_Run_15.txt (front matter loan_policyH_front_matter.txt): EXACT MATCH [15 cases, 156 task rows, 21 wait rows, 56 decision rows]
+loan_policyH_chapter_Run_16.txt (front matter loan_policyH_front_matter.txt): EXACT MATCH [15 cases, 216 task rows, 27 wait rows, 80 decision rows]
+loan_policyP_chapter_Run_13.txt (front matter loan_policyP_front_matter.txt): EXACT MATCH [15 cases, 139 task rows, 24 wait rows, 47 decision rows]
+loan_policyP_chapter_Run_14.txt (front matter loan_policyP_front_matter.txt): EXACT MATCH [15 cases, 157 task rows, 26 wait rows, 54 decision rows]
+pharmacy_policyH_chapter_Run_15.txt (front matter pharmacy_policyH_front_matter.txt): EXACT MATCH [15 cases, 128 task rows, 45 wait rows, 78 decision rows]
+pharmacy_policyH_chapter_Run_16.txt (front matter pharmacy_policyH_front_matter.txt): EXACT MATCH [15 cases, 125 task rows, 45 wait rows, 78 decision rows]
+pharmacy_policyP_chapter_Run_13.txt (front matter pharmacy_policyP_front_matter.txt): EXACT MATCH [15 cases, 124 task rows, 45 wait rows, 78 decision rows]
+pharmacy_policyP_chapter_Run_14.txt (front matter pharmacy_policyP_front_matter.txt): EXACT MATCH [15 cases, 123 task rows, 45 wait rows, 75 decision rows]
+W01: change={'work': [('c0001', 'Approve and post home insurance quote', 4, 5491)]} target=c0001 baseline_end=120644 answer=120644 err=None
+W02: change={'remove': ['c0005']} target=c0011 baseline_end=52791 answer=52791 err=None
+W03: change={'unavail': {'Appraiser_1': [(39600, 54000)]}} target=c0013 baseline_end=122014 answer=127185 err=None
+W04: change={'draw': [('c0007', 'D4', 2, Decimal('0.750000'))]} target=c0007 baseline_end=137860 answer=147353 err=None
+W05: change={'probs': {'D4': {'D4-a': Decimal('0.3'), 'D4-b': Decimal('0.7')}}} target=c0002 baseline_end=54241 answer=54241 err=None
+W06: change={'wait': [('c0003', 'W1', 1, 39680)]} target=c0003 baseline_end=227282 answer=229720 err=None
+W07: change={'work': [('c0000', 'Approve application', 3, 3768)]} target=c0000 baseline_end=227149 answer=None err=IndexError('list assignment index out of range')
+W08: change={'remove': ['c0004']} target=c0014 baseline_end=134835 answer=134835 err=None
+W09: change={'unavail': {'AML Investigator_2': [(39600, 68400)], 'AML Investigator_3': [(39600, 68400)]}} target=c0012 baseline_end=53792 answer=54147 err=None
+W10: change={'draw': [('c0012', 'D2', 1, Decimal('0.750000'))]} target=c0012 baseline_end=53792 answer=120685 err=None
+W11: change={'probs': {'D4': {'D4-a': Decimal('0.9'), 'D4-b': Decimal('0.1')}}} target=c0009 baseline_end=60943 answer=120637 err=None
+W12: change={'wait': [('c0011', 'W2', 1, 6970)]} target=c0011 baseline_end=120715 answer=134082 err=None
+W13: change={'work': [('c0012', 'Check Insurance', 1, 2)]} target=c0012 baseline_end=31590 answer=31591 err=None
+W14: change={'remove': ['c0003']} target=c0001 baseline_end=30322 answer=30305 err=None
+W15: change={'extra': {'Pharmacy System': 2}} target=c0013 baseline_end=31678 answer=31678 err=None
+W16: change={'draw': [('c0001', 'D3', 1, Decimal('0.900000'))]} target=c0001 baseline_end=30322 answer=30431 err=None
+W17: change={'probs': {'D6': {'D6-a': Decimal('0.7'), 'D6-b': Decimal('0.3')}}} target=c0002 baseline_end=30435 answer=29962 err=None
+W18: change={'wait': [('c0003', 'W2', 1, 0)]} target=c0003 baseline_end=31299 answer=31217 err=None
+W19: change={'work': [('c0014', 'Check Insurance', 1, 2)]} target=c0014 baseline_end=31784 answer=31785 err=None
+W20: change={'remove': ['c0003']} target=c0004 baseline_end=30617 answer=30598 err=None
+W21: change={'unavail': {'Pharmacist_0': [(28800, 57600)], 'Pharmacist_1': [(28800, 57600)]}} target=c0007 baseline_end=30984 answer=58323 err=None
+W22: change={'draw': [('c0008', 'D6', 1, Decimal('0.035000'))]} target=c0008 baseline_end=31201 answer=30744 err=None
+W23: change={'probs': {'D6': {'D6-a': Decimal('0.7'), 'D6-b': Decimal('0.3')}}} target=c0007 baseline_end=30962 answer=30529 err=None
+W24: change={'wait': [('c0004', 'W2', 1, 420)]} target=c0004 baseline_end=30681 answer=30891 err=None
