@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 120644,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W02",
+  "answer": 52791,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change did not alter this case end (same as factual)."
+ },
+ {
+  "qid": "W03",
+  "answer": 127185,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change did not alter this case end (same as factual)."
+ },
+ {
+  "qid": "W06",
+  "answer": 229720,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W07",
+  "answer": 227149,
+  "factual_reproduced": true,
+  "confidence": "medium",
+  "note": "Plan has only visit 1 for Approve application (it can occur once); visit 3 never occurs, so the change is a no-op and the factual end stands."
+ },
+ {
+  "qid": "W08",
+  "answer": 134835,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change did not alter this case end (same as factual)."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Pool Pharmacy System raised from 1 to 3 workers; the asked case end is unchanged."
+ },
+ {
+  "qid": "W16",
+  "answer": 30431,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W18",
+  "answer": 31217,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W20",
+  "answer": 30598,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W21",
+  "answer": 58323,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W22",
+  "answer": 30744,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W23",
+  "answer": 30529,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ },
+ {
+  "qid": "W24",
+  "answer": 30891,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulator reproduced this chapter exactly; change applied to the stated input only and re-run."
+ }
+]

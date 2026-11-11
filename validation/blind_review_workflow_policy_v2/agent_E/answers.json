@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 120644,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Visit 4 of 'Approve and post home insurance quote' is never reached by c0001 (only 2 visits occur), so the change has no effect; answer equals the recorded end."
+ },
+ {
+  "qid": "W02",
+  "answer": 52791,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removing c0005 frees capacity but does not alter any task of c0011; its end is unchanged."
+ },
+ {
+  "qid": "W03",
+  "answer": 127185,
+  "factual_reproduced": true,
+  "confidence": "medium",
+  "note": "Appraiser_1's unavailable interval is treated as non-working time (in-progress task pauses); the resulting delays push c0013 later. Unavailability is not exercised by the factual records."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.75 at D4 visit 2 now selects D4-b (Consider re-design loan offer) instead of D4-a; simulated forward with the listed plans."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0002's D4 visit-1 draw is at least 0.5, so it takes D4-b under both the old and new probabilities; other cases' rerouting does not touch its tasks, so the end is unchanged."
+ },
+ {
+  "qid": "W06",
+  "answer": 229720,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Longer W1 delays the second form check and everything after it."
+ },
+ {
+  "qid": "W07",
+  "answer": 227149,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "'Approve application' leads directly to End, so a third visit can never happen; the change has no effect and the answer equals the recorded end."
+ },
+ {
+  "qid": "W08",
+  "answer": 134835,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removing c0004 does not change any task of c0014; end unchanged."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "medium",
+  "note": "Two AML Investigators unavailable 11:00-19:00 Monday; remaining workers plus pausing make c0012 end 355 s later. Unavailability is not exercised by the factual records."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.75 at D2 selects D2-b (Design loan offer) instead of Reject; the offer path ends the next working day."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With D4-a at 0.9, the draw 0.713556 now selects D4-a (W3 then Approve application) instead of re-design/cancel."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Longer W2 delays Assess loan risk and the following chain; c0011 crosses into later working periods."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance takes 1 s longer on the single Pharmacy System worker, shifting c0012 by 1 s."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removing c0003 reduces queueing, so c0001 finishes 17 s earlier."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Two extra Pharmacy System workers (same calendar) do not change c0013's end in this run."
+ },
+ {
+  "qid": "W16",
+  "answer": 30431,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.9 at D3 selects D3-b; D4 (its own draw 0.915059) then takes D4-a, adding Resolve DUR manually before Check Insurance."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With D6-a at 0.7, c0002's D6 draw now routes to W3 directly (skipping packing and QA)."
+ },
+ {
+  "qid": "W18",
+  "answer": 31217,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Zero-second W2 lets packing start immediately after D6."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance takes 1 s longer; c0014 ends 1 s later."
+ },
+ {
+  "qid": "W20",
+  "answer": 30598,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removing c0003 lets c0004 get workers earlier; it ends 19 s earlier."
+ },
+ {
+  "qid": "W21",
+  "answer": 58323,
+  "factual_reproduced": true,
+  "confidence": "medium",
+  "note": "Both Pharmacists unavailable 08:00-16:00 Monday, so Check for Quality Assurance waits until 16:00. Unavailability is not exercised by the factual records."
+ },
+ {
+  "qid": "W22",
+  "answer": 30744,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.035 at D6 selects D6-a (W3 then Pick-up), skipping packing and QA."
+ },
+ {
+  "qid": "W23",
+  "answer": 30529,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With D6-a at 0.7, c0007's D6 draw now routes directly to W3."
+ },
+ {
+  "qid": "W24",
+  "answer": 30891,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 lasts 420 s instead of 210 s, delaying packing, QA and pick-up."
+ }
+]
