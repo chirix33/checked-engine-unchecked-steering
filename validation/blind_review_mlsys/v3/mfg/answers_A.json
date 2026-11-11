@@ -1,0 +1,50 @@
+[
+ {
+  "qid": "B01",
+  "answer": 1806,
+  "confidence": "high",
+  "note": "Full re-run days 1-14 at 27600 kg (=1150 ATN units). State re-converges to the recorded one at end of day 6-7, diverges from day 8; ATN open at end of day 14: d11 204 + d12 1224 + d14 378. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B02",
+  "answer": 6493,
+  "confidence": "high",
+  "note": "Full re-run days 99-102 at 150000 kg. SOS500 d100 order is cut to 2023 units on day 101; day 102 clears the d100 rest (1802) but the cap is then used by SOS005 d100 (7070 units), so d101 2959 + d102 3534 stay open."
+ },
+ {
+  "qid": "B03",
+  "answer": 950,
+  "confidence": "high",
+  "note": "Recorded 176 +40 unshipped = 216 at end of day 25; day 26 +874 -140 = 950; day 27 no movement. Capacity never binding. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B04",
+  "answer": 0,
+  "confidence": "high",
+  "note": "No SOS008 backlog before day 8. Without the d8 order: stock 767 kept; d9 order 142 and d10 order 292 ship in full (days 9-10 far below capacity). Stock 333, backordered 0. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B05",
+  "answer": 18368,
+  "confidence": "high",
+  "note": "No capacity event in the period and SOS001 has no backlog through day 117 (all orders ship in full), so the extra 4973 units carry: 13395 + 4973."
+ },
+ {
+  "qid": "B06",
+  "answer": 359,
+  "confidence": "high",
+  "note": "MAR never has a backlog; on the one capacity-bound day (190) the MAR order (29) is served before ATN and ships in full. Extra 81 carries: 278 + 81."
+ },
+ {
+  "qid": "B07",
+  "answer": 302,
+  "confidence": "high",
+  "note": "End day 40 POP002 stock 0, backordered 302; day 41 has no order and now no production, so backlog stays 302. [carried from v1: question text unchanged]"
+ },
+ {
+  "qid": "B08",
+  "answer": 13694,
+  "confidence": "high",
+  "note": "End day 124 POV001 stock 0, backordered 12296. Day 125 without production ships 0; day 126 adds order 1398 with no stock: 13694. No capacity event in the period."
+ }
+]

@@ -1,0 +1,62 @@
+[
+ {
+  "qid": "B01",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T105 first start in modified run: 1171"
+ },
+ {
+  "qid": "B02",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T183 first start in modified run: 1202"
+ },
+ {
+  "qid": "B03",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T058 first start in modified run: 595"
+ },
+ {
+  "qid": "B04",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T105 first start in modified run: 917"
+ },
+ {
+  "qid": "B05",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T127 first start in modified run: 1318"
+ },
+ {
+  "qid": "B06",
+  "answer": 1076,
+  "factual_reproduced": true,
+  "note": "T039 first start in modified run: 1076"
+ },
+ {
+  "qid": "B07",
+  "answer": 1139,
+  "factual_reproduced": true,
+  "note": "T104 first start in modified run: 1139"
+ },
+ {
+  "qid": "B08",
+  "answer": 583,
+  "factual_reproduced": true,
+  "note": "T071 first start in modified run: 583"
+ },
+ {
+  "qid": "B09",
+  "answer": 407,
+  "factual_reproduced": true,
+  "note": "T038 first start in modified run: 407"
+ },
+ {
+  "qid": "B10",
+  "answer": true,
+  "factual_reproduced": true,
+  "note": "T004 first start in modified run: 83"
+ }
+]
