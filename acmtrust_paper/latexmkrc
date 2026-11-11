@@ -1,0 +1,6 @@
+# Build with:  latexmk main.tex   (output goes to build/main.pdf)
+$pdf_mode = 1;
+$out_dir = 'build';
+# BibTeX runs inside build/, so point it back at the bibliography and the bundled ACM style.
+ensure_path('BIBINPUTS', '..');
+ensure_path('BSTINPUTS', '..');

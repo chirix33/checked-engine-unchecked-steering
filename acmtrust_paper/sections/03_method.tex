@@ -1,0 +1,52 @@
+\section{The Assurance Library}
+\label{sec:method}
+
+\begin{figure*}[t]
+\centering
+\input{figures/pipeline}
+\caption{How the library decides about one what-if answer. Each check can decline, and each decline is named for what the library observed. Tests use only the document and runs of the program, never reference answers. The capability record carries test results between questions and is consulted again when the program is reused.}
+\Description{A top-to-bottom flow. A what-if question is interpreted into a structured change, which passes a contract check, a history check, and change-specific tests that read and write a capability record. Passing all steps gives Trusted. Side exits are labelled Request rejected, Failed history check, Caught, Already caught, Untestable, and Can't express.}
+\label{fig:pipeline}
+\end{figure*}
+
+The library decides, for one question and one program, whether the program's answer can be trusted. It is a Python package of about 3.8k lines that platforms call through a small adapter: the adapter runs the program on a given set of inputs and returns its output records. Figure~\ref{fig:pipeline} shows the steps. The configuration that runs all of them is called \gate. Every step uses only what a user of the platform could legitimately see: the document and runs of the program on inputs the library constructs. No step reads a reference simulator, a reference answer, or any hidden label.
+
+\subsection{From question to a checked change}
+\label{sec:method:request}
+
+One LLM call (Claude Haiku~5.5) turns the question into a structured change: the run, the family, the operation (for example \emph{set}, \emph{add workers}, \emph{remove}), the selected case and target (an activity, a wait, a decision point, a worker pool, a product, a task), the visit, the new value with its unit, the effective time interval, and the queried outcome. This output is not trusted. A \emph{contract check} compares it with a description of the process built from the document alone: the names of runs, cases, activities, pools and decision points, and the stated routes and pool sizes. It separates an unknown target, an ambiguous match, an unsupported operation, an invalid unit, an invalid time interval, a non-numeric value and an unreadable question. Any of these declines the request before the program is run (\Badrequest). Removing the very case being asked about, for example, is rejected as an unsupported operation.
+
+\otf answers through its own path, in which another LLM call edits the program's extracted records to apply the change~\cite{otftools2026}. For these programs the library also compares the records before and after the edit. A case-level change must alter exactly one input record, for the requested case and target, to the requested value, and must change nothing else. A failed comparison declines the answer even if the answer happens to be right, so a wrong edit is never rewarded.
+
+\subsection{History check}
+\label{sec:method:history}
+
+The program is run on the unchanged inputs of the run being asked about, and its outcomes must equal the recorded ones exactly (every case end in a workflow; every ledger cell in manufacturing; every task-log event in IT). This is stricter than \otf's acceptance check, which compares predicted with hidden events under a time tolerance and accepts a mean F1 of~0.4~\cite{otftools2026}. A program that fails is declined on that run (\Failhist). The history check alone is also one of the judges we compare against.
+
+\subsection{Tests aimed at the requested change}
+\label{sec:method:probes}
+
+A history check cannot see a mistake in an input that never varied, as in the example of \S\ref{sec:intro}. The library therefore changes inputs itself and checks properties that any correct simulator must satisfy. Each test states its expected relation, and each relation follows from the document's rules and records rather than from a reference answer. In software-testing terms they are metamorphic relations~\cite{chen2018metamorphic,segura2016survey}. Tests are chosen by the requested family and target:
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Input use.} Change the same kind of input for \emph{another} case that the records show was used (one hour more work or delay, or a route draw that selects a different stated route). That case's outputs must change, and no output earlier than the point where the changed input is first used may change. A crash fails the test. This is the test that exposes the program in \S\ref{sec:intro}.
+  \item \textbf{No-op.} Change an input for a visit that the records show never happened. Nothing may change.
+  \item \textbf{Routing rule.} When route probabilities change, the printed draws decide which recorded decisions switch route. The earliest switched decision must take its new route and nothing before it may move; if no decision switches, the outputs must not change at all.
+  \item \textbf{Resource rules.} A worker made unavailable starts no task inside the interval. With added workers, nothing changes before the first task of that pool that had to wait, and that task starts earlier.
+  \item \textbf{Case removal.} Remove a different case: its records must vanish, and nothing before its arrival may move.
+  \item \textbf{Exact stated-rule checks.} Where a program prints records that name tasks, waits, workers and visits, the library recomputes what the stated rules imply for a test change (task and wait timing, case paths implied by the printed draws, which workers can be used) and compares. Manufacturing and IT have analogous checks for dispatch completeness and for resource requests.
+\end{itemize}
+A test that cannot be run (no suitable second case, or no input that can represent the change) counts neither as a pass nor as a failure. \gate trusts an answer only if at least one test that exercises the changed input ran and passed, and none failed. A passing no-op alone never suffices. Main tests are capped at three program executions per request; the stated-rule checks add their own executions, which we count.
+
+\subsection{A record of what each program can do}
+\label{sec:method:registry}
+
+Every test result is appended to a \emph{capability record}, keyed by the program's code hash, the adapter version, a fingerprint of the stated policy, the family and the operation. A record has one of three states: \emph{failed}, \emph{untested}, or \emph{tested under the listed conditions}; it never says ``verified''. Reuse follows two rules. First, a failure blocks the capability for that target wherever the key matches, so a program caught once is not trusted on the same kind of change later (\Already). Second, a pass is reused only for the same key on the same run; on new records or under a changed policy, the relevant tests are run again. Passes that depend on the request's own values, such as new route probabilities or a particular unavailability interval, are never reused. The policy fingerprint hashes the front matter without the list of runs, so new runs under the same rules keep the same fingerprint, while any change to the rule text, including a harmless rewording, forces rechecking. We measure the cost of that choice in \S\ref{sec:results:reuse}.
+
+\subsection{Decisions in plain terms}
+\label{sec:method:terms}
+
+Each decline is named for what the library saw. \Caught: a test showed the program getting this kind of change wrong. \Already: it failed this test on an earlier question. \Untestable: no test of this kind of change could run on this program, so the library has no evidence either way. \Failhist: the program does not reproduce the recorded history of this run. \Cantexpress: the program has no input that can represent the change. \Badrequest: the structured change failed the contract check. Otherwise the answer is \Trusted. These names separate declines that \emph{detect} a problem (\Caught, \Already, \Failhist) from declines that only \emph{abstain} (\Untestable, \Cantexpress), which matters when reading the results.
+
+\paragraph{Ablations.} The same code path gives simpler configurations: \cfg{Schema} (contract check only), \cfg{Replay} (contract and history check), \cfg{Generic} (contract, history and input-use tests on randomly chosen families, with the same execution budget as \gate), and \cfg{Program-wide} (one verdict per program and run from one input-use test per case-level family, the same for every question on that run).
+
+\paragraph{Running untrusted code.} Generated programs run inside a sandbox (bubblewrap with every namespace unshared, only system libraries and the program's own folder mounted, no network, and a seccomp filter that allows only local sockets). Reference code and gold are outside the sandbox.

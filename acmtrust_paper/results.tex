@@ -1,0 +1,44 @@
+%% =====================================================================================
+%% RESULT NUMBERS QUOTED IN THE PROSE (abstract, introduction, results text, conclusion)
+%% =====================================================================================
+%% Every value here is a placeholder until the main (test) run is scored by
+%% scripts/main_analysis.py. Replace \tbd with the measured value; never with a dev number.
+%% Table cells are filled directly in sections/06_results.tex (search for \tbd there).
+%%
+%% Units: error = wrong answers / answered answers (1 - precision), as a percentage.
+%% Coverage = answered program-question pairs / all program-question pairs, as a percentage.
+%% "Matched" = the judge is cut to the gate's coverage in each cell (process x builder cohort).
+%% The two builder classes (hosted-API models, Ollama models) are never pooled.
+
+%% ---- Hosted-API builder class, all four domains (headline) --------------------------
+\newcommand{\rGateCovClaude}{\tbd}        % gate coverage (%)
+\newcommand{\rGateErrClaude}{\tbd}        % gate error among answered (%)
+\newcommand{\rNoCheckErrClaude}{\tbd}     % error with no added check (native config) (%)
+\newcommand{\rHistErrClaude}{\tbd}        % history check only (%)
+\newcommand{\rAnsJudgeErrClaude}{\tbd}    % answer-level LLM judge (Haiku) at matched coverage (%)
+\newcommand{\rReactErrClaude}{\tbd}       % ReAct judge (Haiku) at matched coverage (%)
+\newcommand{\rWrongRemovedClaude}{\tbd}   % share of wrong answers the gate removes (%)
+\newcommand{\rRightLostClaude}{\tbd}      % share of correct answers the gate declines (%)
+
+%% ---- Ollama-hosted builder class (OTF-Tools only) -------------------------------------
+\newcommand{\rGateCovOllama}{\tbd}
+\newcommand{\rGateErrOllama}{\tbd}
+\newcommand{\rNoCheckErrOllama}{\tbd}
+
+%% ---- Where the gate's declines come from (Section 6.2) --------------------------------
+\newcommand{\rShareCaught}{\tbd}          % share of wrong answers removed that were Caught (%)
+\newcommand{\rShareUntestable}{\tbd}      % share of wrong answers removed that were Untestable (%)
+\newcommand{\rShareHist}{\tbd}            % share removed by Failed history check (%)
+
+%% ---- Reuse under a changed or reworded policy (Section 6.3) ---------------------------
+\newcommand{\rPolPGateErr}{\tbd}
+\newcommand{\rPolPHistErr}{\tbd}
+\newcommand{\rPolHUnneeded}{\tbd}         % rows rechecked on H that a text-blind record would have carried
+
+%% ---- Cost (Section 6.4) ----------------------------------------------------------------
+\newcommand{\rGateExecPerQ}{\tbd}         % program executions per question (median)
+\newcommand{\rGateSecPerQ}{\tbd}          % wall-clock seconds per question (median)
+\newcommand{\rAnsJudgeUSDPerRow}{\tbd}    % answer-level judge, USD per row (mean)
+\newcommand{\rReactUSDPerRow}{\tbd}       % ReAct judge, USD per row (mean)
+\newcommand{\rReactSecPerRow}{\tbd}       % ReAct judge, seconds per row (median)
+\newcommand{\rTotalUSD}{\tbd}             % all model spend in the study (USD)

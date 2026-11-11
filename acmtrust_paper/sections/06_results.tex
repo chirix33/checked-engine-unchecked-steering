@@ -1,0 +1,172 @@
+\section{Results}
+\label{sec:results}
+
+%% NOTE FOR FILLING IN: every \tbd and \TBD below is a placeholder for a number or finding from the
+%% scored test run (scripts/main_analysis.py on wf_test, ml_test, wf_policy and runs/judges_main_v1).
+%% Do not fill any cell from development data. Prose marked \TBD states what the sentence must report;
+%% rewrite it to match the measured direction, including null or negative results.
+
+We ask four questions. \textbf{RQ1}: at the same coverage, does the library accept fewer wrong answers than the other judges? \textbf{RQ2}: when it declines, is it detecting errors or abstaining? \textbf{RQ3}: does rechecking keep wrong answers out when a program is reused under a changed policy, and what does it cost when the policy was only reworded? \textbf{RQ4}: what does checking cost? All numbers are from the test runs, with programs built on development documents only.
+
+\subsection{RQ1: Wrong answers accepted at matched coverage}
+\label{sec:results:main}
+
+\begin{table*}[t]
+\centering
+\caption{Coverage (Cov.) and error among answered pairs (Err., \%) on the test runs. Claude-built programs pool \otf R1, \devs and the coding agent within each domain as sums over cells; Ollama-built programs (\otf R1 only) are shown apart. LLM judges are cut to \gate's coverage in each cell (matched); rule-based judges are shown at their own operating point. 95\% two-level bootstrap intervals are in the artifact.}
+\label{tab:main}
+\small
+\setlength{\tabcolsep}{4.2pt}
+\begin{tabular}{@{}l rr rr rr rr rr@{}}
+\toprule
+& \multicolumn{8}{c}{Claude-built programs} & \multicolumn{2}{c}{Ollama-built (\otf)} \\
+\cmidrule(lr){2-9}\cmidrule(l){10-11}
+& \multicolumn{2}{c}{Loan} & \multicolumn{2}{c}{Pharmacy} & \multicolumn{2}{c}{Manufacturing} & \multicolumn{2}{c}{IT operations} & \multicolumn{2}{c}{All domains} \\
+Judge & Cov. & Err. & Cov. & Err. & Cov. & Err. & Cov. & Err. & Cov. & Err. \\
+\midrule
+Platform check (no added check) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+History check (\cfg{Replay}) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Generic tests (\cfg{Generic}) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Disagreement with reading & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Program-level LLM judge (Haiku) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\midrule
+Answer-level LLM judge (Haiku), matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+ReAct judge (Haiku), matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Random refusal, matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\midrule
+\cfg{Schema} (ablation) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\cfg{Program-wide} (ablation) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\gate (ours) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:main} gives the main comparison. Without any added check, \TBD{\rNoCheckErrClaude\% of answers from Claude-built programs are wrong; state per domain where errors concentrate}. The history check \TBD{removes X of these at a coverage cost of Y; report \rHistErrClaude\%}. \gate reaches \rGateCovClaude\% coverage with \rGateErrClaude\% error, removing \rWrongRemovedClaude\% of the wrong answers and declining \rRightLostClaude\% of the correct ones. At the same coverage, the answer-level LLM judge has \rAnsJudgeErrClaude\% error and the ReAct judge \rReactErrClaude\%. \TBD{State the paired difference and interval for gate minus each judge, and say plainly where the gate is not better.}
+
+\TBD{Domain by domain. Report separately (i) domains where programs make few or no errors, so that any judge can only lose coverage there; (ii) the IT result, where a capability caught once blocks that family for the program everywhere, and the coverage this costs on otherwise correct answers; (iii) whether \cfg{Generic} with the same budget recovers the gate's gain, which tells whether the choice of test matters.}
+
+For Ollama-built programs, \TBD{report \rNoCheckErrOllama\% vs.\ \rGateErrOllama\% at \rGateCovOllama\% coverage; most of these programs fail the history check, so state how much of the difference is the history check alone}. Qwen built only three programs, so its cells are thin evidence.
+
+\paragraph{Per program.} \TBD{One sentence per platform on spread across individual programs (from the per-program table in the artifact): how many programs have any wrong answer trusted by the gate, and whether one program dominates the totals.}
+
+\subsection{RQ2: Detecting or abstaining?}
+\label{sec:results:families}
+
+\begin{table}[t]
+\centering
+\caption{The gate's decisions by change family (Claude-built programs, test). ``Wrong'' is the number of wrong answers with no added check; ``Kept'' the wrong answers the gate trusts. Declines are split into those that \emph{detect} (\Caught, \Already, \Failhist) and those that \emph{abstain} (\Untestable, \Cantexpress, \Badrequest), each as wrong answers removed / correct answers lost.}
+\label{tab:families}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l r r r c c@{}}
+\toprule
+Family & Pairs & Wrong & Kept & Detect & Abstain \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Workflows (Loan and Pharmacy)}} \\
+Activity duration & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Timer delay & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Route draw (one case) & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Routing probabilities & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Worker availability & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Case removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+\multicolumn{6}{@{}l}{\textit{Manufacturing}} \\
+Order removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Production quantity & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Production timing & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Dispatch capacity & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+\multicolumn{6}{@{}l}{\textit{IT operations}} \\
+Job removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Failure removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Task priority & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Task resource request & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Machine removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+\midrule
+No-effect controls (all) & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A judge can remove wrong answers in two ways: by finding the error, or by declining questions it cannot check. Both reduce accepted errors, but only the first is evidence about the program. Table~\ref{tab:families} separates them. Of the wrong answers \gate removes, \rShareCaught\% are \Caught or \Already, \rShareHist\% fail the history check, and \rShareUntestable\% are declined as \Untestable. \TBD{Name the families where the gain is mainly abstention, and where the tests detect errors the history check cannot see, with one concrete example of a \Caught program (what the test changed and what moved).} On no-effect controls, \TBD{report whether any correct ``nothing changes'' answer was declined, and why}.
+
+\paragraph{Interpretation.} \TBD{Share of test questions whose structured change matched the hidden binding exactly, per domain; and how the gate's error and coverage change when the hidden binding is supplied instead (oracle request), which bounds the share of errors due to misreading the question.}
+
+\subsection{RQ3: Reuse under a changed or reworded policy}
+\label{sec:results:reuse}
+
+\begin{table}[t]
+\centering
+\caption{Policy reuse (Claude-built workflow programs; 1{,}411 pairs). Programs and their capability records come from the test runs. P changes one pool size; H rewords the rules without changing them. Exec./pair counts program executions per question.}
+\label{tab:reuse}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l rr rr r@{}}
+\toprule
+& \multicolumn{2}{c}{P (changed)} & \multicolumn{2}{c}{H (reworded)} & \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Judge (recheck regime) & Cov. & Err. & Cov. & Err. & Exec./pair \\
+\midrule
+Platform check (no recheck) & \tbd & \tbd & \tbd & \tbd & 0 \\
+History check (factual recheck) & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\gate (per-family recheck) & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Every main result above is already a reuse result: each program was built on development runs and judged on test runs it had never seen, and its capability record carried failures from earlier test questions forward. Table~\ref{tab:reuse} adds a change of the rules themselves. Under P, \TBD{report how many programs keep the old pool size, whether the history check exposes them, and the gate's error \rPolPGateErr\% vs.\ \rPolPHistErr\% for the history check}. No P decision used evidence recorded under the old policy (\TBD{confirm the count is 0}). Under H, the fingerprint treats the rewording as a new policy, so the gate rechecks everything: \TBD{report the extra executions, and the number of rows (\rPolHUnneeded) where a failure recorded on test was dropped although the rules had not changed, and how many of those answers were wrong}. This is the price of a text-level fingerprint, and we report it rather than tune it away.
+
+\subsection{RQ4: Cost of checking}
+\label{sec:results:cost}
+
+\begin{table}[t]
+\centering
+\caption{Cost per judged pair on the test runs. Program executions exclude the run that produces the answer. USD at list prices.}
+\label{tab:cost}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+Judge & Model calls & USD & Executions & Seconds \\
+\midrule
+History check & 0 & 0 & \tbd & \tbd \\
+Generic tests & 0 & 0 & \tbd & \tbd \\
+\gate & 0 & 0 & \tbd & \tbd \\
+Answer-level judge, Haiku & 1 & \tbd & 0 & \tbd \\
+Answer-level judge, Sonnet & 1 & \tbd & 0 & \tbd \\
+Program-level judge, Haiku$^\dagger$ & \tbd & \tbd & 0 & \tbd \\
+ReAct judge, Haiku & \tbd & \tbd & \tbd & \tbd \\
+ReAct judge, Sonnet & \tbd & \tbd & \tbd & \tbd \\
+\bottomrule
+\multicolumn{5}{@{}l}{\scriptsize $^\dagger$One call per program and run, spread over its questions.}\\
+\multicolumn{5}{@{}l}{\scriptsize The shared interpretation call (Haiku) is not counted here; every judge uses it.}
+\end{tabular}
+\end{table}
+
+The library's checks make no model calls beyond the shared interpretation; their cost is program executions. \gate uses a median of \rGateExecPerQ executions and \rGateSecPerQ seconds per question (Table~\ref{tab:cost}). The answer-level judge costs \$\rAnsJudgeUSDPerRow per pair and the ReAct judge \$\rReactUSDPerRow and \rReactSecPerRow seconds. \TBD{State how cost scales with reuse: passing evidence is reused within a run, so the per-question cost falls when many questions share a run; give the measured reuse share.}
+
+\subsection{Do LLM judges depend on the model?}
+\label{sec:results:models}
+
+\begin{table}[t]
+\centering
+\caption{The shared 150-pair subset: error at the gate's coverage on these pairs, and the share of replies that could not be parsed (counted as declines). Sonnet ReAct ran on 50 of the 150.}
+\label{tab:models}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}l rr rr@{}}
+\toprule
+& \multicolumn{2}{c}{Answer-level judge} & \multicolumn{2}{c}{ReAct judge} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Model & Err. & Unparsed & Err. & Unparsed \\
+\midrule
+Claude Haiku 5.5 & \tbd & \tbd & \tbd & \tbd \\
+Claude Sonnet 5.5 & \tbd & \tbd & \tbd & \tbd \\
+gpt-oss-120b & \tbd & \tbd & \tbd & \tbd \\
+Gemma 4 31B & \tbd & \tbd & \tbd & \tbd \\
+Qwen3.5 9B & \tbd & \tbd & \tbd & \tbd \\
+\midrule
+\gate on the same pairs & \multicolumn{4}{c}{\tbd} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:models} asks whether a stronger or different model makes a better judge on the same pairs. \TBD{Report the ordering and whether any model's judge beats the gate at matched coverage. Note self-judging: Claude and Ollama models judge programs built by their own family.} In development checks, gpt-oss under our plain-text ReAct format often described an action without writing code; we ran it unchanged, so its ReAct numbers measure that setup with that model, not the model's ability to test programs.

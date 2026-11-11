@@ -1,0 +1,19 @@
+\section{Problem Setting}
+\label{sec:problem}
+
+\paragraph{Documents, runs and programs.} A \emph{document} describes one process. Its front matter states the rules: the steps, which workers or machines do them, working hours, how cases are routed, how capacity is shared. The rest of the document holds one or more \emph{runs}. Each run records the inputs (arrivals, planned work, orders, task requests) and the outcomes (when each case ended, what shipped, when each task started). A \emph{platform} reads a development document and produces a \emph{program}: a simulator that takes a run's inputs and returns its outcomes. The same program is later applied to other runs of the same process, which it has never seen.
+
+\paragraph{Questions.} A what-if question names a run, one \emph{change} to it, and one queried outcome. For example: ``In Run~11, suppose 1 Technician worker (Technician\_7) was unavailable from time 28800 to time 43200. At what time would case c0014 end?'' Each change belongs to a \emph{family}, a kind of change such as a different activity duration, a different routing probability, or fewer workers (Table~\ref{tab:benchmark}). Some valid changes do not affect the queried outcome. These \emph{no-effect controls} are included on purpose: a judge that distrusts every answer that ``did not move'' is wrong on them.
+
+\paragraph{Answers.} To answer, the platform applies the change to the run's inputs, runs the program, and reads off the queried value. An answer is \emph{correct} if it equals the reference answer (numbers within one unit). A program may also produce no answer, for instance when it has no input that can represent the change.
+
+\paragraph{Trust judges.} A \emph{trust judge} sees a program, a run, a question and, depending on the judge, the program's answer, and decides to \emph{trust} or \emph{decline}. All judges decide about the same programs and the same answers, so they differ only in which answers they let through. We count an answer as \emph{answered} only if it is trusted \emph{and} the program produced it; a trusted row with no answer counts as declined. This rule is the same for every judge.
+
+\paragraph{What we measure.} The unit is one program--question pair. For each judge, within one process and one cohort of programs (same platform and builder model):
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{coverage}: answered pairs as a share of all pairs;
+  \item \textbf{error}: wrong answers as a share of answered pairs (one minus precision), and the count of wrong answers accepted;
+  \item \textbf{correct kept}: correct answered pairs as a share of all pairs, and \textbf{correct declined}: correct program answers that the judge declined;
+  \item \textbf{cost}: program executions, model calls, tokens, dollars and wall-clock time spent on judging.
+\end{itemize}
+A judge that answers less can always look safer. We therefore compare judges at \emph{matched coverage}: judges that give a confidence are cut at the coverage our library reaches in the same cell, keeping their most confident answers, with ties resolved by their exact expected precision. Judges that give only a yes or no are reported at their own operating point, next to a random refusal at the library's coverage. Programs built by different model families are never pooled.
