@@ -499,23 +499,30 @@ class OTFDomain:
         votes: dict = {}
         for o in r["outcomes"]:
             for src in o.get("src") or []:
-                if not (isinstance(src, (list, tuple)) and len(src) == 3 and isinstance(src[1], int)
-                        and isinstance(src[2], (list, tuple))):
+                # A table-cell source is [node, row, cols]; the pinned B0 reader writes [node, row] (review of
+                # 2026-11-10: it does not leave `src` empty). The IT task log needs only the row.
+                if not (isinstance(src, (list, tuple)) and len(src) in (2, 3) and isinstance(src[1], int)):
                     continue                    # a list-line source, not a table cell
-                nid, row, cols = src
+                nid, row = src[0], src[1]
+                cols = src[2] if len(src) == 3 and isinstance(src[2], (list, tuple)) else None
                 node = nodes.get(nid)
                 if node is None or node.get("kind") != "table":
                     continue
                 if self.schema.domain == MFG and node["title"] == f"{scope}: Daily ledger":
+                    if cols is None:
+                        continue
                     hit = [c for c in cols if c in LEDGER_COLS]
                     if len(hit) == 1:
                         votes.setdefault(o.get("kind"), set()).add(hit[0])
                 elif self.schema.domain == IT and node["title"] == f"{scope}: Task log":
                     tcols = node["table"]["columns"]
-                    ev = node["table"]["rows"][row][tcols.index("event")] if row < len(node["table"]["rows"]) else None
-                    if ev in EVENTS:
+                    ev = node["table"]["rows"][row][tcols.index("event")] if 0 <= row < len(node["table"]["rows"]) else None
+                    if ev is not None:
+                        # every event votes, so a kind whose sources mix events (e.g. submit and start) is ambiguous
+                        # and stays unmapped (review of 2026-11-10: submit votes were dropped before)
                         votes.setdefault(o.get("kind"), set()).add(ev)
-        self._maps[scope] = {k: next(iter(v)) for k, v in votes.items() if len(v) == 1 and k is not None}
+        self._maps[scope] = {k: next(iter(v)) for k, v in votes.items()
+                             if len(v) == 1 and k is not None and next(iter(v)) in (EVENTS if self.schema.domain == IT else LEDGER_COLS)}
         return self._maps[scope]
 
     def project(self, scope, recs):

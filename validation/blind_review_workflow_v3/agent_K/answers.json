@@ -1,0 +1,86 @@
+[
+ {
+  "qid": "W01",
+  "answer": 293096,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Return work 1895->1 makes c0009 reach the applicant step earlier, but its second completeness check still waits for Wednesday 09:00, so the end is unchanged from the recorded 293096."
+ },
+ {
+  "qid": "W02",
+  "answer": 56971,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0004 removed from Run 07; with other cases rescheduled, c0014 ends at 56971 (recorded 56620)."
+ },
+ {
+  "qid": "W03",
+  "answer": 134022,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Added Appraiser_2 with the same Mon-Fri 09:00-17:00 hours; c0011 ends at 134022 (recorded 134148)."
+ },
+ {
+  "qid": "W04",
+  "answer": 215479,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.100000 < 0.2 sends c0011 to D1-a (return to applicant); visit-2 draw 0.997084 then gives D1-b, and D2 rejects; end 215479 (recorded 52875)."
+ },
+ {
+  "qid": "W05",
+  "answer": 59158,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D5 cumulative 0.7 > draw 0.517267, so c0007 cancels on its first D5 visit; end 59158 (recorded 126373)."
+ },
+ {
+  "qid": "W06",
+  "answer": 58166,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 3261->6861 for c0002 delays Assess loan risk; routes unchanged; end 58166 (recorded 54566)."
+ },
+ {
+  "qid": "W07",
+  "answer": 31843,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Pick-up work 130->260 for c0013; Pick-up starts at 31583 as before and ends 31843 (recorded 31713)."
+ },
+ {
+  "qid": "W08",
+  "answer": 30804,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0007 removed from Run 08; c0006 ends at 30804, one second earlier than recorded 30805."
+ },
+ {
+  "qid": "W09",
+  "answer": 31507,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Added Pharmacist_1 with the same hours; c0011 ends at 31507 (recorded 31601)."
+ },
+ {
+  "qid": "W10",
+  "answer": 30198,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.025 < 0.05 gives D7-a back to D6; D6 visit-2 draw 0.016552 gives D6-a to W3 at the same time 29696, so the end is unchanged at 30198."
+ },
+ {
+  "qid": "W11",
+  "answer": 30235,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0000 D1 draw 0.140082 < 0.3 so its own route is unchanged, but other cases re-route and delay its Pick-up start to 30074; end 30235 (recorded 30198)."
+ },
+ {
+  "qid": "W12",
+  "answer": 32941,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 183->0 for c0014; Pack starts immediately at 32259; end 32941 (recorded 33124)."
+ }
+]

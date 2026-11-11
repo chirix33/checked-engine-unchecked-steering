@@ -61,7 +61,13 @@ class ProcessSchema:
     reached: dict[str, set] = field(default_factory=dict)   # scope -> {(case, element, visit)} seen in the record
 
     def policy_fingerprint(self) -> str:
-        return hashlib.sha256(re.sub(r"\s+", " ", self.policy_text).strip().encode()).hexdigest()[:16]
+        """Hash of the stated policy. The front matter's last line lists the document's own chapters ("Chapters in
+        this document: ..."); it is not policy, and is dropped so one policy has one fingerprint across documents, as
+        in `mlsys.py` (Ashraf, 2026-11-09; changed after the development pilot)."""
+        text = re.sub(r"\s+", " ", self.policy_text).strip()
+        # only the exact closing chapter list ("Chapters in this document: Run 01, Run 02."), and only at the very end
+        text = re.sub(r"\s*Chapters in this document: Run \d+(?:, Run \d+)*\.$", "", text).strip()
+        return hashlib.sha256(text.encode()).hexdigest()[:16]
 
 
 def schema_from_map(nav: dict) -> ProcessSchema:

@@ -534,6 +534,52 @@ Our library and the rule-based judges run on every row (no model cost). DEVS-Gen
 
 **Estimated total spend** is about $75-80 of Claude credit. The runner's Claude stop ($25) will be raised before the main run, and the raise reported.
 
+## D28. Freeze (2026-11-10, ahead of the Nov 11 deadline)
+
+**What is frozen.** The library, runner, scorer, judges, client, sandbox filter, question files, splits and the 118-program list, recorded in `manifests/freeze_v1.md` and `manifests/freeze_v1.json`.
+
+**Last pre-freeze changes,** all made on dev data and all disclosed:
+- **Program sandbox hardened:** `/run`, vsock and io_uring were closed by the seccomp filter, with byte-identical program output.
+- **OTF IT record mapping grounded in table cells:** B0's `[node, row]` sources are now read, and ambiguous kinds stay unmapped. This gives B0 its IT native answers, and fixes one R1 Haiku program whose wrong mapping had made its history check fail.
+  - Effect on IT Haiku, dev: replay coverage 0.661 → 0.994; directed 0.500 → 0.744.
+- **Main runner:** the 64k per-question output cap.
+
+**Dev results** are in `runs/main_v1/{wf_dev,ml_dev}_summary.*`: 118 programs, 11,225 rows, no program failures. They are development data, not evidence.
+
+**Stays as decided:**
+- the D27 cuts;
+- rule A;
+- IT Already-caught blocking;
+- the two unresolved blind spots kept as reported limits.
+
+**Open.** Ashraf topped up the Ollama credit. Under D27 the main run needs no Ollama calls, so any use of it is a new decision for him.
+
+## D29. Ollama models as judges on the shared subset (Ashraf, 2026-11-10; a logged addition after the freeze)
+
+Ashraf topped up the Ollama Cloud credit and chose the cheapest use of it, which restores the same models across the judges on one shared set of rows.
+
+**What is added.** gpt-oss:120b and gemma4:31b (Ollama cloud), and qwen3.5:9b (local, free), judge the same shared 150-row subset Sonnet judges (D27). Each runs:
+- the answer-level LLM judge;
+- the ReAct judge.
+
+**Coverage on the shared 150 rows:**
+- answer-level judge: all five models (Haiku, Sonnet, gpt-oss, Gemma, Qwen);
+- ReAct judge: Haiku and the three Ollama models on all 150 rows, plus Sonnet on 50 of them. Ashraf added the Sonnet ReAct judge on 2026-11-10, at about $15; the 50 rows are drawn from the 150 with a fixed seed, by row id only, before any judging;
+- program-level judge: Haiku only (D27).
+
+**Nothing else changes.** No new programs, no change to the library, runner, scorer or `judges.py`, which already takes any setup in `scripts/b0_build_test.py` through `--model`. The frozen files are unchanged.
+
+**Cost, estimated from the dev smoke and Ollama prices:**
+- per Ollama cloud model, about $1.40 answer-level and about $7.50 ReAct, so about $18 for both;
+- Qwen costs no money but about 10 hours for ReAct on 150 rows, run one at a time.
+
+The runner's Ollama stop (`CAP_USD`, $5) is raised to match the balance Ashraf reports, and the raise is logged.
+
+**Caveats to report:**
+- Ollama cloud offers no prompt caching through this client.
+- Qwen 9B is a weak judge and thin evidence (D7).
+- The Ollama models also built some of the OTF programs they judge. Report self-judging by cohort, as for Claude.
+
 ## D9. Independent checker: Decided (Ashraf, 2026-11-04)
 
 A separately started agent writes the checker from the written spec and I/O formats alone. See D5, condition 4. Implementations are compared on small scenarios and boundary cases.
