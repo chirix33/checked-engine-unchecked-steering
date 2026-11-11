@@ -1,0 +1,86 @@
+[
+ {
+  "qid": "W01",
+  "answer": 213523,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0005 is 215354; change: Reject application visit 1 work set to 1s; simulated end 213523."
+ },
+ {
+  "qid": "W02",
+  "answer": 45599,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0003 is 45859; change: c0001 removed; simulated end 45599."
+ },
+ {
+  "qid": "W03",
+  "answer": 119156,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0005 is 47253; change: both Appraisers unavailable 39600-54000; simulated end 119156."
+ },
+ {
+  "qid": "W04",
+  "answer": 215479,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0011 is 52875; change: D1 visit 1 draw set to 0.1; simulated end 215479."
+ },
+ {
+  "qid": "W05",
+  "answer": 59158,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0007 is 126373; change: D5 probabilities 0.7/0.3; simulated end 59158."
+ },
+ {
+  "qid": "W06",
+  "answer": 58166,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0002 is 54566; change: W2 visit 1 delay set to 6861; simulated end 58166."
+ },
+ {
+  "qid": "W07",
+  "answer": 34055,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0002 is 30466; change: Check DUR visit 1 work set to 3601; simulated end 34055."
+ },
+ {
+  "qid": "W08",
+  "answer": 31562,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0006 is 31661; change: c0004 removed; simulated end 31562."
+ },
+ {
+  "qid": "W09",
+  "answer": 37688,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0007 is 31613; change: Pharmacist unavailable 28800-36000; simulated end 37688."
+ },
+ {
+  "qid": "W10",
+  "answer": 31116,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0007 is 31116; change: D3 visit 1 draw set to 0.9; simulated end 31116."
+ },
+ {
+  "qid": "W11",
+  "answer": 30235,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0000 is 30198; change: D1 probabilities 0.3/0.7; simulated end 30235."
+ },
+ {
+  "qid": "W12",
+  "answer": 31793,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Factual end of c0009 is 31457; change: W3 visit 1 delay set to 672; simulated end 31793."
+ }
+]
