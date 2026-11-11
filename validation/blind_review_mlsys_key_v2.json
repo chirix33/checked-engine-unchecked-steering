@@ -1,0 +1,60 @@
+{
+ "seed": 2027,
+ "questions": [
+  "manifests/mlsys_questions_dev_v1.json",
+  "manifests/mlsys_questions_test_v1.json"
+ ],
+ "questions_sha256": {
+  "manifests/mlsys_questions_dev_v1.json": "fcfc64ca0217993d81c84fb8afc84accdd77dbcba01c48b4a6e9ba6193053f49",
+  "manifests/mlsys_questions_test_v1.json": "eeea12c1c6c6fe1aa311dad8e35d41b7620dbb00ee56b2c99adcf9cfe36f041c"
+ },
+ "input_files_sha256": {
+  "mfg": {
+   "chapter_Plant_1912_Period_01.txt": "2dde6d08a4b9e38250e32610628189b7114a6082224abd60172ce472632929b7",
+   "chapter_Plant_1912_Period_15.txt": "91bd633e7cbe12f4bcba41211ec7c27bc44fdb498dbb1ec7e35bc41d99ebd304",
+   "chapter_Plant_1914_Period_11.txt": "8550d7da36e308986b331e2dff0a51b08df8b7e25b48bf394266a85f6b32d267",
+   "chapter_Plant_2103_Period_01.txt": "0faa42d73e848b11fcae28d897efb54feb1401705185e9a69cc42563174e5595",
+   "chapter_Plant_2103_Period_03.txt": "c06af35c02ebc7862ccb2f9072ac57339211ba6be6688b7fb9be3a682ad396da",
+   "chapter_Plant_2103_Period_06.txt": "e31fb8442adf6b1031f25afd1ccef36edb0ecd3094490a2f47fd3c5023175e3a",
+   "chapter_Plant_2103_Period_09.txt": "6c6ad51a69e971f7da21fbda4c719e7a06183c625a5dfe0d7b645f9bbb15b066",
+   "chapter_Plant_2114_Period_02.txt": "b487683f51fb3436ea10420f5d792b562b69eaa418b056af683a898928c08a11",
+   "front_matter.txt": "5b6b642479070ac563d66a6522d2db779d18d131d69f6d878413ed6aace2f682",
+   "questions.json": "31e7a2223e81a6fb5068c0fc11f0f1516dc419f8555b01386613a6fd7c9162a9"
+  },
+  "itops": {
+   "chapter_Cell_window_03.txt": "f6524b2e6519629fdc67d2b1f293801b8aed6499def238b1db95e591d9c7dff1",
+   "chapter_Cell_window_06.txt": "05d3ec02fab865d4c4642379b6222adab713963f98a65ffce3bec805701e1551",
+   "chapter_Cell_window_10.txt": "fca882bfd17229f9c1a8e1a895e256c08e33e244bdcae6870f0a354f21bfde24",
+   "chapter_Cell_window_11.txt": "29b09a452091521da37f99d04c521c3ffd4e385ebde35e39e8bd39ec3dc1e796",
+   "chapter_Cell_window_13.txt": "dcc3be6e81bb77265ca5f2772dc4788f0e0ba71c35d510d29d61e92a041e8797",
+   "chapter_Cell_window_14.txt": "e4bbaaf0e55581795c433904390513e3d0e5191c78945efff480e6586851b0e0",
+   "chapter_Cell_window_17.txt": "155064aa7bef08ea7ef8693b36d10d82a65cb14292f46d945def7a3dd694024f",
+   "chapter_Cell_window_20.txt": "e1fcb9266c415db3fd38548f0b7128671c3fc1198aff9c3bd0dbd6c0cf15ef60",
+   "chapter_Cell_window_27.txt": "8a7649665e6390d63e3ed353fd38a7e0e932c847aaee92a2c20271444cb46898",
+   "front_matter.txt": "7d7e7ba51bd5a68ea986c77de02613190c741096ce540fe6e0649165bb60f761",
+   "questions.json": "043e844db20d8535eca1010f7c4e1e4f34b85ea038bdee5ad913f6b60e8425b3"
+  }
+ },
+ "mfg": {
+  "B01": "mfg-dev-dispatch_capacity-06",
+  "B02": "mfg-test-dispatch_capacity-17",
+  "B03": "mfg-dev-order_removal-05",
+  "B04": "mfg-dev-order_removal-00",
+  "B05": "mfg-test-production_quantity-08",
+  "B06": "mfg-test-production_quantity-13",
+  "B07": "mfg-dev-production_timing-11",
+  "B08": "mfg-test-production_timing-13"
+ },
+ "itops": {
+  "B01": "itops-dev-failure_removal-11",
+  "B02": "itops-test-failure_removal-10",
+  "B03": "itops-dev-job_removal-11",
+  "B04": "itops-test-job_removal-05",
+  "B05": "itops-test-machine_removal-06",
+  "B06": "itops-dev-machine_removal-04",
+  "B07": "itops-test-task_priority-09",
+  "B08": "itops-test-task_priority-07",
+  "B09": "itops-dev-task_request-04",
+  "B10": "itops-test-task_request-04"
+ }
+}

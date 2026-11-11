@@ -1,0 +1,66 @@
+{
+ "seed": 2027,
+ "questions": [
+  "manifests/mlsys_questions_dev_v1.json",
+  "manifests/mlsys_questions_test_v1.json"
+ ],
+ "questions_sha256": {
+  "manifests/mlsys_questions_dev_v1.json": "f9c582628b0a0be77bb7b2557dfbddf273c072d80e74323ec11b03229f0cde79",
+  "manifests/mlsys_questions_test_v1.json": "d9f5ff821b18e739345bc8bc6e8c4937d3dc753e0d4e624bdb4334ebba543981"
+ },
+ "input_files_sha256": {
+  "mfg": {
+   "answers_A.json": "89b733dc08413002baf3c5457a4f78ce3372a0ad7511f9c73983685b10fd35f8",
+   "answers_A_merged.json": "89b733dc08413002baf3c5457a4f78ce3372a0ad7511f9c73983685b10fd35f8",
+   "answers_A_v3only.json": "18cca7a50fe06ceafa4de50303ef2ef4b5bab25ad95f936d915c33e3d171cf83",
+   "answers_B.json": "a22a082d6dd3ee18066bf2da0ea06dff10b4e246198a09e5487a54dba7743491",
+   "answers_B_merged.json": "a22a082d6dd3ee18066bf2da0ea06dff10b4e246198a09e5487a54dba7743491",
+   "answers_B_v3only.json": "ee8a68c270306481c6687a7a62f4226c1284f4599b1b25f9ae89dcff9e428813",
+   "chapter_Plant_1912_Period_01.txt": "2dde6d08a4b9e38250e32610628189b7114a6082224abd60172ce472632929b7",
+   "chapter_Plant_1912_Period_14.txt": "b760b957a1b0927d02741082cc127507f189a92ddaa4e1f02eadcd8d8ea65675",
+   "chapter_Plant_2103_Period_01.txt": "0faa42d73e848b11fcae28d897efb54feb1401705185e9a69cc42563174e5595",
+   "chapter_Plant_2103_Period_03.txt": "c06af35c02ebc7862ccb2f9072ac57339211ba6be6688b7fb9be3a682ad396da",
+   "chapter_Plant_2103_Period_09.txt": "6c6ad51a69e971f7da21fbda4c719e7a06183c625a5dfe0d7b645f9bbb15b066",
+   "chapter_Plant_2114_Period_02.txt": "b487683f51fb3436ea10420f5d792b562b69eaa418b056af683a898928c08a11",
+   "chapter_Plant_2114_Period_08.txt": "73fa24a3d41faea1bf00dd5dca9746ab803fbdc3a2569691ea01c0e99e2e3dfa",
+   "front_matter.txt": "5b6b642479070ac563d66a6522d2db779d18d131d69f6d878413ed6aace2f682",
+   "questions.json": "cd92b3d381198404e7523840673f38a23ff3a03817974c4cf9e2a7d30e2154a4",
+   "steps_A.md": "706b3693792de7b141ed53b7094ec071462ab7a4c8fb9b9dec0328c8805f27e9",
+   "steps_B.md": "cb41b00a95e95da8e8ce4daa73d0ae01564c144cf3fb915f282e7434da399295"
+  },
+  "itops": {
+   "chapter_Cell_window_02.txt": "3ff48a7b4609e978473eaf3b103f341d6e9534999dfaf5ff6c82363475c5369b",
+   "chapter_Cell_window_04.txt": "b9c445feb16cbc777062e702bb56371c5e12509cf1e8cda3773a13b05423bc6d",
+   "chapter_Cell_window_06.txt": "05d3ec02fab865d4c4642379b6222adab713963f98a65ffce3bec805701e1551",
+   "chapter_Cell_window_09.txt": "b19b66eb572600104ddef715c9d9f3dd96ab5d4e7b6d6fafdd27bf31ca07f4e3",
+   "chapter_Cell_window_13.txt": "dcc3be6e81bb77265ca5f2772dc4788f0e0ba71c35d510d29d61e92a041e8797",
+   "chapter_Cell_window_18.txt": "611fce3acdded659b08dff9311057889033d2a5e9f79adc539d43418944671ef",
+   "chapter_Cell_window_20.txt": "e1fcb9266c415db3fd38548f0b7128671c3fc1198aff9c3bd0dbd6c0cf15ef60",
+   "chapter_Cell_window_30.txt": "7644718095e6bb19808284c71683fcd124538359949095cf3d265a2d7fbead68",
+   "front_matter.txt": "7d7e7ba51bd5a68ea986c77de02613190c741096ce540fe6e0649165bb60f761",
+   "questions.json": "cbf1abb4dce8119b0cad52324f6b59c9f15a0e680a4ff0abb1478cfa105a8106"
+  }
+ },
+ "mfg": {
+  "B01": "mfg-dev-dispatch_capacity-06",
+  "B02": "mfg-test-dispatch_capacity-17",
+  "B03": "mfg-dev-order_removal-05",
+  "B04": "mfg-dev-order_removal-00",
+  "B05": "mfg-test-production_quantity-08",
+  "B06": "mfg-test-production_quantity-13",
+  "B07": "mfg-dev-production_timing-11",
+  "B08": "mfg-test-production_timing-13"
+ },
+ "itops": {
+  "B01": "itops-dev-failure_removal-11",
+  "B02": "itops-test-failure_removal-10",
+  "B03": "itops-dev-job_removal-11",
+  "B04": "itops-test-job_removal-05",
+  "B05": "itops-test-machine_removal-06",
+  "B06": "itops-dev-machine_removal-04",
+  "B07": "itops-test-task_priority-09",
+  "B08": "itops-test-task_priority-07",
+  "B09": "itops-dev-task_request-04",
+  "B10": "itops-test-task_request-04"
+ }
+}
