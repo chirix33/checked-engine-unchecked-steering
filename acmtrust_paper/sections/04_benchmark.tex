@@ -1,0 +1,65 @@
+\section{Benchmark}
+\label{sec:benchmark}
+
+\begin{table*}[t]
+\centering
+\caption{Domains, change families and test questions. Every family has valid no-effect controls. Inputs are real for manufacturing and IT and come from published process models for the workflows; all outcomes are computed under the rules stated in each document.}
+\label{tab:benchmark}
+\small
+\begin{tabular}{@{}l p{4.6cm} p{6.6cm} r r@{}}
+\toprule
+Domain & Source of inputs and rules & Change families (what a question changes) & Test qs. & No-effect \\
+\midrule
+Loan application & Published BPMN model and simulation parameters~\cite{chapela2023zenodo}; 17 activities, loops, 6 worker pools & activity duration; timer delay; route draw of one case; routing probabilities; worker availability (added or unavailable workers); case removal & 120 & 24 \\
+Pharmacy & Same source; 12 activities, loops, 3 worker pools & same six families & 120 & 24 \\
+Manufacturing & SupplyGraph production and orders~\cite{wasi2024supplygraph}; written dispatch policy~\cite{otftools2026} & order removal; production quantity; production timing; dispatch capacity & 96 & 16 \\
+IT operations & Google 2011 cluster trace~\cite{reiss2011google}; written priority scheduler on 8 machines~\cite{otftools2026} & job removal; machine-failure removal; task priority; task resource request; machine removal & 120 & 20 \\
+\midrule
+Policy reuse (workflows) & Loan and Pharmacy under a changed policy (P: one more worker in one pool) or a reworded one (H: same rules, 24 sentences rewritten) & the six workflow families & 91 & 22 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Domains.} Table~\ref{tab:benchmark} lists the four domains. The two workflows come from an open collection of business-process models with simulation parameters~\cite{chapela2023zenodo,chapela2024extraneous}. We chose Loan Application and Pharmacy because they have distinct structures, queues, loops and timer events. Manufacturing and IT operations reuse the documents of a prior process-record benchmark~\cite{otftools2026}: real production, order and cluster-trace inputs, with outcomes computed under a written dispatch policy and a written scheduler. Each workflow run has 15 cases; a manufacturing run is one plant over 14 days; an IT run is one cluster window.
+
+\paragraph{Exact answers to what-if questions.} A what-if question has an exact answer only if the random parts of a run are pinned down. A shared random seed does not do this: in the Prosimos simulator~\cite{lopezpintado2023prosimos}, for example, draws come from process-wide streams in execution order, so adding one case changed the routes of earlier cases in our checks. We therefore wrote the workflow semantics down first (resource allocation, calendars, priorities, simultaneous events, timers, routing and loops) and built a deterministic reference engine for it. Every random quantity is tied to a stable identity (case, activity or decision, visit) and printed in the document: planned work, planned waits, and route draws to six decimals. Removing a case leaves every other case's draws unchanged, and a new routing probability is applied to the same draw. This is a common-random-numbers coupling~\cite{law2015simulation}: the question asks about the same realized run under a change, and everything needed for the exact answer is in the document. Manufacturing and IT are deterministic by construction.
+
+\paragraph{Checked reference answers.} Gold never comes from an LLM judge. For the workflows, an independent checker was written from the semantics specification alone, without the engine's code or outputs. Engine and checker agree on 18 of 18 hand-worked cases, on 66 of 66 fixed scenarios and 500 of 500 randomized ones in every output field, and on all 240 workflow test questions. A further check confirms that every value each test answer depends on is printed in the document (240 of 240), and that rounding the printed route draws changes no answer. Separately started agents, given only the document text, reproduced every printed record of the sampled runs and matched gold on 24 of 24 sampled questions. For manufacturing and IT, gold comes from the original simulators and from a second implementation fed only by values parsed back from the documents; the two agree on all 216 test questions, and blind samples matched on 16 of 16 (manufacturing, by hand) and 20 of 20 (IT, agents writing their own schedulers). Prosimos was used only to compare factual aggregates, which cannot validate what-if answers.
+
+\paragraph{Questions and splits.} Test questions are drawn by a fixed rule, never by how any system performs on them. Each family has 20 (workflow) or 24 (manufacturing, IT) test questions, of which one in five or one in six is a no-effect control. Rules applied at generation remove questions whose answer needs an unprinted draw, changes equal to the recorded value, changes at visits that never happen (an unknown target, not a no-effect change), and unavailability of workers who do no work. Splits are by run: development runs 1--4 and test runs 5--12 for each workflow, with policy-variant runs 13--16. IT windows that share jobs and manufacturing periods that share order-book days are kept on the same side. The development set (112 workflow, 108 manufacturing and IT questions) was used to design the library; it is not reported as evidence.
+
+\paragraph{Policy reuse.} The policy set (Table~\ref{tab:benchmark}, last row) tests reuse when the rules themselves move. In variant P one pool gets one more worker (Loan Appraisers 2$\to$3; Pharmacy Pharmacists 1$\to$2), stated in the document. In variant H the parameters are byte-identical and 24 sentences of the rules are reworded; four blind agents reproduced every H run from the H text, confirming the rules did not change. A program that hard-codes the old pool size should fail on P. A judge that treats any text change as a new policy will recheck H needlessly.
+
+\begin{table}[t]
+\centering
+\caption{Programs evaluated, as accepted builds out of build attempts. All were built on development documents only and reused on unseen test runs. B0 is the original \otf code, kept unchanged and used only with its own check.}
+\label{tab:programs}
+\small
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}ll rrrr r@{}}
+\toprule
+Platform & Builder & Loan & Pharm. & Mfg. & IT & Accepted \\
+\midrule
+\otf (R1) & Sonnet 5.5 & 3 & 3 & 3 & 3 & 12/12 \\
+          & Haiku 5.5  & 3 & 3 & 3 & 3 & 12/12 \\
+          & gpt-oss-120b & 2 & 3 & 3 & 2 & 10/12 \\
+          & Gemma 4 31B  & 3 & 2 & 3 & 3 & 11/12 \\
+          & Qwen3.5 9B   & 2 & 0 & 0 & 1 & 3/12 \\
+\otf (B0) & Sonnet 5.5 & 3 & 3 & 3 & 3 & 12/12 \\
+          & Haiku 5.5  & 3 & 3 & 2 & 2 & 10/12 \\
+          & gpt-oss-120b & 2 & 2 & 1 & 3 & 8/12 \\
+          & Gemma 4 31B  & 0 & 1 & 0 & 1 & 2/12 \\
+          & Qwen3.5 9B   & 0 & 0 & 0 & 0 & 0/12 \\
+\devs     & Sonnet 5.5 & 3 & 3 & 3 & 3 & 12/12 \\
+          & Haiku 5.5  & 2 & 3 & 3 & 2 & 10/13 \\
+Coding agent & Sonnet 5.5 & 2 & 2 & 2 & 2 & 8/8 \\
+          & Haiku 5.5  & 2 & 2 & 2 & 2 & 8/8 \\
+\midrule
+\multicolumn{2}{@{}l}{Total} & 30 & 30 & 28 & 30 & 118/161 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Platforms and programs.} Three platforms build programs (Table~\ref{tab:programs}). \textbf{\otf}~\cite{otftools2026} compiles a document into reader functions and a simulator, accepts a program if it reproduces hidden recorded outcomes well enough, and answers by having an LLM edit the extracted records and re-running the simulator. We use its original code unchanged as \textbf{B0}, and a generation path we call \textbf{R1} that fixes mechanical failures we diagnosed in B0 builds (a helper that makes record locations correct by construction, more reading attempts, and failure feedback that leads with the fix); R1 gives no hints about process logic and keeps the acceptance check unchanged. \textbf{\devs}~\cite{chen2026devs} generates discrete-event models in stages from a specification; we give it the document's rules and one generic input format for records, plans and probabilities. \textbf{\Agent} is a single model asked to write a simulator for the same specification and run it once on a published example input, without further checks. Programs are built by Claude Sonnet~5.5 and Haiku~5.5 on every platform, and by gpt-oss-120b~\cite{openai2025gptoss}, Gemma~4 31B and Qwen3.5~9B through Ollama on \otf only. Builds are independent, none was selected by result, and failed builds are reported. While building, builders had no access to test documents, gold or reference code; we checked this with sandbox isolation tests and by scanning every program for test-only names, seeds and draws.
+
+In total, the main test set has 9{,}792 program--question pairs from the 86 programs that are judged (2{,}640 Loan, 2{,}520 Pharmacy, 2{,}112 manufacturing, 2{,}520 IT), and the policy set has 1{,}411 pairs from the 31 Claude-built workflow programs. B0's 32 programs add pairs that are scored only under their own check.

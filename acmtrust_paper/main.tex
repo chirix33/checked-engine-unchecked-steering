@@ -1,0 +1,70 @@
+%% ACM TRUST 2027 submission.
+%% Template: acmart v2.21 (2026/11/01), sigconf, as required by the TRUST 2027 author guidelines.
+%% Review build: double-blind (anonymous) with line numbers (review).
+%% For camera-ready: remove `review,anonymous`, fill in the rights block ACM sends, and restore authors.
+\documentclass[sigconf,review,anonymous]{acmart}
+
+%% ---------------------------------------------------------------- packages
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,calc,shapes.misc}
+
+\setlength{\emergencystretch}{1.5em}
+
+%% ---------------------------------------------------------------- rights block (submission placeholders)
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\acmConference[ACM TRUST '27]{ACM Conference on Trustworthy and Responsible AI and Computing Systems}{March 7--9, 2027}{Washington, DC, USA}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+
+%% ---------------------------------------------------------------- shared macros and result numbers
+\input{macros}
+\input{results}
+
+\begin{document}
+
+\title{Beyond Pass or Fail: Checking When LLM-Generated Simulators Can Answer What-If Questions}
+
+%% Double-blind: author block is suppressed by `anonymous`. Restore real authors only for camera-ready.
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \city{Anonymous City}
+  \country{Anonymous Country}}
+\email{anonymous@example.com}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\ccsdesc[500]{Software and its engineering~Software verification and validation}
+\ccsdesc[300]{Computing methodologies~Modeling and simulation}
+\ccsdesc[300]{Computing methodologies~Natural language processing}
+
+\keywords{LLM-generated simulators, what-if questions, counterfactual answers, selective answering, assurance, metamorphic testing, process simulation, LLM-as-a-judge}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_problem}
+\input{sections/03_method}
+\input{sections/04_benchmark}
+\input{sections/05_judges}
+\input{sections/06_results}
+\input{sections/07_related}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+%% Exempt from the page limit (TRUST 2027 author guidelines): GenAI Usage Disclosure and references.
+\input{sections/10_genai_disclosure}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

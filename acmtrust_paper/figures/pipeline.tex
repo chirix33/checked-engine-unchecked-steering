@@ -1,0 +1,38 @@
+%% Figure 1: the decision pipeline (TikZ, full text width, left to right).
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  node distance=4.5mm and 5mm,
+  pStage/.style={draw, rounded corners=2pt, fill=black!5, align=center, text width=2.8cm, minimum height=13mm, inner sep=2.5pt},
+  pIO/.style={draw, rounded corners=2pt, fill=white, align=center, text width=2.8cm, minimum height=13mm, inner sep=2.5pt},
+  pOut/.style={draw, rounded corners=5pt, align=center, inner sep=3pt, fill=black!10, font=\footnotesize\sffamily},
+  pRec/.style={draw, dashed, rounded corners=2pt, align=center, inner sep=3pt, font=\footnotesize, text width=2.9cm},
+  pArr/.style={-{Stealth[length=2mm]}, semithick},
+  pSide/.style={-{Stealth[length=1.7mm]}, thin, black!70}
+]
+\node[pIO]    (q) {\textbf{What-if question}\\\footnotesize ``Run 11: 1 Technician unavailable 8:00--12:00. When does case c0014 end?''};
+\node[pStage, right=of q] (i) {\textbf{Structured change}\\\footnotesize one LLM call: run, family, target, value, unit, interval};
+\node[pStage, right=of i] (c) {\textbf{Contract check}\\\footnotesize against the names and rules in the document};
+\node[pStage, right=of c] (h) {\textbf{History check}\\\footnotesize the unchanged run must match the records};
+\node[pStage, right=of h] (p) {\textbf{Change-specific tests}\\\footnotesize input use, no-op, routing and resource rules};
+\node[pOut, right=of p, fill=black!25, minimum height=8mm, font=\small\sffamily\bfseries] (t) {Trusted};
+
+\node[pOut, below=of c] (o1) {Request rejected};
+\node[pOut, below=of h] (o2) {Failed history check};
+\node[pOut, below=of p, xshift=-10mm] (o3) {Caught};
+\node[pOut, below=of p, xshift=10mm] (o4) {Untestable /\\Can't express};
+\node[pRec, above=of p] (r) {capability record per program, policy and kind of change};
+\node[pOut, left=of r] (o5) {Already caught};
+
+\draw[pArr] (q) -- (i);
+\draw[pArr] (i) -- (c);
+\draw[pArr] (c) -- (h);
+\draw[pArr] (h) -- (p);
+\draw[pArr] (p) -- (t);
+\draw[pSide] (c) -- (o1);
+\draw[pSide] (h) -- (o2);
+\draw[pSide] (p.south -| o3) -- (o3.north);
+\draw[pSide] (p.south -| o4) -- (o4.north);
+\draw[pSide, {Stealth[length=1.7mm]}-{Stealth[length=1.7mm]}] (r) -- node[right, font=\scriptsize]{read / append} (p);
+\draw[pSide] (r) -- (o5);
+\end{tikzpicture}}

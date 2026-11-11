@@ -1,0 +1,31 @@
+%% Shared names and terms, so the paper uses one word for each thing.
+
+%% Placeholders for numbers that the main (test) run has not produced yet.
+%% Every placeholder renders in red. Before submission, `grep -n "\\tbd\|\\TBD" *.tex sections/*.tex` must be empty.
+\newcommand{\tbd}{\textcolor{red}{\textbf{??}}\xspace}
+\newcommand{\TBD}[1]{\textcolor{red}{[\textit{#1}]}\xspace}
+
+%% Platforms (systems that build simulator programs)
+\newcommand{\otf}{OTF-Tools\xspace}
+\newcommand{\devs}{DEVS-Gen\xspace}
+\newcommand{\agent}{the plain coding agent\xspace}
+\newcommand{\Agent}{The plain coding agent\xspace}
+
+%% Our method and the gate configurations
+\newcommand{\gate}{\textsc{Directed}\xspace}
+\newcommand{\cfg}[1]{\textsc{#1}\xspace}
+
+%% Decline reasons (plain terms used throughout)
+\newcommand{\dterm}[1]{\textsf{#1}}
+\newcommand{\Trusted}{\dterm{Trusted}\xspace}
+\newcommand{\Caught}{\dterm{Caught}\xspace}
+\newcommand{\Already}{\dterm{Already caught}\xspace}
+\newcommand{\Untestable}{\dterm{Untestable}\xspace}
+\newcommand{\Failhist}{\dterm{Failed history check}\xspace}
+\newcommand{\Cantexpress}{\dterm{Can't express}\xspace}
+\newcommand{\Badrequest}{\dterm{Request rejected}\xspace}
+
+
+%% Short forms
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}

@@ -1,0 +1,26 @@
+\section{Trust Judges Compared}
+\label{sec:judges}
+
+All judges decide about the same programs, runs, structured changes and answers. Interpretation is shared: every judge that uses a structured change gets the one produced in \S\ref{sec:method:request}. No judge sees gold, the reference simulators, hidden change bindings, other programs, other judges' verdicts, or build histories.
+
+\paragraph{Rule-based judges} run on every pair and need no model calls.
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Platform check}: trust every answer from an accepted program. This is the single pass-or-fail verdict a platform gives today.
+  \item \textbf{History check} (\cfg{Replay}): trust if the program reproduces the queried run exactly.
+  \item \textbf{Generic tests} (\cfg{Generic}): history check plus input-use tests on randomly chosen families, with the same execution budget as \gate. This separates the value of \emph{which} tests are run from the value of running tests at all.
+  \item \textbf{Disagreement}: trust if the program's answer agrees with an answer obtained by an LLM reading the document (Haiku, given the rules and the queried run).
+\end{itemize}
+
+\paragraph{LLM-based judges} return a verdict, a confidence from 0 to 100 that the answer is exactly right, and a one-line reason. An unparsable reply, a cut-off output, a refusal, or running out of turns counts as a decline at the lowest confidence and is reported separately.
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Answer-level LLM judge}~\cite{zheng2023judging}: one call that sees the rules, the queried run's records, the program's code, the question, the structured change, the program's answer, and its unchanged answer.
+  \item \textbf{Program-level LLM judge}: one call per program and run that sees the same material minus the question and answer, and says whether the program can be trusted for what-if questions on that run. Its verdict applies to every question on the run.
+  \item \textbf{ReAct judge}~\cite{yao2023react}: a plain reason--act loop whose only tool runs Python in a sandbox holding the program, its launcher and the same document view, with at most eight turns. It is told what to return and nothing about how to test. It can run the program on any inputs, so it has at least the execution access our library has.
+\end{itemize}
+The three form a ladder: reasoning only, reasoning plus free execution, and our fixed, change-specific tests with a recorded history. The answer-level judges see the question text and the answer value, which the library never uses, so only they can notice a misread question or an implausible number. This asymmetry favors them.
+
+\paragraph{Models and subsets.} Interpretation, the reading answers and \otf's record edit use Claude Haiku~5.5 for every platform, so the answer path never changes between judges. Model-based judging is costly, so it runs on fixed subsets drawn before any judging, by row identifier only, with a fixed seed, stratified by process, program cohort and family: the Haiku answer-level judge on 3{,}000 answered pairs, the Haiku ReAct judge on 1{,}000 of them, and the program-level judge (Haiku) on every program and run. A shared subset of 150 pairs is judged by all five models with the answer-level judge, and by Haiku, gpt-oss, Gemma and Qwen with the ReAct judge, plus Sonnet on 50 of those 150. Claude models do not expose sampling temperature; we set reasoning effort to medium. Ollama models run with a 131{,}072-token context and a 16{,}384-token output cap.
+
+\paragraph{Other references.} Two ablations of the library, \cfg{Schema} and \cfg{Program-wide} (\S\ref{sec:method:terms}), isolate the contract check and the per-change granularity. A random refusal at \gate's coverage gives the precision that declining without information would reach. Two reading answerers, a plain LLM (vanilla) and retrieval-augmented reading~\cite{lewis2020rag}, answer without any program and show what a fallback to reading would give.
+
+\paragraph{Analysis plan, fixed before test labels were read.} The library, runner, scorer, judge prompts, question files, splits and the list of 118 programs were frozen and hashed before any test question was run. The only later changes were raised spending limits and, on the shared subset only, the added Ollama-model judges and the Sonnet ReAct judge; no code, prompt or program changed, and both changes are logged. Results are reported per process and per cohort and never pooled across model families. Uncertainty comes from a two-level bootstrap (2{,}000 resamples of programs, then of questions), with the coverage match redone inside every resample and differences between the gate and each judge computed on the same resamples. Builds of one model are not independent, so these intervals describe variation over the programs and questions we have; they are not population guarantees.
