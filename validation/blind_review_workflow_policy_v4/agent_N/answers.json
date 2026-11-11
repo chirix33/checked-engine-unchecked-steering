@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 140804,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 138820, modified end 140804; mod {'work': {(8, 'Design loan offer', 2): 3776}}"
+ },
+ {
+  "qid": "W02",
+  "answer": 42771,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 42771, modified end 42771; mod {'remove': [13]}"
+ },
+ {
+  "qid": "W03",
+  "answer": 138588,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 138820, modified end 138588; mod {'addworkers': {'Senior Officer': 1}}"
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 137860, modified end 147353; mod {'draw': {(7, 'D4', 2): 0.75}}"
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 54241, modified end 54241; mod {'probs': {'D4': [0.3, 0.7]}}"
+ },
+ {
+  "qid": "W06",
+  "answer": 52795,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 49195, modified end 52795; mod {'wait': {(7, 'W2', 1): 6471}}"
+ },
+ {
+  "qid": "W07",
+  "answer": 120853,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 120853, modified end 120853; mod {'work': {(4, 'Assess loan risk', 1): 3864}}"
+ },
+ {
+  "qid": "W08",
+  "answer": 120715,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 120715, modified end 120715; mod {'remove': [9]}"
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 53792, modified end 54147; mod {'unavail': {'AML Investigator_2': [(39600, 68400)], 'AML Investigator_3': [(39600, 68400)]}}"
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 53792, modified end 120685; mod {'draw': {(12, 'D2', 1): 0.75}}"
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 60943, modified end 120637; mod {'probs': {'D4': [0.9, 0.1]}}"
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 120715, modified end 134082; mod {'wait': {(11, 'W2', 1): 6970}}"
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31590, modified end 31591; mod {'work': {(12, 'Check Insurance', 1): 2}}"
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 30322, modified end 30305; mod {'remove': [3]}"
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31678, modified end 31678; mod {'addworkers': {'Pharmacy System': 2}}"
+ },
+ {
+  "qid": "W16",
+  "answer": 32184,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31872, modified end 32184; mod {'draw': {(14, 'D5', 1): 0.915}}"
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 30435, modified end 29962; mod {'probs': {'D6': [0.7, 0.3]}}"
+ },
+ {
+  "qid": "W18",
+  "answer": 31007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31114, modified end 31007; mod {'wait': {(7, 'W2', 1): 0}}"
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31784, modified end 31785; mod {'work': {(14, 'Check Insurance', 1): 2}}"
+ },
+ {
+  "qid": "W20",
+  "answer": 31803,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31819, modified end 31803; mod {'remove': [11]}"
+ },
+ {
+  "qid": "W21",
+  "answer": 31441,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31482, modified end 31441; mod {'addworkers': {'Pharmacist': 2}}"
+ },
+ {
+  "qid": "W22",
+  "answer": 30356,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 30231, modified end 30356; mod {'draw': {(0, 'D3', 1): 0.9}}"
+ },
+ {
+  "qid": "W23",
+  "answer": 32007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 32007, modified end 32007; mod {'probs': {'D3': [0.9, 0.1]}}"
+ },
+ {
+  "qid": "W24",
+  "answer": 31060,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Simulated factual end 31191, modified end 31060; mod {'wait': {(8, 'W2', 1): 0}}"
+ }
+]

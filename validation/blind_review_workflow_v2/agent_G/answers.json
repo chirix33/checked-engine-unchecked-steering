@@ -1,0 +1,86 @@
+[
+ {
+  "qid": "W01",
+  "answer": 293096,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0009's Return task ends 1894 s earlier, but its second form check still waits for Wednesday 09:00, and from there the path is unchanged, so the end time is the same as recorded."
+ },
+ {
+  "qid": "W02",
+  "answer": 45599,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removed c0001 from the run (all other inputs unchanged); c0003 ends earlier because shared workers become available sooner."
+ },
+ {
+  "qid": "W03",
+  "answer": 119156,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Both Appraisers are non-working in [39600, 54000); c0005's Appraise property pauses at 39600 and resumes at 54000, which pushes Reject application past 17:00 to the next day."
+ },
+ {
+  "qid": "W04",
+  "answer": 215479,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.1 at D1 visit 1 gives D1-a (form incomplete), so the return/W1/applicant loop runs before the rest of the process."
+ },
+ {
+  "qid": "W05",
+  "answer": 59158,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "With D5-a at 0.7, c0007's D5 visit-1 draw now picks D5-a (Cancel application) instead of a redesign loop."
+ },
+ {
+  "qid": "W06",
+  "answer": 58166,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 for c0002 is 6861 s instead of 3261 s; the downstream tasks shift later by the same amount."
+ },
+ {
+  "qid": "W07",
+  "answer": 34055,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check DUR takes 3601 s on the single Pharmacy System worker, which also delays c0002's later Pharmacy System tasks."
+ },
+ {
+  "qid": "W08",
+  "answer": 31562,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Removed c0004 from the run (all other inputs unchanged); c0006 ends earlier because shared workers become available sooner."
+ },
+ {
+  "qid": "W09",
+  "answer": 37688,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "The only Pharmacist is non-working in [28800, 36000), so all Pharmacist tasks queue until 36000 and are then served FCFS."
+ },
+ {
+  "qid": "W10",
+  "answer": 30198,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw 0.025 gives D7-a back to D6 visit 2, whose draw 0.016552 gives D6-a straight to W3 at the same time, so pick-up and the end time are unchanged."
+ },
+ {
+  "qid": "W11",
+  "answer": 30235,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0000's D1 draw 0.140082 still gives D1-a under the new probabilities; its end time changes only because other cases now take D1-b and use shared workers."
+ },
+ {
+  "qid": "W12",
+  "answer": 34341,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 for c0005 is 3788 s instead of the planned 188 s; Pack, QA, W3 and Pick-up follow later."
+ }
+]

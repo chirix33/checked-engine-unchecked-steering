@@ -27,6 +27,7 @@ __pycache__/
 checker/out/
 
 meeting/
+papers/
 
 .agents/
 .claude/
