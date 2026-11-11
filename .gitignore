@@ -25,3 +25,9 @@ __pycache__/
 
 # Generated checker outputs (regenerate with checker/validate_all.py)
 checker/out/
+
+meeting/
+
+.agents/
+.claude/
+skills-lock.json
