@@ -1,19 +1,20 @@
 """Counterfactual questions for manufacturing and IT operations, with gold (evaluation-only, never shown to a system).
 
 New questions on the MLSys documents (MLSys's own multiple-choice items are not reused). Each question states one
-change in the document's own names and asks for one number (or yes/no) about one product-day or one task. Gold
+change in the document's own names and asks for one number about one product-day or one task. Gold
 comes from the pinned reference simulator on raw-rebuilt chapters and windows, and is kept only if MLSys's
 independent re-implementation, fed only from the PDF, gives exactly the same value (`mlsys_gold.py`).
 
 Selection follows a fixed rule and seed, decided before any method is run on these questions, and never looks at
-any program. Per family, about one question in five is a valid no-effect control (same quota rule as
-`make_pilot_questions.py`). Splits follow `manifests/mlsys_splits_v1.json`: dev questions are half on chapters or
+any program. Per family, n // 5 questions are valid no-effect controls (the quota rule of
+`make_pilot_questions.py`): 2 of 12 and 4 of 24, that is 1 in 6. Splits follow `manifests/mlsys_splits_v1.json`: dev questions are half on chapters or
 windows of the build document (seen at build) and half on unseen dev ones; test questions are all on unseen test
 chapters or windows. Queries ask about days or tasks at or after the change, so no-effect controls are not
 trivially before the change.
 
 Fields follow `manifests/pilot_questions_v1.json` (id, doc, scope, family, gold, factual_end, effectful, question,
-text, interventions, query_case, binding), plus: domain, split, seen_at_build, query (structured), gold_reimpl.
+text, interventions, query_case, binding), plus: domain, split, seen_at_build, query (structured), gold_reimpl,
+beyond_window (IT: the answer or the factual start is after the window end).
 `interventions` are the pinned simulators' own change dicts; `binding` is the hidden request in library style.
 
 Usage: python -X utf8 scripts/make_mlsys_questions.py <splits_json> <out_dev_json> <out_test_json> <seed>
@@ -91,11 +92,13 @@ def mfg_draft(family, rng, s):
 
 # ---------------------------------------------------------------- IT operations
 def it_query(rng, w, task, factual):
-    if rng.random() < 0.75 or factual is None:
-        return ({"kind": "task_start_time", "task": task},
-                f"At what time, in seconds from the window start, would task {task} first start?")
-    return ({"kind": "task_starts_by", "task": task, "deadline": factual},
-            f"Would task {task} first start at or before time {factual}? Answer yes or no.")
+    """Every IT question asks for the task's first start time (decision of 2026-11-09). Yes/no questions ("first
+    start at or before time X?") were dropped: every deadline rule tried either pointed at an unprinted start or
+    lost the yes/no mix (see manifests/domain_readiness.md). The draw below is kept only so the main random stream
+    advances as in the original generator, which keeps ids and drafts as close to the original files as possible."""
+    rng.random()
+    return ({"kind": "task_start_time", "task": task},
+            f"At what time, in seconds from the window start, would task {task} first start?")
 
 
 def it_draft(family, rng, w, f_starts):
@@ -220,7 +223,10 @@ def make(domain, split, splits, rng, stats):
                         "seen_at_build": chapters[title]["seen_at_build"], "family": family,
                         "gold": g_sim, "gold_reimpl": g_ref, "factual_end": f_val, "effectful": effect,
                         "question": f"{text} {qtext}", "text": text, "interventions": changes,
-                        "query_case": entity, "query": query, "binding": binding})
+                        "query_case": entity, "query": query, "binding": binding,
+                        # IT: the answer (or the factual start) lies after the window end, so no printed row shows
+                        # it; it follows from the printed inputs and the stated after-window rule (label only)
+                        "beyond_window": domain == "it_ops" and max(g_sim, f_val if f_val is not None else -1) > w.length})
             made += 1
         stats["made"][f"{domain}/{split}/{family}"] = [made, noeffect, tries]
     return out

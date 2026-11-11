@@ -29,7 +29,9 @@ def main(out_dir, key_path, seed):
     for split in ("dev", "test"):
         qs += json.loads((G.ROOT / "manifests" / f"mlsys_questions_{split}_v1.json").read_text(encoding="utf-8"))
     out = Path(out_dir)
-    key = {}
+    files = [f"manifests/mlsys_questions_{split}_v1.json" for split in ("dev", "test")]
+    key = {"seed": int(seed), "questions": files, "questions_sha256": {f: G.sha256(G.ROOT / f) for f in files},
+           "input_files_sha256": {}}
     for dom, short in (("manufacturing", "mfg"), ("it_ops", "itops")):
         d = out / short
         d.mkdir(parents=True, exist_ok=True)
@@ -51,8 +53,9 @@ def main(out_dir, key_path, seed):
                  "question": q["question"]} for k, q in enumerate(pick)]
         (d / "questions.json").write_text(json.dumps(rows, indent=1), encoding="utf-8")
         key[short] = {r["qid"]: q["id"] for r, q in zip(rows, pick)}
+        key["input_files_sha256"][short] = {f.name: G.sha256(f) for f in sorted(d.iterdir()) if f.is_file()}
     Path(key_path).write_text(json.dumps(key, indent=1), encoding="utf-8")
-    print({k: len(v) for k, v in key.items()}, "questions; folders under", out)
+    print({k: len(key[k]) for k in ("mfg", "itops")}, "questions; folders under", out)
 
 
 if __name__ == "__main__":

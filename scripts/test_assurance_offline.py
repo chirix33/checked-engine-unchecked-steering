@@ -327,7 +327,7 @@ def policy_tests():
         iva = Intervention("resource_availability", "add_workers", target="Clerk", value=2)
         run = probes.ProbeRunner(b, loan, sl)
         da = policy.decide("directed", req("Run 01", iva, "c0000"), sl, run, reg, b)
-        detail = da.evidence[-1][2]
+        detail = next(e[2] for e in da.evidence if e[0] == "rule add_workers")   # (Phase 2 adds an exact row after it)
         check("policy: ignoring program declined for add_workers when the record shows waiting, or passed when none waited",
               da.permit == ("no task of this pool waited" in detail), detail)
         for pool in sl.pools:
@@ -404,11 +404,292 @@ def contract_tests():
           str(r.unresolved))
 
 
+def fingerprint_tests():
+    """Policy fingerprint (Ashraf, 2026-11-09): the closing chapter list is not policy; any policy edit is."""
+    import copy
+    from assurance import probes
+    from assurance.request import schema_from_map
+    nav = nav_of("workflow_loan_dev")
+    s = schema_from_map(nav)
+    front = next(n for n in nav["nodes"] if n["level"] == 0 and n["kind"] == "list")
+
+    def with_lines(f):
+        out = copy.deepcopy(nav)
+        node = next(n for n in out["nodes"] if n["level"] == 0 and n["kind"] == "list")
+        node["lines"] = f(list(front["lines"]))
+        return schema_from_map(out).policy_fingerprint()
+    other = lambda ls: [l.replace("Run 01, Run 02, Run 03, Run 04.", "Run 05, Run 06,") for l in ls] + ["Run 07."]
+    check("fingerprint: the edited front matter really lists other chapters", other(front["lines"]) != front["lines"]
+          and "Run 05" in " ".join(other(front["lines"])))
+    check("fingerprint: another chapter list gives the same fingerprint", with_lines(other) == s.policy_fingerprint())
+    check("fingerprint: no chapter list gives the same fingerprint", with_lines(lambda ls: [l for l in ls if "Chapters in" not in l]) == s.policy_fingerprint())
+    check("fingerprint: text after the chapter list is policy", with_lines(lambda ls: ls + ["Clerk works weekends."]) != s.policy_fingerprint())
+    check("fingerprint: a worker-count edit changes it", schema_from_map(probes.policy_with_pool(nav, "Clerk", 9, 1)).policy_fingerprint() != s.policy_fingerprint())
+    check("fingerprint: a route-probability edit changes it",
+          schema_from_map(probes.policy_with_routes(nav, s, "D1", {"D1-a": 0.5, "D1-b": 0.5})).policy_fingerprint() != s.policy_fingerprint())
+    check("fingerprint: Loan and Pharmacy differ", schema_from_map(nav_of("workflow_pharmacy_dev")).policy_fingerprint() != s.policy_fingerprint())
+
+
+# ---------------------------------------------------------------- full review, 2026-11-09
+def review3_tests():
+    loan = nav_of("workflow_loan_dev")
+    sl = schema_from_map(loan)
+    ign = IgnoringDEVS(loan)
+    # 1. route rule: a change that switches only a later visit must catch an input-ignoring program
+    iv = Intervention("routing_probability", "set", target="D1", routes={"D1-a": 0.1124, "D1-b": 0.8876})
+    run = probes.ProbeRunner(ign, loan, sl)
+    ok, why = run.route_rule("Run 01", iv)
+    check("review3: route rule catches an ignoring program when only a later visit switches", ok is False, f"{ok} {why}")
+    with tempfile.TemporaryDirectory() as tmp:
+        d = policy.decide("directed", Request("Run 01", [iv], Query("case_end_time", "c0001")), sl,
+                          probes.ProbeRunner(ign, loan, sl), Registry(Path(tmp) / "r1.jsonl"), ign)
+        check("review3: directed declines the ignoring program on that request", not d.permit, d.reason)
+    st = probes.stated_probabilities(sl)["D1"]
+    ok, why = probes.ProbeRunner(ign, loan, sl).route_rule("Run 01", Intervention("routing_probability", "set", target="D1", routes=dict(st)))
+    check("review3: route rule passes when nothing switches and the records are unchanged", ok is True, f"{ok} {why}")
+
+    class NullVisit(IgnoringDEVS):
+        def run_input(self, data):
+            ex = super().run_input(data)
+            for r in ex.records:
+                if r.get("event") == "decision":
+                    r["visit"] = None
+            return ex
+    nv = NullVisit(loan)
+    try:
+        ok, why = probes.ProbeRunner(nv, loan, sl).route_rule("Run 01", iv)
+        check("review3: a decision event with no visit does not crash the route rule", ok in (None, False), f"{ok} {why}")
+    except Exception as e:
+        check("review3: a decision event with no visit does not crash the route rule", False, repr(e))
+    # 2. no reuse of a rule pass across unavailable intervals
+    with tempfile.TemporaryDirectory() as tmp:
+        reg = Registry(Path(tmp) / "r2.jsonl")
+        a = Intervention("resource_availability", "unavailable", target="Clerk", value=2, effective_from=0, effective_to=3600)
+        b = Intervention("resource_availability", "unavailable", target="Clerk", value=2, effective_from=36097, effective_to=39697)
+        policy.decide("directed", Request("Run 01", [a], Query("case_end_time", "c0001")), sl, probes.ProbeRunner(ign, loan, sl), reg, ign)
+        d2 = policy.decide("directed", Request("Run 01", [b], Query("case_end_time", "c0001")), sl, probes.ProbeRunner(ign, loan, sl), reg, ign)
+        check("review3: an unavailable pass on one interval is not reused for another", not any(e[0] == "reused" for e in d2.evidence),
+              f"{d2.reason} {[e[0] for e in d2.evidence]}")
+        check("review3: the second interval is probed and the ignoring program is caught", not d2.permit and "unavailable" in d2.reason, d2.reason)
+    # 3. NaN and infinity are malformed
+    q = Query("case_end_time", "c0001")
+    nanroutes = Intervention("routing_probability", "set", target="D1", routes={"D1-a": float("nan"), "D1-b": float("nan")})
+    check("review3: NaN route probabilities are invalid", contract.validate(Request("Run 01", [nanroutes], q), sl).status == "invalid_units")
+    for fam, op, extra in (("activity_duration", "set", {"case": "c0001", "target": sl.activities[0], "visit": 1}),
+                           ("resource_availability", "add_workers", {"target": "Clerk"})):
+        for bad in (float("nan"), float("inf")):
+            try:
+                r = contract.validate(Request("Run 01", [Intervention(fam, op, value=bad, **extra)], q), sl)
+                check(f"review3: {fam} value {bad} is invalid, not an exception", r.status == "invalid_units", r.status)
+            except Exception as e:
+                check(f"review3: {fam} value {bad} is invalid, not an exception", False, repr(e))
+    r = contract.validate(Request("Run 01", [Intervention("case_set", "remove", case="c0002")], Query("case_ends_by", "c0001", float("inf"))), sl)
+    check("review3: an infinite deadline is invalid", r.status == "invalid_time", r.status)
+    reply = json.dumps({"scope": "Run 01", "interventions": [{"family": "activity_duration", "op": "set", "case": "c0001",
+                        "target": sl.activities[0], "visit": 1, "value": "NaN"}], "query": {"kind": "case_end_time", "case": "c0001"}})
+    check("review3: a NaN value from the interpreter is rejected by the contract",
+          contract.validate(parse(reply), sl).status in ("invalid_units", "unresolved_meaning"))
+    # 4. program_wide: one verdict per program and scope
+    acts = [Intervention("activity_duration", "set", case="c0001", target=a_, visit=1, value=100) for a_ in sl.activities[:4]]
+    picks = []
+    for x in acts:
+        d = policy.decide("program_wide", Request("Run 01", [x], q), sl, probes.ProbeRunner(ign, loan, sl), None, ign)
+        picks.append(tuple((e[0], e[2]) for e in d.evidence))
+    check("review3: program_wide picks the same witnesses for every request on a scope", len(set(picks)) == 1, str(len(set(picks))))
+    # 5. generic: no repeated witness
+    dup = 0
+    for k in range(60):
+        x = Intervention("activity_duration", "set", case="c0001", target=sl.activities[k % len(sl.activities)], visit=1, value=100 + k)
+        d = policy.decide("generic", Request("Run 01", [x], q), sl, probes.ProbeRunner(ign, loan, sl), None, ign)
+        ws = [e[2] for e in d.evidence if e[0].startswith("input_use")]
+        dup += len(ws) != len(set(ws))
+    check("review3: generic never repeats a witness", dup == 0, str(dup))
+    # 6. route-flip witnesses need only printed inputs and change an activity or wait
+    for doc in ("workflow_loan_dev", "workflow_pharmacy_dev"):
+        nav = nav_of(doc)
+        s = schema_from_map(nav)
+        bad_walk = bad_flip = n = 0
+        for sc in s.scopes:
+            tl, wl = probes._table_rows(nav, sc, "Task log"), probes._table_rows(nav, sc, "Wait log")
+            for c in s.cases[sc]:
+                items, ok = probes.flow_walk(nav, s, sc, c)
+                want = sorted([(r[1], int(r[2])) for r in tl if r[0] == c] + [(r[1], int(r[2])) for r in wl if r[0] == c])
+                bad_walk += (not ok) or items != want
+            for r in probes._table_rows(nav, sc, "Decision log"):
+                w = Intervention("routing_outcome", "set_draw", case=r[0], target=r[1], visit=int(r[2]))
+                pw = probes.perturb(nav, s, sc, w)
+                if pw is None:
+                    continue
+                n += 1
+                base, _ = probes.flow_walk(nav, s, sc, r[0])
+                flipped, ok = probes.flow_walk(nav, s, sc, r[0], {(r[1], int(r[2])): pw.value})
+                bad_flip += (not ok) or flipped == base
+        check(f"review3: {doc} stated flow reproduces every recorded case path", bad_walk == 0, str(bad_walk))
+        check(f"review3: {doc} every usable route flip is printed and changes the case ({n} flips)", bad_flip == 0 and n > 0, f"{bad_flip} of {n}")
+    for doc, sc, case, dec in (("workflow_pharmacy_policyP", "Run 13", "c0010", "D7"), ("workflow_loan_policyP", "Run 13", "c0014", "D4")):
+        pol = ROOT / f"runs/workflow_docs/{doc}/navmap.json"
+        if pol.exists():
+            nav = json.loads(pol.read_text(encoding="utf-8"))
+            s = schema_from_map(nav)
+            w = Intervention("routing_outcome", "set_draw", case=case, target=dec, visit=1)
+            check(f"review3: the misfiring flip ({doc} {sc} {case} {dec}) is not used", probes.perturb(nav, s, sc, w) is None)
+
+
+# ---------------------------------------------------------------- review 4 of the 2026-11-09 fixes
+def review4_tests():
+    import copy as _copy
+    loan = nav_of("workflow_loan_dev")
+    sl = schema_from_map(loan)
+    iv = Intervention("routing_probability", "set", target="D1", routes={"D1-a": 0.1124, "D1-b": 0.8876})
+    draws = probes.ProbeRunner(None, loan, sl)._route_draws("Run 01", "D1")
+
+    class RightDecisionsOnly(IgnoringDEVS):
+        """Records every decision with the route the stated rule gives under the change, but copies every other
+        record from the factual run: it reports the new routes without acting on them."""
+        def run_input(self, data):
+            ex = super().run_input(data)
+            if "iv" in data:
+                for r in ex.records:
+                    if r.get("event") == "decision" and r.get("name") == "D1":
+                        u = draws.get((r["case"], r["visit"]))
+                        if u is not None:
+                            r["route"] = probes._route_of(iv.routes, u)
+            return ex
+    ok, why = probes.ProbeRunner(RightDecisionsOnly(loan), loan, sl).route_rule("Run 01", iv)
+    check("review4: right decision records with unchanged activities are caught", ok is False and "activities" in why, f"{ok} {why}")
+
+    class NoEnds(IgnoringDEVS):
+        def run_input(self, data):
+            ex = super().run_input(data)
+            if "iv" in data:
+                ex.records = [r for r in ex.records if r.get("event") != "case_end"]
+            return ex
+    nd = NoEnds(loan)
+    run = probes.ProbeRunner(nd, loan, sl)
+    run.base("Run 01")
+    ok, why = run.route_rule("Run 01", iv)
+    check("review4: a run with case ends missing is not trusted", ok is not True, f"{ok} {why}")
+    # parser: infinite numbers are malformed, not a crash
+    for reply in ('{"scope":"Run 01","interventions":[],"query":{"kind":"case_ends_by","case":"c0001","deadline":Infinity}}',
+                  '{"scope":"Run 01","interventions":[{"family":"activity_duration","op":"set","case":"c0001","target":"x","visit":1e999,"value":5}],'
+                  '"query":{"kind":"case_end_time","case":"c0001"}}'):
+        try:
+            r = parse(reply)
+            check("review4: the parser handles infinite numbers without crashing", True)
+        except Exception as e:
+            check("review4: the parser handles infinite numbers without crashing", False, repr(e))
+    check("review4: an over-large integer is not finite", not contract._finite(10 ** 400))
+    # an unreadable flow means no route-flip witness
+    broken = _copy.deepcopy(loan)
+    front = next(n for n in broken["nodes"] if n["level"] == 0 and n["kind"] == "list")
+    front["lines"] = [l.replace("Process.", "Flow.") for l in front["lines"]]
+    sb = schema_from_map(broken)
+    row = next(r for r in probes._table_rows(loan, "Run 01", "Decision log"))
+    w = Intervention("routing_outcome", "set_draw", case=row[0], target=row[1], visit=int(row[2]))
+    check("review4: with an unreadable flow no route flip is used", probes.perturb(broken, sb, "Run 01", w) is None)
+    # case removal passes are family-level and still reused on the same scope
+    with tempfile.TemporaryDirectory() as tmp:
+        reg = Registry(Path(tmp) / "r4.jsonl")
+        class Remover(IgnoringFree):
+            """Drops every record of a removed case; ignores every other change."""
+            @staticmethod
+            def apply(data, iv, schema):
+                return {**data, "iv": repr(iv), "drop": iv.case if iv.family == "case_set" else None}
+
+            def run_input(self, data):
+                ex = super().run_input(data)
+                if data.get("drop"):
+                    ex.records = [r for r in ex.records if data["drop"] not in (r.get("entities") or [])]
+                    ex.case_ends.pop(data["drop"], None)
+                return ex
+        b = Remover(loan)
+        q = Query("case_end_time", "c0001")
+        d1 = policy.decide("directed", Request("Run 01", [Intervention("case_set", "remove", case="c0003")], q), sl, probes.ProbeRunner(b, loan, sl), reg, b)
+        d2 = policy.decide("directed", Request("Run 01", [Intervention("case_set", "remove", case="c0004")], q), sl, probes.ProbeRunner(b, loan, sl), reg, b)
+        passed1 = any(e[0] == "rule case_removal" and e[1] is True for e in d1.evidence)
+        check("review4: a case-removal pass is reused for another removal on the same scope",
+              passed1 and any(e[0] == "reused" for e in d2.evidence), f"{d1.reason} | {d2.reason} | {[e[0] for e in d2.evidence]}")
+
+
+# ---------------------------------------------------------------- review 5
+def review5_tests():
+    loan = nav_of("workflow_loan_dev")
+    sl = schema_from_map(loan)
+    iv = Intervention("routing_probability", "set", target="D1", routes={"D1-a": 0.1124, "D1-b": 0.8876})
+    draws = probes.ProbeRunner(None, loan, sl)._route_draws("Run 01", "D1")
+
+    class RightRoutes(IgnoringDEVS):
+        """Records the routes the stated rule gives under the change; copies everything else."""
+        def run_input(self, data):
+            ex = super().run_input(data)
+            if "iv" in data:
+                for r in ex.records:
+                    if r.get("event") == "decision" and r.get("name") == "D1" and (r["case"], r["visit"]) in draws:
+                        r["route"] = probes._route_of(iv.routes, draws[(r["case"], r["visit"])])
+            return ex
+
+    class DecisionsOnly(RightRoutes):
+        def run_input(self, data):
+            ex = super().run_input(data)
+            ex.records = [r for r in ex.records if r.get("event") in ("decision", "case_end")]
+            return ex
+    ok, why = probes.ProbeRunner(DecisionsOnly(loan), loan, sl).route_rule("Run 01", iv)
+    check("review5: records with no task events are Untestable, never Trusted", ok is None and "no tasks" in why, f"{ok} {why}")
+
+    class SomeStarts(RightRoutes):
+        def run_input(self, data):
+            ex = super().run_input(data)
+            ex.records = [r for r in ex.records if r.get("event") != "task_start" or str(r.get("name"))[:1] < "N"]
+            return ex
+    ok, why = probes.ProbeRunner(SomeStarts(loan), loan, sl).route_rule("Run 01", iv)
+    check("review5: a partial task shape is not comparable (Untestable), not Caught", ok is None and "cannot be compared" in why, f"{ok} {why}")
+
+
+def phase2_tests():
+    """Exact stated-rule checks (manifests/blindspots.md): the calendar arithmetic, and the printed record itself
+    passing the timing check (it is computed by the stated rules), with a one-minute error caught."""
+    from assurance.backends import Execution
+    wk = (1, 0, 4, 9 * 3600, 17 * 3600)                                  # Monday to Friday 09:00 to 17:00
+    check("phase2: work crosses the night", probes.work_end(wk, 16 * 3600, 7200) == 86400 + 10 * 3600)
+    check("phase2: exactly the time left ends at closing", probes.work_end(wk, 16 * 3600, 3600) == 17 * 3600)
+    check("phase2: Friday work resumes on Monday", probes.work_end(wk, 4 * 86400 + 16 * 3600, 7200) == 7 * 86400 + 10 * 3600)
+    check("phase2: an unavailable block pauses work", probes.work_end(wk, 9 * 3600, 3600, [(9 * 3600 + 1800, 10 * 3600)]) == 10 * 3600 + 1800)
+    allweek = (1, 0, 6, 0, 23 * 3600 + 59 * 60)                          # Monday to Sunday 00:00 to 23:59
+    check("phase2: the last minute of a day is not working time", probes.work_end(allweek, 0, 86400) == 86400 + 60)
+    for doc in ("workflow_loan_dev", "workflow_pharmacy_dev"):
+        nav = nav_of(doc)
+        s = schema_from_map(nav)
+        pools = probes.activity_pools(s)
+        check(f"phase2: every activity's pool is read ({doc})", set(pools) == set(s.activities) and set(pools.values()) <= set(s.pools),
+              str(set(s.activities) - set(pools)))
+        runner = probes.ProbeRunner(None, nav, s)
+        for scope in s.scopes:
+            recs = []
+            for r in probes._table_rows(nav, scope, "Task log"):
+                recs += [{"time": int(r[4]), "case": r[0], "event": "task_start", "name": r[1], "visit": int(r[2]), "worker": r[6]},
+                         {"time": int(r[5]), "case": r[0], "event": "task_end", "name": r[1], "visit": int(r[2]), "worker": r[6]}]
+            for r in probes._table_rows(nav, scope, "Wait log"):
+                recs += [{"time": int(r[3]), "case": r[0], "event": "wait_start", "name": r[1], "visit": int(r[2])},
+                         {"time": int(r[4]), "case": r[0], "event": "wait_end", "name": r[1], "visit": int(r[2])}]
+            runner._base[scope] = Execution("ran", records=recs)      # the printed record as the factual run
+            ok, why = runner._timing(scope, Execution("ran", records=recs), None)
+            check(f"phase2: the printed record passes the timing check ({doc} {scope})", ok is True, why)
+            bad = [dict(x) for x in recs]
+            j = next(i for i, x in enumerate(bad) if x["event"] == "task_end")
+            bad[j]["time"] += 60
+            check(f"phase2: a task ending a minute late fails it ({doc} {scope})", runner._timing(scope, Execution("ran", records=bad), None)[0] is False)
+
+
 if __name__ == "__main__":
+    phase2_tests()
+    fingerprint_tests()
     binding_tests()
     probe_tests()
     policy_tests()
     route_change_tests()
     contract_tests()
+    review3_tests()
+    review4_tests()
+    review5_tests()
     print(f"\n{len(FAILS)} failures")
     sys.exit(len(FAILS))
