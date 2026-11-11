@@ -1,0 +1,554 @@
+{
+ "version": "workflow_policy_v1",
+ "variants": {
+  "workflow_loan_policyP": {
+   "process": "loan",
+   "variant": "P",
+   "runs": [
+    "Run 13",
+    "Run 14"
+   ],
+   "seed_prefix": "policyP-loan",
+   "seeds": [
+    "policyP-loan-13",
+    "policyP-loan-14"
+   ],
+   "pdf": "runs/workflow_docs/workflow_loan_policyP/document.pdf",
+   "pdf_sha256": "6cd91e291b2b27762e5e12067e85b146a7bf2d20657799d8c0d31fc0e2b97ea9",
+   "navmap_sha256": "3ecc61b685aabaa75da3e822f5eb418afe154fb2286db493173a91b3241e5b70",
+   "document_meta_sha256": "f8f0b077d8c6dfda8635c1858b16d3d46e3cbbb7c58d94797f18bedfd8ca985f",
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files": {
+    "Loan_Application_3_timers.bpmn": "efb5055dcbd201b7b91a52d649deef2060b4581c655c9dc60e7457ce3d8873bd",
+    "Loan_Application_3_timers.json": "ac70a09473acc7e169b904cbcf1ec25bc17e0e542bf64c98f77c9a6e2ce8318c"
+   },
+   "bpmn_equals_published": true,
+   "params_equal_published": false,
+   "pool_amounts_changed": {
+    "Appraiser": [
+     2,
+     3
+    ]
+   },
+   "all_other_parameters_equal": true,
+   "library_reads_differ_from_dev": {
+    "pools": [
+     {
+      "Applicant": 20,
+      "Senior Officer": 3,
+      "Appraiser": 2,
+      "AML Investigator": 4,
+      "Loan Officer": 9,
+      "Clerk": 9
+     },
+     {
+      "Applicant": 20,
+      "Senior Officer": 3,
+      "Appraiser": 3,
+      "AML Investigator": 4,
+      "Loan Officer": 9,
+      "Clerk": 9
+     }
+    ],
+    "calendars": [
+     {
+      "Applicant": [
+       20,
+       0,
+       6,
+       0,
+       86340
+      ],
+      "Senior Officer": [
+       3,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Appraiser": [
+       2,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "AML Investigator": [
+       4,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Loan Officer": [
+       9,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Clerk": [
+       9,
+       0,
+       4,
+       32400,
+       61200
+      ]
+     },
+     {
+      "Applicant": [
+       20,
+       0,
+       6,
+       0,
+       86340
+      ],
+      "Senior Officer": [
+       3,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Appraiser": [
+       3,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "AML Investigator": [
+       4,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Loan Officer": [
+       9,
+       0,
+       4,
+       32400,
+       61200
+      ],
+      "Clerk": [
+       9,
+       0,
+       4,
+       32400,
+       61200
+      ]
+     }
+    ]
+   },
+   "front_matter_lines_changed_vs_dev": [
+    "- Appraiser: 2 workers (Appraiser_0 to Appraiser_1), working Monday to Friday 09:00 to 17:00.",
+    "+ Appraiser: 3 workers (Appraiser_0 to Appraiser_2), working Monday to Friday 09:00 to 17:00.",
+    "- Chapters in this document: Run 01, Run 02, Run 03, Run 04.",
+    "+ Chapters in this document: Run 13, Run 14."
+   ],
+   "fingerprint": "3c4f8656e578fe02",
+   "fingerprint_dev": "78b0ef971079793b",
+   "fingerprint_test": "78b0ef971079793b",
+   "fingerprint_equals_dev": false
+  },
+  "workflow_pharmacy_policyP": {
+   "process": "pharmacy",
+   "variant": "P",
+   "runs": [
+    "Run 13",
+    "Run 14"
+   ],
+   "seed_prefix": "policyP-pharmacy",
+   "seeds": [
+    "policyP-pharmacy-13",
+    "policyP-pharmacy-14"
+   ],
+   "pdf": "runs/workflow_docs/workflow_pharmacy_policyP/document.pdf",
+   "pdf_sha256": "4652951e494d716db0e1354abfae1ae03a62950b85341c19eae12867a1823b9b",
+   "navmap_sha256": "da49f4233d960732189aee672dd8d44c68d530cb6545b4be29675a7811c51960",
+   "document_meta_sha256": "df8f3c1a3a232c070c448df96f51c98e76f1bad2453528676a4e479f3ccb490a",
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files": {
+    "Pharmacy_3_timers.bpmn": "967471f70422385668bd581ad44def3951efa966a2eaf9f9bba6318e34f91ac5",
+    "Pharmacy_3_timers.json": "e7e77225ed1d64b781aedf9c7625c5715a95265ea5430c96cf9c8f9a49058680"
+   },
+   "bpmn_equals_published": true,
+   "params_equal_published": false,
+   "pool_amounts_changed": {
+    "Pharmacist": [
+     1,
+     2
+    ]
+   },
+   "all_other_parameters_equal": true,
+   "library_reads_differ_from_dev": {
+    "pools": [
+     {
+      "Pharmacy System": 1,
+      "Technician": 8,
+      "Pharmacist": 1
+     },
+     {
+      "Pharmacy System": 1,
+      "Technician": 8,
+      "Pharmacist": 2
+     }
+    ],
+    "calendars": [
+     {
+      "Pharmacy System": [
+       1,
+       0,
+       4,
+       28800,
+       72000
+      ],
+      "Technician": [
+       8,
+       0,
+       4,
+       28800,
+       72000
+      ],
+      "Pharmacist": [
+       1,
+       0,
+       4,
+       28800,
+       72000
+      ]
+     },
+     {
+      "Pharmacy System": [
+       1,
+       0,
+       4,
+       28800,
+       72000
+      ],
+      "Technician": [
+       8,
+       0,
+       4,
+       28800,
+       72000
+      ],
+      "Pharmacist": [
+       2,
+       0,
+       4,
+       28800,
+       72000
+      ]
+     }
+    ]
+   },
+   "front_matter_lines_changed_vs_dev": [
+    "- Pharmacist: 1 workers (Pharmacist_0 to Pharmacist_0), working Monday to Friday 08:00 to 20:00.",
+    "+ Pharmacist: 2 workers (Pharmacist_0 to Pharmacist_1), working Monday to Friday 08:00 to 20:00.",
+    "- Chapters in this document: Run 01, Run 02, Run 03, Run 04.",
+    "+ Chapters in this document: Run 13, Run 14."
+   ],
+   "fingerprint": "11d8de7b419f03c8",
+   "fingerprint_dev": "eaadfaae27cf5fdc",
+   "fingerprint_test": "eaadfaae27cf5fdc",
+   "fingerprint_equals_dev": false
+  },
+  "workflow_loan_policyH": {
+   "process": "loan",
+   "variant": "H",
+   "runs": [
+    "Run 15",
+    "Run 16"
+   ],
+   "seed_prefix": "policyH-loan",
+   "seeds": [
+    "policyH-loan-15",
+    "policyH-loan-16"
+   ],
+   "pdf": "runs/workflow_docs/workflow_loan_policyH/document.pdf",
+   "pdf_sha256": "5f5664f5403de47fa26223a36525e140da32ccdbfa6e0af8a363555a1ced7697",
+   "navmap_sha256": "d13b1fec92338df9c4c0255af95a720ea75356f61081e4a3516ea53318e3b9e6",
+   "document_meta_sha256": "1e3b6facca09025aa07e0c2067bd0e4f798d44e70c07da2aebb6959e43df0af7",
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files": {
+    "Loan_Application_3_timers.bpmn": "efb5055dcbd201b7b91a52d649deef2060b4581c655c9dc60e7457ce3d8873bd",
+    "Loan_Application_3_timers.json": "bae84df36fec2f1baab522253bf6dda138aeffc063fa7bb9d819279d14491551"
+   },
+   "bpmn_equals_published": true,
+   "params_equal_published": true,
+   "pool_amounts_changed": {},
+   "all_other_parameters_equal": true,
+   "library_reads_differ_from_dev": {},
+   "front_matter_lines_changed_vs_dev": [
+    "- This document records independent runs of one business process, Loan Application.",
+    "+ The runs recorded here are independent runs of a single business process, Loan Application.",
+    "- The process structure and its parameters come from a published simulation model.",
+    "+ Its structure and parameters are taken from a published simulation model.",
+    "- Each run is one fixed realization: every case's arrival time, every activity's required work, every wait and every route draw are fixed in advance and listed.",
+    "+ A run is a single fixed realization: the arrival time of every case, the work each activity requires, every wait and every route draw are set in advance and listed.",
+    "- The records are computed from those plans by the rules below, applied exactly.",
+    "+ The rules below are applied exactly to those plans to compute the records.",
+    "- Knowing the plans in advance is a condition of this benchmark, not a claim about real operations.",
+    "+ That the plans are known in advance is a condition of this benchmark; it is not a claim about real operations.",
+    "- The document is divided into chapters titled 'Run <NN>'.",
+    "- Runs are independent, and a question names its run by that title.",
+    "- Each chapter has these sections.",
+    "- 'Cases' gives each case's arrival time and end time.",
+    "+ Each chapter is titled 'Run <NN>', and a question refers to a run by this title.",
+    "+ The runs do not depend on one another.",
+    "+ A chapter contains the following sections.",
+    "+ 'Cases': the arrival time and end time of each case.",
+    "- 'Work plan' gives, for each case and activity, the work required on each visit.",
+    "+ 'Work plan': per case and activity, the work needed on each visit.",
+    "- 'Wait plan' gives, for each case and timed wait, the delay on each visit.",
+    "+ 'Wait plan': per case and timed wait, the delay on each visit.",
+    "- 'Route draws' gives, for each case and decision, the draw on each visit.",
+    "+ 'Route draws': per case and decision, the draw on each visit.",
+    "- 'Task log' records each performed activity.",
+    "+ 'Task log': one row for each time an activity is performed.",
+    "- 'Wait log' records each wait.",
+    "+ 'Wait log': one row for each wait.",
+    "- 'Decision log' records each decision.",
+    "- Plans list values for visits that did not happen, because a change could make them happen.",
+    "+ 'Decision log': one row for each time a decision is made.",
+    "+ The plans also give values for visits that did not take place, since a change could cause them to take place.",
+    "- All times are whole seconds from time 0, which is a Monday at 00:00.",
+    "+ Every time is a whole number of seconds counted from time 0, a Monday at 00:00.",
+    "- Weekday = floor(t / 86400) mod 7, where 0 is Monday.",
+    "+ The weekday of t is floor(t / 86400) mod 7, with 0 for Monday.",
+    "- An interval [a, b) includes a and excludes b.",
+    "+ An interval [a, b) contains a but not b.",
+    "- Arrival times are given in 'Cases' and do not depend on other cases.",
+    "- A new case arriving at a stated time does not change other cases' plans.",
+    "+ 'Cases' lists the arrival times, and no case's arrival depends on any other case.",
+    "+ If a new case arrives at a stated time, the plans of the other cases stay as they are.",
+    "- Workers in a pool are interchangeable, and the assigned worker does not change how much work an activity needs.",
+    "+ Any worker of a pool can take any of its tasks, and which worker is assigned does not affect the work an activity needs.",
+    "- A visit counts how many times a case has reached an activity, wait or decision, starting at 1.",
+    "+ The visit number counts how often a case has reached an activity, wait or decision, beginning with 1.",
+    "- Reaching an activity enables it.",
+    "- Passing through a decision, split or join takes no time.",
+    "+ An activity is enabled when a case reaches it.",
+    "+ A decision, split or join is passed through in zero time.",
+    "- Enabled activities wait in one first-come-first-served line per pool, shared by all activities of that pool.",
+    "+ Each pool has a single first-come-first-served line, shared by all of its activities, in which enabled activities wait.",
+    "- Order: earliest enabled time, then the case that arrived earlier, then the lower case id, then the lower activity id, then the lower visit.",
+    "+ The line is ordered by earliest enabled time; ties go to the case that arrived earlier, then to the lower case id, then to the lower activity id, then to the lower visit.",
+    "- Activity id order is fixed by the model and given by each activity's position in the 'Work plan' table.",
+    "+ The model fixes the order of activity ids, which is the order in which activities appear in the 'Work plan' table.",
+    "- The task goes to the worker who can start it earliest.",
+    "+ A task is given to the worker able to start it earliest.",
+    "- On a tie, the worker free for longest; on a further tie, the lower-numbered worker.",
+    "- A worker can start at the first time that is at or after both the enabled time and the time the worker is free, and within that worker's working hours.",
+    "+ If several workers can start it at that same earliest time, the one that has been free for longest gets it, and if that also ties, the lower-numbered one.",
+    "+ A worker's start time is the first time that is no earlier than the enabled time and no earlier than the time the worker is free, and that falls within that worker's working hours.",
+    "- A worker does one task at a time and keeps it until it ends.",
+    "+ Each worker handles one task at a time and keeps it until it ends.",
+    "- Work counts only during working hours.",
+    "+ Only working hours count as work.",
+    "- Outside them the task pauses and resumes with the same worker, who stays held.",
+    "+ Outside working hours the task is paused, and it resumes with the same worker, who remains held by it.",
+    "- A task that needs exactly the time left ends at closing time.",
+    "- If a worker is declared unavailable for an interval, that interval counts as non-working time in the same way.",
+    "+ If a task needs exactly the remaining working time, it ends at closing time.",
+    "+ An interval in which a worker is declared unavailable counts as non-working time in the same way.",
+    "- A wait starts when reached and ends after its delay.",
+    "- It uses no worker and ignores working hours.",
+    "+ A wait begins when it is reached and ends once its delay has passed.",
+    "+ It needs no worker, and working hours do not apply to it.",
+    "- Take the decision's routes in the listed order and add up their probabilities.",
+    "- The route taken is the first whose running total is greater than the draw for this case and visit.",
+    "- If a probability changes, the draw stays the same and the route is chosen again from the changed probabilities.",
+    "+ Go through the decision's routes in the order listed, summing their probabilities.",
+    "+ The case takes the first route at which this running sum is greater than its draw for that visit.",
+    "+ When a probability is changed, the draw is kept and the route is chosen again from the changed probabilities.",
+    "- A case ends when its last path reaches End.",
+    "+ A case ends when its last path arrives at End.",
+    "- All cases run until they end.",
+    "+ Every case runs until it ends.",
+    "- Work and delays are in whole seconds.",
+    "+ Work and delays are whole seconds.",
+    "- Draws are between 0 and 1, shown to 6 decimal places.",
+    "+ Draws lie between 0 and 1 and are printed with 6 decimal places.",
+    "- Chapters in this document: Run 01, Run 02, Run 03, Run 04.",
+    "+ Chapters in this document: Run 15, Run 16."
+   ],
+   "fingerprint": "56a151fab0f8a684",
+   "fingerprint_dev": "78b0ef971079793b",
+   "fingerprint_test": "78b0ef971079793b",
+   "fingerprint_equals_dev": false
+  },
+  "workflow_pharmacy_policyH": {
+   "process": "pharmacy",
+   "variant": "H",
+   "runs": [
+    "Run 15",
+    "Run 16"
+   ],
+   "seed_prefix": "policyH-pharmacy",
+   "seeds": [
+    "policyH-pharmacy-15",
+    "policyH-pharmacy-16"
+   ],
+   "pdf": "runs/workflow_docs/workflow_pharmacy_policyH/document.pdf",
+   "pdf_sha256": "48c13fee7789ad288814de06365d2b9c054bfe07bf2d286b2f715dba2285d18a",
+   "navmap_sha256": "d87a1cdc94086dbd3f7a77fee63110415654ab7bd83fba3a06a87f3aa79ca14d",
+   "document_meta_sha256": "d105e34fcd25284ecc013603a01ff8e1d03bc67176941bd2586c6e8e6cb4d932",
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files": {
+    "Pharmacy_3_timers.bpmn": "967471f70422385668bd581ad44def3951efa966a2eaf9f9bba6318e34f91ac5",
+    "Pharmacy_3_timers.json": "2e2de200ac25d2cb069630759c5d6da00295616de9a838958d5021c9240983a4"
+   },
+   "bpmn_equals_published": true,
+   "params_equal_published": true,
+   "pool_amounts_changed": {},
+   "all_other_parameters_equal": true,
+   "library_reads_differ_from_dev": {},
+   "front_matter_lines_changed_vs_dev": [
+    "- This document records independent runs of one business process, Pharmacy.",
+    "+ The runs recorded here are independent runs of a single business process, Pharmacy.",
+    "- The process structure and its parameters come from a published simulation model.",
+    "+ Its structure and parameters are taken from a published simulation model.",
+    "- Each run is one fixed realization: every case's arrival time, every activity's required work, every wait and every route draw are fixed in advance and listed.",
+    "+ A run is a single fixed realization: the arrival time of every case, the work each activity requires, every wait and every route draw are set in advance and listed.",
+    "- The records are computed from those plans by the rules below, applied exactly.",
+    "+ The rules below are applied exactly to those plans to compute the records.",
+    "- Knowing the plans in advance is a condition of this benchmark, not a claim about real operations.",
+    "+ That the plans are known in advance is a condition of this benchmark; it is not a claim about real operations.",
+    "- The document is divided into chapters titled 'Run <NN>'.",
+    "- Runs are independent, and a question names its run by that title.",
+    "- Each chapter has these sections.",
+    "- 'Cases' gives each case's arrival time and end time.",
+    "+ Each chapter is titled 'Run <NN>', and a question refers to a run by this title.",
+    "+ The runs do not depend on one another.",
+    "+ A chapter contains the following sections.",
+    "+ 'Cases': the arrival time and end time of each case.",
+    "- 'Work plan' gives, for each case and activity, the work required on each visit.",
+    "+ 'Work plan': per case and activity, the work needed on each visit.",
+    "- 'Wait plan' gives, for each case and timed wait, the delay on each visit.",
+    "+ 'Wait plan': per case and timed wait, the delay on each visit.",
+    "- 'Route draws' gives, for each case and decision, the draw on each visit.",
+    "+ 'Route draws': per case and decision, the draw on each visit.",
+    "- 'Task log' records each performed activity.",
+    "+ 'Task log': one row for each time an activity is performed.",
+    "- 'Wait log' records each wait.",
+    "+ 'Wait log': one row for each wait.",
+    "- 'Decision log' records each decision.",
+    "- Plans list values for visits that did not happen, because a change could make them happen.",
+    "+ 'Decision log': one row for each time a decision is made.",
+    "+ The plans also give values for visits that did not take place, since a change could cause them to take place.",
+    "- All times are whole seconds from time 0, which is a Monday at 00:00.",
+    "+ Every time is a whole number of seconds counted from time 0, a Monday at 00:00.",
+    "- Weekday = floor(t / 86400) mod 7, where 0 is Monday.",
+    "+ The weekday of t is floor(t / 86400) mod 7, with 0 for Monday.",
+    "- An interval [a, b) includes a and excludes b.",
+    "+ An interval [a, b) contains a but not b.",
+    "- Arrival times are given in 'Cases' and do not depend on other cases.",
+    "- A new case arriving at a stated time does not change other cases' plans.",
+    "+ 'Cases' lists the arrival times, and no case's arrival depends on any other case.",
+    "+ If a new case arrives at a stated time, the plans of the other cases stay as they are.",
+    "- Workers in a pool are interchangeable, and the assigned worker does not change how much work an activity needs.",
+    "+ Any worker of a pool can take any of its tasks, and which worker is assigned does not affect the work an activity needs.",
+    "- A visit counts how many times a case has reached an activity, wait or decision, starting at 1.",
+    "+ The visit number counts how often a case has reached an activity, wait or decision, beginning with 1.",
+    "- Reaching an activity enables it.",
+    "- Passing through a decision, split or join takes no time.",
+    "+ An activity is enabled when a case reaches it.",
+    "+ A decision, split or join is passed through in zero time.",
+    "- Enabled activities wait in one first-come-first-served line per pool, shared by all activities of that pool.",
+    "+ Each pool has a single first-come-first-served line, shared by all of its activities, in which enabled activities wait.",
+    "- Order: earliest enabled time, then the case that arrived earlier, then the lower case id, then the lower activity id, then the lower visit.",
+    "+ The line is ordered by earliest enabled time; ties go to the case that arrived earlier, then to the lower case id, then to the lower activity id, then to the lower visit.",
+    "- Activity id order is fixed by the model and given by each activity's position in the 'Work plan' table.",
+    "+ The model fixes the order of activity ids, which is the order in which activities appear in the 'Work plan' table.",
+    "- The task goes to the worker who can start it earliest.",
+    "+ A task is given to the worker able to start it earliest.",
+    "- On a tie, the worker free for longest; on a further tie, the lower-numbered worker.",
+    "- A worker can start at the first time that is at or after both the enabled time and the time the worker is free, and within that worker's working hours.",
+    "+ If several workers can start it at that same earliest time, the one that has been free for longest gets it, and if that also ties, the lower-numbered one.",
+    "+ A worker's start time is the first time that is no earlier than the enabled time and no earlier than the time the worker is free, and that falls within that worker's working hours.",
+    "- A worker does one task at a time and keeps it until it ends.",
+    "+ Each worker handles one task at a time and keeps it until it ends.",
+    "- Work counts only during working hours.",
+    "+ Only working hours count as work.",
+    "- Outside them the task pauses and resumes with the same worker, who stays held.",
+    "+ Outside working hours the task is paused, and it resumes with the same worker, who remains held by it.",
+    "- A task that needs exactly the time left ends at closing time.",
+    "- If a worker is declared unavailable for an interval, that interval counts as non-working time in the same way.",
+    "+ If a task needs exactly the remaining working time, it ends at closing time.",
+    "+ An interval in which a worker is declared unavailable counts as non-working time in the same way.",
+    "- A wait starts when reached and ends after its delay.",
+    "- It uses no worker and ignores working hours.",
+    "+ A wait begins when it is reached and ends once its delay has passed.",
+    "+ It needs no worker, and working hours do not apply to it.",
+    "- Take the decision's routes in the listed order and add up their probabilities.",
+    "- The route taken is the first whose running total is greater than the draw for this case and visit.",
+    "- If a probability changes, the draw stays the same and the route is chosen again from the changed probabilities.",
+    "+ Go through the decision's routes in the order listed, summing their probabilities.",
+    "+ The case takes the first route at which this running sum is greater than its draw for that visit.",
+    "+ When a probability is changed, the draw is kept and the route is chosen again from the changed probabilities.",
+    "- A case ends when its last path reaches End.",
+    "+ A case ends when its last path arrives at End.",
+    "- All cases run until they end.",
+    "+ Every case runs until it ends.",
+    "- Work and delays are in whole seconds.",
+    "+ Work and delays are whole seconds.",
+    "- Draws are between 0 and 1, shown to 6 decimal places.",
+    "+ Draws lie between 0 and 1 and are printed with 6 decimal places.",
+    "- Chapters in this document: Run 01, Run 02, Run 03, Run 04.",
+    "+ Chapters in this document: Run 15, Run 16."
+   ],
+   "fingerprint": "f14fb1c4fa59f2e6",
+   "fingerprint_dev": "eaadfaae27cf5fdc",
+   "fingerprint_test": "eaadfaae27cf5fdc",
+   "fingerprint_equals_dev": false
+  }
+ },
+ "checks": {
+  "problems": [],
+  "dev_equals_test_fingerprint": {
+   "loan": true,
+   "pharmacy": true
+  }
+ },
+ "question_shortfalls": [
+  {
+   "doc": "workflow_loan_policyP",
+   "family": "case_set",
+   "made": 1,
+   "missing": [
+    "effectful"
+   ],
+   "candidates": {
+    "effectful": 0,
+    "no_effect": 420
+   }
+  },
+  {
+   "doc": "workflow_pharmacy_policyP",
+   "family": "timer_delay",
+   "made": 3,
+   "missing": [
+    "no_effect"
+   ],
+   "candidates": {
+    "effectful": 270,
+    "no_effect": 0
+   }
+  },
+  {
+   "doc": "workflow_pharmacy_policyH",
+   "family": "timer_delay",
+   "made": 3,
+   "missing": [
+    "no_effect"
+   ],
+   "candidates": {
+    "effectful": 270,
+    "no_effect": 0
+   }
+  }
+ ]
+}

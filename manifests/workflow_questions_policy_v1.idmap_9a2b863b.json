@@ -1,0 +1,371 @@
+{
+ "old_file_sha256": "9a2b863bf7c54bf6c083626cde394f891a7352a323a28332c33b3684180e5861",
+ "new_file_sha256": "fc79f0db1c8e92c2f083abd671149716e94a72906a0f44be64ee512d7762c350",
+ "note": "Ids are positional. Join any earlier result to the new file only through same_content_now_at, never by id.",
+ "ids": {
+  "loa-polP-activity_duration-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polP-activity_duration-01": {
+   "same_content_now_at": "loa-polP-activity_duration-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-activity_duration-02": {
+   "same_content_now_at": "loa-polP-activity_duration-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-activity_duration-03": {
+   "same_content_now_at": "loa-polP-activity_duration-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-timer_delay-00": {
+   "same_content_now_at": "loa-polP-timer_delay-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-timer_delay-01": {
+   "same_content_now_at": "loa-polP-timer_delay-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-timer_delay-02": {
+   "same_content_now_at": "loa-polP-timer_delay-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-timer_delay-03": {
+   "same_content_now_at": "loa-polP-timer_delay-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_outcome-00": {
+   "same_content_now_at": "loa-polP-routing_outcome-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_outcome-01": {
+   "same_content_now_at": "loa-polP-routing_outcome-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_outcome-02": {
+   "same_content_now_at": "loa-polP-routing_outcome-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_outcome-03": {
+   "same_content_now_at": "loa-polP-routing_outcome-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_probability-00": {
+   "same_content_now_at": "loa-polP-routing_probability-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_probability-01": {
+   "same_content_now_at": "loa-polP-routing_probability-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_probability-02": {
+   "same_content_now_at": "loa-polP-routing_probability-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-routing_probability-03": {
+   "same_content_now_at": "loa-polP-routing_probability-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-resource_availability-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polP-resource_availability-01": {
+   "same_content_now_at": "loa-polP-resource_availability-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-resource_availability-02": {
+   "same_content_now_at": "loa-polP-resource_availability-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polP-resource_availability-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polP-case_set-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-activity_duration-00": {
+   "same_content_now_at": "pha-polP-activity_duration-00",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polP-activity_duration-01": {
+   "same_content_now_at": "pha-polP-activity_duration-01",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polP-activity_duration-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-activity_duration-03": {
+   "same_content_now_at": "pha-polP-activity_duration-02",
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-timer_delay-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-timer_delay-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-timer_delay-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_outcome-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_outcome-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_outcome-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_outcome-03": {
+   "same_content_now_at": "pha-polP-routing_outcome-03",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polP-routing_probability-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_probability-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_probability-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-routing_probability-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-resource_availability-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-resource_availability-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-resource_availability-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-resource_availability-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-case_set-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-case_set-01": {
+   "same_content_now_at": "pha-polP-case_set-02",
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-case_set-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polP-case_set-03": {
+   "same_content_now_at": "pha-polP-case_set-01",
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-activity_duration-00": {
+   "same_content_now_at": "loa-polH-activity_duration-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-activity_duration-01": {
+   "same_content_now_at": "loa-polH-activity_duration-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-activity_duration-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-activity_duration-03": {
+   "same_content_now_at": "loa-polH-activity_duration-02",
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-timer_delay-00": {
+   "same_content_now_at": "loa-polH-timer_delay-01",
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-timer_delay-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-timer_delay-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-timer_delay-03": {
+   "same_content_now_at": "loa-polH-timer_delay-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_outcome-00": {
+   "same_content_now_at": "loa-polH-routing_outcome-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_outcome-01": {
+   "same_content_now_at": "loa-polH-routing_outcome-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_outcome-02": {
+   "same_content_now_at": "loa-polH-routing_outcome-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_outcome-03": {
+   "same_content_now_at": "loa-polH-routing_outcome-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_probability-00": {
+   "same_content_now_at": "loa-polH-routing_probability-00",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_probability-01": {
+   "same_content_now_at": "loa-polH-routing_probability-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_probability-02": {
+   "same_content_now_at": "loa-polH-routing_probability-02",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-routing_probability-03": {
+   "same_content_now_at": "loa-polH-routing_probability-03",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-resource_availability-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-resource_availability-01": {
+   "same_content_now_at": "loa-polH-resource_availability-01",
+   "id_now_names_the_same_question": true
+  },
+  "loa-polH-resource_availability-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-resource_availability-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-case_set-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-case_set-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-case_set-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "loa-polH-case_set-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-activity_duration-00": {
+   "same_content_now_at": "pha-polH-activity_duration-00",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-activity_duration-01": {
+   "same_content_now_at": "pha-polH-activity_duration-01",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-activity_duration-02": {
+   "same_content_now_at": "pha-polH-activity_duration-02",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-activity_duration-03": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-timer_delay-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-timer_delay-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-timer_delay-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-routing_outcome-00": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-routing_outcome-01": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-routing_outcome-02": {
+   "same_content_now_at": null,
+   "id_now_names_the_same_question": false
+  },
+  "pha-polH-routing_outcome-03": {
+   "same_content_now_at": "pha-polH-routing_outcome-03",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-routing_probability-00": {
+   "same_content_now_at": "pha-polH-routing_probability-00",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-routing_probability-01": {
+   "same_content_now_at": "pha-polH-routing_probability-01",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-routing_probability-02": {
+   "same_content_now_at": "pha-polH-routing_probability-02",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-routing_probability-03": {
+   "same_content_now_at": "pha-polH-routing_probability-03",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-resource_availability-00": {
+   "same_content_now_at": "pha-polH-resource_availability-00",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-resource_availability-01": {
+   "same_content_now_at": "pha-polH-resource_availability-01",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-resource_availability-02": {
+   "same_content_now_at": "pha-polH-resource_availability-02",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-resource_availability-03": {
+   "same_content_now_at": "pha-polH-resource_availability-03",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-case_set-00": {
+   "same_content_now_at": "pha-polH-case_set-00",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-case_set-01": {
+   "same_content_now_at": "pha-polH-case_set-01",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-case_set-02": {
+   "same_content_now_at": "pha-polH-case_set-02",
+   "id_now_names_the_same_question": true
+  },
+  "pha-polH-case_set-03": {
+   "same_content_now_at": "pha-polH-case_set-03",
+   "id_now_names_the_same_question": true
+  }
+ }
+}

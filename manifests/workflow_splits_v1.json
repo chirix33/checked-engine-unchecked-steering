@@ -1,0 +1,1701 @@
+{
+ "version": "workflow_splits_v1",
+ "rule": "split by full run. Each run is one independent deterministic realization of the published process model with its own seed; the provenance group is the run. All runs of a process share the process model and front matter, which is the reuse condition (dev-built programs answer test questions on test records).",
+ "n_cases_per_run": 15,
+ "docs": {
+  "workflow_loan_dev": {
+   "split": "dev",
+   "process": "Loan_Application_3_timers",
+   "pdf": "runs/build_test_v1/docs/workflow_loan_dev/document.pdf",
+   "pdf_sha256": "8bcd6acfc55522586710d85f9bcd65b8a9b55fc22526aa1427d801bb1cb51edc",
+   "navmap": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_loan_dev/b2/navmap.json",
+   "navmap_sha256": "447e94eb5007caabbe1fcd93c9c593d7364f0769810d14855c38dc74d117e106",
+   "document_meta_sha256": "5975835950ffbcb184961cd0003ac2e26b705ca8e5f9d867164ff2ee59227dd6",
+   "pages": 48,
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files_sha256": {
+    "Loan_Application_3_timers.bpmn": "efb5055dcbd201b7b91a52d649deef2060b4581c655c9dc60e7457ce3d8873bd",
+    "Loan_Application_3_timers.json": "bae84df36fec2f1baab522253bf6dda138aeffc063fa7bb9d819279d14491551"
+   },
+   "policy_fingerprint": "78b0ef971079793b",
+   "runs": [
+    {
+     "title": "Run 01",
+     "seed": "dev-loan-01",
+     "group": "workflow_loan_dev/Run 01",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 133,
+     "visit_columns": 4,
+     "max_end": 381755
+    },
+    {
+     "title": "Run 02",
+     "seed": "dev-loan-02",
+     "group": "workflow_loan_dev/Run 02",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 146,
+     "visit_columns": 5,
+     "max_end": 647477
+    },
+    {
+     "title": "Run 03",
+     "seed": "dev-loan-03",
+     "group": "workflow_loan_dev/Run 03",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 182,
+     "visit_columns": 6,
+     "max_end": 311592
+    },
+    {
+     "title": "Run 04",
+     "seed": "dev-loan-04",
+     "group": "workflow_loan_dev/Run 04",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 192,
+     "visit_columns": 4,
+     "max_end": 320171
+    }
+   ]
+  },
+  "workflow_loan_test": {
+   "split": "test",
+   "process": "Loan_Application_3_timers",
+   "pdf": "runs/workflow_docs/workflow_loan_test/document.pdf",
+   "pdf_sha256": "354d4847a9a791b4a6982698623b4634ad2cf27a7276731e867ae09d04346299",
+   "navmap": "runs/workflow_docs/workflow_loan_test/navmap.json",
+   "navmap_sha256": "5ecbd0c5a854e1c3c03ac7eac2300698cc8744d979cb12da127e0510a331a933",
+   "document_meta_sha256": "a9cd80372f7f7151662bf3bd2142c16d4b80d07a369b45d177d1b55211558325",
+   "pages": 93,
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files_sha256": {
+    "Loan_Application_3_timers.bpmn": "efb5055dcbd201b7b91a52d649deef2060b4581c655c9dc60e7457ce3d8873bd",
+    "Loan_Application_3_timers.json": "bae84df36fec2f1baab522253bf6dda138aeffc063fa7bb9d819279d14491551"
+   },
+   "policy_fingerprint": "78b0ef971079793b",
+   "runs": [
+    {
+     "title": "Run 05",
+     "seed": "test-loan-05",
+     "group": "workflow_loan_test/Run 05",
+     "split": "test",
+     "cases": 15,
+     "tasks": 172,
+     "visit_columns": 6,
+     "max_end": 660233
+    },
+    {
+     "title": "Run 06",
+     "seed": "test-loan-06",
+     "group": "workflow_loan_test/Run 06",
+     "split": "test",
+     "cases": 15,
+     "tasks": 155,
+     "visit_columns": 4,
+     "max_end": 381639
+    },
+    {
+     "title": "Run 07",
+     "seed": "test-loan-07",
+     "group": "workflow_loan_test/Run 07",
+     "split": "test",
+     "cases": 15,
+     "tasks": 169,
+     "visit_columns": 4,
+     "max_end": 292286
+    },
+    {
+     "title": "Run 08",
+     "seed": "test-loan-08",
+     "group": "workflow_loan_test/Run 08",
+     "split": "test",
+     "cases": 15,
+     "tasks": 171,
+     "visit_columns": 6,
+     "max_end": 381924
+    },
+    {
+     "title": "Run 09",
+     "seed": "test-loan-09",
+     "group": "workflow_loan_test/Run 09",
+     "split": "test",
+     "cases": 15,
+     "tasks": 165,
+     "visit_columns": 4,
+     "max_end": 404818
+    },
+    {
+     "title": "Run 10",
+     "seed": "test-loan-10",
+     "group": "workflow_loan_test/Run 10",
+     "split": "test",
+     "cases": 15,
+     "tasks": 132,
+     "visit_columns": 6,
+     "max_end": 380280
+    },
+    {
+     "title": "Run 11",
+     "seed": "test-loan-11",
+     "group": "workflow_loan_test/Run 11",
+     "split": "test",
+     "cases": 15,
+     "tasks": 158,
+     "visit_columns": 4,
+     "max_end": 219213
+    },
+    {
+     "title": "Run 12",
+     "seed": "test-loan-12",
+     "group": "workflow_loan_test/Run 12",
+     "split": "test",
+     "cases": 15,
+     "tasks": 182,
+     "visit_columns": 4,
+     "max_end": 229808
+    }
+   ]
+  },
+  "workflow_pharmacy_dev": {
+   "split": "dev",
+   "process": "Pharmacy_3_timers",
+   "pdf": "runs/build_test_v1/docs/workflow_pharmacy_dev/document.pdf",
+   "pdf_sha256": "678fbeae7795a87cfb24c94b2bca66c6d72270795a61c2f83cb3669ea407dfbb",
+   "navmap": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b2/navmap.json",
+   "navmap_sha256": "ce81e5825ec90144d5ddd61eed16474e7a3c025a9b5a8c63c91014ad480300a1",
+   "document_meta_sha256": "60b5c268683c5e39425f2425dfeca73db14e742370859c90a76002310d3f1672",
+   "pages": 46,
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files_sha256": {
+    "Pharmacy_3_timers.bpmn": "967471f70422385668bd581ad44def3951efa966a2eaf9f9bba6318e34f91ac5",
+    "Pharmacy_3_timers.json": "2e2de200ac25d2cb069630759c5d6da00295616de9a838958d5021c9240983a4"
+   },
+   "policy_fingerprint": "eaadfaae27cf5fdc",
+   "runs": [
+    {
+     "title": "Run 01",
+     "seed": "dev-pharmacy-01",
+     "group": "workflow_pharmacy_dev/Run 01",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 122,
+     "visit_columns": 3,
+     "max_end": 32247
+    },
+    {
+     "title": "Run 02",
+     "seed": "dev-pharmacy-02",
+     "group": "workflow_pharmacy_dev/Run 02",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 127,
+     "visit_columns": 3,
+     "max_end": 32325
+    },
+    {
+     "title": "Run 03",
+     "seed": "dev-pharmacy-03",
+     "group": "workflow_pharmacy_dev/Run 03",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 130,
+     "visit_columns": 3,
+     "max_end": 32578
+    },
+    {
+     "title": "Run 04",
+     "seed": "dev-pharmacy-04",
+     "group": "workflow_pharmacy_dev/Run 04",
+     "split": "dev",
+     "cases": 15,
+     "tasks": 127,
+     "visit_columns": 3,
+     "max_end": 32413
+    }
+   ]
+  },
+  "workflow_pharmacy_test": {
+   "split": "test",
+   "process": "Pharmacy_3_timers",
+   "pdf": "runs/workflow_docs/workflow_pharmacy_test/document.pdf",
+   "pdf_sha256": "e4888ad6efad987dd2fa0d2c9c815044c34861f67e3911bdc66d4654f815f00f",
+   "navmap": "runs/workflow_docs/workflow_pharmacy_test/navmap.json",
+   "navmap_sha256": "9c3e80c3c0775eb2ffdbbafa5456d6db45841f6e71e728f737fd144b91d26980",
+   "document_meta_sha256": "1d127ce09af7e04346953a1897f589922d9640d6d25ea82cede9582d676fda69",
+   "pages": 90,
+   "map_rebuilt_from_pdf_equals_stored": true,
+   "model_files_sha256": {
+    "Pharmacy_3_timers.bpmn": "967471f70422385668bd581ad44def3951efa966a2eaf9f9bba6318e34f91ac5",
+    "Pharmacy_3_timers.json": "2e2de200ac25d2cb069630759c5d6da00295616de9a838958d5021c9240983a4"
+   },
+   "policy_fingerprint": "eaadfaae27cf5fdc",
+   "runs": [
+    {
+     "title": "Run 05",
+     "seed": "test-pharmacy-05",
+     "group": "workflow_pharmacy_test/Run 05",
+     "split": "test",
+     "cases": 15,
+     "tasks": 122,
+     "visit_columns": 3,
+     "max_end": 33124
+    },
+    {
+     "title": "Run 06",
+     "seed": "test-pharmacy-06",
+     "group": "workflow_pharmacy_test/Run 06",
+     "split": "test",
+     "cases": 15,
+     "tasks": 127,
+     "visit_columns": 3,
+     "max_end": 32341
+    },
+    {
+     "title": "Run 07",
+     "seed": "test-pharmacy-07",
+     "group": "workflow_pharmacy_test/Run 07",
+     "split": "test",
+     "cases": 15,
+     "tasks": 126,
+     "visit_columns": 3,
+     "max_end": 31901
+    },
+    {
+     "title": "Run 08",
+     "seed": "test-pharmacy-08",
+     "group": "workflow_pharmacy_test/Run 08",
+     "split": "test",
+     "cases": 15,
+     "tasks": 122,
+     "visit_columns": 3,
+     "max_end": 32828
+    },
+    {
+     "title": "Run 09",
+     "seed": "test-pharmacy-09",
+     "group": "workflow_pharmacy_test/Run 09",
+     "split": "test",
+     "cases": 15,
+     "tasks": 123,
+     "visit_columns": 3,
+     "max_end": 31849
+    },
+    {
+     "title": "Run 10",
+     "seed": "test-pharmacy-10",
+     "group": "workflow_pharmacy_test/Run 10",
+     "split": "test",
+     "cases": 15,
+     "tasks": 124,
+     "visit_columns": 3,
+     "max_end": 32252
+    },
+    {
+     "title": "Run 11",
+     "seed": "test-pharmacy-11",
+     "group": "workflow_pharmacy_test/Run 11",
+     "split": "test",
+     "cases": 15,
+     "tasks": 125,
+     "visit_columns": 3,
+     "max_end": 33017
+    },
+    {
+     "title": "Run 12",
+     "seed": "test-pharmacy-12",
+     "group": "workflow_pharmacy_test/Run 12",
+     "split": "test",
+     "cases": 15,
+     "tasks": 126,
+     "visit_columns": 3,
+     "max_end": 33128
+    }
+   ]
+  }
+ },
+ "checks": {
+  "workflow_loan_test": {
+   "seeds_disjoint": true,
+   "titles_disjoint": true,
+   "factual_sections_checked": [
+    "Cases",
+    "Work plan",
+    "Wait plan",
+    "Route draws",
+    "Task log",
+    "Wait log",
+    "Decision log"
+   ],
+   "same_process_model": true,
+   "same_policy_fingerprint_as_dev": true,
+   "table_overlap_with_dev": {
+    "Cases": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Work plan": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 36,
+     "examples": [
+      [
+       "c0000",
+       "Applicant completes form",
+       "86400",
+       "86400",
+       "86400",
+       "86400"
+      ],
+      [
+       "c0000",
+       "Applicant completes form",
+       "86400",
+       "86400",
+       "86400",
+       "86400",
+       "86400",
+       "86400"
+      ],
+      [
+       "c0001",
+       "Applicant completes form",
+       "86400",
+       "86400",
+       "86400",
+       "86400"
+      ]
+     ]
+    },
+    "Wait plan": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Route draws": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Task log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 3,
+     "examples": [
+      [
+       "c0001",
+       "Check application form completeness",
+       "1",
+       "33300",
+       "33300",
+       "35107",
+       "Clerk_1"
+      ],
+      [
+       "c0001",
+       "Check application form completeness",
+       "1",
+       "33300",
+       "33300",
+       "35186",
+       "Clerk_1"
+      ],
+      [
+       "c0006",
+       "Check application form completeness",
+       "1",
+       "37800",
+       "37800",
+       "39624",
+       "Clerk_1"
+      ]
+     ]
+    },
+    "Wait log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Decision log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 5,
+     "examples": [
+      [
+       "c0001",
+       "D1",
+       "1",
+       "35107",
+       "D1-a"
+      ],
+      [
+       "c0001",
+       "D1",
+       "1",
+       "35186",
+       "D1-b"
+      ],
+      [
+       "c0006",
+       "D1",
+       "1",
+       "39624",
+       "D1-b"
+      ]
+     ]
+    }
+   }
+  },
+  "workflow_pharmacy_test": {
+   "seeds_disjoint": true,
+   "titles_disjoint": true,
+   "factual_sections_checked": [
+    "Cases",
+    "Work plan",
+    "Wait plan",
+    "Route draws",
+    "Task log",
+    "Wait log",
+    "Decision log"
+   ],
+   "same_process_model": true,
+   "same_policy_fingerprint_as_dev": true,
+   "table_overlap_with_dev": {
+    "Cases": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 2,
+     "examples": [
+      [
+       "c0011",
+       "30120",
+       "31573"
+      ],
+      [
+       "c0012",
+       "30240",
+       "31573"
+      ]
+     ]
+    },
+    "Work plan": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 45,
+     "other_shared_rows": 77,
+     "examples": [
+      [
+       "c0000",
+       "Contact customer / doctor",
+       "669",
+       "",
+       ""
+      ],
+      [
+       "c0000",
+       "Enter prescription details",
+       "148",
+       "",
+       ""
+      ],
+      [
+       "c0000",
+       "Enter prescription details",
+       "158",
+       "",
+       ""
+      ]
+     ]
+    },
+    "Wait plan": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 21,
+     "examples": [
+      [
+       "c0001",
+       "W3",
+       "337",
+       "",
+       ""
+      ],
+      [
+       "c0002",
+       "W1",
+       "196",
+       "",
+       ""
+      ],
+      [
+       "c0003",
+       "W1",
+       "181",
+       "",
+       ""
+      ]
+     ]
+    },
+    "Route draws": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Task log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 17,
+     "examples": [
+      [
+       "c0000",
+       "Process drop-off",
+       "1",
+       "28800",
+       "28800",
+       "28882",
+       "Technician_0"
+      ],
+      [
+       "c0004",
+       "Process drop-off",
+       "1",
+       "29280",
+       "29280",
+       "29373",
+       "Technician_6"
+      ],
+      [
+       "c0005",
+       "Check if refill is allowed",
+       "1",
+       "29817",
+       "29817",
+       "29818",
+       "Pharmacy System_0"
+      ]
+     ]
+    },
+    "Wait log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 0,
+     "examples": []
+    },
+    "Decision log": {
+     "identical_tables": [],
+     "rows_in_every_dev_run": 0,
+     "other_shared_rows": 14,
+     "examples": [
+      [
+       "c0009",
+       "D1",
+       "1",
+       "30317",
+       "D1-a"
+      ],
+      [
+       "c0010",
+       "D1",
+       "1",
+       "30427",
+       "D1-a"
+      ],
+      [
+       "c0011",
+       "D1",
+       "1",
+       "30575",
+       "D1-a"
+      ]
+     ]
+    }
+   }
+  },
+  "program_input_check": {
+   "maps": 65,
+   "programs": 54,
+   "violations": [],
+   "spec_files": 10,
+   "spec_violations": [],
+   "devs_gen_programs": 15,
+   "devs_gen_violations": [],
+   "nothing_found": []
+  }
+ },
+ "devs_gen_programs": {
+  "scan": "runs/workflow_test_v1/devs_gen_scan.txt",
+  "scan_sha256": "d524cc867b0e6cbd0f4f49b3da728f50d9d8957ed251d0e039c553c2f336f89d",
+  "programs": [
+   {
+    "program": "haiku/Manufacturing/run_01",
+    "files_hash": "abcfa6a9d4df344d",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowLoan/run_01",
+    "files_hash": "8c6c04bf0687e116",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowLoan/run_02",
+    "files_hash": "97a6787629ee9013",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowLoan/run_03",
+    "files_hash": "565adfb4f0f3df2a",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowLoan/run_04",
+    "files_hash": "4c3b7a89fc1bcd2f",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowPharmacy/run_01",
+    "files_hash": "366771a038ba74e7",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowPharmacy/run_02",
+    "files_hash": "5abb35c21b8c050b",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "haiku/WorkflowPharmacy/run_03",
+    "files_hash": "54992453be33087e",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/ITOperations/run_01",
+    "files_hash": "abcfa6a9d4df344d",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowLoan/run_01",
+    "files_hash": "f58207d1bab5bee2",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowLoan/run_02",
+    "files_hash": "574e8421244da6db",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowLoan/run_03",
+    "files_hash": "0af9827718c5374a",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowPharmacy/run_01",
+    "files_hash": "9d04b03edc5ce7d8",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowPharmacy/run_02",
+    "files_hash": "15fa91565ed99e13",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   },
+   {
+    "program": "sonnet/WorkflowPharmacy/run_03",
+    "files_hash": "3850df855875285a",
+    "files_naming_test": 0,
+    "test_draw_strings": 0
+   }
+  ]
+ },
+ "program_inputs": [
+  {
+   "path": "runs/build_test_b0_claude/claude-haiku-5-5/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-haiku-5-5/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-sonnet-5-5/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-sonnet-5-5/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-sonnet-5-5/workflow_loan_dev/b3/navmap.json",
+   "program": false,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_b0_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gemma-31b-ollama/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/gpt-oss-120b/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1/qwen3.5-9b/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-haiku-5-5/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gemma-31b-ollama/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/gpt-oss-120b/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_loan_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_loan_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_loan_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_loan_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_pharmacy_dev/b1/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_pharmacy_dev/b2/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/build_test_v1/qwen3.5-9b/workflow_pharmacy_dev/b3/navmap.json",
+   "program": true,
+   "built_on": "workflow_pharmacy_dev",
+   "map_equals_dev_map": true,
+   "chapters": [
+    "Run 01",
+    "Run 02",
+    "Run 03",
+    "Run 04"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_loan_dev/case_remove/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_loan_dev/duration_set/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_loan_dev/factual/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_loan_dev/resource_add/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_loan_dev/timer_set/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_pharmacy_dev/case_remove/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_pharmacy_dev/duration_set/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_pharmacy_dev/factual/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_pharmacy_dev/resource_add/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  },
+  {
+   "path": "runs/intervention_probe_v1/workflow_pharmacy_dev/timer_set/navmap.json",
+   "program": false,
+   "built_on": null,
+   "map_equals_dev_map": false,
+   "chapters": [
+    "Run 01"
+   ],
+   "names_a_test_chapter": [],
+   "names_a_test_seed": []
+  }
+ ],
+ "spec_inputs": [
+  {
+   "path": "adapters/devs_gen_tasks/WorkflowLoan/WorkflowLoan.yaml",
+   "sha256": "5d7c93bf5211b76ef879e844aec882fd3d728c54354381b586c058c80ab22827",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 34,
+   "route_draws_shared_with_dev": 34,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/devs_gen_tasks/WorkflowLoan/workflowloan_test_config.json",
+   "sha256": "d102b3b865de9b0610201ae4f7fd1331e8fdc7678730066ad0e556eb14c197bf",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 255,
+   "route_draws_shared_with_dev": 255,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/devs_gen_tasks/WorkflowPharmacy/WorkflowPharmacy.yaml",
+   "sha256": "bd4a418837d8b74c4f4fcb252833a6607d41cb375b5a9fe99923326a7c615972",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 22,
+   "route_draws_shared_with_dev": 22,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/devs_gen_tasks/WorkflowPharmacy/workflowpharmacy_test_config.json",
+   "sha256": "54a7c8f2be47cbde27f79811788207eee84ececa339cbc8fddee671598aa694d",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 165,
+   "route_draws_shared_with_dev": 165,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowLoan/example_input.json",
+   "sha256": "beea4604374f0e1ba194590807cc8efb6a2c79c4d3505447c07dcc8d881b10f6",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 255,
+   "route_draws_shared_with_dev": 255,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowLoan/spec.json",
+   "sha256": "9d95dc6148fa75cd423cd04420b22c8da6db78c7e3990d44a88b145b442316cb",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 0,
+   "route_draws_shared_with_dev": 0,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowLoan/spec.md",
+   "sha256": "6d0ecc8423decff576839a99ae228c6e3d6ad0842d75bc3f68dba920ee609cee",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 34,
+   "route_draws_shared_with_dev": 34,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowPharmacy/example_input.json",
+   "sha256": "7c9a72c06c4ba1558c156233089dd7e0bfc05ba9a8ed8f92dc4fd7c8b5a4bc4d",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 165,
+   "route_draws_shared_with_dev": 165,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowPharmacy/spec.json",
+   "sha256": "671ff70420f5296ad9d7e3f9add8249290a7289fb0cdb5d0a09623fed21280a0",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 0,
+   "route_draws_shared_with_dev": 0,
+   "route_draws_shared_with_test": 0
+  },
+  {
+   "path": "adapters/generic_tasks/WorkflowPharmacy/spec.md",
+   "sha256": "40461aba6ef69592658fa1937d76c8fc2f9ded1542844bd5af42d955e3653af3",
+   "names_a_test_chapter": [],
+   "names_a_test_seed": [],
+   "route_draws_found": 22,
+   "route_draws_shared_with_dev": 22,
+   "route_draws_shared_with_test": 0
+  }
+ ]
+}

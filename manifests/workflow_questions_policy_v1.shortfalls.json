@@ -1,0 +1,38 @@
+[
+ {
+  "doc": "workflow_loan_policyP",
+  "family": "case_set",
+  "made": 1,
+  "missing": [
+   "effectful"
+  ],
+  "candidates": {
+   "effectful": 0,
+   "no_effect": 420
+  }
+ },
+ {
+  "doc": "workflow_pharmacy_policyP",
+  "family": "timer_delay",
+  "made": 3,
+  "missing": [
+   "no_effect"
+  ],
+  "candidates": {
+   "effectful": 270,
+   "no_effect": 0
+  }
+ },
+ {
+  "doc": "workflow_pharmacy_policyH",
+  "family": "timer_delay",
+  "made": 3,
+  "missing": [
+   "no_effect"
+  ],
+  "candidates": {
+   "effectful": 270,
+   "no_effect": 0
+  }
+ }
+]
