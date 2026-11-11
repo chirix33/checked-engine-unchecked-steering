@@ -5,6 +5,7 @@
 # Keep the run manifest and decision log
 !manifests/
 !manifests/**/*.md
+!acmtrust_paper/**/*.md
 
 # Keep the semantics spec and the checker's notes
 !spec/**/*.md
