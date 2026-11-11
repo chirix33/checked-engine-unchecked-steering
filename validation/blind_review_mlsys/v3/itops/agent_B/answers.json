@@ -1,0 +1,62 @@
+[
+ {
+  "qid": "B01",
+  "answer": 3188,
+  "factual_reproduced": true,
+  "note": "T065 first start in modified run: 3188"
+ },
+ {
+  "qid": "B02",
+  "answer": 1794,
+  "factual_reproduced": true,
+  "note": "T127 first start in modified run: 1794"
+ },
+ {
+  "qid": "B03",
+  "answer": 595,
+  "factual_reproduced": true,
+  "note": "T058 first start in modified run: 595"
+ },
+ {
+  "qid": "B04",
+  "answer": 1839,
+  "factual_reproduced": true,
+  "note": "T094 first start in modified run: 1839"
+ },
+ {
+  "qid": "B05",
+  "answer": 1793,
+  "factual_reproduced": true,
+  "note": "T059 first start in modified run: 1793"
+ },
+ {
+  "qid": "B06",
+  "answer": 875,
+  "factual_reproduced": true,
+  "note": "T090 first start in modified run: 875"
+ },
+ {
+  "qid": "B07",
+  "answer": 383,
+  "factual_reproduced": true,
+  "note": "T058 first start in modified run: 383"
+ },
+ {
+  "qid": "B08",
+  "answer": 315,
+  "factual_reproduced": true,
+  "note": "T041 first start in modified run: 315"
+ },
+ {
+  "qid": "B09",
+  "answer": 1615,
+  "factual_reproduced": true,
+  "note": "T120 first start in modified run: 1615"
+ },
+ {
+  "qid": "B10",
+  "answer": 953,
+  "factual_reproduced": true,
+  "note": "T072 first start in modified run: 953"
+ }
+]

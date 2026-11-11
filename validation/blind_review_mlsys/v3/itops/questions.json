@@ -1,0 +1,52 @@
+[
+ {
+  "qid": "B01",
+  "chapter_file": "chapter_Cell_window_18.txt",
+  "question": "In Cell window 18, suppose machine M05 had not failed during the window. At what time, in seconds from the window start, would task T065 first start?"
+ },
+ {
+  "qid": "B02",
+  "chapter_file": "chapter_Cell_window_09.txt",
+  "question": "In Cell window 09, suppose machine M01 had not failed during the window. At what time, in seconds from the window start, would task T127 first start?"
+ },
+ {
+  "qid": "B03",
+  "chapter_file": "chapter_Cell_window_06.txt",
+  "question": "In Cell window 06, suppose job J10 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T058 first start?"
+ },
+ {
+  "qid": "B04",
+  "chapter_file": "chapter_Cell_window_04.txt",
+  "question": "In Cell window 04, suppose job J37 had never been submitted (none of its tasks). At what time, in seconds from the window start, would task T094 first start?"
+ },
+ {
+  "qid": "B05",
+  "chapter_file": "chapter_Cell_window_20.txt",
+  "question": "In Cell window 20, suppose machine M01 had not been part of the cluster. At what time, in seconds from the window start, would task T059 first start?"
+ },
+ {
+  "qid": "B06",
+  "chapter_file": "chapter_Cell_window_30.txt",
+  "question": "In Cell window 30, suppose machine M04 had not been part of the cluster. At what time, in seconds from the window start, would task T090 first start?"
+ },
+ {
+  "qid": "B07",
+  "chapter_file": "chapter_Cell_window_02.txt",
+  "question": "In Cell window 02, suppose task T058 had priority 9 (instead of 4). At what time, in seconds from the window start, would task T058 first start?"
+ },
+ {
+  "qid": "B08",
+  "chapter_file": "chapter_Cell_window_09.txt",
+  "question": "In Cell window 09, suppose task T041 had priority 5 (instead of 6). At what time, in seconds from the window start, would task T041 first start?"
+ },
+ {
+  "qid": "B09",
+  "chapter_file": "chapter_Cell_window_30.txt",
+  "question": "In Cell window 30, suppose task T100 had requested 1932 units of memory (instead of 966). At what time, in seconds from the window start, would task T120 first start?"
+ },
+ {
+  "qid": "B10",
+  "chapter_file": "chapter_Cell_window_13.txt",
+  "question": "In Cell window 13, suppose task T072 had requested 4974 units of CPU (instead of 2487). At what time, in seconds from the window start, would task T072 first start?"
+ }
+]
