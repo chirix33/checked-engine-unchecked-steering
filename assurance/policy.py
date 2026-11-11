@@ -8,13 +8,15 @@ The decision is taken before the answering execution is used, as the handoff req
 
 Configurations select which evidence counts, so comparators share one code path:
 - `native`: no checks beyond the program's own acceptance.
-- `replay`: strict factual replay of recorded case ends only.
+- `replay`: strict factual replay of recorded case ends. Like every configuration except `native`, it first applies
+  contract validation, so a malformed request is declined before replay runs.
 - `schema`: contract validation only.
 - `generic`: replay and contract, plus input-use probes on randomly chosen families and targets. Its budget is a
   number of probe executions, set to the directed cap (`budget`), so generic never has less probe budget than
   directed on any request, including requests where directed reuses evidence and runs nothing.
 - `directed`: replay and contract, plus probes on the requested family, operation and target.
-- `program_wide`: one verdict per program, from one input-use probe on each case-level family.
+- `program_wide`: one verdict per program and scope, from one input-use probe on each case-level family. Its
+  witnesses are seeded by program and scope; it re-executes them on each request, and that cost is counted.
 
 A probe result of None (could not be run) is never counted as a pass. A policy that probes permits only if at
 least one probe actually ran and none failed. A change the backend cannot express is reported as such, never
@@ -55,6 +57,15 @@ def request_seed(req: Request, seed: int) -> int:
     return int(hashlib.sha256(text.encode()).hexdigest()[:12], 16)
 
 
+def program_seed(backend, scope: str, seed: int) -> int:
+    try:
+        ph = backend.program_hash()
+    except Exception:
+        ph = getattr(backend, "name", "")
+    text = json.dumps({"seed": seed, "scope": scope, "program": ph}, sort_keys=True)
+    return int(hashlib.sha256(text.encode()).hexdigest()[:12], 16)
+
+
 def decide(config: str, req: Request, schema, runner: ProbeRunner, registry: Registry | None, backend,
            budget: int = 3, seed: int = 0) -> Decision:
     if config not in CONFIGS:
@@ -76,6 +87,9 @@ def decide(config: str, req: Request, schema, runner: ProbeRunner, registry: Reg
     elif config == "generic":
         d = _probe_set(_random_witnesses(runner, schema, req.scope, max(budget, 1), rng), runner, req.scope, ev, "generic")
     else:
+        # One verdict per program and scope: the witnesses are seeded by program, scope and seed, never by the
+        # request, so every request on a scope sees the same picks (fixed 2026-11-09 after review).
+        rng = random.Random(program_seed(backend, req.scope, seed))
         picks = []
         for fam in CASE_LEVEL:
             target = _first_target(runner, fam, req.scope)
@@ -93,12 +107,16 @@ def _first_target(runner, family, scope):
 
 
 def _random_witnesses(runner, schema, scope, budget, rng):
-    out, tries = [], 0
+    out, tries, seen = [], 0, set()
     while len(out) < budget and tries < 20 * max(budget, 1):
         tries += 1
         fam = rng.choice(CASE_LEVEL)
         got = witnesses(runner.nav, schema, scope, Intervention(fam, "set", target=None), 1, rng, same_target=False)
-        out += got
+        for w in got:                      # a repeated witness adds no evidence; never spend budget on it twice
+            k = (w.family, w.case, w.target, w.visit)
+            if k not in seen:
+                seen.add(k)
+                out.append(w)
     return out
 
 
@@ -116,17 +134,57 @@ def _probe_set(ws, runner, scope, ev, label):
 
 
 def _directed(req, iv, schema, runner, registry, backend, budget, rng, ev):
+    """Today's directed method; where it permits, the exact stated-rule checks of Phase 2 (manifests/blindspots.md),
+    on the runs today's probes made plus, for case-level families, the request's own change. The checks keep their
+    own registry rows (op `<op>|exact`), so a failure they find never changes a row today's method decides."""
+    ctx = {}
+    d = _directed_today(req, iv, schema, runner, registry, backend, budget, rng, ev, ctx)
+    if not d.permit:
+        return d
+    key = Key(backend.name, backend.program_hash(), backend.adapter_version, schema.policy_fingerprint(), iv.family,
+              f"{iv.op}|exact")
+    if registry is not None:
+        state, rows = registry.state(key, iv.target)
+        if state == "failed":
+            bad = next(r for r in rows if r["passed"] is False)
+            return Decision(False, f"exact-check capability failed earlier for {iv.family}/{iv.op}/{iv.target} on {bad['scope']}", ev)
+    checks = []
+    if iv.family in CASE_LEVEL:
+        checks = [(f"exact {w.family}", lambda w=w: runner.exact_witness(req.scope, w)) for w in ctx.get("ws", [])]
+        checks.append(("exact requested change", lambda: runner.exact_own(req.scope, iv)))
+    elif iv.family == "routing_probability":
+        if any(n == "records routing_probability" and ok is True for n, ok, _ in ev):
+            checks.append(("exact routing_probability paths", lambda: runner.route_paths(req.scope, iv)))
+        checks.append(("exact routing_probability timing", lambda: runner.exact_rule(req.scope, iv)))
+    elif iv.family == "resource_availability":
+        checks.append((f"exact {iv.op}", lambda: runner.resource_exact(req.scope, iv)))
+        checks.append((f"exact {iv.op} timing", lambda: runner.exact_rule(req.scope, iv)))
+    elif iv.family == "case_set" and "w_case" in ctx:
+        checks.append(("exact case_removal", lambda: runner.case_exact(req.scope, ctx["w_case"])))
+        checks.append(("exact case_removal timing", lambda: runner.exact_rule(req.scope, iv)))
+    for name, run in checks:
+        ok, why = run()
+        ev.append((name, ok, why))
+        _record(registry, key, iv, req.scope, name, ok, why)
+        if ok is False:
+            return Decision(False, f"directed: {why}", ev)
+    return d
+
+
+def _directed_today(req, iv, schema, runner, registry, backend, budget, rng, ev, ctx):
     key = Key(backend.name, backend.program_hash(), backend.adapter_version, schema.policy_fingerprint(), iv.family, iv.op)
     if registry is not None:
         state, rows = registry.state(key, iv.target)
         if state == "failed":
             bad = next(r for r in rows if r["passed"] is False)
             return Decision(False, f"capability failed earlier for {iv.family}/{iv.op}/{iv.target} on {bad['scope']}", ev)
-        # Only a passing input-use or rule probe can be reused; a no-op alone never permits, here or fresh.
-        # Route-probability probes test the request's own probabilities, so their passes are never reused for a
-        # different request; a recorded failure still blocks (review 4).
-        here = [r for r in rows if r["scope"] == req.scope and r["passed"] is True and r["probe"] != "no_op"
-                and iv.family != "routing_probability"]
+        # Only family-level passes are reused: input-use witnesses, and case removal (which removes a different case,
+        # never the request's). A no-op alone never permits, here or fresh. Rules that test the request's own
+        # values or interval (route probabilities, worker changes) are never reused for a different request; a
+        # recorded failure still blocks (review 4 of 2026-11-07 for route probabilities; widened to worker changes on
+        # 2026-11-09, after a pass on one unavailable interval was reused for another).
+        here = [r for r in rows if r["scope"] == req.scope and r["passed"] is True
+                and (str(r["probe"]).startswith("input_use") or r["probe"] == "rule case_removal")]
         if here:
             ev.append(("reused", True, f"{len(here)} earlier passing probes for {iv.target} on this scope"))
             return Decision(True, f"reused evidence for {iv.family}/{iv.op}/{iv.target} on {req.scope}", ev)
@@ -144,11 +202,13 @@ def _directed(req, iv, schema, runner, registry, backend, budget, rng, ev):
     elif iv.family == "case_set":
         others = [c for c in schema.cases.get(req.scope, []) if c not in (iv.case, req.query.case)]
         if others:
-            results.append(("rule case_removal", *runner.case_removal(req.scope, iv, rng.choice(others))))
+            ctx["w_case"] = rng.choice(others)
+            results.append(("rule case_removal", *runner.case_removal(req.scope, iv, ctx["w_case"])))
     else:
         # Input use must be shown by at least one witness; a passing no-op alone never permits. Witnesses run first,
         # the no-op only if budget remains, and probing stops at the first failure.
         ws = witnesses(runner.nav, schema, req.scope, iv, max(budget - 1, 1), rng)
+        ctx["ws"] = ws
         for w in ws:
             results.append((f"input_use {w.family}", *runner.input_use(req.scope, w)))
             if results[-1][1] is False:

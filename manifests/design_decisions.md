@@ -60,7 +60,7 @@ Checks on the reference engine (see the manifest):
 
 Procure_to_Pay is the alternative if Pharmacy proves too insensitive at the pilot. It queues heavily, but all its durations are fixed.
 
-## D7. Model lineup: Tentative until the Nov 9 freeze (Ashraf, 2026-11-04)
+## D7. Model lineup: Tentative until the Nov 9 freeze (Ashraf, 2026-11-04). Superseded in part by D22: all five models on every platform
 
 Replaces the earlier gpt-oss-20b, Qwen3.6-27B and Gemma-4-31B plan.
 
@@ -220,7 +220,7 @@ Decisions accepted by Ashraf on 2026-11-06:
 5. **G-Sim:** capped at 3 hours and $1, then labeled by evidence.
 6. **Required:** Study A, Study B analyzed offline from shared runs, a small reuse study, ablations reusing that evidence, and vanilla LLM and RAG. **Optional:** ReAct, disagreement beyond the shared reading candidate, and paraphrase volume.
 7. **Credits:** Claude cohorts added because Ollama credits are short. See D18.
-8. **Dates and semantics:** freeze moves to Nov 10. Active-case cancellation stays out of the benchmark and is disclosed. Ashraf's hand-check and rulings on route order and paused tasks should arrive before the freeze.
+8. **Dates and semantics:** freeze moves to Nov 10 (later moved to Nov 11, see D23). Active-case cancellation stays out of the benchmark and is disclosed. Ashraf's hand-check and rulings on route order and paused tasks should arrive before the freeze.
 
 Current outside facts checked on 2026-11-06: CFP dates are Nov 8 and Nov 15, 11:59 PM Pacific. DEVS-Gen release `czyarl/devs_gen_code` at `f7461b9f9d23`, Apache-2.0 with bundled GPLv3 xDEVS, Linux tools required (WSL Ubuntu-24.04 is present). G-Sim `samholt/generative-simulations` at `72b5d51a7790`, MIT.
 
@@ -361,10 +361,183 @@ Skipping probes on new records was the bug, and it contradicts AGENTS.md. This c
 
 **Re-scoring.** Pilot v1b (`scripts/pilot_rerun_routing_b.py`) re-decides only the directed routing_probability decisions, for OTF and DEVS-Gen, on the 112 valid questions, with fresh registries.
 
+## D22. Platforms, trust-judge baselines and models (Ashraf, 2026-11-08 and 11-09)
+
+After the Nov 8 meeting with Dr. Roy. The full design and its review are in `manifests/baseline_judges_design.md`, decisions 1 to 7.
+
+**Platforms.** OTF-Tools, DEVS-Gen and a plain reason-and-code agent (named generically in the paper, not "ReCode") produce programs and answers. They are not baselines.
+
+**Baselines are other trust judges:**
+- the native check;
+- an answer-level and a program-level LLM-as-a-judge;
+- a raw ReAct judge: one sandbox code tool, at most 8 turns;
+- history-only, generic tests and disagreement.
+
+**Ablations of the library.** This supersedes D16.6, where ReAct was optional.
+
+**Models:**
+- All five models (Sonnet 5.5, Haiku 5.5, gpt-oss, Gemma, Qwen) build on every platform. B0 also builds with Sonnet and Haiku, and B0 stays native-only.
+- Haiku judges every row. The other four models judge one shared random subset.
+- Per-question work stays on Haiku.
+
+**Claude stop** raised to $25.
+
+**Abstract** re-registered on 2026-11-08 with these platforms, models and domains (`manifests/abstract_draft.md`).
+
+## D23. Domains, test sets, freeze and scoring (Ashraf, 2026-11-08 and 11-09)
+
+**Domains.** Manufacturing, IT operations, Loan and Pharmacy.
+- Manufacturing and IT reuse the MLSys documents and simulators, with new questions.
+- Their gold is OTF's simulator plus its re-implementation, with a sampled blind check (`manifests/domain_readiness.md`).
+- This supersedes D16.4, which made manufacturing and IT optional for DEVS-Gen.
+
+**Test programs.** Dev-built programs are reused on unseen test records, for all platforms and domains. There are no test builds.
+
+**Sizes:**
+
+| | Manufacturing | IT | Workflows |
+|---|---|---|---|
+| Dev | 48 | 60 | pilot v1, 112 valid |
+| Test | 96 | 120 | 240 |
+
+**Freeze** moved to Nov 11. Completion stays Nov 13.
+
+**Policy fingerprint.** It drops the document's chapter list (option (a)), as `mlsys.py` already does, so dev evidence carries over to test. This is a library change made after the pilot, disclosed and reviewed.
+
+**Policy-variant reuse.** 96 workflow questions on a real policy change (P) and a harmless rewording (H), in the workflow test-set session's files.
+
+**Scoring rule A.** A row counts as answered only if it is trusted and an answer exists; otherwise it is Can't express. The rule is the same for every judge.
+
+**Builder isolation.** Test material is hidden from builders during DEVS-Gen and coding-agent builds.
+
+**Disclosure.** Probe soundness was run on test documents with the reference only, and rule A was chosen with test-side counts in view. No probe, threshold or prompt was changed because of either.
+
+## D24. Library fixes after the full review (Ashraf approved, 2026-11-09; made after the development pilot)
+
+A full independent review found ways for the gate to trust a wrong answer, and to reject a correct program. Every change below was made after seeing development data and the policy-variant soundness check. All are disclosed. None was made on test labels or on any system's results on test questions.
+
+**Fixes:**
+
+1. **Route rule, for programs whose records name decisions (DEVS-Gen).**
+   - The old rule compared visit-1 decisions only, so a program that ignored a change acting on a later visit passed.
+   - It now checks every recorded decision with a printed draw.
+   - The earliest switched decision must appear with its new route, and nothing before it may move.
+   - Every factual case end must still be recorded.
+   - Every case whose path under the change is fully printed must perform exactly that path's activities (and waits, if the program prints them).
+   - If no altered path is fully printed, the result is Untestable.
+   - The no-switch check (D21, first made for the record form) and the near-boundary guard now also apply to the rule form.
+2. **Reuse.**
+   - Reused passes: input-use witnesses and case removal (a different case).
+   - Never reused: route-probability and worker-change rules, which test the request's own values or interval. Before, a pass on one unavailable interval was reused for another.
+   - A recorded failure still blocks.
+3. **NaN and infinite values** are rejected by the contract and the parser, as `mlsys` already did.
+4. **`program_wide`** is seeded by program and scope, so one program gets one verdict per scope (also in `mlsys`).
+5. **Generic tests never repeat a witness** (also in `mlsys`). This makes the baseline fairer.
+6. **Route-flip witnesses.**
+   - The library reads the control flow the document states and walks a case's path from the printed plans and draws.
+   - A flip is used only if the whole path after it is printed and at least one activity or wait changes.
+   - If the flow cannot be read, no flip is used.
+   - Effect: no witness removed on dev; 2 removed on the test documents (the known deep ones); 4 removed on the policy variants (the misfires).
+7. The `replay` configuration's docstring now says the contract applies first.
+
+**Evidence:**
+- Offline tests: 0 failures, with new checks for each fix in `review3_tests` and `review4_tests`.
+- Dev soundness: 0 rejections of the reference on the route rule (184 cases), route records (204 per shape), route flips (433) and added workers (72).
+- The stated-flow walker reproduces all 480 recorded case paths on dev, test and policy documents. Path check against the reference: 2,610 paths, 0 mismatches.
+- The reviewer's adversarial programs (right decisions only, truncated output, dropped case ends) are now never Trusted.
+- Review: two rounds by a separate agent.
+
+**Review 5** (the confirmation round) found two more gaps, both fixed:
+- The route rule now returns Untestable, never Trusted, when the program prints no task records or the flow cannot be read. It uses task ends when no task starts are printed.
+- If a program's own factual records do not list each case's path, the shape cannot be compared, and the result is Untestable rather than Caught.
+
+**Limit to report:** after the first switched decision, the route rule checks routes, case ends and paths, but not timing. A program with the right paths and wrong times after the switch would pass this probe; only the history check and other probes bear on timing.
+
+**Consequence:** dev pilot decisions change where these bugs applied, mainly DEVS-Gen routing-probability and resource-availability decisions. The pilot is rescored with the fixed library before the freeze.
+
+## D25. IT CPU/memory blind spot resolved (Ashraf approved the search, 2026-11-09)
+
+**The blind spot.** `task_request` witnesses could not tell CPU from memory when one machine was largest in both. A planted CPU-into-memory program then had 5 wrong answers Trusted on test.
+
+**The method** (`manifests/it_blindspot.md`) is a deterministic router in `mlsys._directed`:
+- Where no blind spot exists, today's method runs unchanged.
+- In a blind spot, today's probes still run first. Only where they would permit does a split step run: it removes the dominating machine(s), prechecks that removal alone, then runs a discriminating witness on the remaining cluster.
+- If that split step cannot resolve the case, the result is Untestable.
+
+**How it was developed.**
+- Designed and iterated on dev only: attempt 1 failed the bar and was discarded; attempt 2 was adopted.
+- Reviewed by a separate agent, with fixes applied for registry isolation.
+- Then run once on test.
+
+**Results.**
+- On 40,800 dev rows, with fresh and shared registries:
+  - every non-blind row is identical to before;
+  - the reference is Caught 0 times;
+  - no Caught row is lost.
+- Test: reference `task_request` stays 24 of 24 Trusted; CPU-into-memory wrong answers Trusted fall from 5 to 0.
+- The Untestable fallback, also approved, was not needed.
+
+**Credit.** DeMillo and Offutt (1991), constraint-based test data generation.
+
+**Limits.**
+- A resolved row costs 4 executions instead of 2.
+- It depends on the program handling machine removal; where it doesn't, the row is Untestable.
+- The generic and program-wide baselines keep the blind spot.
+
+**Disclosure.** Made after seeing test diagnostics from planted bugs; no real system results were seen.
+
+## D26. Blind-spot checks for every family (Ashraf approved the extension, 2026-11-09; made after the development pilot)
+
+Details are in `manifests/blindspots.md`.
+
+**Method.**
+- Today's method runs first and is unchanged; every decline keeps its decision, reason and evidence.
+- Where it would permit, exact stated-rule checks run:
+  - workflow: task and wait timing, case paths from printed draws, worker names and unused workers, other cases' ends, and the request's own change;
+  - manufacturing: dispatch completeness;
+  - IT: a fill witness, plus the D25 split.
+- A failed check gives Caught, under its own registry key.
+
+**Development.**
+- Designed on dev with a confusion catalog written before any measurement; 3 attempts were adopted.
+- Reviewed by a separate agent.
+- Run once on test.
+
+**Results.**
+- On test, the reference is never Caught, and every directed term and reason is unchanged.
+- Planted wrong answers Trusted fall to 0 for every confusion except three: the RA residue (pool and count on used workers' unavailability) and TP-add. These are kept as reported limits (Ashraf, 2026-11-10).
+
+**Cost.** Workflow directed executions on test rose from 644 to 882, and DEVS rows add about one execution each.
+
+**Limits.**
+- The checks need generic-format records that name tasks, waits, workers and visits.
+- On OTF's free-form records they do not apply. They add Untestable-labelled evidence but change no permit.
+
+**Disclosure.** Made after seeing test diagnostics from planted programs; no real system results were seen.
+
+## D27. Main-run cuts (Ashraf, 2026-11-10)
+
+Approved because the full plan was several times over the remaining credit (about $89 Claude, $8.73 Ollama) and could not finish before the freeze.
+
+1. **Ollama models (gpt-oss, Gemma, Qwen) stay on OTF-Tools only,** where their programs already exist. No DEVS-Gen or coding-agent builds on them, and no Ollama judges. This supersedes the platform and judge parts of D22 decision 6. The abstract's "programs built by five language models" stays true through OTF-Tools.
+2. **The plain coding agent builds with Haiku 5.5 and Sonnet 5.5,** 2 builds per domain on all four domains (16 programs).
+3. **Judges run on stratified subsets,** with row ids drawn with a fixed seed and stratified by process, cohort and family:
+   - Haiku answer-level judge on about 3,000 answered rows;
+   - Haiku ReAct judge on about 1,000;
+   - the program-level judge on every program;
+   - Sonnet answer-level judge on a shared 150 rows, also judged by Haiku;
+   - no Sonnet ReAct judge.
+4. **Policy-reuse questions run on Claude-built programs only.**
+5. **Timing:** code freezes at the end of Nov 11; main runs Nov 11-12; analysis and the paper Nov 12-13.
+
+Our library and the rule-based judges run on every row (no model cost). DEVS-Gen manufacturing and IT tasks are built on Claude (Haiku and Sonnet), and B0 builds on Claude as decided in D22.
+
+**Estimated total spend** is about $75-80 of Claude credit. The runner's Claude stop ($25) will be raised before the main run, and the raise reported.
+
 ## D9. Independent checker: Decided (Ashraf, 2026-11-04)
 
 A separately started agent writes the checker from the written spec and I/O formats alone. See D5, condition 4. Implementations are compared on small scenarios and boundary cases.
 
 ## D10. Approval at freeze: Open, needs Ashraf
 
-Proposed: one short stop at the freeze, now Nov 10 (D16).
+Proposed: one short stop at the freeze, now Nov 11 (D23). Still open on 2026-11-09.

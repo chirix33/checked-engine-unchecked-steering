@@ -1,6 +1,6 @@
 # Baselines that judge trust: design proposal (2026-11-08, revised after review 1)
 
-Status: **proposal, not implemented, nothing run; Ashraf's decisions of 2026-11-08 applied (see "Decisions").** Written after the Nov 8 meeting with Dr. Roy (`meeting/nov_8_part_1.docx`). One independent review is done and its fixes are applied (listed at the end). Becomes D22 once Ashraf settles the open decisions.
+Status: **design settled by Ashraf on 2026-11-08 and 11-09 (see "Decisions"; recorded as D22). Not implemented yet: no judge code, no coding-agent platform, nothing run.** Written after the Nov 8 meeting with Dr. Roy (`meeting/nov_8_part_1.docx`). One independent review is done and its fixes are applied (listed at the end). Becomes D22 once Ashraf settles the open decisions.
 
 ## Why the baselines change
 
@@ -14,7 +14,7 @@ So the paper's main comparison is between **trust judges**, all deciding on the 
 
 | Role | Methods | Status |
 |---|---|---|
-| **Platforms** (produce programs and answers; not compared with each other) | OTF-Tools (R1 programs; B0 kept as a pinned native reference) and DEVS-Gen. A third platform is open decision 1. | Built |
+| **Platforms** (produce programs and answers; not compared with each other) | OTF-Tools (R1 programs; B0 kept as a pinned native reference) and DEVS-Gen. The third platform is a plain reason-and-code agent (decision 1). | Built |
 | **Our method** | The library's `directed` gate | Built, piloted |
 | **Baselines: other trust judges** | 1. **Native check**: each platform's own single pass-or-fail verdict. This is the "current checks" of the abstract. | Built (`native`) |
 | | 2. **LLM-as-a-judge, answer level**: one model call reads the records, the program, the question and the answer, and says whether to trust the answer. | **New** |
@@ -46,7 +46,7 @@ At 12:08 Dr. Roy calls the LLM judge "basically your pass or fail verdict". The 
 
 - **Says:** `TRUST` or `DECLINE`, a confidence from 0 to 100 that the answer is exactly right, and a one-line reason.
 - **Failures:** an unparsable reply, an output cutoff or a refusal counts as `DECLINE` at the lowest confidence, and is reported apart.
-- **Model:** Haiku 5.5, the fixed per-question model (D18), with adaptive thinking at medium effort and the same output cap as the other per-question calls. A Sonnet 5.5 judge on a fixed random subset is open decision 3.
+- **Model:** Haiku 5.5, the fixed per-question model (D18), with adaptive thinking at medium effort and the same output cap as the other per-question calls. Sonnet 5.5 and the other models judge a shared random subset (decisions 5 and 6).
 - **Self-preference:** Claude judging Claude-built programs may favor them, which is disclosed. The Ollama-built programs give a partial check.
 
 ## Baseline 3: LLM-as-a-judge, program level
@@ -85,11 +85,12 @@ It holds no gold, reference engine, hidden bindings, other programs or build his
   - precision at the gate's coverage, by threshold on confidence;
   - precision at its own `TRUST` verdict;
   - its full risk-coverage curve.
+- **Answered means trusted and an answer exists** (Ashraf, 2026-11-09). A row that a judge trusts but where the program produced no answer is recorded as Can't express, never as covered. The rule is the same for every judge.
 - **Ties:** confidences will be coarse. At the matched point, report expected precision over the tied rows. That is exact, so no random tie-break is needed.
 - **Uncertainty:** the two-level bootstrap (programs, then questions). The coverage match is redone inside each resample. Gate-minus-judge differences are reported as paired. Matching to the gate's coverage is the same analysis step for every judge, not tuning on labels.
 - **Results** per program and per family.
 
-**Dev results don't count as evidence.** Form (b) and the no-switch check were designed after seeing these 112 questions (D21), so a dev comparison favors the gate. Dev runs exist only to debug the judges and fix their prompts. Prompts may be revised on dev only, and are frozen with everything else on Nov 10.
+**Dev results don't count as evidence.** Form (b) and the no-switch check were designed after seeing these 112 questions (D21), so a dev comparison favors the gate. Dev runs exist only to debug the judges and fix their prompts. Prompts may be revised on dev only, and are frozen with everything else on Nov 11.
 
 ## Code changes needed
 
@@ -113,9 +114,9 @@ Running everything on all dev rows could cost $39–90. That is too much, since 
 - then a stratified subset of about 300 rows, by cohort and family;
 - the program-level judge in full.
 
-That comes to about $8–12. The rest is kept for the test set. That set isn't generated yet, so its cost is estimated per row and decided once its size is known.
+That comes to about $8–12. The rest is kept for the test set. The test sets now exist (2026-11-09: workflow 240, manufacturing 96, IT 120, plus 96 policy-variant questions in progress). **The test-run cost estimate from actual row counts is still owed**, and goes to Ashraf before any paid run.
 
-The runner's Claude stop is $15 (D18). $5.99 is on that ledger, so only $8.76 more can be spent; raising the stop is open decision 2. DEVS-Gen's estimated $5.08 is tracked apart.
+The runner's Claude stop is now $25 (decision 2). With $5.99 on that ledger, about $18.76 can still be spent before it stops. DEVS-Gen's estimated $5.08 is tracked apart.
 
 ## Decisions (Ashraf, 2026-11-08)
 
@@ -173,8 +174,8 @@ The runner's Claude stop is $15 (D18). $5.99 is on that ledger, so only $8.76 mo
 
 ## What this doesn't change, and what it depends on
 
-- **Domains:** manufacturing, IT operations, loan and pharmacy. The pilot covers loan and pharmacy only. Claude-built OTF programs for manufacturing and IT operations exist (`runs/build_test_r1_claude/*/mfg_dev`, `itops_dev`), but those domains still need questions and gold before the main run.
-- **DEVS-Gen scope:** Dr. Roy's Experiment 2 is DEVS-Gen on all four domains, while D16 makes manufacturing and IT optional for it. DEVS-Gen tasks exist for loan and pharmacy only.
+- **Domains:** manufacturing, IT operations, loan and pharmacy. The pilot covers loan and pharmacy only. Claude-built OTF programs for manufacturing and IT operations exist (`runs/build_test_r1_claude/*/mfg_dev`, `itops_dev`), and their dev and test questions with checked gold are done (`manifests/domain_readiness.md`).
+- **DEVS-Gen scope:** Dr. Roy's Experiment 2 is DEVS-Gen on all four domains, while D16 makes manufacturing and IT optional for it. DEVS-Gen tasks now exist for all four domains; manufacturing and IT are installed but not built.
 - **Unchanged:** our library, B0, the gold source, the splits rule and form (b) (D21).
 
 ## Review 1 (2026-11-08): what changed
@@ -183,7 +184,7 @@ An independent agent checked the proposal against the code, the transcript and m
 - **DEVS-Gen program view:** it is the generated model files, not `run.py`.
 - **History check:** the earlier text wrongly said the gate replays all four runs. It replays only the queried run. The judges now get that run only, and the ReAct `read_records` tool was removed, because it would have given the ReAct judge more than the gate.
 - **OTF view:** `code` only, so the native verdict doesn't leak.
-- **ReAct output:** the run tool now returns a record diff, matching what probes compare.
+- **ReAct output:** the run tool returned a record diff. Superseded: decision 4 replaced that tool with a raw sandbox code tool.
 - **Disclosure:** that the judges see the question text and the answer.
 - **Equal access:** argued explicitly; ReAct with probe tools added as an optional ablation.
 - **Cost:** recomputed from measured calls. Caching needs a client change. Row counts were corrected from 1,960 and 1,290 to 1,758 and 1,171 answered rows. Dev spend was cut to a smoke run plus a subset.

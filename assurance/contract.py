@@ -6,6 +6,7 @@ question meant; interpretation is evaluated separately.
 """
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 from .request import FAMILIES, ProcessSchema, Request
@@ -36,11 +37,17 @@ def validate(req: Request, schema: ProcessSchema) -> ContractResult:
         return ContractResult("unknown_target", f"query case {q.case!r}")
     if q.kind == "case_ends_by" and (q.deadline is None or q.deadline < 0):
         return ContractResult("invalid_time", "deadline")
+    if q.deadline is not None and not _finite(q.deadline):
+        return ContractResult("invalid_time", "deadline is not a finite number")
     if not req.interventions:
         return ContractResult("unresolved_meaning", "no intervention")
     if len(req.interventions) > 1:
         return ContractResult("unsupported_operation", "only one change per request is supported")
     for iv in req.interventions:
+        # NaN and infinite values are malformed, not values (guard added 2026-11-09, as in `mlsys`).
+        nums = [iv.value, iv.effective_from, iv.effective_to] + list((iv.routes or {}).values())
+        if any(x is not None and not _finite(x) for x in nums):
+            return ContractResult("invalid_units", "a value is not a finite number")
         if iv.family not in FAMILIES or iv.op not in FAMILIES[iv.family]:
             return ContractResult("unsupported_operation", f"{iv.family}/{iv.op}")
         if iv.case is not None and iv.case not in cases:
@@ -87,3 +94,10 @@ def validate(req: Request, schema: ProcessSchema) -> ContractResult:
             if iv.case == q.case:
                 return ContractResult("unsupported_operation", "the queried case is the one removed")
     return ContractResult(OK)
+
+
+def _finite(x) -> bool:
+    try:
+        return math.isfinite(float(x))
+    except (TypeError, ValueError, OverflowError):
+        return False

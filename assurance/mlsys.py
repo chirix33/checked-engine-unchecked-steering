@@ -606,13 +606,11 @@ class DEVSDomain:
         return ch["last"] if self.schema.domain == MFG else IT_HORIZON
 
     def _wsl(self, data, horizon, timeout):
-        bw = "$HOME/trust2027/tools/usr/bin/bwrap"
+        from .backends import sandbox_command
         venv = "$HOME/trust2027/devs_gen_code/.venvs/devs-gen"
-        py_home = "$HOME/.local/share/uv/python"
-        cmd = (f"cd '{self.dir}' && {bw} --ro-bind / / --tmpfs /mnt --tmpfs /home "
-               f"--ro-bind {venv} {venv} --ro-bind-try {py_home} {py_home} --ro-bind '{self.dir}' '{self.dir}' "
-               f"--dev /dev --proc /proc --tmpfs /tmp --unshare-net --die-with-parent "
-               f"--chdir '{self.dir}' {venv}/bin/python run.py --horizon {horizon}")
+        # Hardened 2026-11-10 (see `backends.sandbox_command`).
+        import shlex
+        cmd = f"cd {shlex.quote(str(self.dir))} && " + sandbox_command(self.dir, f"{venv}/bin/python run.py --horizon {horizon}")
         p = subprocess.run(["wsl.exe", "-d", "Ubuntu-24.04", "--", "bash", "-c", cmd], input=json.dumps(data),
                            capture_output=True, text=True, timeout=timeout, env={**os.environ, "MSYS_NO_PATHCONV": "1"})
         return p.returncode, p.stdout, p.stderr
@@ -866,6 +864,7 @@ class ProbeRunner:
         data = apply_inputs(inputs_from_schema(s, scope), iv)
         bad = completeness(s, scope, data, c1)
         bad += mfg_invariants(s, scope, data, c1) if s.domain == MFG and not bad else []
+        self.last_rule = (scope, iv, data, c1)      # for the dispatch check after a permit (Phase 2)
         bad += it_invariants(s, scope, data, c1, iv) if s.domain == IT and not bad else []
         if s.domain == IT and not bad:
             if iv.family == "failure_removal" and any(e[1] == "fail" and e[3] == iv.target for e in c1):
@@ -986,6 +985,23 @@ def mfg_invariants(schema, scope, data, canon) -> list:
     return bad
 
 
+def mfg_dispatch_full(schema, scope, data, canon) -> list:
+    """Dispatch ships each order as far as stock and remaining capacity allow (policy step 3). So at the end of a
+    day, a product still backordered has no stock left, or the capacity left is below one unit of it (Phase 2,
+    manifests/blindspots.md)."""
+    ch = schema.chapters[scope]
+    g = _grams(schema, scope)
+    cap = {x["day"]: x["capacity_kg"] for x in data["days"]}
+    bad = []
+    for d in range(ch["first"], ch["last"] + 1):
+        left = round(cap[d] * 1000) - sum(canon[("shipped", p, d)] * g[p] for p in ch["products"])
+        for p in sorted(ch["products"]):
+            if canon[("backordered", p, d)] > 0 and canon[("stock", p, d)] > 0 and left >= g[p]:
+                bad.append(f"day {d}: {p} stays backordered with stock on hand and {left / 1000:g} kg of capacity unused")
+                return bad
+    return bad
+
+
 def it_invariants(schema, scope, data, canon, iv) -> list:
     """No machine over capacity after the events at any time, nothing runs on a down or removed machine, removed
     tasks leave no records, no start before submission."""
@@ -1056,13 +1072,20 @@ def decide(config: str, req: DRequest, schema: DomainSchema, runner: ProbeRunner
     if config == "directed":
         d = _directed(req, iv, schema, runner, registry, backend, budget, rng, ev)
     elif config == "generic":
-        picks, tries = [], 0
+        picks, tries, seen = [], 0, set()
         while len(picks) < cap(budget) and tries < 20 * cap(budget):
             tries += 1
-            picks += runner.witnesses(req.scope, rng.choice(fams), 1, rng)
+            for w in runner.witnesses(req.scope, rng.choice(fams), 1, rng):
+                k = repr(w)                # a repeated witness adds no evidence (fixed 2026-11-09 after review)
+                if k not in seen:
+                    seen.add(k)
+                    picks.append(w)
         d = _probe_set(picks[:cap(budget)], runner, req.scope, ev, "generic")
     else:
-        picks = [w for f in fams for w in runner.witnesses(req.scope, f, 1, rng)]
+        # One verdict per program and scope, as in `policy` (fixed 2026-11-09 after review).
+        from .policy import program_seed
+        prng = random.Random(program_seed(backend, req.scope, seed))
+        picks = [w for f in fams for w in runner.witnesses(req.scope, f, 1, prng)]
         d = _probe_set(picks, runner, req.scope, ev, "program-wide")
     d.probes_run = runner.executions - start
     return d
@@ -1082,6 +1105,67 @@ def _probe_set(ws, runner, scope, ev, label):
 
 
 def _directed(req, iv, schema, runner, registry, backend, budget, rng, ev):
+    """Today's directed method, then, where it permits an IT task_request, the fill witness (Phase 2)."""
+    d = _directed_today(req, iv, schema, runner, registry, backend, budget, rng, ev)
+    if d.permit and schema.domain == MFG:
+        return _dispatch_check(req, iv, schema, runner, registry, backend, ev, d)
+    if not d.permit or schema.domain != IT or iv.family != "task_request":
+        return d
+    key = Key(backend.name, backend.program_hash(), backend.adapter_version, schema.policy_fingerprint(), iv.family,
+              f"{iv.op}|fill {iv.resource}")
+    if registry is not None:
+        state, rows = registry.state(key, reg_target(iv))
+        if state == "failed":
+            bad = next(r for r in rows if r["passed"] is False)
+            return Decision(False, f"fill capability failed earlier for {iv.family}/{iv.resource} on {bad['scope']}", ev)
+    ws = _fill_witnesses(schema, req.scope, iv)
+    if not ws:
+        return d
+    w = rng.choice(ws)
+    ok, why = runner.input_use(req.scope, w)
+    name = f"input_use {w.family} (fill {w.resource})"
+    ev.append((name, ok, why))
+    _record(registry, key, iv, req.scope, name, ok, why)
+    if ok is False:
+        return Decision(False, f"directed: {why}", ev)
+    return d
+
+
+def _dispatch_check(req, iv, schema, runner, registry, backend, ev, d):
+    """Manufacturing, where today's method permits: dispatch completeness on the rule probe's run of the request's
+    own change (no extra execution), with its own registry rows (op `<op>|exact`)."""
+    key = Key(backend.name, backend.program_hash(), backend.adapter_version, schema.policy_fingerprint(), iv.family,
+              f"{iv.op}|exact")
+    if registry is not None:
+        state, rows = registry.state(key, reg_target(iv))
+        if state == "failed":
+            bad = next(r for r in rows if r["passed"] is False)
+            return Decision(False, f"exact-check capability failed earlier for {iv.family}/{iv.op}/{iv.target} on {bad['scope']}", ev)
+    last = getattr(runner, "last_rule", None)
+    if last is None or last[0] != req.scope or last[1] is not iv:
+        return d
+    bad = mfg_dispatch_full(schema, req.scope, last[2], last[3])
+    ok, why = (not bad), ("; ".join(bad[:2]) if bad else "every backordered product is out of stock or out of capacity")
+    ev.append(("exact dispatch", ok, why))
+    _record(registry, key, iv, req.scope, "exact dispatch", ok, why)
+    return Decision(False, f"directed: {why}", ev) if bad else d
+
+
+def _fill_witnesses(schema, scope, iv) -> list:
+    """Started tasks other than the request's whose other resource fits the largest machine in the asked
+    resource, with that machine up at the end, set to exactly that machine's capacity. A correct program must
+    start and finish such a task (completeness); one that adds the value to the current request never can."""
+    ch = schema.chapters[scope]
+    res, other = iv.resource, "mem" if iv.resource == "cpu" else "cpu"
+    machines, tasks = ch["machines"], ch["tasks"]
+    v = max(a[res] for a in machines.values())
+    top = [m for m in machines.values() if m[res] == v and (m["down"] is None or m["back"] is not None)]
+    started = sorted({e[2] for e in ch["log"] if e[1] == "start"})
+    return [Change("task_request", "set", target=t, value=float(v), resource=res) for t in started
+            if t != iv.target and tasks[t][res] != v and any(m[other] >= tasks[t][other] for m in top)]
+
+
+def _directed_today(req, iv, schema, runner, registry, backend, budget, rng, ev):
     key = Key(backend.name, backend.program_hash(), backend.adapter_version, schema.policy_fingerprint(), iv.family, iv.op)
     if registry is not None:
         state, rows = registry.state(key, reg_target(iv))
@@ -1101,9 +1185,13 @@ def _directed(req, iv, schema, runner, registry, backend, budget, rng, ev):
             if ok is False:
                 _record(registry, key, iv, req.scope, "rule " + iv.family, ok, why)
                 return Decision(False, f"directed: {why}", ev)
+            if _scope_blind(schema, req.scope, iv):
+                return _blind_spot(req, iv, schema, runner, registry, key, budget, rng, ev, len(here))
             return Decision(True, f"reused evidence for {iv.family}/{iv.op}/{iv.target} on {req.scope}", ev)
     results = []
-    for w in runner.witnesses(req.scope, iv.family, max(cap(budget) - 2, 1), rng, avoid=iv):
+    ws = runner.witnesses(req.scope, iv.family, max(cap(budget) - 2, 1), rng, avoid=iv)
+    blind = _blind(schema, req.scope, iv, ws)
+    for w in ws:
         label = f"input_use {w.family}" + ("" if discriminates(schema, req.scope, w) else " (cannot tell cpu from mem)")
         results.append((label, *runner.input_use(req.scope, w)))
         if results[-1][1] is False:
@@ -1131,7 +1219,167 @@ def _directed(req, iv, schema, runner, registry, backend, budget, rng, ev):
                         ev, untested=not cannot, inexpressible=cannot)
     if used_ok == 0:
         return Decision(False, "directed: no input-use probe could be run", ev, untested=True)
+    if blind:
+        return _blind_spot(req, iv, schema, runner, registry, key, budget, rng, ev, used_ok)
     return Decision(True, f"directed: {used_ok} input-use probes and the rule probe passed", ev)
+
+
+# ---------------------------------------------------------------- IT CPU/memory blind spot (manifests/it_blindspot.md)
+BLIND = " (cannot tell cpu from mem)"
+TOLD = "told from the other resource"
+
+
+def _blind(schema, scope, iv, ws) -> bool:
+    """Router: a task_request request whose selected witnesses exist and none of which can tell a program that
+    writes the change into the other resource from a correct one. Everything else keeps today's method."""
+    return (schema.domain == IT and iv.family == "task_request" and bool(ws)
+            and not any(discriminates(schema, scope, w) for w in ws))
+
+
+def _scope_blind(schema, scope, iv) -> bool:
+    """Router for the registry-reuse path: a task_request whose window and resource have no discriminating
+    witness (the same test as `_blind`, since today's witnesses draw the discriminating ones first). Today's reuse
+    runs unchanged; only where it would permit, the blind-spot step decides, with its own registry rows
+    (`_split_key`), so today's registry rows evolve exactly as before."""
+    return (schema.domain == IT and iv.family == "task_request"
+            and not _kinds(schema, scope, iv.resource, schema.chapters[scope]["machines"]))
+
+
+def _split_key(key, iv):
+    """The blind-spot step's own registry key, one per resource. Its rows never reach today's key, so a failure
+    found by the split can block only later blind-spot rows of that resource, never a row today's method decides
+    (review of attempt 2: a shared registry otherwise turned later non-blind rows into Already caught)."""
+    return replace(key, op=f"{key.op}|split {iv.resource}")
+
+
+def _kinds(schema, scope, res, machines) -> list:
+    """Today's discriminating witness kinds (`sharp`, `pos` in `ProbeRunner.witnesses`) on a given machine set."""
+    ch = schema.chapters[scope]
+    tasks, other = ch["tasks"], "mem" if res == "cpu" else "cpu"
+    started = sorted({e[2] for e in ch["log"] if e[1] == "start"})
+    up_end = [m for m in machines.values() if m["down"] is None or m["back"] is not None]
+    big = max(a[res] for a in machines.values()) + 1
+    sharp = [Change("task_request", "set", target=t, value=float(big), resource=res) for t in started
+             if any(m[other] >= big and m[res] >= tasks[t][res] for m in up_end)]
+    pos_v = max(a[other] for a in machines.values()) + 1
+    pos = [Change("task_request", "set", target=t, value=float(pos_v), resource=res) for t in started
+           if any(m[res] >= pos_v and m[other] >= tasks[t][other] for m in up_end)]
+    return sharp + pos
+
+
+def _split_cluster(schema, scope, res):
+    """Remove the machines largest in both resources, again while one still is, until a witness of today's kind
+    exists on the rest. Returns (removed machines, witnesses) or ([], []). Only the Machines table and the printed
+    task log are used."""
+    left, removed = dict(schema.chapters[scope]["machines"]), []
+    while len(left) > 1:
+        ws = _kinds(schema, scope, res, left)
+        if ws:
+            return (removed, ws) if removed else ([], [])
+        top = [k for k, a in sorted(left.items()) if a["cpu"] == max(x["cpu"] for x in left.values())
+               and a["mem"] == max(x["mem"] for x in left.values())]
+        if not top or len(top) == len(left):
+            break
+        for k in top:
+            left.pop(k)
+        removed += top
+    return [], []
+
+
+def _run_changes(runner, scope, changes):
+    """One execution of the program under test with several changes written into its input, through the backends'
+    own input paths. None when the backend has no such path or the input no place for a change."""
+    b = runner.backend
+    if isinstance(b, DEVSDomain):
+        data = inputs_from_schema(b.schema, scope)
+        for c in changes:
+            data = apply_inputs(data, c)
+            if data is None:
+                return None
+        ex = b.run_input(scope, data)
+    elif isinstance(b, OTFDomain):
+        nav, pe, params = b.nav, {}, b.params(scope)
+        for c in changes:
+            e = edit_nav(nav, b.schema, scope, c, params)
+            if e is None:
+                return None
+            nav = e[0]
+            pe.update(e[1] or {})
+        ex = b.run_map(nav, scope, pe or None)
+    else:
+        return None
+    runner.executions += 1
+    return ex
+
+
+def _without(runner, scope, removed, w=None) -> tuple[bool | None, str]:
+    """The run with `removed` machines taken out (and the witness change `w`, if given), checked against the rules
+    on that input: completeness, the stated invariants, nothing on a removed machine, and for `w` the outcome the
+    rules fix: never starts if no remaining machine can hold the request, else starts (and finishes)."""
+    s = runner.schema
+    rm = [Change("machine_removal", "remove", target=m) for m in removed]
+    changes = rm + ([w] if w is not None else [])
+    data = inputs_from_schema(s, scope)
+    for c in changes:
+        data = apply_inputs(data, c)
+    ex = _run_changes(runner, scope, changes)
+    if ex is None:
+        return None, "the backend has no input for this change"
+    if ex.status != "ran":
+        return False, f"crashed: {ex.detail}"
+    c1 = runner.canon(ex)
+    bad = completeness(s, scope, data, c1)
+    bad = bad or it_invariants(s, scope, data, c1, w)
+    on = [e for e in c1 if e[3] in removed]
+    if on:
+        bad.append(f"{len(on)} records on removed machine {on[0][3]}")
+    if bad:
+        return False, "; ".join(bad[:2])
+    if w is None:
+        return True, "stated rules hold"
+    st = [e for e in c1 if e[1] == "start" and e[2] == w.target]
+    if w.value > max(m["cpu" if w.resource == "cpu" else "memory"] for m in data["machines"]):
+        return (not st), (f"{w.target} started although no remaining machine can hold it" if st else f"{w.target} never starts")
+    return bool(st), (f"{w.target} starts with {w.resource} {w.value:g}" if st else
+                      f"{w.target} never starts, although a remaining machine can hold it")
+
+
+def _blind_spot(req, iv, schema, runner, registry, key, budget, rng, ev, used_ok):
+    """The added step on a blind-spot row that today's method would permit (manifests/it_blindspot.md, attempt
+    2): split the dominating machines off, check that the program handles that removal on its own, then run
+    today's kind of witness on the rest. Untestable, never Trusted, when no such witness exists or the removal
+    alone is not handled; Caught when the witness fails."""
+    bkey = _split_key(key, iv)
+    if registry is not None:
+        state, rows = registry.state(bkey, reg_target(iv))
+        if state == "failed":
+            bad = next(r for r in rows if r["passed"] is False)
+            return Decision(False, f"blind-spot capability failed earlier for {iv.family}/{iv.resource} on {bad['scope']}", ev)
+        here = [r for r in rows if r["scope"] == req.scope and r["passed"] is True]
+        if here:
+            ev.append(("reused", True, f"{len(here)} earlier passing blind-spot probes for {iv.resource} on this scope"))
+            return Decision(True, f"directed: blind spot resolved by reused evidence for {iv.family}/{iv.resource} on {req.scope}", ev)
+    removed, ws = _split_cluster(schema, req.scope, iv.resource)
+    if not ws:
+        return Decision(False, "directed: blind spot, no witness can tell cpu from mem", ev, untested=True)
+    names = ", ".join(removed)
+    ok, why = _without(runner, req.scope, removed)
+    ev.append((f"precheck without {names}", ok, why))
+    if ok is not True:
+        return Decision(False, f"directed: blind spot, the run without {names} is not usable ({why})", ev, untested=True)
+    rng.shuffle(ws)
+    told = 0
+    for w in ws[:max(cap(budget) - 2, 1)]:
+        name = f"input_use {w.family} ({iv.resource} {TOLD}, without {names})"
+        ok, why = _without(runner, req.scope, removed, w)
+        ev.append((name, ok, why))
+        _record(registry, bkey, iv, req.scope, name, ok, why)
+        if ok is False:
+            return Decision(False, f"directed: {why}", ev)
+        told += ok is True
+    if told == 0:
+        return Decision(False, "directed: blind spot, no witness could be run", ev, untested=True)
+    return Decision(True, f"directed: {used_ok + told} input-use probes ({told} without {names}) and the rule probe passed", ev)
 
 
 def cap(budget: int) -> int:
@@ -1387,9 +1635,9 @@ REQUEST FORMAT
     {{"family": "task_priority", "op": "set", "target": task id, "value": priority}}
     {{"family": "task_request", "op": "set", "target": task id, "resource": "cpu" or "mem", "value": units}}
     {{"family": "machine_removal", "op": "remove", "target": machine id}}],
-  "query": {{"kind": "task_start_time" or "task_starts_by", "task": task id, "deadline": time or null}},
+  "query": {{"kind": "task_start_time", "task": task id, "deadline": null}},
   "unresolved": null, or a short reason if the question cannot be written in this format}}
-"task_start_time" asks when a task first starts; "task_starts_by" asks whether it first starts at or before a time.
+"task_start_time" asks when a task first starts.
 
 QUESTION
 {question}"""}

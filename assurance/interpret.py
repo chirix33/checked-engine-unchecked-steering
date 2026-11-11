@@ -73,7 +73,7 @@ def parse(text: str) -> Request:
     q = d.get("query") or {}
     try:
         query = Query(str(q.get("kind")), str(q.get("case")), None if q.get("deadline") is None else int(q["deadline"]))
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         query = Query("invalid", "")
     ivs = []
     for x in d.get("interventions") or []:
@@ -87,7 +87,7 @@ def parse(text: str) -> Request:
                 routes={str(k): float(v) for k, v in x["routes"].items()} if isinstance(x.get("routes"), dict) else None,
                 effective_from=None if x.get("effective_from") is None else int(x["effective_from"]),
                 effective_to=None if x.get("effective_to") is None else int(x["effective_to"])))
-        except (TypeError, ValueError):
+        except (TypeError, ValueError, OverflowError):
             return Request(str(d.get("scope")), [], query, unresolved="malformed intervention")
     unresolved = d.get("unresolved") or None
     return Request(str(d.get("scope")), ivs, query, unresolved=unresolved)

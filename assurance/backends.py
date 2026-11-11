@@ -197,6 +197,41 @@ class OTFBackend:
         return Execution("ran", case_ends=self._ends(w["trace"]), records=w["trace"]), binding
 
 
+def sandbox_command(program_dir: str, inner: str) -> str:
+    """The bubblewrap command every generated stdin program (DEVS-Gen, the plain coding agent) runs under.
+
+    Hardened on 2026-11-10, in two steps after two reviews:
+    1. The earlier form (`--ro-bind / / --tmpfs /mnt --tmpfs /home --unshare-net`) was escapable: with /run visible,
+       code reached the user session bus and started a process outside with `systemd-run --user`, which saw /mnt/c
+       (reference code and gold) and the network. Now only /usr (read-only), the linker files, the interpreter and
+       the program's own read-only folder are mounted; no /run, /var, /mnt or host /home; /usr/lib/wsl is hidden;
+       every namespace is unshared; a new session; an empty environment; inherited descriptors above 2 are closed.
+    2. `--unshare-net` does not cover AF_VSOCK on the WSL2 kernel: a program could connect to the Windows host,
+       where a port answered the 9P handshake that serves /mnt/c. A seccomp filter
+       (`scripts/make_seccomp_filter.py`, installed at $HOME/trust2027/tools/seccomp_unix_only.bpf) now refuses
+       socket() and socketpair() for every family except AF_UNIX, and kills other architectures and the x32 ABI.
+       Soft limits on address space, processes and file size keep a program from exhausting the WSL VM.
+    The program folder is shell-quoted. Same isolation as `scripts/judges.py` `bwrap`."""
+    import shlex
+    bw = "$HOME/trust2027/tools/usr/bin/bwrap"
+    venv = "$HOME/trust2027/devs_gen_code/.venvs/devs-gen"
+    py_home = "$HOME/.local/share/uv/python"
+    bpf = "$HOME/trust2027/tools/seccomp_unix_only.bpf"
+    d = shlex.quote(str(program_dir))
+    # close every inherited descriptor, then open only the seccomp filter on descriptor 10 for bubblewrap to read
+    closer = (f"{venv}/bin/python -c 'import os, sys; os.closerange(3, 65536); fd = os.open(sys.argv[1], os.O_RDONLY); "
+              f"os.dup2(fd, 10); os.close(fd); os.execv(sys.argv[2], sys.argv[2:])' {bpf}")
+    limited = f'/bin/bash -c "ulimit -S -v 8388608 -u 4096 -f 4194304 && exec {inner}"'
+    return (f"[ -s {bpf} ] && {closer} {bw} --seccomp 10 --ro-bind /usr /usr --symlink usr/lib /lib "
+            f"--symlink usr/lib64 /lib64 --symlink usr/bin /bin --symlink usr/sbin /sbin "
+            f"--ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /etc/ld.so.conf /etc/ld.so.conf "
+            f"--ro-bind-try /etc/ld.so.conf.d /etc/ld.so.conf.d $([ -d /usr/lib/wsl ] && echo --tmpfs /usr/lib/wsl) "
+            f"--proc /proc --dev /dev --tmpfs /tmp --tmpfs /home --ro-bind {venv} {venv} --ro-bind-try {py_home} {py_home} "
+            f"--ro-bind {d} {d} --unshare-all --die-with-parent --new-session --clearenv "
+            f"--setenv PATH {venv}/bin:/usr/bin:/bin --setenv HOME /tmp --setenv LANG C.UTF-8 "
+            f"--setenv PYTHONDONTWRITEBYTECODE 1 --chdir {d} {limited}")
+
+
 class DEVSBackend:
     """A DEVS-Gen program, run unchanged inside WSL under the release's bubblewrap isolation tool."""
 
@@ -268,15 +303,10 @@ class DEVSBackend:
         return d
 
     def run_input(self, data: dict, timeout: int = 60) -> Execution:
-        bw = "$HOME/trust2027/tools/usr/bin/bwrap"
         venv = "$HOME/trust2027/devs_gen_code/.venvs/devs-gen"
-        py_home = "$HOME/.local/share/uv/python"
-        # The program sees system directories, its interpreter and its own folder, read-only. /mnt (the Windows
-        # drive, with the project's reference code and gold) and the rest of /home are hidden.
-        cmd = (f"cd '{self.dir}' && {bw} --ro-bind / / --tmpfs /mnt --tmpfs /home "
-               f"--ro-bind {venv} {venv} --ro-bind-try {py_home} {py_home} --ro-bind '{self.dir}' '{self.dir}' "
-               f"--dev /dev --proc /proc --tmpfs /tmp --unshare-net --die-with-parent "
-               f"--chdir '{self.dir}' {venv}/bin/python run.py --horizon {HORIZON}")
+        # The program sees /usr, its interpreter and its own folder, read-only; see `sandbox_command`.
+        import shlex
+        cmd = f"cd {shlex.quote(str(self.dir))} && " + sandbox_command(self.dir, f"{venv}/bin/python run.py --horizon {HORIZON}")
         try:
             p = subprocess.run(["wsl.exe", "-d", "Ubuntu-24.04", "--", "bash", "-c", cmd], input=json.dumps(data),
                                capture_output=True, text=True, timeout=timeout, env={**os.environ, "MSYS_NO_PATHCONV": "1"})

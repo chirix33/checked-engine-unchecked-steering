@@ -1,6 +1,6 @@
 # Domain readiness: manufacturing and IT operations (Phase 1 review, 2026-11-08)
 
-Status: **readiness review only. Nothing implemented, nothing built, no model calls.** The read-only checks below ran existing programs and the pinned reference code on development documents, with scripts kept outside the repo (session scratchpad). Phase 2 waits for a go-ahead.
+Status: **Phase 1 (this part) was the readiness review. Phase 2 is implemented: see "Phase 2: implementation" and "Phase 2 results" below (2026-11-08/09). Nothing built, no paid model calls.** Phase 1 text is kept as written, except for corrections marked as such.
 
 Labels: **Verified** = checked on files or by running code here. **Proposal** = not done. **Decision** = needs Ashraf.
 
@@ -60,7 +60,7 @@ Pilot-ready for development: 112 valid dev questions, reference engine plus inde
 - **Native answer path.** The Haiku patch step is unchanged and paid at run time; it was not run here.
 
 ### DEVS-Gen
-- **What exists (Verified).** Tasks exist only for `WorkflowLoan` and `WorkflowPharmacy`, installed in WSL at `~/trust2027/devs_gen_code/benchmark`. There are no manufacturing or IT tasks and no builds.
+- **What exists (Verified).** At Phase 1, tasks existed only for `WorkflowLoan` and `WorkflowPharmacy`, installed in WSL at `~/trust2027/devs_gen_code/benchmark`. *Update (Phase 2):* `Manufacturing` and `ITOperations` tasks now exist and are installed there; no builds.
 - **Conversion (assessment).** Both convert cleanly. The policy prose is the front matter (`render.intro`), already exact, deterministic and integer. The generic stdin format needs no per-family keys:
   - **manufacturing:** products (weight, opening stock), a per-day capacity list, and per-day production and orders;
   - **IT:** machines (capacity, fail and return times) and tasks (job, priority, CPU, memory, submit, run time).
@@ -97,11 +97,11 @@ Everything is workflow-shaped today. **Verified missing for the new domains:**
 - Interventions: `remove_order(p, d)`, `set_production(p, d, v)` (v in {0, x0.5, x2, +k}), `delay_production(p, d, k)` (k in 1–3), `scale_capacity(f, from_day)` (f in {0.5, 0.8, 1.2}, from day 1 or mid-period).
 
 **IT:**
-- Queries: first start time of task T, and "does T start by time X" (the workflow pattern).
+- Queries: first start time of task T. *Corrected 2026-11-09:* this also proposed "does T start by time X" (the workflow pattern). Those yes/no questions were dropped; see "IT yes/no questions dropped" below.
 - Interventions: `remove_job(J)` (never the queried task's job), `remove_failure(M)`, `set_priority(T, p)`, `set_request(T, cpu|mem, v)` (it must still fit some machine), `remove_machine(M)`.
 
 **Both:**
-- About 1 in 5 per family is a valid no-effect control, drawn by the same rule, as in `make_pilot_questions.py`.
+- Per family, n // 5 questions are valid no-effect controls, drawn by the same quota rule as `make_pilot_questions.py`: 2 of 12 and 4 of 24, that is **1 in 6** (18 of 108 dev, 36 of 216 test). *Corrected 2026-11-09; this said "about 1 in 5".*
 - Gold is kept only if `sim.py` and `validate.py` agree exactly.
 - Each question carries a hidden binding in library request style, an effect label and both golds.
 
@@ -234,7 +234,7 @@ Notes for the runner:
 |---|---|---|
 | Gold, two routes | `scripts/mlsys_gold.py` | `sim.py` on raw-rebuilt chapters reproduces every printed row of all 60 chapters and 30 windows. `validate.py` from the PDF alone does too. Inputs are identical. |
 | Split and build-input check | `scripts/make_mlsys_splits.py`, giving `manifests/mlsys_splits_v1.json` | Manufacturing: dev 12, boundary 4, test 44. IT: dev 16, test 14. Across the split, 0 real jobs and 0 machines are shared. 48 of 48 existing programs were built on dev documents only. Their stored navmaps equal the committed PDFs' maps. 0 programs name a test chapter in their code. |
-| Questions | `scripts/make_mlsys_questions.py` (seed 20271108), giving `manifests/mlsys_questions_{dev,test}_v1.json`; hashes in `manifests/mlsys_questions_v1.sha256` | Dev 108 (48 + 60), test 216 (96 + 120), 12 or 24 per family, with one in five a no-effect control (18 + 36). 0 disagreements between the two golds. Byte-reproducible. |
+| Questions | `scripts/make_mlsys_questions.py` (seed 20271108), giving `manifests/mlsys_questions_{dev,test}_v1.json`; hashes in `manifests/mlsys_questions_v1.sha256` | Dev 108 (48 + 60), test 216 (96 + 120), 12 or 24 per family, with n // 5 per family (1 in 6) a no-effect control (18 + 36). 0 disagreements between the two golds. Byte-reproducible. |
 | Realization check | `validation/mlsys_input_coverage.py` | 324 of 324 pass. |
 | Library | `assurance/mlsys.py` (new; no shared file changed) | Offline tests in `scripts/test_assurance_mlsys_offline.py`: 118 PASS, 0 failures. Workflow `scripts/test_assurance_offline.py`: 0 failures. |
 | Probe soundness | `validation/probe_soundness_mlsys.py`, giving `manifests/probe_soundness_mlsys_v1.json` | **Reference passes, 0 Caught** on 28 history checks, 778 input-use witnesses, 108 rule probes and 43 no-ops. Directed: 106 Trusted, 2 Untestable (no witness). The reference's answer through the library equals gold on 108 of 108. **Broken programs:** Caught on every defect except IT "writes the CPU change into memory", where 1 wrong answer is Trusted and 5 are Caught (see the limit below). |
@@ -269,6 +269,53 @@ Notes for the runner:
 - **Evidence carry-over:** IT evidence is family-level, because ids are local to a window. Manufacturing evidence is per product. One IT failure blocks that family for that program everywhere, including test documents. This is the intended Study C carry-over.
 - **Dev windows sharing jobs:** unseen IT dev windows 05–07 share jobs with build window 08 (same time group). Dev reuse there is not fully new records.
 - **List-line edits:** the IT list-line edits work per PDF line. A mention wrapped across lines is not removed. Those lines are outcomes, hidden after the cut.
-- **Coverage depends on the program:** 31 dev and test manufacturing capacity questions start after the first day. On OTF programs with one capacity constant they are Can't express.
+- **Coverage depends on the program:** **10** manufacturing capacity questions (3 dev, 7 test) start after their chapter's first day. On OTF programs with one capacity constant they are Can't express. The other 21 start on the chapter's first day and are a constant edit. *Corrected 2026-11-09; this said 31. That count came from a smoke check run before the capacity-sentence parsing fix, when chapters whose capacity line wrapped had no capacity parsed.*
+- **Delays past the ledger:** in 4 of 12 dev and 10 of 24 test `production_timing` questions, the delayed production arrives after the chapter's last ledger day, on an order-book day. Those units cannot affect any queried ledger day, so the question becomes "the day's production is removed". The answer is still exact, and both references agree.
 
 **Not done here (by design):** no runner changes (the coordinating session owns `pilot_runner.py`), no workflow test questions, no builds and no paid calls.
+
+## IT yes/no questions dropped (decision of 2026-11-09)
+
+**What went wrong.** The first question files asked some IT questions as yes/no: "would task T first start at or before time X?", where X was the task's factual first start.
+- All 32 such questions had this form (9 dev, 23 test).
+- In 14 of them (4 dev, 10 test) that start falls after the window end and is not printed, so the question text gave away a hidden value.
+- It also made "effectful" identical to "the answer is no".
+
+**Three deadline rules tried.** All were checked with `validation/mlsys_deadline_check.py` (since retired) and a separate-agent review. All three were rejected:
+
+| rule | how the deadline is chosen | outcome | why rejected |
+|---|---|---|---|
+| Steered draw | Drawn at random from a printed range (task submit time to window end plus the longest printed run time). The first candidate with the wanted effect (effectful with probability 0.8) is kept. | 39 yes/no questions with both answers. No deadline equals a start, and no unprinted time appears in the text. | Effectful deadlines must lie between the factual and the changed start, so the rule places them in that narrow gap: median distance to the nearer start 14 s, minimum 1 s (no-effect items: at least 1,020 s). That points at unprinted starts. Example: `itops-test-machine_removal-06`, factual start 1409, deadline 1405. Yes rate 0.74 against an always-yes baseline. |
+| Unsteered draw | One draw per draft from the task's submit time to the window end plus its own run time. Neither start is used. | No leak. Only 13 yes/no questions survive the no-effect quota, and all answer yes. | No yes/no mix. Effectful yes/no questions are rare, because a random deadline seldom falls between the two starts. |
+| Fixed deadline | The window end, 1200 (scratch trial only). | 18 yes/no questions. Every dev answer is yes, and one deadline equals a start (a task starting exactly at 1200). | No dev mix, and an equality with a start. |
+
+**Decision (Ashraf, via the coordinating session, 2026-11-09):** drop yes/no from IT, and ask every IT question as a first-start time. A numeric question cannot leak a value through its wording.
+
+**What stayed the same:**
+- `it_query` still draws once from the main random stream, so the stream advances as before;
+- seed 20271108, 12 dev and 24 test per family, and the `n // 5` no-effect quota;
+- the ids.
+
+**What changed.** The main random stream is shared across the domain and split blocks, so a change in IT dev acceptance also shifts the drafts of later blocks:
+- 271 of 324 questions differ from the original files, including all 96 manufacturing test questions (`manifests/mlsys_questions_v1_changed_ids.json`);
+- manufacturing dev and 7 IT dev questions are unchanged;
+- the question files are new, with hashes in `manifests/mlsys_questions_v1.sha256`; the realization check passes 324 of 324, and both references still agree on every chapter and window.
+
+**Blind check.** It is redone for every sampled question whose text changed: 4 of 8 manufacturing and 10 of 10 IT. See the run manifest.
+
+**After the decision (2026-11-09):**
+- **Labelled, not filtered:** each question row now carries `beyond_window`. It is true for 22 of 60 dev and 71 of 120 test IT questions whose answer or factual start lies after the window end. These answers follow from the printed inputs and the stated after-window rule, and the question text reveals nothing, unlike the dropped yes/no questions.
+- **Not adopted, open:** the generator review recommends seeding each domain-and-split block separately, so that a change in one block cannot rewrite later ones. Adopting it would change the files again and require another blind redo, so it is left to the coordinating session.
+- **Library prompt:** `assurance/mlsys.py` still accepts `task_starts_by` and advertises it in the IT interpreter prompt, although the benchmark no longer contains such questions. The library belongs to the coordinating session.
+- **Probe soundness on the final library** (`manifests/probe_soundness_mlsys_v2_{dev,test}.json`):
+
+| split | questions | reference Caught | Trusted | Untestable | answers equal to gold |
+|---|---|---|---|---|---|
+| dev | 108 | 0 | manufacturing 48, IT 57 | IT 3 | 108 of 108 |
+| test | 216 | 0 | manufacturing 95, IT 119 | manufacturing 1, IT 1 | 216 of 216 |
+
+On the original dev questions, the final library gives the same directed counts and broken-program counts as the v1 run.
+
+**Recorded as known properties (2026-11-09, coordinating session):**
+- **One shared random stream.** The question generator uses one random stream for all four domain-and-split blocks (dev manufacturing, dev IT, test manufacturing, test IT), in that order. A change in one block's acceptance shifts every later block. The reviewer's recommendation of per-block seeding was not adopted, because the files are final.
+- **A blind answer resting on an untested rule.** IT blind question B05 (v3) has an answer that rests on a stated rule no printed log separates from an alternative reading: a reservation tie goes to the "first machine, in id order". This is not a gold problem, since the answer follows the text.

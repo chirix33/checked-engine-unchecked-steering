@@ -1,0 +1,502 @@
+{
+ "reference": {
+  "manufacturing": {
+   "replay pass": 12,
+   "order_removal input_use True": 72,
+   "production_quantity input_use True": 72,
+   "production_timing input_use True": 72,
+   "dispatch_capacity input_use True": 12
+  },
+  "it_ops": {
+   "replay pass": 16,
+   "job_removal input_use True": 96,
+   "failure_removal input_use True": 13,
+   "task_priority input_use True": 77,
+   "task_request input_use True": 96,
+   "machine_removal input_use True": 96
+  },
+  "questions": {
+   "manufacturing rule True": 48,
+   "manufacturing no_op True": 43,
+   "manufacturing directed Trusted": 48,
+   "manufacturing answer == gold": 48,
+   "manufacturing no_op None": 5,
+   "it_ops rule True": 60,
+   "it_ops no_op None": 60,
+   "it_ops directed Trusted": 57,
+   "it_ops answer == gold": 60,
+   "it_ops directed Untestable": 3
+  },
+  "per_question": {
+   "mfg-dev-order_removal-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-order_removal-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_quantity-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-production_timing-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "mfg-dev-dispatch_capacity-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-job_removal-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-03": {
+    "directed": "Untestable",
+    "reason": "directed: no input-use probe could be run"
+   },
+   "itops-dev-failure_removal-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-06": {
+    "directed": "Untestable",
+    "reason": "directed: no input-use probe could be run"
+   },
+   "itops-dev-failure_removal-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-failure_removal-10": {
+    "directed": "Untestable",
+    "reason": "directed: no input-use probe could be run"
+   },
+   "itops-dev-failure_removal-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_priority-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-task_request-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-00": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-01": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-02": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-03": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-04": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-05": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-06": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-07": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-08": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-09": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-10": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   },
+   "itops-dev-machine_removal-11": {
+    "directed": "Trusted",
+    "reason": "directed: 1 input-use probes and the rule probe passed"
+   }
+  },
+  "rejections": []
+ },
+ "broken": {
+  "manufacturing/ignores_input": {
+   "right Caught": 4,
+   "wrong Caught": 20
+  },
+  "manufacturing/wrong_field": {
+   "right Caught": 2,
+   "wrong Caught": 22
+  },
+  "manufacturing/moves_prefix": {
+   "right Caught": 48
+  },
+  "manufacturing/ignores_capacity": {
+   "wrong Caught": 10,
+   "right Caught": 2
+  },
+  "it_ops/ignores_input": {
+   "right Caught": 2,
+   "wrong Caught": 10
+  },
+  "it_ops/wrong_field": {
+   "right Caught": 2,
+   "right Trusted": 4,
+   "wrong Caught": 6
+  },
+  "it_ops/moves_prefix": {
+   "wrong Caught": 48
+  },
+  "it_ops/ignores_removed_machine": {
+   "right Caught": 2,
+   "wrong Caught": 10
+  }
+ },
+ "question_files": [
+  "manifests/mlsys_questions_dev_v1.json"
+ ]
+}
