@@ -59,6 +59,10 @@ class Reference:
         if out.get("status") != "ok":
             return Execution("crashed", detail=str(out.get("error")))
         recs = [{"event": "case_end", "case": c["case"], "time": float(c["end"])} for c in out["cases"]]
+        lab = self.labels.label
+        for t in out["tasks"]:              # the generic output format prints task starts (added 2026-11-09, review 5)
+            recs.append({"event": "task_start", "case": t["case"], "name": lab[t["task"]], "visit": t["visit"],
+                         "time": float(t["start"]), "worker": t["resource"]})
         for b in out["branches"]:
             recs.append({"event": "decision", "case": b["case"], "name": self.labels.label[b["gateway"]], "visit": b["visit"],
                          "time": float(b["time"]), "route": self.labels.routes(b["gateway"])[b["flow"]]})

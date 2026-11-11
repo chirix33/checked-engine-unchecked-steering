@@ -19,7 +19,9 @@ generic output format, so it goes through exactly the library path a DEVS-Gen or
    Trusted), split by whether the defective program's answer is right. "0 rejections" in part 1 means no probe
    Caught the reference; Untestable declines (no witness exists) are counted and reported, not hidden.
 
-Usage: python -X utf8 validation/probe_soundness_mlsys.py [out_json]
+Usage: python -X utf8 validation/probe_soundness_mlsys.py [out_json] [questions_json ...]
+       (default questions: manifests/mlsys_questions_dev_v1.json; the split of each chapter in part 1 follows the
+       questions' split; per-question directed decisions are kept in the report for later comparison)
 """
 from __future__ import annotations
 
@@ -135,11 +137,14 @@ def navs():
     return out
 
 
-def main(out=None):
+def main(out=None, *question_files):
     import tempfile
     NAV = navs()
     splits = json.loads((ROOT / "manifests" / "mlsys_splits_v1.json").read_text(encoding="utf-8"))
-    qs = json.loads((ROOT / "manifests" / "mlsys_questions_dev_v1.json").read_text(encoding="utf-8"))
+    question_files = question_files or (str(ROOT / "manifests" / "mlsys_questions_dev_v1.json"),)
+    qs = [q for f in question_files for q in json.loads(Path(f).read_text(encoding="utf-8"))]
+    use_splits = {q["split"] for q in qs}
+    report_q = {}
     report = {"reference": {}, "broken": {}}
     rng = random.Random(7)
     rejections = []
@@ -147,7 +152,7 @@ def main(out=None):
     for dom in (M.MFG, M.IT):
         counts = Counter()
         for title, v in splits[dom].items():
-            if v["split"] != "dev":
+            if v["split"] not in use_splits:
                 continue
             schema = M.schema_from_map(NAV[v["doc"]])
             backend = M.DEVSDomain("ref", schema, runner=Program(dom))
@@ -184,6 +189,7 @@ def main(out=None):
             d = M.decide("directed", req, schema, runner, Registry(Path(tmp) / "r.jsonl"), backend)
         label = "Trusted" if d.permit else "Untestable" if d.untested else "Can't express" if d.inexpressible else "Caught"
         dec[f"{dom} directed {label}"] += 1
+        report_q[q["id"]] = {"directed": label, "reason": d.reason}
         if label == "Caught":
             rejections.append((q["id"], "directed", d.reason))
         # the reference's answer through the projection equals gold
@@ -192,6 +198,8 @@ def main(out=None):
         if a != q["gold"]:
             rejections.append((q["id"], "answer", f"{a} vs gold {q['gold']}"))
     report["reference"]["questions"] = dict(dec)
+    report["reference"]["per_question"] = report_q
+    report["question_files"] = list(question_files)
     report["reference"]["rejections"] = rejections
     # 2. broken programs
     for dom, defects in DEFECTS.items():
@@ -225,4 +233,4 @@ def main(out=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main(*sys.argv[1:2]))
+    sys.exit(main(*sys.argv[1:]))
