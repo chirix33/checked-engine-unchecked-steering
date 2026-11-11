@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 140804,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Design loan offer visit 2 work set to 3776 and the whole run re-simulated; case end moves from 138820 to 140804. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W02",
+  "answer": 52791,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Case c0005 removed from the arrivals; c0011 end is unchanged because its end is set by the next-morning opening and no queue effect reaches it. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W03",
+  "answer": 127185,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Appraiser_1 treated as non-working 39600-54000 (Appraiser pool has 2 workers in this document); re-simulated. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Draw for D4 visit 2 of c0007 replaced by 0.75, route re-chosen with unchanged probabilities. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D4 probabilities 0.3/0.7; draws kept; c0002 end unchanged (its D4 draws give the same routes). Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W06",
+  "answer": 52795,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 delay for c0007 visit 1 set to 6471 and re-simulated. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W07",
+  "answer": 120853,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Assess loan risk work for c0004 visit 1 set to 3864; end unchanged because the final Approve application starts at the Tuesday opening either way. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W08",
+  "answer": 134835,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0004 removed; c0014 end unchanged. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "AML Investigator_2 and _3 non-working 39600-68400; re-simulated. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D2 visit 1 draw for c0012 set to 0.75, so route D2-b (design loan offer) instead of reject. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D4 probabilities 0.9/0.1, draws kept; c0009 route re-chosen. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 delay for c0011 visit 1 set to 6970 and re-simulated. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance work for c0012 visit 1 set to 2 seconds (was 1). Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0003 removed; c0001 ends earlier because shared Technician/Pharmacy System queues are less congested. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Pharmacy System pool given 2 extra workers (3 total); c0013 end unchanged. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W16",
+  "answer": 32184,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D5 visit 1 draw for c0014 set to 0.915, giving route D5-b (insurance issues) with the draw kept. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D6 probabilities 0.7/0.3 with draws kept; c0002 route changes. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W18",
+  "answer": 31007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 delay for c0007 visit 1 set to 0 seconds. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Check Insurance work for c0014 visit 1 set to 2 seconds (was 1). Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W20",
+  "answer": 31803,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "c0011 removed; c0014 ends earlier. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W21",
+  "answer": 31586,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Technician_6 and Technician_7 non-working 28800-57600; re-simulated. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W22",
+  "answer": 30356,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D3 visit 1 draw for c0000 set to 0.9, giving D3-b then the D4 branch. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W23",
+  "answer": 32007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "D3 probabilities 0.9/0.1, draws kept; c0012 end unchanged. Factual chapter reproduced exactly."
+ },
+ {
+  "qid": "W24",
+  "answer": 31060,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "W2 delay for c0008 visit 1 set to 0 seconds. Factual chapter reproduced exactly."
+ }
+]

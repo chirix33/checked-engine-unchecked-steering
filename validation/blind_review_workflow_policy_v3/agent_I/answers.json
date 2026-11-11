@@ -1,0 +1,170 @@
+[
+ {
+  "qid": "W01",
+  "answer": 140804,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: work c0008 Design loan offer v2 1888 -> 3776. Factual end of target case 138820; changed-run end 140804."
+ },
+ {
+  "qid": "W02",
+  "answer": 52791,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: remove c0005. Factual end of target case 52791; changed-run end 52791. Removing c0005 does not change c0011."
+ },
+ {
+  "qid": "W03",
+  "answer": 127185,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: unavailable ['Appraiser_1'] [39600,54000). Factual end of target case 122014; changed-run end 127185."
+ },
+ {
+  "qid": "W04",
+  "answer": 147353,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: draw c0007 D4 v2 0.387791 -> 0.750000. Factual end of target case 137860; changed-run end 147353."
+ },
+ {
+  "qid": "W05",
+  "answer": 54241,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: prob D4 [('D4-a', '0.3'), ('D4-b', '0.7')]. Factual end of target case 54241; changed-run end 54241. The c0002 D4 draw 0.541281 (visit 1) still selects D4-b under 0.3/0.7, so no effect."
+ },
+ {
+  "qid": "W06",
+  "answer": 52795,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: wait c0007 W2 v1 2871 -> 6471. Factual end of target case 49195; changed-run end 52795."
+ },
+ {
+  "qid": "W07",
+  "answer": 120853,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: work c0004 Assess loan risk v1 1932 -> 3864. Factual end of target case 120853; changed-run end 120853. End unchanged because Approve application still waits for Tuesday 09:00 opening."
+ },
+ {
+  "qid": "W08",
+  "answer": 134835,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: remove c0004. Factual end of target case 134835; changed-run end 134835. Removing c0004 does not change c0014."
+ },
+ {
+  "qid": "W09",
+  "answer": 54147,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: unavailable ['AML Investigator_2', 'AML Investigator_3'] [39600,68400). Factual end of target case 53792; changed-run end 54147. AML Investigator_2 was mid-task (c0005) at 39600; that task pauses and resumes Tuesday per rule 3."
+ },
+ {
+  "qid": "W10",
+  "answer": 120685,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: draw c0012 D2 v1 0.002077 -> 0.750000. Factual end of target case 53792; changed-run end 120685."
+ },
+ {
+  "qid": "W11",
+  "answer": 120637,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: prob D4 [('D4-a', '0.9'), ('D4-b', '0.1')]. Factual end of target case 60943; changed-run end 120637."
+ },
+ {
+  "qid": "W12",
+  "answer": 134082,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: wait c0011 W2 v1 3370 -> 6970. Factual end of target case 120715; changed-run end 134082."
+ },
+ {
+  "qid": "W13",
+  "answer": 31591,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: work c0012 Check Insurance v1 1 -> 2. Factual end of target case 31590; changed-run end 31591."
+ },
+ {
+  "qid": "W14",
+  "answer": 30305,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: remove c0003. Factual end of target case 30322; changed-run end 30305."
+ },
+ {
+  "qid": "W15",
+  "answer": 31678,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: pool Pharmacy System +2. Factual end of target case 31678; changed-run end 31678. New workers named Pharmacy System_1 and _2 with the same hours; no effect on c0013."
+ },
+ {
+  "qid": "W16",
+  "answer": 32184,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: draw c0014 D5 v1 0.795002 -> 0.915000. Factual end of target case 31872; changed-run end 32184."
+ },
+ {
+  "qid": "W17",
+  "answer": 29962,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: prob D6 [('D6-a', '0.7'), ('D6-b', '0.3')]. Factual end of target case 30435; changed-run end 29962."
+ },
+ {
+  "qid": "W18",
+  "answer": 31007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: wait c0007 W2 v1 205 -> 0. Factual end of target case 31114; changed-run end 31007."
+ },
+ {
+  "qid": "W19",
+  "answer": 31785,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: work c0014 Check Insurance v1 1 -> 2. Factual end of target case 31784; changed-run end 31785."
+ },
+ {
+  "qid": "W20",
+  "answer": 31803,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: remove c0011. Factual end of target case 31819; changed-run end 31803."
+ },
+ {
+  "qid": "W21",
+  "answer": 31586,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: unavailable ['Technician_6', 'Technician_7'] [28800,57600). Factual end of target case 31553; changed-run end 31586."
+ },
+ {
+  "qid": "W22",
+  "answer": 30356,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: draw c0000 D3 v1 0.004715 -> 0.900000. Factual end of target case 30231; changed-run end 30356."
+ },
+ {
+  "qid": "W23",
+  "answer": 32007,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: prob D3 [('D3-a', '0.9'), ('D3-b', '0.1')]. Factual end of target case 32007; changed-run end 32007. c0012 draw at D3 does not change route under the new probabilities."
+ },
+ {
+  "qid": "W24",
+  "answer": 31060,
+  "factual_reproduced": true,
+  "confidence": "high",
+  "note": "Change applied: wait c0008 W2 v1 190 -> 0. Factual end of target case 31191; changed-run end 31060."
+ }
+]
