@@ -21,12 +21,13 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-CAP_USD = 5.00
+CAP_USD = 21.00  # Raised from 5.00 for the D29 Ollama judges (Ashraf reported a balance of $20 or more, 2026-11-10). Post-freeze change, logged in run_manifest.md.
 EARLIER_SPEND_USD = 0.03
 CAP_MARGIN_USD = 0.25
-CLAUDE_CAP_USD = 25.00  # Raised from 15.00 by Ashraf on 2026-11-08 for the judge baselines (D18, baseline_judges_design.md). Tracked apart from Ollama credits.
+CLAUDE_CAP_USD = 80.00  # Raised from 25.00 for the main run (D27, D29; Ashraf, 2026-11-10). Post-freeze change, logged in run_manifest.md. Was raised from 15.00 on 2026-11-08 (D18). Tracked apart from Ollama credits.
 NUM_CTX = 131072
-MAX_OUTPUT = 16384
+MAX_OUTPUT = 16384  # Builds. Unchanged, so B0 and R1 builds behave as before.
+MAX_OUTPUT_PER_QUESTION = 64000  # Per-question calls (interpretation, reading, the native patch step, judges): pass Client(..., max_output=MAX_OUTPUT_PER_QUESTION). 17 of 120 vanilla calls hit the 16k cap (baseline_judges_design.md).
 BUSY_DELAYS = [30, 60, 120, 240, 300, 300]
 BUSY_CODES = {408, 409, 425, 429, 500, 502, 503, 504, 529}
 BILLING_CODES = {401, 402, 403}
@@ -72,6 +73,28 @@ def load_env(path):
     return env
 
 
+def content_text(content) -> str:
+    """A message's content as one string. Content is a string, or a list of text blocks
+    ({"type": "text", "text": ..., optional "cache_control": ...}) for block-level prompt caching. Blocks are joined
+    as they are, with nothing added between them: a caller puts its own blank lines inside the blocks, so a service
+    that takes blocks and one that takes a string get the same text."""
+    if isinstance(content, list):
+        return "".join((b.get("text") or "") if isinstance(b, dict) else str(b) for b in content)
+    return content or ""
+
+
+def prompt_chars(messages) -> int:
+    """Characters in a prompt. For list content this counts the blocks' characters, not the number of blocks."""
+    total = 0
+    for m in messages:
+        c = m.get("content")
+        if isinstance(c, list):
+            total += sum(len((b.get("text") or "") if isinstance(b, dict) else str(b)) for b in c)
+        else:
+            total += len(c or "")
+    return total
+
+
 class Ledger:
     def __init__(self, folder, setup_name):
         self.folder = Path(folder)
@@ -86,7 +109,10 @@ class Ledger:
                 continue
             with p.open(encoding="utf-8") as f:
                 for line in f:
-                    total += json.loads(line).get("usd", 0.0)
+                    try:
+                        total += json.loads(line).get("usd", 0.0)
+                    except ValueError:  # a line another process is still writing; it is counted on the next read
+                        continue
         return total
 
     def add(self, record):
@@ -95,25 +121,38 @@ class Ledger:
 
 
 class Client:
-    def __init__(self, setup_name, env, ledger):
+    def __init__(self, setup_name, env, ledger, max_output=None):
         self.name = setup_name
         self.setup = SETUPS[setup_name]
         self.key = env[self.setup["key"]] if self.setup["key"] else None
         self.ledger = ledger
         self.build_id = None
         self.calls = []
+        self._max_output = max_output  # None: the module's MAX_OUTPUT, read at call time as before (builds)
 
-    def _request(self, messages):
+    @property
+    def max_output(self):
+        """Output cap per call. Without an explicit value it is the module's MAX_OUTPUT at call time, so a caller
+        that sets `b0_build_test.MAX_OUTPUT` (the coding-agent builder does) still takes effect."""
+        return MAX_OUTPUT if self._max_output is None else self._max_output
+
+    def _request(self, messages, stop=None):
         s = self.setup
+        # These services take string content only, so block content is joined (no block caching there).
+        messages = [{**m, "content": content_text(m.get("content"))} for m in messages]
         if s["kind"] == "ollama":
             url = s["base"] + "/api/chat"
-            options = {**s["options"], "num_predict": MAX_OUTPUT, "num_ctx": NUM_CTX}
+            options = {**s["options"], "num_predict": self.max_output, "num_ctx": NUM_CTX}
+            if stop:
+                options["stop"] = list(stop)
             body = {"model": s["model"], "stream": False, "think": s["think"], "options": options, "messages": messages}
         else:
             url = s["base"] + "/chat/completions"
             options = dict(s["options"])
-            body = {"model": s["model"], "max_tokens": MAX_OUTPUT, "reasoning": {"enabled": True}, "messages": messages,
+            body = {"model": s["model"], "max_tokens": self.max_output, "reasoning": {"enabled": True}, "messages": messages,
                     "temperature": options["temperature"], "top_p": options["top_p"], "top_k": options["top_k"]}
+            if stop:
+                body["stop"] = list(stop)
         headers = {"Content-Type": "application/json", "User-Agent": "trust-artifact-check/0.1"}
         if self.key:
             headers["Authorization"] = f"Bearer {self.key}"
@@ -133,16 +172,25 @@ class Client:
                 "reasoning_tokens": (usage.get("completion_tokens_details") or {}).get("reasoning_tokens"),
                 "finish": choice.get("finish_reason"), "provider": data.get("provider")}
 
-    def _claude_call(self, messages):
-        """One call through the official SDK. Busy errors are retried by the caller, so the SDK's own retries are off."""
+    def _claude_call(self, messages, stop=None, auto_cache=True):
+        """One call through the official SDK. Busy errors are retried by the caller, so the SDK's own retries are off.
+
+        Content may be a string, or a list of text blocks carrying their own `cache_control` breakpoints (document,
+        then program, then question). `auto_cache` is the request-level breakpoint on the last block: right for a
+        growing conversation, a pure write surcharge when the prompt ends in a one-off question, so callers that
+        place their own breakpoints turn it off. `stop` are stop sequences (the ReAct loop)."""
         import anthropic
         s = self.setup
         client = anthropic.Anthropic(api_key=self.key, max_retries=0, timeout=s["timeout"])
-        system = "\n\n".join(m["content"] for m in messages if m["role"] == "system")
+        system = "\n\n".join(content_text(m["content"]) for m in messages if m["role"] == "system")
         turns = [{"role": m["role"], "content": m["content"]} for m in messages if m["role"] != "system"]
         kwargs = {"system": system} if system else {}
-        with client.messages.stream(model=s["model"], max_tokens=MAX_OUTPUT, messages=turns, thinking={"type": "adaptive"},
-                                    output_config={"effort": s["effort"]}, cache_control={"type": "ephemeral"}, **kwargs) as stream:
+        if stop:
+            kwargs["stop_sequences"] = list(stop)
+        if auto_cache:
+            kwargs["cache_control"] = {"type": "ephemeral"}
+        with client.messages.stream(model=s["model"], max_tokens=self.max_output, messages=turns, thinking={"type": "adaptive"},
+                                    output_config={"effort": s["effort"]}, **kwargs) as stream:
             final = stream.get_final_message()
         text = "".join(b.text for b in final.content if b.type == "text")
         u = final.usage
@@ -155,14 +203,14 @@ class Client:
                 "uncached_input_tokens": u.input_tokens, "cache_read_tokens": read, "cache_write_tokens": write, "usd": usd,
                 "finish": final.stop_reason, "provider": "anthropic"}
 
-    def _claude_with_retries(self, messages):
+    def _claude_with_retries(self, messages, stop=None, auto_cache=True):
         import anthropic
         started = time.time()
         busy = []
         for attempt in range(len(BUSY_DELAYS) + 1):
             attempt_start = time.time()
             try:
-                return self._claude_call(messages), busy, started
+                return self._claude_call(messages, stop, auto_cache), busy, started
             except (anthropic.AuthenticationError, anthropic.PermissionDeniedError, anthropic.NotFoundError, anthropic.BadRequestError) as e:
                 error = {"http": e.status_code, "detail": str(e)[:200]}
                 self._log_failure(messages, busy + [error], started)
@@ -178,15 +226,15 @@ class Client:
                 raise InfrastructureFailure(f"still busy after {len(busy)} attempts: {error['detail'][:120]}")
             time.sleep(BUSY_DELAYS[attempt])
 
-    def _one_call(self, messages):
+    def _one_call(self, messages, stop=None, auto_cache=True):
         spent = self.ledger.spent()
         cap = CLAUDE_CAP_USD if self.setup["kind"] == "claude" else CAP_USD
         if spent >= cap - CAP_MARGIN_USD:
             raise CapReached(f"list-price spend {spent:.2f}")
         if self.setup["kind"] == "claude":
-            parsed, busy, started = self._claude_with_retries(messages)
+            parsed, busy, started = self._claude_with_retries(messages, stop, auto_cache)
             record = {"build": self.build_id, "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(started)),
-                      "seconds": round(time.time() - started, 2), "prompt_chars": sum(len(m.get("content") or "") for m in messages),
+                      "seconds": round(time.time() - started, 2), "prompt_chars": prompt_chars(messages),
                       "busy": busy, **{k: v for k, v in parsed.items() if k != "text"}, "reply_chars": len(parsed["text"])}
             self.ledger.add(record)
             self.calls.append(record)
@@ -197,7 +245,7 @@ class Client:
             attempt_start = time.time()
             error = None
             try:
-                with urllib.request.urlopen(self._request(messages), timeout=self.setup["timeout"]) as r:
+                with urllib.request.urlopen(self._request(messages, stop), timeout=self.setup["timeout"]) as r:
                     data = json.load(r)
                 break
             except urllib.error.HTTPError as e:
@@ -218,7 +266,7 @@ class Client:
                 raise InfrastructureFailure(f"still busy after {len(busy)} attempts: {error['detail'][:120]}")
             time.sleep(BUSY_DELAYS[attempt])
         parsed = self._parse(data)
-        chars = sum(len(m.get("content") or "") for m in messages)
+        chars = prompt_chars(messages)
         in_price, out_price = self.setup["price_per_million"]
         usd = ((parsed["prompt_tokens"] or 0) * in_price + (parsed["output_tokens"] or 0) * out_price) / 1e6
         record = {"build": self.build_id, "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(started)),
@@ -231,15 +279,16 @@ class Client:
     def _log_failure(self, messages, busy, started):
         # A failed stream may still be billed for tokens it generated; that amount is unknown, so it is flagged.
         record = {"build": self.build_id, "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(started)),
-                  "seconds": round(time.time() - started, 2), "prompt_chars": sum(len(m.get("content") or "") for m in messages),
+                  "seconds": round(time.time() - started, 2), "prompt_chars": prompt_chars(messages),
                   "busy": busy, "usd": 0.0, "failed": True, "billing_unknown": True}
         self.ledger.add(record)
         self.calls.append(record)
 
-    def llm(self, messages, empty_retries=2):
-        """Same behaviour as the pinned adapter: an empty reply is retried up to twice, and every call counts."""
+    def llm(self, messages, empty_retries=2, stop=None, auto_cache=True):
+        """Same behaviour as the pinned adapter: an empty reply is retried up to twice, and every call counts.
+        `stop` and `auto_cache` are for the judges (see `_claude_call`); builds never pass them."""
         for _ in range(empty_retries + 1):
-            text = self._one_call(messages)
+            text = self._one_call(messages, stop, auto_cache)
             if text.strip():
                 return text
         return ""

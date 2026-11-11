@@ -413,6 +413,9 @@ def section_breakdowns(rows):
         res = {"n": len(rs)}
         for name in RULE_JUDGES:
             if name == "disagreement":
+                if not any(r["vanilla_row"] for r in rs):
+                    res[name] = None                    # no reading rows: not available
+                    continue
                 t = [r["agree_vanilla"] for r in rs]
             else:
                 t = [bool((r["decisions"].get(name) or {}).get("permit")) for r in rs]
@@ -489,17 +492,22 @@ def _norm_req(d):
 def section_interpretation(rows, oracle, qinfo, correct):
     """Interpreted request equal to the oracle request, per question (once per question, as main_summary does), by
     set and family; and the gate under each source, per class (oracle is a labelled diagnostic only)."""
-    per_q = {}
+    per_q, no_request = {}, set()
     for r in rows:
         o = oracle.get((r["set"], r["program"], r["question"]))
         if o is not None and r["request"] is not None and o.get("request") is not None:
             per_q.setdefault((r["set"], r["question"]), _norm_req(o["request"]) == _norm_req(r["request"]))
+        elif r["request"] is None:
+            no_request.add((r["set"], r["question"]))
     by = defaultdict(Counter)
     for (s, q), ok in per_q.items():
         f = qinfo[(s, q)]["family"]
         for k in (s, f"{s}|{f}"):
             by[k]["of"] += 1
             by[k]["exact"] += ok
+    for (s, q) in no_request - set(per_q):   # unparsable or missing interpretation: not exact, counted apart (review 1)
+        for k in (s, f"{s}|{qinfo[(s, q)]['family']}"):
+            by[k]["no_request"] += 1
     src = defaultdict(Counter)
     for r in rows:
         o = oracle.get((r["set"], r["program"], r["question"]))
@@ -521,7 +529,7 @@ def section_interpretation(rows, oracle, qinfo, correct):
     return {"exact": {k: dict(v) for k, v in sorted(by.items())}, "gate_by_source": srcd}
 
 
-def section_study_c(rows, root, mr):
+def section_study_c(rows, root, mr, policy_set="wf_policy"):
     """Policy reuse (D20, D23). P is a real policy change, H a harmless rewording; each policy document has new runs
     (scopes) and its own policy fingerprint. Each program's policy registry starts as a copy of its final wf_test
     registry (`--registry-from wf_test`). Under the frozen rules a pass is reused only on the same scope, and a
@@ -538,25 +546,32 @@ def section_study_c(rows, root, mr):
     - missed invalidation: a P row decided on evidence recorded under the old policy (a cited test scope). Expected 0
       by construction; the count is the check;
     - re-checking cost: probe executions per row, and same-run reuse within the policy set."""
-    pol = [r for r in rows if r["set"] == "wf_policy"]
+    pol = [r for r in rows if r["set"] == policy_set]
     if not pol:
         return None
     import re
     safe = lambda n: re.sub(r"[^A-Za-z0-9._-]+", "_", n)
     fps = {}
-    for s in ("wf_test", "wf_policy"):
+    for s in ("wf_test", policy_set):
         for d in sorted({q["doc"] for q in mr.questions(root, s)}):
             nav = mr.split_nav(root, d, mr.SETS[s][2])
             fps[d] = {"set": s, "fingerprint": mr.adapter(mr.process_of(d)).schema(nav).policy_fingerprint()}
     test_fps = {v["fingerprint"] for v in fps.values() if v["set"] == "wf_test"}
     test_scopes = {q["scope"] for q in mr.questions(root, "wf_test")}
-    test_fail, prefix_ok = {}, {}
+    pol_scopes = {q["scope"] for q in mr.questions(root, policy_set)}
+    if test_scopes & pol_scopes:          # the carry-over check reads scope names, so they must not repeat (review 1)
+        raise SystemExit(f"test and policy scope names overlap: {sorted(test_scopes & pol_scopes)}")
+    test_fail, prefix_ok, test_missing = {}, {}, []
     for prog in sorted({r["program"] for r in pol}):
         tp = mr.OUT / "wf_test" / "registries" / f"{safe(prog)}_interpreted.jsonl"
-        pp = mr.OUT / "wf_policy" / "registries" / f"{safe(prog)}_interpreted.jsonl"
+        pp = mr.OUT / policy_set / "registries" / f"{safe(prog)}_interpreted.jsonl"
+        if not tp.exists():
+            test_missing.append(prog)
         tl = [json.loads(l) for l in tp.read_text(encoding="utf-8").splitlines() if l.strip()] if tp.exists() else []
         pl = [json.loads(l) for l in pp.read_text(encoding="utf-8").splitlines() if l.strip()] if pp.exists() else []
         prefix_ok[prog] = pl[:len(tl)] == tl
+        # key layout backend|program_hash|adapter|fingerprint|family|op; op is already bare for "op|exact" keys
+        # (the key's own "|" splits it), so today's checks and the exact checks are both matched here.
         test_fail[prog] = {(e["key"].split("|")[4], e["key"].split("|")[5], str(e.get("target"))) for e in tl if e.get("passed") is False}
     scope_re = re.compile(r" on (Run \d+)")
     by = defaultdict(Counter)
@@ -566,8 +581,7 @@ def section_study_c(rows, root, mr):
         req = r["request"] or {}
         iv = (req.get("interventions") or [{}])[0] if req.get("interventions") else {}
         cap = (str(iv.get("family")), str(iv.get("op")), str(iv.get("target")))
-        failed_on_test = cap in test_fail.get(r["program"], set()) or \
-            (cap[0], cap[1] + "|exact", cap[2]) in test_fail.get(r["program"], set())
+        failed_on_test = cap in test_fail.get(r["program"], set())
         cited = scope_re.findall(reason)
         t = term(d, r["has"])
         for kk in (f"variant={r['variant']}|class={r['class']}", f"variant={r['variant']}|class={r['class']}|platform={r['platform']}"):
@@ -592,8 +606,9 @@ def section_study_c(rows, root, mr):
                   "precision": r4(c["correct"] / c["answered"]) if c["answered"] else None,
                   "executions_per_row": r4(c["executions"] / c["n"])}
     return {"fingerprints": fps,
-            "policy_fingerprint_equals_a_test_fingerprint": {d: v["fingerprint"] in test_fps for d, v in fps.items() if v["set"] == "wf_policy"},
+            "policy_fingerprint_equals_a_test_fingerprint": {d: v["fingerprint"] in test_fps for d, v in fps.items() if v["set"] == policy_set},
             "policy_registry_starts_with_test_registry": {p: ok for p, ok in prefix_ok.items()},
+            "test_registry_missing": test_missing,
             "missed_invalidations_P": sum(v.get("cites_test_scope", 0) for k, v in res.items() if k.startswith("variant=P") and k.count("|") == 1),
             "by_variant": res}
 
@@ -604,11 +619,11 @@ def expected_ids(run, idsets):
     if run["judge"] == "program":
         return None
     names = {s for s, _ in run["subsets"] if s}
-    if len(names) != 1:
+    if not names:
         return set()
-    ids = set(idsets.get(next(iter(names)), []))
-    if "react50" in idsets and run["dir"].endswith("react_sonnet50"):
-        ids &= set(idsets["react50"])
+    ids = set().union(*(set(idsets.get(n, [])) for n in names))   # nested subsets: the union is the largest (review 2)
+    if "react50" in idsets and run["judge"] == "react" and run["model"].startswith("claude-sonnet"):
+        ids &= set(idsets["react50"])                                # D29: Sonnet's ReAct judge saw the 50 only
     return {tuple(x.split("|", 2)) for x in ids}
 
 
@@ -628,7 +643,10 @@ def section_judges(rows, tab, runs, B, sets_main, idsets):
         if not len(idx):
             continue
         conf, trust, present = verdict_arrays(rows, idx, run)
-        res = {"judge": run["judge"], "model": run["model"], "dir": run["dir"], "expected_rows_in_main_sets": int(len(idx)),
+        res = {"judge": run["judge"], "model": run["model"], "dir": run["dir"],
+               "expected_ids_all_sets": None if exp is None else len(exp),
+               "expected_ids_main_sets": None if exp is None else sum(1 for k in exp if k[0] in sets_main),
+               "expected_rows_in_main_sets": int(len(idx)),
                "rows_with_judgment": int(present.sum()), "rows_without_judgment": int((~present).sum()),
                "expected_known": exp is None or bool(exp), "duplicates": run.get("duplicates", 0),
                "prompt_hashes": sorted(map(str, run["prompt_hashes"])), "subsets": sorted(map(str, run["subsets"])),
@@ -645,11 +663,11 @@ def section_judges(rows, tab, runs, B, sets_main, idsets):
     return out
 
 
-def section_policy_judges(rows, tab, runs, B):
+def section_policy_judges(rows, tab, runs, B, policy_set="wf_policy"):
     """Judges on the policy set, by variant and class (Study C), against the gate."""
     out = {}
     for lab, run in sorted(runs.items()):
-        idx = np.array([i for i, r in enumerate(rows) if r["set"] == "wf_policy" and r["has"]
+        idx = np.array([i for i, r in enumerate(rows) if r["set"] == policy_set and r["has"]
                         and (run["judge"] == "program" or (r["set"], r["program"], r["question"]) in run["rows"])])
         if not len(idx):
             continue
@@ -704,13 +722,14 @@ def section_agreement(rows, runs):
                 shared = sorted(set(a) & set(b))
                 if not shared:
                     continue
-                va = [a[x].get("verdict") for x in shared]
-                vb = [b[x].get("verdict") for x in shared]
+                # binary TRUST vs not (a failure or skip is DECLINE), for both agreement and kappa (review 1)
+                va = [a[x].get("verdict") == "TRUST" and a[x].get("status") == "judged" for x in shared]
+                vb = [b[x].get("verdict") == "TRUST" and b[x].get("status") == "judged" for x in shared]
                 ca = np.array([float(a[x].get("confidence") or 0) for x in shared])
                 cb = np.array([float(b[x].get("confidence") or 0) for x in shared])
                 agree = sum(x == y for x, y in zip(va, vb)) / len(shared)
-                pa = sum(x == "TRUST" for x in va) / len(shared)
-                pb = sum(x == "TRUST" for x in vb) / len(shared)
+                pa = sum(va) / len(shared)
+                pb = sum(vb) / len(shared)
                 pe = pa * pb + (1 - pa) * (1 - pb)
                 res["repeat"][f"{labs[i]} vs {labs[k]}"] = {
                     "rows": len(shared), "verdict_agreement": r4(agree), "kappa": r4((agree - pe) / (1 - pe)) if pe < 1 else None,
@@ -818,7 +837,7 @@ def digest(res) -> str:
     for g, d in res["rule_judges"].items():
         if g.startswith("cell="):
             continue
-        cells = [f"{fmt(d[k]['coverage'])}/{fmt(d[k]['precision'])}/{fmt(d[k]['yield'])} (w{d[k]['wrong']})" for k in RULE_JUDGES]
+        cells = ["n/a" if d[k] is None else f"{fmt(d[k]['coverage'])}/{fmt(d[k]['precision'])}/{fmt(d[k]['yield'])} (w{d[k]['wrong']})" for k in RULE_JUDGES]
         L.append(f"| {g} | {d['n']} | {d['programs']} | " + " | ".join(cells) +
                  f" | {fmt(d['matched_random_refusal']['precision'])}/{fmt(d['matched_random_refusal']['yield'])} |")
     L.append("")
@@ -829,7 +848,7 @@ def digest(res) -> str:
     for g, d in res["rule_judges"].items():
         if g.startswith("cell="):
             continue
-        cells = [f"{fmt(d[k]['gate_minus_this_yield']['point'])}{ci(d[k]['gate_minus_this_yield'] if 'ci95' in d[k]['gate_minus_this_yield'] else None)}"
+        cells = ["n/a" if d[k] is None else f"{fmt(d[k]['gate_minus_this_yield']['point'])}{ci(d[k]['gate_minus_this_yield'] if 'ci95' in d[k]['gate_minus_this_yield'] else None)}"
                  for k in RULE_JUDGES if k != "directed"]
         rr = d["matched_random_refusal"]["gate_minus_this_yield"]
         L.append(f"| {g} | " + " | ".join(cells) + f" | {fmt(rr['point'])}{ci(rr if 'ci95' in rr else None)} |")
@@ -872,14 +891,14 @@ def main(root: Path, out_dir: Path, judges_dir: Path, main_sets, policy_set, B: 
     res["llm_judges"] = section_judges(rows, atab, runs, B, set(main_sets), idsets)
     shared = {k: idsets[v] for k, v in (("shared150", "answer_sonnet"), ("react50", "react50")) if v in idsets}
     res["shared_rows"] = section_shared(rows, atab, runs, shared, B)
-    res["study_c"] = section_study_c(rows, root, mr)
+    res["study_c"] = section_study_c(rows, root, mr, policy_set) if policy_set else None
     if res["study_c"] is not None:
         prow = [r for r in rows if r["set"] == policy_set]
         ptab = table(prow)
         res["study_c"]["rule_judges"] = {f"variant={v}|class={c}": compare_rule_judges(ptab, np.array([i for i, r in enumerate(prow) if r["variant"] == v and r["class"] == c]), B, SEED)
                                          for v in sorted({r["variant"] for r in prow}) for c in sorted({r["class"] for r in prow})
                                          if any(r["variant"] == v and r["class"] == c for r in prow)}
-        res["study_c"]["llm_judges"] = section_policy_judges(rows, atab, runs, B)
+        res["study_c"]["llm_judges"] = section_policy_judges(rows, atab, runs, B, policy_set)
     res["agreement"] = section_agreement(rows, runs)
     res["cost"] = section_cost(rows, runs, root, sets)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -929,6 +948,16 @@ def selftest():
     check("term caught", float(term({"permit": False, "reason": "directed: c1 differs", "evidence": [["replay", True, ""], ["input_use", False, ""]]}, True) == "Caught"), 1)
     check("term untestable", float(term({"permit": False, "reason": "directed: no probe could be run", "untested": True}, True) == "Untestable"), 1)
     check("term inexpressible", float(term({"permit": False, "reason": "directed: no probe", "inexpressible": True}, True) == "Can't express"), 1)
+    for pre in ("exact-check ", "fill ", "blind-spot "):
+        check(f"term already ({pre.strip()})", float(term({"permit": False, "reason": pre + "capability failed earlier for x on Run 06",
+                                                           "evidence": [["replay", True, ""]]}, True) == "Already caught"), 1)
+    # compare_llm_judge: two cells; matching stays inside each cell
+    tab = {"prog": np.array(["p1", "p1", "p2", "p2"], dtype=object), "qid": np.array(["a", "b", "a", "b"], dtype=object),
+           "cell": np.array(["x", "x", "y", "y"], dtype=object), "correct": np.array([1, 0, 0, 1.]), "t_directed": np.array([1, 0, 0, 1.])}
+    r = compare_llm_judge(tab, np.arange(4), np.array([10, 90, 90, 10.]), np.array([0, 1, 1, 0.]), 20, 1)
+    check("per-cell match: judge takes its top row in each cell (both wrong)", r["judge_matched"]["precision"], 0.0)
+    check("gate precision", r["gate"]["precision"], 1.0)
+    check("judge own verdict wrong trusted", r["judge_own_verdict"]["wrong_trusted"], 2)
     check("builder class", float(builder_class("otf/b0/gpt-oss-120b/x/b1") == "ollama" and builder_class("devs/sonnet/X/run_01") == "claude"
                                  and builder_class("otf/r1_claude/claude-haiku-5-5/x/b1") == "claude"), 1)
     print(f"{fails} failures")
@@ -946,7 +975,7 @@ if __name__ == "__main__":
     ap.add_argument("--policy-set", default="wf_policy")
     ap.add_argument("--boot", type=int, default=2000)
     ap.add_argument("--subsets", default=None, help="frozen judge subsets file; its answer_sonnet ids are the shared rows")
-    ap.add_argument("--react50", default=None, help="JSON list of the 50 row ids (set|program|question) of the Sonnet ReAct draw")
+    ap.add_argument("--react50", default=None, help="the Sonnet ReAct draw file of scripts/draw_react50.py (its `ids`: set|program|question)")
     a = ap.parse_args()
     root = Path(a.root).resolve()
     idsets = {}

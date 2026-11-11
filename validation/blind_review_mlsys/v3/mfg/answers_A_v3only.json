@@ -1,0 +1,26 @@
+[
+ {
+  "qid": "B02",
+  "answer": 6493,
+  "confidence": "high",
+  "note": "Full re-run days 99-102 at 150000 kg. SOS500 d100 order is cut to 2023 units on day 101; day 102 clears the d100 rest (1802) but the cap is then used by SOS005 d100 (7070 units), so d101 2959 + d102 3534 stay open."
+ },
+ {
+  "qid": "B05",
+  "answer": 18368,
+  "confidence": "high",
+  "note": "No capacity event in the period and SOS001 has no backlog through day 117 (all orders ship in full), so the extra 4973 units carry: 13395 + 4973."
+ },
+ {
+  "qid": "B06",
+  "answer": 359,
+  "confidence": "high",
+  "note": "MAR never has a backlog; on the one capacity-bound day (190) the MAR order (29) is served before ATN and ships in full. Extra 81 carries: 278 + 81."
+ },
+ {
+  "qid": "B08",
+  "answer": 13694,
+  "confidence": "high",
+  "note": "End day 124 POV001 stock 0, backordered 12296. Day 125 without production ships 0; day 126 adds order 1398 with no stock: 13694. No capacity event in the period."
+ }
+]
