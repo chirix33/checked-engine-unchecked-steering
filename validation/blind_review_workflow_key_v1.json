@@ -1,0 +1,33 @@
+{
+ "seed": 20271109,
+ "questions": "manifests/workflow_questions_test_v1.json",
+ "questions_sha256": "fe754f44bb8b586ba912eec110660bf8d974124651300642709e473564e9997f",
+ "input_files_sha256": {
+  "loan_chapter_Run_05.txt": "93eb718e470eb58ba84b94871bdddfccc63b97544efcb769255bab80679bf2dd",
+  "loan_chapter_Run_06.txt": "c685414db9c07b86acf01126d41a4ac00e4215d3c039420617a2f23499dc58ac",
+  "loan_chapter_Run_07.txt": "27c186cc70d0996d921f9f5e4dc9e1109e26781c777b338b5354c0277eeb6e1b",
+  "loan_chapter_Run_10.txt": "c369110f99d7434d75e8aa5208431123ead75886bcea6400afd295d96160c8ad",
+  "loan_chapter_Run_11.txt": "971d82e5d8f90bb9145401fce0f36213dff0c0b12c8b18dbff338f18203af155",
+  "loan_chapter_Run_12.txt": "c3dad881ca4f12a3f45f49d4f4a1ed52c1f17f78371b724fe7e0be0e8a6befa1",
+  "loan_front_matter.txt": "1ec23975feb07b6a06262d24abf917cc4e07018938bb4eab976da1de5b02ca78",
+  "pharmacy_chapter_Run_05.txt": "80475eb3a00bb2c4dd699153108a9ccef4a2796580a5363567b1c036cb5ce727",
+  "pharmacy_chapter_Run_08.txt": "420274723f4d1b801cd99bb790efeadeb68b784e3bfe1f3531b8329bf8dd23ae",
+  "pharmacy_chapter_Run_09.txt": "6fe43617cfeef79deb67718eb377028169d671850a7d169cc418bfe61e4c95e5",
+  "pharmacy_front_matter.txt": "2e291a41e64a0744b06475b175caa0210ffb9e3e42ff3c480e25ce52bb346302"
+ },
+ "questions_json_sha256": "51868f906db946bf6fefec8c7e97141e51cfba4d3a04b8e70b97a58d36253933",
+ "key": {
+  "W01": "loa-test-activity_duration-15",
+  "W02": "loa-test-case_set-15",
+  "W03": "loa-test-resource_availability-16",
+  "W04": "loa-test-routing_outcome-15",
+  "W05": "loa-test-routing_probability-19",
+  "W06": "loa-test-timer_delay-03",
+  "W07": "pha-test-activity_duration-03",
+  "W08": "pha-test-case_set-16",
+  "W09": "pha-test-resource_availability-19",
+  "W10": "pha-test-routing_outcome-17",
+  "W11": "pha-test-routing_probability-06",
+  "W12": "pha-test-timer_delay-06"
+ }
+}

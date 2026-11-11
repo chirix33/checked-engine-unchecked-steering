@@ -577,10 +577,50 @@ def phase2_tests():
     check("phase2: fill value is the largest memory in the window", ws8 and {w.value for w in ws8} == {float(top)})
 
 
+def kindmap_tests():
+    """`OTFDomain.kind_map` (2026-11-10 review): table-cell sources in both forms ([node, row] from the pinned B0 reader,
+    [node, row, cols] from R1) vote; every task-log event votes, so a kind whose rows mix events stays unmapped."""
+    from assurance import mlsys as M2
+    nav = json.loads((ROOT / "runs" / "mlsys_docs" / "itops_dev" / "navmap.json").read_text(encoding="utf-8"))
+    schema = M2.schema_from_map(nav)
+    scope = sorted(schema.chapters)[0]
+    log = next(n for n in nav["nodes"] if n["title"] == f"{scope}: Task log" and n["kind"] == "table")
+    ecol = log["table"]["columns"].index("event")
+    rows_of = {}
+    for i, r in enumerate(log["table"]["rows"]):
+        rows_of.setdefault(r[ecol], []).append(i)
+    nid = log["node_id"]
+
+    class FakeToolgen:
+        outcomes = []
+
+        def read_scope(self, code, m, sc):
+            return {"outcomes": FakeToolgen.outcomes, "params": {}}
+
+    be = object.__new__(M2.OTFDomain)
+    be.nav, be.schema, be.toolgen, be.code, be._maps = nav, schema, FakeToolgen(), "", {}
+
+    def kmap(outs):
+        FakeToolgen.outcomes = outs
+        be._maps = {}
+        return be.kind_map(scope)
+    s0, s1, f0 = rows_of["start"][0], rows_of["start"][1], rows_of["finish"][0]
+    sub = rows_of.get("submit", [None])[0]
+    km = kmap([{"kind": "start", "src": [[nid, s0]]}, {"kind": "task_finish", "src": [[nid, f0]]}])
+    check("kind_map: [node, row] sources (B0 form) vote", km == {"start": "start", "task_finish": "finish"}, str(km))
+    km = kmap([{"kind": "go", "src": [[nid, s0, ["event"]]]}])
+    check("kind_map: [node, row, cols] sources (R1 form) vote", km == {"go": "start"}, str(km))
+    if sub is not None:
+        km = kmap([{"kind": "wait", "src": [[nid, s1]]}, {"kind": "wait", "src": [[nid, sub]]}])
+        check("kind_map: a kind whose rows mix submit and start stays unmapped", km == {}, str(km))
+    km = kmap([{"kind": "starting", "src": []}, {"kind": "task_evicted", "src": []}])
+    check("kind_map: no names are guessed without table-cell sources", km == {}, str(km))
+
+
 if __name__ == "__main__":
     phase2_tests()
     for f in (schema_tests, contract_tests, parse_tests, edit_tests, binding_tests, policy_tests, review1_tests, native_tests,
-              blindspot_tests):
+              blindspot_tests, kindmap_tests):
         f()
     print(f"\n{len(FAILS)} failures")
     sys.exit(len(FAILS))
