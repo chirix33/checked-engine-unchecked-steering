@@ -309,10 +309,10 @@ These are directions for wording the paper accurately. They are not items for th
 - **Safe wording:** the gate stays safe on weak builders and refuses almost everything, because the programs fail its checks. State coverage and the wrong count together.
 - **Caveat to state next to the result (not in Limitations):** the gate's precision on Ollama-built programs rests on very few Trusted answers (0.983 on the program-level judge rows, 0.949 on 537 Haiku-answer rows), so do not read it as a precise estimate.
 
-**N3. Where the D26 checks apply: a method-scope sentence, not a limitation.**
-- **Fact:** the D26 checks need structured records, so they cannot run on OTF's free-form records. There they record Untestable and change no Trusted decision; OTF rows are decided by the earlier probes. On OTF R1 Claude-built programs the gate still Trusts 0 wrong answers in the main run.
-- **Safe wording:** in the method section, say which record formats each check needs and that checks which cannot apply are recorded as Untestable, not passed.
-- **Avoid:** describing the D26 checks as covering every platform.
+**N3. D26 checks on OTF: only needed if the paper names the D26 checks individually.**
+- **Why it might matter:** if the method section lists the D26 checks as part of the gate, a careful reader could assume they run on every platform. They don't: they need structured records, so on OTF's free-form records they are recorded as Untestable.
+- **Why it matters little:** it changed no decision in the main run, no main-run error depends on it, and on OTF R1 Claude-built programs the gate let 0 wrong answers through without them.
+- **What to do:** if the paper names the checks, add one clause: "checks that need structured records are recorded as Untestable on free-form records." If it describes the gate's checks at a general level (likely in 9 pages), skip this note.
 
 ## 7. Known limits
 
