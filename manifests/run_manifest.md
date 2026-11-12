@@ -1553,3 +1553,16 @@ Closes the failed check in "The judges' sandbox gets the socket filter; io_uring
   - scope fixes: "only Haiku ReAct" is limited to the 101 main-set rows, the "most precise" superlative is rewritten, self-judging rows are labelled as including wf_policy, borderline intervals ending at 0 are flagged, and Sonnet ReAct's AUROC is added.
   - §6b note N1 ("On P, refusing is the correct outcome") contradicts the disagreement result. I added a review note and left the wording for Ashraf to decide.
 - **N1 rewritten (2026-11-11, at Ashraf's request):** §6b N1 in `main_results_v1.md` now matches the data. On P the gate is safe but has zero yield, and a reading-disagreement baseline keeps 47.4% at precision 1.000. The "refusing is the correct outcome" guidance and the review note are removed. A history-free fallback is noted as untested future work.
+
+## 2026-11-12: domain x platform x judge tables (main run only; reporting view, post-freeze)
+
+- New script `scripts/domain_tables.py` (not a frozen file). It reuses the reviewed `main_analysis.py` functions and only regroups the main-set rows (wf_test, ml_test; 9,792 rows) by domain x platform x builder class. B=2000, seed 20261111.
+- Output: `runs/main_v1/domain_tables_v1/test/domain_tables.{md,json}`. A dev version was made and deleted at Ashraf's request (main run only).
+- Separate-agent review: every number matches main_analysis.json/tables.md (the pooled rows byte for byte, the plain-term totals equal §4), and spot cells were recomputed from raw rows. Fixes applied after the review:
+  - pipes in platform names broke the markdown columns;
+  - the W/L labels overstated what they showed and were replaced by +/0/- signs for precision and yield;
+  - LLM brackets now show the gate's wrong answers on the same subset;
+  - the footnote row counts are 2,565 / 8,020 / 853;
+  - the win/tie/loss tally was dropped, because native = schema and replay ~ program_wide;
+  - a no-answer group now shows n/a.
+- Reading: the gate never loses on precision anywhere. Pharmacy OTF-R1 Claude-built is the one cell where no judge beats it on either axis. Selecting a headline cell after seeing test is post hoc; disclose it.

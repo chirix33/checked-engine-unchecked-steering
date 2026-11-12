@@ -9,11 +9,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{In one loan-application process we study,}{1}{section*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Our approach.}{1}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Our procedure.}{1}{section*.6}\protected@file@percent }
 \citation{yao2023react}
 \citation{otftools2026}
 \citation{chen2026devs}
-\@writefile{toc}{\contentsline {paragraph}{How we evaluate it.}{2}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation process.}{2}{section*.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Problem Setting}{2}{section.2}\protected@file@percent }
 \newlabel{sec:problem}{{2}{2}{Problem Setting}{section.2}{}}
@@ -76,22 +76,22 @@
 \@writefile{toc}{\contentsline {paragraph}{Models and subsets.}{6}{section*.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Other references.}{6}{section*.28}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Analysis plan, fixed before test labels were read.}{6}{section*.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Error against coverage on OTF-Tools\xspace  R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \textsc  {Directed}\xspace  trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table\nonbreakingspace \ref {tab:llm}).}}{6}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:riskcov}{{2}{6}{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table~\ref {tab:llm})}{figure.caption.32}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Results}{6}{section.6}\protected@file@percent }
 \newlabel{sec:results}{{6}{6}{Results}{section.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}RQ1: Wrong answers accepted at matched coverage}{6}{subsection.6.1}\protected@file@percent }
 \newlabel{sec:results:main}{{6.1}{6}{RQ1: Wrong answers accepted at matched coverage}{subsection.6.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Per program.}{6}{section*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}RQ2: Detecting or abstaining?}{6}{subsection.6.2}\protected@file@percent }
-\newlabel{sec:results:families}{{6.2}{6}{RQ2: Detecting or abstaining?}{subsection.6.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Interpretation.}{6}{section*.34}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Rule-based judges and \textsc  {Directed}\xspace  on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs as a share of all pairs (\%). Err.: wrong answers among them (\%), with the count of wrong answers in parentheses. Sonnet- and Haiku-built programs are shown per platform and pooled; Ollama-built programs (OTF-Tools\xspace  R1 only) are shown apart and never pooled with them. Random refusal keeps a random subset of the unchecked answers at \textsc  {Directed}\xspace  's coverage in each cell. Paired 95\% intervals for every difference are in the artifact.}}{7}{table.caption.30}\protected@file@percent }
-\newlabel{tab:main}{{3}{7}{Rule-based judges and \gate on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs as a share of all pairs (\%). Err.: wrong answers among them (\%), with the count of wrong answers in parentheses. Sonnet- and Haiku-built programs are shown per platform and pooled; Ollama-built programs (\otf R1 only) are shown apart and never pooled with them. Random refusal keeps a random subset of the unchecked answers at \gate 's coverage in each cell. Paired 95\% intervals for every difference are in the artifact}{table.caption.30}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Model-based judges against \textsc  {Directed}\xspace  on Sonnet- and Haiku-built programs (main test sets). Each judge ran on a fixed subset of $n$ answered pairs; coverage here is a share of these answered pairs, so it is higher than in Table\nonbreakingspace \ref {tab:main}. Matched: the judge keeps its most confident answers up to \textsc  {Directed}\xspace  's count in each cell; the expected number of wrong answers is in parentheses. Own verdict: the judge's own trust or decline. $\Delta $: \textsc  {Directed}\xspace  minus the judge, in percentage points, with the paired 95\% interval; $\Delta $ precision $>0$ favors \textsc  {Directed}\xspace  , and $\Delta $ kept $<0$ means the judge's own verdict keeps more correct answers. Failed: unparsable, cut-off or refused replies and ReAct runs out of turns, all counted as declines, over every row the judge saw.}}{7}{table.caption.31}\protected@file@percent }
-\newlabel{tab:llm}{{4}{7}{Model-based judges against \gate on Sonnet- and Haiku-built programs (main test sets). Each judge ran on a fixed subset of $n$ answered pairs; coverage here is a share of these answered pairs, so it is higher than in Table~\ref {tab:main}. Matched: the judge keeps its most confident answers up to \gate 's count in each cell; the expected number of wrong answers is in parentheses. Own verdict: the judge's own trust or decline. $\Delta $: \gate minus the judge, in percentage points, with the paired 95\% interval; $\Delta $ precision $>0$ favors \gate , and $\Delta $ kept $<0$ means the judge's own verdict keeps more correct answers. Failed: unparsable, cut-off or refused replies and ReAct runs out of turns, all counted as declines, over every row the judge saw}{table.caption.31}{}}
+\@writefile{toc}{\contentsline {paragraph}{Per program.}{6}{section*.33}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Rule-based judges and \textsc  {Directed}\xspace  on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs (\% of all pairs). Wrong: wrong answers trusted (expected number for random refusal, which keeps random unchecked answers at \textsc  {Directed}\xspace  's coverage in each cell). $\Delta $K: correct answers kept by \textsc  {Directed}\xspace  minus by the judge, in points; negative means the judge keeps more. Bold: paired 95\% bootstrap interval excludes 0. Ollama-built programs are never pooled with the others.}}{7}{table.caption.30}\protected@file@percent }
+\newlabel{tab:main}{{3}{7}{Rule-based judges and \gate on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs (\% of all pairs). Wrong: wrong answers trusted (expected number for random refusal, which keeps random unchecked answers at \gate 's coverage in each cell). $\Delta $K: correct answers kept by \gate minus by the judge, in points; negative means the judge keeps more. Bold: paired 95\% bootstrap interval excludes 0. Ollama-built programs are never pooled with the others}{table.caption.30}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Model-based judges against \textsc  {Directed}\xspace  on Sonnet- and Haiku-built programs (main test sets), each on a fixed subset of $n$ answered pairs, so coverage is a share of answered pairs. Matched: the judge keeps its most confident answers up to \textsc  {Directed}\xspace  's count in each cell (expected wrong answers in parentheses). Own verdict: the judge's own decisions. $\Delta $: \textsc  {Directed}\xspace  minus the judge, in points, with paired 95\% interval; $\Delta $ precision $>0$ favors \textsc  {Directed}\xspace  ; $\Delta $ kept $<0$ means the judge keeps more correct answers. Bold: interval excludes 0. Failed: unparsable, cut-off, refused or out-of-turns replies (counted as declines).}}{7}{table.caption.31}\protected@file@percent }
+\newlabel{tab:llm}{{4}{7}{Model-based judges against \gate on Sonnet- and Haiku-built programs (main test sets), each on a fixed subset of $n$ answered pairs, so coverage is a share of answered pairs. Matched: the judge keeps its most confident answers up to \gate 's count in each cell (expected wrong answers in parentheses). Own verdict: the judge's own decisions. $\Delta $: \gate minus the judge, in points, with paired 95\% interval; $\Delta $ precision $>0$ favors \gate ; $\Delta $ kept $<0$ means the judge keeps more correct answers. Bold: interval excludes 0. Failed: unparsable, cut-off, refused or out-of-turns replies (counted as declines)}{table.caption.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}RQ2: Detecting or abstaining?}{7}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:results:families}{{6.2}{7}{RQ2: Detecting or abstaining?}{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Interpretation.}{7}{section*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}RQ3: Reuse under a changed or reworded policy}{7}{subsection.6.3}\protected@file@percent }
 \newlabel{sec:results:reuse}{{6.3}{7}{RQ3: Reuse under a changed or reworded policy}{subsection.6.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}RQ4: Cost of checking}{7}{subsection.6.4}\protected@file@percent }
-\newlabel{sec:results:cost}{{6.4}{7}{RQ4: Cost of checking}{subsection.6.4}{}}
 \citation{otftools2026}
 \citation{chen2026devs}
 \citation{holt2025gsim}
@@ -102,43 +102,44 @@
 \citation{wu2026never}
 \citation{elyaniv2010selective,geifman2017selective}
 \citation{opoku2026toolchain}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textsc  {Directed}\xspace  's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \textsc  {Directed}\xspace  trusts. Declines are split into those that \emph  {detect} (\textsf  {Caught}\xspace  , \textsf  {Already caught}\xspace  , \textsf  {Failed history check}\xspace  ) and those that \emph  {abstain} (\textsf  {Untestable}\xspace  , \textsf  {Can't express}\xspace  , \textsf  {Request rejected}\xspace  ), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families.}}{8}{table.caption.34}\protected@file@percent }
+\newlabel{tab:families}{{5}{8}{\gate 's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \gate trusts. Declines are split into those that \emph {detect} (\Caught , \Already , \Failhist ) and those that \emph {abstain} (\Untestable , \Cantexpress , \Badrequest ), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families}{table.caption.34}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs.}}{8}{table.caption.36}\protected@file@percent }
+\newlabel{tab:reuse}{{6}{8}{Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs}{table.caption.36}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}RQ4: Cost of checking}{8}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:results:cost}{{6.4}{8}{RQ4: Cost of checking}{subsection.6.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair.}}{8}{table.caption.37}\protected@file@percent }
+\newlabel{tab:cost}{{7}{8}{Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Do LLM judges depend on the model?}{8}{subsection.6.5}\protected@file@percent }
+\newlabel{sec:results:models}{{6.5}{8}{Do LLM judges depend on the model?}{subsection.6.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{8}{section.7}\protected@file@percent }
+\newlabel{sec:related}{{7}{8}{Related Work}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{LLM-generated simulators.}{8}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Structured requests and abstention.}{8}{section*.39}\protected@file@percent }
 \citation{zheng2023judging}
 \citation{panickssery2024self}
 \citation{yao2023react}
 \citation{zhao2023selection}
 \citation{zerhoudi2026wrong}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textsc  {Directed}\xspace  's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \textsc  {Directed}\xspace  trusts. Declines are split into those that \emph  {detect} (\textsf  {Caught}\xspace  , \textsf  {Already caught}\xspace  , \textsf  {Failed history check}\xspace  ) and those that \emph  {abstain} (\textsf  {Untestable}\xspace  , \textsf  {Can't express}\xspace  , \textsf  {Request rejected}\xspace  ), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families.}}{8}{table.caption.33}\protected@file@percent }
-\newlabel{tab:families}{{5}{8}{\gate 's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \gate trusts. Declines are split into those that \emph {detect} (\Caught , \Already , \Failhist ) and those that \emph {abstain} (\Untestable , \Cantexpress , \Badrequest ), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families}{table.caption.33}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs.}}{8}{table.caption.35}\protected@file@percent }
-\newlabel{tab:reuse}{{6}{8}{Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs}{table.caption.35}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Do LLM judges depend on the model?}{8}{subsection.6.5}\protected@file@percent }
-\newlabel{sec:results:models}{{6.5}{8}{Do LLM judges depend on the model?}{subsection.6.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair.}}{8}{table.caption.36}\protected@file@percent }
-\newlabel{tab:cost}{{7}{8}{Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair}{table.caption.36}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{8}{section.7}\protected@file@percent }
-\newlabel{sec:related}{{7}{8}{Related Work}{section.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{LLM-generated simulators.}{8}{section*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Structured requests and abstention.}{8}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Models as judges.}{8}{section*.39}\protected@file@percent }
 \citation{sargent2013vv}
 \citation{chen2018metamorphic,segura2016survey}
 \citation{demillo1991constraint}
 \citation{law2015simulation}
 \citation{pearl2009causality}
 \citation{vanderaalst2016process,lopezpintado2023prosimos,chapela2024extraneous}
-\citation{chapela2023zenodo}
-\@writefile{toc}{\contentsline {paragraph}{Testing simulation programs.}{9}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Models as judges.}{9}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Testing simulation programs.}{9}{section*.41}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8}Limitations and Threats to Validity}{9}{section.8}\protected@file@percent }
 \newlabel{sec:limits}{{8}{9}{Limitations and Threats to Validity}{section.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Known blind spots.}{9}{section*.41}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Design on development data.}{9}{section*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The reference and the builders share a model family.}{9}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Scope.}{9}{section*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sandbox and cost accounting.}{9}{section*.45}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Broader impact.}{9}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Known blind spots.}{9}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Design on development data.}{9}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The reference and the builders share a model family.}{9}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Scope.}{9}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sandbox and cost accounting.}{9}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Broader impact.}{9}{section*.47}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}\protected@file@percent }
 \newlabel{sec:conclusion}{{9}{9}{Conclusion}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{Artifact.}{9}{section*.47}\protected@file@percent }
+\citation{chapela2023zenodo}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
 \bibcite{otftools2026}{{1}{2026}{{Anonymous}}{{}}}
@@ -178,9 +179,10 @@
 \newlabel{tocindent3}{0pt}
 \newlabel{tocindent4}{0pt}
 \newlabel{tocindent5}{0pt}
-\@writefile{toc}{\contentsline {paragraph}{As objects of study.}{10}{section*.49}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In building the research software and the benchmark.}{10}{section*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In writing this paper.}{10}{section*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{10}{section*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Artifact.}{10}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{As objects of study.}{10}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In building the research software and the benchmark.}{10}{section*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In writing this paper.}{10}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{10}{section*.54}\protected@file@percent }
 \newlabel{TotPages}{{10}{10}{}{page.10}{}}
 \gdef \@abspage@last{10}
