@@ -1,10 +1,10 @@
 \section{Results}
 \label{sec:results}
 
-%% NOTE FOR FILLING IN: every \tbd and \TBD below is a placeholder for a number or finding from the
-%% scored test run (scripts/main_analysis.py on wf_test, ml_test, wf_policy and runs/judges_main_v1).
-%% Do not fill any cell from development data. Prose marked \TBD states what the sentence must report;
-%% rewrite it to match the measured direction, including null or negative results.
+%% Table cells were filled on 2026-11-12 from runs/main_v1/analysis_v1/main_analysis.json (B = 2000),
+%% with medians and the no-effect split recomputed from the raw rows (see results.tex for sources).
+%% Prose marked \TBD still states what a sentence must report; it is rewritten in the claims pass to match
+%% the measured direction, including null and negative results. Never fill anything from development data.
 
 We ask four questions. \textbf{RQ1}: at the same coverage, does the library accept fewer wrong answers than the other judges? \textbf{RQ2}: when it declines, is it detecting errors or abstaining? \textbf{RQ3}: does rechecking keep wrong answers out when a program is reused under a changed policy, and what does it cost when the policy was only reworded? \textbf{RQ4}: what does checking cost? All numbers are from the test runs, with programs built on development documents only.
 
@@ -13,30 +13,57 @@ We ask four questions. \textbf{RQ1}: at the same coverage, does the library acce
 
 \begin{table*}[t]
 \centering
-\caption{Coverage (Cov.) and error among answered pairs (Err., \%) on the test runs. Claude-built programs pool \otf R1, \devs and the coding agent within each domain as sums over cells; Ollama-built programs (\otf R1 only) are shown apart. LLM judges are cut to \gate's coverage in each cell (matched); rule-based judges are shown at their own operating point. 95\% two-level bootstrap intervals are in the artifact.}
+\caption{Rule-based judges and \gate on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs as a share of all pairs (\%). Err.: wrong answers among them (\%), with the count of wrong answers in parentheses. Sonnet- and Haiku-built programs are shown per platform and pooled; Ollama-built programs (\otf R1 only) are shown apart and never pooled with them. Random refusal keeps a random subset of the unchecked answers at \gate's coverage in each cell. Paired 95\% intervals for every difference are in the artifact.}
 \label{tab:main}
 \small
-\setlength{\tabcolsep}{4.2pt}
+\setlength{\tabcolsep}{3.0pt}
 \begin{tabular}{@{}l rr rr rr rr rr@{}}
 \toprule
-& \multicolumn{8}{c}{Claude-built programs} & \multicolumn{2}{c}{Ollama-built (\otf)} \\
+& \multicolumn{8}{c}{Built by Sonnet and Haiku} & \multicolumn{2}{c}{Built by Ollama models} \\
 \cmidrule(lr){2-9}\cmidrule(l){10-11}
-& \multicolumn{2}{c}{Loan} & \multicolumn{2}{c}{Pharmacy} & \multicolumn{2}{c}{Manufacturing} & \multicolumn{2}{c}{IT operations} & \multicolumn{2}{c}{All domains} \\
+& \multicolumn{2}{c}{\otf R1 (24 progs)} & \multicolumn{2}{c}{\devs (22)} & \multicolumn{2}{c}{Coding agent (16)} & \multicolumn{2}{c}{All three (62)} & \multicolumn{2}{c}{\otf R1 (24)} \\
+& \multicolumn{2}{c}{2{,}736 pairs} & \multicolumn{2}{c}{2{,}496} & \multicolumn{2}{c}{1{,}824} & \multicolumn{2}{c}{7{,}056} & \multicolumn{2}{c}{2{,}736} \\
 Judge & Cov. & Err. & Cov. & Err. & Cov. & Err. & Cov. & Err. & Cov. & Err. \\
 \midrule
-Platform check (no added check) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-History check (\cfg{Replay}) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-Generic tests (\cfg{Generic}) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-Disagreement with reading & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-Program-level LLM judge (Haiku) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Platform check (no added check) & 87.0 & 10.2 (243) & 87.8 & 1.5 (34) & 97.6 & 0.0 (0) & 90.0 & 4.4 (277) & 61.0 & 69.6 (1161) \\
+History check (\cfg{Replay}) & 82.4 & 9.0 (202) & 79.0 & 0.2 (5) & 97.6 & 0.0 (0) & 85.1 & 3.4 (207) & 4.9 & 13.4 (18) \\
+Generic tests (\cfg{Generic}) & 82.1 & 8.9 (200) & 78.7 & 0.2 (5) & 97.6 & 0.0 (0) & 84.9 & 3.4 (205) & 4.9 & 13.4 (18) \\
+Disagreement with reading & 59.7 & 1.8 (29) & 68.3 & 0.2 (4) & 75.0 & 0.0 (0) & 66.7 & 0.7 (33) & 15.5 & 4.3 (18) \\
+Random refusal at \gate's coverage & 70.5 & 10.2 & 78.2 & 1.5 & 96.9 & 0.0 & 80.1 & 4.4 & 4.2 & 69.6 \\
 \midrule
-Answer-level LLM judge (Haiku), matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-ReAct judge (Haiku), matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-Random refusal, matched & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\cfg{Schema} (ablation) & 87.0 & 10.2 (243) & 87.8 & 1.5 (34) & 97.6 & 0.0 (0) & 90.0 & 4.4 (277) & 61.0 & 69.6 (1161) \\
+\cfg{Program-wide} (ablation) & 82.1 & 9.0 (202) & 78.7 & 0.2 (4) & 97.6 & 0.0 (0) & 84.9 & 3.4 (206) & 4.9 & 13.4 (18) \\
+\gate (ours) & 70.5 & 0.0 (0) & 78.2 & 0.3 (5) & 96.9 & 0.0 (0) & 80.1 & 0.1 (5) & 4.2 & 1.7 (2) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Model-based judges against \gate on Sonnet- and Haiku-built programs (main test sets). Each judge ran on a fixed subset of $n$ answered pairs; coverage here is a share of these answered pairs, so it is higher than in Table~\ref{tab:main}. Matched: the judge keeps its most confident answers up to \gate's count in each cell; the expected number of wrong answers is in parentheses. Own verdict: the judge's own trust or decline. $\Delta$: \gate minus the judge, in percentage points, with the paired 95\% interval; $\Delta$ precision $>0$ favors \gate, and $\Delta$ kept $<0$ means the judge's own verdict keeps more correct answers. Failed: unparsable, cut-off or refused replies and ReAct runs out of turns, all counted as declines, over every row the judge saw.}
+\label{tab:llm}
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}l r r r r r r r r@{}}
+\toprule
+& & \gate & \multicolumn{2}{c}{Judge, matched} & \multicolumn{3}{c}{Judge, own verdict} & \\
+\cmidrule(lr){3-3}\cmidrule(lr){4-5}\cmidrule(lr){6-8}
+Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & Failed \\
 \midrule
-\cfg{Schema} (ablation) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-\cfg{Program-wide} (ablation) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
-\gate (ours) & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd & \tbd \\
+\multicolumn{9}{@{}l}{\textit{Answer-level judge}} \\
+\quad Haiku & 2{,}028 & 0.2 (3) & 1.1 (20) & $+0.9$ [0.2, 2.0] & 85.7 & 0.6 (10) & $+3.1$ [$-2.7$, 7.8] & 1/3{,}000 \\
+\quad Sonnet & 101 & 0.0 (0) & 0.0 (0) & 0.0 [0.0, 0.0] & 94.1 & 0.0 (0) & $-9.9$ [$-23.4$, 1.1] & 0/150 \\
+\quad gpt-oss & 101 & 0.0 (0) & 3.2 (3) & $+3.2$ [0.0, 6.2] & 60.4 & 3.3 (2) & $+25.7$ [6.2, 43.6] & 0/150 \\
+\quad Gemma & 101 & 0.0 (0) & 2.7 (2) & $+2.7$ [0.0, 5.5] & 81.2 & 1.2 (1) & $+4.0$ [$-10.7$, 18.4] & 0/150 \\
+\quad Qwen & 101 & 0.0 (0) & 0.6 (1) & $+0.6$ [0.0, 1.8] & 80.2 & 1.2 (1) & $+5.0$ [$-12.3$, 22.6] & 5/150 \\
+\multicolumn{9}{@{}l}{\textit{Program-level judge}} \\
+\quad Haiku & 6{,}352 & 0.1 (5) & 3.5 (196) & $+3.4$ [1.7, 5.6] & 76.4 & 3.3 (160) & $+14.9$ [9.6, 21.0] & 0/1{,}778 \\
+\multicolumn{9}{@{}l}{\textit{ReAct judge}} \\
+\quad Haiku & 679 & 0.0 (0) & 1.4 (8) & $+1.4$ [0.4, 3.9] & 93.1 & 1.3 (8) & $-5.6$ [$-11.7$, $-0.5$] & 3/1{,}000 \\
+\quad Sonnet & 32 & 0.0 (0) & 0.0 (0) & 0.0 [0.0, 0.0] & 87.5 & 0.0 (0) & $-9.4$ [$-30.3$, 0.0] & 1/50 \\
+\quad gpt-oss & 101 & 0.0 (0) & 2.3 (2) & $+2.4$ [0.0, 5.5] & 53.5 & 1.8 (1) & $+31.7$ [11.1, 50.0] & 38/150 \\
+\quad Gemma & 101 & 0.0 (0) & 2.5 (2) & $+2.5$ [0.0, 5.0] & 90.1 & 1.1 (1) & $-5.0$ [$-20.2$, 9.9] & 3/150 \\
+\quad Qwen & 101 & 0.0 (0) & 2.3 (2) & $+2.4$ [0.0, 5.7] & 71.3 & 0.0 (0) & $+12.9$ [$-7.5$, 32.6] & 24/150 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -54,7 +81,7 @@ For Ollama-built programs, \TBD{report \rNoCheckErrOllama\% vs.\ \rGateErrOllama
 
 \begin{table}[t]
 \centering
-\caption{The gate's decisions by change family (Claude-built programs, test). ``Wrong'' is the number of wrong answers with no added check; ``Kept'' the wrong answers the gate trusts. Declines are split into those that \emph{detect} (\Caught, \Already, \Failhist) and those that \emph{abstain} (\Untestable, \Cantexpress, \Badrequest), each as wrong answers removed / correct answers lost.}
+\caption{\gate's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \gate trusts. Declines are split into those that \emph{detect} (\Caught, \Already, \Failhist) and those that \emph{abstain} (\Untestable, \Cantexpress, \Badrequest), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families.}
 \label{tab:families}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -63,25 +90,26 @@ For Ollama-built programs, \TBD{report \rNoCheckErrOllama\% vs.\ \rGateErrOllama
 Family & Pairs & Wrong & Kept & Detect & Abstain \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{Workflows (Loan and Pharmacy)}} \\
-Activity duration & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Timer delay & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Route draw (one case) & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Routing probabilities & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Worker availability & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Case removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Activity duration & 620 & 11 & 0 & 11/55 & 0/0 \\
+Timer delay & 620 & 15 & 0 & 15/67 & 0/0 \\
+Route draw (one case) & 620 & 5 & 0 & 5/44 & 0/14 \\
+Routing probabilities & 620 & 195 & 0 & 195/70 & 0/0 \\
+Worker availability & 620 & 33 & 1 & 32/36 & 0/0 \\
+Case removal & 620 & 11 & 1 & 10/20 & 0/0 \\
 \multicolumn{6}{@{}l}{\textit{Manufacturing}} \\
-Order removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Production quantity & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Production timing & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Dispatch capacity & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Order removal & 384 & 0 & 0 & 0/0 & 0/0 \\
+Production quantity & 384 & 0 & 0 & 0/0 & 0/0 \\
+Production timing & 384 & 0 & 0 & 0/0 & 0/0 \\
+Dispatch capacity & 384 & 0 & 0 & 0/0 & 0/9 \\
 \multicolumn{6}{@{}l}{\textit{IT operations}} \\
-Job removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Failure removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Task priority & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Task resource request & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
-Machine removal & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+Job removal & 360 & 3 & 1 & 2/1 & 0/0 \\
+Failure removal & 360 & 1 & 1 & 0/4 & 0/14 \\
+Task priority & 360 & 0 & 0 & 0/5 & 0/0 \\
+Task resource request & 360 & 2 & 0 & 2/6 & 0/6 \\
+Machine removal & 360 & 1 & 1 & 0/79 & 0/0 \\
 \midrule
-No-effect controls (all) & \tbd & \tbd & \tbd & \tbd/\tbd & \tbd/\tbd \\
+All families & 7{,}056 & 277 & 5 & 272/387 & 0/43 \\
+No-effect controls & 1{,}300 & 16 & 0 & 16/90 & 0/37 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -95,20 +123,22 @@ A judge can remove wrong answers in two ways: by finding the error, or by declin
 
 \begin{table}[t]
 \centering
-\caption{Policy reuse (Claude-built workflow programs; 1{,}411 pairs). Programs and their capability records come from the test runs. P changes one pool size; H rewords the rules without changing them. Exec./pair counts program executions per question.}
+\caption{Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs.}
 \label{tab:reuse}
 \footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}l rr rr r@{}}
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{@{}l rrr rrr@{}}
 \toprule
-& \multicolumn{2}{c}{P (changed)} & \multicolumn{2}{c}{H (reworded)} & \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-Judge (recheck regime) & Cov. & Err. & Cov. & Err. & Exec./pair \\
+& \multicolumn{3}{c}{P (changed)} & \multicolumn{3}{c}{H (reworded)} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Judge & Cov. & Err. & Exec. & Cov. & Err. & Exec. \\
 \midrule
-Platform check (no recheck) & \tbd & \tbd & \tbd & \tbd & 0 \\
-History check (factual recheck) & \tbd & \tbd & \tbd & \tbd & \tbd \\
-\gate (per-family recheck) & \tbd & \tbd & \tbd & \tbd & \tbd \\
+Platform check & 93.9 & 47.1 (302) & 0 & 94.0 & 7.2 (49) & 0 \\
+History check & 0.0 & -- & 0 & 77.5 & 6.2 (35) & 0 \\
+Disagreement$^\ast$ & 47.4 & 0.0 (0) & 0 & 74.2 & 0.0 (0) & 0 \\
+\gate & 0.0 & -- & 0 & 72.1 & 0.0 (0) & 1.45 \\
 \bottomrule
+\multicolumn{7}{@{}l}{\scriptsize $^\ast$Plus one reading call per question, shared by all programs.}
 \end{tabular}
 \end{table}
 
@@ -119,7 +149,7 @@ Every main result above is already a reuse result: each program was built on dev
 
 \begin{table}[t]
 \centering
-\caption{Cost per judged pair on the test runs. Program executions exclude the run that produces the answer. USD at list prices.}
+\caption{Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair.}
 \label{tab:cost}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -127,46 +157,26 @@ Every main result above is already a reuse result: each program was built on dev
 \toprule
 Judge & Model calls & USD & Executions & Seconds \\
 \midrule
-History check & 0 & 0 & \tbd & \tbd \\
-Generic tests & 0 & 0 & \tbd & \tbd \\
-\gate & 0 & 0 & \tbd & \tbd \\
-Answer-level judge, Haiku & 1 & \tbd & 0 & \tbd \\
-Answer-level judge, Sonnet & 1 & \tbd & 0 & \tbd \\
-Program-level judge, Haiku$^\dagger$ & \tbd & \tbd & 0 & \tbd \\
-ReAct judge, Haiku & \tbd & \tbd & \tbd & \tbd \\
-ReAct judge, Sonnet & \tbd & \tbd & \tbd & \tbd \\
+History check & 0 & 0 & 0 & --$^\ddagger$ \\
+Generic tests & 0 & 0 & 2.62 & --$^\ddagger$ \\
+\cfg{Program-wide} & 0 & 0 & 3.21 & --$^\ddagger$ \\
+\gate & 0 & 0 & 1.54 & --$^\ddagger$ \\
+Answer-level judge, Haiku & 1.00 & 0.0037 & 0 & 28.6 \\
+Answer-level judge, Sonnet & 1.00 & 0.052 & 0 & 14.2 \\
+Program-level judge, Haiku$^\dagger$ & 1.00 & 0.0033 & 0 & 22.4 \\
+ReAct judge, Haiku & 1.87 & 0.0038 & 0.78$^\S$ & 24.7 \\
+ReAct judge, Sonnet & 1.40 & 0.064 & 0.26$^\S$ & 9.5 \\
 \bottomrule
-\multicolumn{5}{@{}l}{\scriptsize $^\dagger$One call per program and run, spread over its questions.}\\
+\multicolumn{5}{@{}l}{\scriptsize $^\dagger$Per program and run, not per pair; its verdict covers every question on the run.}\\
+\multicolumn{5}{@{}l}{\scriptsize $^\ddagger$Timed together: median 4.2\,s per pair for the answer run and all rule-based judges.}\\
+\multicolumn{5}{@{}l}{\scriptsize $^\S$Counted from a log inside the sandbox; a lower bound.}\\
 \multicolumn{5}{@{}l}{\scriptsize The shared interpretation call (Haiku) is not counted here; every judge uses it.}
 \end{tabular}
 \end{table}
 
-The library's checks make no model calls beyond the shared interpretation; their cost is program executions. \gate uses a median of \rGateExecPerQ executions and \rGateSecPerQ seconds per question (Table~\ref{tab:cost}). The answer-level judge costs \$\rAnsJudgeUSDPerRow per pair and the ReAct judge \$\rReactUSDPerRow and \rReactSecPerRow seconds. \TBD{State how cost scales with reuse: passing evidence is reused within a run, so the per-question cost falls when many questions share a run; give the measured reuse share.}
+The library's checks make no model calls beyond the shared interpretation; their cost is program executions. \gate uses \rGateExecPerQ{} program executions per question on average (median \rGateExecMedian), fewer than generic tests (\rGenericExecPerQ) (Table~\ref{tab:cost}). The answer-level judge costs \$\rAnsJudgeUSDPerRow{} per pair and \rAnsJudgeSecPerRow{}\,s, and the ReAct judge \$\rReactUSDPerRow{} and \rReactSecPerRow{}\,s. \TBD{State how cost scales with reuse: passing evidence is reused within a run, so the per-question cost falls when many questions share a run; give the measured reuse share.}
 
 \subsection{Do LLM judges depend on the model?}
 \label{sec:results:models}
 
-\begin{table}[t]
-\centering
-\caption{The shared 150-pair subset: error at the gate's coverage on these pairs, and the share of replies that could not be parsed (counted as declines). Sonnet ReAct ran on 50 of the 150.}
-\label{tab:models}
-\footnotesize
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}l rr rr@{}}
-\toprule
-& \multicolumn{2}{c}{Answer-level judge} & \multicolumn{2}{c}{ReAct judge} \\
-\cmidrule(lr){2-3}\cmidrule(l){4-5}
-Model & Err. & Unparsed & Err. & Unparsed \\
-\midrule
-Claude Haiku 5.5 & \tbd & \tbd & \tbd & \tbd \\
-Claude Sonnet 5.5 & \tbd & \tbd & \tbd & \tbd \\
-gpt-oss-120b & \tbd & \tbd & \tbd & \tbd \\
-Gemma 4 31B & \tbd & \tbd & \tbd & \tbd \\
-Qwen3.5 9B & \tbd & \tbd & \tbd & \tbd \\
-\midrule
-\gate on the same pairs & \multicolumn{4}{c}{\tbd} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Table~\ref{tab:models} asks whether a stronger or different model makes a better judge on the same pairs. \TBD{Report the ordering and whether any model's judge beats the gate at matched coverage. Note self-judging: Claude and Ollama models judge programs built by their own family.} In development checks, gpt-oss under our plain-text ReAct format often described an action without writing code; we ran it unchanged, so its ReAct numbers measure that setup with that model, not the model's ability to test programs.
+Table~\ref{tab:llm} asks whether a stronger or different model makes a better judge on the same pairs. \TBD{Report the ordering and whether any model's judge beats the gate at matched coverage. Note self-judging: Claude and Ollama models judge programs built by their own family.} In development checks, gpt-oss under our plain-text ReAct format often described an action without writing code; we ran it unchanged, so its ReAct numbers measure that setup with that model, not the model's ability to test programs.

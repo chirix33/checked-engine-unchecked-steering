@@ -1,44 +1,194 @@
 %% =====================================================================================
 %% RESULT NUMBERS QUOTED IN THE PROSE (abstract, introduction, results text, conclusion)
 %% =====================================================================================
-%% Every value here is a placeholder until the main (test) run is scored by
-%% scripts/main_analysis.py. Replace \tbd with the measured value; never with a dev number.
-%% Table cells are filled directly in sections/06_results.tex (search for \tbd there).
+%% Filled 2026-11-12 from the complete main (test) run:
+%%   runs/main_v1/analysis_v1/main_analysis.json and tables.md (B = 2000, seed 20261111),
+%%   cross-checked against manifests/main_results_v1.md (final, reviewed).
+%% Numbers marked "raw rows" were computed from runs/main_v1/{wf_test,ml_test}/programs/*.jsonl or
+%% runs/judges_main_v1/*/judgments_*.jsonl, because the analysis JSON stores only means.
+%% Never replace any value with a development-run number.
 %%
-%% Units: error = wrong answers / answered answers (1 - precision), as a percentage.
-%% Coverage = answered program-question pairs / all program-question pairs, as a percentage.
-%% "Matched" = the judge is cut to the gate's coverage in each cell (process x builder cohort).
-%% The two builder classes (hosted-API models, Ollama models) are never pooled.
+%% Units: coverage, error and "kept" are percentages (no % sign; the prose adds \%).
+%%   coverage = trusted and answered pairs / all pairs;
+%%   error    = wrong / trusted and answered pairs (1 - precision);
+%%   kept     = correct trusted pairs / all pairs (the analysis calls this "yield").
+%% Differences (\rD...) are gate minus the other judge, in percentage points, with the paired two-level
+%% bootstrap 95% interval. Positive = the gate is higher. A difference whose interval includes 0 is a tie.
+%% "Matched" = the LLM judge keeps its most confident answers up to the gate's count in each cell.
+%% LLM judges see only pairs that have an answer, so their n and coverages are over answered pairs.
+%% The hosted-API builder class and the Ollama builder class are never pooled. The pooled hosted-API view covers three platforms and is
+%% a secondary view; per-platform numbers come first.
 
-%% ---- Hosted-API builder class, all four domains (headline) --------------------------
-\newcommand{\rGateCovClaude}{\tbd}        % gate coverage (%)
-\newcommand{\rGateErrClaude}{\tbd}        % gate error among answered (%)
-\newcommand{\rNoCheckErrClaude}{\tbd}     % error with no added check (native config) (%)
-\newcommand{\rHistErrClaude}{\tbd}        % history check only (%)
-\newcommand{\rAnsJudgeErrClaude}{\tbd}    % answer-level LLM judge (Haiku) at matched coverage (%)
-\newcommand{\rReactErrClaude}{\tbd}       % ReAct judge (Haiku) at matched coverage (%)
-\newcommand{\rWrongRemovedClaude}{\tbd}   % share of wrong answers the gate removes (%)
-\newcommand{\rRightLostClaude}{\tbd}      % share of correct answers the gate declines (%)
+%% ---- Sizes ---------------------------------------------------------------------------------------------
+\newcommand{\rPairsMain}{9{,}792}         % main test pairs (wf_test 5,160 + ml_test 4,632), 86 programs
+\newcommand{\rPairsClaude}{7{,}056}       % Claude-built main pairs, 62 programs
+\newcommand{\rPairsOllama}{2{,}736}       % Ollama-built main pairs, 24 programs (OTF R1 only)
+\newcommand{\rProgsClaude}{62}
+\newcommand{\rProgsOllama}{24}
+\newcommand{\rPairsPolicy}{1{,}411}       % wf_policy pairs (P 683, H 728), 31 Claude-built programs
 
-%% ---- Ollama-hosted builder class (OTF-Tools only) -------------------------------------
-\newcommand{\rGateCovOllama}{\tbd}
-\newcommand{\rGateErrOllama}{\tbd}
-\newcommand{\rNoCheckErrOllama}{\tbd}
+%% ---- Hosted-API builder class, all platforms, main test sets (tables.md section 1, first row) ----------
+\newcommand{\rGateCovClaude}{80.1}        % gate coverage
+\newcommand{\rGateErrClaude}{0.1}         % gate error: 5 wrong of 5,652 trusted answers
+\newcommand{\rGateWrongClaude}{5}
+\newcommand{\rGateKeptClaude}{80.0}
+\newcommand{\rNoCheckCovClaude}{90.0}     % no added check (platform check only)
+\newcommand{\rNoCheckErrClaude}{4.4}      % 277 wrong of 6,352 answers
+\newcommand{\rNoCheckWrongClaude}{277}
+\newcommand{\rNoCheckKeptClaude}{86.1}
+\newcommand{\rHistCovClaude}{85.1}        % history check only
+\newcommand{\rHistErrClaude}{3.4}         % 207 wrong
+\newcommand{\rHistWrongClaude}{207}
+\newcommand{\rWrongRemovedClaude}{98.2}   % (277 - 5) / 277
+\newcommand{\rRightLostClaude}{7.1}       % 430 of 6,075 correct program answers declined by the gate
+\newcommand{\rRightLostCountClaude}{430}
+\newcommand{\rDKeptNoCheckClaude}{$-6.1$~[$-9.5$,~$-3.4$]}     % gate - no added check, kept
+\newcommand{\rDPrecNoCheckClaude}{$+4.3$~[$2.3$,~$6.7$]}       % gate - no added check, precision
+\newcommand{\rDKeptHistClaude}{$-2.2$~[$-3.5$,~$-1.1$]}        % gate - history check, kept
+\newcommand{\rDKeptRandomClaude}{$+3.4$~[$1.9$,~$5.2$]}        % gate - random refusal at the gate's coverage
+\newcommand{\rRandomErrClaude}{4.4}       % random refusal at the gate's coverage: error equals no-check error
+\newcommand{\rDisCovClaude}{66.7}         % disagreement with a reading answer
+\newcommand{\rDisErrClaude}{0.7}          % 33 wrong
+\newcommand{\rDKeptDisClaude}{$+13.8$~[$7.4$,~$20.6$]}
 
-%% ---- Where the gate's declines come from (Section 6.2) --------------------------------
-\newcommand{\rShareCaught}{\tbd}          % share of wrong answers removed that were Caught (%)
-\newcommand{\rShareUntestable}{\tbd}      % share of wrong answers removed that were Untestable (%)
-\newcommand{\rShareHist}{\tbd}            % share removed by Failed history check (%)
+%% ---- Per platform, hosted-API builder class (tables.md section 1, platform=...) ------------------------
+%% OTF-Tools R1: 24 programs, 2,736 pairs
+\newcommand{\rOtfNoCheckErr}{10.2}        % 243 wrong
+\newcommand{\rOtfNoCheckWrong}{243}
+\newcommand{\rOtfHistErr}{9.0}            % 202 wrong
+\newcommand{\rOtfHistWrong}{202}
+\newcommand{\rOtfGateCov}{70.5}           % 0 wrong
+\newcommand{\rOtfHistCov}{82.4}
+\newcommand{\rOtfNoCheckCov}{87.0}
+\newcommand{\rOtfDKeptNoCheck}{$-7.6$~[$-12.6$,~$-3.4$]}
+\newcommand{\rOtfDKeptHist}{$-4.5$~[$-7.8$,~$-2.1$]}
+\newcommand{\rOtfDPrecHist}{$+9.0$~[$4.5$,~$13.8$]}
+\newcommand{\rOtfDKeptRandom}{$+7.2$~[$4.0$,~$10.2$]}
+%% DEVS-Gen: 22 programs, 2,496 pairs
+\newcommand{\rDevsNoCheckErr}{1.5}        % 34 wrong
+\newcommand{\rDevsHistErr}{0.2}           % 5 wrong (history check), gate also 5 wrong
+\newcommand{\rDevsGateCov}{78.2}
+\newcommand{\rDevsGateErr}{0.3}
+\newcommand{\rDevsDKeptHist}{$-0.7$~[$-1.6$,~$-0.1$]}
+%% Coding agent: 16 programs, 1,824 pairs, no wrong answer under any judge
+\newcommand{\rAgentGateCov}{96.9}
+\newcommand{\rAgentNoCheckCov}{97.6}
 
-%% ---- Reuse under a changed or reworded policy (Section 6.3) ---------------------------
-\newcommand{\rPolPGateErr}{\tbd}
-\newcommand{\rPolPHistErr}{\tbd}
-\newcommand{\rPolHUnneeded}{\tbd}         % rows rechecked on H that a text-blind record would have carried
+%% ---- Per domain, hosted-API builder class (tables.md section 1, process=...) --------------------------
+\newcommand{\rItHistCov}{91.8}            % IT: history check 91.8 / 0.2 (3 wrong)
+\newcommand{\rItGateCov}{86.4}            % IT: gate 86.4 / 0.2 (3 wrong); program-wide 91.1 / 0.1 (2 wrong)
+\newcommand{\rItDKeptHist}{$-5.4$~[$-10.0$,~$-2.1$]}
+\newcommand{\rItAlreadyRight}{71}         % correct IT answers declined as Already caught
+\newcommand{\rMfgNoCheckCov}{72.9}        % manufacturing: no wrong answer under any judge
+\newcommand{\rMfgGateCov}{72.3}
 
-%% ---- Cost (Section 6.4) ----------------------------------------------------------------
-\newcommand{\rGateExecPerQ}{\tbd}         % program executions per question (median)
-\newcommand{\rGateSecPerQ}{\tbd}          % wall-clock seconds per question (median)
-\newcommand{\rAnsJudgeUSDPerRow}{\tbd}    % answer-level judge, USD per row (mean)
-\newcommand{\rReactUSDPerRow}{\tbd}       % ReAct judge, USD per row (mean)
-\newcommand{\rReactSecPerRow}{\tbd}       % ReAct judge, seconds per row (median)
-\newcommand{\rTotalUSD}{\tbd}             % all model spend in the study (USD)
+%% ---- Programs (raw rows; tables.md section 10) ---------------------------------------------------------
+\newcommand{\rProgsWithWrong}{19}         % of 62 Claude-built programs give any wrong answer with no added check
+\newcommand{\rProgsAllRemoved}{15}        % the gate removes all of them in 15
+\newcommand{\rProgsWrongKept}{4}          % the 4 that keep a wrong trusted answer are all DEVS-Gen (one or two each)
+\newcommand{\rOtfLargestProgWrong}{32}    % largest single OTF R1 program: 32 of the 243 wrong answers
+
+%% ---- Ollama-built programs (OTF R1 only) ----------------------------------------------------------------
+\newcommand{\rGateCovOllama}{4.2}
+\newcommand{\rGateErrOllama}{1.7}         % 2 wrong of 116 trusted answers
+\newcommand{\rGateWrongOllama}{2}
+\newcommand{\rNoCheckCovOllama}{61.0}
+\newcommand{\rNoCheckErrOllama}{69.6}     % 1,161 wrong
+\newcommand{\rNoCheckWrongOllama}{1{,}161}
+\newcommand{\rHistCovOllama}{4.9}         % history check 4.9 / 13.4 (18 wrong)
+\newcommand{\rHistErrOllama}{13.4}
+\newcommand{\rDisCovOllama}{15.5}         % disagreement 15.5 / 4.3 (18 wrong)
+\newcommand{\rDisErrOllama}{4.3}
+\newcommand{\rDKeptDisOllama}{$-10.6$~[$-17.6$,~$-4.2$]}
+\newcommand{\rOllamaProgsNoTrust}{22}     % of 24 Ollama-built programs get no trusted answer
+
+%% ---- Where the gate's declines come from (tables.md section 4; raw rows for the no-effect split) ---------
+%% Of the 277 natural wrong answers in the hosted-API builder class: Trusted 5, Caught 44, Already caught 158,
+%% Failed history check 70, Untestable 0, Can't express 0, Request rejected 0. Removed = 272.
+\newcommand{\rShareCaught}{74.3}          % (Caught + Already caught) / removed = 202 / 272
+\newcommand{\rShareCaughtOnly}{16.2}      % Caught / removed = 44 / 272
+\newcommand{\rShareAlready}{58.1}         % Already caught / removed = 158 / 272
+\newcommand{\rShareHist}{25.7}            % Failed history check / removed = 70 / 272
+\newcommand{\rShareUntestable}{0.0}       % Untestable / removed = 0 / 272
+\newcommand{\rCaughtWrong}{44}
+\newcommand{\rAlreadyWrong}{158}
+\newcommand{\rHistWrongRemoved}{70}
+\newcommand{\rUntestableRight}{43}        % correct answers declined as Untestable (no wrong ones)
+\newcommand{\rUntestableRightNoEffect}{37}% of those 43, on no-effect controls (raw rows)
+\newcommand{\rAlreadyRight}{85}           % correct answers declined as Already caught (71 in IT)
+\newcommand{\rRandomPrecClaude}{95.6}     % random refusal precision at the gate's coverage, vs the gate's 99.9
+\newcommand{\rRouteProbWrong}{195}        % routing-probability wrong answers with no added check (99 Loan, 96 Pharmacy); gate keeps 0
+\newcommand{\rResAvailWrong}{33}          % worker-availability wrong answers with no added check; gate keeps 1
+\newcommand{\rNoEffectWrong}{16}          % no-effect controls: 16 wrong with no added check, 0 under the gate
+\newcommand{\rNoEffectGateCov}{78.6}      % gate coverage on the 1,300 no-effect pairs (no check: 89.6)
+
+%% ---- Interpretation (tables.md section 5) ---------------------------------------------------------------
+\newcommand{\rInterpWf}{240 of 240}
+\newcommand{\rInterpPolicy}{91 of 91}
+\newcommand{\rInterpMl}{209 of 216}
+\newcommand{\rInterpWrongExact}{all 277}  % every wrong answer on Claude-built programs had an exact request (Ollama: all 1,161)
+\newcommand{\rMlCovInterp}{79.9}          % ml_test Claude-built gate coverage, interpreted requests (precision 99.9)
+\newcommand{\rMlCovOracle}{84.3}          % same with the hidden binding supplied (precision 99.9)
+
+%% ---- Policy reuse (tables.md section 6; P 683 pairs, H 728 pairs, 31 programs) ------------------------
+%% No policy document shares a fingerprint with a test document, so no test-scope result applied to any
+%% policy row. The capability recheck was therefore NOT exercised; do not present it as tested.
+\newcommand{\rPolPNoCheckCov}{93.9}
+\newcommand{\rPolPNoCheckErr}{47.1}       % 302 wrong
+\newcommand{\rPolPNoCheckWrong}{302}
+\newcommand{\rPolPGateCov}{0.0}           % every P row fails the history check
+\newcommand{\rPolPDisCov}{47.4}           % disagreement keeps 324 of 683 P rows, 0 wrong
+\newcommand{\rPolPDKeptDis}{$-47.4$~[$-61.9$,~$-32.7$]}
+\newcommand{\rPolHGateCov}{72.1}          % 0 wrong
+\newcommand{\rPolHNoCheckCov}{94.0}
+\newcommand{\rPolHNoCheckErr}{7.2}        % 49 wrong
+\newcommand{\rPolHHistCov}{77.5}
+\newcommand{\rPolHHistErr}{6.2}           % 35 wrong
+\newcommand{\rPolHFailedOnTest}{53}       % H rows whose capability and target had failed on test
+\newcommand{\rPolHFailedOnTestTrusted}{8} % of those, trusted after the recheck (all 8 correct)
+%% The two old macros below have no value: neither the gate nor the history check trusts any P row,
+%% so an error rate is undefined. They print a red note until the RQ3 prose is rewritten.
+\newcommand{\rPolPGateErr}{\TBD{undefined: the gate trusts no P row}}
+\newcommand{\rPolPHistErr}{\TBD{undefined: the history check trusts no P row}}
+\newcommand{\rPolHUnneeded}{\rPolHFailedOnTest}
+
+%% ---- Model-based judges vs the gate, hosted-API builder class, main-set rows (tables.md section 2) ----
+\newcommand{\rAnsJudgeN}{2{,}028}
+\newcommand{\rAnsJudgeErrClaude}{1.1}     % Haiku answer-level at the gate's coverage (expected 20 wrong)
+\newcommand{\rGateErrAnsSub}{0.2}         % the gate on the same 2,028 answered pairs (3 wrong)
+\newcommand{\rDPrecAnsJudge}{$+0.9$~[$0.2$,~$2.0$]}
+\newcommand{\rDKeptAnsJudgeOwn}{$+3.1$~[$-2.7$,~$7.8$]}        % tie; the judge's own verdict lets 10 wrong through
+\newcommand{\rReactN}{679}
+\newcommand{\rReactErrClaude}{1.4}        % Haiku ReAct at the gate's coverage (expected 8 wrong)
+\newcommand{\rGateErrReactSub}{0.0}       % the gate on the same 679 pairs (0 wrong)
+\newcommand{\rDPrecReact}{$+1.4$~[$0.4$,~$3.9$]}
+\newcommand{\rDKeptReactOwn}{$-5.6$~[$-11.7$,~$-0.5$]}         % ReAct's own verdict keeps more, with 8 wrong vs 0
+\newcommand{\rProgJudgeErrClaude}{3.5}    % Haiku program-level at the gate's coverage, 6,352 pairs
+\newcommand{\rDPrecProgJudge}{$+3.4$~[$1.7$,~$5.6$]}
+\newcommand{\rSonnetAnsOwnCov}{94.1}      % Sonnet answer-level own verdict on 101 pairs, 0 wrong; gate 84.2, 0 wrong
+\newcommand{\rDKeptSonnetOwn}{$-9.9$~[$-23.4$,~$1.1$]}         % tie on these 101 rows
+\newcommand{\rDKeptSonnetShared}{$-13.0$~[$-27.3$,~$-1.0$]}    % on the 123 Claude-built rows of the shared 150 (policy rows included)
+\newcommand{\rDKeptReactShared}{$-13.8$~[$-27.2$,~$-3.8$]}     % Haiku ReAct, same 123 rows
+\newcommand{\rHaikuKappa}{0.65}           % Haiku answer-level run twice on the shared 150: agreement 85.3%
+\newcommand{\rHaikuAgree}{85.3}
+\newcommand{\rReactRanProgHaiku}{41.8}    % share of Haiku ReAct rows with at least one program execution (raw rows; lower bound)
+\newcommand{\rReactRanProgSonnet}{22}     % Sonnet ReAct: 11 of 50 rows (raw rows; lower bound)
+\newcommand{\rGptossUnparsed}{38}         % gpt-oss ReAct replies that could not be parsed, of 150
+\newcommand{\rQwenReactFailed}{24}        % Qwen ReAct: 19 out of turns, 4 cut off, 1 unparsable, of 150
+
+%% ---- Cost (tables.md section 8; medians from raw rows) -------------------------------------------------
+\newcommand{\rGateExecPerQ}{1.5}          % gate: mean program executions per pair, main sets (median 1; wf 1.36, ml 1.75)
+\newcommand{\rGateExecMedian}{1}
+\newcommand{\rGenericExecPerQ}{2.6}       % generic tests: mean 2.62 (median 3)
+\newcommand{\rProgWideExecPerQ}{3.2}      % program-wide: mean 3.21 (median 3)
+\newcommand{\rGateSecPerQ}{4.2}           % median wall time per pair for the answer run plus ALL rule-based judges together
+                                          % (the runner times the row, not each judge; mean 4.7)
+\newcommand{\rAnsJudgeUSDPerRow}{0.0037}  % Haiku answer-level, mean USD per pair
+\newcommand{\rAnsJudgeSecPerRow}{28.6}    % mean wall seconds per pair (median 20.1)
+\newcommand{\rSonnetAnsUSDPerRow}{0.052}
+\newcommand{\rReactUSDPerRow}{0.0038}     % Haiku ReAct, mean USD per pair
+\newcommand{\rReactSecPerRow}{24.7}       % Haiku ReAct, mean wall seconds per pair (median 15.7)
+\newcommand{\rSonnetReactUSDPerRow}{0.064}
+\newcommand{\rClaudeUSD}{68}              % about: Claude ledger $60.40 plus about $7.80 of DEVS-Gen builds outside it
+\newcommand{\rOllamaUSD}{7.53}            % Ollama ledgers, earlier runs included; Qwen ran locally at $0
+\newcommand{\rTotalUSD}{76}               % about: all model spend in the study, development and failed runs included

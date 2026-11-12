@@ -1,0 +1,419 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{30}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter does
+%%% not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+\makeatletter
+\@ifundefined{NAT@parse@date}{}{\let\NAT@parse@date@orig\NAT@parse@date}
+\@ifundefined{NAT@parse@date}{}{\def\NAT@parse@date#1#2#3#4#5#6@@{\NAT@parse@date@orig#1#2#3#4#5#6@@\def\NAT@tempyear{0000}\def\NAT@tempexlab{{?}}\ifx\NAT@year\NAT@tempyear\ifx\NAT@exlab\NAT@tempexlab\def\NAT@date{[n.\,d.]}\else\edef\NAT@date{[n.\,d.]\NAT@exlab}\fi\fi}}
+\makeatother
+
+\bibitem[{Anonymous}(2026)]%
+        {otftools2026}
+\bibfield{author}{\bibinfo{person}{{Anonymous}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Compile Once, Query Many: Reusable Executable Models
+  for Process-Record Question Answering}.  (\bibinfo{year}{2026}).
+\newblock
+\newblock
+\shownote{Under review}.
+
+
+\bibitem[Chapela-Campa and Dumas(2023)]%
+        {chapela2023zenodo}
+\bibfield{author}{\bibinfo{person}{David Chapela-Campa} {and}
+  \bibinfo{person}{Marlon Dumas}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Evaluation Datasets and Results for the Paper
+  ``Enhancing Business Process Simulation Models with Extraneous Activity
+  Delays''}.
+\newblock \bibinfo{howpublished}{Zenodo, version 4.0}.
+\newblock
+\href{https://doi.org/10.5281/zenodo.10435849}{doi:\nolinkurl{10.5281/zenodo.10435849}}
+\newblock
+\shownote{CC BY 4.0}.
+
+
+\bibitem[Chapela-Campa and Dumas(2024)]%
+        {chapela2024extraneous}
+\bibfield{author}{\bibinfo{person}{David Chapela-Campa} {and}
+  \bibinfo{person}{Marlon Dumas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Enhancing Business Process Simulation Models with
+  Extraneous Activity Delays}.
+\newblock \bibinfo{journal}{\emph{Information Systems}}  \bibinfo{volume}{122}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{102346}.
+\newblock
+\href{https://doi.org/10.1016/j.is.2024.102346}{doi:\nolinkurl{10.1016/j.is.2024.102346}}
+
+
+\bibitem[Chen et~al\mbox{.}(2018)]%
+        {chen2018metamorphic}
+\bibfield{author}{\bibinfo{person}{Tsong~Yueh Chen}, \bibinfo{person}{Fei-Ching
+  Kuo}, \bibinfo{person}{Huai Liu}, \bibinfo{person}{Pak-Lok Poon},
+  \bibinfo{person}{Dave Towey}, \bibinfo{person}{T.~H. Tse}, {and}
+  \bibinfo{person}{Zhi~Quan Zhou}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Metamorphic Testing: A Review of Challenges and
+  Opportunities}.
+\newblock \bibinfo{journal}{\emph{Comput. Surveys}} \bibinfo{volume}{51},
+  \bibinfo{number}{1} (\bibinfo{year}{2018}), \bibinfo{pages}{1--27}.
+\newblock
+\href{https://doi.org/10.1145/3143561}{doi:\nolinkurl{10.1145/3143561}}
+
+
+\bibitem[Chen et~al\mbox{.}(2026)]%
+        {chen2026devs}
+\bibfield{author}{\bibinfo{person}{Zheyu Chen}, \bibinfo{person}{Huiteng
+  Zhuang}, \bibinfo{person}{Zhuohuan Li}, {and} \bibinfo{person}{Chuanhao Li}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Specification-Driven Generation and Evaluation of
+  Discrete-Event World Models via the {DEVS} Formalism}.
+\newblock \bibinfo{howpublished}{arXiv:2603.03784}.
+\newblock
+\showeprint[arxiv]{2603.03784}~[cs.AI]
+
+
+\bibitem[DeMillo and Offutt(1991)]%
+        {demillo1991constraint}
+\bibfield{author}{\bibinfo{person}{Richard~A. DeMillo} {and}
+  \bibinfo{person}{A.~Jefferson Offutt}.} \bibinfo{year}{1991}\natexlab{}.
+\newblock \showarticletitle{Constraint-Based Automatic Test Data Generation}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Software Engineering}}
+  \bibinfo{volume}{17}, \bibinfo{number}{9} (\bibinfo{year}{1991}),
+  \bibinfo{pages}{900--910}.
+\newblock
+\href{https://doi.org/10.1109/32.92910}{doi:\nolinkurl{10.1109/32.92910}}
+
+
+\bibitem[El-Yaniv and Wiener(2010)]%
+        {elyaniv2010selective}
+\bibfield{author}{\bibinfo{person}{Ran El-Yaniv} {and} \bibinfo{person}{Yair
+  Wiener}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{On the Foundations of Noise-free Selective
+  Classification}.
+\newblock \bibinfo{journal}{\emph{Journal of Machine Learning Research}}
+  \bibinfo{volume}{11} (\bibinfo{year}{2010}), \bibinfo{pages}{1605--1641}.
+\newblock
+
+
+\bibitem[Frochte and Schmidt(2026)]%
+        {frochte2026modelica}
+\bibfield{author}{\bibinfo{person}{J{\"o}rg Frochte} {and}
+  \bibinfo{person}{Herbert Schmidt}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{LLM} Agents as Suppliers of Physical System Models:
+  Calibration and Acceptance in {Modelica}}.
+\newblock \bibinfo{howpublished}{arXiv:2610.25019}.
+\newblock
+\showeprint[arxiv]{2610.25019}
+
+
+\bibitem[Gao et~al\mbox{.}(2023)]%
+        {gao2023pal}
+\bibfield{author}{\bibinfo{person}{Luyu Gao}, \bibinfo{person}{Aman Madaan},
+  \bibinfo{person}{Shuyan Zhou}, \bibinfo{person}{Uri Alon},
+  \bibinfo{person}{Pengfei Liu}, \bibinfo{person}{Yiming Yang},
+  \bibinfo{person}{Jamie Callan}, {and} \bibinfo{person}{Graham Neubig}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{PAL}: Program-aided Language Models}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 40th International Conference on
+  Machine Learning}} \emph{(\bibinfo{series}{Proceedings of Machine Learning
+  Research}, Vol.~\bibinfo{volume}{202})}. \bibinfo{publisher}{PMLR}.
+\newblock
+\newblock
+\shownote{arXiv:2211.10435}.
+
+
+\bibitem[Gathani et~al\mbox{.}(2026)]%
+        {gathani2026praxa}
+\bibfield{author}{\bibinfo{person}{Sneha Gathani}, \bibinfo{person}{Sirui
+  Zeng}, \bibinfo{person}{Diya Patel}, \bibinfo{person}{Ryan~A. Rossi},
+  \bibinfo{person}{Dan Marshall}, \bibinfo{person}{{\c{C}}a{\u{g}}atay
+  Demiralp}, \bibinfo{person}{Steven Drucker}, {and} \bibinfo{person}{Zhicheng
+  Liu}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Bridging Natural Language and Interactive What-If
+  Interfaces via {LLM}-Generated Declarative Specifications}.
+\newblock \bibinfo{howpublished}{arXiv:2604.07652}.
+\newblock
+\showeprint[arxiv]{2604.07652}
+
+
+\bibitem[Geifman and El-Yaniv(2017)]%
+        {geifman2017selective}
+\bibfield{author}{\bibinfo{person}{Yonatan Geifman} {and} \bibinfo{person}{Ran
+  El-Yaniv}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Selective Classification for Deep Neural Networks}.
+  In \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems 30 (NeurIPS 2017)}}.
+\newblock
+\newblock
+\shownote{arXiv:1705.08500}.
+
+
+\bibitem[Holt et~al\mbox{.}(2025)]%
+        {holt2025gsim}
+\bibfield{author}{\bibinfo{person}{Samuel Holt}, \bibinfo{person}{Max~Ruiz
+  Luyten}, \bibinfo{person}{Antonin Berthon}, {and} \bibinfo{person}{Mihaela
+  van~der Schaar}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{G-Sim}: Generative Simulations with Large Language
+  Models and Gradient-Free Calibration}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 42nd International Conference on
+  Machine Learning}} \emph{(\bibinfo{series}{Proceedings of Machine Learning
+  Research}, Vol.~\bibinfo{volume}{267})}. \bibinfo{publisher}{PMLR}.
+\newblock
+\newblock
+\shownote{arXiv:2506.09272}.
+
+
+\bibitem[Law(2015)]%
+        {law2015simulation}
+\bibfield{author}{\bibinfo{person}{Averill~M. Law}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Simulation Modeling and Analysis}
+  (\bibinfo{edition}{5th} ed.)}.
+\newblock \bibinfo{publisher}{McGraw-Hill Education}.
+\newblock
+
+
+\bibitem[Lewis et~al\mbox{.}(2020)]%
+        {lewis2020rag}
+\bibfield{author}{\bibinfo{person}{Patrick Lewis}, \bibinfo{person}{Ethan
+  Perez}, \bibinfo{person}{Aleksandra Piktus}, \bibinfo{person}{Fabio Petroni},
+  \bibinfo{person}{Vladimir Karpukhin}, \bibinfo{person}{Naman Goyal},
+  \bibinfo{person}{Heinrich K{\"u}ttler}, \bibinfo{person}{Mike Lewis},
+  \bibinfo{person}{Wen tau Yih}, \bibinfo{person}{Tim Rockt{\"a}schel},
+  \bibinfo{person}{Sebastian Riedel}, {and} \bibinfo{person}{Douwe Kiela}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Retrieval-Augmented Generation for
+  Knowledge-Intensive {NLP} Tasks}. In \bibinfo{booktitle}{\emph{Advances in
+  Neural Information Processing Systems 33 (NeurIPS 2020)}}.
+\newblock
+\newblock
+\shownote{arXiv:2005.11401}.
+
+
+\bibitem[L{\'o}pez-Pintado et~al\mbox{.}(2023)]%
+        {lopezpintado2023prosimos}
+\bibfield{author}{\bibinfo{person}{Orlenys L{\'o}pez-Pintado},
+  \bibinfo{person}{Iryna Halenok}, {and} \bibinfo{person}{Marlon Dumas}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Prosimos: Discovering and Simulating Business
+  Processes with Differentiated Resources}. In
+  \bibinfo{booktitle}{\emph{Enterprise Design, Operations, and Computing. EDOC
+  2022 Workshops}} \emph{(\bibinfo{series}{Lecture Notes in Business
+  Information Processing})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{346--352}.
+\newblock
+\href{https://doi.org/10.1007/978-3-031-26886-1_23}{doi:\nolinkurl{10.1007/978-3-031-26886-1_23}}
+
+
+\bibitem[{OpenAI}(2025)]%
+        {openai2025gptoss}
+\bibfield{author}{\bibinfo{person}{{OpenAI}}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{gpt-oss-120b \& gpt-oss-20b Model Card}.
+\newblock \bibinfo{howpublished}{arXiv:2508.10925}.
+\newblock
+\showeprint[arxiv]{2508.10925}
+
+
+\bibitem[Opoku and Banahene(2026)]%
+        {opoku2026toolchain}
+\bibfield{author}{\bibinfo{person}{Jeffery Opoku} {and} \bibinfo{person}{David
+  Banahene}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{ToolChain-CRC}: Conformal Risk Control for Agentic
+  {AI} Under Retrieval and Tool-Use Drift}.
+\newblock \bibinfo{howpublished}{arXiv:2606.18467}.
+\newblock
+\showeprint[arxiv]{2606.18467}
+
+
+\bibitem[Panickssery et~al\mbox{.}(2024)]%
+        {panickssery2024self}
+\bibfield{author}{\bibinfo{person}{Arjun Panickssery},
+  \bibinfo{person}{Samuel~R. Bowman}, {and} \bibinfo{person}{Shi Feng}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{LLM} Evaluators Recognize and Favor Their Own
+  Generations}. In \bibinfo{booktitle}{\emph{Advances in Neural Information
+  Processing Systems 37 (NeurIPS 2024)}}.
+\newblock
+\newblock
+\shownote{arXiv:2404.13076}.
+
+
+\bibitem[Pearl(2009)]%
+        {pearl2009causality}
+\bibfield{author}{\bibinfo{person}{Judea Pearl}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Causality: Models, Reasoning, and
+  Inference} (\bibinfo{edition}{2nd} ed.)}.
+\newblock \bibinfo{publisher}{Cambridge University Press}.
+\newblock
+\href{https://doi.org/10.1017/CBO9780511803161}{doi:\nolinkurl{10.1017/CBO9780511803161}}
+
+
+\bibitem[Reiss et~al\mbox{.}(2011)]%
+        {reiss2011google}
+\bibfield{author}{\bibinfo{person}{Charles Reiss}, \bibinfo{person}{John
+  Wilkes}, {and} \bibinfo{person}{Joseph~L. Hellerstein}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Google Cluster-Usage Traces: Format +
+  Schema}}.
+\newblock \bibinfo{type}{Technical Report}. \bibinfo{institution}{Google Inc.}
+\newblock
+
+
+\bibitem[Sargent(2013)]%
+        {sargent2013vv}
+\bibfield{author}{\bibinfo{person}{Robert~G. Sargent}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Verification and Validation of Simulation Models}.
+\newblock \bibinfo{journal}{\emph{Journal of Simulation}} \bibinfo{volume}{7},
+  \bibinfo{number}{1} (\bibinfo{year}{2013}), \bibinfo{pages}{12--24}.
+\newblock
+\href{https://doi.org/10.1057/jos.2012.20}{doi:\nolinkurl{10.1057/jos.2012.20}}
+
+
+\bibitem[Segura et~al\mbox{.}(2016)]%
+        {segura2016survey}
+\bibfield{author}{\bibinfo{person}{Sergio Segura}, \bibinfo{person}{Gordon
+  Fraser}, \bibinfo{person}{Ana~B. Sanchez}, {and} \bibinfo{person}{Antonio
+  Ruiz-Cort{\'e}s}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{A Survey on Metamorphic Testing}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Software Engineering}}
+  \bibinfo{volume}{42}, \bibinfo{number}{9} (\bibinfo{year}{2016}),
+  \bibinfo{pages}{805--824}.
+\newblock
+\href{https://doi.org/10.1109/TSE.2016.2532875}{doi:\nolinkurl{10.1109/TSE.2016.2532875}}
+
+
+\bibitem[van~der Aalst(2016)]%
+        {vanderaalst2016process}
+\bibfield{author}{\bibinfo{person}{Wil van~der Aalst}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Process Mining: Data Science in Action}
+  (\bibinfo{edition}{2nd} ed.)}.
+\newblock \bibinfo{publisher}{Springer}.
+\newblock
+\href{https://doi.org/10.1007/978-3-662-49851-4}{doi:\nolinkurl{10.1007/978-3-662-49851-4}}
+
+
+\bibitem[Wasi et~al\mbox{.}(2024)]%
+        {wasi2024supplygraph}
+\bibfield{author}{\bibinfo{person}{Azmine~Toushik Wasi},
+  \bibinfo{person}{MD~Shafikul Islam}, {and} \bibinfo{person}{Adipto~Raihan
+  Akib}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{SupplyGraph}: A Benchmark Dataset for Supply Chain
+  Planning using Graph Neural Networks}.
+\newblock \bibinfo{howpublished}{arXiv:2401.15299}.
+\newblock
+\showeprint[arxiv]{2401.15299}
+
+
+\bibitem[Wu(2026)]%
+        {wu2026never}
+\bibfield{author}{\bibinfo{person}{Zhelun Wu}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Never the Number: Structural Abstention for {AI}
+  Systems Whose Answers Are Consumed as Fact}.
+\newblock \bibinfo{howpublished}{arXiv:2608.13926}.
+\newblock
+\showeprint[arxiv]{2608.13926}
+
+
+\bibitem[Yao et~al\mbox{.}(2023)]%
+        {yao2023react}
+\bibfield{author}{\bibinfo{person}{Shunyu Yao}, \bibinfo{person}{Jeffrey Zhao},
+  \bibinfo{person}{Dian Yu}, \bibinfo{person}{Nan Du}, \bibinfo{person}{Izhak
+  Shafran}, \bibinfo{person}{Karthik Narasimhan}, {and} \bibinfo{person}{Yuan
+  Cao}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{ReAct}: Synergizing Reasoning and Acting in
+  Language Models}. In \bibinfo{booktitle}{\emph{The Eleventh International
+  Conference on Learning Representations (ICLR)}}.
+\newblock
+\newblock
+\shownote{arXiv:2210.03629}.
+
+
+\bibitem[Yoo et~al\mbox{.}(2026)]%
+        {yoo2026validation}
+\bibfield{author}{\bibinfo{person}{Haesoo Yoo}, \bibinfo{person}{Guesuk Lee},
+  \bibinfo{person}{Wonbin Song}, {and} \bibinfo{person}{Byeng~D. Youn}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{A Validation-Aware Framework for {LLM}-driven
+  Simulation Automation}.
+\newblock \bibinfo{howpublished}{SSRN preprint}.
+\newblock
+\href{https://doi.org/10.2139/ssrn.7428738}{doi:\nolinkurl{10.2139/ssrn.7428738}}
+
+
+\bibitem[Zerhoudi(2026)]%
+        {zerhoudi2026wrong}
+\bibfield{author}{\bibinfo{person}{Saber Zerhoudi}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Wrong Together: Shared Bias in User Simulation}.
+\newblock \bibinfo{howpublished}{arXiv:2611.01354; NeurIPS 2026 Workshop on
+  Grounded User Simulation}.
+\newblock
+\showeprint[arxiv]{2611.01354}
+
+
+\bibitem[Zhao et~al\mbox{.}(2023)]%
+        {zhao2023selection}
+\bibfield{author}{\bibinfo{person}{James Zhao}, \bibinfo{person}{Yuxi Xie},
+  \bibinfo{person}{Kenji Kawaguchi}, \bibinfo{person}{Junxian He}, {and}
+  \bibinfo{person}{Michael Xie}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Automatic Model Selection with Large Language
+  Models for Reasoning}. In \bibinfo{booktitle}{\emph{Findings of the
+  Association for Computational Linguistics: EMNLP 2023}}.
+  \bibinfo{pages}{758--783}.
+\newblock
+\href{https://doi.org/10.18653/v1/2023.findings-emnlp.55}{doi:\nolinkurl{10.18653/v1/2023.findings-emnlp.55}}
+
+
+\bibitem[Zheng et~al\mbox{.}(2023)]%
+        {zheng2023judging}
+\bibfield{author}{\bibinfo{person}{Lianmin Zheng}, \bibinfo{person}{Wei-Lin
+  Chiang}, \bibinfo{person}{Ying Sheng}, \bibinfo{person}{Siyuan Zhuang},
+  \bibinfo{person}{Zhanghao Wu}, \bibinfo{person}{Yonghao Zhuang},
+  \bibinfo{person}{Zi Lin}, \bibinfo{person}{Zhuohan Li},
+  \bibinfo{person}{Dacheng Li}, \bibinfo{person}{Eric~P. Xing},
+  \bibinfo{person}{Hao Zhang}, \bibinfo{person}{Joseph~E. Gonzalez}, {and}
+  \bibinfo{person}{Ion Stoica}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Judging {LLM}-as-a-Judge with {MT-Bench} and
+  {Chatbot Arena}}. In \bibinfo{booktitle}{\emph{Advances in Neural Information
+  Processing Systems 36 (NeurIPS 2023), Datasets and Benchmarks Track}}.
+\newblock
+\newblock
+\shownote{arXiv:2306.05685}.
+
+
+\end{thebibliography}
