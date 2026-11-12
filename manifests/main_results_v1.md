@@ -1,18 +1,15 @@
 # Main (test) run results, v1
 
-**Status (2026-11-11, 07:20 CST): draft from the complete run, waiting on two Ollama judges.** Numbers come from `runs/main_v1/analysis_v1_partial/` (`main_analysis.json`, `tables.md`, B = 2000, seed 20261111). Every program stage, the frozen scorer, every rule-based judge and every Claude judge are complete.
+**Status (2026-11-11, 10:15 CST): draft from the complete run, waiting on one Ollama judge.** Numbers come from `runs/main_v1/analysis_v1_noqwenreact/` (`main_analysis.json`, `tables.md`, B = 2000, seed 20261111). Every program stage, the frozen scorer, every rule-based judge, every Claude judge, and the gpt-oss, Gemma and Qwen answer-level and gpt-oss and Gemma ReAct judges are complete (150 of 150 each).
 
-Still running:
-- Qwen answer-level: 127 of 150 in the analysis snapshot (105 main-set rows).
-- Qwen ReAct: 0 of 150.
-- gpt-oss ReAct: 63 of 150 in the snapshot (56 main-set rows).
+Still running: Qwen ReAct, 25 of 150 in this analysis (27 by 10:15; local, about 315 s per row, so about 11 hours more).
 
-These change only those models' shared-150 rows. The analysis is rerun into `runs/main_v1/analysis_v1/` when they finish, and rows that depend on them are marked **pending**. A separate agent fact-checked this report (about 110 numbers); its corrections are applied.
+It changes only Qwen ReAct's shared-150 rows. The analysis is then rerun into `runs/main_v1/analysis_v1/`; rows that depend on it are marked **pending**. The rerun with the completed gpt-oss ReAct and Qwen answer judges changed only those two judges' rows and added Qwen ReAct's partial rows (diff against `analysis_v1_partial/tables.md`). A separate agent fact-checked this report (about 110 numbers); its corrections are applied.
 
 **Terms.** The gate's decisions are **Trusted**, **Caught**, **Already caught**, **Untestable**, **Failed history check** and **Can't express**. An LLM judge's verdict is written TRUST or DECLINE.
 - *Coverage* = rows answered and Trusted (or TRUST), divided by rows.
 - *Precision* = correct answers among those.
-- *Yield* = correct answers Trusted, divided by all rows: the share of questions that end with a correct answer let through.
+- *Yield*: defined at the first table in §1.
 - "Wrong" = let through but wrong. Square brackets are paired two-level bootstrap 95% intervals (programs × questions).
 - A difference whose interval includes 0 is reported as a tie or "not significant".
 
@@ -21,6 +18,8 @@ These change only those models' shared-150 rows. The analysis is rerun into `run
 ## 1. Headline findings (verified)
 
 **1. Per platform, Claude-built programs** (`tables.md` §1):
+
+*Yield* = correct answers Trusted ÷ all rows = coverage × precision: the share of questions that end with a correct answer let through. It counts useful output in one number, because refusing everything gives perfect precision and trusting everything gives full coverage. Example, OTF R1: ungated 0.870 × 0.898 = 0.781; gate 0.705 × 1.000 = 0.705; so "gate − ungated yield −0.076" means the gate gives up about 8 right answers per 100 questions to remove every wrong one. In "gate − X yield", positive means the gate lets more correct answers through than X; negative means X does. Yield ignores wrong answers, so read it next to precision or the wrong count.
 
 | platform (programs, rows) | ungated: cov/prec (wrong) | history check (wrong) | gate: cov/prec (wrong) | gate − ungated: precision; yield | gate − history check: precision; yield |
 |---|---|---|---|---|---|
@@ -31,7 +30,7 @@ These change only those models' shared-150 rows. The analysis is rerun into `run
 - **On OTF R1** the gate removes all 243 wrong answers, against 202 left by the history check. Relative to the history check, it costs 11.9 points of coverage and 4.5 points of yield. Relative to ungated, it costs 16.5 points of coverage.
 - **On DEVS-Gen** the history check already removes most errors. The gate adds nothing to it and costs 0.7 points of yield.
 - **On the coding agent** there are no wrong answers to remove.
-- Random refusal at the gate's coverage gives yield +0.072 [0.040, 0.102] below the gate on OTF R1 and +0.010 [0.001, 0.023] below it on DEVS-Gen.
+- Against random refusal at the gate's coverage, the gate's yield is higher by 0.072 [0.040, 0.102] on OTF R1 and by 0.010 [0.001, 0.023] on DEVS-Gen.
 
 **2. All Claude-built programs (secondary, pooled across the three platforms):**
 - 62 programs, 7,056 rows. Ungated gives 0.900/0.956 (277 wrong); the history check 0.851/0.966 (207); the gate 0.801/0.999 [0.997, 1.000] (5).
@@ -91,8 +90,10 @@ These change only those models' shared-150 rows. The analysis is rerun into `run
 | vs Sonnet answer-level (101 Claude-built main-set rows) | matched: tie (both 1.000). Own verdict: not significant (−0.099 [−0.234, 0.011]); 0 wrong for both. On the 123 Claude-built rows of the shared 150, policy rows included: −0.130 [−0.273, −0.010] | §2, §3a |
 | vs Sonnet ReAct (32 Claude-built main-set rows) | matched: tie. Own verdict: not significant (−0.094 [−0.303, 0.000]). Thin | §2 |
 | vs gpt-oss, Gemma answer-level; Gemma ReAct (101 rows) | matched: ties (+0.025 to +0.032, intervals reach 0). Own verdict: **wins** vs gpt-oss answer (+0.257 [0.062, 0.436]); ties vs Gemma | §2 |
-| vs gpt-oss ReAct; Qwen answer and ReAct | **pending** | §2 |
-| Ollama-built, judges' own verdicts | **loses on yield** to Haiku answer (−0.177 [−0.297, −0.076]) and Haiku ReAct (−0.167 [−0.312, −0.058]), with similar precision on the rows they judged (0.950 vs the gate's 0.949 on 537 rows; 0.950 vs 0.900 on 174 rows). Ties with the others (intervals reach 0), several of which have much lower precision (program-level 0.358, gpt-oss answer 0.714, Gemma ReAct 0.750) | §2 |
+| vs gpt-oss ReAct (101 rows) | matched: tie (+0.024 [0, 0.055]). Own verdict: **wins on yield** (+0.317 [0.111, 0.500]); it TRUSTs 53.5% of rows and lets 1 wrong through | §2 |
+| vs Qwen answer-level (101 rows) | matched: tie (+0.006 [0, 0.018]). Own verdict: tie (+0.050 [−0.123, 0.226]); it lets 1 wrong through | §2 |
+| vs Qwen ReAct | **pending** (25 of 150 judged) | §2 |
+| Ollama-built, judges' own verdicts | **loses on yield** to Haiku answer (−0.177 [−0.297, −0.076]) and Haiku ReAct (−0.167 [−0.312, −0.058]), with similar precision on the rows they judged (0.950 vs the gate's 0.949 on 537 rows; 0.950 vs 0.900 on 174 rows). Ties with the others (intervals reach 0), several of which have much lower precision (program-level 0.358, gpt-oss answer 0.714, gpt-oss ReAct 0.375, Qwen answer 0.556, Gemma ReAct 0.750) | §2 |
 | Study C, P variant | **loses on yield** to Haiku answer (−0.505 [−0.663, −0.335]), Haiku ReAct (−0.493 [−0.717, −0.270]), program-level (−0.140 [−0.236, −0.059]) and Gemma ReAct (−0.462 [−0.917, −0.048]). Ties with the rest (13 rows or fewer). On P the program-level judge lets 119 wrong through; the others 0–3 | §6 |
 | Study C, H variant | matched precision +0.000 to +0.143; **significant only vs program-level** (+0.061 [0.018, 0.113], which lets 36 wrong through) | §6 |
 
@@ -117,9 +118,9 @@ Matching is within cells (set | process | cohort). The judge keeps the gate's nu
 | gpt-oss answer | 101 | 0.842/1.000 (0) | 0.968 (3) | +0.032 [0, 0.062] | 0.604/0.967 (2) | +0.257 [0.062, 0.436] | 0.455 |
 | Gemma answer | 101 | 0.842/1.000 (0) | 0.973 (2) | +0.027 [0, 0.054] | 0.812/0.988 (1) | +0.040 [−0.107, 0.184] | 0.438 |
 | Gemma ReAct | 101 | 0.842/1.000 (0) | 0.975 (2) | +0.025 [0, 0.050] | 0.901/0.989 (1) | −0.050 [−0.202, 0.099] | 0.557 |
-| Qwen answer | 84 of 101 | pending | | | | | |
-| gpt-oss ReAct | 51 of 101 | pending | | | | | |
-| Qwen ReAct | 0 | pending | | | | | |
+| Qwen answer | 101 | 0.842/1.000 (0) | 0.994 (1) | +0.006 [0, 0.018] | 0.802/0.988 (1) | +0.050 [−0.123, 0.226] | 0.769 |
+| gpt-oss ReAct | 101 | 0.842/1.000 (0) | 0.977 (2) | +0.024 [0, 0.055] | 0.535/0.982 (1) | +0.317 [0.111, 0.500] | 0.572 |
+| Qwen ReAct | 22 of 101 | pending | | | | | |
 
 **Per platform** (Claude-built; `main_analysis.json` `llm_judges.*.groups["platform=…"]`, rendered in `tables.md` §2):
 
@@ -136,13 +137,13 @@ Matching is within cells (set | process | cohort). The judge keeps the gate's nu
 | Haiku program-level | coding agent | 1,780 | 0.000 | 0.908/1.000 (0) | +0.085 [0.028, 0.155] |
 | Sonnet answer | OTF R1 / DEVS-Gen / agent | 33 / 37 / 31 | 0.000 each | 0.909 / 0.919 / 1.000, all 1.000 precision | −0.030 / −0.216 / −0.032, all intervals reach 0 |
 
-Risk-coverage points for each judge and group, with the gate's point, are in `main_analysis.json` (`risk_coverage`). The program-level judge is the weakest (AUROC 0.58). Haiku ReAct is the only judge whose own verdict significantly out-yields the gate on Claude-built programs. Sonnet answer-level has the highest AUROC (0.997); Sonnet is tied with the gate and its sample is thin.
+Risk-coverage points for each judge and group, with the gate's point, are in `main_analysis.json` (`risk_coverage`). Among the Haiku judges, program-level is the weakest (AUROC 0.58); the gpt-oss and Gemma judges are as low or lower (0.44–0.57). Haiku ReAct is the only judge whose own verdict significantly out-yields the gate on Claude-built programs. Sonnet answer-level has the highest AUROC (0.997); Sonnet is tied with the gate and its sample is thin.
 
 ## 4. Paper tables and their files
 
 | paper table | content | file and section |
 |---|---|---|
-| T1 | rule-based judges vs the gate, per platform, process, effect; pooled class (secondary) | `runs/main_v1/analysis_v1_partial/tables.md` §1; `main_analysis.json` → `rule_judges` (per cell: `cell=set|process|cohort`) |
+| T1 | rule-based judges vs the gate, per platform, process, effect; pooled class (secondary) | `runs/main_v1/analysis_v1_noqwenreact/tables.md` §1 (final: `analysis_v1/`); `main_analysis.json` → `rule_judges` (per cell: `cell=set|process|cohort`) |
 | T2 | LLM judges vs the gate at matched coverage and own verdict | `tables.md` §2; `llm_judges` |
 | T3 | five models on the same 150 rows (answer and ReAct) | `tables.md` §3a/§3b; `shared_rows` |
 | T4 | natural errors in plain terms; wrong answers Trusted | `tables.md` §4; `natural_errors` |
@@ -177,19 +178,20 @@ Risk-coverage points for each judge and group, with the gate's point, are in `ma
   - Loan, DEVS-Gen: 1 case_set and 1 resource_availability.
   - IT, DEVS-Gen Sonnet: 1 job_removal, 1 machine_removal and 1 failure_removal.
   - IT, OTF R1 Gemma: 1 task_priority and 1 machine_removal.
-  - Three of the 7 rest on reused evidence from an earlier pass. Two are in families with known blind spots (resource_availability; IT task_priority); whether these rows are those blind spots is not established.
+  - Three of the 7 rest on reused evidence from an earlier pass. None of the 7 is one of the planted blind-spot confusions (post-hoc diagnostic, 2026-11-11, reference runners only, `run_manifest.md`): for Loan `resource_availability-05` the reference gives 121,633 with one worker too many and 60,438–132,396 in any other pool, against the program's 59,262; for IT `task_priority-04` no priority value 0–20 gives the program's 2,365 (add-vs-set gives the right answer, 2,481).
 - **Planted (test questions, before this run; `manifests/blindspots.md`):** after the D26 checks, every planted confusion is Trusted 0 times except RA-count (6), RA-pool (12) and TP-add (5). These are the two unresolved blind spots.
 - Planted programs are our construction. The natural errors fall mostly in routing-probability and resource-availability.
 
 **e. Cost per judge** (`tables.md` §8):
 - **Gate:** 1.36 program executions per row on wf_test and 1.75 on ml_test, against generic tests 2.70 / 2.52 and program-wide 2.70 / 3.79. No model calls.
-- **LLM judges, USD per row:** Haiku answer $0.0037, program-level $0.0033, ReAct $0.0038, Sonnet answer $0.052, Sonnet ReAct $0.064, gpt-oss answer $0.0063, Gemma answer $0.0056, Gemma ReAct $0.012. Qwen runs locally for $0, at 180 s per row.
+- **LLM judges, USD per row:** Haiku answer $0.0037, program-level $0.0033, ReAct $0.0038, Sonnet answer $0.052, Sonnet ReAct $0.064, gpt-oss answer $0.0063, Gemma answer $0.0056, Gemma ReAct $0.012, gpt-oss ReAct $0.0125 ($1.87 for 150 in the judgments; the ledger shows $1.93, the difference being calls that failed with HTTP 500). Qwen runs locally for $0, at 178 s per row (answer) and about 315 s per row (ReAct).
 - **Totals:** Haiku answer $11.06 (3,000 rows), program-level $5.93 (1,778), Haiku ReAct $3.84 (1,000), Sonnet answer $7.86 (150), Sonnet ReAct $3.19 (50).
 - **Shared stage:** native answers $5.88, vanilla $6.17, RAG $1.89, interpretation $0.14.
 - **Spend to date:**
   - The Claude ledger is at $60.40 of $80. It does not include the DEVS-Gen builds, which ran before the main run and outside the ledger, at about $7.80 (estimated, `run_manifest.md`). So the project Claude total is about $68.
-  - Ollama is at $6.40 of $21.
+  - Ollama is at $7.53 of $21 (sum of the non-Claude ledgers, earlier runs included).
   - Smoke and dev-check judge runs: $0.96 (included in the ledger).
+  - Appendix note: one ledger line from the dev run is torn (two writers), an undercount of about $0.01.
 
 **f. Study C (P vs H; missed and unnecessary invalidations):**
 - All 31 policy registries start from the final test registry, and no policy fingerprint equals a test fingerprint. "Missed invalidations: 0" therefore cannot fail in this design; the capability recheck was not exercised (§1, item 8).
@@ -207,9 +209,13 @@ Risk-coverage points for each judge and group, with the gate's point, are in `ma
 - **Haiku repeat on 150 rows:** verdict agreement 0.853, kappa 0.651, confidence Spearman 0.845.
 - **Self-judging** (`tables.md` §7): Haiku answer-level TRUSTs 6.6% of wrong answers on Claude-built programs (13 of 196) and 1.9% on Ollama-built ones (7 of 370). Haiku ReAct: 13.3% (10 of 75) and 1.5% (2 of 132).
   - That is a real gap in favour of Claude-built programs. It is confounded with how the programs fail: Ollama-built programs fail far more often, and their wrong answers may be easier to spot (not measured here). So this does not establish self-preference, but it does not rule it out.
-  - Sonnet answer-level TRUSTs 0 wrong answers on both. gpt-oss answer TRUSTs 27% of wrong answers on Claude-built programs; Gemma ReAct 36% on Claude-built and 9.5% on Ollama-built.
+  - Sonnet answer-level TRUSTs 0 wrong answers on both. gpt-oss answer TRUSTs 27% of wrong answers on Claude-built programs; Gemma ReAct 36% on Claude-built and 9.5% on Ollama-built; gpt-oss ReAct 36% (4 of 11) and 24% (5 of 21); Qwen answer 18% (2 of 11) and 19% (4 of 21).
   - For the Ollama models, the own-builder cells are 4–14 rows, too few to read.
-- **Five-model comparison:** `tables.md` §3a; Qwen and gpt-oss ReAct are pending.
+- **Five-model comparison** (`tables.md` §3a; 150 shared rows, 123 Claude-built with 11 wrong, 27 Ollama-built with 21 wrong):
+  - On Claude-built rows the gate is 0.748/1.000 (0 wrong). At its coverage, every judge ties it on precision (all intervals reach 0).
+  - Own verdicts on Claude-built rows: Sonnet answer (−0.130 [−0.273, −0.010]) and Haiku ReAct (−0.138 [−0.272, −0.038]) out-yield the gate, with 0 and 1 wrong. The gate out-yields gpt-oss answer (+0.195 [0.023, 0.352]) and gpt-oss ReAct (+0.252 [0.058, 0.431]). The rest tie.
+  - By AUROC on Claude-built rows: Sonnet answer 0.995, Haiku answer 0.968, Haiku ReAct 0.936, Haiku repeat 0.832, Qwen answer 0.771; the gpt-oss and Gemma judges and program-level are 0.39–0.56, near chance.
+  - Qwen ReAct is pending.
 
 ## 6. Reviewer questions
 
@@ -289,21 +295,32 @@ Risk-coverage points for each judge and group, with the gate's point, are in `ma
 
 **Policy reuse:** see §1, item 8 and §5f. The history check refused every row under a real policy change. The capability recheck was not exercised, and the gate keeps no correct answers on P.
 
+## 6b. Paper results notes (how to phrase these facts; not limitations)
+
+These are directions for wording the paper accurately. They are not items for the Limitations section.
+
+**N1. Capability recheck on reuse: do not claim it works, anywhere in the paper.**
+- **Fact:** the step that rechecks a program's capabilities when it is reused never ran in Study C. It runs only when a policy case reuses evidence recorded on a test case, and no policy fingerprint equals a test fingerprint. "Missed invalidations: 0" therefore cannot fail in this design (§5f).
+- **Safe wording:** under a real policy change (P), the history check refuses every row: 0 Trusted, against 302 wrong answers ungated. Under a harmless change (H), 72.1% are Trusted at precision 1.000. Present the recheck as part of the design, if at all, never as a tested result.
+- **Avoid:** "the recheck catches stale capabilities", "0 missed invalidations" stated as evidence, or "zero yield" framed as a weakness. On P, refusing is the correct outcome.
+
+**N2. Ollama-built programs: a result about the builders, reported with the gate's thin evidence there.**
+- **Fact:** only 2 of 24 Ollama-built programs get any Trusted answer, and the 6 Ollama manufacturing programs never answer on the structured path. Most of these programs are wrong (1,161 wrong answers ungated); the gate Trusts 2 of them.
+- **Safe wording:** the gate stays safe on weak builders and refuses almost everything, because the programs fail its checks. State coverage and the wrong count together.
+- **Caveat to state next to the result (not in Limitations):** the gate's precision on Ollama-built programs rests on very few Trusted answers (0.983 on the program-level judge rows, 0.949 on 537 Haiku-answer rows), so do not read it as a precise estimate.
+
+**N3. Where the D26 checks apply: a method-scope sentence, not a limitation.**
+- **Fact:** the D26 checks need structured records, so they cannot run on OTF's free-form records. There they record Untestable and change no Trusted decision; OTF rows are decided by the earlier probes. On OTF R1 Claude-built programs the gate still Trusts 0 wrong answers in the main run.
+- **Safe wording:** in the method section, say which record formats each check needs and that checks which cannot apply are recorded as Untestable, not passed.
+- **Avoid:** describing the D26 checks as covering every platform.
+
 ## 7. Known limits
 
-1. **Two unresolved blind spots**, kept as reported limits (Ashraf, 2026-11-10): workflow resource-availability pool/count (planted RA-count 6 and RA-pool 12 wrong Trusted), and IT task-priority add-vs-set (TP-add 5).
-2. **IT Already-caught coverage cost:** 71 right IT answers on Claude programs are Already caught (blocking is by capability and target across questions). Kept as designed.
-3. **The D26 checks do not apply to OTF's free-form records.** They add Untestable-labelled evidence there but change no Trusted decision, so OTF rows rely on the earlier probes.
-4. **Earlier runs used the old sandbox** (see Sandbox history).
-5. **Policy P:** zero yield; the capability recheck was not exercised.
-6. **Ollama-built programs:** only 2 of 24 get a Trusted answer, and the 6 Ollama manufacturing programs never answer on the structured path.
-7. **Judges:**
-   - gpt-oss ReAct mostly fails the frozen ReAct format: 22 of 63 unparsable so far. Ashraf chose to run it as frozen; it is reported as a setup failure with this model.
+1. **IT Already-caught coverage cost:** 71 right IT answers on Claude programs are Already caught (blocking is by capability and target across questions). Kept as designed.
+2. **Judges:**
+   - gpt-oss ReAct often fails the frozen ReAct format: 38 of 150 replies unparsable (counted as DECLINE by the frozen judge). Ashraf chose to run it as frozen; this is reported as a setup failure with this model, and part of its low coverage comes from it.
    - Qwen 9B is a weak, thin judge, and Ollama Cloud has no prompt caching.
    - A single judge run is noisy (kappa 0.651).
-8. **Pooled "all Claude-built" numbers** mix three platforms and two builder models; the per-platform rows are the primary result.
-9. **One torn ledger line** from the dev run (two writers), an undercount of about $0.01.
-10. **Infrastructure during the run:** vanilla reading (wf_test, ml_test), one Haiku answer shard and gpt-oss ReAct stopped on network faults, and everything stopped once on a PC restart. All were resumed with the unchanged commands, with no row repeated (`run_manifest.md`).
 
 ## 8. Run facts
 
@@ -313,7 +330,7 @@ Risk-coverage points for each judge and group, with the gate's point, are in `ma
   - Haiku answer 3,000; Haiku ReAct 1,000.
   - Program-level 1,778 (every non-B0 program × chapter; B0 is native-only and excluded by `judges.py`).
   - Sonnet answer 150; Sonnet ReAct 50.
-  - gpt-oss and Gemma answer 150 each; Gemma ReAct 150.
-  - Pending: Qwen answer and ReAct, gpt-oss ReAct.
+  - gpt-oss, Gemma and Qwen answer 150 each; gpt-oss and Gemma ReAct 150 each. gpt-oss ReAct: 64 rows from the single-shard run and its resumes, then the remaining 86 in 4 parallel shards (33/20/12/21) after repeated Ollama Cloud HTTP 500s; 5 files, 150 unique keys.
+  - Pending: Qwen ReAct (25 of 150).
 - **Frozen files:** unchanged except the two disclosed cap lines.
 - **New scripts after the freeze**, each reviewed by a separate agent: `scripts/main_analysis.py` (2 rounds), `scripts/draw_react50.py`, `scripts/report_tables.py` (2 rounds). This report was fact-checked by a separate agent.
