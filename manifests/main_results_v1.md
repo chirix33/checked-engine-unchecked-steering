@@ -2,6 +2,10 @@
 
 **Status (2026-11-11, 22:30 CST): final, from the complete run.** Numbers come from `runs/main_v1/analysis_v1/` (`main_analysis.json`, `tables.md`, B = 2000, seed 20261111). Every program stage, the frozen scorer, every rule-based judge and every LLM judge are complete; no row is pending.
 
+**Update (2026-11-13): Jev judge added (D30, after the main run).**
+- Jev's numbers come from `runs/main_v1/analysis_v2/`, the same frozen analysis with Jev's rows added. Every other value in v2 equals v1, so v1 numbers elsewhere in this report stand.
+- Jev is in §3c. The per-domain tables with Jev are `runs/main_v1/domain_tables_v2/`.
+
 The final rerun changed only Qwen ReAct's rows relative to the interim analysis (`analysis_v1_noqwenreact/`), which in turn changed only the gpt-oss ReAct and Qwen answer rows relative to the first (`analysis_v1_partial/`). Both earlier folders are superseded. The whole report was reviewed against `analysis_v1/` after the final rerun.
 
 **Terms.** The gate's decisions are **Trusted**, **Caught**, **Already caught**, **Untestable**, **Failed history check** and **Can't express**. An LLM judge's verdict is written TRUST or DECLINE.
@@ -147,12 +151,106 @@ Matching is within cells (set | process | cohort). The judge keeps the gate's nu
 
 Risk-coverage points for each judge and group, with the gate's point, are in `main_analysis.json` (`risk_coverage`). Among the Haiku judges, program-level is the weakest (AUROC 0.58); the gpt-oss and Gemma judges are as low or lower (0.44–0.57). On these 101 main-set rows, Haiku ReAct is the only judge whose own verdict significantly out-yields the gate on Claude-built programs; on the shared 150 and react50 samples Sonnet answer-level does too (§1, item 6). Sonnet answer-level has the highest AUROC (0.997); Sonnet is tied with the gate and its sample is thin.
 
+## 3c. Jev, a non-generative answer-level judge (D30; added after the main run)
+
+**What it is.** TypeSafe's hosted decision model `jev-1.14.0`.
+- **How it decides:** it writes no text and runs no code; it returns a probability p for one yes/no question.
+- **Its input:** the answer-level LLM judges' prompt, minus their output-format lines (checked byte for byte), plus "Is the program's answer with the change exactly right for the question?".
+- **Verdict:** TRUST if p ≥ 0.5. Confidence is 100·p, and the service returns p to two decimals, so confidences tie.
+- **Rows:** the same frozen 3,000 rows as the Haiku answer-level judge: 2,028 Claude-built main, 537 Ollama-built main and 435 policy rows. Every row was judged, with 0 failures.
+
+**Sources.**
+- Numbers come from `runs/main_v1/analysis_v2/` (same frozen `main_analysis.py` and arguments as v1). Every non-Jev value there equals `analysis_v1` (recursive JSON diff: 6 added Jev keys, 0 other differences).
+- Run-clustered intervals come from `acmtrust_paper/sensitivity/analysis_v2_runclustered/`; its non-Jev values equal `analysis_v1_runclustered`.
+
+**Against the gate** (main sets). "runs" is the run-clustered interval. "At gate's coverage" means Jev keeps its most confident answers, up to the gate's count in each cell.
+
+| group | n | gate cov/prec (wrong) | Jev at gate's coverage: prec (exp. wrong) | gate − Jev precision | Jev own cov/prec (wrong) | gate − own yield | AUROC Jev / Haiku answer |
+|---|---|---|---|---|---|---|---|
+| Claude-built | 2,028 | 0.884/0.998 (3) | 0.977 (42) | +0.022 [0.008, 0.042]; runs [0.007, 0.043] | 0.735/0.969 (46) | +0.170 [0.108, 0.236]; runs [0.093, 0.249] | 0.625 / 0.858 |
+| OTF R1, Claude-built | 775 | 0.813/1.000 (0) | 0.940 (38) | +0.060 [0.025, 0.105]; runs [0.020, 0.109] | 0.723/0.927 (41) | +0.143 [0.054, 0.237]; runs [0.035, 0.258] | 0.608 / 0.870 |
+| DEVS-Gen | 690 | 0.875/0.995 (3) | 0.993 (4) | +0.002 [−0.009, 0.015] | 0.709/0.990 (5) | +0.170 [0.064, 0.266]; runs [0.041, 0.277] | 0.752 / 0.803 |
+| coding agent | 563 | 0.993/1.000 (0) | 1.000 (0) | 0.000 | 0.785/1.000 (0) | +0.208 [0.131, 0.295]; runs [0.121, 0.310] | - |
+| Ollama-built (OTF R1) | 537 | 0.073/0.949 (2) | 0.923 (3) | +0.026 [−0.750, 0.149] | 0.276/0.716 (42) | **−0.129 [−0.233, −0.045]; runs [−0.234, −0.042]** | 0.868 / 0.949 |
+
+**By domain** (Claude-built):
+
+| domain | n | gate − Jev precision at gate's coverage | Jev own cov/prec (wrong) | gate − own yield | AUROC Jev / Haiku |
+|---|---|---|---|---|---|
+| Manufacturing | 359 | 0.000 | 0.763/1.000 (0) | +0.228 [0.130, 0.346] | - |
+| IT | 532 | +0.000 [0.000, 0.004] | 0.605/0.994 (2) | +0.327 [0.219, 0.441] | 0.585 / 0.701 (3 wrong answers only) |
+| Loan | 554 | +0.040 [0.006, 0.089]; runs [0.005, 0.091] | 0.715/0.952 (19) | +0.058 [−0.068, 0.189] | 0.699 / 0.849 |
+| Pharmacy | 583 | +0.043 [0.011, 0.092]; runs [0.012, 0.091] | 0.856/0.950 (25) | +0.098 [0.044, 0.168]; runs [0.030, 0.165] | 0.536 / 0.843 |
+
+**Where Jev beats the gate.** Each case is a yield difference (gate − Jev's own verdict) whose interval is below 0 under both bootstraps, and in each Jev keeps more wrong answers than the gate:
+- **Ollama-built programs:** −0.129 (above), keeping 42 wrong to the gate's 2. Haiku answer-level does the same (−0.177).
+- **IT, Ollama-built:** −0.200 [−0.358, −0.085]; runs [−0.368, −0.070]. Jev keeps 15 wrong, the gate 2. Two of its builder cells, IT on Gemma and IT on gpt-oss, are also below 0 under both bootstraps; they are covered by this bullet and not listed separately.
+- **Loan, Ollama-built:** −0.120 [−0.282, −0.004]; runs [−0.267, −0.008]. Borderline. Jev keeps 6 wrong; the gate keeps no answers there.
+- **No-effect controls, Ollama-built:** −0.308 [−0.544, −0.102]; runs [−0.582, −0.093]. Jev keeps 3 wrong, the gate 0.
+- **Effectful questions, Ollama-built** (n = 430): −0.084 [−0.169, −0.014]; runs [−0.176, −0.007]. Jev's own verdict is 0.239/0.621 (39 wrong), the gate's 0.070/0.933 (2).
+- **Policy change P** (Claude-built, 214 rows): the gate Trusts none. Jev's own verdict keeps 50.9% at precision 0.615 (42 wrong): −0.313 [−0.466, −0.169]; runs [−0.432, −0.164]. Disagreement keeps 47.4% at 1.000 there (§6b N1). That share is over all 683 P rows, while Jev's 50.9% is over the 214 answered P rows of its subset, so the two are not directly comparable.
+
+**Policy H** is a tie, not a win: Jev at the gate's coverage +0.024 [0.000, 0.062]; own verdict 0.810/0.978 (4 wrong), −0.023 [−0.192, 0.140].
+
+At the gate's coverage, Jev never has a significant precision advantage over the gate in any group.
+
+**Shared 150** (`shared_rows`, policy rows included; same rows as every model):
+- **Claude-built, 123 rows with 11 wrong.** Gate 0.748/1.000 (0). Jev at the gate's coverage 0.978 (2): +0.022 [0.000, 0.037], a tie. Own verdict 0.715/0.920 (7 wrong): +0.089 [−0.065, 0.258], a tie. AUROC 0.666, against 0.968 for Haiku answer (0.832 for its repeat), 0.995 for Sonnet answer, and 0.385 / 0.529 / 0.771 for the gpt-oss / Gemma / Qwen answer judges.
+- **Ollama-built, 27 rows.** Own verdict 0.296/0.750 (2): −0.148 [−0.429, 0.000], borderline.
+- **react50** (39 Claude-built rows): own verdict 0.795/0.871 (4): −0.026, a tie.
+
+**By domain × long-context mode** (`runs/main_v1/jev_long_context_v1/jev_long_context.md`; reviewed). "long" means the default request got `400 max_tokens_exceeded` and was resent once with the long-context header: 410 rows, of which Loan 371 (275 test, 96 policy) and IT 39. The mode follows input length, so this is not a controlled comparison. Many cells rest on few wrong answers.
+
+| set | domain | built by | mode | rows | wrong | Jev own cov/prec (wrong) | Jev AUROC | Haiku answer AUROC |
+|---|---|---|---|---|---|---|---|---|
+| main | Manufacturing | Claude | default | 359 | 0 | 0.763/1.000 (0) | - | - |
+| main | IT | Claude | default | 497 | 2 | 0.608/0.993 (2) | 0.385 (2 wrong) | 0.698 |
+| main | IT | Claude | long | 35 | 1 | 0.571/1.000 (0) | 1.000 (1 wrong) | 0.691 |
+| main | Loan | Claude | default | 374 | 42 | 0.759/0.944 (16) | 0.704 | 0.869 |
+| main | Loan | Claude | long | 180 | 9 | 0.622/0.973 (3) | 0.721 | 0.751 |
+| main | Pharmacy | Claude | default | 583 | 37 | 0.856/0.950 (25) | 0.536 | 0.843 |
+| main | IT | Ollama | default | 116 | 55 | 0.336/0.692 (12) | 0.734 | 0.861 |
+| main | IT | Ollama | long | 4 | 4 | 0.750/0.000 (3) | - | - |
+| main | Loan | Ollama | default | 146 | 120 | 0.171/0.840 (4) | 0.947 | 0.982 |
+| main | Loan | Ollama | long | 95 | 80 | 0.105/0.800 (2) | 0.936 | 0.985 |
+| main | Pharmacy | Ollama | default | 176 | 111 | 0.403/0.704 (21) | 0.873 | 0.929 |
+| policy | Loan | Claude | default | 117 | 26 | 0.650/0.789 (16) | 0.549 | 0.967 |
+| policy | Loan | Claude | long | 96 | 11 | 0.646/0.871 (8) | 0.483 | 0.883 |
+| policy | Pharmacy | Claude | default | 222 | 68 | 0.676/0.853 (22) | 0.836 | 0.914 |
+
+What the table shows:
+- **On the main sets, the long-context mode does not explain Jev's weak ranking.** Within Loan on Claude-built programs, its AUROC is about the same in both modes (0.70 default, 0.72 long). Among main-set Claude-built cells with at least 5 wrong answers, its lowest AUROC is Pharmacy's 0.54, and no Pharmacy row used long context.
+- **On the policy set the pattern differs.** Loan is lower in long mode (0.48, 11 wrong) than in default (0.55, 26 wrong); both samples are small.
+- **Haiku's AUROC is lower on long Loan inputs** (0.87 default, 0.75 long), with 42 and 9 wrong answers.
+
+**Threshold note.** 67 of the 3,000 rows have p exactly 0.50 and so count as TRUST:
+- main sets, Claude-built: 46 right, 5 wrong;
+- main sets, Ollama-built: 2 right, 6 wrong;
+- policy: 6 right, 2 wrong.
+
+Jev's own-verdict numbers would move under a strict p > 0.5. AUROC and the risk-coverage curve do not depend on the threshold.
+
+**Cost and latency.**
+- **Spend:** $3.163 for 3,000 rows ($0.0011 per row; Haiku answer $0.0037), 75.3M prompt tokens. The 4-row dev check cost $0.0043.
+- **Calls:** 3,410, of which 410 are default calls refused for length at $0 and resent with long context. The "failed calls 410" in `tables.md` §8 are these.
+- **Time:** wall 0.33 s per row on average (median 0.26), against 28.6 s for Haiku answer-level. Median model time is 0.25 s for default calls and 0.43 s for long-context calls.
+- **Ledger:** 7 of 3,410 records were lost to overlapping writes from parallel shards. Cost comes from the judgment rows, which are complete; run_manifest has the details.
+
+**Caveats to state with any Jev number:**
+- Its own-verdict numbers depend on the 0.5 threshold; use the risk-coverage curve (`risk_coverage` in the JSON), which needs none.
+- `inconsistent` is n/a, not 0: it is false by construction.
+- It cannot run code or compute.
+- Its accuracy claims (and its stated weakness on counting, numbers and long inputs) are the vendor's own.
+- It was added after the freeze and after the main run (D30), with no frozen file changed.
+- Jev built no programs, so there is no self-judging case.
+
 ## 4. Paper tables and their files
 
 | paper table | content | file and section |
 |---|---|---|
 | T1 | rule-based judges vs the gate, per platform, process, effect; pooled class (secondary) | `runs/main_v1/analysis_v1/tables.md` §1; `main_analysis.json` → `rule_judges` (per cell: `cell=set|process|cohort`) |
-| T2 | LLM judges vs the gate at matched coverage and own verdict | `tables.md` §2; `llm_judges` |
+| T2 | LLM judges vs the gate at matched coverage and own verdict | `tables.md` §2; `llm_judges` (Jev: `analysis_v2/`, §3c here) |
+| T2b | Jev by domain × long-context mode | `runs/main_v1/jev_long_context_v1/jev_long_context.md` |
 | T3 | five models on the same 150 rows (answer and ReAct) | `tables.md` §3a/§3b; `shared_rows` |
 | T4 | natural errors in plain terms; wrong answers Trusted | `tables.md` §4; `natural_errors` |
 | T5 | planted errors (blind-spot checks, test questions) | `manifests/blindspots.md` "Single test run"; `manifests/probe_soundness_mlsys_v4_test.json`, `probe_soundness_workflow_test_v2.json` |
@@ -343,5 +441,7 @@ These are directions for wording the paper accurately. They are not items for th
   - Haiku answer 3,000; Haiku ReAct 1,000.
   - Program-level 1,778 (every non-B0 program × chapter; B0 is native-only and excluded by `judges.py`).
   - Sonnet answer 150; Sonnet ReAct 50.
-  - gpt-oss, Gemma and Qwen answer 150 each; gpt-oss, Gemma and Qwen ReAct 150 each. gpt-oss ReAct: 64 rows from the single-shard run and its resumes, then the remaining 86 in 4 parallel shards (33/20/12/21) after repeated Ollama Cloud HTTP 500s; 5 files, 150 unique keys.- **Frozen files:** unchanged except the two disclosed cap lines.
-- **New scripts after the freeze**, each reviewed by a separate agent: `scripts/main_analysis.py` (2 rounds), `scripts/draw_react50.py`, `scripts/report_tables.py` (2 rounds). This report was fact-checked by a separate agent.
+  - gpt-oss, Gemma and Qwen answer 150 each; gpt-oss, Gemma and Qwen ReAct 150 each. gpt-oss ReAct: 64 rows from the single-shard run and its resumes, then the remaining 86 in 4 parallel shards (33/20/12/21) after repeated Ollama Cloud HTTP 500s; 5 files, 150 unique keys.
+  - Jev answer (D30, added 2026-11-13): 3,000, the `answer_haiku` subset, in 4 parallel shards; 3,000 unique keys, 0 failures, 410 long-context.
+- **Frozen files:** unchanged except the two disclosed cap lines.
+- **New scripts after the freeze**, each reviewed by a separate agent: `scripts/main_analysis.py` (2 rounds), `scripts/draw_react50.py`, `scripts/report_tables.py` (2 rounds). Later, also reviewed: `scripts/domain_tables.py` (Jev added to its run list on 2026-11-13, a post-run reporting change), `scripts/jev_judge.py` and `scripts/jev_long_context_table.py`. This report was fact-checked by a separate agent. §3c and the Jev paper text were checked separately on 2026-11-13, and the errors that check found are fixed. The domain_tables.py Jev change was reviewed together with jev_long_context_table.py.

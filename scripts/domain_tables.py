@@ -23,7 +23,10 @@ import main_analysis as ma  # noqa: E402
 PLAIN = ("Trusted", "Caught", "Already caught", "Untestable", "Failed history check", "Can't express", "Request rejected", "Other")
 BASE = ("native", "replay", "generic", "schema", "program_wide", "disagreement")
 LLM_RUNS = ("main_answer_haiku|answer|claude-haiku-5-5", "main_program_haiku|program|claude-haiku-5-5",
-            "main_react_haiku|react|claude-haiku-5-5")
+            "main_react_haiku|react|claude-haiku-5-5",
+            "main_answer_jev|answer|jev-1.14.0")   # Jev (D30) added 2026-11-13, after the main run: a post-run reporting change
+LLM_LABEL = {"main_answer_haiku|answer|claude-haiku-5-5": "Haiku answer", "main_program_haiku|program|claude-haiku-5-5": "Haiku program",
+             "main_react_haiku|react|claude-haiku-5-5": "Haiku ReAct", "main_answer_jev|answer|jev-1.14.0": "Jev answer"}
 DOMAIN_ORDER = ("manufacturing", "it_ops", "loan", "pharmacy")
 PLAT_ORDER = ("otf_r1|claude", "devs|claude", "agent|claude", "all|claude", "otf_r1|ollama")
 PLAT_NAME = {"otf_r1|claude": "OTF-R1, Claude-built", "devs|claude": "DEVS-Gen, Claude-built", "agent|claude": "Coding agent, Claude-built",
@@ -132,14 +135,14 @@ def pair(p, y):
 
 def summary(res):
     G, L = res["groups"], res.get("llm") or {}
-    lab3 = [lab.split("|")[1] for lab in LLM_RUNS]
+    lab3 = [LLM_LABEL[lab] for lab in LLM_RUNS]
     cols = list(BASE) + ([f"{j} at gate coverage" for j in lab3] + [f"{j}, own verdict" for j in lab3] if L else [])
-    n_llm = {lab.split("|")[1]: sum(v["n"] for k, v in (L.get(lab) or {}).items() if not k.split("|", 1)[1].startswith("all|")) for lab in LLM_RUNS}
+    n_llm = {LLM_LABEL[lab]: sum(v["n"] for k, v in (L.get(lab) or {}).items() if not k.split("|", 1)[1].startswith("all|")) for lab in LLM_RUNS}
     out = ["## Summary: gate against each judge, by domain and platform", "",
            "Each cell has two signs, for precision and then yield, from the paired 95% interval of (gate - judge): "
            "+ = gate significantly higher, - = gate significantly lower, 0 = interval includes 0, ? = undefined (a side kept no rows). "
            "So '+0' means the gate is more precise with no significant yield difference; '+-' means more precise but fewer correct answers kept. "
-           "Brackets give wrong answers kept: for rule-based judges, judge then gate over the same rows; for LLM columns, judge then gate over the rows that judge saw. "
+           "Brackets give wrong answers kept: for rule-based judges, judge then gate over the same rows; for model-judge columns, judge then gate over the rows that judge saw. "
            "native and schema make identical decisions here, and replay and program_wide nearly so: they are not independent comparisons.", "",
            "| domain | platform | rows | gate yield | " + " | ".join(cols) + " |", "|---|---|---|---|" + "---|" * len(cols)]
     for dom in DOMAIN_ORDER:
@@ -166,9 +169,10 @@ def summary(res):
                                                    f"({v['judge_own_verdict']['wrong_trusted']} vs {v['gate_wrong_trusted']})")
             out.append(f"| {dom} | {name(k)} | {r['n']} | {f3(r['directed']['yield'])} | " + " | ".join(cells) + " |")
     if L:
-        out += ["", "LLM columns cover only the rows each judge saw in these sets (answered rows): "
+        out += ["", "Model-judge columns cover only the rows each judge saw in these sets (answered rows): "
                 + ", ".join(f"{j} {n_llm[j]}" for j in lab3)
-                + ". The answer-level and ReAct judges ran on frozen random subsets; the program-level judge on every answered row."]
+                + ". The answer-level and ReAct judges ran on frozen random subsets (Jev on the same rows as Haiku answer); the program-level judge on every answered row. "
+                "Jev (D30) was added after the main run; its own verdict uses p >= 0.5."]
     out.append("")
     return out
 
@@ -217,7 +221,7 @@ def render(res):
             cells.append(ci(mr_.get("gate_minus_this_yield")))
             out.append(f"| {name(k)} | {f3(r['directed']['yield'])} | " + " | ".join(cells) + " |")
         if res.get("llm"):
-            out += ["", "### LLM judges (Haiku), matched to the gate's coverage within cells; answered rows only (answer-level and ReAct: frozen random subsets)", "",
+            out += ["", "### Model-based judges (Haiku LLM judges; Jev, added after the run, D30), matched to the gate's coverage within cells; answered rows only (answer-level and ReAct: frozen random subsets)", "",
                     "| platform | judge | n (wrong) | gate prec (wrong kept) | judge prec at gate coverage | gate - judge, matched yield | judge's own verdict cov/prec (wrong kept) | gate - own verdict yield |",
                     "|---|---|---|---|---|---|---|---|"]
             for k in keys:
@@ -226,7 +230,7 @@ def render(res):
                     if not v:
                         continue
                     o = v["judge_own_verdict"]
-                    out.append(f"| {name(k)} | {lab.split('|')[1]} | {v['n']} ({v['wrong_rows']}) | {f3(v['gate']['precision'])} ({v['gate_wrong_trusted']}) | "
+                    out.append(f"| {name(k)} | {LLM_LABEL[lab]} | {v['n']} ({v['wrong_rows']}) | {f3(v['gate']['precision'])} ({v['gate_wrong_trusted']}) | "
                                f"{f3(v['judge_matched']['precision'])} | {ci(v['gate_minus_judge_matched_yield'])} | "
                                f"{f3(o['coverage'])}/{f3(o['precision'])} ({o['wrong_trusted']}) | {ci(v['gate_minus_judge_own_yield'])} |")
         out.append("")

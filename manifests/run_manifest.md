@@ -1645,3 +1645,82 @@ Closes the failed check in "The judges' sandbox gets the socket filter; io_uring
   - **Cost:** 1.54 program runs per question with the record vs 1.92 without (+24.7%).
   - **Ollama-built:** no change; the 12 Already-caught wrong answers are Caught when retested.
 - **Reading.** The record saves program runs. It prevents no errors and costs correct answers, mostly in IT, through machine-removal blocking. The paper (§6.2, §6.1 IT sentence, §6.5, §5, conclusion) now says this. The "record's effect on accuracy is not measured" limit has been removed.
+
+## 2026-11-13: Jev judge (D30), steps 0-2: checks, dev path check, test run
+
+- **Step 0.** `scripts/test_jev_judge_offline.py`: 77 pass, 0 failures. Hashes:
+  - `scripts/judges.py` ab971e9d..., unchanged;
+  - `scripts/jev_judge.py` 9cbbb8a4...;
+  - the test 31a92dad....
+  - `TYPESAFE_API_KEY` is set; only that boolean was checked.
+- **Step 1, dev path check** (`--rows 4`, ml_dev/wf_dev, `runs/judges_jev_devcheck_v1`):
+  - 4 of 4 replies are 200 from model jev-1.14.0, with 0 long-context rows;
+  - $0.0043, 0.22-0.41 s per call;
+  - no accuracy was read.
+  - The service returns noul probabilities at 2-decimal resolution (e.g. 0.34), so Jev's confidences (100*p) have ties. This is the model's own resolution; the code does not round.
+- **Step 2, test run** (frozen `answer_haiku` subset, sha256 236c7028..., wf_test/wf_policy/ml_test; 4 shards run side by side; stop $6.0 shared):
+  - **Rows:** 3,000 rows, 3,000 unique keys. 3,000 judged; 0 no_answer, 0 skipped, 0 unparsable, 0 too_long; all from jev-1.14.0.
+  - **By set:** wf_test 1,554, ml_test 1,011, wf_policy 435.
+  - **Verdicts at p >= 0.5:** TRUST 1,927, DECLINE 1,073.
+  - **Long context:** 410 rows. By process: Loan 371 of 1,008, IT 39 of 652, Pharmacy 0 of 981, Manufacturing 0 of 359.
+    - Each first had a `400 max_tokens_exceeded` default call: 410 failed calls at $0, so 3,410 calls in all.
+    - The design note expected about 858 rows over 32k by Haiku's token counts; Jev's tokenizer and limit gave 410.
+  - **Spend:** $3.1630 from the judgment rows (75.3M prompt tokens).
+  - **Latency:** median model time 0.252 s for default calls (p90 0.319) and 0.431 s for long-context calls (p90 0.526); max 21.5 s.
+  - **Ledger problem:** 7 of the 3,410 call records were lost, because appends from the 4 shards on Windows overlapped. Three tails of overwritten lines remain; 4 successes and 3 failed calls are missing. The ledger therefore sums to $3.1582, $0.0048 below the rows. The judgment rows (one file per shard) are complete and are the cost source, as the design states. No verdict is affected.
+  - **Hashes:** see the sha256 list printed in the session for the judgment files, the dev file and the ledger (recorded below).
+  - judgments_jev-1.14.0.s0of4.jsonl 2ac04d5d...; s1of4 8f2e878c...; s2of4 9e10b9ab...; s3of4 806d05bc...
+  - dev check judgments 987c91dd...; ledger calls_jev-1.14.0.jsonl a395d37a... (as of the end of step 2)
+
+## 2026-11-13: Jev judge (D30), steps 3-6: analysis, tables, report, paper
+
+- **Correction to the step-2 entry above.** The 7 lost ledger records are 5 successful calls (4 default, 1 long-context) and 2 failed (400) calls, not "4 successes and 3 failed calls". This was found by the separate-agent review by matching the ledger to the judgment rows. The total of 7 and the $0.0048 gap are unchanged.
+- **Step 3, analysis.**
+  - Ran `scripts/main_analysis.py` (a96134a4..., unchanged) with the v1 arguments into the new folder `runs/main_v1/analysis_v2/`, then `scripts/report_tables.py` (f2c1aeec..., unchanged).
+  - Recursive JSON diff against v1: 6 added keys, all Jev (llm_judges, study_c.llm_judges, shared_rows.shared150/react50, agreement.self_judging, cost.judges), and 0 other differences. tables.md differs only in its title line and the added Jev lines.
+  - Hashes: main_analysis.json a653d7f5..., tables.md 00b3b473....
+  - **Run-clustered sensitivity:** `acmtrust_paper/sensitivity/run_clustered.py` (0009dbde..., unchanged) was rerun into the new folder `acmtrust_paper/sensitivity/analysis_v2_runclustered/` (7be76b84...). Its non-Jev values equal `analysis_v1_runclustered`, and every Jev difference that is significant under question resampling stays significant under run resampling.
+- **Step 4, domain tables.** Added `main_answer_jev|answer|jev-1.14.0` to `LLM_RUNS` in `scripts/domain_tables.py`, a post-run reporting change.
+  - An `LLM_LABEL` map replaces `lab.split('|')[1]`, which would have labelled Jev and Haiku answer both "answer". Some wording changed ("model-judge", "model-based").
+  - Output `runs/main_v1/domain_tables_v2/` (json d21b296a...). The non-Jev groups and Haiku entries equal v1. Script hash 29508f88....
+- **Step 5, long-context table.** New `scripts/jev_long_context_table.py` (50bc9dfb...) produces `runs/main_v1/jev_long_context_v1/` (json 3bbac33b...).
+  - Separate-agent review: all 38 groups were recomputed independently and matched, the main rows equal analysis_v2, and the long-context count is 410.
+  - Fixes from the review: the pooled Claude+Ollama ('all') groups now hold counts only, and the header now says that long vs default is not a controlled comparison and that many cells rest on few wrong answers.
+  - The review also found that 67 rows have p exactly 0.50 (TRUST); this is disclosed in the report.
+- **Step 6, report and paper.**
+  - `manifests/main_results_v1.md`: new §3c (Jev), a status update and §4/§8 lines.
+  - Paper:
+    - `results.tex`: Jev macros, and `\rTotalUSD` 76 -> 79 (68 + 7.53 + 3.17 Jev);
+    - `05_judges.tex`: a Jev paragraph;
+    - `06_results.tex`: a Jev row in tab:llm with its caption, a Jev paragraph, the new tab:jevlong and the cost sentence;
+    - `10_genai_disclosure.tex`: a Jev clause.
+  - The build is clean (0 overfull boxes, 0 undefined references). The body ends on page 9; the GenAI disclosure (exempt) runs onto page 10. The Jev text was shortened to fit.
+  - The watermarks-remover hook flagged two new source comments containing "Claude". They were reworded; the cleaner was not run on the paper.
+  - Paper files are not committed; they may need syncing with Overleaf.
+- **Jev spend total:** $3.1673 (main $3.1630 + dev check $0.0043), within the $6 stop.
+
+- **Addendum (2026-11-13), step 4 review:** the `scripts/domain_tables.py` Jev change was reviewed by the same separate agent as step 5 (item B of that review). It found identical non-Jev output, Jev rows equal to analysis_v2, the same row sets as Haiku answer, and aligned columns.
+- **Step 6 fact-check (separate agent):** every number matches its source. Fixes applied to the report:
+  - "where Jev beats the gate" gained the effectful Ollama-built group, the counts for the no-effect bullet, and a note on the IT builder cells;
+  - the AUROC/long-context claim is restricted to main-set cells with at least 5 wrong answers, with the policy-set pattern stated;
+  - a note that the P denominators differ (683 vs 214).
+  Fixes applied to the paper: "no frozen code, prompt or program changed"; the long-context trigger is the service's rejection; the disclosure notes the 7 lost ledger lines.
+
+- **2026-11-13, paper: Jev citation (Ashraf).**
+  - Added `@misc{typesafe2026jev}` to `acmtrust_paper/references.bib`: author TypeSafe, "Jev documentation (model jev-1.14.0)", url https://docs.typesafe.ai, last accessed November 12, 2026. That is the date the docs were read for the design (jev_judge_design.md). The page title is generic because only the site address is recorded.
+  - Cited once in §5, "A decision model as judge": "a hosted model from TypeSafe~\cite{typesafe2026jev}".
+  - The build is clean and the body still ends on page 9; the reference prints as [24].
+
+- **2026-11-13, final review before Ashraf's commit.**
+  - **run_manifest.md:**
+    - My step-3-6 entry had a carriage-return byte where the text should read the macro name "rTotalUSD" with a leading backslash. A shell heredoc had collapsed the double backslash. Git therefore treated the whole file as binary, and the diff showed 3,241 changed lines.
+    - Fixed, and lines 1589-1647 (LF only, from before this session) were set to CRLF like the rest of the file.
+    - git diff now shows only the 65 appended lines. No text changed.
+  - **main_results_v1.md §3c:**
+    - The lead of "Where Jev beats the gate" now states the rule (interval below 0 under both bootstraps; Jev keeps more wrong answers in each case) instead of "many more".
+    - Policy H, a tie, is moved out of that list.
+    - The Loan Ollama-built bullet says the gate keeps no answers there.
+  - **Paper 06_results.tex:** the Ollama-built sentence now reads "(Delta kept -12.9 [...] points)", so the sign follows the table's Vouch-minus-judge definition. The build is clean and the body still ends on page 9.
+  - **Checks:**
+    - Every edited file is free of stray control bytes and has consistent line endings;
+    - both scripts compile.
