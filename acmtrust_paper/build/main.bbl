@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{31}
+\begin{thebibliography}{29}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -345,17 +345,6 @@
 \href{https://doi.org/10.1109/TSE.2016.2532875}{doi:\nolinkurl{10.1109/TSE.2016.2532875}}
 
 
-\bibitem[van~der Aalst(2016)]%
-        {vanderaalst2016process}
-\bibfield{author}{\bibinfo{person}{Wil van~der Aalst}.}
-  \bibinfo{year}{2016}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{Process Mining: Data Science in Action}
-  (\bibinfo{edition}{2nd} ed.)}.
-\newblock \bibinfo{publisher}{Springer}.
-\newblock
-\href{https://doi.org/10.1007/978-3-662-49851-4}{doi:\nolinkurl{10.1007/978-3-662-49851-4}}
-
-
 \bibitem[Wasi et~al\mbox{.}(2024)]%
         {wasi2024supplygraph}
 \bibfield{author}{\bibinfo{person}{Azmine~Toushik Wasi},
@@ -414,19 +403,6 @@
   Grounded User Simulation}.
 \newblock
 \showeprint[arxiv]{2611.01354}
-
-
-\bibitem[Zhao et~al\mbox{.}(2023)]%
-        {zhao2023selection}
-\bibfield{author}{\bibinfo{person}{James Zhao}, \bibinfo{person}{Yuxi Xie},
-  \bibinfo{person}{Kenji Kawaguchi}, \bibinfo{person}{Junxian He}, {and}
-  \bibinfo{person}{Michael Xie}.} \bibinfo{year}{2023}\natexlab{}.
-\newblock \showarticletitle{Automatic Model Selection with Large Language
-  Models for Reasoning}. In \bibinfo{booktitle}{\emph{Findings of the
-  Association for Computational Linguistics: EMNLP 2023}}.
-  \bibinfo{pages}{758--783}.
-\newblock
-\href{https://doi.org/10.18653/v1/2023.findings-emnlp.55}{doi:\nolinkurl{10.18653/v1/2023.findings-emnlp.55}}
 
 
 \bibitem[Zheng et~al\mbox{.}(2023)]%

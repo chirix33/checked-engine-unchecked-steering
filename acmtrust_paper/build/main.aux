@@ -59,6 +59,8 @@
 \citation{otftools2026}
 \citation{chen2026devs}
 \citation{openai2025gptoss}
+\citation{zheng2023judging}
+\citation{yao2023react}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Domains, change families and test questions. The no-effect column counts the test questions whose change, though valid, leaves the queried outcome unchanged. Manufacturing and IT inputs are real records; workflow inputs come from published process models. All outcomes are computed under the rules stated in each document.}}{5}{table.caption.16}\protected@file@percent }
 \newlabel{tab:benchmark}{{1}{5}{Domains, change families and test questions. The no-effect column counts the test questions whose change, though valid, leaves the queried outcome unchanged. Manufacturing and IT inputs are real records; workflow inputs come from published process models. All outcomes are computed under the rules stated in each document}{table.caption.16}{}}
 \@writefile{toc}{\contentsline {paragraph}{Questions and splits.}{5}{section*.20}\protected@file@percent }
@@ -67,17 +69,15 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5}Trust Judges Compared}{5}{section.5}\protected@file@percent }
 \newlabel{sec:judges}{{5}{5}{Trust Judges Compared}{section.5}{}}
 \@writefile{toc}{\contentsline {paragraph}{Rule-based judges.}{5}{section*.23}\protected@file@percent }
-\citation{zheng2023judging}
-\citation{yao2023react}
-\@writefile{toc}{\contentsline {paragraph}{LLM judges.}{6}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{LLM judges.}{5}{section*.24}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Models and subsets.}{6}{section*.25}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Analysis plan.}{6}{section*.26}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Results}{6}{section.6}\protected@file@percent }
 \newlabel{sec:results}{{6}{6}{Results}{section.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Error against coverage on OTF-Tools\xspace  R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; Vouch\xspace  trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table\nonbreakingspace \ref {tab:llm}).}}{6}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:riskcov}{{2}{6}{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table~\ref {tab:llm})}{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Errors that survive the history check}{6}{subsection.6.1}\protected@file@percent }
 \newlabel{sec:results:main}{{6.1}{6}{Errors that survive the history check}{subsection.6.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Error against coverage on OTF-Tools\xspace  R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; Vouch\xspace  trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table\nonbreakingspace \ref {tab:llm}).}}{6}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:riskcov}{{2}{6}{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table~\ref {tab:llm})}{figure.caption.29}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Rule-based judges and Vouch on the main test set. Cov.: share of all program--question pairs whose answer the judge releases (\%). Wrong: number of released answers that are wrong (for random refusal, the expected number). $\Delta $K: correct answers kept by Vouch minus those kept by the judge, in percentage points of all pairs; negative values mean the judge keeps more correct answers. Bold: the 95\% interval of $\Delta $K excludes zero under both bootstrap analyses (\S  \ref {sec:judges}). Programs built by open-weight models are shown apart.}}{7}{table.caption.27}\protected@file@percent }
 \newlabel{tab:main}{{2}{7}{Rule-based judges and Vouch on the main test set. Cov.: share of all program--question pairs whose answer the judge releases (\%). Wrong: number of released answers that are wrong (for random refusal, the expected number). $\Delta $K: correct answers kept by Vouch minus those kept by the judge, in percentage points of all pairs; negative values mean the judge keeps more correct answers. Bold: the 95\% interval of $\Delta $K excludes zero under both bootstrap analyses (\S \ref {sec:judges}). Programs built by open-weight models are shown apart}{table.caption.27}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces LLM judges against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge keeps its most confident answers up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta $: Vouch minus the judge, in points, with 95\% interval; positive $\Delta $ precision favors Vouch, negative $\Delta $ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast $excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies that could not be parsed, were cut off or refused, or ran out of turns, all counted as declines.}}{7}{table.caption.28}\protected@file@percent }
@@ -90,7 +90,6 @@
 \citation{gao2023pal}
 \citation{yoo2026validation}
 \citation{frochte2026modelica}
-\citation{vanderaalst2016process,lopezpintado2023prosimos,chapela2024extraneous}
 \citation{sargent2013vv}
 \citation{damour2022underspecification}
 \citation{chen2018metamorphic,segura2016survey}
@@ -110,6 +109,7 @@
 \newlabel{sec:related}{{7}{8}{Related Work}{section.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{LLM-generated simulators.}{8}{section*.31}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Validity for an intended use.}{8}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Testing simulation programs.}{8}{section*.33}\protected@file@percent }
 \citation{gathani2026praxa}
 \citation{wu2026never}
 \citation{elyaniv2010selective,geifman2017selective}
@@ -117,10 +117,8 @@
 \citation{zheng2023judging}
 \citation{panickssery2024self}
 \citation{yao2023react}
-\citation{zhao2023selection}
 \citation{zerhoudi2026wrong}
 \citation{chapela2023zenodo}
-\@writefile{toc}{\contentsline {paragraph}{Testing simulation programs.}{9}{section*.33}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Structured requests and abstention.}{9}{section*.34}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Models as judges.}{9}{section*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8}Limitations}{9}{section.8}\protected@file@percent }
@@ -133,6 +131,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}\protected@file@percent }
 \newlabel{sec:conclusion}{{9}{9}{Conclusion}{section.9}{}}
 \@writefile{toc}{\contentsline {paragraph}{Artifact.}{9}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{As objects of study.}{9}{section*.43}\protected@file@percent }
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
 \bibcite{otftools2026}{{1}{2026}{{Anonymous}}{{}}}
@@ -158,14 +157,12 @@
 \bibcite{reiss2011google}{{21}{2011}{{Reiss et~al\mbox  {.}}}{{}}}
 \bibcite{sargent2013vv}{{22}{2013}{{Sargent}}{{}}}
 \bibcite{segura2016survey}{{23}{2016}{{Segura et~al\mbox  {.}}}{{}}}
-\bibcite{vanderaalst2016process}{{24}{2016}{{van~der Aalst}}{{}}}
-\bibcite{wasi2024supplygraph}{{25}{2024}{{Wasi et~al\mbox  {.}}}{{}}}
-\bibcite{wu2026never}{{26}{2026}{{Wu}}{{}}}
-\bibcite{yao2023react}{{27}{2023}{{Yao et~al\mbox  {.}}}{{}}}
-\bibcite{yoo2026validation}{{28}{2026}{{Yoo et~al\mbox  {.}}}{{}}}
-\bibcite{zerhoudi2026wrong}{{29}{2026}{{Zerhoudi}}{{}}}
-\bibcite{zhao2023selection}{{30}{2023}{{Zhao et~al\mbox  {.}}}{{}}}
-\bibcite{zheng2023judging}{{31}{2023}{{Zheng et~al\mbox  {.}}}{{}}}
+\bibcite{wasi2024supplygraph}{{24}{2024}{{Wasi et~al\mbox  {.}}}{{}}}
+\bibcite{wu2026never}{{25}{2026}{{Wu}}{{}}}
+\bibcite{yao2023react}{{26}{2023}{{Yao et~al\mbox  {.}}}{{}}}
+\bibcite{yoo2026validation}{{27}{2026}{{Yoo et~al\mbox  {.}}}{{}}}
+\bibcite{zerhoudi2026wrong}{{28}{2026}{{Zerhoudi}}{{}}}
+\bibcite{zheng2023judging}{{29}{2023}{{Zheng et~al\mbox  {.}}}{{}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{4.185pt}
@@ -173,7 +170,6 @@
 \newlabel{tocindent3}{0pt}
 \newlabel{tocindent4}{0pt}
 \newlabel{tocindent5}{0pt}
-\@writefile{toc}{\contentsline {paragraph}{As objects of study.}{10}{section*.43}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{In building the research software and the benchmark.}{10}{section*.44}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{In writing this paper.}{10}{section*.45}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{References}{10}{section*.47}\protected@file@percent }

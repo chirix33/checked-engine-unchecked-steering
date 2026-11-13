@@ -1,0 +1,159 @@
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-dispatch_capacity-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/Manufacturing/b2 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/ITOperations/run_03 itops-test-failure_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/ITOperations/run_03 itops-test-failure_removal-17 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-02 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-14 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-15 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-17 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-19 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-failure_removal-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-01 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-15 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-17 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-job_removal-20 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-01 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-06 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-07 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-12 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-13 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-14 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-15 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-16 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-17 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-18 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-19 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-21 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-22 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-machine_removal-23 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-14 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-19 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-20 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-09 frozen True fresh True directed: 2 input-use probes (1 without M05) and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-15 frozen True fresh True directed: 2 input-use probes (1 without M06) and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-19 frozen True fresh True directed: 2 input-use probes (1 without M06) and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-21 frozen True fresh True directed: 2 input-use probes (1 without M04) and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_request-23 frozen True fresh True directed: 2 input-use probes (1 without M04) and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-02 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-14 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-15 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-17 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-19 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-failure_removal-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-01 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-15 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-17 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-job_removal-20 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-01 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-06 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-07 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-12 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-13 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-14 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-15 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-16 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-17 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-18 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-19 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-20 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-21 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-22 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-machine_removal-23 frozen False fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-03 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-09 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-14 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-19 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_priority-20 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-03 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-07 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-09 frozen True fresh True directed: 2 input-use probes (1 without M05) and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-10 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-15 frozen True fresh True directed: 2 input-use probes (1 without M06) and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-19 frozen True fresh True directed: 2 input-use probes (1 without M06) and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-21 frozen True fresh True directed: 2 input-use probes (1 without M04) and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/itops_dev/b2 itops-test-task_request-23 frozen True fresh True directed: 2 input-use probes (1 without M04) and the rule probe passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-activity_duration-12 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-activity_duration-13 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-activity_duration-15 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-04 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-05 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-07 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-08 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-09 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-10 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-12 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-13 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-14 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-15 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-16 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-17 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-case_set-19 frozen True fresh True directed: 1 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-routing_outcome-05 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-routing_outcome-07 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-routing_outcome-11 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-routing_outcome-16 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-05 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-14 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-15 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-17 frozen True fresh True directed: 2 probes passed
+agent/claude-sonnet-5-5/WorkflowPharmacy/b2 pha-test-timer_delay-19 frozen True fresh True directed: 2 probes passed
+done 158

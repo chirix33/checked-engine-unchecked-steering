@@ -40,6 +40,7 @@
 \newcommand{\rHistErrClaude}{3.4}         % 207 wrong
 \newcommand{\rHistWrongClaude}{207}
 \newcommand{\rWrongRemovedClaude}{98.2}   % (277 - 5) / 277
+\newcommand{\rWrongRemovedHistClaude}{97.6} % (207 - 5) / 207: share of the wrong answers passing the history check that Vouch removes
 \newcommand{\rRightLostClaude}{7.1}       % 430 of 6,075 correct program answers declined by the gate
 \newcommand{\rRightLostCountClaude}{430}
 \newcommand{\rDKeptNoCheckClaude}{$-6.1$~[$-9.5$,~$-3.4$]}     % gate - no added check, kept
@@ -187,6 +188,18 @@
 \newcommand{\rReactRanProgSonnet}{22}     % Sonnet ReAct: 11 of 50 rows (raw rows; lower bound)
 \newcommand{\rGptossUnparsed}{38}         % gpt-oss ReAct replies that could not be parsed, of 150
 \newcommand{\rQwenReactFailed}{24}        % Qwen ReAct: 19 out of turns, 4 cut off, 1 unparsable, of 150
+
+%% ---- Retesting every question instead of using the capability record (post-freeze rerun, 2026-11-12;
+%% acmtrust_paper/sensitivity/fresh_record_*; 1,944 dependent rows rerun with an empty record, no model calls;
+%% a 48-row check on non-dependent rows reproduced every frozen decision) --------------------------------
+\newcommand{\rFreshRerunRows}{1{,}944}
+\newcommand{\rFreshWrong}{5}              % wrong answers released when every question is retested (same as with the record)
+\newcommand{\rFreshAlreadyCaughtAgain}{158} % all 158 wrong answers blocked as Already caught fail a fresh test on the question
+\newcommand{\rFreshRightRecovered}{71}    % of the 85 correct answers blocked as Already caught, released when retested
+\newcommand{\rFreshDKept}{1.0}            % fresh keeps 1.0 pp more correct answers (record - fresh: -1.0 [-2.1, -0.2]; runs [-2.4, -0.2])
+\newcommand{\rFreshDKeptOtf}{2.6}         % OTF R1: -2.6 [-5.3, -0.6]; runs [-5.7, -0.4]
+\newcommand{\rFreshDKeptIt}{3.9}          % IT: -3.9 [-7.8, -1.2]; runs [-7.9, -1.1]
+\newcommand{\rFreshExecPerQ}{1.92}        % program runs per question without the record (with it: 1.54); +24.7%
 
 %% ---- Cost (tables.md section 8; medians from raw rows) -------------------------------------------------
 \newcommand{\rGateExecPerQ}{1.5}          % gate: mean program executions per pair, main sets (median 1; wf 1.36, ml 1.75)

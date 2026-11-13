@@ -1616,3 +1616,32 @@ Closes the failed check in "The judges' sandbox gets the socket filter; io_uring
     - three DEVS-Gen/Ollama secondary LLM-judge cells.
 - **Paper use.** Frozen intervals stay the reported analysis. Tables 3 and 4 bold a difference only when it excludes 0 under both bootstraps, and the captions say so. Two cells were unbolded (DEVS-Gen vs random refusal; Haiku ReAct −5.6, which keeps a marker and the clustered interval).
 - **Limit.** Some IT windows share jobs across windows, so run-level clustering still does not capture all dependence. Intervals remain descriptive.
+
+## 2026-11-12: retesting every question instead of using the capability record (Ashraf approved; post-freeze, program executions only)
+
+- **Why.** 158 of the 272 wrong answers Vouch removed on Claude-built programs were declined as Already caught, which means blocked by an earlier failure recorded for the same kind of change and target. The paper could not say whether the record prevents errors or only saves work. A naive reviewer asked for this comparison.
+- **What.** Vouch's directed decision was rerun with an empty capability record for each question, so every question is tested afresh. It was rerun only on the 1,944 main-set rows whose frozen decision depended on the record:
+  - Already caught: 245 Claude-built and 12 Ollama-built rows;
+  - trusted on reused evidence: 1,650 Claude-built and 37 Ollama-built rows.
+
+  Every other row was decided by tests on the question itself and is carried over unchanged. Everything else was held fixed: the same programs, documents, shared interpretations, adapter and policy code, budget and seed. Answers are fixed by the frozen run. No model calls were made.
+- **How.**
+  - Scripts:
+    - `acmtrust_paper/sensitivity/fresh_record_rows.py` (sha256 33814c9e…) selects the rows.
+    - `fresh_record_rerun.py` (18456617…) imports the unchanged `scripts/main_runner.py` (1acb2c98…) and the assurance package. It gives `ad.decide("directed", …)` a never-committed empty registry.
+    - `fresh_record_compare.py` (2b299898…) uses the reviewed `main_analysis.py` functions: B = 2000, seed 20261111, both the question-level and the run-level bootstrap.
+  - Ran in 12 shards. Output is in `acmtrust_paper/sensitivity/fresh_record/` (rerun JSONL sha256 019108b1…) and `fresh_record_compare.md`.
+- **Check first.** 48 random rows that did not depend on the record were rerun the same way. All 48 permits equal the frozen ones. 47 of 48 reasons are identical; the 48th is the same history-check failure, whose error text quotes a different temporary path.
+- **Result (Claude-built, main sets).**
+  - **Wrong answers released:** 5 in both versions.
+  - **Already-caught wrong answers:** all 158 fail a fresh test on the question itself (Caught 44 → 202).
+  - **Reused passes:** no trusted-on-reuse answer changed.
+  - **Correct answers:** retesting releases 71 of the 85 correct answers the record blocked (Trusted 5,645 → 5,716). Record minus fresh, kept correct answers:
+    - pooled −1.0 points [−2.1, −0.2], run-level [−2.4, −0.2];
+    - OTF R1 −2.6 [−5.3, −0.6];
+    - IT −3.9 [−7.8, −1.2].
+
+    All three are significant under both bootstraps. Precision is unchanged.
+  - **Cost:** 1.54 program runs per question with the record vs 1.92 without (+24.7%).
+  - **Ollama-built:** no change; the 12 Already-caught wrong answers are Caught when retested.
+- **Reading.** The record saves program runs. It prevents no errors and costs correct answers, mostly in IT, through machine-removal blocking. The paper (§6.2, §6.1 IT sentence, §6.5, §5, conclusion) now says this. The "record's effect on accuracy is not measured" limit has been removed.

@@ -1,0 +1,15 @@
+agent/claude-haiku-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_03 mfg-test-dispatch_capacity-18 frozen False fresh False replay: 294 of 294 ledger cells differ
+devs/haiku/Manufacturing/run_03 mfg-test-production_timing-00 frozen False fresh False replay: 210 of 210 ledger cells differ
+otf/r1/gemma-31b-ollama/mfg_dev/b1 mfg-test-production_timing-02 frozen False fresh False replay: 546 of 546 ledger cells differ
+otf/r1_claude/claude-haiku-5-5/itops_dev/b3 itops-test-job_removal-21 frozen False fresh False contract unresolved_meaning: Job J110 is not in Cell window 10, whose jobs run f
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b3 mfg-test-dispatch_capacity-06 frozen False fresh False replay: factual run read_failed: outcomes('Plant 1912, Period 07') failed: File 
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b3 mfg-test-dispatch_capacity-23 frozen False fresh False directed: the request's own change cannot be run (the backend cannot express it)
+agent/claude-sonnet-5-5/WorkflowLoan/b2 loa-test-case_set-01 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_loan_dev/run_01 loa-test-routing_probability-10 frozen True fresh True directed: 1 probes passed
+otf/r1/gemma-31b-ollama/workflow_loan_dev/b2 loa-test-resource_availability-00 frozen False fresh False replay: 4 of 15 case ends differ
+otf/r1/gpt-oss-120b/workflow_pharmacy_dev/b2 pha-test-routing_outcome-12 frozen False fresh False replay: 15 of 15 case ends differ
+otf/r1/gpt-oss-120b/workflow_pharmacy_dev/b2 pha-test-timer_delay-06 frozen False fresh False replay: 15 of 15 case ends differ
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-resource_availability-09 frozen False fresh False directed: no probe could be run (the backend cannot express the change)
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-00 frozen True fresh True directed: 2 probes passed
+done 14

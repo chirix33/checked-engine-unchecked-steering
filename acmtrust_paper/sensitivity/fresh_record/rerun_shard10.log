@@ -1,0 +1,123 @@
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-dispatch_capacity-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/Manufacturing/b1 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-activity_duration-12 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-activity_duration-13 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-activity_duration-15 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-04 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-05 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-07 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-08 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-09 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-10 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-12 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-13 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-14 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-15 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-16 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-17 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-case_set-19 frozen True fresh True directed: 1 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-05 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-07 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-11 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-16 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-05 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-14 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-15 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-17 frozen True fresh True directed: 2 probes passed
+devs/haiku/workflow_pharmacy_dev/run_01 pha-test-timer_delay-19 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-activity_duration-12 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-activity_duration-13 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-activity_duration-15 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-case_set-08 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-case_set-10 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-case_set-13 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-case_set-14 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-case_set-16 frozen True fresh True directed: 1 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-05 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-07 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-15 frozen False fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-routing_outcome-16 frozen False fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-routing_probability-14 frozen False fresh False directed: crashed: exit 1, 137 events: 267, in deltfcn
+    proc.deltfcn()
+  File
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-timer_delay-05 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-timer_delay-17 frozen True fresh True directed: 2 probes passed
+devs/sonnet/workflow_pharmacy_dev/run_01 pha-test-timer_delay-19 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-activity_duration-10 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-03 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-06 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-07 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-08 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-09 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-10 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-11 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-12 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-14 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-15 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-16 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-17 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-18 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-case_set-19 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-10 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-12 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-16 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-18 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-02 frozen False fresh False directed: c0000 takes a different route at D4 visit 1 (time 48679) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-03 frozen False fresh False directed: c0000 takes a different route at D1 visit 2 (time 142953) but its reco
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-06 frozen False fresh False directed: c0009 takes a different route at D2 visit 1 (time 49693) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-07 frozen False fresh False directed: c0006 takes a different route at D2 visit 1 (time 46494) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-08 frozen False fresh False directed: c0000 takes a different route at D2 visit 1 (time 40873) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-09 frozen False fresh False directed: c0004 takes a different route at D2 visit 1 (time 45591) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-10 frozen False fresh False directed: c0004 takes a different route at D5 visit 1 (time 54669) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-11 frozen False fresh False directed: c0005 takes a different route at D5 visit 1 (time 55776) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-12 frozen False fresh False directed: c0000 takes a different route at D2 visit 1 (time 40873) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-13 frozen False fresh False directed: c0012 takes a different route at D4 visit 1 (time 60033) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-14 frozen False fresh False directed: c0006 takes a different route at D5 visit 1 (time 56100) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-15 frozen False fresh False directed: c0009 takes a different route at D5 visit 1 (time 389683) but its reco
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-16 frozen False fresh False directed: c0005 takes a different route at D1 visit 1 (time 38724) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-17 frozen False fresh False directed: c0005 takes a different route at D5 visit 1 (time 55776) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-18 frozen False fresh False directed: c0013 takes a different route at D5 visit 1 (time 120496) but its reco
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-routing_probability-19 frozen False fresh False directed: c0006 takes a different route at D5 visit 1 (time 56100) but its recor
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-06 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-11 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-12 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-13 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-14 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-15 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b3 loa-test-timer_delay-18 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-06 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-07 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-08 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-09 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-10 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-11 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-12 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-14 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-15 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-16 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-17 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-18 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-case_set-19 frozen True fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-resource_availability-14 frozen False fresh True directed: 1 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-resource_availability-17 frozen False fresh False directed: records before the first wait for a Appraiser worker (39698) moved
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-10 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-12 frozen True fresh False directed: records before the change point 143466 moved
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-16 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_outcome-18 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_probability-02 frozen False fresh False directed: c0000 takes a different route at D4 visit 1 (time 48679) but its recor
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_probability-08 frozen False fresh False directed: c0000 takes a different route at D2 visit 1 (time 40873) but its recor
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_probability-12 frozen False fresh False directed: c0000 takes a different route at D2 visit 1 (time 40873) but its recor
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-routing_probability-18 frozen False fresh False directed: c0013 takes a different route at D5 visit 1 (time 120496) but its reco
+otf/r1_claude/claude-sonnet-5-5/workflow_loan_dev/b3 loa-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+done 120

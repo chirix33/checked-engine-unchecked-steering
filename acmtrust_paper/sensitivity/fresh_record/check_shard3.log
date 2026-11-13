@@ -1,0 +1,12 @@
+devs/haiku/Manufacturing/run_01 mfg-test-production_quantity-06 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-production_quantity-13 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1/gemma-31b-ollama/itops_dev/b3 itops-test-job_removal-00 frozen False fresh False replay: factual run crashed: timeout after 20s
+otf/r1_claude/claude-haiku-5-5/itops_dev/b1 itops-test-task_priority-03 frozen False fresh False replay: 132 task-log events differ
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b2 mfg-test-production_quantity-16 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-sonnet-5-5/WorkflowLoan/b1 loa-test-activity_duration-19 frozen True fresh True directed: 2 probes passed
+otf/r1/gemma-31b-ollama/workflow_loan_dev/b1 loa-test-activity_duration-17 frozen False fresh False replay: 15 of 15 case ends differ
+otf/r1/gpt-oss-120b/workflow_loan_dev/b2 loa-test-routing_outcome-12 frozen False fresh False replay: 9 of 15 case ends differ
+otf/r1_claude/claude-haiku-5-5/workflow_loan_dev/b2 loa-test-activity_duration-00 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b3 pha-test-timer_delay-08 frozen True fresh True directed: 2 probes passed
+otf/r1_claude/claude-sonnet-5-5/workflow_pharmacy_dev/b3 pha-test-timer_delay-11 frozen True fresh True directed: 2 probes passed
+done 11

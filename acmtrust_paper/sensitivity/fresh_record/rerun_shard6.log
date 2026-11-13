@@ -1,0 +1,60 @@
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-dispatch_capacity-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/haiku/Manufacturing/run_01 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-dispatch_capacity-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+devs/sonnet/Manufacturing/run_03 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-dispatch_capacity-08 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-dispatch_capacity-12 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-dispatch_capacity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-dispatch_capacity-22 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-dispatch_capacity-23 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-haiku-5-5/mfg_dev/b1 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b2 mfg-test-order_removal-11 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b2 mfg-test-order_removal-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b2 mfg-test-production_quantity-21 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+otf/r1_claude/claude-sonnet-5-5/mfg_dev/b2 mfg-test-production_timing-18 frozen True fresh True directed: 1 input-use probes and the rule probe passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-activity_duration-12 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-activity_duration-13 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-activity_duration-15 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-04 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-05 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-07 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-08 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-09 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-10 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-12 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-13 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-14 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-15 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-16 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-17 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-case_set-19 frozen True fresh True directed: 1 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-routing_outcome-05 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-routing_outcome-07 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-routing_outcome-11 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-routing_outcome-16 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-05 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-10 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-14 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-15 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-17 frozen True fresh True directed: 2 probes passed
+agent/claude-haiku-5-5/WorkflowPharmacy/b1 pha-test-timer_delay-19 frozen True fresh True directed: 2 probes passed
+done 59
