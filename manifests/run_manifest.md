@@ -1590,3 +1590,29 @@ Closes the failed check in "The judges' sandbox gets the socket filter; io_uring
   - Round 2 found the spending stop was per process (shards could overspend), a 200 body masked before parsing, a near-vacuous shard test, and a redirect test that checked only the hook. All fixed; round 3 confirmed it clean.
   - The last nit is also closed: a success record's reply is masked.
   - Final offline suite: 77 pass, 0 failures. Final hashes: `scripts/jev_judge.py` 9cbbb8a4…, `scripts/test_jev_judge_offline.py` 31a92dad….
+
+## 2026-11-12: run-clustered bootstrap (sensitivity check; Ashraf approved; post-freeze, analysis only)
+
+- **Why.** The frozen analysis resamples programs, then individual questions. Questions on the same run share records and printed draws, so this ignores dependence within a run. The 240 workflow test questions come from 16 runs; the 216 manufacturing and IT questions come from 53 runs (document + scope).
+- **What changed.** Only the second bootstrap level. It now resamples whole runs (document + scope) instead of questions, and every question of a run gets that run's weight. Everything else is unchanged: rows, per-cell matching, seed 20261111, B = 2000, judge subsets (`manifests/judge_subsets_main_v1.json`, `..._react_sonnet50.json`).
+- **How.** `acmtrust_paper/sensitivity/run_clustered.py` (sha256 0009dbde…) imports the reviewed `scripts/main_analysis.py` (a96134a4…, unchanged) and replaces its `boot_weights` at run time. No project file was modified, and no model calls or program executions were made.
+- **Output.** `acmtrust_paper/sensitivity/analysis_v1_runclustered/main_analysis.json` (29ea873f…). Comparisons are in `compare.py` / `compare_all.txt` (whole JSON) and `paper_claims.py` / `paper_claims.md` (the 175 differences the paper uses).
+- **Check.** Every point estimate equals the frozen one (0 mismatches over the whole JSON), as the design requires.
+- **Result.**
+  - Whole JSON: 302 → 272 differences with an interval excluding 0.
+  - Paper-relevant: 9 of 175 lose significance, and none gain it.
+  - **Results that keep their significance:**
+    - every OTF R1 difference (gate − history check, kept −4.5, precision +9.0; gate − random refusal +7.2);
+    - every pooled difference (gate − history check −2.2; gate − random refusal +3.4; gate − disagreement +13.8);
+    - IT against the history check (−5.4) and against program-wide (−4.8);
+    - Ollama-built against disagreement (−10.6);
+    - policy P against disagreement (−47.4);
+    - all three matched-precision wins over the Haiku judges (pooled and OTF R1).
+  - **Results that lose it:**
+    - Haiku ReAct own-verdict kept −5.6 (now [−13.5, 0.5]);
+    - Sonnet answer own-verdict kept on the shared 150 (−13.0, now [−27.5, 0.0]) and on react50 (−17.9);
+    - DEVS-Gen gate − random refusal +1.0;
+    - DEVS-Gen gate − platform-check precision;
+    - three DEVS-Gen/Ollama secondary LLM-judge cells.
+- **Paper use.** Frozen intervals stay the reported analysis. Tables 3 and 4 bold a difference only when it excludes 0 under both bootstraps, and the captions say so. Two cells were unbolded (DEVS-Gen vs random refusal; Haiku ReAct −5.6, which keeps a marker and the clustered interval).
+- **Limit.** Some IT windows share jobs across windows, so run-level clustering still does not capture all dependence. Intervals remain descriptive.

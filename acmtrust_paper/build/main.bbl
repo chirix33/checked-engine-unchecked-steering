@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{30}
+\begin{thebibliography}{31}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -101,6 +101,41 @@
 \newblock \bibinfo{howpublished}{arXiv:2603.03784}.
 \newblock
 \showeprint[arxiv]{2603.03784}~[cs.AI]
+
+
+\bibitem[D'Amour et~al\mbox{.}(2022)]%
+        {damour2022underspecification}
+\bibfield{author}{\bibinfo{person}{Alexander D'Amour},
+  \bibinfo{person}{Katherine Heller}, \bibinfo{person}{Dan Moldovan},
+  \bibinfo{person}{Ben Adlam}, \bibinfo{person}{Babak Alipanahi},
+  \bibinfo{person}{Alex Beutel}, \bibinfo{person}{Christina Chen},
+  \bibinfo{person}{Jonathan Deaton}, \bibinfo{person}{Jacob Eisenstein},
+  \bibinfo{person}{Matthew~D. Hoffman}, \bibinfo{person}{Farhad Hormozdiari},
+  \bibinfo{person}{Neil Houlsby}, \bibinfo{person}{Shaobo Hou},
+  \bibinfo{person}{Ghassen Jerfel}, \bibinfo{person}{Alan Karthikesalingam},
+  \bibinfo{person}{Mario Lucic}, \bibinfo{person}{Yian Ma},
+  \bibinfo{person}{Cory McLean}, \bibinfo{person}{Diana Mincu},
+  \bibinfo{person}{Akinori Mitani}, \bibinfo{person}{Andrea Montanari},
+  \bibinfo{person}{Zachary Nado}, \bibinfo{person}{Vivek Natarajan},
+  \bibinfo{person}{Christopher Nielson}, \bibinfo{person}{Thomas~F. Osborne},
+  \bibinfo{person}{Rajiv Raman}, \bibinfo{person}{Kim Ramasamy},
+  \bibinfo{person}{Rory Sayres}, \bibinfo{person}{Jessica Schrouff},
+  \bibinfo{person}{Martin Seneviratne}, \bibinfo{person}{Shannon Sequeira},
+  \bibinfo{person}{Harini Suresh}, \bibinfo{person}{Victor Veitch},
+  \bibinfo{person}{Max Vladymyrov}, \bibinfo{person}{Xuezhi Wang},
+  \bibinfo{person}{Kellie Webster}, \bibinfo{person}{Steve Yadlowsky},
+  \bibinfo{person}{Taedong Yun}, \bibinfo{person}{Xiaohua Zhai}, {and}
+  \bibinfo{person}{D. Sculley}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Underspecification Presents Challenges for
+  Credibility in Modern Machine Learning}.
+\newblock \bibinfo{journal}{\emph{Journal of Machine Learning Research}}
+  \bibinfo{volume}{23}, \bibinfo{number}{226} (\bibinfo{year}{2022}),
+  \bibinfo{pages}{1--61}.
+\newblock
+\urldef\tempurl%
+\url{https://jmlr.org/papers/v23/20-1335.html}
+\showURL{%
+\tempurl}
 
 
 \bibitem[DeMillo and Offutt(1991)]%
@@ -204,23 +239,6 @@
 \newblock
 
 
-\bibitem[Lewis et~al\mbox{.}(2020)]%
-        {lewis2020rag}
-\bibfield{author}{\bibinfo{person}{Patrick Lewis}, \bibinfo{person}{Ethan
-  Perez}, \bibinfo{person}{Aleksandra Piktus}, \bibinfo{person}{Fabio Petroni},
-  \bibinfo{person}{Vladimir Karpukhin}, \bibinfo{person}{Naman Goyal},
-  \bibinfo{person}{Heinrich K{\"u}ttler}, \bibinfo{person}{Mike Lewis},
-  \bibinfo{person}{Wen tau Yih}, \bibinfo{person}{Tim Rockt{\"a}schel},
-  \bibinfo{person}{Sebastian Riedel}, {and} \bibinfo{person}{Douwe Kiela}.}
-  \bibinfo{year}{2020}\natexlab{}.
-\newblock \showarticletitle{Retrieval-Augmented Generation for
-  Knowledge-Intensive {NLP} Tasks}. In \bibinfo{booktitle}{\emph{Advances in
-  Neural Information Processing Systems 33 (NeurIPS 2020)}}.
-\newblock
-\newblock
-\shownote{arXiv:2005.11401}.
-
-
 \bibitem[L{\'o}pez-Pintado et~al\mbox{.}(2023)]%
         {lopezpintado2023prosimos}
 \bibfield{author}{\bibinfo{person}{Orlenys L{\'o}pez-Pintado},
@@ -278,6 +296,18 @@
 \newblock \bibinfo{publisher}{Cambridge University Press}.
 \newblock
 \href{https://doi.org/10.1017/CBO9780511803161}{doi:\nolinkurl{10.1017/CBO9780511803161}}
+
+
+\bibitem[Raunak and Olsen(2021)]%
+        {raunak2021metamorphic}
+\bibfield{author}{\bibinfo{person}{M.~S. Raunak} {and} \bibinfo{person}{Megan
+  Olsen}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Metamorphic Testing on the Continuum of
+  Verification and Validation of Simulation Models}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 6th IEEE/ACM International
+  Workshop on Metamorphic Testing (MET)}}. \bibinfo{pages}{47--52}.
+\newblock
+\href{https://doi.org/10.1109/MET52542.2021.00015}{doi:\nolinkurl{10.1109/MET52542.2021.00015}}
 
 
 \bibitem[Reiss et~al\mbox{.}(2011)]%

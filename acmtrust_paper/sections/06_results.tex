@@ -1,25 +1,24 @@
 \section{Results}
 \label{sec:results}
 
-%% Table cells were filled on 2026-11-12 from runs/main_v1/analysis_v1/main_analysis.json (B = 2000),
-%% with medians and the no-effect split recomputed from the raw rows (see results.tex for sources).
-%% Prose marked \TBD still states what a sentence must report; it is rewritten in the claims pass to match
-%% the measured direction, including null and negative results. Never fill anything from development data.
+%% Tables: filled 2026-11-12 from runs/main_v1/analysis_v1/main_analysis.json (B = 2000); medians, the no-effect
+%% split and ReAct execution counts from raw rows; bold = significant under the frozen and the run-clustered
+%% bootstrap (acmtrust_paper/sensitivity/). Prose numbers come from results.tex.
 
-We ask four questions. \textbf{RQ1}: at the same coverage, does the library accept fewer wrong answers than the other judges? \textbf{RQ2}: when it declines, is it detecting errors or abstaining? \textbf{RQ3}: does rechecking keep wrong answers out when a program is reused under a changed policy, and what does it cost when the policy was only reworded? \textbf{RQ4}: what does checking cost? All numbers are from the test runs, with programs built on development documents only.
+We first ask how many wrong answers survive the history check and what removing them costs (\S\ref{sec:results:main}), then whether Vouch removes them by finding faults or by declining (\S\ref{sec:results:families}), how it compares with LLM judges (\S\ref{sec:results:llm}), what happens when the rules change (\S\ref{sec:results:reuse}), and what checking costs (\S\ref{sec:results:cost}).
 
-\subsection{RQ1: Wrong answers accepted at matched coverage}
+\subsection{Errors that survive the history check}
 \label{sec:results:main}
 
 \begin{table*}[t]
 \centering
-\caption{Rule-based judges and \gate on the main test sets, over all program--question pairs. Cov.: trusted and answered pairs (\% of all pairs). Wrong: wrong answers trusted (expected number for random refusal, which keeps random unchecked answers at \gate's coverage in each cell). $\Delta$K: correct answers kept by \gate minus by the judge, in points; negative means the judge keeps more. Bold: paired 95\% bootstrap interval excludes 0. Ollama-built programs are never pooled with the others.}
+\caption{Rule-based judges and Vouch on the main test set. Cov.: share of all program--question pairs whose answer the judge releases (\%). Wrong: number of released answers that are wrong (for random refusal, the expected number). $\Delta$K: correct answers kept by Vouch minus those kept by the judge, in percentage points of all pairs; negative values mean the judge keeps more correct answers. Bold: the 95\% interval of $\Delta$K excludes zero under both bootstrap analyses (\S\ref{sec:judges}). Programs built by open-weight models are shown apart.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{2.6pt}
 \begin{tabular}{@{}l rrr rrr rrr rrr rrr@{}}
 \toprule
-& \multicolumn{12}{c}{Built by Sonnet and Haiku} & \multicolumn{3}{c}{Built by Ollama models} \\
+& \multicolumn{12}{c}{Built by Sonnet and Haiku} & \multicolumn{3}{c}{Built by open-weight models} \\
 \cmidrule(lr){2-13}\cmidrule(l){14-16}
 & \multicolumn{3}{c}{\otf R1 (24 progs)} & \multicolumn{3}{c}{\devs (22)} & \multicolumn{3}{c}{Coding agent (16)} & \multicolumn{3}{c}{All three (62)} & \multicolumn{3}{c}{\otf R1 (24)} \\
 & \multicolumn{3}{c}{2{,}736 pairs} & \multicolumn{3}{c}{2{,}496} & \multicolumn{3}{c}{1{,}824} & \multicolumn{3}{c}{7{,}056} & \multicolumn{3}{c}{2{,}736} \\
@@ -27,21 +26,21 @@ We ask four questions. \textbf{RQ1}: at the same coverage, does the library acce
 Judge & Cov. & Wrong & $\Delta$K & Cov. & Wrong & $\Delta$K & Cov. & Wrong & $\Delta$K & Cov. & Wrong & $\Delta$K & Cov. & Wrong & $\Delta$K \\
 \midrule
 Platform check only & 87.0 & 243 & \sig{$-7.6$} & 87.8 & 34 & \sig{$-8.4$} & 97.6 & 0 & $-0.7$ & 90.0 & 277 & \sig{$-6.1$} & 61.0 & 1161 & \sig{$-14.4$} \\
-History check (\cfg{Replay}) & 82.4 & 202 & \sig{$-4.5$} & 79.0 & 5 & \sig{$-0.7$} & 97.6 & 0 & $-0.7$ & 85.1 & 207 & \sig{$-2.2$} & 4.9 & 18 & $-0.1$ \\
-Generic tests (\cfg{Generic}) & 82.1 & 200 & \sig{$-4.3$} & 78.7 & 5 & $-0.5$ & 97.6 & 0 & $-0.7$ & 84.9 & 205 & \sig{$-2.0$} & 4.9 & 18 & $-0.1$ \\
-Disagreement with reading & 59.7 & 29 & \sig{$+11.8$} & 68.3 & 4 & $+9.9$ & 75.0 & 0 & \sig{$+21.9$} & 66.7 & 33 & \sig{$+13.8$} & 15.5 & 18 & \sig{$-10.6$} \\
-Random refusal (matched) & 70.5 & (197) & \sig{$+7.2$} & 78.2 & (30) & \sig{$+1.0$} & 96.9 & (0) & 0.0 & 80.1 & (246) & \sig{$+3.4$} & 4.2 & (81) & $+2.9$ \\
+History check & 82.4 & 202 & \sig{$-4.5$} & 79.0 & 5 & \sig{$-0.7$} & 97.6 & 0 & $-0.7$ & 85.1 & 207 & \sig{$-2.2$} & 4.9 & 18 & $-0.1$ \\
+Generic tests & 82.1 & 200 & \sig{$-4.3$} & 78.7 & 5 & $-0.5$ & 97.6 & 0 & $-0.7$ & 84.9 & 205 & \sig{$-2.0$} & 4.9 & 18 & $-0.1$ \\
+Disagreement & 59.7 & 29 & \sig{$+11.8$} & 68.3 & 4 & $+9.9$ & 75.0 & 0 & \sig{$+21.9$} & 66.7 & 33 & \sig{$+13.8$} & 15.5 & 18 & \sig{$-10.6$} \\
+Random refusal & 70.5 & (197) & \sig{$+7.2$} & 78.2 & (30) & $+1.0$ & 96.9 & (0) & 0.0 & 80.1 & (246) & \sig{$+3.4$} & 4.2 & (81) & $+2.9$ \\
 \midrule
-\cfg{Schema} (ablation) & 87.0 & 243 & \sig{$-7.6$} & 87.8 & 34 & \sig{$-8.4$} & 97.6 & 0 & $-0.7$ & 90.0 & 277 & \sig{$-6.1$} & 61.0 & 1161 & \sig{$-14.4$} \\
-\cfg{Program-wide} (ablation) & 82.1 & 202 & \sig{$-4.2$} & 78.7 & 4 & $-0.5$ & 97.6 & 0 & $-0.7$ & 84.9 & 206 & \sig{$-2.0$} & 4.9 & 18 & $-0.1$ \\
-\gate (ours) & 70.5 & 0 & -- & 78.2 & 5 & -- & 96.9 & 0 & -- & 80.1 & 5 & -- & 4.2 & 2 & -- \\
+Contract check only & 87.0 & 243 & \sig{$-7.6$} & 87.8 & 34 & \sig{$-8.4$} & 97.6 & 0 & $-0.7$ & 90.0 & 277 & \sig{$-6.1$} & 61.0 & 1161 & \sig{$-14.4$} \\
+Program-wide tests & 82.1 & 202 & \sig{$-4.2$} & 78.7 & 4 & $-0.5$ & 97.6 & 0 & $-0.7$ & 84.9 & 206 & \sig{$-2.0$} & 4.9 & 18 & $-0.1$ \\
+Vouch & 70.5 & 0 & -- & 78.2 & 5 & -- & 96.9 & 0 & -- & 80.1 & 5 & -- & 4.2 & 2 & -- \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 \begin{table*}[t]
 \centering
-\caption{Model-based judges against \gate on Sonnet- and Haiku-built programs (main test sets), each on a fixed subset of $n$ answered pairs, so coverage is a share of answered pairs. Matched: the judge keeps its most confident answers up to \gate's count in each cell (expected wrong answers in parentheses). Own verdict: the judge's own decisions. $\Delta$: \gate minus the judge, in points, with paired 95\% interval; $\Delta$ precision $>0$ favors \gate; $\Delta$ kept $<0$ means the judge keeps more correct answers. Bold: interval excludes 0. Failed: unparsable, cut-off, refused or out-of-turns replies (counted as declines).}
+\caption{LLM judges against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge keeps its most confident answers up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta$: Vouch minus the judge, in points, with 95\% interval; positive $\Delta$ precision favors Vouch, negative $\Delta$ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast$excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies that could not be parsed, were cut off or refused, or ran out of turns, all counted as declines.}
 \label{tab:llm}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
@@ -49,7 +48,7 @@ Random refusal (matched) & 70.5 & (197) & \sig{$+7.2$} & 78.2 & (30) & \sig{$+1.
 \toprule
 & & \gate & \multicolumn{2}{c}{Judge, matched} & \multicolumn{3}{c}{Judge, own verdict} & \\
 \cmidrule(lr){3-3}\cmidrule(lr){4-5}\cmidrule(lr){6-8}
-Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & Failed \\
+Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & Failed replies \\
 \midrule
 \multicolumn{9}{@{}l}{\textit{Answer-level judge}} \\
 \quad Haiku & 2{,}028 & 0.2 (3) & 1.1 (20) & \sig{$+0.9$ [0.2, 2.0]} & 85.7 & 0.6 (10) & $+3.1$ [$-2.7$, 7.8] & 1/3{,}000 \\
@@ -60,7 +59,7 @@ Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & F
 \multicolumn{9}{@{}l}{\textit{Program-level judge}} \\
 \quad Haiku & 6{,}352 & 0.1 (5) & 3.5 (196) & \sig{$+3.4$ [1.7, 5.6]} & 76.4 & 3.3 (160) & \sig{$+14.9$ [9.6, 21.0]} & 0/1{,}778 \\
 \multicolumn{9}{@{}l}{\textit{ReAct judge}} \\
-\quad Haiku & 679 & 0.0 (0) & 1.4 (8) & \sig{$+1.4$ [0.4, 3.9]} & 93.1 & 1.3 (8) & \sig{$-5.6$ [$-11.7$, $-0.5$]} & 3/1{,}000 \\
+\quad Haiku & 679 & 0.0 (0) & 1.4 (8) & \sig{$+1.4$ [0.4, 3.9]} & 93.1 & 1.3 (8) & $-5.6$ [$-11.7$, $-0.5$]$^\ast$ & 3/1{,}000 \\
 \quad Sonnet & 32 & 0.0 (0) & 0.0 (0) & 0.0 [0.0, 0.0] & 87.5 & 0.0 (0) & $-9.4$ [$-30.3$, 0.0] & 1/50 \\
 \quad gpt-oss & 101 & 0.0 (0) & 2.3 (2) & $+2.4$ [0.0, 5.5] & 53.5 & 1.8 (1) & \sig{$+31.7$ [11.1, 50.0]} & 38/150 \\
 \quad Gemma & 101 & 0.0 (0) & 2.5 (2) & $+2.5$ [0.0, 5.0] & 90.1 & 1.1 (1) & $-5.0$ [$-20.2$, 9.9] & 3/150 \\
@@ -73,24 +72,24 @@ Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & F
 \centering
 \input{figures/riskcov}
 \caption{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table~\ref{tab:llm}).}
-\Description{A line chart with coverage on the x axis and error on the y axis. Three dashed or solid curves for Haiku judges stay between about 2 and 10 percent error at coverages above 20 percent. A red dot for the library sits at about 81 percent coverage and 0 percent error. Points for the history check and no added check sit near 95 and 100 percent coverage at about 9 and 10 percent error; disagreement sits at about 69 percent coverage and 2 percent error.}
+\Description{A line chart with coverage on the x axis and error on the y axis. Three dashed or solid curves for Haiku judges stay between about 2 and 10 percent error at coverages above 20 percent. A red dot for Vouch sits at about 81 percent coverage and 0 percent error. Points for the history check and no added check sit near 95 and 100 percent coverage at about 9 and 10 percent error; disagreement sits at about 69 percent coverage and 2 percent error.}
 \label{fig:riskcov}
 \end{figure}
 
-Table~\ref{tab:main} gives the main comparison. Without any added check, \TBD{\rNoCheckErrClaude\% of answers from Claude-built programs are wrong; state per domain where errors concentrate}. The history check \TBD{removes X of these at a coverage cost of Y; report \rHistErrClaude\%}. \gate reaches \rGateCovClaude\% coverage with \rGateErrClaude\% error, removing \rWrongRemovedClaude\% of the wrong answers and declining \rRightLostClaude\% of the correct ones. At the same coverage, the answer-level LLM judge has \rAnsJudgeErrClaude\% error and the ReAct judge \rReactErrClaude\%. \TBD{State the paired difference and interval for gate minus each judge, and say plainly where the gate is not better.}
+Table~\ref{tab:main} shows what each rule-based judge releases. With only the platform check, Claude-built programs answer \rNoCheckCovClaude\% of the pairs, and \rNoCheckWrongClaude{} of those answers are wrong (\rNoCheckErrClaude\%). The history check leaves \rHistWrongClaude{} of them, and Vouch leaves \rGateWrongClaude, an error of \rGateErrClaude\% at \rGateCovClaude\% coverage. A random refusal at Vouch's coverage keeps the \rRandomErrClaude\% error and 3.4 points fewer correct answers, so declining the same number of answers at random would not produce Vouch's gain.
 
-\TBD{Domain by domain. Report separately (i) domains where programs make few or no errors, so that any judge can only lose coverage there; (ii) the IT result, where a capability caught once blocks that family for the program everywhere, and the coverage this costs on otherwise correct answers; (iii) whether \cfg{Generic} with the same budget recovers the gate's gain, which tells whether the choice of test matters.}
+Most of these errors come from one platform. On \otf R1 programs, \rOtfHistWrong{} wrong answers pass the history check and Vouch releases none of them. Of all \rNoCheckWrongClaude{} wrong answers, \rRouteProbWrong{} follow a change of routing probabilities, which the history check cannot exercise because the recorded probabilities never vary. On \devs the history check already leaves only 5 wrong answers, and so does Vouch. The coding agent's programs, and all programs in manufacturing, give no wrong answer at all. Programs written by open-weight models mostly fail the history check: with \rNoCheckErrOllama\% error under the platform check, Vouch releases only \rGateCovOllama\% of their pairs, and a disagreement check keeps 10.6 points more correct answers.
 
-For Ollama-built programs, \TBD{report \rNoCheckErrOllama\% vs.\ \rGateErrOllama\% at \rGateCovOllama\% coverage; most of these programs fail the history check, so state how much of the difference is the history check alone}. Qwen built only three programs, so its cells are thin evidence.
+These errors are not misreadings of the question: for every one of the \rNoCheckWrongClaude{} wrong answers, the structured change equalled the hidden correct reading. Interpretation was exact on \rInterpWf{} workflow questions and \rInterpMl{} manufacturing and IT questions, and the seven misreadings cost only coverage (supplying the correct reading raises Vouch's coverage there from \rMlCovInterp\% to \rMlCovOracle\%). The faults lie in the programs, and in many of them: \rProgsWithWrong{} of the \rProgsClaude{} Claude-built programs give a wrong answer, Vouch removes all of them for \rProgsAllRemoved, the \rProgsWrongKept{} that keep one or two are \devs programs, and no \otf R1 program contributes more than \rOtfLargestProgWrong{} of the 243.
 
-\paragraph{Per program.} \TBD{One sentence per platform on spread across individual programs (from the per-program table in the artifact): how many programs have any wrong answer trusted by the gate, and whether one program dominates the totals.}
+Vouch pays for this in correct answers. It declines \rRightLostCountClaude{} of 6{,}075 correct answers (\rRightLostClaude\%) and keeps 2.2 points fewer correct answers than the history check, 4.5 on \otf R1. The loss is largest in IT, where the history check keeps 5.4 points more with the same three wrong answers: once a program fails a test of removing a particular machine, Vouch declines every later question about that machine, and \rItAlreadyRight{} of those answers were correct. Generic and program-wide tests release almost exactly what the history check releases (205 and 206 wrong), so tests drawn at random from the input-use family do not find these errors; Vouch's routing and worker tests do.
 
-\subsection{RQ2: Detecting or abstaining?}
+\subsection{Detection or abstention}
 \label{sec:results:families}
 
 \begin{table}[t]
 \centering
-\caption{\gate's decisions by change family (Sonnet- and Haiku-built programs, main test sets). Pairs: all program--question pairs. Wrong: wrong answers with no added check. Kept: wrong answers \gate trusts. Declines are split into those that \emph{detect} (\Caught, \Already, \Failhist) and those that \emph{abstain} (\Untestable, \Cantexpress, \Badrequest), each as wrong answers removed / correct answers lost. No-effect controls are also counted in their families.}
+\caption{Why Vouch declined, by change family (Claude-built programs, main test set). Pairs: program--question pairs. Wrong: wrong answers under the platform check alone. Kept: wrong answers Vouch releases. Detect and Abstain: wrong answers removed / correct answers lost by declines that detect a problem (\Caught, \Already, \Failhist) and by declines that abstain (\Untestable, \Cantexpress). Manufacturing is omitted: no program gave a wrong answer there, and Vouch abstained on 9 correct answers. The totals include it.}
 \label{tab:families}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -105,11 +104,6 @@ Route draw (one case) & 620 & 5 & 0 & 5/44 & 0/14 \\
 Routing probabilities & 620 & 195 & 0 & 195/70 & 0/0 \\
 Worker availability & 620 & 33 & 1 & 32/36 & 0/0 \\
 Case removal & 620 & 11 & 1 & 10/20 & 0/0 \\
-\multicolumn{6}{@{}l}{\textit{Manufacturing}} \\
-Order removal & 384 & 0 & 0 & 0/0 & 0/0 \\
-Production quantity & 384 & 0 & 0 & 0/0 & 0/0 \\
-Production timing & 384 & 0 & 0 & 0/0 & 0/0 \\
-Dispatch capacity & 384 & 0 & 0 & 0/0 & 0/9 \\
 \multicolumn{6}{@{}l}{\textit{IT operations}} \\
 Job removal & 360 & 3 & 1 & 2/1 & 0/0 \\
 Failure removal & 360 & 1 & 1 & 0/4 & 0/14 \\
@@ -123,69 +117,25 @@ No-effect controls & 1{,}300 & 16 & 0 & 16/90 & 0/37 \\
 \end{tabular}
 \end{table}
 
-A judge can remove wrong answers in two ways: by finding the error, or by declining questions it cannot check. Both reduce accepted errors, but only the first is evidence about the program. Table~\ref{tab:families} separates them. Of the wrong answers \gate removes, \rShareCaught\% are \Caught or \Already, \rShareHist\% fail the history check, and \rShareUntestable\% are declined as \Untestable. \TBD{Name the families where the gain is mainly abstention, and where the tests detect errors the history check cannot see, with one concrete example of a \Caught program (what the test changed and what moved).} On no-effect controls, \TBD{report whether any correct ``nothing changes'' answer was declined, and why}.
+A judge can lower its error by declining whatever it cannot check, so we ask why Vouch declined each wrong answer (Table~\ref{tab:families}). Of the 272 it removed, \rCaughtWrong{} were \Caught by a test on the question itself, \rAlreadyWrong{} were \Already because the program had failed the same test earlier, and \rHistWrongRemoved{} \Failhist. None was removed by abstaining. Of the \rUntestableRight{} correct answers declined as \Untestable, \rUntestableRightNoEffect{} are no-effect controls on which no test of the change could run.
 
-\paragraph{Interpretation.} \TBD{Share of test questions whose structured change matched the hidden binding exactly, per domain; and how the gate's error and coverage change when the hidden binding is supplied instead (oracle request), which bounds the share of errors due to misreading the question.}
+An example from the routing family shows detection at work. In Run~05 of the loan process, a question asks when case c0005 would end if decision D2 sent 30\% of cases one way and 70\% the other. All six Claude-built \otf R1 loan programs pass the history check and answer 47{,}253 seconds, the recorded value; the correct answer is 207{,}014. Vouch's routing test looks at the earliest decision on that run that the new probabilities must switch: the draw printed for another case, c0004, at D2 now requires it to take the other route, but none of the programs changes c0004's records, and Vouch declines (\Caught). The programs ignore the stated probabilities, which never vary in the recorded history.
 
-\subsection{RQ3: Reuse under a changed or reworded policy}
+Detection also costs correct answers. Of the 430 declined, 277 come from programs that fail the history check, 43 from abstention and 110 from failed tests, which can fail on another case or input than the one the question touches. The \Already removals rest on an earlier failure, not a fresh test; without a comparison against retesting every question, we cannot say whether the record improves accuracy.
+
+\subsection{Comparison with LLM judges}
+\label{sec:results:llm}
+
+Table~\ref{tab:llm} compares Vouch with LLM judges, the usual alternative to testing, each on its own subset, and Figure~\ref{fig:riskcov} shows the whole trade-off on \otf R1, where the errors are. At equal coverage the three Haiku judges accept more wrong answers than Vouch: the answer-level judge \rAnsJudgeErrClaude\% against \rGateErrAnsSub\% on the same \rAnsJudgeN{} pairs, the program-level judge \rProgJudgeErrClaude\% against 0.1\%, and the ReAct judge \rReactErrClaude\% against \rGateErrReactSub\%; all three differences are significant. No threshold closes the gap: above 5\% coverage no Haiku judge gets below 1.8\% error on \otf R1, while Vouch releases 81\% of those answers with none wrong.
+
+Sonnet and the open-weight judges ran on 32 to 101 Claude-built pairs containing at most four wrong answers, and at equal coverage Vouch ties with all of them. On its own verdicts, Sonnet's answer-level judge trusts \rSonnetAnsOwnCov\% of these pairs with no wrong answer, against Vouch's 84.2\%; Sonnet and the Haiku ReAct judge tend to keep more correct answers than Vouch, though neither difference holds when whole runs are resampled. The gpt-oss judges keep 26 and 32 points fewer, partly because \rGptossUnparsed{} of 150 ReAct replies broke the required format. Being able to run the program did not make the ReAct judge a tester: Haiku's ran it on only \rReactRanProgHaiku\% of its pairs and Sonnet's on 11 of 50, deciding the rest from reading alone.
+
+\subsection{When the rules change}
 \label{sec:results:reuse}
 
-\begin{table}[t]
-\centering
-\caption{Policy reuse (Sonnet- and Haiku-built workflow programs; 683 P and 728 H pairs from 31 programs). Each program starts from its capability record at the end of the test runs. P adds one worker to one pool; H rewords the rules without changing them. No P or H document has the policy fingerprint of a test document, so no test result applied to any of these pairs. Exec.: program executions per pair beyond the factual and answer runs.}
-\label{tab:reuse}
-\footnotesize
-\setlength{\tabcolsep}{2.6pt}
-\begin{tabular}{@{}l rrr rrr@{}}
-\toprule
-& \multicolumn{3}{c}{P (changed)} & \multicolumn{3}{c}{H (reworded)} \\
-\cmidrule(lr){2-4}\cmidrule(l){5-7}
-Judge & Cov. & Err. & Exec. & Cov. & Err. & Exec. \\
-\midrule
-Platform check & 93.9 & 47.1 (302) & 0 & 94.0 & 7.2 (49) & 0 \\
-History check & 0.0 & -- & 0 & 77.5 & 6.2 (35) & 0 \\
-Disagreement$^\ast$ & 47.4 & 0.0 (0) & 0 & 74.2 & 0.0 (0) & 0 \\
-\gate & 0.0 & -- & 0 & 72.1 & 0.0 (0) & 1.45 \\
-\bottomrule
-\multicolumn{7}{@{}l}{\scriptsize $^\ast$Plus one reading call per question, shared by all programs.}
-\end{tabular}
-\end{table}
+Programs are meant to be reused after the rules change. Under P, where one pool has one more worker, the programs answer \rPolPNoCheckCov\% of the questions under the platform check alone, and \rPolPNoCheckErr\% of those answers are wrong. Every program fails the history check on every P run, so Vouch releases nothing, while a disagreement check keeps \rPolPDisCov\% of the questions without a wrong answer. Under H, where the rules are reworded but mean the same, Vouch treats the text as a new policy, tests again (1.45 extra runs per question), and releases \rPolHGateCov\% of the answers with none wrong; the history check alone releases \rPolHHistCov\% with 35 wrong. No P or H document shares a fingerprint with a test document, so nothing recorded under the original rules was carried over, and this set does not test whether recorded results transfer correctly across policies.
 
-Every main result above is already a reuse result: each program was built on development runs and judged on test runs it had never seen, and its capability record carried failures from earlier test questions forward. Table~\ref{tab:reuse} adds a change of the rules themselves. Under P, \TBD{report how many programs keep the old pool size, whether the history check exposes them, and the gate's error \rPolPGateErr\% vs.\ \rPolPHistErr\% for the history check}. No P decision used evidence recorded under the old policy (\TBD{confirm the count is 0}). Under H, the fingerprint treats the rewording as a new policy, so the gate rechecks everything: \TBD{report the extra executions, and the number of rows (\rPolHUnneeded) where a failure recorded on test was dropped although the rules had not changed, and how many of those answers were wrong}. This is the price of a text-level fingerprint, and we report it rather than tune it away.
-
-\subsection{RQ4: Cost of checking}
+\subsection{Cost}
 \label{sec:results:cost}
 
-\begin{table}[t]
-\centering
-\caption{Cost per judged pair on the main test sets (means). Program executions exclude the factual run and the run that produces the answer. USD at list prices. Seconds are wall-clock time per judged pair.}
-\label{tab:cost}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}l r r r r@{}}
-\toprule
-Judge & Model calls & USD & Executions & Seconds \\
-\midrule
-History check & 0 & 0 & 0 & --$^\ddagger$ \\
-Generic tests & 0 & 0 & 2.62 & --$^\ddagger$ \\
-\cfg{Program-wide} & 0 & 0 & 3.21 & --$^\ddagger$ \\
-\gate & 0 & 0 & 1.54 & --$^\ddagger$ \\
-Answer-level judge, Haiku & 1.00 & 0.0037 & 0 & 28.6 \\
-Answer-level judge, Sonnet & 1.00 & 0.052 & 0 & 14.2 \\
-Program-level judge, Haiku$^\dagger$ & 1.00 & 0.0033 & 0 & 22.4 \\
-ReAct judge, Haiku & 1.87 & 0.0038 & 0.78$^\S$ & 24.7 \\
-ReAct judge, Sonnet & 1.40 & 0.064 & 0.26$^\S$ & 9.5 \\
-\bottomrule
-\multicolumn{5}{@{}l}{\scriptsize $^\dagger$Per program and run, not per pair; its verdict covers every question on the run.}\\
-\multicolumn{5}{@{}l}{\scriptsize $^\ddagger$Timed together: median 4.2\,s per pair for the answer run and all rule-based judges.}\\
-\multicolumn{5}{@{}l}{\scriptsize $^\S$Counted from a log inside the sandbox; a lower bound.}\\
-\multicolumn{5}{@{}l}{\scriptsize The shared interpretation call (Haiku) is not counted here; every judge uses it.}
-\end{tabular}
-\end{table}
-
-The library's checks make no model calls beyond the shared interpretation; their cost is program executions. \gate uses \rGateExecPerQ{} program executions per question on average (median \rGateExecMedian), fewer than generic tests (\rGenericExecPerQ) (Table~\ref{tab:cost}). The answer-level judge costs \$\rAnsJudgeUSDPerRow{} per pair and \rAnsJudgeSecPerRow{}\,s, and the ReAct judge \$\rReactUSDPerRow{} and \rReactSecPerRow{}\,s. \TBD{State how cost scales with reuse: passing evidence is reused within a run, so the per-question cost falls when many questions share a run; give the measured reuse share.}
-
-\subsection{Do LLM judges depend on the model?}
-\label{sec:results:models}
-
-Table~\ref{tab:llm} asks whether a stronger or different model makes a better judge on the same pairs. \TBD{Report the ordering and whether any model's judge beats the gate at matched coverage. Note self-judging: Claude and Ollama models judge programs built by their own family.} In development checks, gpt-oss under our plain-text ReAct format often described an action without writing code; we ran it unchanged, so its ReAct numbers measure that setup with that model, not the model's ability to test programs.
+Vouch makes no model calls beyond the interpretation every judge shares; its cost is program runs. It used 1.54 extra runs per question on average (median \rGateExecMedian), fewer than generic tests (2.62) or program-wide tests (3.21) because passes are reused within a run, and all rule-based judges together took a median of \rGateSecPerQ{} seconds per question. The Haiku answer-level judge cost \$\rAnsJudgeUSDPerRow{} and \rAnsJudgeSecPerRow{} seconds per pair, the Haiku ReAct judge \$\rReactUSDPerRow{} and \rReactSecPerRow{} seconds, and Sonnet's judges \$0.052 and \$0.064. The whole study, including development and failed runs, cost about \$\rTotalUSD{} in model calls.

@@ -163,12 +163,24 @@
 \newcommand{\rGateErrReactSub}{0.0}       % the gate on the same 679 pairs (0 wrong)
 \newcommand{\rDPrecReact}{$+1.4$~[$0.4$,~$3.9$]}
 \newcommand{\rDKeptReactOwn}{$-5.6$~[$-11.7$,~$-0.5$]}         % ReAct's own verdict keeps more, with 8 wrong vs 0
+\newcommand{\rDKeptReactOwnRC}{[$-13.5$,~$0.5$]}               % run-clustered interval: NOT significant (sensitivity check)
 \newcommand{\rProgJudgeErrClaude}{3.5}    % Haiku program-level at the gate's coverage, 6,352 pairs
 \newcommand{\rDPrecProgJudge}{$+3.4$~[$1.7$,~$5.6$]}
 \newcommand{\rSonnetAnsOwnCov}{94.1}      % Sonnet answer-level own verdict on 101 pairs, 0 wrong; gate 84.2, 0 wrong
 \newcommand{\rDKeptSonnetOwn}{$-9.9$~[$-23.4$,~$1.1$]}         % tie on these 101 rows
 \newcommand{\rDKeptSonnetShared}{$-13.0$~[$-27.3$,~$-1.0$]}    % on the 123 Claude-built rows of the shared 150 (policy rows included)
-\newcommand{\rDKeptReactShared}{$-13.8$~[$-27.2$,~$-3.8$]}     % Haiku ReAct, same 123 rows
+\newcommand{\rDKeptSonnetSharedRC}{[$-27.5$,~$0.0$]}           % run-clustered interval: NOT significant (sensitivity check)
+\newcommand{\rDKeptReactShared}{$-13.8$~[$-27.2$,~$-3.8$]}     % Haiku ReAct, same 123 rows (run-clustered [-27.0, -2.8]: still significant)
+
+%% ---- Run-clustered bootstrap (sensitivity check, 2026-11-12; acmtrust_paper/sensitivity/) ------------
+%% Same rows, matching, seed and B; the second level resamples whole runs (document + scope) instead of
+%% single questions. Point estimates are identical. Of the 175 significance-bearing differences the paper
+%% uses (sensitivity/paper_claims.md), 9 lose significance and none gain it. All OTF R1, pooled, IT, Ollama,
+%% policy-P and matched-precision results keep their status.
+\newcommand{\rRunsWf}{16}                 % workflow test runs behind the 240 workflow test questions
+\newcommand{\rRunsMl}{53}                 % manufacturing and IT test runs behind the 216 questions
+\newcommand{\rRCChecked}{175}
+\newcommand{\rRCChanged}{9}
 \newcommand{\rHaikuKappa}{0.65}           % Haiku answer-level run twice on the shared 150: agreement 85.3%
 \newcommand{\rHaikuAgree}{85.3}
 \newcommand{\rReactRanProgHaiku}{41.8}    % share of Haiku ReAct rows with at least one program execution (raw rows; lower bound)
