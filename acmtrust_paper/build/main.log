@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.11.4)  12 NOV 2026 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.11.4)  13 NOV 2026 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,12 +1549,15 @@ nh77jq.enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libe
 rtine/lbtn_7grukw.enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc
 /dvips/libertine/lbtn_naooyc.enc}]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 21.
-) (sections/02_problem.tex
+(Font)              scaled to size 9.0pt on input line 19.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(sections/02_problem.tex) (sections/03_method.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 16.
- [2.2])
-(sections/03_method.tex (figures/pipeline.tex
+(Font)              scaled to size 7.0pt on input line 1.
+ [2.2] (figures/pipeline.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 38.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
@@ -1563,7 +1566,10 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 38.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 38.
-) [3.3])
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3.3])
 (sections/04_benchmark.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 9.
@@ -1607,7 +1613,13 @@ Underfull \hbox (badness 2126) in paragraph at lines 18--18
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) Loan and Phar-macy with one more
  []
 
-[4.4]) (sections/05_judges.tex [5.5]) (sections/06_results.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4.4])
+(sections/05_judges.tex [5.5]) (sections/06_results.tex
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
 (Font)              scaled to size 8.0pt on input line 28.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
@@ -1694,20 +1706,22 @@ LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 6.5pt on input line 28.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.5pt on input line 28.
-)
-Underfull \vbox (badness 1067) has occurred while \output is active []
-
- [6.6{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/
-lbtn_oexx6f.enc}]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 92.
-
+) [6.6{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine
+/lbtn_oexx6f.enc}]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 9.0pt on input line 94.
+
+Underfull \vbox (badness 7064) has occurred while \output is active []
+
  [7.7{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/
-lbtn_fygcup.enc}]) (sections/07_related.tex [8.8]) (sections/08_limitations.tex
-)
-(sections/09_conclusion.tex) (sections/10_genai_disclosure.tex [9.9])
+lbtn_fygcup.enc}]) (sections/07_related.tex
+Underfull \vbox (badness 5022) has occurred while \output is active []
+
+ [8.8])
+(sections/08_limitations.tex) (sections/09_conclusion.tex)
+(sections/10_genai_disclosure.tex [9.9])
 (C:\Users\aashraf\Desktop\Work\2026\ACM Trust 2027\acmtrust_paper\build\main.bb
 l
 Underfull \hbox (badness 3407) in paragraph at lines 97--104
@@ -1716,8 +1730,9 @@ Underfull \hbox (badness 3407) in paragraph at lines 97--104
  []
 
 
-Underfull \vbox (badness 1803) has occurred while \output is active []
+Underfull \vbox (badness 3049) has occurred while \output is active []
 
+LaTeX Info: Redefining \tempurl on input line 355.
 )
 
 Class acmart Warning: ACM reference format is mandatory 
@@ -1745,16 +1760,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B9ABB919EFFE50CA5AFD3F8E7BADBC6C;3366.
+(rerunfilecheck)             Checksum: AA98B8805072C966735738748A1333CF;3366.
  ) 
 Here is how much of TeX's memory you used:
- 43591 strings out of 467871
- 966763 string characters out of 5417408
- 1531143 words of memory out of 5000000
- 70761 multiletter control sequences out of 15000+600000
- 853919 words of font info for 582 fonts, out of 8000000 for 9000
+ 43639 strings out of 467871
+ 967753 string characters out of 5417408
+ 1535411 words of memory out of 5000000
+ 70783 multiletter control sequences out of 15000+600000
+ 856540 words of font info for 600 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,19n,131p,2069b,2238s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,19n,131p,1958b,2238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Libe
 rtineMathBMI7.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/newtx/LibertineMathMI.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX
@@ -1772,9 +1787,9 @@ s.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 txmiaX.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/n
 ewtx/txsys.pfb>
 Output written on "C:\Users\aashraf\Desktop\Work\2026\ACM Trust 2027\acmtrust_p
-aper\build\main.pdf" (10 pages, 622961 bytes).
+aper\build\main.pdf" (10 pages, 622403 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
  112837 words of extra memory for PDF output out of 128383 (max. 10000000)
 

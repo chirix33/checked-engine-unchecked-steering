@@ -3,7 +3,7 @@
 
 Generative AI was used in this work in three ways.
 
-\paragraph{As objects of study.} Claude Sonnet~5.5, Claude Haiku~5.5, gpt-oss-120b, Gemma~4 31B and Qwen3.5~9B built the simulator programs we evaluate. Claude Haiku~5.5 interpreted every question, produced the reading answers, and performed \otf's record edits. These five models also served as the LLM-based judges described in \S\ref{sec:judges}. All model calls, tokens, costs and failures are logged in the artifact.
+\paragraph{As objects of study.} Claude Sonnet~5.5, Claude Haiku~5.5, gpt-oss-120b, Gemma~4 31B and Qwen3.5~9B built the simulator programs we evaluate. Claude Haiku~5.5 interpreted every question, produced the reading answers, and performed \otf's record edits. These five models also served as the LLM-based judges described in \S\ref{sec:judges}, and TypeSafe's Jev, a hosted decision model that writes no text, served as one further judge. All model calls, tokens, costs and failures are logged in the artifact; for Jev, seven of 3{,}410 call-ledger lines were lost to parallel writes, and each judgment row still records its calls and cost.
 
 %% AUTHORS: confirm this paragraph matches how the software was actually written before submission.
 \paragraph{Implementation of the research software and the benchmark.} An AI coding assistant was directed in writing some of the code of the assurance library.

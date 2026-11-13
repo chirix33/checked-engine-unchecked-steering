@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{29}
+\begin{thebibliography}{30}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -343,6 +343,18 @@
   \bibinfo{pages}{805--824}.
 \newblock
 \href{https://doi.org/10.1109/TSE.2016.2532875}{doi:\nolinkurl{10.1109/TSE.2016.2532875}}
+
+
+\bibitem[{TypeSafe}(2026)]%
+        {typesafe2026jev}
+\bibfield{author}{\bibinfo{person}{{TypeSafe}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Jev documentation (model jev-1.14.0)}.
+\newblock
+\urldef\tempurl%
+\url{https://docs.typesafe.ai}
+\showURL{%
+Retrieved November 12, 2026 from \tempurl}
 
 
 \bibitem[Wasi et~al\mbox{.}(2024)]%

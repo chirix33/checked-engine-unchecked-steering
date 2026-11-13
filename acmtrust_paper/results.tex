@@ -173,6 +173,29 @@
 \newcommand{\rDKeptSonnetSharedRC}{[$-27.5$,~$0.0$]}           % run-clustered interval: NOT significant (sensitivity check)
 \newcommand{\rDKeptReactShared}{$-13.8$~[$-27.2$,~$-3.8$]}     % Haiku ReAct, same 123 rows (run-clustered [-27.0, -2.8]: still significant)
 
+%% ---- Jev answer-level judge (D30; added after the main run, 2026-11-13) --------------------------------
+%% Source: runs/main_v1/analysis_v2/ (frozen main_analysis.py, same arguments as v1; every non-Jev value
+%% equals v1) and acmtrust_paper/sensitivity/analysis_v2_runclustered/ (run-clustered; same check).
+%% Same 3,000 frozen rows as the Haiku answer-level judge; below: main-set rows of hosted-API-built programs.
+\newcommand{\rJevN}{2{,}028}
+\newcommand{\rJevErrClaude}{2.3}          % Jev at the gate's coverage: precision 0.977, expected 42 wrong
+\newcommand{\rJevExpWrong}{42}
+\newcommand{\rDPrecJev}{$+2.2$~[$0.8$,~$4.2$]}               % runs [0.7, 4.3]: significant under both
+\newcommand{\rJevOwnCov}{73.5}            % own verdict (p >= 0.5): 0.735 coverage, precision 0.969, 46 wrong
+\newcommand{\rJevOwnErr}{3.1}
+\newcommand{\rJevOwnWrong}{46}
+\newcommand{\rDKeptJevOwn}{$+17.0$~[$10.8$,~$23.6$]}         % runs [9.3, 24.9]: significant under both
+\newcommand{\rJevAUROC}{0.63}             % Claude-built, 2,028 rows (0.6255); Haiku answer 0.86 (0.8584) on the same rows
+\newcommand{\rHaikuAnsAUROC}{0.86}
+\newcommand{\rJevErrOtf}{6.0}             % OTF R1 Claude-built (775 rows): Jev at gate's coverage precision 0.940 (38 wrong); gate 0 wrong
+\newcommand{\rJevPharmAUROC}{0.54}        % pharmacy, Claude-built (583 rows, 37 wrong): no row needed long context
+\newcommand{\rJevLongRows}{410}           % of 3,000 rows needed the long-context mode (Loan 371 incl. policy, IT 39)
+\newcommand{\rJevDKeptOllama}{$-12.9$~[$-23.3$,~$-4.5$]}     % Ollama-built: Jev's own verdict keeps more (42 wrong vs 2); runs [-23.4, -4.2]
+\newcommand{\rJevSharedOwnCov}{71.5}      % shared 150, 123 Claude-built rows: own 0.715/0.920 (7 wrong); gate 0.748/1.000
+\newcommand{\rJevUSDPerRow}{0.0011}       % $3.163 for 3,000 rows
+\newcommand{\rJevSecPerRow}{0.33}         % mean wall seconds per row (median 0.26)
+\newcommand{\rJevUSD}{3.17}               % main run $3.163 plus the $0.0043 dev path check
+
 %% ---- Run-clustered bootstrap (sensitivity check, 2026-11-12; acmtrust_paper/sensitivity/) ------------
 %% Same rows, matching, seed and B; the second level resamples whole runs (document + scope) instead of
 %% single questions. Point estimates are identical. Of the 175 significance-bearing differences the paper
@@ -216,4 +239,5 @@
 \newcommand{\rSonnetReactUSDPerRow}{0.064}
 \newcommand{\rClaudeUSD}{68}              % about: Claude ledger $60.40 plus about $7.80 of DEVS-Gen builds outside it
 \newcommand{\rOllamaUSD}{7.53}            % Ollama ledgers, earlier runs included; Qwen ran locally at $0
-\newcommand{\rTotalUSD}{76}               % about: all model spend in the study, development and failed runs included
+\newcommand{\rTotalUSD}{79}               % about: all model spend in the study, development and failed runs included
+                                          % (was 76 before Jev: 68 hosted API + 7.53 Ollama + 3.17 Jev = 78.7)

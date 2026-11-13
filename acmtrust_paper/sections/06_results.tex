@@ -40,7 +40,7 @@ Vouch & 70.5 & 0 & -- & 78.2 & 5 & -- & 96.9 & 0 & -- & 80.1 & 5 & -- & 4.2 & 2 
 
 \begin{table*}[t]
 \centering
-\caption{LLM judges against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge keeps its most confident answers up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta$: Vouch minus the judge, in points, with 95\% interval; positive $\Delta$ precision favors Vouch, negative $\Delta$ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast$excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies that could not be parsed, were cut off or refused, or ran out of turns, all counted as declines.}
+\caption{LLM judges and a decision model (Jev) against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge keeps its most confident answers up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta$: Vouch minus the judge, in points, with 95\% interval; positive $\Delta$ precision favors Vouch, negative $\Delta$ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast$excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies that could not be parsed, were cut off or refused, or ran out of turns, all counted as declines. Jev, added after the main run, returns a probability and trusts at 0.5, so its own-verdict columns depend on that threshold.}
 \label{tab:llm}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
@@ -64,6 +64,8 @@ Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & F
 \quad gpt-oss & 101 & 0.0 (0) & 2.3 (2) & $+2.4$ [0.0, 5.5] & 53.5 & 1.8 (1) & \sig{$+31.7$ [11.1, 50.0]} & 38/150 \\
 \quad Gemma & 101 & 0.0 (0) & 2.5 (2) & $+2.5$ [0.0, 5.0] & 90.1 & 1.1 (1) & $-5.0$ [$-20.2$, 9.9] & 3/150 \\
 \quad Qwen & 101 & 0.0 (0) & 2.3 (2) & $+2.4$ [0.0, 5.7] & 71.3 & 0.0 (0) & $+12.9$ [$-7.5$, 32.6] & 24/150 \\
+\multicolumn{9}{@{}l}{\textit{Decision model, answer-level input}} \\
+\quad Jev & 2{,}028 & 0.2 (3) & 2.3 (42) & \sig{$+2.2$ [0.8, 4.2]} & 73.5 & 3.1 (46) & \sig{$+17.0$ [10.8, 23.6]} & 0/3{,}000 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -130,6 +132,28 @@ Table~\ref{tab:llm} compares Vouch with LLM judges, the usual alternative to tes
 
 Sonnet and the open-weight judges ran on 32 to 101 Claude-built pairs containing at most four wrong answers, and at equal coverage Vouch ties with all of them. On its own verdicts, Sonnet's answer-level judge trusts \rSonnetAnsOwnCov\% of these pairs with no wrong answer, against Vouch's 84.2\%; Sonnet and the Haiku ReAct judge tend to keep more correct answers than Vouch, though neither difference holds when whole runs are resampled. The gpt-oss judges keep 26 and 32 points fewer, partly because \rGptossUnparsed{} of 150 ReAct replies broke the required format. Being able to run the program did not make the ReAct judge a tester: Haiku's ran it on only \rReactRanProgHaiku\% of its pairs and Sonnet's on 11 of 50, deciding the rest from reading alone.
 
+Jev judged the same \rJevN{} pairs as the Haiku answer-level judge but ranks answers less well (AUROC \rJevAUROC{} against \rHaikuAnsAUROC{}). At Vouch's coverage it accepts \rJevErrClaude\% wrong answers against \rGateErrAnsSub\%, and \rJevErrOtf\% on \otf R1, where Vouch accepts none; its long-context mode does not explain this (Table~\ref{tab:jevlong}). On the 123 Claude-built pairs of the shared 150 it ties with Vouch. On Ollama-built programs its own verdicts keep more correct answers than Vouch ($\Delta$ kept \rJevDKeptOllama{} points), as Haiku's do, with 42 wrong answers against Vouch's 2.
+
+\begin{table}[t]
+\centering
+\caption{Jev by domain and input mode, Claude-built main-test pairs. Long: the input exceeded Jev's default limit and was sent again in its long-context mode. The mode follows input length, so the rows are not a controlled comparison. Cov.\ and Err.: Jev's own verdicts, in \%, with wrong answers in parentheses. AUROC is omitted where a row has fewer than five wrong answers.}
+\label{tab:jevlong}
+\footnotesize
+\setlength{\tabcolsep}{2.8pt}
+\begin{tabular}{@{}l l r r r r r r@{}}
+\toprule
+Domain & Mode & Pairs & Wrong & Cov. & Err. & AUROC & Haiku AUROC \\
+\midrule
+Manufacturing & default & 359 & 0 & 76.3 & 0.0 (0) & -- & -- \\
+IT & default & 497 & 2 & 60.8 & 0.7 (2) & -- & -- \\
+IT & long & 35 & 1 & 57.1 & 0.0 (0) & -- & -- \\
+Loan & default & 374 & 42 & 75.9 & 5.6 (16) & 0.70 & 0.87 \\
+Loan & long & 180 & 9 & 62.2 & 2.7 (3) & 0.72 & 0.75 \\
+Pharmacy & default & 583 & 37 & 85.6 & 5.0 (25) & 0.54 & 0.84 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{When the rules change}
 \label{sec:results:reuse}
 
@@ -138,4 +162,4 @@ Programs are meant to be reused after the rules change. Under P, where one pool 
 \subsection{Cost}
 \label{sec:results:cost}
 
-Vouch makes no model calls beyond the interpretation every judge shares; its cost is program runs. It used 1.54 extra runs per question on average (median \rGateExecMedian), fewer than generic tests (2.62) or program-wide tests (3.21) because results are reused within a run (\rFreshExecPerQ{} without the record), and all rule-based judges together took a median of \rGateSecPerQ{} seconds per question. The Haiku answer-level judge cost \$\rAnsJudgeUSDPerRow{} and \rAnsJudgeSecPerRow{} seconds per pair, the Haiku ReAct judge \$\rReactUSDPerRow{} and \rReactSecPerRow{} seconds, and Sonnet's judges \$0.052 and \$0.064. The whole study, including development and failed runs, cost about \$\rTotalUSD{} in model calls.
+Vouch makes no model calls beyond the interpretation every judge shares; its cost is program runs. It used 1.54 extra runs per question on average (median \rGateExecMedian), fewer than generic tests (2.62) or program-wide tests (3.21) because results are reused within a run (\rFreshExecPerQ{} without the record), and all rule-based judges together took a median of \rGateSecPerQ{} seconds per question. The Haiku answer-level judge cost \$\rAnsJudgeUSDPerRow{} and \rAnsJudgeSecPerRow{} seconds per pair, the Haiku ReAct judge \$\rReactUSDPerRow{} and \rReactSecPerRow{} seconds, Sonnet's judges \$0.052 and \$0.064, and Jev \$\rJevUSDPerRow{} and \rJevSecPerRow{} seconds. The whole study, including development and failed runs, cost about \$\rTotalUSD{} in model calls.
