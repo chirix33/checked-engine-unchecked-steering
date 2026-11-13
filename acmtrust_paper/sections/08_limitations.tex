@@ -1,6 +1,6 @@
 \section{Limitations}
 \label{sec:limits}
 
-\paragraph{The reference and the builders share a model family.} Claude models helped write the workflow semantics, the reference engine and the hand-worked cases, a separately started Claude model wrote the independent checker, and Claude models built and judged programs. A misreading of the semantics shared by the reference and the Claude-built programs would be invisible to our scoring; independent reproductions from the document text reduce this risk but do not exclude it.
+\paragraph{The reference and the builders share a model family.} Claude models helped write the reference engine. A separat started Claude model wrote the independent checker, and Claude models built and judged programs. A misreading of the semantics shared by the reference and the Claude-built programs would be invisible to our scoring; independent reproductions from the document text reduce this risk but do not exclude it.
 
-\paragraph{Scope.} The workflow runs are fixed realizations of two published synthetic models, with every random draw printed, which real operations would not know in advance. Questions come from templates and are easier to interpret than questions written by people. Finally, \Trusted means only that specific tests passed.
+\paragraph{The Scope.} Synthetic workflow data: each run comes from a published simulation model~\cite{chapela2023zenodo}, and every random value it uses is recorded. A real business will not know these values in advance. Questions come from templates may be easier to interpret than questions written by people. Finally, \Trusted means only that specific tests passed.
