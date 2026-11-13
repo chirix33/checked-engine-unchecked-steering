@@ -580,6 +580,38 @@ The runner's Ollama stop (`CAP_USD`, $5) is raised to match the balance Ashraf r
 - Qwen 9B is a weak judge and thin evidence (D7).
 - The Ollama models also built some of the OTF programs they judge. Report self-judging by cohort, as for Claude.
 
+## D30. TypeSafe Jev as an answer-level judge (Ashraf, 2026-11-12; a logged addition after the freeze and after the main run)
+
+**What is added.** Jev (`jev-1.14.0`), TypeSafe's hosted, non-generative "System One" decision model, is added as an answer-level trust judge.
+- **Rows:** the frozen `answer_haiku` subset, 3,000 rows that contain the shared 150.
+- **Not added:** no ReAct and no program-level judge. Jev writes no text and has no tools.
+- **Laya, considered and skipped by Ashraf:**
+  - It is a 0.4B encoder with a 512–8k context.
+  - Our judge inputs are 15k–60k tokens.
+  - Its untrained checkpoints are near chance, by its own model card.
+
+**Fairness (`manifests/jev_judge_design.md`):**
+- Jev's input is the answer-level LLM judges' prompt text minus their output-format lines. The offline test checks this byte for byte, and a run stops if `judges.py` differs from the frozen file.
+- There are no criteria, hints, examples or sub-questions.
+- The wording is fixed before any call, and nothing is fitted on labels.
+- Confidence is 100·p, unrounded. TRUST means p ≥ 0.5.
+- Long context is used only after a `max_tokens_exceeded` reply, a rule that depends on input length only.
+- The model version is fixed.
+- Failures follow `judges.py`: unreadable replies are DECLINE at 0, and service errors are raised, never counted as verdicts.
+
+**Code:** `scripts/jev_judge.py` and `scripts/test_jev_judge_offline.py`, new files with no change to frozen files. They were reviewed by a separate agent (Opus, medium effort), which found 13 issues; all were fixed and a confirmation round followed.
+
+**Run:** by the main-run session, with Ashraf's key `TYPESAFE_API_KEY` in `.env`.
+- About $4, stop $6.
+- Ledger `runs/judges_jev_ledger/`, kept outside `build_test_*` so it does not count against the Ollama stop.
+- Ashraf approved sending the judge views to TypeSafe: document chapter, program, question, interpreted request and answers. They contain no gold and no personal data.
+
+**Report:**
+- Jev against the gate at matched coverage, as for every LLM judge.
+- A process × `long_context` table: about 858 of 3,000 rows exceed 32k tokens, mostly Loan and Pharmacy.
+- Own-verdict numbers depend on the 0.5 threshold, and `inconsistent` is n/a.
+- All of Jev's accuracy claims are the vendor's own.
+
 ## D9. Independent checker: Decided (Ashraf, 2026-11-04)
 
 A separately started agent writes the checker from the written spec and I/O formats alone. See D5, condition 4. Implementations are compared on small scenarios and boundary cases.

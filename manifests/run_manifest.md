@@ -1566,3 +1566,27 @@ Closes the failed check in "The judges' sandbox gets the socket filter; io_uring
   - the win/tie/loss tally was dropped, because native = schema and replay ~ program_wide;
   - a no-answer group now shows n/a.
 - Reading: the gate never loses on precision anywhere. Pharmacy OTF-R1 Claude-built is the one cell where no judge beats it on either axis. Selecting a headline cell after seeing test is post hoc; disclose it.
+
+## 2026-11-12: Jev judge added (D30), built and reviewed; run handed to the main-run session
+
+- **Laya checked and skipped:** a 0.4B encoder, a 512–8k context against 15k–60k-token judge inputs, near chance without training. Ashraf chose to skip it.
+- **TypeSafe Jev:** feasible as an answer-level judge. Docs read 2026-11-12 (docs.typesafe.ai):
+  - $0.042 per million input tokens;
+  - 32k context per question, 262k with the long-context header.
+- **New files:** `scripts/jev_judge.py`, `scripts/test_jev_judge_offline.py` and `manifests/jev_judge_design.md`. No frozen file changed; `scripts/judges.py` is still sha256 ab971e9d…, prompt hash ed45fe10bab7c96c.
+- **Review:**
+  - A separate agent (Opus, medium effort) found 13 issues, all fixed:
+    - `--rows` together with `--subsets` could judge test rows partially;
+    - the ledger counted against the Ollama stop;
+    - the key could leak through echoed error text or a followed redirect;
+    - some 5xx and protocol errors stopped the run instead of being retried;
+    - the docs contradicted the code on unparsable replies;
+    - nothing checked the frozen prompt hash;
+    - tests were vacuous or missing;
+    - design-text gaps: the long-context counts, the own-verdict threshold and domain_tables.
+  - Offline suite: 69 pass, 0 failures. No network call has been made.
+- **Not run here:** the dev path check and the test run are for the main-run session, with Ashraf's key.
+- **Review rounds 2 and 3 (same agent):**
+  - Round 2 found the spending stop was per process (shards could overspend), a 200 body masked before parsing, a near-vacuous shard test, and a redirect test that checked only the hook. All fixed; round 3 confirmed it clean.
+  - The last nit is also closed: a success record's reply is masked.
+  - Final offline suite: 77 pass, 0 failures. Final hashes: `scripts/jev_judge.py` 9cbbb8a4…, `scripts/test_jev_judge_offline.py` 31a92dad….
