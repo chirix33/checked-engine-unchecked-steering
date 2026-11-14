@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.11.4)  13 NOV 2026 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.11.4)  13 NOV 2026 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -18,13 +18,12 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 x
 \XKV@toks=\toks17
 \XKV@tempa@toks=\toks18
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex)
 )
 \XKV@depth=\count275
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.st
+y
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
 \xs_counta=\count276
 \xs_countb=\count277
@@ -55,21 +54,17 @@ Document Class: amsart 2020/05/29 v2.20.6
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip50
-
 For additional information on amsmath, use the `?' option.
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen150
-))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen151
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count278
@@ -122,7 +117,6 @@ LaTeX Info: Redefining \] on input line 2951.
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 397
 .
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -232,8 +226,8 @@ Package: totpages 2005/09/19 v2.00 Totpages Package (muewi)
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/everyshi\everyshi.sty
 Package: everyshi 2020/11/18 v4.00 EveryShipout Package
-))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.st
+y
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces
@@ -241,7 +235,6 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \@ACM@acmcp@delta=\dimen174
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip60
@@ -271,11 +264,11 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.st
+y
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.st
+y
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
@@ -296,7 +289,6 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \@linkdim=\dimen175
 \Hy@linkcounter=\count307
 \Hy@pagecounter=\count308
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -306,7 +298,7 @@ Now handling font encoding PD1 ...
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count309
- (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -328,7 +320,6 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen176
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -352,7 +343,6 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 \c@Hfootnote=\count314
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
 \Fld@listcount=\count315
@@ -376,12 +366,10 @@ Package: hyperxmp 2024/03/17 v5.13 Store hyperref metadata in XMP format
 \hyxmp@aep@toks=\toks32
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 \@hyxmp@count=\count317
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\ifdraft.sty
 Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
 ) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.st
@@ -408,8 +396,7 @@ File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen179
 \Gin@req@width=\dimen180
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
@@ -473,14 +460,11 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ty
 Package: libertine 2024/04/23 (Bob Tennent) Supports Libertine and Biolinum fon
 ts for all LaTeX engines.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/fontaxes\fontaxes.sty
@@ -496,14 +480,12 @@ Already applied: [0000-00-00] Fall back to v1 on input line 76.
 LaTeX Info: Redefining \oldstylenums on input line 485.
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/libertine\LinLibertin
-e_I.tex))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\zi4.sty
+e_I.tex)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata
+\zi4.sty
 Package: zi4 2019/05/17 v1.12
-
 `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
 \zifour@ocount=\count323
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\newtxmath.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\newtxmath.sty
 Package: newtxmath 2024/09/22 v1.754
 
 `newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe
@@ -513,14 +495,12 @@ y
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
 \tx@cntz=\count324
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/binhex\binhex.tex)
 \tx@Isdigit=\count325
 \tx@IsAlNum=\count326
 \tx@tA=\toks34
 \tx@tB=\toks35
 \tx@su=\read2
-
 amsthm NOT loaded
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 402.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -655,8 +635,7 @@ e AMS and SMF document classes (AR)
 \c@caption@flags=\count327
 \c@continuedfloat=\count328
 Package caption Info: hyperref package is loaded.
-)
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count329
 \float@exts=\toks37
@@ -678,10 +657,8 @@ Class acmart Info: Printing CCS on input line 1831.
 Class acmart Info: Printing bibformat on input line 1831.
 Class acmart Info: Suppressing folios on input line 1838.
 Class acmart Info: Setting authorsperrow to 0 on input line 1841.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write3
-
 Excluding comment 'comment') Excluding comment 'CCSXML'
 \c@@concepts=\count333
 \mktitle@bx=\box59
@@ -713,7 +690,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \ACM@linecount@bx=\box63
 \ACM@linecount@bxht=\skip82
 \ACM@linecount=\count334
- Special comment 'acks'
+Special comment 'acks'
 LaTeX Font Info:    Trying to load font information for T1+LinuxLibertineT-TLF 
 on input line 3637.
 
@@ -996,8 +973,8 @@ sty
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys
 .sty
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
-ys.code.tex))
-(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+ys.code.tex)) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/pgf/mat
+h\pgfmath.sty
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
 de.tex))
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffo
@@ -1205,16 +1182,15 @@ s\pgflibraryshapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Class acmart Info: Suppressing bibformat on input line 22.
- (macros.tex) (results.tex)
+(macros.tex) (results.tex)
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 33.
 
 \c@theorem=\count366
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/preprint\balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
 \oldvsize=\dimen327
-) Excluding comment 'screenonly' Include comment 'printonly'
-Excluding comment 'anonsuppress' Excluding comment 'acks'
+) Excluding comment 'screenonly' Include comment 'printonly' Excluding comment 
+'anonsuppress' Excluding comment 'acks'
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -1227,7 +1203,7 @@ x)
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 33.
 LaTeX Font Info:    Trying to load font information for OML+nxlmi on input line
  33.
- (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\omlnxlmi.fd
+(C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
 LaTeX Font Info:    ... okay on input line 33.
@@ -1255,7 +1231,6 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 33.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
  33.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
@@ -1263,7 +1238,6 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 33.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
 e 33.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
@@ -1298,19 +1272,16 @@ LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
 (Font)              scaled to size 5.5pt on input line 33.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
-
 
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
 33.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
@@ -1320,7 +1291,6 @@ LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
 (Font)              scaled to size 5.5pt on input line 33.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
 33.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
@@ -1330,7 +1300,6 @@ LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
 (Font)              scaled to size 5.5pt on input line 33.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
 33.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
@@ -1443,7 +1412,6 @@ tim
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1473,7 +1441,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 55.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 55.
- (sections/00_abstract.tex
+(sections/00_abstract.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 3.
 )
@@ -1511,7 +1479,6 @@ LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
 (Font)              scaled to size 9.0pt on input line 55.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
 (Font)              scaled to size 6.6pt on input line 55.
-
 (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (C:\Users\aashraf\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cf
@@ -1534,30 +1501,43 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 9.0pt on input line 55.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.6pt on input line 55.
- (sections/01_introduction.tex
+(sections/01_introduction.tex
+<figures/history_gap.pdf, id=99, 843.15pt x 342.31888pt>
+File: figures/history_gap.pdf Graphic file (type pdf)
+<use figures/history_gap.pdf>
+Package pdftex.def Info: figures/history_gap.pdf  used on input line 13.
+(pdftex.def)             Requested size: 506.295pt x 205.56004pt.
+
+Class acmart Warning: A possible image without description on input line 16.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 18.
- [1.1{C:/Users/aashraf/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Use
-rs/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_76gpa5.
-enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/l
-btn_25tcsq.enc}
+(Font)              scaled to size 6.0pt on input line 26.
+[1.1{C:/Users/aashraf/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/User
+s/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_76gpa5.e
+nc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lb
+tn_25tcsq.enc}
 
 {C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 nh77jq.enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libe
 rtine/lbtn_7grukw.enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc
 /dvips/libertine/lbtn_naooyc.enc}]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 19.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 9.0pt on input line 27.
 
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+) (sections/02_problem.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
-(sections/02_problem.tex) (sections/03_method.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1.
- [2.2] (figures/pipeline.tex
+(Font)              scaled to size 9.0pt on input line 6.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 6.
+[2.2 <./figures/history_gap.pdf>]) (sections/03_method.tex (figures/pipeline.te
+x
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 38.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
@@ -1569,8 +1549,10 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3.3])
-(sections/04_benchmark.tex
+[3.3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+) (sections/04_benchmark.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 9.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
@@ -1613,12 +1595,11 @@ Underfull \hbox (badness 2126) in paragraph at lines 18--18
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) Loan and Phar-macy with one more
  []
 
+[4.4]
+Underfull \vbox (badness 1389) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4.4])
-(sections/05_judges.tex [5.5]) (sections/06_results.tex
-Underfull \vbox (badness 2073) has occurred while \output is active []
+) (sections/05_judges.tex [5.5]) (sections/06_results.tex
+Underfull \vbox (badness 5681) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
 (Font)              scaled to size 8.0pt on input line 28.
@@ -1669,26 +1650,25 @@ LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 (Font)              scaled to size 5.5pt on input line 28.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 53.
+(Font)              scaled to size 7.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 7.0pt on input line 54.
+(Font)              scaled to size 7.0pt on input line 53.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
+(Font)              scaled to size 7.3pt on input line 53.
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 7.3pt on input line 54.
-
+(Font)              scaled to size 7.3pt on input line 53.
 (figures/riskcov.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.5pt on input line 28.
@@ -1706,22 +1686,17 @@ LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 6.5pt on input line 28.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.5pt on input line 28.
-) [6.6{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine
-/lbtn_oexx6f.enc}]
+) [6.6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 94.
 
-Underfull \vbox (badness 7064) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7.7{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/
-lbtn_fygcup.enc}]) (sections/07_related.tex
-Underfull \vbox (badness 5022) has occurred while \output is active []
-
- [8.8])
-(sections/08_limitations.tex) (sections/09_conclusion.tex)
-(sections/10_genai_disclosure.tex [9.9])
+[7.7{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/l
+btn_fygcup.enc}{C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+libertine/lbtn_oexx6f.enc}] [8.8]) (sections/07_related.tex) (sections/08_limit
+ations.tex) (sections/09_conclusion.tex) (sections/10_genai_disclosure.tex [9.9
+])
 (C:\Users\aashraf\Desktop\Work\2026\ACM Trust 2027\acmtrust_paper\build\main.bb
 l
 Underfull \hbox (badness 3407) in paragraph at lines 97--104
@@ -1729,11 +1704,23 @@ Underfull \hbox (badness 3407) in paragraph at lines 97--104
  and Chuan-hao Li. 2026.
  []
 
-
-Underfull \vbox (badness 3049) has occurred while \output is active []
-
 LaTeX Info: Redefining \tempurl on input line 355.
 )
+
+Class acmart Warning: Some images may lack descriptions.
+(acmart)              ACM is committed to complying with the upcoming US ADA ht
+tps://accessiblyapp.com/accessibility-compliance/ada/ and European Accessibilit
+y Act (EAA) https://accessiblyapp.com/accessibility-compliance/eaa/ regulations
+ by actively working to ensure our publications and application services are ac
+cessible to individuals with disabilities, adhering to the WCAG guidelines to p
+rovide a seamless experience for all users, and regularly reviewing our accessi
+bility practices to maintain compliance with evolving standards. 
+(acmart)              To this end, we strongly encourage our authors to provide
+ alternative text and captions for images and multimedia content. It is also im
+portant to optimize color contrast for the visually impaired. Taking these impo
+rtant steps when creating your papers will ensure that the widest possible audi
+ence can ingest your work..
+
 
 Class acmart Warning: ACM reference format is mandatory 
 (acmart)              for papers over one page. 
@@ -1763,11 +1750,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: AA98B8805072C966735738748A1333CF;3366.
  ) 
 Here is how much of TeX's memory you used:
- 43639 strings out of 467871
- 967753 string characters out of 5417408
- 1535411 words of memory out of 5000000
- 70783 multiletter control sequences out of 15000+600000
- 856540 words of font info for 600 fonts, out of 8000000 for 9000
+ 43642 strings out of 467871
+ 967894 string characters out of 5417408
+ 1539641 words of memory out of 5000000
+ 70790 multiletter control sequences out of 15000+600000
+ 856368 words of font info for 598 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,19n,131p,1958b,2238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Libe
@@ -1787,9 +1774,9 @@ s.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 txmiaX.pfb><C:/Users/aashraf/AppData/Local/Programs/MiKTeX/fonts/type1/public/n
 ewtx/txsys.pfb>
 Output written on "C:\Users\aashraf\Desktop\Work\2026\ACM Trust 2027\acmtrust_p
-aper\build\main.pdf" (10 pages, 622403 bytes).
+aper\build\main.pdf" (10 pages, 689474 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
+ 454 PDF objects out of 1000 (max. 8388607)
  109 named destinations out of 1000 (max. 500000)
- 112837 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 112842 words of extra memory for PDF output out of 128383 (max. 10000000)
 

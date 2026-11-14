@@ -1,4 +1,5 @@
 *.pdf
+acmtrust_paper/figures/src/
 !acmtrust_paper/figures/history_gap.pdf
 *.md
 !README.md

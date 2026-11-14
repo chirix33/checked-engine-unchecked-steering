@@ -3,7 +3,7 @@
 
 \begin{table*}[t]
 \centering
-\caption{Domains, change families and test questions. The no-effect column counts the test questions whose change, though valid, leaves the queried outcome unchanged. Manufacturing and IT inputs are real records; workflow inputs come from published process models. All outcomes are computed under the rules stated in each document.}
+\caption{Domains, change families and test questions. The no-effect column counts the test questions whose change, though valid, leaves the queried outcome unchanged.}
 \label{tab:benchmark}
 \small
 \begin{tabular}{@{}l p{4.6cm} p{6.6cm} r r@{}}
@@ -29,7 +29,7 @@ To know whether a released answer is right, we need what-if questions with known
 
 \paragraph{Checked reference answers.} Reference answers are computed by deterministic reference code, which was itself checked. For the workflows, a separate checker was written from the semantics specification alone, without the engine's code or outputs; engine and checker agree on 18 of 18 hand-worked cases, on 566 fixed and random scenarios in every output field, and on all 240 workflow test questions. Independent LLM agents given only the document text also matched 24 of 24 sampled answers. For manufacturing and IT, the original simulators and a second implementation fed only by values parsed back from the documents agree on all 216 test questions, and blind samples matched 16 of 16 (by hand) and 20 of 20 (by agents writing their own schedulers).
 
-\paragraph{Questions and splits.} Each question is written from a fixed template for its family and selected by a fixed rule, without regard to how any system answers it, so the wording is more regular than real users' would be. Each family has 20 (workflow) or 24 (manufacturing and IT) test questions, about one in five of them no-effect controls. Data are split by run: workflow runs 1--4 are for development and runs 5--12 for testing, and IT windows that share jobs, or manufacturing periods that share order days, stay on the same side. The development questions (112 workflow, 108 manufacturing and IT) were used to design Vouch and are not reported as evidence.
+\paragraph{Questions and splits.} Each question is written from a fixed template for its family and selected by a fixed rule, without regard to how any system answers it. Each family has 20 (workflow) or 24 (manufacturing and IT) test questions, about one in five of them no-effect controls. Data are split by run: workflow runs 1--4 are for development and runs 5--12 for testing, and IT windows that share jobs, or manufacturing periods that share order days, stay on the same side. The development questions (112 workflow, 108 manufacturing and IT) were used to design Vouch and are not reported as evidence.
 
 \paragraph{Policy variants.} Programs are meant to be reused after the rules change, so the policy set asks questions under rules the program was not built for. In variant P (a policy change) one pool gets one more worker (Loan appraisers 2$\to$3; Pharmacy pharmacists 1$\to$2), stated in the document. In variant H (a harmless rewording) the parameters are unchanged and 24 sentences of the rules are reworded; four independent LLM agents reproduced every H run from the H text alone. A program that hard-codes the old pool size should fail on P, and nothing should change on H.
 

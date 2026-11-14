@@ -5,14 +5,14 @@
 %% split and ReAct execution counts from raw rows; bold = significant under the frozen and the run-clustered
 %% bootstrap (acmtrust_paper/sensitivity/). Prose numbers come from results.tex.
 
-We first ask how many wrong answers survive the history check and what removing them costs (\S\ref{sec:results:main}), then whether Vouch removes them by finding faults or by declining (\S\ref{sec:results:families}), how it compares with LLM judges (\S\ref{sec:results:llm}), what happens when the rules change (\S\ref{sec:results:reuse}), and what checking costs (\S\ref{sec:results:cost}).
+We ask how many wrong answers survive the history check, whether Vouch removes them by finding faults or by declining, how it compares with LLM judges, what happens when the rules change, and what checking costs.
 
 \subsection{Errors that survive the history check}
 \label{sec:results:main}
 
 \begin{table*}[t]
 \centering
-\caption{Rule-based judges and Vouch on the main test set. Cov.: share of all program--question pairs whose answer the judge releases (\%). Wrong: number of released answers that are wrong (for random refusal, the expected number). $\Delta$K: correct answers kept by Vouch minus those kept by the judge, in percentage points of all pairs; negative values mean the judge keeps more correct answers. Bold: the 95\% interval of $\Delta$K excludes zero under both bootstrap analyses (\S\ref{sec:judges}). Programs built by open-weight models are shown apart.}
+\caption{Rule-based judges and Vouch on the main test set. Cov.: share of all program--question pairs whose answer the judge releases (\%). Wrong: released wrong answers (for random refusal, the expected number). $\Delta$K: correct answers kept by Vouch minus those kept by the judge, in percentage points of all pairs; negative values mean the judge keeps more correct answers. Bold: the 95\% interval of $\Delta$K excludes zero under both bootstrap analyses (\S\ref{sec:judges}). The contract check alone releases exactly what the platform check releases.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{2.6pt}
@@ -31,7 +31,6 @@ Generic tests & 82.1 & 200 & \sig{$-4.3$} & 78.7 & 5 & $-0.5$ & 97.6 & 0 & $-0.7
 Disagreement & 59.7 & 29 & \sig{$+11.8$} & 68.3 & 4 & $+9.9$ & 75.0 & 0 & \sig{$+21.9$} & 66.7 & 33 & \sig{$+13.8$} & 15.5 & 18 & \sig{$-10.6$} \\
 Random refusal & 70.5 & (197) & \sig{$+7.2$} & 78.2 & (30) & $+1.0$ & 96.9 & (0) & 0.0 & 80.1 & (246) & \sig{$+3.4$} & 4.2 & (81) & $+2.9$ \\
 \midrule
-Contract check only & 87.0 & 243 & \sig{$-7.6$} & 87.8 & 34 & \sig{$-8.4$} & 97.6 & 0 & $-0.7$ & 90.0 & 277 & \sig{$-6.1$} & 61.0 & 1161 & \sig{$-14.4$} \\
 Program-wide tests & 82.1 & 202 & \sig{$-4.2$} & 78.7 & 4 & $-0.5$ & 97.6 & 0 & $-0.7$ & 84.9 & 206 & \sig{$-2.0$} & 4.9 & 18 & $-0.1$ \\
 Vouch & 70.5 & 0 & -- & 78.2 & 5 & -- & 96.9 & 0 & -- & 80.1 & 5 & -- & 4.2 & 2 & -- \\
 \bottomrule
@@ -40,7 +39,7 @@ Vouch & 70.5 & 0 & -- & 78.2 & 5 & -- & 96.9 & 0 & -- & 80.1 & 5 & -- & 4.2 & 2 
 
 \begin{table*}[t]
 \centering
-\caption{LLM judges and a decision model (Jev) against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge keeps its most confident answers up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta$: Vouch minus the judge, in points, with 95\% interval; positive $\Delta$ precision favors Vouch, negative $\Delta$ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast$excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies that could not be parsed, were cut off or refused, or ran out of turns, all counted as declines. Jev, added after the main run, returns a probability and trusts at 0.5, so its own-verdict columns depend on that threshold.}
+\caption{LLM judges and a decision model (Jev) against Vouch on Claude-built programs (main test set). Each judge ran on its own fixed subset of $n$ answered pairs, so coverage and error here are shares of answered pairs. Err.: error among released answers (\%), with the number of wrong answers in parentheses (expected number when matched). Matched: the judge's most confident answers, up to Vouch's count in each domain, platform and builder model. Own verdict: the judge's own decisions. $\Delta$: Vouch minus the judge, in points, with 95\% interval; positive $\Delta$ precision favors Vouch, negative $\Delta$ kept means the judge keeps more correct answers. Bold: interval excludes zero under both bootstrap analyses; $^\ast$excludes zero only when resampling questions (resampling runs: [$-13.5$, 0.5]). Failed: replies counted as declines (\S\ref{sec:judges}). Jev's own verdicts depend on its 0.5 threshold.}
 \label{tab:llm}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
@@ -73,7 +72,7 @@ Judge & $n$ & Err. & Err. & $\Delta$ precision & Cov. & Err. & $\Delta$ kept & F
 \begin{figure}[t]
 \centering
 \input{figures/riskcov}
-\caption{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. Above 5\% coverage, the lowest error any Haiku judge reaches at any threshold is 1.8\%; \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%). Sonnet judges also reached 0\% error, on samples too small to draw (Table~\ref{tab:llm}).}
+\caption{Error against coverage on \otf R1 programs built by Sonnet and Haiku, where 243 of the 277 wrong answers occur. Curves sweep each Haiku judge's confidence threshold on the pairs it judged ($n$); markers are judges with a single operating point, on all 2{,}380 answered pairs. \gate trusts 81\% of these pairs with no wrong answer, at a lower coverage than the history check (95\%).}
 \Description{A line chart with coverage on the x axis and error on the y axis. Three dashed or solid curves for Haiku judges stay between about 2 and 10 percent error at coverages above 20 percent. A red dot for Vouch sits at about 81 percent coverage and 0 percent error. Points for the history check and no added check sit near 95 and 100 percent coverage at about 9 and 10 percent error; disagreement sits at about 69 percent coverage and 2 percent error.}
 \label{fig:riskcov}
 \end{figure}
@@ -91,7 +90,7 @@ Vouch pays for this in correct answers. It declines \rRightLostCountClaude{} of 
 
 \begin{table}[t]
 \centering
-\caption{Why Vouch declined, by change family (Claude-built programs, main test set). Pairs: program--question pairs. Wrong: wrong answers under the platform check alone. Kept: wrong answers Vouch releases. Detect and Abstain: wrong answers removed / correct answers lost by declines that detect a problem (\Caught, \Already, \Failhist) and by declines that abstain (\Untestable, \Cantexpress). Manufacturing is omitted: no program gave a wrong answer there, and Vouch abstained on 9 correct answers. The totals include it.}
+\caption{Why Vouch declined, by change family (Claude-built programs, main test set). Wrong: wrong answers under the platform check alone. Kept: wrong answers Vouch releases. Detect and Abstain: wrong answers removed / correct answers lost by declines that detect a problem (\Caught, \Already, \Failhist) and by declines that abstain (\Untestable, \Cantexpress). Manufacturing is omitted: no program gave a wrong answer there, and Vouch abstained on 9 correct answers. The totals include it.}
 \label{tab:families}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -130,29 +129,9 @@ Detection also costs correct answers. Of the 430 declined, 277 come from program
 
 Table~\ref{tab:llm} compares Vouch with LLM judges, the usual alternative to testing, each on its own subset, and Figure~\ref{fig:riskcov} shows the whole trade-off on \otf R1, where the errors are. At equal coverage the three Haiku judges accept more wrong answers than Vouch: the answer-level judge \rAnsJudgeErrClaude\% against \rGateErrAnsSub\% on the same \rAnsJudgeN{} pairs, the program-level judge \rProgJudgeErrClaude\% against 0.1\%, and the ReAct judge \rReactErrClaude\% against \rGateErrReactSub\%; all three differences are significant. No threshold closes the gap: above 5\% coverage no Haiku judge gets below 1.8\% error on \otf R1, while Vouch releases 81\% of those answers with none wrong.
 
-Sonnet and the open-weight judges ran on 32 to 101 Claude-built pairs containing at most four wrong answers, and at equal coverage Vouch ties with all of them. On its own verdicts, Sonnet's answer-level judge trusts \rSonnetAnsOwnCov\% of these pairs with no wrong answer, against Vouch's 84.2\%; Sonnet and the Haiku ReAct judge tend to keep more correct answers than Vouch, though neither difference holds when whole runs are resampled. The gpt-oss judges keep 26 and 32 points fewer, partly because \rGptossUnparsed{} of 150 ReAct replies broke the required format. Being able to run the program did not make the ReAct judge a tester: Haiku's ran it on only \rReactRanProgHaiku\% of its pairs and Sonnet's on 11 of 50, deciding the rest from reading alone.
+Sonnet and the open-weight judges ran on 32 to 101 Claude-built pairs containing at most four wrong answers, and at equal coverage Vouch ties with all of them. On its own verdicts, Sonnet's answer-level judge trusts \rSonnetAnsOwnCov\% of these pairs with no wrong answer, against Vouch's 84.2\%; Sonnet and the Haiku ReAct judge tend to keep more correct answers than Vouch, though neither difference holds when whole runs are resampled. The gpt-oss judges keep far fewer, partly because \rGptossUnparsed{} of 150 ReAct replies broke the format. Being able to run the program did not make the ReAct judge a tester: Haiku's ran it on only \rReactRanProgHaiku\% of its pairs and Sonnet's on 11 of 50, deciding the rest from reading alone.
 
-Jev judged the same \rJevN{} pairs as the Haiku answer-level judge but ranks answers less well (AUROC \rJevAUROC{} against \rHaikuAnsAUROC{}). At Vouch's coverage it accepts \rJevErrClaude\% wrong answers against \rGateErrAnsSub\%, and \rJevErrOtf\% on \otf R1, where Vouch accepts none; its long-context mode does not explain this (Table~\ref{tab:jevlong}). On the 123 Claude-built pairs of the shared 150 it ties with Vouch. On Ollama-built programs its own verdicts keep more correct answers than Vouch ($\Delta$ kept \rJevDKeptOllama{} points), as Haiku's do, with 42 wrong answers against Vouch's 2.
-
-\begin{table}[t]
-\centering
-\caption{Jev by domain and input mode, Claude-built main-test pairs. Long: the input exceeded Jev's default limit and was sent again in its long-context mode. The mode follows input length, so the rows are not a controlled comparison. Cov.\ and Err.: Jev's own verdicts, in \%, with wrong answers in parentheses. AUROC is omitted where a row has fewer than five wrong answers.}
-\label{tab:jevlong}
-\footnotesize
-\setlength{\tabcolsep}{2.8pt}
-\begin{tabular}{@{}l l r r r r r r@{}}
-\toprule
-Domain & Mode & Pairs & Wrong & Cov. & Err. & AUROC & Haiku AUROC \\
-\midrule
-Manufacturing & default & 359 & 0 & 76.3 & 0.0 (0) & -- & -- \\
-IT & default & 497 & 2 & 60.8 & 0.7 (2) & -- & -- \\
-IT & long & 35 & 1 & 57.1 & 0.0 (0) & -- & -- \\
-Loan & default & 374 & 42 & 75.9 & 5.6 (16) & 0.70 & 0.87 \\
-Loan & long & 180 & 9 & 62.2 & 2.7 (3) & 0.72 & 0.75 \\
-Pharmacy & default & 583 & 37 & 85.6 & 5.0 (25) & 0.54 & 0.84 \\
-\bottomrule
-\end{tabular}
-\end{table}
+Jev judged the same \rJevN{} pairs as the Haiku answer-level judge but ranks answers less well (AUROC \rJevAUROC{} against \rHaikuAnsAUROC{}). At Vouch's coverage it accepts \rJevErrClaude\% wrong answers against \rGateErrAnsSub\%, and \rJevErrOtf\% on \otf R1, where Vouch accepts none; its long-context mode does not explain this, since 43 of the 46 wrong answers it trusted on its own verdicts came from inputs sent in the default mode. On the 123 Claude-built pairs of the shared 150 it ties with Vouch. On Ollama-built programs its own verdicts keep more correct answers than Vouch ($\Delta$ kept \rJevDKeptOllama{} points), as Haiku's do, with 42 wrong answers against Vouch's 2.
 
 \subsection{When the rules change}
 \label{sec:results:reuse}
