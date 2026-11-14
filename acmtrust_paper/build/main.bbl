@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{30}
+\begin{thebibliography}{28}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -136,18 +136,6 @@
 \url{https://jmlr.org/papers/v23/20-1335.html}
 \showURL{%
 \tempurl}
-
-
-\bibitem[DeMillo and Offutt(1991)]%
-        {demillo1991constraint}
-\bibfield{author}{\bibinfo{person}{Richard~A. DeMillo} {and}
-  \bibinfo{person}{A.~Jefferson Offutt}.} \bibinfo{year}{1991}\natexlab{}.
-\newblock \showarticletitle{Constraint-Based Automatic Test Data Generation}.
-\newblock \bibinfo{journal}{\emph{IEEE Transactions on Software Engineering}}
-  \bibinfo{volume}{17}, \bibinfo{number}{9} (\bibinfo{year}{1991}),
-  \bibinfo{pages}{900--910}.
-\newblock
-\href{https://doi.org/10.1109/32.92910}{doi:\nolinkurl{10.1109/32.92910}}
 
 
 \bibitem[El-Yaniv and Wiener(2010)]%
@@ -404,17 +392,6 @@ Retrieved November 12, 2026 from \tempurl}
 \newblock \bibinfo{howpublished}{SSRN preprint}.
 \newblock
 \href{https://doi.org/10.2139/ssrn.7428738}{doi:\nolinkurl{10.2139/ssrn.7428738}}
-
-
-\bibitem[Zerhoudi(2026)]%
-        {zerhoudi2026wrong}
-\bibfield{author}{\bibinfo{person}{Saber Zerhoudi}.}
-  \bibinfo{year}{2026}\natexlab{}.
-\newblock \bibinfo{title}{Wrong Together: Shared Bias in User Simulation}.
-\newblock \bibinfo{howpublished}{arXiv:2611.01354; NeurIPS 2026 Workshop on
-  Grounded User Simulation}.
-\newblock
-\showeprint[arxiv]{2611.01354}
 
 
 \bibitem[Zheng et~al\mbox{.}(2023)]%

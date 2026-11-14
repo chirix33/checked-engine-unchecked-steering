@@ -35,45 +35,45 @@ Warning--page numbers missing in both pages and numpages fields in yao2023react
 Warning--empty publisher in zheng2023judging
 Warning--empty address in zheng2023judging
 Warning--page numbers missing in both pages and numpages fields in zheng2023judging
-You've used 30 entries,
+You've used 28 entries,
             6335 wiz_defined-function locations,
-            1712 strings with 25024 characters,
-and the built_in function-call counts, 32255 in all, are:
-= -- 3750
-> -- 1370
+            1700 strings with 24730 characters,
+and the built_in function-call counts, 30231 in all, are:
+= -- 3451
+> -- 1322
 < -- 0
-+ -- 471
-- -- 501
-* -- 2504
-:= -- 3418
-add.period$ -- 157
-call.type$ -- 30
-change.case$ -- 266
-chr.to.int$ -- 30
-cite$ -- 51
-duplicate$ -- 2706
-empty$ -- 1937
-format.name$ -- 589
-if$ -- 7425
++ -- 456
+- -- 480
+* -- 2381
+:= -- 3228
+add.period$ -- 147
+call.type$ -- 28
+change.case$ -- 254
+chr.to.int$ -- 28
+cite$ -- 49
+duplicate$ -- 2528
+empty$ -- 1809
+format.name$ -- 564
+if$ -- 6921
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 72
-newline$ -- 315
-num.names$ -- 210
-pop$ -- 1062
+missing$ -- 68
+newline$ -- 297
+num.names$ -- 196
+pop$ -- 1009
 preamble$ -- 1
-purify$ -- 495
+purify$ -- 468
 quote$ -- 0
-skip$ -- 995
+skip$ -- 929
 stack$ -- 0
-substring$ -- 2091
-swap$ -- 202
+substring$ -- 1926
+swap$ -- 186
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 772
+type$ -- 726
 warning$ -- 21
-while$ -- 179
+while$ -- 162
 width$ -- 0
-write$ -- 632
+write$ -- 593
 (There were 21 warnings)
