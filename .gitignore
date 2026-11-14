@@ -1,4 +1,5 @@
 *.pdf
+!acmtrust_paper/figures/history_gap.pdf
 *.md
 !README.md
 
@@ -32,4 +33,5 @@ papers/
 
 .agents/
 .claude/
+gap-figure/
 skills-lock.json
