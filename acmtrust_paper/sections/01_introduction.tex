@@ -17,7 +17,7 @@ Take, for example, a loan-application process from our benchmark in which every 
 
 Machine learning has a name for this situation: models that fit the same data equally well can still behave differently on inputs the data never exercised~\cite{damour2022underspecification}. A single pass-or-fail verdict on a program therefore says little about whether a \emph{particular answer}, for a \emph{particular change}, can be trusted. Failures can stem from various places: \textbf{(a)} the question may be misread, \textbf{(b)} the change may be applied to the wrong record, \textbf{(c)} the program may ignore the changed input or simulate its effects incorrectly, \textbf{(d)} or the program may stop being valid when the policy it was built for changes. A check that gives one verdict for the whole program cannot tell these failures apart, and cannot tell the user which answers to rely on. 
 
-\paragraph{Our approach.} We built Vouch, an assurance library that decides, for each answer, whether to trust it or decline it, based on the change the question requests. Because the change is an intervention on the process, we call this intervention-level assurance. For each question, Vouch:
+\paragraph{Our approach.} We built Vouch, an assurance library that decides, for each answer, whether to trust it or decline it, based on the change the question requests. Because the change is an intervention on the process, we call this intervention-level assurance. Vouch does this for each question:
 \begin{enumerate}[leftmargin=*,nosep]
   \item turns the question into a structured change (what is changed, how, by how much, when, and for which record) and checks that change against the document and the current records;
   \item checks that the program reproduces the recorded history of the run being asked about;
@@ -34,5 +34,5 @@ Every decline comes with a reason: either a test showed the program getting this
 \begin{itemize}[leftmargin=*,nosep]
   \item Vouch, a method for deciding whether to release a generated simulator's answer to a what-if question, which tests the requested kind of change without reference answers and names the reason for every decline (\S\ref{sec:method}).
   \item A benchmark and protocol for answer-level assurance: 547 test questions in four domains with exact answers under fixed random draws, independently checked reference answers, no-effect controls and policy variants, and 86 programs from three platforms and five builder models, judged with the candidate answers held fixed (\S\ref{sec:problem}, \S\ref{sec:benchmark}, \S\ref{sec:judges}).
-  \item A characterization of when answer-level checking helps or fall short, relative to rule-based and LLM judges at equal coverage, reporting results across platforms, domains, change types, and programs. (\S\ref{sec:results}).
+  \item A characterization of when answer-level checking helps or fall short, relative to rule-based and LLM judges at equal coverage, reporting results across platforms, domains, change types, and generated programs. (\S\ref{sec:results}).
 \end{itemize}

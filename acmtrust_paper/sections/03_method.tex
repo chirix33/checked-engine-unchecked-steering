@@ -1,10 +1,10 @@
-\section{Vouch}
+\section{Our Method: Vouch}
 \label{sec:method}
 
 \begin{figure*}[t]
 \centering
 \input{figures/pipeline}
-\caption{How Vouch decides about one what-if answer, shown for the question of \S\ref{sec:problem}. Each step can stop with a named decline. Test results go into a capability record that later questions consult.}
+\caption{Vouch's decision pipeline for a what-if answer, shown for the question of \S\ref{sec:problem}. Each step can stop with a named decline. Test results populate a capability record for future queries.}
 \Description{A left-to-right flow. A what-if question is turned into a structured change, which passes a contract check, a history check, and tests aimed at the requested change that read and write a capability record. Passing every step gives Trusted. Side exits are labelled Request rejected, Failed history check, Caught, Already caught, Untestable, and Can't express.}
 \label{fig:pipeline}
 \end{figure*}
@@ -32,7 +32,7 @@ The most general test is \emph{input use}. Vouch changes the same kind of input 
 
 Other families have rules of their own. In the workflow documents the random draw that decided each recorded route is printed (\S\ref{sec:benchmark}), so when routing probabilities change, the stated rule determines which recorded decisions must switch route; if the program's records name decisions, they must show those switches and the new paths of the cases. \otf's free-form records do not name decisions, so there Vouch only checks that the first case that switches changes. Either way, nothing before the first switch may move, and if nothing switches, nothing may change. A worker made unavailable may start no task inside the interval; with added workers, nothing may change before the first task of that pool that had to wait, and that task's case must change. A removed case's records must vanish, and nothing before its arrival may move. Where a program prints records that name tasks, waits and workers, Vouch also checks them against the stated rules for the test runs and for a run of the question's own change: tasks last their stated work, waits their stated delay, workers work only in their hours, and cases follow the paths their printed draws imply. These checks take the program's own sequencing as given, so they cannot produce the queried answer themselves. Manufacturing and IT have analogous checks, which run on the question's own change: nothing before the change may move, every dispatchable order must be dispatched as the policy states, stock and backorders must add up within each day's capacity, and a task's requests must fit the machine it runs on, which has to be up.
 
-A test that cannot run, because no suitable second case exists or the program has no input for the change, counts as neither a pass nor a failure. Vouch trusts an answer only if at least one test that exercises the changed input ran and passed, and none failed; a passing no-op alone is not enough. The input-use and no-op tests only show whether the program reacts to a change, and the rule checks show that it reacts the way the rules say. They do not show that the answer is correct. The tests get a budget of three program runs per question, and the stated-rule checks and some IT tests can add up to two more. Exact selection rules and tolerances are in the artifact.
+A test that cannot run, because no suitable second case exists or the program has no input for the change, counts as neither a pass nor a failure. Vouch trusts an answer only if at least one test that exercises the changed input ran and passed, and none failed; a passing no-op alone is not enough. The input-use and no-op tests only show whether the program reacts to a change, and the rule checks show that it reacts the way the rules say. They do not show that the answer is correct. The tests get a budget of three program runs per question, and the stated-rule checks and some IT tests can add up to two more. The exact selection rules and tolerances are in the artifact.
 
 \subsection{A record of what each program can do}
 \label{sec:method:registry}
@@ -42,7 +42,7 @@ The same program answers many questions, so Vouch keeps what its tests found in 
 \subsection{Decisions and variants}
 \label{sec:method:terms}
 
-Every question ends in one named outcome. \Trusted releases the answer.
+Every question resolves to one of seven named outcomes. The first is the \textbf{\Trusted} outcome, the only outcome that \emph{releases} the answer.
 \begin{rulebox}
 \small
 \noindent\textbf{When Vouch trusts an answer.} For a question $q$ about run $r$, answered by program $P$:
@@ -54,6 +54,6 @@ Every question ends in one named outcome. \Trusted releases the answer.
 \footnotesize
 where $C(q)$: the structured change passes the contract check (\S\ref{sec:method:request}); $H(P,r)$: $P$ reproduces the recorded history of $r$ (\S\ref{sec:method:history}); $F(P,k)$: the record holds a failure of $P$ for this kind of change and target, $k$ (\S\ref{sec:method:registry}); $T$: the tests for $q$, run now or reused from the same run, each with outcome $o(t)$ of pass, fail or not run; $N\subseteq T$: the no-op tests (\S\ref{sec:method:probes}). In manufacturing and IT, the last condition must hold for the question's own change and for a change of the same kind elsewhere.
 \end{rulebox}
-\noindent Three declines \emph{detect} a problem: \Caught (a test on this question failed), \Already (the record holds an earlier failure for this kind of change and target) and \Failhist. Two only \emph{abstain}: \Untestable (no test could run, so there is no evidence either way) and \Cantexpress (the adapter finds no input of the program that can hold the change). \Badrequest marks a request that failed the contract check.
+\noindent \textbf{Request Rejected} halts invalid queries at the contract check. The remaining five outcomes are  either in the decline or abstain categories: declines' outcomes flag detected errors: \textbf{Caught} (a test failed on the current question), \textbf{Already Caught} (a prior recorded failure for that change type and target), and \textbf{Failed} (the program fails to reproduce the baseline run). In the abstain category, these outcomes are returned without evidence:  \textbf{Untestable} (when no test can be executed to gather evidence) and \textbf{Can't express} (the platform adapter cannot map the requested change to any program input).
 
-To see which parts matter, we also run reduced versions on the same code: the contract check alone; the contract and history checks, which form the history-check judge; \emph{generic tests}, which add input-use tests on randomly chosen families with the same budget of program runs as Vouch; and \emph{program-wide tests}, which give one verdict per program and run, from one input-use test per family, for every question on that run. Generic tests lack Vouch's routing, worker and stated-rule checks, so their difference from Vouch measures the whole choice of tests, not the effect of aiming one fixed set of tests at the request.
+To measure which components matter, we evaluate four ablated baselines on the same code: (1) the contract check alone; (2) the history-check judge (contract plus history checks); (3) generic tests, which add input-use tests on randomly sampled families; and (4) program-wide tests, which run one input-use test per family to assign a single shared verdict to all questions on a given program and run. Generic tests lack Vouch's routing, staffers and stated-rule checks, so their difference from Vouch measures the whole choice of tests.
