@@ -3,7 +3,8 @@
 
 \begin{figure*}[t]
 \centering
-\input{figures/pipeline}
+%% Colored figure, same size as the old TikZ figures/pipeline.tex at 0.92\textwidth. Source: figures/src/pipeline (bash build.sh).
+\includegraphics[width=0.92\textwidth]{figures/pipeline.pdf}
 \caption{How Vouch decides about one what-if answer, shown for the question of \S\ref{sec:problem}. Each step can stop with a named decline. Test results go into a capability record that later questions consult.}
 \Description{A left-to-right flow. A what-if question is turned into a structured change, which passes a contract check, a history check, and tests aimed at the requested change that read and write a capability record. Passing every step gives Trusted. Side exits are labelled Request rejected, Failed history check, Caught, Already caught, Untestable, and Can't express.}
 \label{fig:pipeline}

@@ -1,0 +1,8 @@
+# Keep the evidence folders (runs/, programs/, data/) in the repository.
+__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+node_modules/
+acmtrust_paper/build/

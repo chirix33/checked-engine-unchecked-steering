@@ -1,0 +1,82 @@
+{
+ "files": 3987,
+ "text_files": 3963,
+ "binary_files": 23,
+ "bytes": 209092902,
+ "files_over_10MB": [],
+ "files_over_50MB": [],
+ "max_files_in_one_folder": [
+  [
+   "validation/fuzz_v1",
+   500
+  ],
+  [
+   "runs/main_v1/wf_test/registries",
+   184
+  ],
+  [
+   "runs/main_v1/ml_test/registries",
+   176
+  ]
+ ],
+ "lines_with_neutral_user_paths_C_Users_user_or_home_user": 2317,
+ "identity_hits": 0,
+ "path_hits": 0,
+ "secret_hits": 0,
+ "binary_files_with_identity_like_bytes": [],
+ "env_value_hits_by_key": {},
+ "env_keys_checked": [
+  "ANTHROPIC_API_KEY",
+  "OLLAMA_API_KEY",
+  "OPENROUTER_API_KEY",
+  "TYPESAFE_API_KEY"
+ ],
+ "identity_terms_from_git": 9,
+ "link_hosts_not_allowed": {
+  "openrouter.a": [
+   11,
+   "manifests/openrouter_free_probe_1.json:9"
+  ]
+ },
+ "github_owners_not_allowed": {},
+ "link_hosts_all": {
+  "registry.npmjs.org": 153,
+  "docs.litellm.ai": 107,
+  "errors.pydantic.dev": 46,
+  "opencollective.com": 18,
+  "github.com": 16,
+  "openrouter.a": 11,
+  "openrouter.ai": 10,
+  "127.0.0.1": 8,
+  "ollama.com": 6,
+  "docs.anthropic.com": 5,
+  "tidelift.com": 4,
+  "doi.org": 3,
+  "www.omg.org": 3,
+  "zenodo.org": 2,
+  "accessiblyapp.com": 2,
+  "creativecommons.org": 2,
+  "arxiv.org": 2,
+  "docs.typesafe.ai": 2,
+  "doi.acm.org": 1,
+  "orcid.org": 1,
+  "jmlr.org": 1,
+  "api.typesafe.ai": 1,
+  "elsewhere.example": 1,
+  "api.anthropic.com": 1,
+  "example.invalid": 1
+ },
+ "github_owners_all": {
+  "sponsors": 9,
+  "ciol-sust": 2,
+  "google": 2,
+  "vitejs": 1,
+  "czyarl": 1,
+  "astral-sh": 1
+ },
+ "hit_samples": {
+  "identity": [],
+  "path": [],
+  "secret": []
+ }
+}

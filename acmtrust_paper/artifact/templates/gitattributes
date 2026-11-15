@@ -1,0 +1,3 @@
+# Store every file byte for byte. Several frozen files use CRLF line endings, and their sha256 hashes
+# (manifests/freeze_v1_anonymized.json, artifact_files.sha256) are only valid if git does not rewrite line endings.
+* -text

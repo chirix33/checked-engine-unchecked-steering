@@ -1,0 +1,407 @@
+{
+  "_comment": "Rules for build_artifact.py. This file names the identifying strings it removes, so it must never be copied into the export.",
+  "out_dir_name": "vouch_artifact",
+  "tracked_exclude_prefixes": [
+    "acmtrust_paper/",
+    "checker/out/"
+  ],
+  "tracked_exclude_exact": [
+    "README.md",
+    ".gitignore",
+    "manifests/abstract_draft.md"
+  ],
+  "paper": {
+    "tracked_include_exact": [
+      "acmtrust_paper/main.tex",
+      "acmtrust_paper/macros.tex",
+      "acmtrust_paper/results.tex",
+      "acmtrust_paper/references.bib",
+      "acmtrust_paper/latexmkrc",
+      "acmtrust_paper/acmart.cls",
+      "acmtrust_paper/ACM-Reference-Format.bst",
+      "acmtrust_paper/figures/history_gap.pdf"
+    ],
+    "tracked_include_prefixes": [
+      "acmtrust_paper/sections/",
+      "acmtrust_paper/sensitivity/"
+    ],
+    "tracked_include_suffixes_under": {
+      "acmtrust_paper/figures/": [
+        ".tex"
+      ]
+    },
+    "extra_dirs": [
+      "acmtrust_paper/figures/src/history_gap",
+      "acmtrust_paper/paper_numbers"
+    ],
+    "extra_dir_skip_names": [
+      "node_modules",
+      "dist",
+      ".vite",
+      "__pycache__",
+      "playwright-report",
+      "test-results"
+    ]
+  },
+  "ignored_md_dirs": [
+    "adapters/generic_tasks",
+    "validation"
+  ],
+  "runs": {
+    "dirs": [
+      "runs/main_v1/wf_test",
+      "runs/main_v1/ml_test",
+      "runs/main_v1/wf_policy",
+      "runs/main_v1/analysis_v1",
+      "runs/main_v1/analysis_v2",
+      "runs/main_v1/domain_tables_v1",
+      "runs/main_v1/domain_tables_v2",
+      "runs/main_v1/jev_long_context_v1",
+      "runs/judges_main_v1",
+      "runs/judges_jev_ledger",
+      "runs/build_test_main_claude",
+      "runs/build_test_judges",
+      "runs/build_test_pilot_claude",
+      "runs/build_test_assurance_claude",
+      "runs/build_test_coding_agent",
+      "runs/build_test_b0_claude",
+      "runs/build_test_v1",
+      "runs/build_test_r1",
+      "runs/build_test_r1_claude",
+      "runs/devs_gen",
+      "runs/coding_agent",
+      "runs/workflow_docs",
+      "runs/mlsys_docs"
+    ],
+    "files": [
+      "runs/main_v1/wf_test_summary.json",
+      "runs/main_v1/ml_test_summary.json",
+      "runs/main_v1/wf_policy_summary.json"
+    ],
+    "logs_dir": "runs/main_v1/logs",
+    "logs_exclude_regex": [
+      "^ollama_serve",
+      "^wf_dev_",
+      "^ml_dev_",
+      "^paper_build",
+      "^analysis_v1_partial",
+      "^analysis_v1_noqwenreact"
+    ],
+    "dir_skip_names": [
+      "_smoke_cap16k",
+      "__pycache__"
+    ]
+  },
+  "wsl": {
+    "distro": "Ubuntu-24.04",
+    "gen_dir": "~/trust2027/gen",
+    "lock_file": "~/trust2027/requirements.lock",
+    "dest": "programs/devs_gen",
+    "lock_dest": "manifests/requirements_devs_gen_wsl.lock",
+    "skip_dir_names": [
+      "__pycache__"
+    ],
+    "skip_suffixes": [
+      ".db",
+      ".pyc"
+    ]
+  },
+  "binary_suffixes": [
+    ".pdf",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".zip",
+    ".db",
+    ".pyc",
+    ".bpf",
+    ".woff",
+    ".woff2",
+    ".pkl",
+    ".npy",
+    ".npz",
+    ".xlsx",
+    ".docx",
+    ".ico",
+    ".ttf",
+    ".otf"
+  ],
+  "generic": [
+    {
+      "name": "user-name-in-paths",
+      "pattern": "aashraf",
+      "repl": "user",
+      "mode": "plain"
+    },
+    {
+      "name": "name-with-date-1",
+      "pattern": "Ashraf, (\\d{4}-\\d{2}-\\d{2})",
+      "repl": "\\1",
+      "mode": "plain"
+    },
+    {
+      "name": "name-with-date-2",
+      "pattern": "Ashraf (\\d{4}-\\d{2}-\\d{2})",
+      "repl": "\\1",
+      "mode": "plain"
+    },
+    {
+      "name": "full-name",
+      "pattern": "Ashraf Abdul-Muumin",
+      "repl": "author",
+      "mode": "author"
+    },
+    {
+      "name": "first-name-possessive",
+      "pattern": "Ashraf's",
+      "repl": "author's",
+      "mode": "author"
+    },
+    {
+      "name": "first-name",
+      "pattern": "Ashraf",
+      "repl": "author",
+      "mode": "author"
+    },
+    {
+      "name": "first-name-other-case",
+      "pattern": "(?i)\\bashraf\\b",
+      "repl": "author",
+      "mode": "author"
+    },
+    {
+      "name": "advisor-possessive",
+      "pattern": "Dr\\. Roy's",
+      "repl": "advisor's",
+      "mode": "author"
+    },
+    {
+      "name": "advisor",
+      "pattern": "Dr\\. Roy",
+      "repl": "advisor",
+      "mode": "author"
+    },
+    {
+      "name": "handle",
+      "pattern": "(?i)chirix\\w*",
+      "repl": "anonymous",
+      "mode": "plain"
+    },
+    {
+      "name": "earlier-project-folder",
+      "pattern": "MLSystem 2027",
+      "repl": "EarlierProject",
+      "mode": "plain"
+    }
+  ],
+  "line_fixes": [
+    {
+      "file": "manifests/run_manifest.md",
+      "old": "`baseline/otf-tools-10f5401`, commit `10f540118756b6062feb0ccc5e2012fe771f1579`, clean checkout.",
+      "new": "`baseline/otf-tools-10f5401` (the pinned baseline clone; commit withheld for review), clean checkout."
+    },
+    {
+      "file": "manifests/run_manifest.md",
+      "old": "| Saved MLSys results | Left in place in `MLSystem 2027/`, not edited. Hashes below. |",
+      "new": "| Saved earlier results | Left in place in a separate project folder, not edited. Their hashes are withheld for review. |"
+    },
+    {
+      "file": "manifests/run_manifest.md",
+      "old": "| Paper | `otf-tools.pdf` is treated as the MLSys `main.pdf` under another name, per Ashraf. Their bytes differ. |",
+      "new": "| Paper | A related paper (not part of this artifact) is treated as the original submitted paper; its file is withheld. |"
+    },
+    {
+      "file": "manifests/run_manifest.md",
+      "type": "block",
+      "start": "Saved MLSys results SHA-256:",
+      "end": "Other file hashes are in `hashes_p0.txt`.",
+      "new": "The hashes of the saved earlier results are withheld for review. Other file hashes are in `hashes_p0.txt`."
+    },
+    {
+      "file": "manifests/run_manifest.md",
+      "type": "delete_line",
+      "pattern": "^\\s*- Paper files are not committed; they may need syncing with Overleaf\\.\\s*$"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "`otf-tools.pdf` is treated as the original `main.pdf`.",
+      "new": "A related paper (file withheld) is treated as the original submitted paper."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "using Ashraf's $100 in Anthropic credits",
+      "new": "using Anthropic credits"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "with Ashraf's key `TYPESAFE_API_KEY` in `.env`",
+      "new": "with the project's key `TYPESAFE_API_KEY` in `.env`"
+    },
+    {
+      "file": "manifests/jev_judge_design.md",
+      "old": "the API key is Ashraf's, kept in `.env`",
+      "new": "the API key is the project's, kept in `.env`"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "(`.gitignore`, owned by Ashraf)",
+      "new": "(`.gitignore`)"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "- The reference code and MLSys documents are public (GitHub, `chirix33/otf-tools`), so there is a memorization risk for all builder and judge models.",
+      "new": "- The reference code and documents are public, so there is a memorization risk for all builder and judge models."
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "It is read only from `MLSystem 2027/implementation-1/data/domains/raw`.",
+      "new": "It is read only from the raw-data directory named by the environment variable `MLSYS_RAW` (see `data/README.md`)."
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "are read only from `MLSystem 2027/implementation-1/data/domains/raw`.",
+      "new": "are read only from the raw-data directory named by the environment variable `MLSYS_RAW` (see `data/README.md`)."
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "| `C:\\Users\\aashraf\\Desktop\\Work\\2026\\MLSystem 2027` | MLSys raw records and the MLSys reference code |",
+      "new": "| `C:\\Users\\user\\Desktop\\Work\\2026\\EarlierProject` | raw records and reference code of an earlier project |"
+    },
+    {
+      "file": "manifests/mlsys_raw_hashes_v1.json",
+      "type": "regex",
+      "pattern": "\"root\": \"C:\\\\\\\\Users\\\\\\\\aashraf[^\"]*\"",
+      "new": "\"root\": \"<raw data directory, see data/README.md>\""
+    },
+    {
+      "file": "manifests/hashes_p0.txt",
+      "type": "delete_line",
+      "pattern": "\\*otf-tools\\.pdf\\s*$"
+    },
+    {
+      "file": "acmtrust_paper/sensitivity/run_fresh_check.sh",
+      "old": "cd \"/c/Users/aashraf/Desktop/Work/2026/ACM Trust 2027\"",
+      "new": "cd \"$(dirname \"$0\")/../..\""
+    },
+    {
+      "file": "acmtrust_paper/sensitivity/run_fresh_rerun.sh",
+      "old": "cd \"/c/Users/aashraf/Desktop/Work/2026/ACM Trust 2027\"",
+      "new": "cd \"$(dirname \"$0\")/../..\""
+    }
+  ],
+  "patches": [
+    {
+      "_comment": "mlsys_gold.py: read the raw-data directory from an environment variable instead of the authors' machine path",
+      "file": "scripts/mlsys_gold.py",
+      "old": "RAW = Path(r\"C:\\Users\\aashraf\\Desktop\\Work\\2026\\MLSystem 2027\\implementation-1\\data\\domains\\raw\")",
+      "new": "RAW = Path(os.environ.get(\"MLSYS_RAW\", \"mlsys_raw\"))   # holds supplygraph/ and google-trace-2011/ (see data/README.md)"
+    },
+    {
+      "file": "scripts/mlsys_gold.py",
+      "old": "import hashlib",
+      "new": "import hashlib\nimport os",
+      "occurrence": "first"
+    },
+    {
+      "_comment": "test_judges_offline.py: the sandbox checks named the authors' user; derive both user names at run time",
+      "file": "scripts/test_judges_offline.py",
+      "old": "    names = [\"the Windows drive, /run, /var, host /home and the project are absent\",",
+      "new": "    import getpass\n    _win_user = getpass.getuser()\n    _wsl_user = subprocess.run([\"wsl.exe\", \"-d\", \"Ubuntu-24.04\", \"--\", \"whoami\"], capture_output=True, text=True).stdout.strip() or \"user\"\n    names = [\"the Windows drive, /run, /var, host /home and the project are absent\","
+    },
+    {
+      "file": "scripts/test_judges_offline.py",
+      "old": "'/mnt/c/Users/aashraf/Desktop/Work/2026/ACM Trust 2027', \"",
+      "new": "'/mnt/c/Users/\" + _win_user + \"/Desktop/Work/2026/ACM Trust 2027', \""
+    },
+    {
+      "file": "scripts/test_judges_offline.py",
+      "old": "\"'/home/aashraf/trust2027/gen', '/home/aashraf/trust2027/coding_agent', '/home/aashraf/trust2027/judge_sandbox', '/run/user', '/run/WSL') if os.path.exists(p)])\\n\"",
+      "new": "\"'/home/\" + _wsl_user + \"/trust2027/gen', '/home/\" + _wsl_user + \"/trust2027/coding_agent', '/home/\" + _wsl_user + \"/trust2027/judge_sandbox', '/run/user', '/run/WSL') if os.path.exists(p)])\\n\""
+    },
+    {
+      "file": "scripts/test_judges_offline.py",
+      "old": "'usr'] ['aashraf', 'rt', 'sandbox']\" in r[\"output\"]",
+      "new": "'usr'] ['\" + _wsl_user + \"', 'rt', 'sandbox']\" in r[\"output\"]"
+    }
+  ],
+  "hash_list_globs": [
+    "manifests/*.sha256",
+    "manifests/hashes_*.txt",
+    "validation/*.sha256"
+  ],
+  "code_pin_globs": [
+    "scripts/*.py",
+    "assurance/*.py"
+  ],
+  "keep_original_freeze": "manifests/freeze_v1.json",
+  "verify": {
+    "identity_regex": "ashraf|aashraf|chirix|abdul|muumin|crimson|ua\\.edu|alabama|tuscaloosa|dr\\. roy|\\broy\\b|student\\+|@gmail|@users\\.noreply",
+    "path_regex": "[A-Za-z]:[\\\\/]+Users[\\\\/]+(?![\\\\/]|user\\b)|/Users/(?!user\\b|\" \\+)|/home/(?!user\\b|sandbox\\b|rt\\d?\\b|\" \\+)|/mnt/c/Users/(?!user\\b|\" \\+)|OneDrive|MiKTeX|STUDENT|Desktop[\\\\/]+Work[\\\\/]+(?![\\\\/]|2026[\\\\/]+(ACM Trust 2027|EarlierProject))",
+    "secret_regex": "sk-ant-[A-Za-z0-9_-]{10,}|sk-or-[A-Za-z0-9_-]{10,}|sk-[A-Za-z0-9]{32,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{30,}|BEGIN [A-Z ]*PRIVATE KEY|xox[abp]-[A-Za-z0-9-]{10,}",
+    "allowed_link_hosts": [
+      "zenodo.org",
+      "doi.org",
+      "github.com",
+      "raw.githubusercontent.com",
+      "storage.googleapis.com",
+      "openrouter.ai",
+      "ollama.com",
+      "docs.typesafe.ai",
+      "api.typesafe.ai",
+      "api.anthropic.com",
+      "www.omg.org",
+      "jmlr.org",
+      "127.0.0.1",
+      "localhost",
+      "www.acm.org",
+      "acm.org",
+      "ctan.org",
+      "www.ctan.org",
+      "arxiv.org",
+      "pypi.org",
+      "www.w3.org",
+      "fonts.googleapis.com",
+      "fonts.gstatic.com",
+      "creativecommons.org",
+      "www.gnu.org",
+      "opensource.org",
+      "www.apache.org",
+      "scripts.sil.org",
+      "openfontlicense.org",
+      "astral.sh",
+      "docs.python.org",
+      "peps.python.org",
+      "example.com",
+      "www.kaggle.com",
+      "kaggle.com",
+      "doi.acm.org",
+      "accessiblyapp.com",
+      "orcid.org",
+      "registry.npmjs.org",
+      "opencollective.com",
+      "tidelift.com",
+      "docs.litellm.ai",
+      "errors.pydantic.dev",
+      "docs.anthropic.com",
+      "elsewhere.example",
+      "example.invalid",
+      "openrouter.a"
+    ],
+    "allowed_github_owners": [
+      "google",
+      "CIOL-SUST",
+      "foundationagents",
+      "FoundationAgents",
+      "microsoft",
+      "astral-sh",
+      "ollama",
+      "openai",
+      "anthropics",
+      "sponsors",
+      "vitejs",
+      "czyarl"
+    ],
+    "binary_identity_regex": "ashraf|aashraf|chirix|abdul|muumin|crimson|alabama|tuscaloosa|@gmail|@users\\.noreply|ua\\.edu"
+  }
+}
