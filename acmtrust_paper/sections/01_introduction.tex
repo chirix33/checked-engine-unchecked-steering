@@ -11,7 +11,7 @@ Take, for example, a loan-application process from our benchmark in which every 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/history_gap.pdf}
-  \caption{The gap. Passing the history check does not make a what-if answer correct. The generated simulator ignores the per-case form durations in the records and assumes one day for every form, so it reproduces the history exactly but answers the one-second question late.}
+  \caption{The gap in LLM-generated simulators built from historical records. (1) In the records, every applicant took one day to complete the form. The simulator ignores the per-case durations in the records and assumes one day for everyone, however it still passes the history check by reproducing the historical outcomes.  (2) When asked a what-if question the records never covered, for example, `what if one applicant finished the form in one second?', the simulator still applies the one day duration and predicts a delayed finish. (3) Reproducing past history cannot prove that a generated program responds faithfully to new interventions—this is the exact verification gap that Vouch tests for.}
   \label{fig:history-gap}
 \end{figure*}
 
