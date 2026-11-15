@@ -1,6 +1,7 @@
 *.pdf
 acmtrust_paper/figures/src/
 !acmtrust_paper/figures/history_gap.pdf
+!acmtrust_paper/figures/pipeline.pdf
 *.md
 !README.md
 
