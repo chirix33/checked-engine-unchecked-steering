@@ -31,8 +31,20 @@ def lp(p):
 
 def walk(base: Path):
     for dp, dns, fns in os.walk(lp(base)):
+        dns[:] = [d for d in dns if d != ".git"]
         for fn in fns:
             yield Path(dp.replace("\\\\?\\", "")) / fn
+
+
+def git_state(out: Path) -> dict:
+    """If the export has been turned into a repository, report who the commits and the remote name (names, not secrets)."""
+    if not (out / ".git").exists():
+        return {"repository": "none yet"}
+    def g(*a):
+        return subprocess.run(["git", "-C", str(out), *a], capture_output=True, text=True).stdout.strip()
+    return {"repository": "present", "commit_identities": sorted(set(g("log", "--all", "--format=%an <%ae> | %cn <%ce>").splitlines())),
+            "commits": len(g("rev-list", "--all").splitlines()), "remotes": g("remote", "-v").splitlines(),
+            "branches": g("branch", "-a").splitlines()}
 
 
 def git_identities() -> list[str]:
@@ -69,6 +81,31 @@ def env_values() -> dict[str, bytes]:
             if len(v) >= 8:
                 vals[k.strip()] = v.encode("utf-8")
     return vals
+
+
+def check_tex_refs(out: Path) -> list[str]:
+    """Files named by \\includegraphics, \\input, \\include and \\bibliography in the exported paper that are not in the export."""
+    paper = out / "acmtrust_paper"
+    missing = []
+    if not paper.is_dir():
+        return ["acmtrust_paper/ missing"]
+    for tex in sorted(paper.rglob("*.tex")):
+        if "figures/src" in tex.as_posix():
+            continue
+        text = "\n".join(ln for ln in tex.read_text(encoding="utf-8").splitlines() if not ln.lstrip().startswith("%"))
+        refs = []
+        for m in re.finditer(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", text):
+            refs.append((m.group(1), ["", ".pdf", ".png", ".jpg"]))
+        for m in re.finditer(r"\\(?:input|include)\{([^}]+)\}", text):
+            refs.append((m.group(1), ["", ".tex"]))
+        for m in re.finditer(r"\\bibliography\{([^}]+)\}", text):
+            refs.extend((b, [".bib"]) for b in m.group(1).split(","))
+        for m in re.finditer(r"\\bibliographystyle\{([^}]+)\}", text):
+            refs.append((m.group(1), [".bst"]))
+        for name, exts in refs:
+            if not any((paper / (name + e)).is_file() for e in exts):
+                missing.append(f"{tex.relative_to(out).as_posix()}: {name}")
+    return missing
 
 
 def main():
@@ -155,6 +192,8 @@ def main():
         "files_over_10MB": big, "files_over_50MB": [b for b in big if b[1] > 50_000_000],
         "max_files_in_one_folder": per_dir.most_common(3),
         "lines_with_neutral_user_paths_C_Users_user_or_home_user": neutral_lines,
+        "tex_references_missing_in_export": check_tex_refs(out),
+        "git": git_state(out),
         "identity_hits": len(hits["identity"]), "path_hits": len(hits["path"]), "secret_hits": len(hits["secret"]),
         "binary_files_with_identity_like_bytes": pdf_hits,
         "env_value_hits_by_key": dict(env_hits), "env_keys_checked": sorted(envs),
@@ -171,7 +210,7 @@ def main():
             print(f"-- {k} hits (first {a.show}):")
             for h in hits[k][: a.show]:
                 print("   ", h)
-    bad = hits["identity"] or hits["path"] or hits["secret"] or env_hits or res["files_over_50MB"] or pdf_hits
+    bad = hits["identity"] or hits["path"] or hits["secret"] or env_hits or res["files_over_50MB"] or pdf_hits or res["tex_references_missing_in_export"]
     sys.exit(1 if bad else 0)
 
 

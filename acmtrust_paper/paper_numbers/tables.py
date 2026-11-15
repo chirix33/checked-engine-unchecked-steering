@@ -1,7 +1,9 @@
-"""Check every cell of Tables 3, 4 and 5 (sections/06_results.tex) against the analysis files.
+"""Rebuild every cell of Tables 3, 4 and 5 of the paper from the analysis files.
 
-For each table row the script rebuilds the cells from the analysis JSON in the paper's format and compares them
-with the LaTeX source, cell by cell, including which differences are set in bold.
+For each table row the script rebuilds the cells from the analysis JSON in the paper's format. If the paper's
+LaTeX source (sections/06_results.tex) is present, it compares them with it cell by cell, including which
+differences are set in bold. If it is not (the public artifact ships the paper as a PDF, not as source), it
+prints the rebuilt tables so they can be compared with the PDF.
 
 - Table 3 (tab:main), rule-based judges: `rule_judges[<group>]` of main_analysis.json.
 - Table 4 (tab:llm), LLM judges and Jev: `llm_judges[<run>].groups["class=claude"]` and `cost.judges[<run>]`.
@@ -14,7 +16,9 @@ with the LaTeX source, cell by cell, including which differences are set in bold
 Usage (from the repository root):
     python -X utf8 acmtrust_paper/paper_numbers/tables.py . [--analysis runs/main_v1/analysis_v2/main_analysis.json]
         [--clustered acmtrust_paper/sensitivity/analysis_v2_runclustered/main_analysis.json]
-Exit code 0 if every cell matches, 1 otherwise.
+        [--paper acmtrust_paper/sections/06_results.tex]
+With the paper source: exit code 0 if every cell matches, 1 otherwise. Without it: prints the tables, exit code 0.
+In the printed tables, \\sig{...} marks a bold cell and $^\\ast$ a starred one; {,} is a thousands separator.
 """
 from __future__ import annotations
 
@@ -197,19 +201,47 @@ def compare(title, paper_rows, expected):
     return bad
 
 
+HEADERS = {
+    "Table 3": "Judge | then Cov. / Wrong / DeltaK for: OTF R1 (Claude-built), DEVS-Gen, Coding agent, All three, OTF R1 (open-weight)",
+    "Table 4": "Judge | n | Vouch Err. | Judge matched Err. | Delta precision | Own-verdict Cov. | Own-verdict Err. | Delta kept | Failed replies",
+    "Table 5": "Family | Pairs | Wrong | Kept | Detect | Abstain",
+}
+
+
+def show(title, expected):
+    print(f"\n== {title}\n   {HEADERS[title.split(' (')[0]]}")
+    if title.startswith("Table 4"):          # several judges share a model name: print in the paper's grouped order
+        seen = Counter()
+        for group, runs in ROWS4:
+            print(f"  [{group}]")
+            for _, name in runs:
+                print(f"    {name:22s} | " + " | ".join(expected[name][seen[name]]))
+                seen[name] += 1
+        return
+    for name, cells in expected.items():
+        print(f"  {name:24s} | " + " | ".join(cells))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("root")
     ap.add_argument("--analysis", default="runs/main_v1/analysis_v2/main_analysis.json")
     ap.add_argument("--clustered", default="acmtrust_paper/sensitivity/analysis_v2_runclustered/main_analysis.json")
+    ap.add_argument("--paper", default=str(PAPER / "sections" / "06_results.tex"))
     a = ap.parse_args()
     root = Path(a.root).resolve()
     d = json.loads((root / a.analysis).read_text(encoding="utf-8"))
     rc = json.loads((root / a.clustered).read_text(encoding="utf-8"))
-    tex = (PAPER / "sections" / "06_results.tex").read_text(encoding="utf-8")
-    bad = compare("Table 3 (tab:main)", tex_rows(tex, "tab:main"), table3(d, rc))
-    bad += compare("Table 4 (tab:llm)", tex_rows(tex, "tab:llm"), table4(d, rc))
-    bad += compare("Table 5 (tab:families)", tex_rows(tex, "tab:families"), table5(root))
+    tables = [("Table 3 (tab:main)", "tab:main", table3(d, rc)), ("Table 4 (tab:llm)", "tab:llm", table4(d, rc)),
+              ("Table 5 (tab:families)", "tab:families", table5(root))]
+    paper = Path(a.paper)
+    if not paper.exists():
+        print(f"Paper source not found ({paper}); printing the rebuilt tables to compare with the paper's PDF.")
+        for title, _, exp in tables:
+            show(title, exp)
+        return 0
+    tex = paper.read_text(encoding="utf-8")
+    bad = sum(compare(title, tex_rows(tex, label), exp) for title, label, exp in tables)
     print(f"\n{'all cells match' if not bad else f'{bad} cell(s) differ'}")
     return 1 if bad else 0
 

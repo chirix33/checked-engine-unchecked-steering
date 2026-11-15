@@ -22,7 +22,6 @@ Hashes of the upstream files are in `manifests/hashes_p0.txt` and `manifests/mls
 | DEVS-Gen (release `f7461b9f9d23`) | Not redistributed (clone it with `scripts/wsl_setup_devs_gen.sh`). The 22 generated programs in `programs/devs_gen/` may embed DEVS-Gen template code | Apache-2.0 |
 | xDEVS (Python), used by the DEVS-Gen programs at run time | Not redistributed | see its repository |
 | OTF-Tools implementation (pinned) | **Withheld during review** for anonymity; see `README.md` | not distributed here |
-| `acmart.cls`, `ACM-Reference-Format.bst` | `acmtrust_paper/` | LaTeX Project Public License 1.3c / ACM, as distributed on CTAN |
 | Python and npm dependencies | Not redistributed; versions in `manifests/requirements_*.lock` and `acmtrust_paper/figures/src/history_gap/package-lock.json` | their own licences (the figure source takes Source Sans 3 from `@fontsource/source-sans-3`, SIL OFL 1.1) |
 
 ## Model outputs

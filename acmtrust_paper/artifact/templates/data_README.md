@@ -36,5 +36,5 @@ reference simulators, or to recompute gold.
 | Documents | Folder | Hash list |
 |---|---|---|
 | manufacturing and IT operations (12 PDFs with reading maps) | `runs/mlsys_docs/` | `manifests/mlsys_docs_v1.sha256` |
-| workflow documents (loan, pharmacy; test and policy sets) | `runs/workflow_docs/` | `manifests/workflow_questions_test_v1.sha256`, `manifests/workflow_questions_policy_v1.sha256` |
+| workflow documents (loan, pharmacy; test and policy sets) | `runs/workflow_docs/` | test-set documents: `manifests/workflow_questions_test_v1.sha256`. Both `workflow_questions_*.sha256` lists also name a few regenerable files under `runs/workflow_test_v1/` and `runs/workflow_policy_v1/` that are not shipped |
 | development documents the builders read | `runs/build_test_v1/docs/` | `pdf_sha256` in each `builds_*.jsonl` record |

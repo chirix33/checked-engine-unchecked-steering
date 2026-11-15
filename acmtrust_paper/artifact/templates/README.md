@@ -18,15 +18,15 @@ path R1) imports at run time, is withheld during review. Everything that recompu
 | `scripts/` | Builders, runners, scorers, judges, question-set generators, checks, analysis scripts and the five offline test suites. |
 | `spec/`, `reference_engine/`, `checker/` | Workflow semantics specification, and the evaluation-only reference simulator with its independent validator. |
 | `validation/` | Evaluation-only: blind-review samples and keys, fuzz scenarios, probe-soundness checks. Never shown to a program, the library, a reading model or a judge. |
-| `manifests/` | Decision log (`design_decisions.md`), run manifest (`run_manifest.md`), freeze records, **question files with gold**, splits, hash lists, design notes, lock files. |
-| `runs/main_v1/{wf_test,ml_test,wf_policy}/` | Decision rows of the three scored sets (per-program rows, interpretations, reading answers, registries) and, beside them, `<set>_summary.json` (the scored result). `runs/main_v1/logs/` holds the console logs and the shell scripts the runs were started with. |
+| `manifests/` | Decision log (`design_decisions.md`), freeze records (`freeze_v1.md`, `freeze_v1.json`), results write-up (`main_results_v1.md`), **question files with gold**, splits, hash lists, design notes, lock files. The working notes (run log, planning and API-check notes) are not included. |
+| `runs/main_v1/{wf_test,ml_test,wf_policy}/` | Decision rows of the three scored sets (per-program rows, interpretations, reading answers, registries) and, beside them, `<set>_summary.json` (the scored result). `runs/main_v1/logs/` holds the shell scripts the runs were started with (the console output of the main run is not included). |
 | `runs/main_v1/{analysis_v1,analysis_v2,domain_tables_v1,domain_tables_v2,jev_long_context_v1}/` | The analysis outputs behind `acmtrust_paper/results.tex`. v1 is the 12 judge runs; v2 adds the TypeSafe Jev judge. |
 | `runs/judges_main_v1/`, `runs/judges_jev_ledger/` | LLM-judge, ReAct-judge and Jev judgment rows, and the Jev call ledger. |
 | `runs/build_test_*/` | Build records and **model-call ledgers** (`calls_*.jsonl`: calls, tokens, cost, failures), `builds_*.jsonl` (every build, accepted or not), console logs, and the OTF programs (`program.json`). `b0_*` and `v1` hold the unchanged original (B0); `r1*` hold R1. |
 | `runs/coding_agent/`, `runs/devs_gen/` | The plain-agent programs and indexes; the DEVS-Gen generation index (all 32 attempts, failures included) and token ledger. |
 | `programs/devs_gen/` | The {{N_DEVS}} DEVS-Gen programs (`run.py` and `devs_project/`), copied from the WSL machine they were generated on. |
 | `runs/workflow_docs/`, `runs/mlsys_docs/` | The process documents the programs read (derived from public sources; see `NOTICE.md`). |
-| `acmtrust_paper/` | Paper source (`results.tex` names the source of every number), run-clustered sensitivity analyses (`sensitivity/`), figure sources. |
+| `acmtrust_paper/` | The paper is provided as a PDF with the submission, not as LaTeX source. This folder holds `results.tex` (the map from every number in the paper to the file it comes from), `figures/` (the built figure PDFs, `riskcov.tex` for Figure 3, and the sources of Figures 1 and 2 under `figures/src/`), `sensitivity/` (run-clustered sensitivity analyses) and `paper_numbers/` (scripts that recompute Figure 3, the tables and the raw-row numbers). |
 | `program_list.csv` | The {{N_PROGRAMS}} programs: platform, builder model, process, document or task, and where each lives. {{N_R1}} OTF R1, {{N_B0}} OTF B0, {{N_DEVS}} DEVS-Gen, {{N_AGENT}} agent. |
 | `b0_results.md` | The unchanged original OTF-Tools builds: {{B0_ACC}} of {{B0_TOTAL}} accepted, derived from the build records. |
 | `anonymization_map.json`, `manifests/freeze_v1_anonymized.json`, `artifact_files.sha256` | What the anonymization changed, the freeze record re-hashed, and the sha256 of every file here. |
@@ -43,22 +43,25 @@ path R1) imports at run time, is withheld during review. Everything that recompu
   - **Not possible without it:** rebuilding OTF programs, re-executing OTF programs (R1 or B0), and regenerating manufacturing/IT gold.
     Programs from DEVS-Gen and the plain agent do not import it.
 - **Source data** is not copied; `data/README.md` gives pointers, versions and hashes. Derived documents are included.
-- **Not included:** development-set rows (`wf_dev`, `ml_dev`), pilots, model-server logs, regenerable reference-engine outputs, API keys
+- **Not included:** development-set rows (`wf_dev`, `ml_dev`), pilots, console output of the main run, model-server logs, working notes, regenerable reference-engine outputs, API keys
   (`.env`), and the DEVS-Gen source tree (clone it with `scripts/wsl_setup_devs_gen.sh`).
 - The LLM outputs here come from commercial and open-weight providers; their terms apply (see `NOTICE.md`).
 
 ## 3. Anonymization
 
-Author and advisor names, dates attached to names, local file paths (user name and project folders) and a few prose lines were
-rewritten, and three small code edits were made so nothing depends on the authors' machine:
+Names of people, dates attached to names, local file paths (user name and project folders), and sentences that referred to material
+that is not part of this artifact (working notes, planning files, accounts and credit balances) were rewritten or deleted,
+in documentation and in code comments and docstrings. Three small code edits were also made so nothing depends on the authors' machine:
 
 - `scripts/mlsys_gold.py` reads the raw-data folder from the environment variable `MLSYS_RAW`;
 - `scripts/test_judges_offline.py` derives the Windows and WSL user names at run time (they used to be spelled out);
 - `acmtrust_paper/sensitivity/run_fresh_*.sh` change into the repository root relative to the script.
 
+The `Source:` line of the four task specs under `adapters/generic_tasks/` was reworded; the `spec_sha256` stored in each
+`runs/coding_agent/*/*/*/build.json` is the hash of the original spec, and `anonymization_map.json` maps it to the file here.
 Paths inside the code that name a WSL account now say `/home/user/...` (for example `/home/user/trust2027/gen`); see section 8.
 {{N_FROZEN_CHANGED}} of the 30 frozen files (library files, scripts and the coding-agent index) were changed by this, so their sha256 differ from `manifests/freeze_v1.json`, which is kept
-as the original record. `manifests/freeze_v1_anonymized.json` has the re-hashed values, and `anonymization_map.json` maps every old
+as the original record (the truncated hashes printed in `manifests/freeze_v1.md` are the original ones too). `manifests/freeze_v1_anonymized.json` has the re-hashed values, and `anonymization_map.json` maps every old
 sha256 to the new one and lists every manual edit. Rows, scores and numbers were not changed.
 
 ## 4. Environment
@@ -145,15 +148,17 @@ reading answers are in `runs/main_v1/<set>/{interpret,vanilla,rag}.jsonl`.
    judges: `python -X utf8 scripts/judges.py {smoke|draw|run|summary} . <sets> ...`. Sets: `wf_test`, `ml_test`, `wf_policy`.
    OTF programs need the withheld OTF-Tools code (section 2).
 
-## 9. Rebuild the paper
+## 9. Figures
 
-```bash
-cd acmtrust_paper && latexmk main.tex        # output in acmtrust_paper/build/
-```
+The paper itself is not included (reviewers have the PDF); see the `acmtrust_paper/` row in section 1.
 
-Figure 1 is built from `acmtrust_paper/figures/src/history_gap/` (Node, Vite and Playwright; `build.sh`); the built PDF is
-`figures/history_gap.pdf`. Figure 2 is TikZ. Figure 3 and the `results.tex` macros: see section 6.
+Figures 1 and 2 are HTML figures printed to PDF with the paper's font (Libertine). Their sources are
+`acmtrust_paper/figures/src/history_gap/` (Figure 1) and `acmtrust_paper/figures/src/pipeline/` (Figure 2), with the shared font converter
+`figures/src/fonts/libertine_ttf.py`; the built PDFs are `figures/history_gap.pdf` and `figures/pipeline.pdf` (included as shipped). Each
+`build.sh` needs Node, Microsoft Edge or Chrome, a TeX installation with the `libertine` package, and a Python with `fontTools`
+(`PYTHON=<python> bash build.sh`); no font files are shipped, the build creates them. These builds were not rerun for the artifact. Figure 3, the tables and the `results.tex` macros: see section 6 and `acmtrust_paper/paper_numbers/README.md`.
 
 ## 10. Size
 
-About {{APPROX_MB}} MB in total. Largest file: {{LARGEST_FILE}}. Largest folder: {{LARGEST_FOLDER}}. {{MIRROR_NOTES}}
+About {{APPROX_MB}} MB in total. On Windows, clone into a short folder or run `git config --global core.longpaths true`: the longest path in this
+artifact is 155 characters (DEVS-Gen build logs under `programs/devs_gen/`). Largest file: {{LARGEST_FILE}}. Largest folder: {{LARGEST_FOLDER}}. {{MIRROR_NOTES}}

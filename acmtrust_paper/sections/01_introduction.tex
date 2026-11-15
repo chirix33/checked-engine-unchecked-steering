@@ -7,7 +7,7 @@ This paper investigates the trustworthiness of these reusable programs. Platform
 
 Take, for example, a loan-application process from our benchmark in which every applicant spends exactly one day completing a form. A program written by one of the models reproduced every recorded outcome on all four runs, and the platform's own check accepted it with a perfect score. The program's code, however, showed a serious gap: it ignored the per-case durations it read from the records and used the published one-day constant instead, as shown in \textbf{Figure~\ref{fig:history-gap}}. That duration never varied in history, so no history check \emph{saw} the problem. The program had assumed every applicant takes one day, so when asked what would happen if an applicant finished in one second, it answered a full day late. This gap also extended to other cases waiting for the same workers.
 
-%% Caption is a draft for the authors to reword. Source: figures/src/history_gap (bash build.sh).
+%% Source: figures/src/history_gap (bash build.sh).
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/history_gap.pdf}

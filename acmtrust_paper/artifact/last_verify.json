@@ -1,8 +1,8 @@
 {
- "files": 3987,
- "text_files": 3963,
- "binary_files": 23,
- "bytes": 209092902,
+ "files": 3805,
+ "text_files": 3780,
+ "binary_files": 24,
+ "bytes": 202168128,
  "files_over_10MB": [],
  "files_over_50MB": [],
  "max_files_in_one_folder": [
@@ -19,7 +19,19 @@
    176
   ]
  ],
- "lines_with_neutral_user_paths_C_Users_user_or_home_user": 2317,
+ "lines_with_neutral_user_paths_C_Users_user_or_home_user": 2117,
+ "tex_references_missing_in_export": [],
+ "git": {
+  "repository": "present",
+  "commit_identities": [
+   "Anonymous <anonymous@email.com> | Anonymous <anonymous@email.com>"
+  ],
+  "commits": 2,
+  "remotes": [],
+  "branches": [
+   "* main"
+  ]
+ },
  "identity_hits": 0,
  "path_hits": 0,
  "secret_hits": 0,
@@ -32,45 +44,31 @@
   "TYPESAFE_API_KEY"
  ],
  "identity_terms_from_git": 9,
- "link_hosts_not_allowed": {
-  "openrouter.a": [
-   11,
-   "manifests/openrouter_free_probe_1.json:9"
-  ]
- },
+ "link_hosts_not_allowed": {},
  "github_owners_not_allowed": {},
  "link_hosts_all": {
-  "registry.npmjs.org": 153,
+  "registry.npmjs.org": 306,
   "docs.litellm.ai": 107,
   "errors.pydantic.dev": 46,
-  "opencollective.com": 18,
-  "github.com": 16,
-  "openrouter.a": 11,
-  "openrouter.ai": 10,
-  "127.0.0.1": 8,
-  "ollama.com": 6,
+  "opencollective.com": 36,
+  "github.com": 26,
+  "tidelift.com": 8,
+  "127.0.0.1": 6,
   "docs.anthropic.com": 5,
-  "tidelift.com": 4,
-  "doi.org": 3,
   "www.omg.org": 3,
   "zenodo.org": 2,
-  "accessiblyapp.com": 2,
-  "creativecommons.org": 2,
-  "arxiv.org": 2,
-  "docs.typesafe.ai": 2,
-  "doi.acm.org": 1,
-  "orcid.org": 1,
-  "jmlr.org": 1,
+  "ollama.com": 2,
+  "openrouter.ai": 1,
   "api.typesafe.ai": 1,
   "elsewhere.example": 1,
   "api.anthropic.com": 1,
   "example.invalid": 1
  },
  "github_owners_all": {
-  "sponsors": 9,
+  "sponsors": 18,
   "ciol-sust": 2,
   "google": 2,
-  "vitejs": 1,
+  "vitejs": 2,
   "czyarl": 1,
   "astral-sh": 1
  },

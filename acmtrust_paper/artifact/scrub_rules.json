@@ -8,21 +8,27 @@
   "tracked_exclude_exact": [
     "README.md",
     ".gitignore",
-    "manifests/abstract_draft.md"
+    "manifests/abstract_draft.md",
+    "manifests/run_manifest.md",
+    "manifests/baseline_judges_design.md",
+    "manifests/baseline_feasibility.md",
+    "manifests/pilot_report.md",
+    "manifests/blindspots.md",
+    "manifests/it_blindspot.md",
+    "manifests/model_endpoint_check.json",
+    "manifests/model_connection_test.json",
+    "manifests/openrouter_free_probe_1.json",
+    "manifests/judges_smoke_v1.json",
+    "scripts/model_endpoint_check.py",
+    "scripts/openrouter_free_probe.py",
+    "scripts/model_connection_test.py"
   ],
   "paper": {
     "tracked_include_exact": [
-      "acmtrust_paper/main.tex",
-      "acmtrust_paper/macros.tex",
       "acmtrust_paper/results.tex",
-      "acmtrust_paper/references.bib",
-      "acmtrust_paper/latexmkrc",
-      "acmtrust_paper/acmart.cls",
-      "acmtrust_paper/ACM-Reference-Format.bst",
       "acmtrust_paper/figures/history_gap.pdf"
     ],
     "tracked_include_prefixes": [
-      "acmtrust_paper/sections/",
       "acmtrust_paper/sensitivity/"
     ],
     "tracked_include_suffixes_under": {
@@ -30,13 +36,30 @@
         ".tex"
       ]
     },
+    "extra_globs": [
+      "acmtrust_paper/figures/*.pdf",
+      "acmtrust_paper/figures/*.tex"
+    ],
+    "exclude_exact": [
+      "acmtrust_paper/figures/history_gap_col.pdf",
+      "acmtrust_paper/figures/pipeline.tex"
+    ],
+    "extra_dir_skip_suffixes": [
+      ".ttf",
+      ".otf",
+      ".woff",
+      ".woff2"
+    ],
     "extra_dirs": [
+      "acmtrust_paper/figures/src/pipeline",
+      "acmtrust_paper/figures/src/fonts",
       "acmtrust_paper/figures/src/history_gap",
       "acmtrust_paper/paper_numbers"
     ],
     "extra_dir_skip_names": [
       "node_modules",
       "dist",
+      "out",
       ".vite",
       "__pycache__",
       "playwright-report",
@@ -85,7 +108,8 @@
       "^ml_dev_",
       "^paper_build",
       "^analysis_v1_partial",
-      "^analysis_v1_noqwenreact"
+      "^analysis_v1_noqwenreact",
+      "\\.log$"
     ],
     "dir_skip_names": [
       "_smoke_cap16k",
@@ -149,37 +173,37 @@
     {
       "name": "full-name",
       "pattern": "Ashraf Abdul-Muumin",
-      "repl": "author",
+      "repl": "authors",
       "mode": "author"
     },
     {
       "name": "first-name-possessive",
       "pattern": "Ashraf's",
-      "repl": "author's",
+      "repl": "authors'",
       "mode": "author"
     },
     {
       "name": "first-name",
       "pattern": "Ashraf",
-      "repl": "author",
+      "repl": "authors",
       "mode": "author"
     },
     {
       "name": "first-name-other-case",
       "pattern": "(?i)\\bashraf\\b",
-      "repl": "author",
+      "repl": "authors",
       "mode": "author"
     },
     {
       "name": "advisor-possessive",
       "pattern": "Dr\\. Roy's",
-      "repl": "advisor's",
+      "repl": "authors'",
       "mode": "author"
     },
     {
       "name": "advisor",
       "pattern": "Dr\\. Roy",
-      "repl": "advisor",
+      "repl": "authors",
       "mode": "author"
     },
     {
@@ -193,40 +217,70 @@
       "pattern": "MLSystem 2027",
       "repl": "EarlierProject",
       "mode": "plain"
+    },
+    {
+      "name": "mlsys-front-matter",
+      "pattern": "from the MLSys front matter",
+      "repl": "from the source benchmark front matter",
+      "mode": "plain"
+    },
+    {
+      "name": "dropped-working-notes",
+      "pattern": "`?(?:manifests/)?(?:run_manifest|baseline_judges_design|baseline_feasibility|pilot_report)(?:\\.md)?`?|`?(?:manifests/)?(?:blindspots|it_blindspot)\\.md`?",
+      "repl": "working notes, not included",
+      "mode": "plain",
+      "skip_prefix": [
+        "runs/",
+        "programs/"
+      ]
+    },
+    {
+      "name": "project-planning-files",
+      "pattern": "`?(?:AGENTS|RESEARCH_DIRECTION)\\.md`?",
+      "repl": "the project's research plan (not included)",
+      "mode": "plain",
+      "skip": [
+        "scripts/check_builder_isolation.py"
+      ],
+      "skip_prefix": [
+        "runs/",
+        "programs/"
+      ]
+    },
+    {
+      "name": "the-author-possessive-to-plural",
+      "pattern": "\\b([Tt]he) author's\\b",
+      "repl": "\\1 authors'",
+      "mode": "plain",
+      "skip": [
+        "acmtrust_paper/acmart.cls",
+        "acmtrust_paper/ACM-Reference-Format.bst"
+      ],
+      "skip_prefix": [
+        "runs/",
+        "programs/"
+      ]
+    },
+    {
+      "name": "the-author-to-plural",
+      "pattern": "\\b([Tt]he) author\\b",
+      "repl": "\\1 authors",
+      "mode": "plain",
+      "skip": [
+        "acmtrust_paper/acmart.cls",
+        "acmtrust_paper/ACM-Reference-Format.bst"
+      ],
+      "skip_prefix": [
+        "runs/",
+        "programs/"
+      ]
     }
   ],
   "line_fixes": [
     {
-      "file": "manifests/run_manifest.md",
-      "old": "`baseline/otf-tools-10f5401`, commit `10f540118756b6062feb0ccc5e2012fe771f1579`, clean checkout.",
-      "new": "`baseline/otf-tools-10f5401` (the pinned baseline clone; commit withheld for review), clean checkout."
-    },
-    {
-      "file": "manifests/run_manifest.md",
-      "old": "| Saved MLSys results | Left in place in `MLSystem 2027/`, not edited. Hashes below. |",
-      "new": "| Saved earlier results | Left in place in a separate project folder, not edited. Their hashes are withheld for review. |"
-    },
-    {
-      "file": "manifests/run_manifest.md",
-      "old": "| Paper | `otf-tools.pdf` is treated as the MLSys `main.pdf` under another name, per Ashraf. Their bytes differ. |",
-      "new": "| Paper | A related paper (not part of this artifact) is treated as the original submitted paper; its file is withheld. |"
-    },
-    {
-      "file": "manifests/run_manifest.md",
-      "type": "block",
-      "start": "Saved MLSys results SHA-256:",
-      "end": "Other file hashes are in `hashes_p0.txt`.",
-      "new": "The hashes of the saved earlier results are withheld for review. Other file hashes are in `hashes_p0.txt`."
-    },
-    {
-      "file": "manifests/run_manifest.md",
-      "type": "delete_line",
-      "pattern": "^\\s*- Paper files are not committed; they may need syncing with Overleaf\\.\\s*$"
-    },
-    {
       "file": "manifests/design_decisions.md",
       "old": "`otf-tools.pdf` is treated as the original `main.pdf`.",
-      "new": "A related paper (file withheld) is treated as the original submitted paper."
+      "new": "The paper's working title and framing are as given in the paper itself."
     },
     {
       "file": "manifests/design_decisions.md",

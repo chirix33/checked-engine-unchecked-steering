@@ -1,0 +1,553 @@
+{
+  "_comment": "Hand-written sentence edits applied by build_artifact.py. pre_fixes run on the original text before the generic rules; post_fixes run on the text after the generic rules (so they match 'the authors', not the real names). Each fix must apply at least once or the build reports a problem. This file must not be copied into the export.",
+  "pre_fixes": [
+    {
+      "file": "validation/blind_review_workflow_v3/agent_K/notes.md",
+      "old": "a project instruction file (AGENTS.md) describing the research goals, an index of the user's memory notes, and a git status listing",
+      "new": "a project instruction file describing the research goals, a notes index, and a git status listing"
+    },
+    {
+      "file": "scripts/main_analysis.py",
+      "old": "# no-effect controls apart (AGENTS.md)",
+      "new": "# no-effect controls apart (per the project's research plan, not included)"
+    },
+    {
+      "file": "scripts/make_workflow_test_questions.py",
+      "old": "(RESEARCH_DIRECTION.md treats them as different failures)",
+      "new": "(the project's research plan, not included, treats them as different failures)"
+    },
+    {
+      "file": "manifests/main_results_v1.md",
+      "old": "run_manifest has the details",
+      "new": "the working notes (not included) have the details"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": " (pilot report, line 3)",
+      "new": ""
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "| `AGENTS.md`, `RESEARCH_DIRECTION.md`, `.env` |",
+      "new": "| the project's research plan (not included), `.env` |"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "After the Nov 8 meeting with Dr. Roy. The full design and its review are in `manifests/baseline_judges_design.md`, decisions 1 to 7.",
+      "new": "After a design review on Nov 8. The working notes behind it are not included; its decisions follow."
+    }
+  ],
+  "post_fixes": [
+    {
+      "file": "manifests/design_decisions.md",
+      "type": "block",
+      "start": "The account's credit balance was",
+      "end": "not a model failure.",
+      "new": "Running out of credit shows up as an account error, logged as an infrastructure failure, not a model failure."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "type": "block",
+      "start": "The key belongs to a free Ollama account",
+      "end": "so the authors have to report it.",
+      "new": "The published page lists 3 concurrent requests on pay-as-you-go. The balance can't be read from the API."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "7. **Credits:** Claude cohorts added because Ollama credits are short. See D18.",
+      "new": "7. **Budget:** Claude cohorts added because the Ollama budget is limited. See D18."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "Added for now because Ollama credits are short, using Anthropic credits.",
+      "new": "Added for now because the Ollama budget is limited."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "If Ollama credits arrive after the freeze,",
+      "new": "If Ollama budget becomes available after the freeze,"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "Rough plan is about $50 of the $100.",
+      "new": "Rough plan is about $50."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "several times over the remaining credit (about $89 Claude, $8.73 Ollama) and could not finish before the freeze.",
+      "new": "several times over the remaining budget and could not finish before the freeze."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "is about $75-80 of Claude credit.",
+      "new": "is about $75-80 on Claude."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "**Open.** The authors topped up the Ollama credit. Under D27 the main run needs no Ollama calls, so any use of it is a new decision for him.",
+      "new": "**Open.** Under D27 the main run needs no Ollama calls, so any use of Ollama is a new decision."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "The authors topped up the Ollama Cloud credit and chose the cheapest use of it, which restores the same models across the judges on one shared set of rows.",
+      "new": "Ollama Cloud budget became available. The cheapest use of it restores the same models across the judges on one shared set of rows."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "is raised to match the balance the authors report, and the raise is logged.",
+      "new": "is raised to $21 for these judges, and the raise is logged."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "as described in the run manifest.",
+      "new": "as described in working notes (not included)."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "type": "block",
+      "start": "The authors' implementation handoff supersedes",
+      "end": "stay unchanged.",
+      "new": "The implementation plan (not included) supersedes conflicting earlier design proposals. The project's research plan (not included) and the pinned baseline stay unchanged."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "follows the handoff's components:",
+      "new": "follows the components of the implementation plan (not included):"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "- Saved MLSys programs become a historical audit only. Every model needs fresh builds. The audit supplies no programs to the main experiment.",
+      "new": "- Every model needs fresh builds."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "matching the MLSys setting.",
+      "new": "matching the OTF-Tools release's setting."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "as in MLSys; gpt-oss",
+      "new": "as in the OTF-Tools release; gpt-oss"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "to match the MLSys sampling.",
+      "new": "to match the OTF-Tools release's sampling."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "reuse the MLSys documents and simulators, with new questions.",
+      "new": "reuse the documents and simulators of the OTF-Tools release, with new questions."
+    },
+    {
+      "file": "manifests/main_results_v1.md",
+      "old": "**Status (2026-11-11, 22:30 CST): final",
+      "new": "**Status (2026-11-11): final"
+    },
+    {
+      "file": "manifests/main_results_v1.md",
+      "old": "**Memorization of public MLSys material.**",
+      "new": "**Memorization of public benchmark material.**"
+    },
+    {
+      "file": "manifests/main_results_v1.md",
+      "old": "The OTF-Tools code and MLSys documents are public",
+      "new": "The OTF-Tools code and documents are public"
+    },
+    {
+      "file": "manifests/main_results_v1.md",
+      "old": "| Ollama credit added; the authors' addition |",
+      "new": "| more Ollama budget became available |"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "The MLSys documents are in the same position.",
+      "new": "The manufacturing and IT documents are in the same position."
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "would need an MLSys generator change",
+      "new": "would need a change to the source benchmark's generator"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "- the project's research plan (not included) section C lists four reuse conditions",
+      "new": "- Section C of the project's research plan (not included) lists four reuse conditions"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "(the project's research plan (not included), git status)",
+      "new": "(a project instruction file, git status)"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "transcripts. the project's research plan (not included): \"Reference implementations",
+      "new": "transcripts. The project's research plan (not included) says: \"Reference implementations"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "the project, the MLSys folder, the Claude folders or WSL",
+      "new": "the project, other project folders, the agent tool's folders or WSL"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "| `data/`, `redesign/`, `papers/`, `meeting/`, `.tools/` | raw data, OTF R1 code, papers, meeting notes, environments |",
+      "new": "| `data/`, `redesign/`, `papers/`, `.tools/` | raw data, OTF R1 code, papers, environments |"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "type": "delete_line",
+      "pattern": "EarlierProject.* raw records and reference code of an earlier project"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "| `C:\\Users\\user\\.claude\\` | Claude transcripts and memory for this project |",
+      "new": "| the agent tool's transcript and memory folders | transcripts and notes of the tool sessions |"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "| `C:\\Users\\user\\AppData\\Local\\Temp\\claude\\` and `C:\\Users\\user\\AppData\\Local\\Claude-Data\\` | session scratchpads, which hold blind-check work and regenerated gold, and session notes |",
+      "new": "| the agent tool's scratch and notes folders | session scratch work, which holds blind-check work and regenerated gold, and session notes |"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "Six MLSys PDFs: `mfg_dev`",
+      "new": "Six PDFs of the source benchmark: `mfg_dev`"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "Six MLSys PDFs: `itops_dev`",
+      "new": "Six PDFs of the source benchmark: `itops_dev`"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "**MLSys questions** are multiple-choice",
+      "new": "**The source benchmark's questions** are multiple-choice"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "Every MLSys IT document mixes groups",
+      "new": "Every IT document of the source benchmark mixes groups"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "(MLSys `scopes.py`)",
+      "new": "(`scopes.py` in the OTF-Tools release)"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "every MLSys document mixes groups",
+      "new": "every document of the source benchmark mixes groups"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "(read-only from the MLSys folder)",
+      "new": "(read-only from the raw-data directory)"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "numeric queries replace MLSys's multiple choice;",
+      "new": "numeric queries replace the source benchmark's multiple choice;"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "- MLSys IT sampling scales capacity",
+      "new": "- The source benchmark's IT sampling scales capacity"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "equal the MLSys working copy's PDFs and the copies the dev builds read",
+      "new": "equal the PDFs of the pinned OTF-Tools release and the copies the dev builds read"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "the reference code and MLSys documents are public on GitHub, so builder and judge models may have seen them.",
+      "new": "the reference code and documents are public, so builder and judge models may have seen them."
+    },
+    {
+      "file": "scripts/build_test_summary.py",
+      "old": "\\nMLSys on the same development documents (historical, different models and provider):",
+      "new": "\\nOTF-Tools release results on the same development documents (historical, different models and provider):"
+    },
+    {
+      "file": "scripts/check_builder_isolation.py",
+      "old": "# MLSys (manufacturing and IT) test material, added 2026-11-10 before the DEVS-Gen MLSys builds:",
+      "new": "# Manufacturing and IT test material, added 2026-11-10 before the DEVS-Gen manufacturing and IT builds:"
+    },
+    {
+      "file": "scripts/main_runner.py",
+      "old": "For the mixed MLSys documents, the map keeps",
+      "new": "For the mixed manufacturing and IT documents, the map keeps"
+    },
+    {
+      "file": "scripts/main_runner.py",
+      "old": "on the larger MLSys documents (5x Haiku price)",
+      "new": "on the larger manufacturing and IT documents (5x Haiku price)"
+    },
+    {
+      "file": "scripts/main_runner.py",
+      "old": "(MLSys documents mix splits)",
+      "new": "(manufacturing and IT documents mix splits)"
+    },
+    {
+      "file": "scripts/make_generic_task_specs.py",
+      "old": "the prose is the MLSys document front matter",
+      "new": "the prose is the front matter of the source benchmark's documents"
+    },
+    {
+      "file": "scripts/make_mlsys_questions.py",
+      "old": "New questions on the MLSys documents (MLSys's own multiple-choice items are not reused).",
+      "new": "New questions on the source benchmark's documents (its own multiple-choice items are not reused)."
+    },
+    {
+      "file": "scripts/make_mlsys_questions.py",
+      "old": "is kept only if MLSys's",
+      "new": "is kept only if the source benchmark's"
+    },
+    {
+      "file": "scripts/mlsys_gold.py",
+      "old": "(the MLSys reference simulator)",
+      "new": "(the reference simulator of the OTF-Tools release)"
+    },
+    {
+      "file": "scripts/mlsys_gold.py",
+      "old": "read-only from the MLSys working copy,",
+      "new": "read-only from the raw-data directory,"
+    },
+    {
+      "file": "scripts/mlsys_gold.py",
+      "old": "(MLSys's independent re-implementation,",
+      "new": "(the release's independent re-implementation,"
+    },
+    {
+      "file": "scripts/mlsys_gold.py",
+      "old": "equal the MLSys working copy's PDFs and the copies the dev builds read",
+      "new": "equal the PDFs of the pinned release and the copies the dev builds read"
+    },
+    {
+      "file": "assurance/mlsys.py",
+      "old": "(the MLSys documents)",
+      "new": "(the manufacturing and IT documents of the source benchmark)"
+    },
+    {
+      "file": "assurance/mlsys.py",
+      "old": "in the MLSys reference,",
+      "new": "in the reference simulator,"
+    },
+    {
+      "file": "assurance/binding.py",
+      "old": "as handoff step 6 allows",
+      "new": "as step 6 of the implementation plan (not included) allows"
+    },
+    {
+      "file": "assurance/contract.py",
+      "old": "as the handoff requires",
+      "new": "as the implementation plan (not included) requires"
+    },
+    {
+      "file": "assurance/policy.py",
+      "old": "as the handoff requires",
+      "new": "as the implementation plan (not included) requires"
+    },
+    {
+      "file": "scripts/assurance_slice.py",
+      "old": "(handoff Stage 2)",
+      "new": "(stage 2 of the implementation plan, not included)"
+    },
+    {
+      "file": "scripts/pilot_runner.py",
+      "old": "(handoff Stage 3)",
+      "new": "(stage 3 of the implementation plan, not included)"
+    },
+    {
+      "file": "scripts/b0_build_test.py",
+      "old": "(the authors reported a balance of $20 or more, 2026-11-10)",
+      "new": "(2026-11-10)"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "transcripts and notes of the tool sessions",
+      "new": "transcripts and notes of the tool"
+    },
+    {
+      "file": "manifests/builder_isolation.md",
+      "old": "session scratch work, which holds blind-check work and regenerated gold, and session notes",
+      "new": "scratch work, which holds blind-check work and regenerated gold, and notes"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "in the workflow test-set session's files.",
+      "new": "in the workflow test-set files."
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "**Run:** by the main-run session, with",
+      "new": "**Run:** after the main run, with"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "### Plain coding agent (built by another session)",
+      "new": "### Plain coding agent"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "## Decisions applied (the authors, via the coordinating session)",
+      "new": "## Decisions applied (the authors)"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "(the coordinating session owns `pilot_runner.py`)",
+      "new": "(another part of the work owns `pilot_runner.py`)"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "**Decision (the authors, via the coordinating session, 2026-11-09):**",
+      "new": "**Decision (the authors, 2026-11-09):**"
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "so it is left to the coordinating session.",
+      "new": "so it is left to another part of the work."
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "The library belongs to the coordinating session.",
+      "new": "The library belongs to another part of the work."
+    },
+    {
+      "file": "manifests/domain_readiness.md",
+      "old": "**Recorded as known properties (2026-11-09, coordinating session):**",
+      "new": "**Recorded as known properties (2026-11-09):**"
+    },
+    {
+      "file": "manifests/jev_judge_design.md",
+      "old": "The run itself is done by the main-run session.",
+      "new": "The run itself is a separate step."
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "- **Accepted by the coordinating session.** The authors' decisions",
+      "new": "- **Accepted.** The authors' decisions"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "with the coordinating session's final library:",
+      "new": "with the final library:"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "and in the coordinating session's own fix.",
+      "new": "and in the later library fix."
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "with the library before the coordinating session's fix. It is rerun",
+      "new": "with the library before the later fix. It is rerun"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "- The coordinating session applies the rule in `pilot_summary.py` and the runner, which it owns.",
+      "new": "- The rule is applied in `pilot_summary.py` and the runner, which another part of the work owns."
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "the coordinating session applies it in `pilot_summary.py` and the runner.",
+      "new": "it is applied in `pilot_summary.py` and the runner."
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "with the library before the coordinating session's fix. It was **not clean**",
+      "new": "with the library before the later fix. It was **not clean**"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "the agents' sessions start with the harness's project context",
+      "new": "the agents start with the harness's project context"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "(2026-11-09; coordinating session's fix, D24)",
+      "new": "(2026-11-09; library fix, D24)"
+    },
+    {
+      "file": "manifests/workflow_test_set.md",
+      "old": "The coordinating session changed the library after two review rounds",
+      "new": "The library was changed after two review rounds"
+    },
+    {
+      "file": "scripts/check_builder_isolation.py",
+      "old": "after the judges session's reviewer",
+      "new": "after the judges' reviewer"
+    },
+    {
+      "file": "scripts/wsl_devs_gen_isolated_generate.sh",
+      "old": "(the judges session's reviewer escaped",
+      "new": "(the judges' reviewer escaped"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy/agent_C/notes.md",
+      "old": "The session started with harness-supplied context",
+      "new": "The run started with harness-supplied context"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy_v2/agent_E/notes.md",
+      "old": "My session started with",
+      "new": "My run started with"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy_v3/agent_I/notes.md",
+      "old": "My session started with",
+      "new": "My run started with"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy_v3/agent_J/notes.md",
+      "old": "Session context (project instructions",
+      "new": "Run context (project instructions"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy_v4/agent_M/notes.md",
+      "old": "My session started with",
+      "new": "My run started with"
+    },
+    {
+      "file": "validation/blind_review_workflow_policy_v4/agent_N/notes.md",
+      "old": "(the session's project context was ignored)",
+      "new": "(the run's project context was ignored)"
+    },
+    {
+      "file": "validation/blind_review_workflow_v2/agent_G/notes.md",
+      "old": "My session began with",
+      "new": "My run began with"
+    },
+    {
+      "file": "validation/blind_review_workflow_v3/agent_K/notes.md",
+      "old": "My session started with",
+      "new": "My run started with"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "## D2. Overlap and dual submission: Owned by the authors (2026-11-04)",
+      "new": "## D2. Venue process: Owned by the authors (2026-11-04)"
+    },
+    {
+      "file": "manifests/design_decisions.md",
+      "old": "Not an agent decision. No chair contact.",
+      "new": "Not an agent decision."
+    },
+    {
+      "file": "acmtrust_paper/figures/src/fonts/libertine_ttf.py",
+      "old": "(the same files acmart's body font comes from)",
+      "new": "(the same files the paper's body font comes from)"
+    },
+    {
+      "file": "acmtrust_paper/figures/src/history_gap/src/index.css",
+      "old": "Linux Libertine (acmart's body font)",
+      "new": "Linux Libertine (the paper's body font)"
+    },
+    {
+      "file": "acmtrust_paper/figures/src/pipeline/src/index.css",
+      "old": "(acmart loads it for the body text)",
+      "new": "(the paper loads it for the body text)"
+    }
+  ]
+}

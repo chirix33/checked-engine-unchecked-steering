@@ -3,7 +3,7 @@
 
 \begin{figure*}[t]
 \centering
-%% Colored figure, same size as the old TikZ figures/pipeline.tex at 0.92\textwidth. Source: figures/src/pipeline (bash build.sh).
+%% Source: figures/src/pipeline (bash build.sh).
 \includegraphics[width=0.92\textwidth]{figures/pipeline.pdf}
 \caption{How Vouch decides whether to trust a what-if answer. In this example, the questions asks when case `c0014' would finish if one Technician were unavailable in a specified time range. First, an LLM translates the question into a structured change, and a contract check verifies that it uses valid names and rules from the document. Next, a history check runs the program on the original, unchanged run to confirm it matches recorded history. Finally, targeted tests apply small probe changes of the same kind and check that the program responds according to the rules. Vouch never looks at the final answer itself. It trusts the answer only if every step passes, otherwise it declines it with a reason. Test results go into a capability record that later questions on the same program are declined immediately as `Already Caught' without rerunning tests.}
 \Description{A left-to-right flow. A what-if question is turned into a structured change, which passes a contract check, a history check, and tests aimed at the requested change that read and write a capability record. Passing every step gives Trusted. Side exits are labelled Request rejected, Failed history check, Caught, Already caught, Untestable, and Can't express.}

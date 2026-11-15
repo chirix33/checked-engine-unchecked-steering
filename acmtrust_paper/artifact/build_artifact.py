@@ -39,6 +39,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 RULES = json.loads((HERE / "scrub_rules.json").read_text(encoding="utf-8"))
+if (HERE / "prose_fixes.json").exists():                 # hand-written sentence edits, kept apart from the structural rules
+    _prose = json.loads((HERE / "prose_fixes.json").read_text(encoding="utf-8"))
+    RULES["line_fixes"].extend(_prose.get("pre_fixes", []))
+    RULES.setdefault("post_fixes", []).extend(_prose.get("post_fixes", []))
 TEMPLATES = HERE / "templates"
 
 
@@ -101,7 +105,7 @@ class Plan:
 
 def walk(base: Path, skip_names=()):
     for dp, dns, fns in os.walk(lp(base)):
-        dns[:] = [d for d in dns if d not in skip_names]
+        dns[:] = [d for d in dns if d not in skip_names and d != ".git"]
         for fn in fns:
             full = Path(dp.replace("\\\\?\\", "")) / fn
             yield full
@@ -132,10 +136,19 @@ def plan_files(skip_wsl: bool) -> Plan:
                 ok = True
         if ok and (REPO / n).exists():
             plan.add_file(n, REPO / n, "paper (tracked)")
+    for pat in paper.get("extra_globs", []):                     # figure files that are not tracked yet (for example a new pipeline.pdf)
+        for f in sorted(REPO.glob(pat)):
+            rel = f.relative_to(REPO).as_posix()
+            if rel not in paper.get("exclude_exact", []):
+                plan.add_file(rel, f, "paper figure (glob)")
+    for rel in paper.get("exclude_exact", []):
+        plan.items.pop(rel, None)
     for d in paper["extra_dirs"]:
         base = REPO / d
         if base.is_dir():
             for f in walk(base, paper["extra_dir_skip_names"]):
+                if f.suffix.lower() in paper.get("extra_dir_skip_suffixes", []):
+                    continue
                 plan.add_file(f.relative_to(REPO).as_posix(), f, "paper (ignored/untracked, listed)")
 
     # 3. ignored markdown notes inside the code and validation folders
@@ -194,7 +207,9 @@ def plan_files(skip_wsl: bool) -> Plan:
 
 
 # ----------------------------------------------------------------------------------------------- scrubbing
-GENERIC = [(r["name"], re.compile(r["pattern"]), r["repl"], r["mode"]) for r in RULES["generic"]]
+GENERIC = [(r["name"], re.compile(r["pattern"]), r["repl"], r["mode"], set(r.get("skip", [])), tuple(r.get("skip_prefix", [])))
+           for r in RULES["generic"]]
+PROSE_SKIP_PREFIX = ("runs/", "programs/")      # evidence rows and generated programs: only names and paths are rewritten there
 
 
 def _cap_ctx(s: str, i: int) -> bool:
@@ -204,8 +219,10 @@ def _cap_ctx(s: str, i: int) -> bool:
     return j == 0 or s[j - 1] in "\r\n.!?:"
 
 
-def apply_generic(text: str, stats: Counter) -> str:
-    for name, rx, repl, mode in GENERIC:
+def apply_generic(rel: str, text: str, stats: Counter) -> str:
+    for name, rx, repl, mode, skip, skip_prefix in GENERIC:
+        if rel in skip or (skip_prefix and rel.startswith(skip_prefix)):
+            continue
         if mode == "plain":
             text, n = rx.subn(repl, text)
         else:
@@ -218,17 +235,39 @@ def apply_generic(text: str, stats: Counter) -> str:
     return text
 
 
+VERBS = {"has": "have", "is": "are", "was": "were", "owns": "own", "wants": "want", "says": "say", "reports": "report",
+         "prefers": "prefer", "asks": "ask", "requires": "require", "needs": "need", "decides": "decide", "approves": "approve",
+         "accepts": "accept", "confirms": "confirm", "handles": "handle", "reviews": "review", "chooses": "choose", "sets": "set",
+         "keeps": "keep", "gives": "give", "does": "do", "doesn't": "don't", "hasn't": "haven't", "isn't": "aren't",
+         "registers": "register", "provides": "provide", "supplies": "supply", "pays": "pay", "runs": "run", "uses": "use",
+         "expects": "expect", "reads": "read", "writes": "write", "checks": "check", "finds": "find", "changes": "change",
+         "adds": "add", "objects": "object", "agrees": "agree", "thinks": "think", "believes": "believe", "knows": "know",
+         "sees": "see", "picks": "pick", "selects": "select", "rejects": "reject", "plans": "plan", "intends": "intend",
+         "notes": "note", "verifies": "verify", "judges": "judge", "rules": "rule", "signs": "sign", "authorises": "authorise"}
+VERB_RX = re.compile(r"\b([Tt]he authors)( \w+ly)? (" + "|".join(sorted(VERBS, key=len, reverse=True)) + r")\b")
+
+
+def fix_plural_verbs(text: str, stats: Counter) -> str:
+    def cb(m):
+        stats["verb-agreement"] += 1
+        return f"{m.group(1)}{m.group(2) or ''} {VERBS[m.group(3)]}"
+    return VERB_RX.sub(cb, text)
+
+
 FIX_BY_FILE: dict[str, list[dict]] = defaultdict(list)
 for fx in RULES["line_fixes"]:
     FIX_BY_FILE[fx["file"]].append(fx)
+POST_BY_FILE: dict[str, list[dict]] = defaultdict(list)
+for fx in RULES.get("post_fixes", []):
+    POST_BY_FILE[fx["file"]].append(fx)
 PATCH_BY_FILE: dict[str, list[dict]] = defaultdict(list)
 for pt in RULES["patches"]:
     PATCH_BY_FILE[pt["file"]].append(pt)
 
 
-def apply_manual(rel: str, text: str, stats: Counter, problems: list, manual_log: list) -> str:
+def apply_manual(rel: str, text: str, stats: Counter, problems: list, manual_log: list, post: bool = False) -> str:
     crlf = "\r\n" in text
-    for fx in FIX_BY_FILE.get(rel, []):
+    for fx in (POST_BY_FILE if post else FIX_BY_FILE).get(rel, []):
         typ = fx.get("type", "literal")
         if typ == "literal":
             n = text.count(fx["old"])
@@ -252,7 +291,7 @@ def apply_manual(rel: str, text: str, stats: Counter, problems: list, manual_log
         else:
             stats["manual:" + rel] += n
             manual_log.append({"file": rel, "kind": "prose/line fix", "times": n})
-    for pt in PATCH_BY_FILE.get(rel, []):
+    for pt in ([] if post else PATCH_BY_FILE.get(rel, [])):
         new = pt["new"].replace("\n", "\r\n") if crlf else pt["new"]
         n = text.count(pt["old"])
         if n < 1:
@@ -282,6 +321,14 @@ def decode_text(rel: str, data: bytes):
         return None
 
 
+def scrub(rel: str, txt: str, stats: Counter, problems: list, manual_log: list) -> str:
+    t = apply_manual(rel, txt, stats, problems, manual_log)
+    t = apply_generic(rel, t, stats)
+    if not rel.startswith(PROSE_SKIP_PREFIX):
+        t = fix_plural_verbs(t, stats)
+    return apply_manual(rel, t, stats, problems, manual_log, post=True)
+
+
 def process(rel: str, data: bytes, stats: Counter, problems: list, manual_log: list) -> bytes:
     """Return the bytes to ship for this file."""
     if rel.endswith(".gz") and rel.startswith(RULES["wsl"]["dest"]):
@@ -292,7 +339,7 @@ def process(rel: str, data: bytes, stats: Counter, problems: list, manual_log: l
         txt = decode_text(rel[:-3], raw)
         if txt is None:
             return data
-        new = apply_generic(apply_manual(rel, txt, stats, problems, manual_log), stats)
+        new = scrub(rel, txt, stats, problems, manual_log)
         if new == txt:
             return data
         stats["gz-recompressed"] += 1
@@ -303,7 +350,7 @@ def process(rel: str, data: bytes, stats: Counter, problems: list, manual_log: l
     txt = decode_text(rel, data)
     if txt is None:
         return data
-    new = apply_generic(apply_manual(rel, txt, stats, problems, manual_log), stats)
+    new = scrub(rel, txt, stats, problems, manual_log)
     return data if new == txt else new.encode("utf-8")
 
 
@@ -387,7 +434,7 @@ def b0_results(out: Path):
                 d = per_doc[(process_of(doc), doc)]
                 d[0] += 1
                 d[1] += a
-    bench = (out / "acmtrust_paper/sections/04_benchmark.tex").read_text(encoding="utf-8")
+    bench = (REPO / "acmtrust_paper/sections/04_benchmark.tex").read_text(encoding="utf-8")      # the paper source is not in the output
     m = re.search(r"accepted (\d+) of (\d+) builds", bench)
     paper = f"{m.group(1)} of {m.group(2)}" if m else "(sentence not found)"
     matches = bool(m) and int(m.group(1)) == acc and int(m.group(2)) == total
@@ -462,9 +509,17 @@ def main():
     plan = plan_files(a.skip_wsl)
     print(f"planned {len(plan.items)} files")
 
-    if out.exists():
-        shutil.rmtree(lp(out), onerror=rm_readonly)
-    os.makedirs(lp(out))
+    if out.exists():                                  # empty the export folder but keep a .git folder if the user has made one
+        for name in os.listdir(lp(out)):
+            if name == ".git":
+                continue
+            child = out / name
+            if child.is_dir():
+                shutil.rmtree(lp(child), onerror=rm_readonly)
+            else:
+                os.chmod(lp(child), stat.S_IWRITE)
+                os.remove(lp(child))
+    os.makedirs(lp(out), exist_ok=True)
 
     changed: dict[str, tuple[str, str]] = {}
     unchanged_count = 0
@@ -585,7 +640,7 @@ def main():
               f"(a build is accepted when its program reproduces the hidden recorded outcomes closely enough). "
               f"Derived from `runs/build_test_v1/builds_*.jsonl` and `runs/build_test_b0_claude/builds_*.jsonl`.")
     md.append("")
-    md.append(f"The paper (`acmtrust_paper/sections/04_benchmark.tex`) says: \"accepted {paper} builds\". "
+    md.append(f"The paper says: \"accepted {paper} builds\". "
               + ("This matches the count derived here." if matches else "**This does NOT match the count derived here.**"))
     md.append("")
     md.append("The 60 builds are 12 per builder model: 3 builds on each of the 4 development documents "
